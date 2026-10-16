@@ -59,6 +59,7 @@ agents:
 | `display_name` | string | *required* | Name shown in Matrix |
 | `role` | string | `""` | System prompt describing the agent's purpose and expertise |
 | `model` | string | `"default"` | Key of an entry under `models:` |
+| `cheap_model` | string or null | `null` | Cheaper model key this agent may switch to; used by `cold_cache`. Inherits `defaults.cheap_model`. See [Cold-Cache Model](https://docs.mindroom.chat/configuration/models/#cold-cache-model) |
 | `tools` | list | `[]` | Tool names or single-key dicts with per-agent overrides; see [Tools](https://docs.mindroom.chat/tools/) and [Per-Agent Tool Configuration](https://docs.mindroom.chat/tools/#per-agent-tool-configuration). The agent gets these plus `defaults.tools`, without duplicates |
 | `include_default_tools` | bool | `true` | Set `false` to leave out `defaults.tools` and its overrides for this agent |
 | `skills` | list | `[]` | Skill names the agent can use; see [Skills](https://docs.mindroom.chat/skills/) |
@@ -72,6 +73,7 @@ agents:
 | `mcp_gateway_shared_credentials` | bool | `false` | Let users who may use this agent call its tools through the [MCP gateway](https://docs.mindroom.chat/deployment/mcp-gateway/#agent-eligibility) even though its worker scope is `shared` or unset. Every caller then runs them with the agent's shared credentials and worker, without its instructions. Agents with `private` or `worker_scope: user` or `user_agent` are available without it |
 | `participation` | object | `null` | Opt into adaptive replies in existing multi-human threads; see [Adaptive Participation](https://docs.mindroom.chat/configuration/threads/#adaptive-participation) |
 | `mid_turn` | object | `null` | Judge whether messages queued during a response can wait until it finishes; see [Mid-Turn Coalescing](https://docs.mindroom.chat/configuration/threads/#mid-turn-coalescing) |
+| `cold_cache` | object | `null` | Move an idle thread to `cheap_model` for good when a judge accepts it; see [Cold-Cache Model](https://docs.mindroom.chat/configuration/models/#cold-cache-model) |
 | `thread_mode` | string | `"thread"` | `thread` replies in Matrix threads; `room` sends plain room messages with one continuous conversation per room, which suits bridges (Telegram, Signal, WhatsApp) and mobile clients |
 | `room_thread_modes` | map | `{}` | Per-room `thread` or `room` overrides keyed by room key, alias, or Matrix room ID; see [Thread Mode Resolution](https://docs.mindroom.chat/configuration/threads/#thread-mode-resolution) |
 | `markdown` | bool | `null` | Instruct the agent to format replies as Markdown |
@@ -202,6 +204,7 @@ These defaults apply to each agent that leaves the same field unset:
 | `markdown` | `true` |
 | `learning` | `true` |
 | `learning_mode` | `always` |
+| `cheap_model` | `null`; ignored for an agent whose `model` is the same. See [Cold-Cache Model](https://docs.mindroom.chat/configuration/models/#cold-cache-model) |
 | `knowledge_graph` | `false` |
 | `num_history_runs`, `num_history_messages`, `max_tool_calls_from_history` | `null` (no limit) |
 | `compress_tool_results` | `false` |

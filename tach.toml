@@ -2937,6 +2937,8 @@ depends_on = [
 path = "mindroom.response_runner"
 depends_on = [
     "mindroom.agent_modes",
+    "mindroom.judgment.cold_cache",
+    "mindroom.thread_models",
     "mindroom.tool_jobs.conversation",
     "mindroom.tool_jobs.runtime",
     "mindroom.tool_jobs.follow_ups",
@@ -7495,6 +7497,11 @@ depends_on = ["mindroom.providers.tool_policy"]
 visibility = ["mindroom.providers.model_loading"]
 
 [[modules]]
+path = "mindroom.config.cold_cache"
+depends_on = ["mindroom.config.judgment"]
+visibility = ["mindroom.config.agent"]
+
+[[modules]]
 path = "mindroom.config.participation"
 depends_on = ["mindroom.config.judgment", "mindroom.config.schema_hints"]
 visibility = ["mindroom.config.agent", "mindroom.turn_policy", "mindroom.response_runner"]
@@ -8653,6 +8660,11 @@ depends_on = ["mindroom.judgment.client"]
 [[modules]]
 path = "mindroom.judgment.openai_decisions"
 depends_on = ["mindroom.judgment.client", "mindroom.model_defaults"]
+
+[[modules]]
+path = "mindroom.judgment.cold_cache"
+depends_on = ["mindroom.judgment.evaluator", "mindroom.judgment.state"]
+visibility = ["mindroom.response_runner"]
 
 [[modules]]
 path = "mindroom.participation_judgment"

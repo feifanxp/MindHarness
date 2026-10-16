@@ -23,6 +23,7 @@ from mindroom.config.access import (
     validate_concrete_matrix_user_ids,
 )
 from mindroom.config.automations import AutomationList  # noqa: TC001
+from mindroom.config.cold_cache import ColdCacheConfig  # noqa: TC001
 from mindroom.config.knowledge import KnowledgeGitConfig  # noqa: TC001
 from mindroom.config.legacy_fields import reject_legacy_agent_fields
 from mindroom.config.memory import AgentMemorySearchConfig, MemoryBackend  # noqa: TC001
@@ -264,6 +265,10 @@ class AgentConfig(BaseModel):
         default=None,
         description="Opt-in judgments for messages queued during this agent's response across all rooms",
     )
+    cold_cache: ColdCacheConfig | None = Field(
+        default=None,
+        description="Opt-in switch of an idle thread to cheap_model for the rest of the thread",
+    )
     access: ResponderAccessConfig | None = Field(
         default=None,
         description="Optional membership-based conversation access policy",
@@ -300,6 +305,11 @@ class AgentConfig(BaseModel):
     model: str = Field(
         default="default",
         description="Configured model alias used for this agent's replies",
+        json_schema_extra=dashboard_hint(reference="model"),
+    )
+    cheap_model: str | None = Field(
+        default=None,
+        description="Cheaper model alias this agent may switch to, used by cold_cache",
         json_schema_extra=dashboard_hint(reference="model"),
     )
     memory_backend: MemoryBackend | None = Field(

@@ -96,6 +96,18 @@
           "default": null,
           "description": "Opt-in judgments for messages queued during this agent's response across all rooms"
         },
+        "cold_cache": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ColdCacheConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Opt-in switch of an idle thread to cheap_model for the rest of the thread"
+        },
         "access": {
           "anyOf": [
             {
@@ -200,6 +212,22 @@
           "description": "Configured model alias used for this agent's replies",
           "title": "Model",
           "type": "string",
+          "x-mindroom": {
+            "reference": "model"
+          }
+        },
+        "cheap_model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Cheaper model alias this agent may switch to, used by cold_cache",
+          "title": "Cheap Model",
           "x-mindroom": {
             "reference": "model"
           }
@@ -1019,6 +1047,33 @@
       "title": "CoalescingConfig",
       "type": "object"
     },
+    "ColdCacheConfig": {
+      "additionalProperties": false,
+      "description": "Let a judge move a thread to the agent's cheap model once its prompt cache went cold.",
+      "properties": {
+        "idle_seconds": {
+          "default": 3600,
+          "description": "Seconds since the agent's last reply in a thread after which its prompt cache counts as cold",
+          "minimum": 1,
+          "title": "Idle Seconds",
+          "type": "integer"
+        },
+        "judgment": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/JudgmentConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "LLM model alias, TypeSafe, or OpenAI Decisions backend; unset asks the cheap model itself"
+        }
+      },
+      "title": "ColdCacheConfig",
+      "type": "object"
+    },
     "CompactionConfig": {
       "description": "Concrete text compaction configuration.",
       "properties": {
@@ -1351,6 +1406,22 @@
           ],
           "title": "Learning Mode",
           "type": "string"
+        },
+        "cheap_model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Cheaper model key for agents without their own cheap_model, used by cold_cache",
+          "title": "Cheap Model",
+          "x-mindroom": {
+            "reference": "model"
+          }
         },
         "compaction": {
           "anyOf": [
@@ -5123,6 +5194,7 @@
         "learning": true,
         "knowledge_graph": false,
         "learning_mode": "always",
+        "cheap_model": null,
         "compaction": {
           "enabled": true,
           "fallback_model": null,

@@ -240,6 +240,8 @@ class ResolvedRuntimeModel:
 
     model_name: str
     context_window: int | None
+    # A scheduled, thread, or persisted room choice rather than the configured model.
+    overridden: bool = False
 
 
 @dataclass(frozen=True)
@@ -2019,19 +2021,60 @@ class Config(BaseModel):
     @model_validator(mode="after")
     def validate_agent_helper_models(self) -> Config:
         """Validate dedicated judgment and skill-review model aliases for opted-in agents."""
+        if self.defaults.cheap_model is not None and self.defaults.cheap_model not in self.models:
+            msg = f"Unknown defaults.cheap_model: {self.defaults.cheap_model!r}"
+            raise ValueError(msg)
         for agent_name, agent in self.agents.items():
-            for settings in (agent.participation, agent.mid_turn):
+            for settings in (agent.participation, agent.mid_turn, agent.cold_cache):
                 if settings is None:
                     continue
                 judgment = settings.judgment
                 if isinstance(judgment, LLMJudgmentConfig) and judgment.model not in self.models:
                     msg = f"Unknown judgment model for agent {agent_name!r}: {judgment.model!r}"
                     raise ValueError(msg)
+            cheap_model = self.get_agent_cheap_model(agent_name)
+            # An inherited default is checked only where an agent uses it.
+            if cheap_model is not None and (agent.cheap_model is not None or agent.cold_cache is not None):
+                self._validate_cheap_model(agent_name, agent.model, cheap_model)
+            elif agent.cold_cache is not None:
+                msg = (
+                    f"cold_cache needs a cheap_model for agent {agent_name!r}; "
+                    "set agents.<name>.cheap_model or defaults.cheap_model"
+                )
+                raise ValueError(msg)
             review_model = agent.skill_learning.model
             if review_model is not None and review_model not in self.models:
                 msg = f"Unknown skill_learning model for agent {agent_name!r}: {review_model!r}"
                 raise ValueError(msg)
         return self
+
+    def get_agent_cheap_model(self, agent_name: str) -> str | None:
+        """Return the agent's cheap model, ignoring an inherited default the agent already runs."""
+        agent = self.agents[agent_name]
+        if agent.cheap_model is not None:
+            return agent.cheap_model
+        default = self.defaults.cheap_model
+        return None if default == agent.model else default
+
+    def _validate_cheap_model(self, agent_name: str, agent_model: str, cheap_model: str) -> None:
+        """Keep a cheap-model turn from compacting history the agent model still needs."""
+        if cheap_model not in self.models:
+            msg = f"Unknown cheap_model for agent {agent_name!r}: {cheap_model!r}"
+            raise ValueError(msg)
+        if cheap_model == agent_model:
+            msg = f"cheap_model must differ from the model of agent {agent_name!r}"
+            raise ValueError(msg)
+        cheap_window = self.get_model_context_window(cheap_model)
+        agent_window = self.get_model_context_window(agent_model)
+        # Without a window on both sides, compaction cannot keep the cheap model's turns in bounds.
+        if (cheap_window is None) != (agent_window is None) or (
+            cheap_window is not None and agent_window is not None and cheap_window < agent_window
+        ):
+            msg = (
+                f"cheap_model {cheap_model!r} for agent {agent_name!r} needs a context window "
+                f"at least as large as {agent_model!r}, and both or neither must set one"
+            )
+            raise ValueError(msg)
 
     @model_validator(mode="after")
     def validate_knowledge_graph(self) -> Config:
@@ -2104,6 +2147,7 @@ class Config(BaseModel):
             thread_overrides = resolve_thread_model_override(runtime_paths, thread_id, config=self).active
             if entity_name is not None:
                 resolved_model_name = thread_overrides.get(entity_name)
+        overridden = resolved_model_name is not None
         if resolved_model_name is None:
             if entity_name is None:
                 resolved_model_name = default_model_name
@@ -2118,6 +2162,7 @@ class Config(BaseModel):
                 ).active
                 if room_override is not None:
                     resolved_model_name = room_override
+                    overridden = True
                 else:
                     from mindroom.entity_resolution import effective_entity_model_name  # noqa: PLC0415
 
@@ -2129,7 +2174,11 @@ class Config(BaseModel):
         if resolved_context_window is None:
             resolved_context_window = self.get_model_context_window(resolved_model_name)
 
-        return ResolvedRuntimeModel(model_name=resolved_model_name, context_window=resolved_context_window)
+        return ResolvedRuntimeModel(
+            model_name=resolved_model_name,
+            context_window=resolved_context_window,
+            overridden=overridden,
+        )
 
 
 def _tag_automation_unions(node: Any) -> None:  # noqa: ANN401 - a JSON schema node
