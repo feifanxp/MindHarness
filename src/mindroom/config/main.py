@@ -38,7 +38,7 @@ from mindroom.config.access import RoomDefaultsConfig, validate_concrete_matrix_
 from mindroom.config.agent import AgentConfig, RoomConfig, TeamConfig  # noqa: TC001
 from mindroom.config.approval import ToolApprovalConfig
 from mindroom.config.auth import AuthorizationConfig
-from mindroom.config.automations import Automation  # noqa: TC001
+from mindroom.config.automations import Automation, ExplorationAutomation
 from mindroom.config.budgets import BudgetsConfig  # noqa: TC001
 from mindroom.config.calls import CallsConfig, CascadedCallProfile, LiveCallProfile
 from mindroom.config.egress_broker import EgressBrokerConfig
@@ -46,6 +46,7 @@ from mindroom.config.entity_view import ResolvedEntityView
 from mindroom.config.external_trigger_policy import ExternalTriggerPolicyConfig
 from mindroom.config.judgment import LLMJudgmentConfig
 from mindroom.config.knowledge import KnowledgeBaseConfig
+from mindroom.config.knowledge_graph import KnowledgeGraphConfig
 from mindroom.config.legacy_access import (
     AccessMigrationError,
     migrate_access_config_data,
@@ -450,6 +451,10 @@ class Config(BaseModel):
     )
     defaults: DefaultsConfig = Field(default_factory=DefaultsConfig, description="Default values")
     memory: MemoryConfig = Field(default_factory=MemoryConfig, description="Memory configuration")
+    knowledge_graph: KnowledgeGraphConfig = Field(
+        default_factory=KnowledgeGraphConfig,
+        description="Knowledge graph built from graph-enabled agents' conversations",
+    )
     knowledge_bases: dict[str, KnowledgeBaseConfig] = Field(
         default_factory=dict,
         description="Knowledge base configurations keyed by base ID",
@@ -1878,7 +1883,8 @@ class Config(BaseModel):
 
         A private agent runs each automation for each requester in that requester's personal room, so it must own
         personal rooms and cannot post in a configured room, which would show one requester's files to everyone in it.
-        The built-ins maintain file memory, which needs the file backend.
+        `prompt_curation` and `dreaming` maintain file memory, which needs the file backend; `exploration` needs the knowledge
+        graph, and a room for a shared agent.
         A plugin automation's own needs are checked when it fires, once its plugin is loaded.
         """
         if self.get_agent(agent_name).private is not None:
@@ -1888,6 +1894,12 @@ class Config(BaseModel):
                 return f"is private; {automation.name} posts in each requester's personal room and cannot set room"
         if automation.requires_file_memory and self._agent_memory_backend(agent_name) != "file":
             return f"needs memory_backend: file for {automation.name}"
+        if isinstance(automation, ExplorationAutomation):
+            if not self.agent_uses_knowledge_graph(agent_name):
+                return "needs knowledge_graph: true for exploration"
+            # Its prompt lists what every requester's conversations looked up, so the operator picks who sees it.
+            if automation.room is None and self.get_agent(agent_name).private is None:
+                return "needs room for exploration, because its prompt lists what conversations looked up"
         return None
 
     def _agent_automations(self, agent_name: str) -> list[Automation]:
@@ -1915,6 +1927,15 @@ class Config(BaseModel):
                     msg = f"Agent {agent_name!r} automation {automation.name!r} uses unknown model {automation.model!r}"
                     raise ValueError(msg)
         return self
+
+    def agent_uses_knowledge_graph(self, agent_name: str) -> bool:
+        """Return whether an agent builds and reads a knowledge graph."""
+        agent = self.get_agent(agent_name)
+        return agent.knowledge_graph if agent.knowledge_graph is not None else self.defaults.knowledge_graph
+
+    def knowledge_graph_agents(self) -> list[str]:
+        """Return the agents that build a knowledge graph."""
+        return [agent_name for agent_name in self.agents if self.agent_uses_knowledge_graph(agent_name)]
 
     def uses_file_memory(self) -> bool:
         """Return whether any configured agent uses file-backed memory."""
@@ -2010,6 +2031,20 @@ class Config(BaseModel):
             if review_model is not None and review_model not in self.models:
                 msg = f"Unknown skill_learning model for agent {agent_name!r}: {review_model!r}"
                 raise ValueError(msg)
+        return self
+
+    @model_validator(mode="after")
+    def validate_knowledge_graph(self) -> Config:
+        """Validate the graph's model once any agent enables the graph."""
+        settings = self.knowledge_graph
+        if not self.knowledge_graph_agents():
+            return self
+        if settings.model is None:
+            msg = "knowledge_graph.model is required when an agent enables knowledge_graph"
+            raise ValueError(msg)
+        if settings.model not in self.models:
+            msg = f"Unknown knowledge_graph model: {settings.model!r}"
+            raise ValueError(msg)
         return self
 
     def _entity_model_name(self, entity_name: str) -> str:
@@ -2113,7 +2148,7 @@ def _tag_automation_unions(node: Any) -> None:  # noqa: ANN401 - a JSON schema n
 def _describe_automation_union(schema: dict[str, Any]) -> None:
     """Shape the automation union for the dashboard's form: a pinned name per built-in and a free one for plugins."""
     defs = schema["$defs"]
-    for built_in in ("PromptCurationAutomation", "DreamingAutomation"):
+    for built_in in ("PromptCurationAutomation", "DreamingAutomation", "ExplorationAutomation"):
         # The form fills required fields when a variant is picked, and the name is what selects the variant.
         defs[built_in]["required"] = ["name", *defs[built_in].get("required", [])]
     plugin = defs["PluginAutomation"]

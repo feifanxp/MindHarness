@@ -1427,6 +1427,7 @@ Keep `models.default` configured, because room topic generation and automatic th
 | `defaults` | Fallback values for agent settings and global-only behavior | [Agents — Defaults](https://docs.mindroom.chat/configuration/agents/#defaults) |
 | `memory` | Memory backends and embedder | [Memory](https://docs.mindroom.chat/memory/) |
 | `knowledge_bases` | File-backed knowledge bases | [Knowledge Bases](https://docs.mindroom.chat/knowledge/) |
+| `knowledge_graph` | Graph of facts built from agents' conversations | [Knowledge Graph](https://docs.mindroom.chat/knowledge-graph/) |
 | `mcp_servers` | External Model Context Protocol servers | [MCP](https://docs.mindroom.chat/mcp/) |
 | `plugins` | Plugin loading | [Plugins](https://docs.mindroom.chat/plugins/) |
 | `voice` | Speech-to-text for voice messages | [Voice](https://docs.mindroom.chat/voice/) |
@@ -1711,6 +1712,7 @@ agents:
 | `markdown` | bool | `null` | Instruct the agent to format replies as Markdown |
 | `learning` | bool | `null` | Enable [Agno Learning](https://docs.mindroom.chat/memory/#agno-learning), a persistent profile of user preferences |
 | `learning_mode` | string | `null` | `always` learns after every turn; `agentic` lets the agent decide through a tool call |
+| `knowledge_graph` | bool | `null` | Build a [knowledge graph](https://docs.mindroom.chat/knowledge-graph/) from this agent's conversations and give it the `knowledge_graph` tool |
 | `memory_backend` | string | `null` | `mem0`, `file`, or `none`, overriding `memory.backend`; `none` disables memory but not `learning`. See [Memory](https://docs.mindroom.chat/memory/) |
 | `memory_search` | object | `null` | File-memory search override (`mode`, `include`, `include_entrypoint`) when the backend is `file`; omitted fields inherit `memory.search`. See [Searching file memory](https://docs.mindroom.chat/memory/#searching-file-memory) |
 | `automations` | list | `null` | Automations such as `prompt_curation`, `dreaming`, or one a plugin provides; `null` inherits the `defaults.automations` entries the agent can run and `[]` turns them off. See [Automations](https://docs.mindroom.chat/scheduling/#automations) |
@@ -1835,6 +1837,7 @@ These defaults apply to each agent that leaves the same field unset:
 | `markdown` | `true` |
 | `learning` | `true` |
 | `learning_mode` | `always` |
+| `knowledge_graph` | `false` |
 | `num_history_runs`, `num_history_messages`, `max_tool_calls_from_history` | `null` (no limit) |
 | `compress_tool_results` | `false` |
 | `compaction` | enabled; see [Agent Compaction Settings](https://docs.mindroom.chat/configuration/history/#agent-compaction-settings) |
@@ -3799,6 +3802,84 @@ A search times out after 30 seconds, and at most four searches run at once; a se
 
 Manage knowledge bases, files, reindexing, and Git sync from the dashboard **Knowledge** tab or the API; see [Dashboard](https://docs.mindroom.chat/dashboard/#knowledge) for the tab and the [knowledge API endpoints](https://docs.mindroom.chat/dashboard/#knowledge-api).
 
+# Knowledge Graph
+
+A knowledge graph gives an agent a model of the people, projects, documents, and events its conversations and tools reveal, with when each fact held and where it came from.
+MindRoom builds it with [Graphiti](https://github.com/getzep/graphiti) in the background from the agent's finished conversations, and the agent looks facts up with the `knowledge_graph` tool.
+To have the agent also explore its data sources on a schedule, add the [`exploration`](https://docs.mindroom.chat/scheduling/#exploration) automation.
+
+## Enable It
+
+```yaml
+models:
+  luna:
+    provider: openai
+    id: gpt-6-luna
+
+knowledge_graph:
+  model: luna          # extracts entities and facts
+
+agents:
+  mind:
+    display_name: Mind
+    knowledge_graph: true
+```
+
+`agents.<name>.knowledge_graph` (bool, default from `defaults.knowledge_graph`, which defaults to `false`) turns the graph on for one agent and gives it the `knowledge_graph` tool.
+MindRoom installs the optional `knowledge_graph` extra the first time a graph is used; its embedded database ships for macOS and for Linux with glibc 2.39 or newer, and elsewhere it must build from source.
+Extraction needs a model with reliable structured output; small local models often fail it; a failed extraction is retried later, and a part of a conversation is skipped once its extraction output was unusable five times or it kept failing for three days.
+
+## Settings
+
+| Field | Default | Description |
+|---|---|---|
+| `knowledge_graph.model` | none | A key of `models` that extracts entities and facts; required once any agent enables the graph |
+| `knowledge_graph.ingest.interval_seconds` | `600` (min 30) | Time between ingestion passes |
+| `knowledge_graph.ingest.idle_seconds` | `120` (min 1) | How long a conversation must be quiet before its new turns are added |
+| `knowledge_graph.ingest.max_sessions_per_cycle` | `10` (min 1) | Conversations added per pass; the rest wait for the next |
+| `knowledge_graph.ingest.max_episode_chars` | `24000` (1000 to 60000) | Largest piece of a conversation sent for extraction at once; a single longer message is cut to this length |
+| `knowledge_graph.ingest.max_tool_result_chars` | `4000` (min 100, at most half of `max_episode_chars`) | Characters kept from each tool result |
+| `knowledge_graph.ingest.backfill_days` | `7` (min 0) | A new graph starts from conversations active within this many days |
+
+Facts are embedded with [`memory.embedder`](https://docs.mindroom.chat/memory/#embedder).
+The graph database runs inside MindRoom and keeps every graph in memory, so MindRoom's memory use grows with the graphs.
+Changing the embedder starts a new, empty graph that fills again from conversations active within `backfill_days`; the old graph is no longer read but keeps its memory until you stop MindRoom and delete `knowledge_graph/` in the storage directory.
+
+## What Goes Into the Graph
+
+- Every finished turn of the agent's Matrix conversations: what people said, what the agent answered, and the tool calls it made with their results.
+- From [`exploration`](https://docs.mindroom.chat/scheduling/#exploration) threads and tasks another agent delegated to it, only the tool calls and their results, never the agent's own summary.
+
+Not added: threads started by other automations such as `dreaming`, graph lookups, including those through a shell, the `reasoning` tool's thoughts, answers from subagents, workflows, and Claude Code, results collected from background jobs, conversations through the OpenAI-compatible API, and team conversations.
+Credential-like values are removed on a best-effort basis before anything is sent for extraction.
+A turn waiting for tool approval holds back the later turns of its conversation until it finishes or its approval expires.
+
+Each fact keeps its sources: `conversation` means someone said it, `tool_results` means it came from a tool call, its arguments or what it returned.
+When later evidence contradicts a fact, the fact is marked superseded with the date it stopped holding instead of being deleted.
+Facts are extracted by a model, so they can be wrong; check a fact's source before relying on it.
+A message redacted before its conversation is added stays out of the graph, and so does the turn that read it.
+Redacting a message later does not remove facts already extracted from it; to forget them, stop MindRoom and delete `knowledge_graph/` in the storage directory, and the graph rebuilds from the remaining conversations of the last `backfill_days`, without redacted messages.
+
+## The `knowledge_graph` Tool
+
+```python
+search_graph("who owns Project Atlas", limit=10)   # limit 1 to 50
+graph_entity("Project Atlas")
+```
+
+Each fact comes back with its validity, for example `valid 2026-01-05 until 2026-03-09 (superseded)`, and its sources with dates.
+An agent reads only its own graph; a [private agent](https://docs.mindroom.chat/configuration/agents/#private-instances) has one graph per requester.
+
+## Privacy
+
+A shared agent's graph holds what it learned from every requester's conversations, including tool results, and anyone who can talk to that agent can query it.
+Use a private agent when requesters must not see each other's facts.
+
+## Cost and Health
+
+Extraction makes several model calls per piece of conversation, reported as `knowledge_graph` in [usage tracking](https://docs.mindroom.chat/usage/#token-usage); each lookup makes one embedding request.
+When ingestion fails, `/api/health` includes a `knowledge_graph` block naming the kind of failure until a later pass succeeds with no failed episode still waiting for its retry, and the MindRoom log has the details.
+
 # Skills
 
 Skills are instruction packs: a `SKILL.md` file with optional scripts and reference documents that guide an agent through a task without adding new code capabilities.
@@ -4309,7 +4390,7 @@ For `schedule:fired` hooks that run more than once for the same occurrence, see 
 ## Automations
 
 Automations are checks MindRoom runs on a cron schedule; when one passes, the agent posts the automation's prompt in its room and answers it with a normal, visible run.
-MindRoom ships two, [`prompt_curation`](#prompt_curation) and [`dreaming`](#dreaming), and [plugins](https://docs.mindroom.chat/plugins/#automations) can add more.
+MindRoom ships three, [`prompt_curation`](#prompt_curation), [`dreaming`](#dreaming), and [`exploration`](#exploration), and [plugins](https://docs.mindroom.chat/plugins/#automations) can add more.
 The check runs in code, so a schedule that finds nothing to do costs no model call and posts nothing.
 Enable them per agent in `config.yaml`, or under `defaults` for every eligible agent:
 
@@ -4337,7 +4418,7 @@ agents:
   Only the agent named by `personal_rooms.agent` can run automations as a private agent, its entries cannot set `room`, and it inherits only default entries without `room`.
   A requester without a personal room, or whom the agent may no longer answer, is skipped.
   Everyone who can read that personal room, such as an agent the requester invited or an adopted room's other participants, sees the prompts and replies, like any other reply there.
-- The built-ins need `memory_backend: file`; an agent without it skips them when it inherits defaults, and keeps inheriting the defaults that do not need it.
+- `prompt_curation` and `dreaming` need `memory_backend: file`, and `exploration` needs `knowledge_graph: true`; an agent that lacks what a default entry needs skips it and keeps inheriting the others.
 - Edits apply on config reload without restarting the agent.
 - The agent posts the prompt in its own name and mentions itself, so it answers even in a room with other agents.
 - When the response to a prompt is final, or an hour after the prompt was posted without one, the automation's next step runs: it posts a notice in the prompt's thread or asks the agent again.
@@ -4403,6 +4484,43 @@ Each run keeps its agenda and report, and a run that reached review also its pat
 `dreaming` needs `memory_backend: file` and something to work from: [auto-flush](https://docs.mindroom.chat/memory/#file-auto-flush-worker) writes the daily notes it reviews and [thread exports](https://docs.mindroom.chat/thread-exports/) add threaded conversations, so with neither on, and no daily notes the agent writes itself, it never runs.
 It also needs a tool that writes workspace files, such as `file`, `coding`, or `shell`, because the agent edits its copy and writes its report and verdict as files; without one, every run stops unfinished.
 Its prompt templates are overridable as `DREAMING_PROMPT_TEMPLATE` and `DREAMING_VERIFY_TEMPLATE`.
+
+### `exploration`
+
+`exploration` asks an agent with a [knowledge graph](https://docs.mindroom.chat/knowledge-graph/) to explore its data sources on a schedule, so the graph learns about projects, people, and documents nobody has asked about yet.
+
+```yaml
+agents:
+  mind:
+    knowledge_graph: true
+    tools: [mcp_github, duckduckgo]
+    automations:
+      - name: exploration
+        cron: "0 */6 * * *"
+        room: "#mind-exploration"
+        max_tool_calls: 30
+```
+
+1. The check lists the tool calls the agent's conversations made since its last run, such as the repositories and searches people asked about.
+2. When there are such calls, or `revisit_days` have passed since the last run and people talked to the agent since, the agent posts a prompt in a new thread to check what the graph knows, re-read those sources for changes, and follow references to what the graph lacks.
+3. The agent answers the prompt like any message, with its own tools and [approval rules](https://docs.mindroom.chat/tool-approval/); a shared agent's call that needs approval is denied, because no person asked for the run, while a private agent's call waits in the thread until its requester answers or the request expires.
+4. When the run ends, MindRoom marks the thread resolved and adds its tool results to the graph; the agent's own summary is not added, and an interrupted run adds nothing.
+
+The prompt tells the agent to only read and to stay within `max_tool_calls`, but nothing enforces either: the agent's `max_tool_calls_per_turn` is the hard limit, and approval rules are what stop writes.
+The prompt lists recent tool calls with their arguments, credential-like values removed and mentions disabled so it wakes nobody, so a shared agent's exploration needs a `room` whose members may see what the agent's conversations looked up; a private agent posts in each requester's personal room.
+A turn whose message was redacted can still be listed until the agent next replies in that conversation.
+
+| Field | Default | Description |
+|---|---|---|
+| `cron` | `30 2 * * *` | When to check |
+| `room` | required for a shared agent | Where the prompt is posted |
+| `max_tool_calls` | `40` (1 to 1000) | Tool calls the prompt asks one run to stay within |
+| `max_leads` | `20` (0 to 200) | Most recent tool calls listed in the prompt |
+| `revisit_days` | `7` (min 1) | Run without new tool calls once this many days have passed since the last run, if people talked to the agent since |
+| `model` | the agent's model | A key of `models` to run the exploration with |
+
+Its prompt template is overridable as `EXPLORATION_PROMPT_TEMPLATE`.
+Its model usage counts as ordinary replies, and extracting what it read counts as `knowledge_graph` usage.
 
 # Chat Commands
 
@@ -5820,6 +5938,7 @@ Helper work adds tokens without adding runs, including retries and rejected outp
 | `dynamic_workflow` | Dynamic Workflow `room_agent` participants; a `subagent` participant's tokens appear under its calling agent |
 | `claude_agent` | Each Claude Code turn run by the `claude_agent` tool, for its main conversation's responses but not the subagents it starts or requests Claude Code makes for itself, such as compaction summaries and session titles; it appears in totals but not in request rows |
 | `skill_learning` | Automatic [skill reviews](https://docs.mindroom.chat/skills/) |
+| `knowledge_graph` | Fact extraction for the [knowledge graph](https://docs.mindroom.chat/knowledge-graph/) |
 | `realtime_voice` | Speech-model tokens of a realtime voice call, one request per response |
 | `routing`, `room_topic`, `schedule_parse`, `team_mode`, `thread_summary`, `voice_normalization`, `voice_transcription` | Internal AI work, reported under the entity `system:internal` |
 
@@ -14345,6 +14464,7 @@ Of the agents' data, dedicated Docker and Kubernetes workers mount only workspac
 The Kubernetes `static_runner` sidecar still mounts `agents`, `private_instances`, and `shared_directories` read-write, so records the primary treats as authority live below the primary-only `tracking/` directory instead: the invited-room and pending-invite ledgers, personal-room records, conversation modes, the shared-directory membership ledger, and the primary's copy of each private-instance owner record, together with their locks.
 The thread exporter writes into a private instance only for the requester that the primary's owner record names, so an owner record planted in `private_instances` gets no export.
 Automations likewise run for a private instance only as the requester that record names, and post only in that requester's personal room, so their replies quoting private files never reach another room.
+The knowledge graph database lives in the primary-only `knowledge_graph/` storage directory, and its embedded server opens no TCP port and listens on a Unix socket in a private temporary directory of the primary, so no worker can reach it.
 
 Egress broker secrets (credential services named `egress_*`) are stored in primary-only credential stores and never reach worker-writable locations, matching the placement of primary-built tool settings.
 When the broker is enabled, workers receive a signed proxy token in their environment, and the broker injects the configured secret when the worker's request matches a service rule.
@@ -14513,6 +14633,11 @@ Do not report or "fix" these; they are deliberate.
 - Removing a member or deleting a shared directory takes effect for a member's dedicated worker on that worker's next tool call, so until then its running processes can still read the directory, including files written after the removal.
 - A team's `access` authorizes its exact member agents for team requests, in Matrix and the OpenAI-compatible API, even members whose own `access` would not admit the requester directly; adding an agent to a team is a deliberate grant.
 - A response's CLI grant, in minimal mode or for a standard-mode agent whose shell can reach MindRoom, is in the environment of its shell commands, so other code in the same worker can use that requester's tools through it until the response ends; code that shares a worker already shares its trust.
+- A shared agent's knowledge graph holds facts from every requester's conversations and tool results, and any requester of that agent can query it, like shared-agent memory; private agents get one graph per requester.
+- Redacting a message does not remove facts the knowledge graph already extracted from it; ingestion skips turns derived from messages redacted before it reached them, so deleting the `knowledge_graph/` storage directory rebuilds the graph without them; an `exploration` prompt can still list a redacted turn's tool calls until the agent next replies in that conversation.
+- An `exploration` run is an ordinary turn started by an automation prompt, with the agent's own tools and approval rules, so content it reads can steer it as it could any turn that reads untrusted content; approval rules, not the prompt's instruction to only read, stop writes.
+- A shared agent's exploration follows tool calls from every requester's conversations with that agent's own credentials, so one requester can lead it to read something their own access cannot and then query the result in the shared graph; use a private agent when requesters must stay apart.
+- Knowledge graph extraction reads tool results that worker code produced, so a crafted result can add wrong facts to the graph, each attributed to its source; it runs nothing in the primary.
 - A non-private agent's workspace is shared by every requester's runtime for that agent, including `user` and `user_agent` workers, so files one requester leaves there (such as `.mindroom/worker-env.sh`, `.pth` files, or Git config) can run in another requester's runtime; use `private` agents when requesters need isolation from each other.
 - Likewise, a non-private agent's primary-process `browser` profiles and default artifacts live in that agent's state root and are shared by all of its requesters, so one requester can use web sessions another signed in and upload screenshots another took; they never cross agents or the requesters of a private agent.
 - A browser egress proxy in a sandbox runner receives destination hostnames, because an approved-egress proxy decides by name, so rebinding between the relay's check and that proxy's own lookup is the proxy's responsibility; in the primary the relay tunnels to the address it validated.
@@ -15462,7 +15587,7 @@ agents:
 
 ### The check and its steps
 
-- `@automation(name, requires_file_memory=False)` marks a synchronous check; the name starts with a lowercase letter and continues with lowercase letters, digits, and `_`, must not be `prompt_curation` or `dreaming`, and must be unique across loaded plugins, or the later registration is ignored with a warning.
+- `@automation(name, requires_file_memory=False)` marks a synchronous check; the name starts with a lowercase letter and continues with lowercase letters, digits, and `_`, must not be `prompt_curation`, `dreaming`, or `exploration`, and must be unique across loaded plugins, or the later registration is ignored with a warning.
   Set `requires_file_memory=True` when the automation maintains file memory, so it never runs for an agent without the file backend.
 - The check returns `None` when there is nothing to do, which posts nothing and calls no model, or an `Ask(text, new_thread=..., then=...)` that the agent answers.
 - `then(config, thread_id, timed_out)` runs after that answer and returns the next `Ask` or a `Done(notice, resolve=..., on_loop=...)` that posts `notice` in the thread, marks the listed threads resolved, and runs `on_loop` on the event loop.
