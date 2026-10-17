@@ -30,6 +30,7 @@ from ._policy import (
     resolve_file_memory_resolution,
     storage_paths_for_scope_user_id,
 )
+from ._prompting import redact_memory_text
 from ._semantic_file_search import (
     SemanticFileMemoryIndexUnavailableError,
     schedule_semantic_file_memory_refresh,
@@ -1435,7 +1436,7 @@ class FileMemoryBackend:
     ) -> None:
         """Persist condensed conversation text to file-backed memory scopes."""
         del session_id, thread_history, user_id  # File conversation memory stores condensed text only.
-        condensed_prompt = " ".join(prompt.strip().split())
+        condensed_prompt = " ".join(redact_memory_text(prompt).split())
         if not condensed_prompt:
             return
 

@@ -16,6 +16,7 @@ from agno.agent import Agent
 
 from mindroom.helper_usage import HelperUsageOwner, record_helper_usage
 from mindroom.logging_config import get_logger
+from mindroom.memory._prompting import redact_memory_text
 from mindroom.memory.functions import append_agent_daily_memory, list_all_agent_memories
 from mindroom.providers import model_loading
 from mindroom.runtime_resolution import resolve_agent_execution
@@ -316,7 +317,7 @@ def _select_recent_chat_lines(
         content = message.content
         if not isinstance(content, str):
             continue
-        cleaned = " ".join(content.split())
+        cleaned = " ".join(redact_memory_text(content).split())
         if not cleaned:
             continue
         if len(cleaned) > 500:
