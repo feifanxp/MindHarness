@@ -1127,6 +1127,8 @@ visibility = [
     "mindroom.history.replay",
     "mindroom.history.storage",
     "mindroom.skill_learning.transcript",
+    "mindroom.history.conversation_text",
+    "mindroom.history.claude_replay_compat",
 ]
 
 [[modules]]
@@ -2655,10 +2657,10 @@ visibility = [
     "mindroom.agent_cli.cli_approval_recovery",
     "mindroom.ai",
     "mindroom.history.turn_recorder",
-    "mindroom.knowledge_graph.episodes",
     "mindroom.matrix_rtc.call_tools",
     "mindroom.response_runner",
     "mindroom.teams",
+    "mindroom.history.conversation_text",
 ]
 
 [[modules]]
@@ -3288,7 +3290,7 @@ visibility = [
     "mindroom.conversation_state_writer",
     "mindroom.execution_preparation",
     "mindroom.history.interrupted_replay",
-    "mindroom.knowledge_graph.episodes",
+    "mindroom.history.conversation_text",
 ]
 
 [[modules]]
@@ -7465,7 +7467,7 @@ visibility = [
 
 [[modules]]
 path = "mindroom.history.claude_replay_compat"
-depends_on = []
+depends_on = ["mindroom.history.run_visibility"]
 visibility = ["mindroom.history.compaction", "mindroom.history.summary_input"]
 
 [[modules]]
@@ -7523,6 +7525,21 @@ visibility = [
     "mindroom.response_turn",
     "mindroom.teams",
     "mindroom.delegation.recovery",
+]
+
+[[modules]]
+path = "mindroom.history.conversation_text"
+depends_on = [
+    "mindroom.automations.steps",
+    "mindroom.constants",
+    "mindroom.history.interrupted_replay",
+    "mindroom.history.run_visibility",
+    "mindroom.prompt_message_tags",
+    "mindroom.turn_origin",
+]
+visibility = [
+    "mindroom.knowledge_graph.episodes",
+    "mindroom.skill_learning.transcript",
 ]
 
 [[modules]]
@@ -8927,6 +8944,7 @@ visibility = [
     "mindroom.response_runner",
     "mindroom.knowledge_graph.episodes",
     "mindroom.automations.exploration",
+    "mindroom.history.conversation_text",
     "mindroom.memory.auto_flush",
 ]
 
@@ -8996,7 +9014,7 @@ visibility = ["mindroom.skill_learning.runner", "mindroom.skill_learning.tools"]
 
 [[modules]]
 path = "mindroom.skill_learning.transcript"
-depends_on = ["mindroom.history.run_visibility"]
+depends_on = ["mindroom.history.conversation_text", "mindroom.history.run_visibility"]
 visibility = ["mindroom.skill_learning.reviewer", "mindroom.skill_learning.runner"]
 
 [[modules]]
@@ -9136,10 +9154,9 @@ path = "mindroom.knowledge_graph.episodes"
 depends_on = [
     "mindroom.automations.steps",
     "mindroom.constants",
-    "mindroom.history.interrupted_replay",
+    "mindroom.history.conversation_text",
     "mindroom.history.session_runs",
     "mindroom.knowledge_graph.store",
-    "mindroom.prompt_message_tags",
     "mindroom.redaction",
 ]
 
