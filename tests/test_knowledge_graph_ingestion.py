@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import threading
 import time
 from dataclasses import dataclass, field
@@ -290,7 +291,7 @@ async def test_active_sessions_wait_for_idle_seconds(tmp_path: Path) -> None:
 
 @pytest.mark.asyncio
 async def test_max_sessions_per_cycle_is_respected(tmp_path: Path) -> None:
-    """A pass ingests at most the configured number of conversations; the rest wait for the next."""
+    """A pass ingests at most the configured number of conversations from a graph; the rest wait for the next."""
     config, paths, store = _config(max_sessions_per_cycle=2), _paths(tmp_path), _FakeStore()
     for index in range(3):
         _seed(config, paths, f"!room:x:$t{index}", [f"r{index}"])
@@ -407,8 +408,11 @@ async def test_one_failing_agent_does_not_stop_the_others(tmp_path: Path) -> Non
             raise OSError(msg)
         return real(agent_name, *args, **kwargs)
 
+    worker = _worker(config, paths, store)
     with patch.object(ingestion, "create_session_storage", storage):
-        await _worker(config, paths, store)._run_cycle(config, now=T0 + 10)
+        await worker._run_cycle(config, now=T0 + 10)
+        # A pass that only fails to list adds nothing, so the worker waits instead of retrying at once.
+        assert await worker._run_cycle(config, now=T0 + 20) is False
 
     assert store.sessions() == ["!room:x:$t1"]
     assert "OSError" in (knowledge_graph_failure() or "")
@@ -717,66 +721,143 @@ async def test_a_failed_conversation_keeps_health_failing_until_it_succeeds(tmp_
 
 
 @pytest.mark.asyncio
-async def test_a_failed_redaction_check_leaves_the_pass_to_other_agents(tmp_path: Path) -> None:
-    """A conversation whose redaction check fails takes no place in the pass, so the next agent is still ingested."""
-    config = _config(max_sessions_per_cycle=1)
-    config.agents["pal"] = AgentConfig(display_name="Pal", knowledge_graph=True)
-    paths, store = _paths(tmp_path), _FakeStore()
-    _seed(config, paths, "!room:x:$m1", ["rm1"])
-    _seed(config, paths, "!room:x:$p1", ["rp1"], agent="pal")
-
-    async def redacted(agent_name: str, room_id: str, event_ids: tuple[str, ...]) -> frozenset[str] | None:
-        del room_id, event_ids
-        if agent_name == "mind":
-            msg = "event journal unavailable"
-            raise RuntimeError(msg)
-        return frozenset()
-
-    await _worker(config, paths, store, redacted)._run_cycle(config, now=T0 + 10)
-
-    assert store.sessions() == ["!room:x:$p1"]
-
-
-@pytest.mark.asyncio
-async def test_an_agent_that_failed_keeps_health_failing_while_passes_do_not_reach_it(tmp_path: Path) -> None:
-    """Another agent's clean passes do not clear the failure of an agent whose conversations could not be listed."""
-    config = _config(max_sessions_per_cycle=1)
-    config.agents["pal"] = AgentConfig(display_name="Pal", knowledge_graph=True)
-    paths, store = _paths(tmp_path), _FakeStore()
-    for thread in ("$m1", "$m2", "$m3"):
-        _seed(config, paths, f"!room:x:{thread}", [f"r{thread}"])
-    real = ingestion.updated_sessions
-
-    def listed(storage: object, agent_name: str, *, since: int) -> list[tuple[str, int]]:
-        if agent_name == "pal":
-            msg = "unreadable session store"
-            raise ValueError(msg)
-        return real(storage, agent_name, since=since)
-
-    worker = _worker(config, paths, store)
-    with patch.object(ingestion, "updated_sessions", listed):
-        for now in (T0 + 10, T0 + 11, T0 + 12):
-            await worker._run_cycle(config, now=now)
-
-    assert len(store.sessions()) == 3
-    assert knowledge_graph_failure() is not None
-
-
-@pytest.mark.asyncio
-async def test_a_busy_agent_does_not_take_every_pass(tmp_path: Path) -> None:
-    """Passes take turns starting with each agent, so one with a long backlog cannot starve the others."""
+async def test_a_busy_agent_does_not_hold_up_the_others(tmp_path: Path) -> None:
+    """Each graph has its own budget in a pass, so one with a long backlog cannot keep another waiting."""
     config = _config(max_sessions_per_cycle=1)
     config.agents["pal"] = AgentConfig(display_name="Pal", knowledge_graph=True)
     paths, store = _paths(tmp_path), _FakeStore()
     for thread in ("$m1", "$m2", "$m3"):
         _seed(config, paths, f"!room:x:{thread}", [f"r{thread}"])
     _seed(config, paths, "!room:x:$p1", ["rp1"], agent="pal")
-    worker = _worker(config, paths, store)
 
-    await worker._run_cycle(config, now=T0 + 10)
-    await worker._run_cycle(config, now=T0 + 11)
+    await _worker(config, paths, store)._run_cycle(config, now=T0 + 10)
 
     assert "!room:x:$p1" in store.sessions()
+    assert len(set(store.sessions())) == 2
+
+
+@dataclass
+class _OverlapStore(_FakeStore):
+    """Holds each graph's episode until another graph has started one, so it finishes only when graphs overlap."""
+
+    started: set[str] = field(default_factory=set)
+    overlapping: asyncio.Event = field(default_factory=asyncio.Event)
+
+    async def add_episode(self, scope: GraphScope, episode: EpisodeInput, usage: UsageTarget) -> None:
+        self.started.add(scope.graph_name)
+        if len(self.started) > 1:
+            self.overlapping.set()
+        await self.overlapping.wait()
+        await super().add_episode(scope, episode, usage)
+
+
+@pytest.mark.asyncio
+async def test_graphs_are_ingested_at_the_same_time(tmp_path: Path) -> None:
+    """One graph's extraction does not wait for another's, so a long backlog in one leaves the others on time."""
+    config = _config()
+    config.agents["pal"] = AgentConfig(display_name="Pal", knowledge_graph=True)
+    paths, store = _paths(tmp_path), _OverlapStore()
+    _seed(config, paths, "!room:x:$m1", ["m1"])
+    _seed(config, paths, "!room:x:$p1", ["p1"], agent="pal")
+
+    await asyncio.wait_for(_worker(config, paths, store)._run_cycle(config, now=T0 + 10), timeout=10)
+
+    assert sorted(store.sessions()) == ["!room:x:$m1", "!room:x:$p1"]
+
+
+@dataclass
+class _InFlightStore(_FakeStore):
+    """Holds the first episode until another graph starts one, and records whether one did."""
+
+    first_graph: str | None = None
+    overlapped: asyncio.Event = field(default_factory=asyncio.Event)
+
+    async def add_episode(self, scope: GraphScope, episode: EpisodeInput, usage: UsageTarget) -> None:
+        if self.first_graph is None:
+            self.first_graph = scope.graph_name
+            # Long enough for the other graph to reach its first episode, were nothing holding it back.
+            with contextlib.suppress(TimeoutError):
+                await asyncio.wait_for(self.overlapped.wait(), timeout=0.5)
+        elif scope.graph_name != self.first_graph and len(self.episodes) == 0:
+            self.overlapped.set()
+        await super().add_episode(scope, episode, usage)
+
+
+@pytest.mark.asyncio
+async def test_no_more_graphs_than_the_limit_are_ingested_at_once(tmp_path: Path) -> None:
+    """Graphs beyond the limit wait for a free place, so many private instances cannot flood the model provider."""
+    config = _config()
+    config.agents["pal"] = AgentConfig(display_name="Pal", knowledge_graph=True)
+    paths, store = _paths(tmp_path), _InFlightStore()
+    _seed(config, paths, "!room:x:$m1", ["m1"])
+    _seed(config, paths, "!room:x:$p1", ["p1"], agent="pal")
+
+    with patch.object(ingestion, "_CONCURRENT_GRAPHS", 1):
+        await _worker(config, paths, store)._run_cycle(config, now=T0 + 10)
+
+    assert sorted(store.sessions()) == ["!room:x:$m1", "!room:x:$p1"]
+    assert not store.overlapped.is_set()
+
+
+@pytest.mark.asyncio
+async def test_a_pass_that_ingested_something_starts_the_next_at_once(tmp_path: Path) -> None:
+    """A backlog larger than one pass is worked through without waiting the interval between passes."""
+    config = _config(max_sessions_per_cycle=1, interval_seconds=3600)
+    paths, store = _paths(tmp_path), _FakeStore()
+    for thread in ("$t1", "$t2"):
+        _seed(config, paths, f"!room:x:{thread}", [f"r{thread}"], at=int(time.time()) - 10)
+    task = asyncio.create_task(_worker(config, paths, store).run())
+
+    async def both_ingested() -> None:
+        while len(set(store.sessions())) < 2:
+            store.added.clear()
+            await store.added.wait()
+
+    try:
+        await asyncio.wait_for(both_ingested(), timeout=10)
+    finally:
+        task.cancel()
+        await asyncio.gather(task, return_exceptions=True)
+
+
+@pytest.mark.asyncio
+async def test_a_pass_that_added_nothing_waits_for_the_interval(tmp_path: Path) -> None:
+    """The worker does not spin while there is nothing to add; only a wake or the interval starts the next pass."""
+    config, paths = _config(interval_seconds=3600), _paths(tmp_path)
+    worker = _worker(config, paths, _FakeStore())
+    passes = 0
+    first_pass = asyncio.Event()
+
+    async def empty_pass(config: Config, *, now: float) -> bool:
+        del config, now
+        nonlocal passes
+        passes += 1
+        first_pass.set()
+        await asyncio.sleep(0)
+        return False
+
+    with patch.object(worker, "_run_cycle", empty_pass):
+        task = asyncio.create_task(worker.run())
+        try:
+            await asyncio.wait_for(first_pass.wait(), timeout=10)
+            await asyncio.sleep(0.05)
+        finally:
+            task.cancel()
+            await asyncio.gather(task, return_exceptions=True)
+
+    assert passes == 1
+
+
+@pytest.mark.asyncio
+async def test_a_pass_whose_every_attempt_failed_added_nothing(tmp_path: Path) -> None:
+    """During a provider outage the worker waits for the interval instead of trying every due conversation at once."""
+    config, paths = _config(max_sessions_per_cycle=1), _paths(tmp_path)
+    store = _FakeStore(error=ConnectionError("provider outage"))
+    for thread in ("$t1", "$t2"):
+        _seed(config, paths, f"!room:x:{thread}", [f"r{thread}"])
+
+    assert await _worker(config, paths, store)._run_cycle(config, now=T0 + 10) is False
+    assert knowledge_graph_failure() is not None
 
 
 @pytest.mark.asyncio
@@ -882,7 +963,7 @@ async def test_a_graph_no_longer_maintained_stops_keeping_health_failing(tmp_pat
 
 @pytest.mark.asyncio
 async def test_a_conversation_whose_agent_is_not_running_counts_for_nothing(tmp_path: Path) -> None:
-    """It neither clears an earlier failure nor takes the pass's budget from an agent that is running."""
+    """It does not clear an earlier failure, while an agent that is running is still ingested."""
     config = _config(max_sessions_per_cycle=1)
     config.agents["pal"] = AgentConfig(display_name="Pal", knowledge_graph=True)
     paths, store = _paths(tmp_path), _FakeStore()
@@ -893,12 +974,12 @@ async def test_a_conversation_whose_agent_is_not_running_counts_for_nothing(tmp_
         del room_id, event_ids
         return frozenset() if agent_name == "pal" else None
 
-    await _worker(config, paths, store, only_pal_runs)._run_cycle(config, now=T0 + 10)
+    # Nor does it start the next pass at once, which would spin while the agent stays down.
+    assert await _worker(config, paths, store, only_pal_runs)._run_cycle(config, now=T0 + 10) is False
     assert knowledge_graph_failure() is not None
 
     _seed(config, paths, "!room:x:$pal", ["p1"], agent="pal")
-    # A new worker's first pass starts with `mind`, whose conversation is due again.
-    await _worker(config, paths, store, only_pal_runs)._run_cycle(config, now=T0 + 20)
+    assert await _worker(config, paths, store, only_pal_runs)._run_cycle(config, now=T0 + 20) is True
     assert store.sessions() == ["!room:x:$pal"]
 
 
