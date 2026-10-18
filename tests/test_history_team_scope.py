@@ -136,7 +136,7 @@ async def test_prepare_bound_agents_for_run_prepares_team_scope_once(tmp_path: P
             runtime_paths=runtime_paths,
             config=config,
             static_prompt_tokens=team_static_token_estimator(team).estimate("Current prompt"),
-            current_prompt_tokens=estimate_text_tokens("Current prompt"),
+            non_prompt_tokens=team_static_token_estimator(team).non_prompt_tokens(),
             scope_context=scope_context,
         )
         prepared = finalize_history_preparation(
@@ -314,13 +314,13 @@ async def test_prepare_bound_scope_history_uses_opened_private_ad_hoc_scope(tmp_
             runtime_paths=runtime_paths,
             config=config,
             scope_context=scope_context,
-            static_prompt_tokens=1,
-            current_prompt_tokens=1,
+            static_prompt_tokens=5,
+            non_prompt_tokens=2,
         )
 
     assert mock_prepare.await_count == 1
     assert mock_prepare.await_args.kwargs["scope"] == opened_scope
-    assert mock_prepare.await_args.kwargs["current_prompt_tokens"] == 1
+    assert mock_prepare.await_args.kwargs["non_prompt_tokens"] == 2
 
 
 def test_team_static_token_estimator_includes_agentic_state_tool() -> None:

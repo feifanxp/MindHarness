@@ -699,6 +699,43 @@ async def test_prepare_agent_execution_context_reuses_function_schema_processing
     )
     assert preparation_process_entrypoint_calls == 1
     assert prepare_scope_history.await_count == 1
+    non_prompt_tokens = agent_static_token_estimator(agent).non_prompt_tokens()
+    assert prepare_scope_history.await_args.kwargs["non_prompt_tokens"] == non_prompt_tokens
+
+
+@pytest.mark.asyncio
+async def test_bound_team_execution_context_passes_the_system_prompt_and_tools_share(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Team history sized from the previous request takes off only the static estimate's system prompt and tools."""
+    member = Agent(id="test_agent", name="Test Agent", model=FakeModel(id="fake-model", provider="fake"))
+    team = Team(id="team_test", name="Test Team", members=[member], model=FakeModel(id="fake-model", provider="fake"))
+    config, runtime_paths = _bound_agent_config(tmp_path)
+    prepare_bound_scope_history = AsyncMock(return_value=MagicMock())
+    monkeypatch.setattr(execution_preparation, "prepare_bound_scope_history", prepare_bound_scope_history)
+    monkeypatch.setattr(
+        execution_preparation,
+        "finalize_history_preparation",
+        lambda **_kwargs: PreparedHistoryState(replays_persisted_history=False),
+    )
+
+    await _prepare_bound_team_execution_context(
+        make_turn_context("test_agent", room_id="!room:localhost", thread_id="$thread"),
+        scope_context=None,
+        agents=[member],
+        team=team,
+        prompt="Current request",
+        thread_history=None,
+        runtime_paths=runtime_paths,
+        config=config,
+        team_name=None,
+        active_model_name=None,
+        active_context_window=None,
+    )
+
+    kwargs = prepare_bound_scope_history.await_args.kwargs
+    assert kwargs["non_prompt_tokens"] == team_static_token_estimator(team).non_prompt_tokens()
 
 
 @pytest.mark.asyncio
@@ -763,78 +800,6 @@ async def test_prepare_agent_execution_context_reuses_function_schema_processing
 
     assert process_entrypoint_calls == 1
     assert prepare_scope_history.await_count == 2
-
-
-@pytest.mark.asyncio
-async def test_prepare_agent_execution_context_passes_the_prompt_share_of_the_static_estimate(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """History sized from the previous request still counts this reply's prompt, which that request never held."""
-    agent = Agent(id="test_agent", name="Test Agent", model=FakeModel(id="fake-model", provider="fake"))
-    config, runtime_paths = _bound_agent_config(tmp_path)
-    prepare_scope_history = AsyncMock(return_value=MagicMock())
-    monkeypatch.setattr(execution_preparation, "prepare_scope_history", prepare_scope_history)
-    monkeypatch.setattr(
-        execution_preparation,
-        "finalize_history_preparation",
-        lambda **_kwargs: PreparedHistoryState(replays_persisted_history=False),
-    )
-
-    await prepare_agent_execution_context(
-        make_turn_context("test_agent", room_id="!room:localhost", thread_id="$thread"),
-        scope_context=None,
-        agent=agent,
-        prompt="Current request " * 100,
-        thread_history=None,
-        runtime_paths=runtime_paths,
-        config=config,
-    )
-
-    kwargs = prepare_scope_history.await_args.kwargs
-    static_prompt_tokens = kwargs["resolved_inputs"].execution_plan.static_prompt_tokens
-    assert kwargs["current_prompt_tokens"] >= len("Current request " * 100) // 4
-    assert static_prompt_tokens - kwargs["current_prompt_tokens"] == agent_static_token_estimator(agent).estimate("")
-
-
-@pytest.mark.asyncio
-async def test_bound_team_execution_context_passes_the_prompt_share_of_the_static_estimate(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """A team's history sized from its previous request still counts this reply's prompt."""
-    member = Agent(id="test_agent", name="Test Agent", model=FakeModel(id="fake-model", provider="fake"))
-    team = Team(id="team_test", name="Test Team", members=[member], model=FakeModel(id="fake-model", provider="fake"))
-    config, runtime_paths = _bound_agent_config(tmp_path)
-    prepare_bound_scope_history = AsyncMock(return_value=MagicMock())
-    monkeypatch.setattr(execution_preparation, "prepare_bound_scope_history", prepare_bound_scope_history)
-    monkeypatch.setattr(
-        execution_preparation,
-        "finalize_history_preparation",
-        lambda **_kwargs: PreparedHistoryState(replays_persisted_history=False),
-    )
-
-    await _prepare_bound_team_execution_context(
-        make_turn_context("test_agent", room_id="!room:localhost", thread_id="$thread"),
-        scope_context=None,
-        agents=[member],
-        team=team,
-        prompt="Current request " * 100,
-        thread_history=None,
-        runtime_paths=runtime_paths,
-        config=config,
-        team_name=None,
-        active_model_name=None,
-        active_context_window=None,
-    )
-
-    kwargs = prepare_bound_scope_history.await_args.kwargs
-    assert kwargs["current_prompt_tokens"] >= len("Current request " * 100) // 4
-    assert kwargs["static_prompt_tokens"] - kwargs["current_prompt_tokens"] == team_static_token_estimator(
-        team,
-    ).estimate(
-        "",
-    )
 
 
 @pytest.mark.asyncio
