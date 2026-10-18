@@ -64,8 +64,16 @@ ENTITY_TYPES: dict[str, type[BaseModel]] = {
 # not check it for an edge endpoint the model names without listing it as a node, so such a node stays untyped.
 EXCLUDED_ENTITY_TYPES = ["Entity"]
 
-# Appended to Graphiti's node and edge extraction prompts.
-EXTRACTION_INSTRUCTIONS = """\
+# Appended to Graphiti's node and edge extraction prompts, before any instructions the operator configures.
+_BUILT_IN_INSTRUCTIONS = """\
 Name each person, agent, organization, and project by its full name when the text gives one, and use that same name every time.
 Never create entities for file paths, source files, URLs, environment variables, configuration keys, commit hashes, branch names, command lines, or log files; mention them inside the facts that use them.
-Date each fact by when it happened or held, as the text states or implies, never by when it was discussed. When a document states dates, use them."""
+Date each fact by when it happened or held, as the text states or implies, never by when it was discussed. When a document states dates, use them.
+Lines from `agent <name>` are written by an AI assistant. Record the facts it reports about their subjects, never as something the assistant said, found, or reported.
+Never create facts about an assistant's own lookups and housekeeping, such as searches, reads, notes it saved, and tool calls, about its access, accounts, tools, configuration, or instructions, about progress or counts in its own tasks, or about what a search or listing returned; extract the knowledge they contain instead. Something the assistant did that changed things for others, such as sending a message or filing an issue, is a fact."""
+
+
+def extraction_instructions(configured: str) -> str:
+    """Return the built-in instructions followed by the operator's own, when set."""
+    extra = configured.strip()
+    return f"{_BUILT_IN_INSTRUCTIONS}\n{extra}" if extra else _BUILT_IN_INSTRUCTIONS
