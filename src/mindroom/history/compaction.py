@@ -24,6 +24,7 @@ from mindroom.history.storage import (
     ensure_scope_session_row,
     read_chunk_basis,
     record_summary_usage,
+    reload_session,
     save_working_run_changes,
     update_scope_state_on_latest,
 )
@@ -245,29 +246,34 @@ async def compact_scope_history(
             compaction_summary=None,
         )
 
-    rewrite_result = await _rewrite_working_session_for_compaction(
-        storage=storage,
-        persisted_session=session,
-        working_session=working_session,
-        summary_model=summary_model,
-        fallback_summary_model=fallback_summary_model,
-        session_id=session.session_id,
-        scope=scope,
-        state=state,
-        history_settings=history_settings,
-        available_history_budget=available_history_budget,
-        selected_run_ids=selected_run_ids,
-        before_tokens=before_tokens,
-        runs_before=before_run_count,
-        threshold_tokens=threshold_tokens,
-        summary_prompt=summary_prompt,
-        summary_timeout_seconds=summary_timeout_seconds,
-        lifecycle_notice_event_id=lifecycle_notice_event_id,
-        progress_callback=progress_callback,
-        collect_compaction_hook_messages=collect_compaction_hook_messages,
-        before_persist_callback=emit_before_persist,
-        replay_model=replay_model,
-    )
+    try:
+        rewrite_result = await _rewrite_working_session_for_compaction(
+            storage=storage,
+            persisted_session=session,
+            working_session=working_session,
+            summary_model=summary_model,
+            fallback_summary_model=fallback_summary_model,
+            session_id=session.session_id,
+            scope=scope,
+            state=state,
+            history_settings=history_settings,
+            available_history_budget=available_history_budget,
+            selected_run_ids=selected_run_ids,
+            before_tokens=before_tokens,
+            runs_before=before_run_count,
+            threshold_tokens=threshold_tokens,
+            summary_prompt=summary_prompt,
+            summary_timeout_seconds=summary_timeout_seconds,
+            lifecycle_notice_event_id=lifecycle_notice_event_id,
+            progress_callback=progress_callback,
+            collect_compaction_hook_messages=collect_compaction_hook_messages,
+            before_persist_callback=emit_before_persist,
+            replay_model=replay_model,
+        )
+    except ConversationChangedError:
+        # The reply replays what the conversation holds now; a manual request stays for the next reply.
+        await run_blocking_until_complete(reload_session, storage, session)
+        raise
     if rewrite_result is None:
         await _persist_cleared_force_state_if_needed(
             storage=storage,
@@ -388,7 +394,7 @@ async def _rewrite_working_session_for_compaction(
             ),
         )
         if basis is None:
-            _log_conversation_changed(persisted_session.session_id, scope, total_compacted_run_count)
+            _stop_for_changed_conversation(session_id, scope, total_compacted_run_count)
             break
         summary_input, included_runs = await asyncio.to_thread(
             build_summary_input,
@@ -446,7 +452,7 @@ async def _rewrite_working_session_for_compaction(
             ),
         )
         if not appended:
-            _log_conversation_changed(session_id, scope, total_compacted_run_count)
+            _stop_for_changed_conversation(session_id, scope, total_compacted_run_count)
             break
         final_summary_text = generated_summary.summary
         working_session.summary = chunk_summary
@@ -487,8 +493,18 @@ async def _rewrite_working_session_for_compaction(
     )
 
 
-def _log_conversation_changed(session_id: str, scope: HistoryScope, compacted_run_count: int) -> None:
-    # Another writer changed this scope's history since the session loaded; earlier chunks stand.
+class ConversationChangedError(RuntimeError):
+    """Another writer changed a scope's history after compaction read it, so compaction stored nothing."""
+
+    def __init__(self) -> None:
+        super().__init__("The conversation changed during compaction.")
+
+
+def _stop_for_changed_conversation(session_id: str, scope: HistoryScope, compacted_run_count: int) -> None:
+    """Stop compacting after another writer changed the scope's history; with nothing stored yet, compaction failed."""
+    if compacted_run_count == 0:
+        raise ConversationChangedError
+    # Earlier chunks stand.
     logger.warning(
         "Compaction stopped because the conversation changed",
         session_id=session_id,
@@ -640,8 +656,7 @@ async def compact_running_turn(
         return appended
 
     if not await run_coroutine_until_complete(commit()):
-        msg = "The conversation changed during compaction."
-        raise RuntimeError(msg)
+        raise ConversationChangedError
     after_tokens = estimate_text_tokens(summary)
     outcome = CompactionOutcome(
         mode="auto",
