@@ -8,13 +8,14 @@ from agno.db.base import SessionType
 from agno.run.agent import RunOutput
 from agno.run.base import RunStatus
 
-from mindroom.history.storage import load_archived_runs, run_event_ids
-from mindroom.session_storage.agent_storage import get_agent_session
+from mindroom.history.storage import run_event_ids
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable, Callable
 
     from agno.db.base import BaseDb
+    from agno.run.team import TeamRunOutput
+    from agno.run.workflow import WorkflowRunOutput
     from agno.session.agent import AgentSession
 
     from mindroom.config.main import Config
@@ -61,20 +62,20 @@ def session_runs(storage: BaseDb, session_id: str) -> list[RunOutput]:
 
     A turn waiting for approval finishes in place later, so callers stop at it rather than skip it.
     """
-    session = get_agent_session(storage, session_id)
-    live = session.runs or [] if session is not None else []
-    runs: dict[str, RunOutput] = {}
-    # A rollback can return archived runs to the live table, so one run may appear in both; either copy will do.
-    for run in [*load_archived_runs(storage, session_id), *live]:
-        if (
-            isinstance(run, RunOutput)
+    # A loaded session holds only the runs after the latest summary row, so the whole run log is read instead.
+    runs = cast("list[RunOutput | TeamRunOutput | WorkflowRunOutput]", storage.get_runs(session_id=session_id))
+    return sorted(
+        (
+            run
+            for run in runs
+            if isinstance(run, RunOutput)
             and run.parent_run_id is None
             and run.run_id
             and run.status in (RunStatus.completed, RunStatus.paused)
             and (run.metadata or {}).get("room_id")
-        ):
-            runs[run.run_id] = run
-    return sorted(runs.values(), key=run_key)
+        ),
+        key=run_key,
+    )
 
 
 def _approval_window_seconds(config: Config) -> float:
