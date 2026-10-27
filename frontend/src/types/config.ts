@@ -267,6 +267,7 @@ export interface Team {
   id: string; // The key in the teams object
   display_name: string;
   role: string;
+  instructions?: string[]; // Guidance for the named team's coordinator
   agents: string[]; // List of agent IDs
   rooms: string[];
   access?: ResponderAccessConfig;
@@ -292,6 +293,10 @@ export interface Room {
 }
 
 export interface RoomConfig {
+  peer_discussion?: {
+    max_agent_turns?: number;
+    max_turns_per_agent?: number;
+  } | null;
   display_name?: string;
   description?: string;
   join_policy?: "invite" | "knock" | "public";

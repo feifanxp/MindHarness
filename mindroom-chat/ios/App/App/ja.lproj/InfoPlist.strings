@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "MindRoom Chat がローカルの Matrix ホームサーバーに接続するために必要です。";
+"NSMicrophoneUsageDescription" = "音声メッセージの録音と音声通話のために、MindRoom Chat がマイクへのアクセスを必要とします。";
+"NSCameraUsageDescription" = "チャットで送信する写真や動画を撮影するために、MindRoom Chat がカメラへのアクセスを必要とします。";
+"NSPhotoLibraryUsageDescription" = "チャットで写真や動画を共有するために、MindRoom Chat が写真ライブラリへのアクセスを必要とします。";
+"NSPhotoLibraryAddUsageDescription" = "チャットの画像や動画を写真ライブラリに保存するために、MindRoom Chat が許可を必要とします。";

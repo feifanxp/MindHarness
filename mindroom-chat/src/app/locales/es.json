@@ -1,0 +1,3189 @@
+{
+  "messageTable": {
+    "label": "Tabla desplazable",
+    "scrollHint": "Desplázate horizontalmente"
+  },
+  "messageCodeBlock": {
+    "actions": "Acciones del bloque de código",
+    "code": "Código",
+    "language": "Lenguaje: {{language}}",
+    "copy": "Copiar código",
+    "copied": "Copiado",
+    "wrap": "Ajustar líneas",
+    "expand": "Expandir",
+    "collapse": "Contraer"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " cambió el nombre de la sala"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "Moderno",
+      "compact": "Compacto",
+      "bubble": "Burbujas"
+    },
+    "messageSpacing": {
+      "none": "Ninguno",
+      "ultraSmall": "Ultrapequeño",
+      "extraSmall": "Extrapequeño",
+      "small": "Pequeño",
+      "normal": "Normal",
+      "large": "Grande"
+    },
+    "dateFormat": {
+      "custom": "Personalizado"
+    },
+    "themeName": {
+      "light": "Claro",
+      "silver": "Plateado",
+      "dark": "Oscuro",
+      "midnight": "Medianoche",
+      "butter": "Mantequilla"
+    },
+    "prefetchScope": {
+      "myHomeserver": "Mi servidor doméstico",
+      "allRooms": "Todas las salas",
+      "currentRoomOnly": "Solo la sala actual"
+    }
+  },
+  "settings": {
+    "title": "Ajustes",
+    "logout": "Cerrar sesión",
+    "nav": {
+      "general": "General",
+      "account": "Cuenta",
+      "notifications": "Notificaciones",
+      "devices": "Dispositivos",
+      "emojisStickers": "Emojis y stickers",
+      "developerTools": "Herramientas para desarrolladores",
+      "about": "Acerca de"
+    },
+    "general": {
+      "title": "General",
+      "interface": {
+        "sectionTitle": "Interfaz",
+        "simpleMode": "Modo sencillo",
+        "simpleModeDescription": "Oculta funciones avanzadas como la paleta de comandos y los filtros de hilos. Se sincroniza entre tus dispositivos.",
+        "showCanvasesInSidebar": "Mostrar paneles interactivos en la barra lateral",
+        "showCanvasesInSidebarDescription": "Muestra un botón para los paneles interactivos de tus agentes en cuanto tengas uno. Se sincroniza entre tus dispositivos.",
+        "saveFailed": "No se pudo guardar el cambio. Comprueba tu conexión e inténtalo de nuevo."
+      },
+      "language": {
+        "sectionTitle": "Idioma",
+        "appLanguage": "Idioma de la aplicación",
+        "appLanguageDescription": "Se aplica a los menús y al texto de la interfaz. El contenido de los mensajes nunca se traduce."
+      },
+      "appearance": {
+        "sectionTitle": "Apariencia",
+        "systemTheme": "Tema del sistema",
+        "systemThemeDescription": "Elige entre el tema claro y oscuro según la preferencia del sistema.",
+        "lightTheme": "Tema claro:",
+        "darkTheme": "Tema oscuro:",
+        "theme": "Tema",
+        "themeDescription": "Tema que se usará cuando el tema del sistema no esté activado.",
+        "monochromeMode": "Modo monocromo",
+        "twitterEmoji": "Emojis de Twitter",
+        "pageZoom": "Zoom de la página"
+      },
+      "dateTime": {
+        "sectionTitle": "Fecha y hora",
+        "hour24Clock": "Formato de 24 horas",
+        "dateFormat": "Formato de fecha",
+        "save": "Guardar",
+        "formatHints": {
+          "title": "Formato",
+          "year": "Año",
+          "twoDigitYear": "Año de dos dígitos",
+          "fourDigitYear": "Año de cuatro dígitos",
+          "month": "Mes",
+          "theMonth": "El mes",
+          "twoDigitMonth": "Mes de dos dígitos",
+          "shortMonthName": "Nombre corto del mes",
+          "fullMonthName": "Nombre completo del mes",
+          "dayOfMonth": "Día del mes",
+          "theDayOfMonth": "El día del mes",
+          "twoDigitDayOfMonth": "Día del mes de dos dígitos",
+          "dayOfWeek": "Día de la semana",
+          "theDayOfWeek": "El día de la semana (domingo = 0)",
+          "twoLetterDayName": "Nombre del día de dos letras",
+          "shortDayName": "Nombre corto del día",
+          "fullDayName": "Nombre completo del día"
+        }
+      },
+      "editor": {
+        "sectionTitle": "Editor",
+        "enterForNewline": "INTRO para una línea nueva",
+        "enterForNewlineDescription": "Usa {{sendKey}} + INTRO para enviar el mensaje e INTRO para crear una línea nueva.",
+        "markdownFormatting": "Formato Markdown",
+        "hideActivity": "Ocultar la escritura y las confirmaciones de lectura",
+        "hideActivityDescription": "Desactiva tanto el estado de escritura como las confirmaciones de lectura para mantener privada tu actividad."
+      },
+      "messages": {
+        "sectionTitle": "Mensajes",
+        "messageLayout": "Diseño de los mensajes",
+        "messageSpacing": "Espaciado de los mensajes",
+        "prefetchScope": "Ámbito de precarga",
+        "prefetchScopeDescription": "Qué salas se mantienen preparadas en segundo plano",
+        "historyDepth": "Profundidad del historial de la sala actual",
+        "historyDepthDescription": "Número objetivo de eventos precargados para la sala que estás viendo. Mínimo: {{min}}; máximo: {{max}}.",
+        "legacyUsernameColor": "Color de nombre de usuario antiguo",
+        "hideMembershipChange": "Ocultar cambios de membresía",
+        "hideProfileChange": "Ocultar cambios de perfil",
+        "disableMediaAutoLoad": "Desactivar la carga automática de contenido multimedia",
+        "urlPreview": "Vista previa de URL",
+        "urlPreviewEncrypted": "Vista previa de URL en salas cifradas",
+        "showHiddenEvents": "Mostrar eventos ocultos"
+      },
+      "computers": {
+        "sectionTitle": "Ordenadores",
+        "apiUrl": "URL del servicio de ordenadores",
+        "description": "Elige un backend MindRoom de confianza; recibirá un token de inicio de sesión de corta duración. Se guarda en este dispositivo. Déjalo vacío para desactivar los ordenadores.",
+        "save": "Guardar servicio de ordenadores",
+        "reset": "Usar configuración de la app",
+        "invalidUrl": "Introduce un origen sin credenciales, ruta, consulta ni fragmento. Usa HTTPS, o HTTP con localhost o una dirección IP privada de la red local.",
+        "httpNotice": "HTTP no cifra el inicio de sesión ni el tráfico del ordenador. Úsalo solo en una red local de confianza.",
+        "saveFailed": "No se pudo guardar el servicio de ordenadores en este dispositivo.",
+        "saved": "Servicio de ordenadores guardado."
+      },
+      "connections": {
+        "sectionTitle": "Conexiones",
+        "title": "Cuentas conectadas",
+        "description": "Conecta las cuentas que usan tus agentes, como Google o GitHub, en tu servidor MindRoom.",
+        "open": "Abrir Conexiones",
+        "noBackend": "Define tu servidor MindRoom en «Ordenadores» para usar Conexiones.",
+        "blocked": "Tu navegador bloqueó la ventana de Conexiones. Permite las ventanas emergentes de este sitio e inténtalo de nuevo."
+      }
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "directMessages": "Mensajes directos",
+    "threads": "Hilos",
+    "canvases": "Paneles interactivos",
+    "inbox": "Bandeja de entrada",
+    "exploreCommunity": "Explorar la comunidad",
+    "addSpace": "Añadir espacio",
+    "createSpace": "Crear espacio",
+    "createSpaceDescription": "Crea un espacio para tu comunidad.",
+    "joinWithAddress": "Unirse con una dirección",
+    "joinWithAddressDescription": "Forma parte de una comunidad existente.",
+    "createRoom": "Crear sala",
+    "messageSearch": "Buscar mensajes",
+    "rooms": "Salas",
+    "chats": "Chats",
+    "createChat": "Crear chat",
+    "directMessage": "Mensaje directo",
+    "noRooms": "No hay salas",
+    "noRoomsDescription": "Aún no tienes ninguna sala.",
+    "noDirectMessages": "No hay mensajes directos",
+    "noDirectMessagesDescription": "Aún no tienes ningún mensaje directo.",
+    "exploreCommunityRooms": "Explorar salas de la comunidad",
+    "unverifiedDevice": "Dispositivo sin verificar",
+    "unverifiedDevices": "Dispositivos sin verificar"
+  },
+  "accountsRail": {
+    "settingsTooltip": "Ajustes: {{name}}",
+    "switchTooltip": "Cambiar a {{name}} ({{userId}})",
+    "openSettingsAria": "Abrir los ajustes de {{name}}",
+    "switchAria": "Cambiar a la cuenta {{name}} ({{userId}})",
+    "manageAccounts": "Gestionar cuentas",
+    "addAccount": "Añadir cuenta",
+    "addAccountAria": "Añadir cuenta"
+  },
+  "commandPalette": {
+    "inputAria": "Paleta de comandos",
+    "placeholder": "Busca o ejecuta un comando…",
+    "closeAria": "Cerrar la paleta de comandos",
+    "open": "Abrir la paleta de comandos",
+    "noResults": "No hay resultados",
+    "resultCount_one": "{{count}} resultado",
+    "resultCount_other": "{{count}} resultados",
+    "sections": {
+      "actions": "Acciones",
+      "threads": "Hilos",
+      "rooms": "Salas",
+      "users": "Usuarios",
+      "messages": "Mensajes",
+      "spaces": "Espacios"
+    },
+    "prefixes": {
+      "label": "Prefijos:",
+      "actions": "acciones",
+      "rooms": "salas",
+      "users": "usuarios",
+      "threads": "hilos",
+      "spaces": "espacios"
+    },
+    "shortcut": "Atajo:",
+    "shortcutOpenSuffix": "abrir.",
+    "actions": {
+      "openSettings": "Abrir ajustes",
+      "openSettingsDescription": "Abrir la ventana de ajustes compartidos",
+      "goHome": "Ir a Inicio",
+      "goHomeDescription": "Ir directamente a Inicio",
+      "goDirect": "Ir a Mensajes directos",
+      "goDirectDescription": "Ir directamente a Mensajes directos",
+      "goInbox": "Ir a la bandeja de entrada",
+      "goInboxDescription": "Abrir las notificaciones de la bandeja de entrada",
+      "createRoom": "Crear sala",
+      "createRoomDescription": "Abrir la ventana de creación de salas",
+      "createSpace": "Crear espacio",
+      "createSpaceDescription": "Abrir la ventana de creación de espacios",
+      "toggleTheme": "Alternar tema",
+      "toggleThemeDescription": "Cambiar entre claro y oscuro",
+      "logout": "Cerrar sesión",
+      "logoutDescription": "Cerrar la sesión de MindRoom Chat",
+      "markCurrentRoomRead": "Marcar la sala actual como leída",
+      "markCurrentRoomReadDescription": "Marcar {{room}} como leída",
+      "copyCurrentRoomLink": "Copiar enlace de la sala actual",
+      "copyCurrentRoomLinkDescription": "Copiar un enlace de la aplicación para {{room}}",
+      "openCurrentRoomSettings": "Abrir los ajustes de la sala actual",
+      "openCurrentRoomSettingsDescription": "Abrir los ajustes de {{room}}",
+      "unresolveCurrentThread": "Marcar el hilo actual como no resuelto",
+      "unresolveCurrentThreadDescription": "Devolver el hilo activo a la cola de no resueltos",
+      "resolveCurrentThread": "Resolver el hilo actual",
+      "resolveCurrentThreadDescription": "Marcar el hilo activo como resuelto",
+      "currentRoomFallback": "sala actual"
+    },
+    "messages": {
+      "searchIn": "Buscar {{query}} en {{scope}}",
+      "searchAll": "Buscar {{query}} en todas las salas",
+      "currentRoomFallback": "sala actual",
+      "currentRoomDescription": "Sala actual",
+      "currentSpaceFallback": "espacio actual",
+      "currentSpaceDescription": "Espacio actual",
+      "globalSearchDescription": "Búsqueda global de mensajes"
+    },
+    "resultCount_many": "{{count}} resultados",
+    "all": "Todo",
+    "filterLabel": "Filtrar resultados",
+    "resultsLabel": "Resultados de búsqueda",
+    "emptyDescription": "Prueba otra búsqueda o elige otra categoría.",
+    "clearSearch": "Borrar búsqueda",
+    "navigate": "Navegar",
+    "select": "Abrir"
+  },
+  "accountSwitcher": {
+    "title": "Cuentas",
+    "description": "Cambia de cuenta, añade otra o elimina una que esté inactiva.",
+    "active": "Activa",
+    "openSettings": "Abrir ajustes",
+    "switch": "Cambiar",
+    "removing": "Eliminando...",
+    "removeFromDevice": "Eliminar del dispositivo",
+    "addAccount": "Añadir cuenta",
+    "close": "Cerrar",
+    "actionError": "No se pudo actualizar esta cuenta. Inténtalo de nuevo."
+  },
+  "recentThreads": {
+    "title": "Abiertos recientemente",
+    "empty": "No hay hilos abiertos recientemente",
+    "resizeAria": "Cambiar el tamaño de Abiertos recientemente",
+    "openedAt": "Abierto {{time}}"
+  },
+  "threadNav": {
+    "title": "Hilos",
+    "empty": "Aún no hay hilos",
+    "loading": "Cargando hilos...",
+    "pin": "Fijar hilo",
+    "unpin": "Desfijar hilo",
+    "pinned": "Fijado",
+    "room": "Sala",
+    "agents": "Agentes",
+    "agentsUnknown": "No se identificó ningún agente",
+    "messages": "Mensajes",
+    "lastActivity": "Última actividad",
+    "unknownActivity": "Desconocida"
+  },
+  "composer": {
+    "placeholder": "Envía un mensaje...",
+    "sendMessage": "Enviar mensaje",
+    "recordVoice": "Grabar mensaje de voz",
+    "formatting": "Formato",
+    "attach": "Adjuntar archivos",
+    "voicePausedInOtherRoom": "La grabación de voz está en pausa; termina o descarta la grabación sin enviar de {{roomName}}",
+    "dropFiles": "Suelta archivos en «{{roomName}}»",
+    "dropFilesHint": "Arrastra y suelta archivos aquí o haz clic para abrir el cuadro de selección",
+    "roomFallback": "Sala",
+    "voiceRoomUnavailable": "Esta sala ya no está disponible. Descarta el mensaje de voz sin enviar e inténtalo de nuevo más tarde.",
+    "voiceStillSending": "Todavía se está enviando otro mensaje de voz. Espera antes de volver a grabar.",
+    "voiceBundleBlocked": "Todavía se está enviando otro archivo adjunto o requiere atención. Espera o reintenta o elimina los archivos adjuntos fallidos antes de volver a enviar este mensaje."
+  },
+  "threadActions": {
+    "more": "Opciones del hilo",
+    "open": "Abrir hilo",
+    "tags": "Editar etiquetas",
+    "editSummary": "Editar resumen",
+    "regenerate": "Volver a generar el resumen",
+    "reopen": "Reabrir hilo",
+    "copy": "Copiar enlace del hilo",
+    "summary": "Resumen",
+    "summaryHint": "Las ediciones manuales detienen las actualizaciones automáticas del resumen. Puedes volver a editar o generar el resumen en cualquier momento.",
+    "length": "{{count}} / {{max}} caracteres",
+    "agent": "Agente",
+    "noAgents": "No hay agentes unidos a esta sala",
+    "regenerateHint": "Pide a un agente que actualice el resumen de este hilo. El agente necesita la herramienta de resumen de hilos.",
+    "requested": "Solicitud enviada. El resumen se actualizará cuando el agente termine. Consulta el hilo para ver su respuesta.",
+    "failed": "No se pudo completar esta acción. Inténtalo de nuevo.",
+    "save": "Guardar resumen",
+    "sendRequest": "Enviar solicitud",
+    "saving": "Enviando…",
+    "cancel": "Cancelar",
+    "done": "Listo"
+  },
+  "thread": {
+    "pinFailed": "No se pudo actualizar el mensaje fijado. Inténtalo de nuevo.",
+    "chip": "Hilo",
+    "view": "Vista del hilo",
+    "resolve": "Resolver",
+    "resolved": "Resuelto",
+    "resolvedBy": "Resuelto por {{name}}",
+    "resolvedByShort": "por {{name}}",
+    "hideDetails": "Ocultar detalles del hilo",
+    "showDetails": "Mostrar detalles del hilo",
+    "backToRoom": "Volver a la sala",
+    "replyCount_one": "{{count}} respuesta",
+    "replyCount_other": "{{count}} respuestas",
+    "aria": {
+      "openThread": "Abrir hilo: {{title}}",
+      "resolvedThread": "Hilo resuelto",
+      "unresolvedThread": "Hilo no resuelto",
+      "unreadMessages": "Mensajes sin leer",
+      "agentStreaming": "El agente está transmitiendo",
+      "messageFailed": "No se pudo enviar el mensaje",
+      "messageSending": "Enviando mensaje",
+      "lastActivity": "Última actividad: {{time}}",
+      "removeTagFilter": "Quitar el filtro {{tag}}"
+    },
+    "status": {
+      "resolved": "Resuelto",
+      "streaming": "Transmitiendo",
+      "scheduled": "Programado",
+      "unread": "Sin leer",
+      "idle": "Inactivo",
+      "idleFilter": "Inactivo (resuelto, sin transmisión y sin tareas)"
+    },
+    "stats": {
+      "aria": "Estadísticas de los hilos",
+      "showing": "Se muestran {{shown}} de {{total}}",
+      "threadCount_one": "{{count}} hilo",
+      "threadCount_other": "{{count}} hilos",
+      "tags": "Etiquetas",
+      "threadCount_many": "{{count}} hilos"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: se muestran todos. Haz clic para mostrar solo este.",
+      "include": "{{label}}: mostrar solo este. Haz clic para ocultarlo.",
+      "exclude": "{{label}}: oculto. Haz clic para borrar el filtro.",
+      "tagAny": "Etiqueta «{{tag}}»",
+      "tagInclude": "Etiqueta «{{tag}}»: mostrar solo esta. Haz clic para ocultarla.",
+      "tagExclude": "Etiqueta «{{tag}}»: oculta. Haz clic para borrar el filtro.",
+      "stateAny": "se muestran todos",
+      "stateInclude": "mostrar solo este",
+      "stateExclude": "oculto"
+    },
+    "filters": {
+      "scope": "Ámbito",
+      "scopeInvolved": "Participación",
+      "scopeAllRooms": "Todas las salas",
+      "status": "Estado",
+      "statusAll": "Todos",
+      "statusUnresolved": "No resueltos",
+      "statusResolved": "Resueltos",
+      "activity": "Actividad",
+      "activityToday": "Hoy",
+      "activity7d": "7 d",
+      "activity30d": "30 d",
+      "activityAll": "Toda",
+      "unread": "Sin leer",
+      "attention": "Atención",
+      "roomIdsPlaceholder": "ID de salas",
+      "roomIdsAria": "Filtros de ID de sala",
+      "spaceIdsPlaceholder": "ID de espacios",
+      "spaceIdsAria": "Filtros de ID de espacio",
+      "tagsPlaceholder": "Etiquetas",
+      "tagsIncludeAria": "Filtros de etiquetas incluidas",
+      "excludeTagsPlaceholder": "Excluir etiquetas",
+      "tagsExcludeAria": "Filtros de etiquetas excluidas",
+      "clear": "Borrar",
+      "open": "Filtros",
+      "search": "Buscar hilos",
+      "sheetAria": "Filtros de hilos",
+      "closeAria": "Cerrar los filtros de hilos"
+    },
+    "simpleFilter": {
+      "unresolved": "No resueltos",
+      "showingUnresolved": "Se muestran los hilos no resueltos. Haz clic para mostrarlos todos.",
+      "showingAll": "Se muestran todos los hilos. Haz clic para mostrar solo los no resueltos."
+    },
+    "replyCount_many": "{{count}} respuestas"
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "Datos de la cuenta",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "jsonContent": "Contenido JSON",
+      "edit": "Editar",
+      "developerTools": "Herramientas para desarrolladores"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "No se pudo cargar la información del flujo de autenticación.",
+      "retry": "Reintentar"
+    },
+    "backupRestore": {
+      "restoring0": "Restaurando: 0 %",
+      "backupHasTrustedDecryptionKey": "La copia de seguridad tiene una clave de descifrado de confianza.",
+      "backupDoesNotHaveTrustedDecryptionKey": "La copia de seguridad no tiene una clave de descifrado de confianza.",
+      "backupHasTrustedBySignature": "La copia de seguridad tiene una firma de confianza.",
+      "backupDoesNotHaveTrustedSignature": "La copia de seguridad no tiene una firma de confianza.",
+      "encryptionBackup": "Copia de seguridad del cifrado",
+      "backupDetails": "Detalles de la copia de seguridad",
+      "restoreBackup": "Restaurar copia de seguridad",
+      "noBackupPresentOnServer": "No hay ninguna copia de seguridad en el servidor.",
+      "connected": "Conectado",
+      "disconnected": "Desconectado",
+      "nil": "NIL",
+      "syncing": "Sincronizando ({{count}})",
+      "restoring": "Restaurando: {{progress}} %",
+      "version": "Versión: {{version}}",
+      "keys": "Claves: {{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "Aviso",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "Esta función está en pruebas y puede cambiar con el tiempo.",
+      "beta": "Beta"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "Llamada entrante",
+      "yourHomeserverDoesNotSupportCalling": "Tu servidor doméstico no admite llamadas.",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "Tu navegador no admite WebRTC, que es necesario para las llamadas.",
+      "answer": "Responder",
+      "reject": "Rechazar",
+      "ignore": "Ignorar"
+    },
+    "deviceVerification": {
+      "close": "Cerrar",
+      "pleaseAcceptTheRequestFromOtherDevice": "Acepta la solicitud del otro dispositivo.",
+      "clickAcceptToStartTheVerificationProcess": "Haz clic en Aceptar para iniciar el proceso de verificación.",
+      "accept": "Aceptar",
+      "verificationRequestHasBeenAccepted": "Se ha aceptado la solicitud de verificación.",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "Confirma que los siguientes emojis aparecen en ambos dispositivos y en el mismo orden:",
+      "theyMatch": "Coinciden",
+      "doNotMatch": "No coinciden",
+      "yourDeviceIsVerified": "Tu dispositivo está verificado.",
+      "okay": "Aceptar",
+      "verificationHasBeenCanceled": "Se ha cancelado la verificación.",
+      "deviceVerification": "Verificación del dispositivo",
+      "waitingForRequestToBeAccepted": "Esperando a que se acepte la solicitud...",
+      "waitingForTheResponseFromOtherDevice": "Esperando la respuesta del otro dispositivo...",
+      "startingVerificationUsingEmojiComparison": "Iniciando la verificación mediante la comparación de emojis...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "Error inesperado. La verificación ha comenzado, pero falta el verificador."
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "Clave de recuperación",
+      "passphraseOptional": "Frase de contraseña (opcional)",
+      "continue": "Continuar",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "El cliente no admite los pasos de autenticación necesarios para realizar esta acción.",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "Guarda la clave de recuperación en un lugar seguro para usarla más adelante, ya que la necesitarás para verificar tu identidad si no tienes acceso a otros dispositivos.",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "setupDeviceVerification": "Configurar la verificación del dispositivo",
+      "resetDeviceVerification": "Restablecer la verificación del dispositivo",
+      "resettingDeviceVerificationIsPermanent": "Restablecer la verificación del dispositivo es permanente.",
+      "recoveryPassphrase": "Frase de recuperación",
+      "reset": "Restablecer",
+      "unexpectedError": "Error inesperado.",
+      "hide": "Ocultar",
+      "show": "Mostrar",
+      "recoveryDescription": "Genera una <b>clave de recuperación</b> para verificar tu identidad si no tienes acceso a otros dispositivos. También puedes configurar una frase de contraseña como alternativa fácil de recordar.",
+      "resetWarning": "Todas las personas que hayas verificado verán alertas de seguridad y se perderá tu copia de seguridad del cifrado. Es casi seguro que no quieras hacer esto, salvo que hayas perdido la <b>clave de recuperación</b> o la <b>frase de recuperación</b> y todos los dispositivos desde los que puedes verificarte."
+    },
+    "hexColorPickerPopOut": {
+      "remove": "Eliminar"
+    },
+    "logoutDialog": {
+      "logout": "Cerrar sesión",
+      "unverifiedDevice": "Dispositivo sin verificar",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "Verifica tu dispositivo antes de cerrar sesión para conservar tus mensajes cifrados.",
+      "alert": "Aviso",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "Activa la verificación del dispositivo o exporta tus datos cifrados desde los ajustes para no perder el acceso a tus mensajes.",
+      "youReAboutToLogOutAreYouSure": "Estás a punto de cerrar sesión. ¿Seguro que quieres continuar?",
+      "cancel": "Cancelar",
+      "logoutFailed": "No se pudo cerrar la sesión. {{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "Frase de recuperación",
+      "recoveryKey": "Clave de recuperación",
+      "verifyManually": "Verificar manualmente",
+      "deviceVerified": "Dispositivo verificado.",
+      "selectAVerificationMethod": "Selecciona un método de verificación.",
+      "provideRecoveryKey": "Introduce la clave de recuperación."
+    },
+    "pdfViewer": {
+      "zoomOut": "Alejar",
+      "zoomIn": "Acercar",
+      "failedToLoadPdf": "No se pudo cargar el PDF",
+      "retry": "Reintentar",
+      "previous": "Anterior",
+      "pageNumber": "Número de página",
+      "jumpToPage": "Ir a la página",
+      "next": "Siguiente",
+      "saving": "Guardando...",
+      "retryDownload": "Reintentar descarga",
+      "download": "Descargar"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "Frase de recuperación",
+      "verify": "Verificar",
+      "recoveryKey": "Clave de recuperación",
+      "invalidRecoveryPassphrase": "Frase de recuperación no válida.",
+      "invalidRecoveryKey": "Clave de recuperación no válida."
+    },
+    "uIAFlowOverlay": {
+      "exit": "Salir",
+      "stepValue1Value2": "Paso {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "Fundadores",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "Durante la creación se pueden asignar usuarios con privilegios especiales. Estos usuarios tienen un control elevado y solo se pueden modificar durante una actualización.",
+      "enter": "Introducir",
+      "noSuggestions": "No hay sugerencias",
+      "pleaseProvideTheUserIdAndHitEnter": "Introduce el ID de usuario y pulsa Intro."
+    },
+    "createRoomAccessSelector": {
+      "restricted": "Restringida",
+      "onlyMemberOfParentSpaceCanJoin": "Solo pueden unirse los miembros del espacio principal.",
+      "private": "Privada",
+      "onlyPeopleWithInviteCanJoin": "Solo pueden unirse las personas invitadas.",
+      "public": "Pública",
+      "anyoneWithTheAddressCanJoin": "Cualquier persona que tenga la dirección puede unirse."
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "Dirección (opcional)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "Elige una dirección única para que se pueda encontrar.",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "Esta dirección ya está en uso. Elige otra."
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "Sala de chat",
+      "messagesPhotosAndVideos": "- Mensajes, fotos y vídeos.",
+      "voiceRoom": "Sala de voz",
+      "liveAudioAndVideoConversations": "- Conversaciones de audio y vídeo en directo."
+    },
+    "roomVersionSelector": {
+      "version": "Versión",
+      "versions": "Versiones"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "Emojis"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "Salas",
+      "unknownRoom": "Sala desconocida"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "Menciones"
+    },
+    "emojiBoard": {
+      "recent": "Recientes",
+      "unknownPack": "Paquete desconocido",
+      "searchResults": "Resultados de búsqueda",
+      "noResultsFound": "No se encontraron resultados",
+      "personalPack": "Paquete personal",
+      "unknown": "Desconocida"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "No hay paquetes de stickers.",
+      "addStickersFromUserRoomOrSpaceSettings": "Añade stickers desde los ajustes del usuario, de la sala o del espacio."
+    },
+    "searchInput": {
+      "react": "Reaccionar",
+      "searchOrTextReaction": "Buscar o escribir una reacción ",
+      "search": "Buscar"
+    },
+    "tabs": {
+      "sticker": "Sticker",
+      "emoji": "Emoji"
+    },
+    "eventReaders": {
+      "seenBy": "Visto por"
+    },
+    "imageEditor": {
+      "imageEditor": "Editor de imágenes",
+      "save": "Guardar"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "No se pudieron aplicar los cambios. Inténtalo de nuevo.",
+      "changesSavedApplyWhenReady": "Cambios guardados. Aplícalos cuando quieras.",
+      "reset": "Restablecer",
+      "applyChanges": "Aplicar cambios",
+      "pack": "Paquete",
+      "imagesUsage": "Uso de las imágenes",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "Selecciona cómo se usan las imágenes: como emojis, como stickers o como ambos.",
+      "images": "Imágenes",
+      "uploadImages": "Subir imágenes",
+      "selectImagesFromYourStorageToUploadThemInPack": "Selecciona imágenes de tu almacenamiento para subirlas al paquete.",
+      "select": "Seleccionar"
+    },
+    "imagePackView": {
+      "emojisStickers": "Emojis y stickers"
+    },
+    "imageTile": {
+      "undo": "Deshacer",
+      "edit": "Editar",
+      "shortcode": "Código corto:",
+      "body": "Cuerpo:",
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    },
+    "packMeta": {
+      "edit": "Editar",
+      "packAvatar": "Avatar del paquete",
+      "upload": "Subir",
+      "reset": "Restablecer",
+      "remove": "Eliminar",
+      "name": "Nombre",
+      "attribution": "Atribución",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "unknown": "Desconocido"
+    },
+    "imageViewer": {
+      "zoomOut": "Alejar",
+      "zoomIn": "Acercar",
+      "saving": "Guardando...",
+      "retryDownload": "Reintentar descarga",
+      "download": "Descargar"
+    },
+    "inviteUserPrompt": {
+      "invite": "Invitar",
+      "userId": "ID de usuario",
+      "reasonOptional": "Motivo (opcional)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "Unirse con una dirección",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "Introduce una dirección pública para unirte a la comunidad. Las direcciones tienen este aspecto:",
+      "address": "Dirección",
+      "invalidAddress": "Dirección no válida",
+      "open": "Abrir"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "Salir de la sala",
+      "areYouSureYouWantToLeaveThisRoom": "¿Seguro que quieres salir de esta sala?",
+      "leaving": "Saliendo...",
+      "leave": "Salir",
+      "leaveFailed": "No se pudo salir de la sala. {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "Salir del espacio",
+      "areYouSureYouWantToLeaveThisSpace": "¿Seguro que quieres salir de este espacio?",
+      "leaving": "Saliendo...",
+      "leave": "Salir",
+      "leaveFailed": "No se pudo salir del espacio. {{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "Abrir ubicación",
+      "voiceMessage": "mensaje de voz",
+      "audio": "audio",
+      "unnamedFile": "Archivo sin nombre",
+      "file": "Archivo",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "Documento PDF",
+      "textFile": "Archivo de texto"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "Este mensaje se ha eliminado",
+      "unsupportedMessage": "Mensaje no compatible",
+      "failedToLoadMessage": "No se pudo cargar el mensaje",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "No se pudo descifrar este mensaje porque la clave de cifrado no está disponible",
+      "thisMessageIsNotDecryptedYet": "Este mensaje aún no se ha descifrado",
+      "brokenMessage": "Mensaje dañado",
+      "emptyMessage": "Mensaje vacío",
+      "edited": " (editado)",
+      "deletedWithReason": "Este mensaje se ha eliminado. {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "Abrir PDF",
+      "openFile": "Abrir archivo",
+      "loadFailed": "¡No se pudo cargar el archivo!",
+      "retryDownload": "Reintentar descarga ({{size}})",
+      "downloadSize": "Descargar ({{size}})",
+      "openValue1": "Abrir {{value1}}"
+    },
+    "imageContent": {
+      "view": "Ver",
+      "spoiler": "Spoiler",
+      "failedToLoadImage": "No se pudo cargar la imagen.",
+      "retry": "Reintentar"
+    },
+    "videoContent": {
+      "watch": "Ver",
+      "spoiler": "Spoiler",
+      "failedToLoadVideo": "No se pudo cargar el vídeo.",
+      "retry": "Reintentar"
+    },
+    "voiceAudioContent": {
+      "loadError": "No se pudo cargar el audio. Pulsa reproducir para volver a intentarlo.",
+      "playbackError": "Este audio no se puede reproducir aquí. Prueba a descargarlo.",
+      "playbackPosition": "{{current}} de {{duration}}",
+      "moreAudioOptions": "Más opciones de audio",
+      "download": "Descargar",
+      "name": "Nombre",
+      "type": "Tipo",
+      "size": "Tamaño",
+      "duration": "Duración",
+      "voiceMessage": "mensaje de voz",
+      "pauseValue1": "Pausar {{value1}}",
+      "playValue1": "Reproducir {{value1}}",
+      "seekValue1": "Buscar en {{value1}}"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "Un administrador revisará tu solicitud.",
+      "messageOptional": "Mensaje (opcional)",
+      "cancel": "Cancelar",
+      "failedToSendRequest": "No se pudo enviar la solicitud.",
+      "sendingRequest": "Enviando solicitud",
+      "sendRequest": "Enviar solicitud",
+      "requestToJoinValue1": "Solicitar unirse a {{value1}}"
+    },
+    "roomCard": {
+      "cancel": "Cancelar",
+      "checkingAccess": "Comprobando el acceso",
+      "space": "Espacio",
+      "view": "Ver",
+      "retry": "Reintentar",
+      "joinError": "Error al unirse",
+      "viewError": "Error de visualización",
+      "retryRoomInfo": "Volver a cargar la información de la sala",
+      "accessUnavailable": "Acceso no disponible",
+      "failedToJoinUnknownError": "No se pudo unir. Error desconocido.",
+      "sendingRequest": "Enviando solicitud",
+      "requestSent": "Solicitud enviada",
+      "requestToJoin": "Solicitar unirse",
+      "joining": "Uniéndose",
+      "join": "Unirse",
+      "members_one": "{{count, number}} miembro",
+      "members_other": "{{count, number}} miembros",
+      "members_many": "{{count, number}} miembros"
+    },
+    "roomIntro": {
+      "inviteMember": "Invitar miembro",
+      "openOldRoom": "Abrir sala anterior",
+      "joinOldRoom": "Unirse a la sala anterior",
+      "thisIsTheBeginningOfConversation": "Este es el principio de la conversación.",
+      "createdBy": "Creada por ",
+      "onValue1Value2": " el {{value1}} a las {{value2}}"
+    },
+    "textViewer": {
+      "copyAll": "Copiar todo"
+    },
+    "datePicker": {
+      "day": "Día",
+      "month": "Mes",
+      "year": "Año"
+    },
+    "timePicker": {
+      "hour": "Hora",
+      "minutes": "Minutos",
+      "period": "Período",
+      "am": "AM",
+      "pm": "PM"
+    },
+    "dummyStage": {
+      "retry": "Reintentar",
+      "cancel": "Cancelar",
+      "failedToRegister": "No se pudo completar el registro."
+    },
+    "emailStage": {
+      "email": "Correo electrónico",
+      "sendVerificationEmail": "Enviar correo de verificación",
+      "cancel": "Cancelar",
+      "sendingVerificationEmail": "Enviando correo de verificación...",
+      "verificationRequestSent": "Solicitud de verificación enviada",
+      "continue": "Continuar",
+      "provideEmail": "Introduce el correo electrónico",
+      "verifyEmail": "Verificar correo electrónico",
+      "failedToSendVerificationEmailRequest": "No se pudo enviar la solicitud de verificación por correo electrónico.",
+      "pleaseProvideEmailToSendVerificationRequest": "Introduce un correo electrónico para enviar la solicitud de verificación.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "Consulta tu correo «{{value1}}» y valídalo antes de continuar."
+    },
+    "passwordStage": {
+      "accountPassword": "Contraseña de la cuenta",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "Para realizar esta acción debes autenticarte introduciendo la contraseña de tu cuenta.",
+      "password": "Contraseña",
+      "continue": "Continuar",
+      "invalidPassword": "Contraseña no válida."
+    },
+    "reCaptchaStage": {
+      "cancel": "Cancelar",
+      "invalidData": "Datos no válidos",
+      "pleaseCheckTheBoxBelowToProceed": "Marca la casilla de abajo para continuar.",
+      "noValidDataFoundToProceedWithRecaptcha": "No se encontraron datos válidos para continuar con reCAPTCHA."
+    },
+    "registrationTokenStage": {
+      "registrationToken": "Token de registro",
+      "retry": "Reintentar",
+      "cancel": "Cancelar",
+      "invalidRegistrationTokenProvided": "El token de registro proporcionado no es válido.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "Introduce el token de registro proporcionado por el administrador de tu servidor doméstico."
+    },
+    "sSOStage": {
+      "ssoLogin": "Inicio de sesión SSO",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "Para realizar esta acción debes autenticarte mediante el inicio de sesión SSO.",
+      "continue": "Continuar",
+      "continueWithSso": "Continuar con SSO"
+    },
+    "termsStage": {
+      "retry": "Reintentar",
+      "cancel": "Cancelar",
+      "failedToSubmitTermsAndConditionAcceptance": "No se pudo enviar la aceptación de los términos y condiciones."
+    },
+    "uploadBoard": {
+      "files": "Archivos",
+      "uploadFailed": "Error de subida",
+      "remove": "Eliminar",
+      "removeAll": "Eliminar todo"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "Reintentar subida",
+      "retry": "Reintentar",
+      "cancelUpload": "Cancelar subida"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "Spoiler",
+      "retryUpload": "Reintentar subida",
+      "retry": "Reintentar",
+      "cancelUpload": "Cancelar subida"
+    },
+    "creatorChip": {
+      "managePowers": "Gestionar permisos"
+    },
+    "powerChip": {
+      "selfDemotion": "Degradación propia",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "Estás a punto de degradarte. No podrás recuperar este nivel de poder por tu cuenta. ¿Seguro que quieres continuar?",
+      "demote": "Degradar",
+      "sharedPower": "Poder compartido",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "Estás ascendiendo al usuario para que tenga el mismo poder que tú. Después no podrás cambiar su poder. ¿Seguro que quieres continuar?",
+      "promote": "Ascender",
+      "managePowers": "Gestionar permisos",
+      "errorName": "Error: {{name}}"
+    },
+    "userChips": {
+      "copyServer": "Copiar servidor",
+      "exploreCommunity": "Explorar la comunidad",
+      "openInBrowser": "Abrir en el navegador",
+      "copyUserId": "Copiar ID de usuario",
+      "copyUserLink": "Copiar enlace del usuario",
+      "share": "Compartir",
+      "spaces": "Espacios",
+      "rooms": "Salas",
+      "directMessages": "Mensajes directos",
+      "blockedUser": "Usuario bloqueado",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "No recibes mensajes ni invitaciones de este usuario.",
+      "mutualRooms": "Salas en común",
+      "unblockUser": "Desbloquear usuario",
+      "blockUser": "Bloquear usuario",
+      "mutualRooms_one": "{{count, number}} sala en común",
+      "mutualRooms_other": "{{count, number}} salas en común",
+      "mutualRooms_many": "{{count, number}} salas en común"
+    },
+    "userModeration": {
+      "kickedUser": "Usuario expulsado",
+      "noReasonProvided": "No se indicó ningún motivo.",
+      "bannedUser": "Usuario vetado",
+      "unban": "Retirar veto",
+      "invitedUser": "Usuario invitado",
+      "cancelInvite": "Cancelar invitación",
+      "moderation": "Moderación",
+      "reason": "Motivo: <b>{{reason}}</b>",
+      "invite": "Invitar",
+      "kick": "Expulsar",
+      "ban": "Vetar",
+      "kickedBy": "Expulsado por: <b>{{name}}</b>",
+      "bannedBy": "Vetado por: <b>{{name}}</b>",
+      "invitedBy": "Invitado por: <b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "Mensaje"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "Volumen de voz",
+      "voiceVolumeCurrentlyValue1": "Volumen de voz, actualmente al {{value1}} %"
+    },
+    "configConfig": {
+      "continueOffline": "Continuar sin conexión",
+      "yourWebSessionHasExpired": "Tu sesión web ha caducado.",
+      "failedToLoadClientConfigurationFile": "No se pudo cargar el archivo de configuración del cliente.",
+      "signInAgainToReconnectOrContinueInOfflineMode": "Vuelve a iniciar sesión para conectarte de nuevo o continúa sin conexión.",
+      "signInAgainToReconnect": "Vuelve a iniciar sesión para conectarte de nuevo.",
+      "signInAgain": "Volver a iniciar sesión",
+      "retry": "Reintentar"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "Falta una función del navegador",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "No se encontró compatibilidad con IndexedDB. Esta aplicación necesita IndexedDB para guardar localmente los datos de la sesión. Comprueba que tu navegador admita IndexedDB y que esté activado.",
+      "whatIsIndexeddb": "¿Qué es IndexedDB?"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "Volver a la cuenta actual",
+      "server": "Servidor",
+      "lookingForServer": "Buscando el servidor...",
+      "failedToFindServer": "No se pudo encontrar el servidor.",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "No se pudo establecer la conexión. El valor base_url de la configuración del servidor no parece válido.",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "Solo se permiten servidores HTTPS. HTTP solo es compatible con servidores de la red local.",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "No se pudo establecer la conexión. Puede que el servidor no esté disponible ahora mismo o que no exista.",
+      "loadingAuthenticationFlow": "Cargando el flujo de autenticación...",
+      "failedToGetAuthenticationFlowInformation": "No se pudo obtener la información del flujo de autenticación.",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "No se pudo conectar. La configuración del servidor encontrada con {{value1}} parece inutilizable.",
+      "connectingToValue1": "Conectando con {{value1}}"
+    },
+    "orDivider": {
+      "or": "O"
+    },
+    "sSOLogin": {
+      "continueWithSso": "Continuar con SSO"
+    },
+    "serverPicker": {
+      "server": "Servidor",
+      "serverList": "Lista de servidores"
+    },
+    "login": {
+      "login": "Iniciar sesión",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Este cliente requiere Iniciar sesión con Apple. Configura la lista de proveedores SSO del servidor doméstico para que incluya Apple.",
+      "register": "Registrarse",
+      "accountLink": "¿No tienes una cuenta? <authLink>Regístrate</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "El inicio de sesión con contraseña está desactivado en «{{value1}}». Usa SSO para iniciar sesión.",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "Este cliente no admite el inicio de sesión en el servidor «{{value1}}». No se encontró ningún método de inicio de sesión con contraseña o SSO."
+    },
+    "passwordLoginForm": {
+      "hint": "Sugerencia",
+      "username": "Nombre de usuario:",
+      "matrixId": "ID de Matrix:",
+      "email": "Correo electrónico:",
+      "username2": "Nombre de usuario",
+      "password": "Contraseña",
+      "forgetPassword": "¿Has olvidado la contraseña?",
+      "login": "Iniciar sesión",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "Esta instancia del cliente no permite iniciar sesión con un servidor personalizado.",
+      "failedToFindYourMatrixIdServer": "No se pudo encontrar el servidor de tu ID de Matrix.",
+      "invalidUsernameOrPassword": "El nombre de usuario o la contraseña no son válidos.",
+      "thisAccountHasBeenDeactivated": "Esta cuenta se ha desactivado.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "No se pudo iniciar sesión. Parte de los datos de la solicitud no son válidos.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "No se pudo iniciar sesión. El servidor ha limitado la frecuencia de tu solicitud. Inténtalo de nuevo más tarde.",
+      "failedToLoginUnknownReason": "No se pudo iniciar sesión. Motivo desconocido.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Se inició la sesión, pero este navegador no pudo guardar la cuenta. Comprueba los permisos de almacenamiento e inténtalo de nuevo."
+    },
+    "tokenLogin": {
+      "tokenLogin": "Inicio de sesión con token",
+      "invalidLoginToken": "El token de inicio de sesión no es válido.",
+      "thisAccountHasBeenDeactivated": "Esta cuenta se ha desactivado.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "No se pudo iniciar sesión. Parte de los datos de la solicitud no son válidos.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "No se pudo iniciar sesión. El servidor ha limitado la frecuencia de tu solicitud. Inténtalo de nuevo más tarde.",
+      "failedToLoginUnknownReason": "No se pudo iniciar sesión. Motivo desconocido.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Se inició la sesión, pero este navegador no pudo guardar la cuenta. Comprueba los permisos de almacenamiento e inténtalo de nuevo."
+    },
+    "passwordRegisterForm": {
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "termsAndConditions": "Términos y condiciones",
+      "register": "Registrarse",
+      "thisUsernameIsAlreadyTaken": "Este nombre de usuario ya está en uso.",
+      "thisUsernameContainsInvalidCharacters": "Este nombre de usuario contiene caracteres no válidos.",
+      "thisUsernameIsReserved": "Este nombre de usuario está reservado.",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "Contraseña poco segura. El servidor la ha rechazado; elige una contraseña más segura.",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "Contraseña demasiado corta. El servidor la ha rechazado; elige una contraseña más larga.",
+      "registrationToken": "Token de registro",
+      "registrationTokenOptional": "Token de registro (opcional)",
+      "email": "Correo electrónico",
+      "emailOptional": "Correo electrónico (opcional)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "No se pudo completar el registro. El servidor ha limitado la frecuencia de tu solicitud. Inténtalo de nuevo más tarde.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "No se pudo completar el registro. El servidor doméstico no permite registrarse.",
+      "failedToRegisterInvalidRequest": "No se pudo completar el registro. La solicitud no es válida.",
+      "failedToRegisterUnknownReason": "No se pudo completar el registro. Motivo desconocido.",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "El registro se completó, pero este navegador no pudo guardar la cuenta. Comprueba los permisos de almacenamiento e intenta iniciar sesión.",
+      "acceptTerms": "Acepto los <terms>términos y condiciones</terms> del servidor."
+    },
+    "register": {
+      "register": "Registrarse",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Este cliente requiere Iniciar sesión con Apple. Configura la lista de proveedores SSO del servidor doméstico para que incluya Apple.",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "Este servidor doméstico solo permite registrarse con Apple, Google o GitHub.",
+      "registrationHasBeenDisabledOnThisHomeserver": "Se ha desactivado el registro en este servidor doméstico.",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "Se ha limitado la frecuencia de tus solicitudes. Inténtalo de nuevo más tarde.",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "Solicitud no válida. No se pudo obtener ninguna opción de registro.",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "Esta aplicación no admite el registro en este servidor doméstico.",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "Este servidor doméstico requiere el registro mediante SSO, pero no anunció ningún proveedor SSO.",
+      "login": "Iniciar sesión",
+      "accountLink": "¿Ya tienes una cuenta? <authLink>Inicia sesión</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "La contraseña se ha restablecido. Inicia sesión con tu nueva contraseña.",
+      "login": "Iniciar sesión",
+      "email": "Correo electrónico",
+      "newPassword": "Nueva contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "resetPassword": "Restablecer contraseña",
+      "resetEmailDescription": "El servidor doméstico <strong>{{server}}</strong> te enviará un correo para que puedas restablecer tu contraseña.",
+      "failedToResetPassword": "No se pudo restablecer la contraseña."
+    },
+    "resetPassword": {
+      "resetPassword": "Restablecer contraseña",
+      "login": "Iniciar sesión",
+      "accountLink": "¿Recuerdas tu contraseña? <authLink>Inicia sesión</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "Actualizando...",
+      "startupRecoveryOptions": "Opciones de recuperación del inicio",
+      "logout": "Cerrar sesión",
+      "retry": "Reintentar",
+      "clearCacheAndReload": "Borrar caché y recargar",
+      "removeAccount": "Eliminar cuenta",
+      "clearing": "Borrando...",
+      "failedToStartAccountValue1Value2": "No se pudo iniciar la cuenta {{value1}}. {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "Cancelar y volver al inicio de sesión",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "No se puede conectar al servidor doméstico. Puede que el servidor o tu conexión a Internet no funcionen.",
+      "retry": "Reintentar",
+      "continue": "Continuar",
+      "connectingToServer": "Conectando con el servidor",
+      "clearing": "Borrando...",
+      "clearCacheAndReload": "Borrar caché y recargar"
+    },
+    "syncStatus": {
+      "catchingUp": "Actualizando...",
+      "connectionLostReconnecting": "Se perdió la conexión. Reconectando...",
+      "connectionLost": "Se perdió la conexión."
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "Configurar MindRoom local",
+      "openLocalMindroomSettings": "Abrir los ajustes de MindRoom local",
+      "enterPairCode": "¿Tienes un código? Introdúcelo en MindRoom local",
+      "poweredBy": "Con tecnología de <links />",
+      "title": "Te damos la bienvenida a {{appName}}",
+      "subtitle": "Agentes de IA que viven en tus salas de chat.",
+      "docs": "Documentación",
+      "sourceCode": "Código fuente",
+      "setupStep1": "1. Ejecuta {{command}}",
+      "setupStep2": "2. Añade las credenciales del modelo a {{envFile}} o ejecuta {{command}}",
+      "setupStep3": "3. Inícialo con {{command}} y luego abre el enlace que muestra para aprobar la conexión"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "Expandir el panel de navegación",
+      "collapseNavigationPanel": "Contraer el panel de navegación"
+    },
+    "create": {
+      "createSpace": "Crear espacio",
+      "buildASpaceForYourCommunity": "Crea un espacio para tu comunidad."
+    },
+    "directCreate": {
+      "createChat": "Crear chat",
+      "startAPrivateEncryptedChatByEnteringAUserId": "Inicia un chat privado y cifrado introduciendo un ID de usuario."
+    },
+    "explore": {
+      "addServer": "Añadir servidor",
+      "addServerNameToExplorePublicCommunities": "Añade el nombre de un servidor para explorar comunidades públicas.",
+      "serverName": "Nombre del servidor",
+      "failedToLoadPublicRoomsPleaseTryAgain": "No se pudieron cargar las salas públicas. Inténtalo de nuevo.",
+      "view": "Ver",
+      "exploreCommunity": "Explorar la comunidad",
+      "featured": "Destacados",
+      "servers": "Servidores"
+    },
+    "featured": {
+      "featuredByClient": "Destacados por el cliente",
+      "featuredSpaces": "Espacios destacados",
+      "featuredRooms": "Salas destacadas",
+      "noRoomsOrSpacesFeaturedByClientProvider": "El proveedor del cliente no ha destacado ninguna sala ni espacio.",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "Busca y explora las salas y espacios públicos destacados por el proveedor del cliente."
+    },
+    "server": {
+      "search": "Buscar",
+      "searchForKeyword": "Buscar una palabra clave",
+      "clear": "Borrar",
+      "enter": "Introducir",
+      "protocols": "Protocolos",
+      "presets": "Preajustes",
+      "customLimit": "Límite personalizado",
+      "perPageItemLimit": "Límite de elementos por página",
+      "changeLimit": "Cambiar límite",
+      "popularCommunities": "Comunidades populares",
+      "previousPage": "Página anterior",
+      "nextPage": "Página siguiente",
+      "noCommunitiesFound": "No se encontraron comunidades.",
+      "pageLimitValue1": "Límite de página: {{value1}}",
+      "resultsForValue1": "Resultados para «{{value1}}»"
+    },
+    "createRoom": {
+      "createRoom": "Crear sala",
+      "buildARoomForRealTimeConversations": "Crea una sala para conversaciones en tiempo real."
+    },
+    "search": {
+      "messageSearch": "Buscar mensajes"
+    },
+    "inbox": {
+      "invites": "Invitaciones",
+      "inbox": "Bandeja de entrada",
+      "notifications": "Notificaciones"
+    },
+    "invites": {
+      "encrypted": "Cifrada",
+      "directMessage": "Mensaje directo",
+      "space": "Espacio",
+      "decline": "Rechazar",
+      "accept": "Aceptar",
+      "primary": "Principal",
+      "public": "Pública",
+      "spam": "Spam",
+      "noInvites": "No hay invitaciones",
+      "declineAll": "Rechazar todas",
+      "acceptAll": "Aceptar todas",
+      "reportAll": "Denunciar todas",
+      "blockAll": "Bloquear todas",
+      "noSpamInvites": "No hay invitaciones de spam",
+      "invites": "Invitaciones",
+      "filter": "Filtrar",
+      "hideAll": "Ocultar todas",
+      "viewAll": "Ver todas",
+      "reason": "Motivo: {{reason}}",
+      "from": "De: <b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "Cuando alguien con quien compartes una sala te envíe una invitación, aparecerá aquí.",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "Aquí aparecerán las invitaciones de personas que no están en tus salas.",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "Algunas de las siguientes invitaciones pueden contener contenido dañino o proceder de usuarios vetados.",
+      "invitesDetectedAsSpamAppearHere": "Las invitaciones detectadas como spam aparecen aquí.",
+      "spamInvites_one": "{{count, number}} invitación de spam",
+      "spamInvites_other": "{{count, number}} invitaciones de spam",
+      "spamInvites_many": "{{count, number}} invitaciones de spam"
+    },
+    "notifications": {
+      "open": "Abrir",
+      "notificationMessages": "Mensajes de notificación",
+      "filter": "Filtrar",
+      "allNotifications": "Todas las notificaciones",
+      "highlighted": "Destacadas",
+      "scrollToTop": "Ir arriba",
+      "noNotifications": "No hay notificaciones",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "Aún no tienes ninguna notificación nueva.",
+      "event": " evento",
+      "roomTombstone": "Lápida de la sala. {{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "Desfijar",
+      "invite": "Invitar",
+      "copyLink": "Copiar enlace",
+      "spaceSettings": "Ajustes del espacio",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "Espacio {{value1}} seleccionado. Usa las teclas de flecha para reordenarlo. Pulsa espacio para soltarlo."
+    },
+    "space": {
+      "invite": "Invitar",
+      "copyLink": "Copiar enlace",
+      "spaceSettings": "Ajustes del espacio",
+      "eventTimeline": "Cronología de eventos",
+      "leaveSpace": "Salir del espacio",
+      "spaceUpgraded": "Espacio actualizado",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "Este espacio se ha sustituido y ya no está activo.",
+      "openNewSpace": "Abrir nuevo espacio",
+      "joinNewSpace": "Unirse al nuevo espacio",
+      "lobby": "Vestíbulo",
+      "messageSearch": "Buscar mensajes",
+      "failedToJoinReplacementSpace": "No se pudo unir al espacio de sustitución.",
+      "rooms": "Salas",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "Sala {{value1}} seleccionada. Usa las teclas de flecha para reordenarla. Pulsa espacio para soltarla."
+    },
+    "threads": {
+      "threads": "Hilos"
+    },
+    "threadsView": {
+      "loadingThreads": "Cargando hilos",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "Aún no has participado en ningún hilo",
+      "noThreadsMatchYourFilters": "Ningún hilo coincide con tus filtros",
+      "clearFilters": "Borrar filtros",
+      "thread": "hilo",
+      "threads": "hilos"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "No compatible",
+      "option0": "Solo con invitación",
+      "option1": "Solicitud e invitación",
+      "option2": "Miembros del espacio o solicitud",
+      "option3": "Miembros del espacio",
+      "option4": "Público"
+    },
+    "toolbar": {
+      "heading1": "Encabezado 1",
+      "heading2": "Encabezado 2",
+      "heading3": "Encabezado 3",
+      "bold": "Negrita",
+      "italic": "Cursiva",
+      "underline": "Subrayado",
+      "strikeThrough": "Tachado",
+      "inlineCode": "Código en línea",
+      "spoiler": "Spoiler",
+      "blockQuote": "Bloque de cita",
+      "blockCode": "Bloque de código",
+      "orderedList": "Lista ordenada",
+      "unorderedList": "Lista sin ordenar",
+      "exitFormatting": "Salir del formato",
+      "disableMarkdown": "Desactivar Markdown",
+      "enableMarkdown": "Activar Markdown",
+      "exitValue1": "Salir de {{value1}}"
+    },
+    "reaction": {
+      "others_one": "{{count}} persona más",
+      "reactionSummary": "<names>{{names}}</names> reaccionó con :<reaction>{{reaction}}</reaction>:",
+      "others_other": "{{count}} personas más",
+      "others_many": "{{count}} personas más"
+    },
+    "audioContent": {
+      "pause": "Pausar",
+      "play": "Reproducir"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "Buscar en el mensaje de voz"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "Predeterminado",
+      "option1": "Todos los mensajes",
+      "option2": "Menciones y palabras clave",
+      "option3": "Silenciar"
+    },
+    "authFooter": {
+      "support": "Ayuda",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "poweredBy": "Con tecnología de <app>{{appName}}</app>, <matrix>Matrix</matrix> y <cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "Unirse",
+      "notFound": "No se encontró la página"
+    },
+    "ssoProviders": {
+      "signUpApple": "Registrarse con Apple",
+      "signInApple": "Iniciar sesión con Apple",
+      "continueGoogle": "Continuar con Google",
+      "continueGithub": "Continuar con GitHub",
+      "continueProvider": "Continuar con {{provider}}"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> aceptó la solicitud de <b>{{userName}}</b> para unirse {{reason}}",
+      "invited": "<b>{{senderName}}</b> invitó a <b>{{userName}}</b> {{reason}}",
+      "requested": "<b>{{userName}}</b> solicitó unirse a la sala {{reason}}",
+      "joined": "<b>{{userName}}</b> se unió a la sala",
+      "rejectedInvitation": "<b>{{userName}}</b> rechazó la invitación {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> rechazó la solicitud de <b>{{userName}}</b> para unirse {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> revocó su solicitud para unirse {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> revocó la invitación de <b>{{userName}}</b> {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> anuló el veto de <b>{{userName}}</b> {{reason}}",
+      "left": "<b>{{userName}}</b> salió de la sala {{reason}}",
+      "kicked": "<b>{{senderName}}</b> expulsó a <b>{{userName}}</b> {{reason}}",
+      "banned": "<b>{{senderName}}</b> vetó a <b>{{userName}}</b> {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> cambió su nombre visible a <b>{{userName}}</b>",
+      "removedName": "<b>{{prevUserName}}</b> eliminó su nombre visible",
+      "changedAvatar": "<b>{{userName}}</b> cambió su avatar",
+      "removedAvatar": "<b>{{userName}}</b> eliminó su avatar",
+      "broken": "Evento de membresía dañado",
+      "unchanged": "Evento de membresía sin cambios"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "Sugerencias de usuarios para invitar",
+      "users": "Usuarios",
+      "searching": "Buscando usuarios",
+      "noMatches": "No hay usuarios coincidentes",
+      "matchingUsers_one": "{{count}} usuario coincidente",
+      "matchingUsers_other": "{{count}} usuarios coincidentes",
+      "matchingUsers_many": "{{count}} usuarios coincidentes"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "Cargando MindRoom Chat"
+    },
+    "commands": {
+      "CommandMe": "Enviar mensaje de acción",
+      "CommandNotice": "Enviar mensaje de aviso",
+      "CommandShrug": "Enviar ¯\\_(ツ)_/¯ como mensaje",
+      "CommandTableFlip": "Enviar {{value1}} como mensaje",
+      "CommandUnFlip": "Enviar {{value1}} como mensaje",
+      "CommandStartDm": "Iniciar mensaje directo con un usuario. Ejemplo: /startdm userId1",
+      "CommandJoin": "Unirse a una sala mediante su dirección. Ejemplo: /join address1 address2",
+      "CommandLeave": "Salir de la sala actual.",
+      "CommandInvite": "Invitar a un usuario a la sala. Ejemplo: /invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "Retirar la invitación de un usuario a la sala. Ejemplo: /disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "Expulsar a un usuario de la sala. Ejemplo: /kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "Vetar a un usuario de la sala. Ejemplo: /ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "Anular el veto de un usuario de la sala. Ejemplo: /unban userId1 userId2",
+      "CommandIgnore": "Ignorar a un usuario. Ejemplo: /ignore userId1 userId2",
+      "CommandUnIgnore": "Dejar de ignorar a un usuario. Ejemplo: /unignore userId1 userId2",
+      "CommandMyRoomNick": "Cambiar el apodo en la sala actual.",
+      "CommandMyRoomAvatar": "Cambiar la imagen de perfil en la sala actual. Ejemplo: /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "Convertir la sala en mensaje directo",
+      "CommandConvertToRoom": "Convertir el mensaje directo en sala",
+      "CommandDelete": "Eliminar mensajes de usuarios. Ejemplo: /delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "Gestionar la lista de control de acceso del servidor. Ejemplo: /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} emoji"
+    },
+    "fileHeader": {
+      "downloadValue1": "Descargar {{value1}}"
+    },
+    "time": {
+      "yesterdayValue1": "Ayer {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "Velocidad de reproducción: {{value1}}. Haz clic para cambiarla"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "Nueva notificación de la bandeja de entrada de {{value1}}"
+    },
+    "memberFilters": {
+      "joined": "Se unió",
+      "invited": "Invitado",
+      "left": "Salió",
+      "kicked": "Expulsado",
+      "banned": "Vetado"
+    },
+    "memberSort": {
+      "atoZ": "De la A a la Z",
+      "ztoA": "De la Z a la A",
+      "newest": "Más reciente",
+      "oldest": "Más antiguo"
+    },
+    "presence": {
+      "active": "Activa",
+      "busy": "Ocupado",
+      "away": "Ausente"
+    },
+    "emojiGroups": {
+      "smileysPeople": "Emoticonos y personas",
+      "animalsNature": "Animales y naturaleza",
+      "foodDrinks": "Comida y bebida",
+      "activity": "Actividad",
+      "travelPlaces": "Viajes y lugares",
+      "objects": "Objetos",
+      "symbols": "Símbolos",
+      "flags": "Banderas"
+    },
+    "roomTypes": {
+      "all": "Todos",
+      "spaces": "Espacios",
+      "rooms": "Salas"
+    },
+    "imageUsage": {
+      "both": "Ambos",
+      "sticker": "Sticker",
+      "emoji": "Emoji"
+    },
+    "powerLevels": {
+      "manager": "Gestor",
+      "founder": "Fundador",
+      "admin": "Administrador",
+      "moderator": "Moderador",
+      "member": "Miembro",
+      "muted": "Silenciado",
+      "team": "Equipo {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "Mensaje de voz",
+      "tools_one": "{{count, number}} herramienta",
+      "tools_other": "{{count, number}} herramientas",
+      "tools_many": "{{count, number}} herramientas"
+    },
+    "threadSummary": {
+      "manual": "Resumen editado manualmente",
+      "title": "Resumen del hilo",
+      "provenance": "Resumen del hilo generado por IA",
+      "provenanceCount_one": "Resumen de IA del último {{count, number}} mensaje",
+      "provenanceCount_other": "Resumen de IA de los últimos {{count, number}} mensajes",
+      "provenanceCount_many": "Resumen de IA de los últimos {{count, number}} mensajes"
+    },
+    "commandPalette": {
+      "shortcutHint": "Atajo: <shortcut>{{shortcut}}</shortcut> para abrir."
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "Añadir existente",
+      "search": "Buscar",
+      "failedToApplyChangesPleaseTryAgain": "No se pudieron aplicar los cambios. Inténtalo de nuevo.",
+      "reset": "Restablecer",
+      "applyChanges": "Aplicar cambios",
+      "applyWhenReadySelected_one": "Aplicar cuando esté listo. ({{count}} seleccionados)",
+      "applyWhenReadySelected_other": "Aplicar cuando esté listo. ({{count}} seleccionados)",
+      "noMatchForQuery": "No se encontraron coincidencias para «{{query}}».",
+      "noMatchFound": "No se encontraron coincidencias",
+      "noRooms": "No hay salas",
+      "noRoomsDescription": "Aún no tienes salas que mostrar.",
+      "noSpaces": "No hay espacios",
+      "noSpacesDescription": "Aún no tienes espacios que mostrar.",
+      "applyWhenReadySelected_many": "Aplicar cuando esté listo. ({{count}} seleccionados)"
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "Finalizar"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name> está hablando...",
+        "two": "<first>{{first}}</first> y <second>{{second}}</second> están hablando...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> y <third>{{third}}</third> están hablando...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> y <others>{{count}} persona más</others> están hablando...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> y <others>{{count}} personas más</others> están hablando..."
+      },
+      "liveCount": "{{count}} en directo"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "Reacciones",
+        "settings": "Ajustes",
+        "end": "Finalizar",
+        "gridView": "Vista de cuadrícula",
+        "spotlightView": "Vista destacada"
+      },
+      "callMemberCard": {
+        "collapse": "Contraer",
+        "additionalParticipants_one": "+{{count}} más",
+        "additionalParticipants_other": "+{{count}} más",
+        "additionalParticipants_many": "+{{count}} más"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "Tu servidor doméstico no admite llamadas.",
+        "yourBrowserDoesNotSupportWebrtcWhich": "Tu navegador no admite WebRTC, que es necesario para las llamadas.",
+        "voiceChatSEmptyBeTheFirst": "El chat de voz está vacío. Sé la primera persona en entrar.",
+        "youDonTHavePermissionToJoin": "No tienes permiso para unirte.",
+        "alreadyInAnotherCallEndTheCurrent": "Ya estás en otra llamada. Finalízala para poder unirte.",
+        "participant": "Participante",
+        "voiceCallError": "Error de llamada de voz",
+        "dismissVoiceCallError": "Cerrar el error de llamada de voz"
+      },
+      "prescreenControls": {
+        "join": "Unirse"
+      },
+      "controls": {
+        "closeChat": "Cerrar chat",
+        "openChat": "Abrir chat",
+        "startCamera": "Activar cámara",
+        "startScreenshare": "Iniciar uso compartido de pantalla",
+        "stopCamera": "Desactivar cámara",
+        "stopScreenshare": "Detener uso compartido de pantalla",
+        "turnOffMicrophone": "Desactivar micrófono",
+        "turnOffSound": "Desactivar sonido",
+        "turnOnMicrophone": "Activar micrófono",
+        "turnOnSound": "Activar sonido"
+      },
+      "liveCount": "{{count}} en directo"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "Herramientas para desarrolladores",
+          "options": "Opciones",
+          "enableDeveloperTools": "Activar herramientas para desarrolladores",
+          "roomId": "ID de sala",
+          "copy": "Copiar",
+          "data": "Datos",
+          "newMessageEvent": "Nuevo evento de mensaje",
+          "createAndSendANewMessageEvent": "Crea y envía un nuevo evento de mensaje dentro de la sala.",
+          "compose": "Redactar",
+          "roomState": "Estado de la sala",
+          "stateEventsOfTheRoom": "Eventos de estado de la sala.",
+          "events": "Eventos",
+          "addNew": "Añadir nuevo",
+          "accountData": "Datos de la cuenta",
+          "privatePersonalizationDataStoredWithinRoom": "Datos privados de personalización guardados dentro de la sala.",
+          "collapse": "Contraer",
+          "copyRoomIdDescription": "Copiar el ID de la sala al portapapeles. («{{roomId}}»)",
+          "expand": "Expandir",
+          "total": "Total: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "Herramientas para desarrolladores",
+          "send": "Enviar",
+          "stateKeyOptional": "Clave de estado (opcional)",
+          "jsonContent": "Contenido JSON",
+          "messageEventType": "Tipo de evento de mensaje",
+          "stateEventType": "Tipo de evento de estado"
+        },
+        "stateEventEditor": {
+          "stateEvent": "Evento de estado",
+          "save": "Guardar",
+          "cancel": "Cancelar",
+          "jsonContent": "Contenido JSON",
+          "edit": "Editar",
+          "developerTools": "Herramientas para desarrolladores"
+        },
+        "defaultStateKey": "Predeterminado"
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emojis y stickers",
+        "roomPacks": {
+          "newPack": "Nuevo paquete",
+          "addYourOwnEmojiAndStickerPack": "Añade tu propio paquete de emojis y stickers para usarlo en la sala.",
+          "name": "Nombre",
+          "create": "Crear",
+          "view": "Ver",
+          "packs": "Paquetes",
+          "noPacks": "No hay paquetes",
+          "thereAreNoEmojiOrStickerPacks": "No hay ningún paquete de emojis o stickers que mostrar en este momento.",
+          "failedToRemovePacksPleaseTryAgain": "No se pudieron eliminar los paquetes. Inténtalo de nuevo.",
+          "cancel": "Cancelar",
+          "delete": "Eliminar",
+          "deleteSelectedPacks_one": "Eliminar los paquetes seleccionados. ({{count}} seleccionados)",
+          "deleteSelectedPacks_other": "Eliminar los paquetes seleccionados. ({{count}} seleccionados)",
+          "unknown": "Desconocida",
+          "deleteSelectedPacks_many": "Eliminar los paquetes seleccionados. ({{count}} seleccionados)"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "Cifrado de la sala",
+          "enabled": "Activado",
+          "enable": "Activar",
+          "enableEncryption": "Activar cifrado",
+          "areYouSureOnceEnabledEncryptionCannot": "¿Seguro? Una vez activado, el cifrado no se puede desactivar.",
+          "enableE2eEncryption": "Activar cifrado E2E",
+          "disabledDescription": "Una vez activado, el cifrado no se puede desactivar.",
+          "enabledDescription": "Los mensajes de esta sala están protegidos con cifrado de extremo a extremo."
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "Visibilidad del historial de mensajes",
+          "changesToHistoryVisibilityWillOnlyApply": "Los cambios en la visibilidad del historial solo se aplicarán a los mensajes futuros. La visibilidad del historial existente no cambiará.",
+          "afterInvite": "Después de la invitación",
+          "afterJoin": "Después de unirse",
+          "allMessages": "Todos los mensajes",
+          "allMessagesGuests": "Todos los mensajes (invitados)"
+        },
+        "roomProfile": {
+          "avatar": "Avatar",
+          "upload": "Subir",
+          "reset": "Restablecer",
+          "remove": "Eliminar",
+          "name": "Nombre",
+          "topic": "Tema",
+          "save": "Guardar",
+          "cancel": "Cancelar",
+          "profile": "Perfil",
+          "edit": "Editar",
+          "unknown": "Desconocida"
+        },
+        "roomPublish": {
+          "publishToDirectory": "Publicar en el directorio",
+          "roomDescription": "Incluye la sala en el directorio público para que otros puedan encontrarla.",
+          "spaceDescription": "Incluye el espacio en el directorio público para que otros puedan encontrarlo."
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "Esta acción es irreversible.",
+          "options": "Opciones",
+          "upgrade": "Actualizar",
+          "currentVersion": "Versión actual: {{version}}.",
+          "oldRoom": "Sala antigua",
+          "oldSpace": "Espacio antiguo",
+          "openNewRoom": "Abrir nueva sala",
+          "openNewSpace": "Abrir nuevo espacio",
+          "roomReplaced": "¡Esta sala ha sido reemplazada!",
+          "roomUpgrade": "Actualización de sala",
+          "spaceReplaced": "¡Este espacio ha sido reemplazado!",
+          "spaceUpgrade": "Actualización de espacio",
+          "upgradeRoom": "Actualizar sala",
+          "upgradeSpace": "Actualizar espacio"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "¡La dirección ya está en uso!",
+          "collapse": "Contraer",
+          "delete": "Eliminar",
+          "expand": "Expandir",
+          "loading": "Cargando...",
+          "localAddresses": "Direcciones locales",
+          "localAddressesDescription": "Establece una dirección local para que los usuarios puedan unirse a través de tu servidor doméstico.",
+          "main": "Principal",
+          "noAddresses": "No hay direcciones",
+          "publish": "Publicar",
+          "publishRequiresLocalAddress": "Para publicar una dirección, primero hay que establecerla como dirección local",
+          "published": "Publicada",
+          "publishedAddresses": "Direcciones publicadas",
+          "publishedAddressesDescription": "Si el acceso es <public>Público</public>, cualquiera podrá usar las direcciones publicadas para unirse.",
+          "save": "Guardar",
+          "selectedCount_one": "{{count}} seleccionados",
+          "selectedCount_other": "{{count}} seleccionados",
+          "setMain": "Establecer como principal",
+          "unpublish": "Anular publicación",
+          "unsetMain": "Dejar de usar como principal",
+          "selectedCount_many": "{{count}} seleccionados"
+        },
+        "roomJoinRules": {
+          "roomAccess": "Acceso a la sala",
+          "roomDescription": "Cambia cómo pueden unirse las personas a la sala.",
+          "spaceAccess": "Acceso al espacio",
+          "spaceDescription": "Cambia cómo pueden unirse las personas al espacio."
+        }
+      },
+      "members": {
+        "search": "Buscar",
+        "scrollToTop": "Ir arriba",
+        "memberCount_one": "{{count}} miembro",
+        "memberCount_other": "{{count}} miembros",
+        "noMembersForFilter": "No hay miembros con «{{filter}}»",
+        "noResults": "No hay resultados",
+        "resultCount_one": "{{count}} resultado",
+        "resultCount_other": "{{count}} resultados",
+        "memberCount_many": "{{count}} miembros",
+        "resultCount_many": "{{count}} resultados"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "Usuarios",
+          "defaultPower": "Poder predeterminado",
+          "defaultPowerLevelForAllUsers": "Nivel de poder predeterminado para todos los usuarios.",
+          "above": "y superiores",
+          "failedToApplyChangesPleaseTryAgain": "No se pudieron aplicar los cambios. Inténtalo de nuevo.",
+          "changesSavedApplyWhenReady": "Cambios guardados. Aplícalos cuando quieras.",
+          "reset": "Restablecer",
+          "applyChanges": "Aplicar cambios"
+        },
+        "powers": {
+          "founders": "Fundadores",
+          "foundingMembersHasAllPermissionsAndCan": "Los miembros fundadores tienen todos los permisos y solo se pueden cambiar durante una actualización.",
+          "powerLevels": "Niveles de poder",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "Gestiona y personaliza niveles de poder progresivos para los usuarios.",
+          "edit": "Editar"
+        },
+        "powersEditor": {
+          "color": "Color",
+          "pick": "Elegir",
+          "name": "Nombre",
+          "bot": "Bot",
+          "power": "Poder",
+          "icon": "Icono",
+          "remove": "Eliminar",
+          "import": "Importar",
+          "save": "Guardar",
+          "cancel": "Cancelar",
+          "permissions": "Permisos",
+          "powerLevels": "Niveles de poder",
+          "newPowerLevel": "Nuevo nivel de poder",
+          "createANewPowerLevel": "Crea un nuevo nivel de poder.",
+          "create": "Crear",
+          "undo": "Deshacer",
+          "usedPowerLevel": "Nivel de poder en uso",
+          "youHaveToRemoveItsUseBefore": "Debes dejar de usarlo antes de poder eliminarlo.",
+          "delete": "Eliminar",
+          "edit": "Editar",
+          "failedToApplyChangesPleaseTryAgain": "No se pudieron aplicar los cambios. Inténtalo de nuevo.",
+          "changesSavedApplyWhenReady": "Cambios guardados. Aplícalos cuando quieras.",
+          "reset": "Restablecer",
+          "applyChanges": "Aplicar cambios"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "ID de usuario",
+      "userSuggestions": "Sugerencias de usuarios",
+      "pleaseEnterAValidUserId": "Introduce un ID de usuario válido.",
+      "options": "Opciones",
+      "endToEndEncryption": "Cifrado de extremo a extremo",
+      "onceThisFeatureIsEnabledItCan": "Una vez activada esta función, no se podrá desactivar después de crear la sala.",
+      "create": "Crear",
+      "rateLimited_one": "El servidor limitó tu solicitud durante {{count}} minuto.",
+      "rateLimited_other": "El servidor limitó tu solicitud durante {{count}} minutos.",
+      "rateLimited_many": "El servidor limitó tu solicitud durante {{count}} minutos."
+    },
+    "createRoom": {
+      "type": "Tipo",
+      "access": "Acceso",
+      "name": "Nombre",
+      "topicOptional": "Tema (opcional)",
+      "options": "Opciones",
+      "advancedOptions": "Opciones avanzadas",
+      "endToEndEncryption": "Cifrado de extremo a extremo",
+      "onceThisFeatureIsEnabledItCan": "Una vez activada esta función, no se podrá desactivar después de crear la sala.",
+      "knockToJoin": "Solicitar unirse",
+      "anyoneCanSendRequestToJoinThis": "Cualquier persona puede solicitar unirse a esta sala.",
+      "allowFederation": "Permitir federación",
+      "usersFromOtherServersCanJoin": "Los usuarios de otros servidores pueden unirse.",
+      "create": "Crear",
+      "newChatRoom": "Nueva sala de chat",
+      "newVoiceRoom": "Nueva sala de voz",
+      "rateLimited_one": "El servidor limitó tu solicitud durante {{count}} minuto.",
+      "rateLimited_other": "El servidor limitó tu solicitud durante {{count}} minutos.",
+      "rateLimited_many": "El servidor limitó tu solicitud durante {{count}} minutos."
+    },
+    "createSpace": {
+      "access": "Acceso",
+      "name": "Nombre",
+      "topicOptional": "Tema (opcional)",
+      "options": "Opciones",
+      "advancedOptions": "Opciones avanzadas",
+      "knockToJoin": "Solicitar unirse",
+      "anyoneCanSendRequestToJoinThis": "Cualquier persona puede solicitar unirse a este espacio.",
+      "allowFederation": "Permitir federación",
+      "usersFromOtherServersCanJoin": "Los usuarios de otros servidores pueden unirse.",
+      "create": "Crear",
+      "createSpaceModal": {
+        "newSpace": "Nuevo espacio"
+      },
+      "rateLimited_one": "El servidor limitó tu solicitud durante {{count}} minuto.",
+      "rateLimited_other": "El servidor limitó tu solicitud durante {{count}} minutos.",
+      "rateLimited_many": "El servidor limitó tu solicitud durante {{count}} minutos."
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "Eliminar",
+        "invite": "Invitar",
+        "settings": "Ajustes",
+        "leave": "Salir",
+        "pinToSidebar": "Fijar en la barra lateral",
+        "setSuggested": "Marcar como sugerido",
+        "unpinFromSidebar": "Desfijar de la barra lateral",
+        "unsetSuggested": "Desmarcar como sugerido"
+      },
+      "scrollToTop": "Ir arriba",
+      "reordering": "Reordenando",
+      "lobbyHeader": {
+        "invite": "Invitar",
+        "spaceSettings": "Ajustes del espacio",
+        "leaveSpace": "Salir del espacio",
+        "members": "Miembros",
+        "moreOptions": "Más opciones"
+      },
+      "roomItem": {
+        "accessUnavailable": "Acceso no disponible",
+        "unknown": "Desconocida",
+        "suggested": "Sugerida",
+        "inaccessible": "Inaccesible",
+        "openRoom": "Abrir sala",
+        "join": "Unirse",
+        "memberCount_one": "{{formattedCount}} miembro",
+        "memberCount_other": "{{formattedCount}} miembros",
+        "requestSent": "Solicitud enviada",
+        "requestToJoin": "Solicitar unirse",
+        "sendingRequest": "Enviando solicitud",
+        "memberCount_many": "{{formattedCount}} miembros"
+      },
+      "spaceHierarchy": {
+        "noRooms": "No hay salas",
+        "thisSpaceDoesNotContainsRoomsYet": "Este espacio aún no contiene salas."
+      },
+      "spaceItem": {
+        "unknown": "Desconocida",
+        "inaccessible": "Inaccesible",
+        "suggested": "Sugerida",
+        "accessUnavailable": "Acceso no disponible",
+        "rooms": "Salas",
+        "chatRoom": "Sala de chat",
+        "voiceRoom": "Sala de voz",
+        "existingRoom": "Sala existente",
+        "addRoom": "Añadir sala",
+        "newSpace": "Nuevo espacio",
+        "existingSpace": "Espacio existente",
+        "addSpace": "Añadir espacio",
+        "requestSent": "Solicitud enviada",
+        "requestToJoin": "Solicitar unirse"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "Notificaciones",
+        "invite": "Invitar",
+        "copyLink": "Copiar enlace",
+        "roomSettings": "Ajustes de la sala",
+        "leaveRoom": "Salir de la sala",
+        "toggleChat": "Alternar chat",
+        "moreOptions": "Más opciones"
+      },
+      "liveCount": "{{count}} en directo"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "Cronología",
+        "general": "General",
+        "options": "Opciones",
+        "addresses": "Direcciones",
+        "advancedOptions": "Opciones avanzadas",
+        "compact": "Compacto",
+        "threads": "Hilos",
+        "classic": "Clásico",
+        "offline": {
+          "title": "Acceso sin conexión",
+          "checking": "Comprobando el contenido guardado…",
+          "unavailable": "El contenido guardado no está disponible en este dispositivo.",
+          "notSaved": "Esta sala aún no se ha guardado para usarla sin conexión.",
+          "downloading": "Descargando esta sala para usarla sin conexión…",
+          "offlinePause": "El guardado está en pausa mientras el dispositivo no tiene conexión.",
+          "backgroundPause": "El guardado está en pausa mientras la aplicación está en segundo plano.",
+          "spacePause": "El guardado está en pausa porque el contenido protegido ocupa todo el espacio asignado.",
+          "readOnlyPause": "Se produjo un error de almacenamiento. Vuelve a abrir la aplicación para reanudar el guardado.",
+          "connectionPause": "El guardado automático está en pausa con esta conexión.",
+          "errorPause": "El guardado se detuvo tras un error. Inténtalo de nuevo.",
+          "partialHistory": "Parte del historial anterior no se ha guardado.",
+          "inaccessibleHistory": "Parte del historial no está disponible en este momento.",
+          "waitingForKeys": "Eventos cifrados a la espera de claves: {{count}}",
+          "unresolvedRelations": "Ediciones o respuestas sin resolver: {{count}}",
+          "missingEssential": "Cuerpos de mensajes esenciales que faltan: {{count}}",
+          "historyEntries": "Entradas de historial guardadas: {{count}}",
+          "attachments": "Archivos adjuntos: {{saved}} guardados, {{missing}} pendientes.",
+          "storageUsed": "Almacenamiento usado por archivos adjuntos: {{size}}",
+          "pinFailed": "No se pudo actualizar «Mantener sin conexión».",
+          "includeAllMedia": "Incluir todos los archivos multimedia",
+          "keepOffline": "Mantener sin conexión",
+          "keepOfflineDescription": "Proteger los archivos multimedia guardados de esta sala durante la limpieza automática.",
+          "cancelDownload": "Cancelar descarga",
+          "downloadEntireRoom": "Descargar toda la sala",
+          "clearDownloadedContent": "Borrar contenido descargado",
+          "clearTitle": "¿Borrar el contenido descargado?",
+          "cancel": "Cancelar",
+          "clearDescription": "El historial y los archivos adjuntos guardados de esta sala se eliminarán de este dispositivo.",
+          "clearFailed": "No se pudo borrar el contenido descargado.",
+          "clearConfirm": "Borrar contenido"
+        }
+      },
+      "permissions": {
+        "permissions": "Permisos",
+        "ban": "Vetar",
+        "changeAllPermission": "Cambiar todos los permisos",
+        "changeRoomAccess": "Cambiar acceso a la sala",
+        "changeServerAcls": "Cambiar ACL del servidor",
+        "deleteOthersMessages": "Eliminar mensajes de otros",
+        "deleteSelfMessages": "Eliminar mensajes propios",
+        "editPowerLevels": "Editar niveles de poder",
+        "enableEncryption": "Activar cifrado",
+        "groups": {
+          "calls": "Llamadas",
+          "messages": "Mensajes",
+          "moderation": "Moderación",
+          "other": "Otro",
+          "roomOverview": "Resumen de la sala",
+          "settings": "Ajustes"
+        },
+        "historyVisibility": "Visibilidad del historial",
+        "invite": "Invitar",
+        "kick": "Expulsar",
+        "manageEmojisStickers": "Gestionar emojis y stickers",
+        "modifyWidgets": "Modificar widgets",
+        "otherMessageEvents": "Otros eventos de mensaje",
+        "otherSettings": "Otros ajustes",
+        "pinMessages": "Fijar mensajes",
+        "pingRoom": "Mencionar a @room",
+        "publishAddress": "Publicar dirección",
+        "roomAvatar": "Avatar de la sala",
+        "roomName": "Nombre de la sala",
+        "roomTopic": "Tema de la sala",
+        "sendMessages": "Enviar mensajes",
+        "sendReactions": "Enviar reacciones",
+        "sendStickers": "Enviar stickers",
+        "startOrJoinCall": "Iniciar una llamada o unirse",
+        "upgradeRoom": "Actualizar sala"
+      },
+      "navigation": {
+        "developerTools": "Herramientas para desarrolladores",
+        "emojisStickers": "Emojis y stickers",
+        "general": "General",
+        "members": "Miembros",
+        "permissions": "Permisos"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "Chat",
+        "close": "Cerrar"
+      },
+      "commandAutocomplete": {
+        "commands": "Comandos"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "No se proporcionó ningún mensaje.",
+        "decline": "Rechazar",
+        "approve": "Aprobar",
+        "approveFromUser": "Aprobar la solicitud de {{userId}} para unirse",
+        "approvedWaitingForSync": "Aprobada. Esperando la sincronización de la sala…",
+        "approving": "Aprobando…",
+        "declineFromUser": "Rechazar la solicitud de {{userId}} para unirse",
+        "declinedWaitingForSync": "Rechazada. Esperando la sincronización de la sala…",
+        "declining": "Rechazando…",
+        "updateFailed": "No se pudo actualizar la solicitud."
+      },
+      "membersDrawer": {
+        "invite": "Invitar",
+        "invitePeople": "Invitar personas",
+        "close": "Cerrar",
+        "typeName": "Escribe un nombre...",
+        "scrollToTop": "Ir arriba",
+        "memberCount_one": "{{count}} miembro",
+        "memberCount_other": "{{count}} miembros",
+        "noMembersForFilter": "No hay miembros con «{{filter}}»",
+        "noPendingJoinRequests": "No hay solicitudes pendientes para unirse",
+        "noResults": "No hay resultados",
+        "requestCount_one": "Solicitudes ({{count}})",
+        "requestCount_other": "Solicitudes ({{count}})",
+        "invitedCount_one": "{{count}} invitado",
+        "invitedCount_other": "{{count}} invitados",
+        "invitedCount_many": "{{count}} invitados",
+        "resultCount_one": "{{count}} resultado",
+        "resultCount_other": "{{count}} resultados",
+        "formattedMemberCount_one": "{{formattedCount}} miembro",
+        "formattedMemberCount_other": "{{formattedCount}} miembros",
+        "memberCount_many": "{{count}} miembros",
+        "requestCount_many": "Solicitudes ({{count}})",
+        "resultCount_many": "{{count}} resultados",
+        "formattedMemberCount_many": "{{formattedCount}} miembros"
+      },
+      "roomTombstone": {
+        "openNewRoom": "Abrir nueva sala",
+        "joinNewRoom": "Unirse a la nueva sala",
+        "joinReplacementFailed": "¡No se pudo unir a la sala de reemplazo!",
+        "replacedDescription": "Esta sala ha sido reemplazada y ya no está activa."
+      },
+      "jumpToTime": {
+        "jumpToTime": "Ir a una fecha y hora",
+        "time": "Hora",
+        "date": "Fecha",
+        "preset": "Preajuste",
+        "today": "Hoy",
+        "yesterday": "Ayer",
+        "beginning": "Principio",
+        "openTimeline": "Abrir cronología"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "Editar mensaje...",
+          "save": "Guardar",
+          "cancel": "Cancelar"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> está escribiendo...",
+        "two": "<first>{{first}}</first> y <second>{{second}}</second> están escribiendo...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> y <third>{{third}}</third> están escribiendo...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> y <others>{{count}} persona más</others> están escribiendo...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> y <others>{{count}} personas más</others> están escribiendo...",
+        "dropTypingStatus": "Dejar de mostrar el estado de escritura"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> está siguiendo la conversación.",
+        "two": "<first>{{first}}</first> y <second>{{second}}</second> están siguiendo la conversación.",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> y <third>{{third}}</third> están siguiendo la conversación.",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> y <others>{{count}} persona más</others> están siguiendo la conversación.",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> y <others>{{count}} personas más</others> están siguiendo la conversación."
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}, {{count}} solicitud pendiente para unirse",
+        "accessibleLabel_other": "{{baseLabel}}, {{count}} solicitudes pendientes para unirse",
+        "accessibleLabel_many": "{{baseLabel}}, {{count}} solicitudes pendientes para unirse"
+      },
+      "reactionViewer": {
+        "reactedWith": "Reaccionó con :{{shortcode}}:"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "Cuenta",
+        "accountDeactivation": {
+          "accountManagement": "Gestión de la cuenta",
+          "deleteDeactivateAccount": "Eliminar o desactivar cuenta",
+          "deleteDeactivate": "Eliminar o desactivar",
+          "openProviderPortal": "Abrir el portal del proveedor",
+          "thisWillRequestAccountDeactivationOnYour": "Esto solicitará la desactivación de la cuenta en tu servidor doméstico Matrix. Podrías perder el acceso a tus mensajes y sesiones.",
+          "eraseAccountDataIfSupported": "Borrar los datos de la cuenta (si se admite)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "Si se activa, el servidor doméstico puede borrar permanentemente los datos de tu cuenta además de desactivarla.",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "Se necesita autenticación adicional para completar la desactivación de la cuenta.",
+          "thisClientDoesNotSupportTheRequired": "Este cliente no admite los pasos de autenticación requeridos por este servidor doméstico.",
+          "continueInProviderPortal": "Continuar en el portal del proveedor",
+          "cancel": "Cancelar",
+          "deactivationFailed": "No se pudo desactivar la cuenta. {{error}}",
+          "descriptionWithProvider": "Inicia la desactivación de la cuenta desde este cliente. Si es necesario, puedes continuar en la página de gestión de cuentas del proveedor.",
+          "descriptionWithoutProvider": "Inicia la desactivación de la cuenta desde este cliente. Algunos servidores domésticos pueden requerir pasos de autenticación adicionales."
+        },
+        "contactInfo": {
+          "contactInformation": "Información de contacto",
+          "emailAddress": "Dirección de correo electrónico",
+          "emailAddressAttachedToYourAccount": "Dirección de correo electrónico asociada a tu cuenta."
+        },
+        "ignoredUserList": {
+          "block": "Bloquear",
+          "blockedUsers": "Usuarios bloqueados",
+          "selectUser": "Seleccionar usuario",
+          "preventReceivingMessagesOrInvitesFromUser": "Impide recibir mensajes o invitaciones de un usuario añadiendo su userId.",
+          "users": "Usuarios"
+        },
+        "matrixId": {
+          "matrixId": "ID de Matrix",
+          "copy": "Copiar",
+          "copied": "Copiado"
+        },
+        "profile": {
+          "avatar": "Avatar",
+          "upload": "Subir",
+          "remove": "Eliminar",
+          "removeAvatar": "Eliminar avatar",
+          "areYouSureYouWantToRemove": "¿Seguro que quieres eliminar el avatar del perfil?",
+          "displayName": "Nombre para mostrar",
+          "save": "Guardar",
+          "profile": "Perfil",
+          "unnamedFile": "Sin nombre"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "Datos de la cuenta",
+          "global": "Global",
+          "dataStoredInYourGlobalAccountData": "Datos guardados en los datos globales de tu cuenta.",
+          "events": "Eventos",
+          "addNew": "Añadir nuevo",
+          "collapse": "Contraer",
+          "expand": "Expandir",
+          "total": "Total: {{count}}"
+        },
+        "developTools": {
+          "developerTools": "Herramientas para desarrolladores",
+          "options": "Opciones",
+          "enableDeveloperTools": "Activar herramientas para desarrolladores",
+          "accessToken": "Token de acceso",
+          "copyAccessTokenToClipboard": "Copiar el token de acceso al portapapeles.",
+          "copy": "Copiar"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "Última actividad:",
+          "deviceName": "Nombre del dispositivo",
+          "save": "Guardar",
+          "cancel": "Cancelar",
+          "deviceNamesAreVisibleToPublic": "Los nombres de los dispositivos son públicos.",
+          "logout": "Cerrar sesión",
+          "undo": "Deshacer",
+          "edit": "Editar",
+          "deviceIdValue": "ID del dispositivo: <value>{{id}}</value>",
+          "deviceKeyValue": "Clave del dispositivo: <value>{{key}}</value>",
+          "ipAddressValue": "Dirección IP: <value>{{address}}</value>",
+          "loading": "cargando...",
+          "today": "Hoy",
+          "yesterday": "Ayer"
+        },
+        "devices": "Dispositivos",
+        "security": "Seguridad",
+        "deviceVerification": "Verificación del dispositivo",
+        "toVerifyDeviceIdentityAndGrantAccess": "Para verificar la identidad del dispositivo y conceder acceso a los mensajes cifrados.",
+        "current": "Actual",
+        "localBackup": {
+          "newPassword": "Nueva contraseña",
+          "confirmPassword": "Confirmar contraseña",
+          "export": "Exportar",
+          "exportMessagesData": "Exportar datos de mensajes",
+          "savePasswordProtectedCopyOfEncryptionData": "Guarda en tu dispositivo una copia de los datos de cifrado protegida por contraseña para descifrar los mensajes más adelante.",
+          "password": "Contraseña",
+          "decrypt": "Descifrar",
+          "importMessagesData": "Importar datos de mensajes",
+          "loadPasswordProtectedCopyOfEncryptionData": "Carga desde el dispositivo una copia de los datos de cifrado protegida por contraseña para descifrar tus mensajes.",
+          "import": "Importar",
+          "localBackup": "Copia de seguridad local",
+          "collapse": "Contraer",
+          "cryptoModuleNotFound": "¡Error inesperado! ¡No se encontró el módulo criptográfico!",
+          "expand": "Expandir"
+        },
+        "otherDevices": {
+          "others": "Otros",
+          "deviceDashboard": "Panel de dispositivos",
+          "manageYourDevicesOnOidcDashboard": "Gestiona tus dispositivos en el panel OIDC.",
+          "open": "Abrir",
+          "authenticationStepsToPerformThisActionAre": "El cliente no admite los pasos de autenticación necesarios para realizar esta acción.",
+          "cancel": "Cancelar",
+          "logout": "Cerrar sesión",
+          "logoutFailed": "¡No se pudo cerrar la sesión de los dispositivos! Inténtalo de nuevo. {{error}}",
+          "logoutSelectedDevices_one": "Cerrar sesión en los dispositivos seleccionados. ({{count}} seleccionados)",
+          "logoutSelectedDevices_other": "Cerrar sesión en los dispositivos seleccionados. ({{count}} seleccionados)",
+          "logoutSelectedDevices_many": "Cerrar sesión en los dispositivos seleccionados. ({{count}} seleccionados)"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "Inicia la verificación desde otro dispositivo o verifica manualmente. <toggle><strong>Ver menos</strong></toggle>",
+          "currentDeviceHelpMore": "Inicia la verificación desde otro dispositivo o verifica manualmente. <toggle><strong>Más información</strong></toggle>",
+          "enable": "Activar",
+          "findDevice": "Busca este dispositivo en la sección <section>Dispositivos/Sesiones</section>.",
+          "initiateVerification": "Inicia la verificación.",
+          "manualVerificationHint": "Si no tienes ningún dispositivo verificado, pulsa el botón <action>«Verificar manualmente»</action>.",
+          "openSettings": "Abre <settings>Ajustes</settings>.",
+          "openVerifiedDevice": "Abre el otro dispositivo verificado.",
+          "reset": "Restablecer",
+          "stepsFromOtherDevice": "Pasos para verificar desde otro dispositivo.",
+          "unverified": "Sin verificar",
+          "unverifiedCount_one": "{{count}} sin verificar",
+          "unverifiedCount_other": "{{count}} sin verificar",
+          "verified": "Verificado",
+          "verify": "Verificar",
+          "verifyDeviceDescription": "Verifica la identidad del dispositivo y concede acceso a los mensajes cifrados.",
+          "verifyManually": "Verificar manualmente",
+          "unverifiedCount_many": "{{count}} sin verificar"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emojis y stickers",
+        "globalPacks": {
+          "roomPacks": "Paquetes de las salas",
+          "noPacks": "No hay paquetes",
+          "packFromRoomsWillAppearHereYou": "Aquí aparecerán los paquetes de las salas. Aún no tienes ninguna sala con paquetes.",
+          "view": "Ver",
+          "favoritePacks": "Paquetes favoritos",
+          "selectPack": "Seleccionar paquete",
+          "pickEmojisAndStickersPackFromRooms": "Elige paquetes de emojis y stickers de las salas para usarlos en todas las salas.",
+          "select": "Seleccionar",
+          "failedToApplyChangesPleaseTryAgain": "No se pudieron aplicar los cambios. Inténtalo de nuevo.",
+          "changesSavedApplyWhenReady": "Cambios guardados. Aplícalos cuando quieras.",
+          "reset": "Restablecer",
+          "applyChanges": "Aplicar cambios",
+          "selectAll": "Seleccionar todo",
+          "unknown": "Desconocida",
+          "unselectAll": "Deseleccionar todo",
+          "save": "Guardar",
+          "close": "Cerrar"
+        },
+        "userPack": {
+          "defaultPack": "Paquete predeterminado",
+          "view": "Ver",
+          "unknown": "Desconocida"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "Todos los mensajes",
+          "badge": "Insignia:",
+          "1To1Chats": "Chats individuales",
+          "1To1ChatsEncrypted": "Chats individuales (cifrados)",
+          "rooms": "Salas",
+          "roomsEncrypted": "Salas (cifradas)"
+        },
+        "keywordMessages": {
+          "save": "Guardar",
+          "keywordMessages": "Mensajes con palabras clave",
+          "badge": "Insignia:",
+          "selectKeyword": "Seleccionar palabra clave",
+          "setANotificationPreferenceForMessageContaining": "Define una preferencia de notificación para los mensajes que contengan la palabra clave indicada."
+        },
+        "notifications": "Notificaciones",
+        "blockMessages": "Bloquear mensajes",
+        "thisOptionHasBeenMovedToAccount": "Esta opción se ha movido a la sección «Cuenta > Bloquear usuarios».",
+        "specialMessages": {
+          "specialMessages": "Mensajes especiales",
+          "badge": "Insignia:",
+          "mentionRoom": "Mención @room",
+          "containsRoom": "Contiene @room",
+          "containsDisplayName": "Contiene el nombre visible («{{displayName}}»)",
+          "containsDisplayNameGeneric": "Contiene el nombre visible",
+          "containsUsername": "Contiene el nombre de usuario («{{username}}»)",
+          "mentionUserId": "Menciona el ID de usuario («{{userId}}»)"
+        },
+        "systemNotification": {
+          "emailNotification": "Notificación por correo electrónico",
+          "yourAccountDoesNotHaveAnyEmail": "Tu cuenta no tiene ningún correo electrónico asociado.",
+          "unexpectedError": "Error inesperado.",
+          "system": "Sistema",
+          "desktopNotifications": "Notificaciones de escritorio",
+          "showDesktopNotificationsWhenMessageArrive": "Mostrar notificaciones de escritorio cuando lleguen mensajes.",
+          "enable": "Activar",
+          "notificationSound": "Sonido de notificación",
+          "playSoundWhenNewMessageArrive": "Reproducir un sonido cuando llegue un mensaje nuevo.",
+          "notSupported": "El sistema no admite notificaciones.",
+          "permissionBlocked": "El permiso de notificaciones está bloqueado. Permite las notificaciones desde la barra de direcciones del navegador.",
+          "sendToEmail": "Enviar notificación a tu correo electrónico.",
+          "sendToEmailAddress": "Enviar notificación a tu correo electrónico. («{{email}}»)"
+        },
+        "mode": {
+          "disable": "Desactivar",
+          "notifyLoud": "Notificar con sonido",
+          "notifySilent": "Notificar en silencio"
+        }
+      },
+      "about": {
+        "clearCache": "Borrar caché",
+        "clearCacheAndReload": "Borrar caché y recargar",
+        "clearCacheDescription": "Borra los datos almacenados en caché y recarga. Seguirás con la sesión iniciada.",
+        "clearTrace": "Borrar seguimiento",
+        "clearing": "Borrando...",
+        "credits": "Créditos",
+        "deepDiagnosticTracing": "Seguimiento de diagnóstico detallado",
+        "deepTraceMemoryOnly": "Se está registrando en memoria porque el almacenamiento de seguimiento no está disponible. Exporta antes de reiniciar la aplicación; estos eventos recientes se pierden al reiniciar.",
+        "deepTraceEnabledStorageUnavailable": "Activado, pero el almacenamiento de seguimiento no está disponible actualmente.",
+        "deepTraceOff": "Desactivado. Actívalo antes de reproducir un bloqueo para registrar el rendimiento, Matrix, la red, el ciclo de vida y los tiempos de interacción.",
+        "deepTracePreferenceSaveFailed": "{{description}} Desactivado durante esta sesión, pero no se pudo guardar la preferencia y puede volver a activarse tras reiniciar.",
+        "deepTraceRecording": "Registrando en este dispositivo un seguimiento limitado y seguro para la privacidad del rendimiento y las interacciones.",
+        "deepTraceStarting": "Iniciando en este dispositivo un seguimiento limitado y seguro para la privacidad del rendimiento y las interacciones.",
+        "diagnosticsExportFailed": "{{description}} Error de exportación. Inténtalo de nuevo.",
+        "diagnosticsNone": "No se conservó ninguna sesión inesperada.",
+        "diagnosticsUnavailable": "El almacenamiento de diagnósticos no está disponible.",
+        "diagnosticsUnexpected": "La sesión anterior terminó de forma inesperada; se desconoce la causa.",
+        "emojiArtCredit": "El diseño de emojis <art>Twemoji</art> es © <owner>Twitter, Inc y otros colaboradores</owner> y se usa conforme a los términos de <license>CC-BY 4.0</license>.",
+        "emojiFontCredit": "La fuente <font>twemoji-colr</font> es © <owner>Mozilla Foundation</owner> y se usa conforme a los términos de <license>Apache 2.0</license>.",
+        "exportDiagnostics": "Exportar diagnósticos",
+        "exporting": "Exportando...",
+        "matrixSdkCredit": "El <sdk>matrix-js-sdk</sdk> es © <owner>The Matrix.org Foundation C.I.C</owner> y se usa conforme a los términos de <license>Apache 2.0</license>.",
+        "onDeviceDiagnostics": "Diagnósticos en el dispositivo",
+        "options": "Opciones",
+        "soundResourcesCredit": "Los <resources>recursos de sonido Material</resources> son © <owner>Google</owner> y se usan conforme a los términos de <license>CC-BY 4.0</license>.",
+        "sourceCode": "Código fuente",
+        "support": "Ayuda",
+        "title": "Acerca de",
+        "traceStorageUnavailable": "El almacenamiento de seguimiento no está disponible."
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "General",
+        "options": "Opciones",
+        "addresses": "Direcciones",
+        "advancedOptions": "Opciones avanzadas"
+      },
+      "permissions": {
+        "permissions": "Permisos",
+        "ban": "Vetar",
+        "changeAllPermission": "Cambiar todos los permisos",
+        "changeServerAcls": "Cambiar ACL del servidor",
+        "changeSpaceAccess": "Cambiar acceso al espacio",
+        "editPowerLevels": "Editar niveles de poder",
+        "groups": {
+          "manage": "Gestionar",
+          "moderation": "Moderación",
+          "other": "Otro",
+          "settings": "Ajustes",
+          "spaceOverview": "Resumen del espacio"
+        },
+        "invite": "Invitar",
+        "kick": "Expulsar",
+        "manageEmojisStickers": "Gestionar emojis y stickers",
+        "manageSpaceRooms": "Gestionar salas del espacio",
+        "messageEvents": "Eventos de mensaje",
+        "otherSettings": "Otros ajustes",
+        "publishAddress": "Publicar dirección",
+        "spaceAvatar": "Avatar del espacio",
+        "spaceName": "Nombre del espacio",
+        "spaceTopic": "Tema del espacio",
+        "upgradeSpace": "Actualizar espacio"
+      },
+      "navigation": {
+        "developerTools": "Herramientas para desarrolladores",
+        "emojisStickers": "Emojis y stickers",
+        "general": "General",
+        "members": "Miembros",
+        "permissions": "Permisos"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "No se encontraron coincidencias para «{{query}}».",
+      "noMatchFound": "No se encontraron coincidencias",
+      "noRooms": "No hay salas",
+      "noRoomsDescription": "Aún no tienes salas que mostrar.",
+      "placeholder": "Buscar",
+      "syntaxHint": "Escribe <rooms>#</rooms> para salas, <directs>@</directs> para mensajes directos y <spaces>*</spaces> para espacios. Atajo: <hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "Descartar grabación de voz",
+      "pauseRecording": "Pausar grabación de voz",
+      "resumeRecording": "Reanudar grabación de voz",
+      "statusActive": "Grabación de voz activa",
+      "statusPaused": "Grabación de voz en pausa",
+      "statusProcessing": "Procesando grabación de voz",
+      "statusReadyToRetry": "Grabación de voz lista para reintentar",
+      "statusSending": "Enviando grabación de voz",
+      "statusStarting": "Iniciando grabación de voz",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "No se pudo enviar el mensaje de voz",
+        "yourRecordingIsStillSaved": "Tu grabación sigue guardada.",
+        "discard": "Descartar",
+        "retry": "Reintentar",
+        "discardVoiceRecording": "¿Descartar la grabación de voz?",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "Esta grabación no se ha enviado. ¿Quieres descartarla permanentemente?",
+        "cancel": "Cancelar",
+        "voiceRecordingError": "Error de grabación de voz",
+        "ok": "Aceptar"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "El acceso al micrófono está bloqueado. Permite que MindRoom Chat acceda al micrófono en los ajustes de la aplicación de Android e inténtalo de nuevo.",
+        "microphoneBlockedIos": "El acceso al micrófono está bloqueado. Permite que MindRoom Chat acceda al micrófono en los ajustes del iPhone e inténtalo de nuevo.",
+        "microphoneBlockedBrowser": "El acceso al micrófono está bloqueado. Permite el acceso al micrófono para este sitio o aplicación en los ajustes del navegador o del sistema e inténtalo de nuevo.",
+        "noMicrophone": "No se encontró ningún micrófono en este dispositivo.",
+        "microphoneUnavailable": "El micrófono no está disponible ahora mismo; puede que lo esté usando otra aplicación.",
+        "microphoneFailed": "No se pudo acceder al micrófono.",
+        "microphoneUnsupported": "Este dispositivo no admite el acceso al micrófono.",
+        "recordingStopped": "La grabación de voz se detuvo de forma inesperada. Vuelve a grabarla.",
+        "noAudio": "No se capturaron datos de audio.",
+        "recordingUnsupported": "Este navegador no admite la grabación de voz.",
+        "httpsRequired": "La grabación de voz requiere HTTPS (o localhost). Abre MindRoom mediante HTTPS.",
+        "sendBusy": "Todavía se está enviando otro mensaje de voz. Espera.",
+        "sendFailed": "No se pudo enviar el mensaje de voz."
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "Llamar",
+        "homeserverUnsupported": "Tu homeserver no admite llamadas.",
+        "browserUnsupported": "Tu navegador no admite WebRTC.",
+        "endCurrentCall": "Finaliza primero la llamada actual.",
+        "failedToStart": "No se pudo iniciar la llamada."
+      },
+      "agentCallHeaderButton": {
+        "call": "Llamar a un agente",
+        "callAgent": "Llamar a {{name}}",
+        "chooseAgent": "Elige un agente para llamar",
+        "close": "Cerrar"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "Comandos de MindRoom"
+      },
+      "descriptions": {
+        "help": "Obtener ayuda sobre las funciones disponibles o un tema concreto.",
+        "reload-plugins": "Volver a cargar los plugins configurados (solo administradores).",
+        "schedule": "Programar una tarea para ejecutarla más adelante.",
+        "list_schedules": "Mostrar todas las tareas programadas.",
+        "cancel_schedule": "Cancelar una programación por ID o todas las programaciones.",
+        "edit_schedule": "Actualizar una tarea programada existente.",
+        "config": "Gestionar la configuración de MindRoom (solo administradores).",
+        "desktop": "Gestionar tu destino de escritorio.",
+        "model": "Mostrar o cambiar el modelo usado en el hilo actual.",
+        "room_model": "Mostrar el modelo predeterminado de la sala o cambiarlo (establecerlo o restablecerlo requiere ser administrador de la sala).",
+        "thread_mode": "Mostrar o cambiar el modo de hilo usado en la sala actual (solo administradores de la sala).",
+        "encrypt": "Revisar o activar el cifrado de extremo a extremo de la sala actual.",
+        "e2ee": "Mostrar los diagnósticos de cifrado de la sala actual.",
+        "hi": "Mostrar la información de bienvenida."
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "Texto pegado",
+        "characterCount_one": "{{formattedCount}} carácter",
+        "characterCount_other": "{{formattedCount}} caracteres",
+        "characterCount_many": "{{formattedCount}} caracteres"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "MindRoom local",
+        "connectLocalMindroom": "Conectar MindRoom local",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "Vincula esta cuenta de chat con tu proceso local de MindRoom",
+        "enterCodeDescription": "Ejecuta {{command}} en tu equipo y luego abre el enlace que muestra o introduce aquí su código.",
+        "pairCode": "Código de vinculación",
+        "mindroomDocs": "Documentación de MindRoom",
+        "linkedInstallations": "Instalaciones vinculadas",
+        "linkedInstallationsUnavailable": "Las instalaciones vinculadas solo están disponibles para cuentas de {{server}}.",
+        "loadingLinkedInstallations": "Cargando instalaciones vinculadas...",
+        "tryAgain": "Intentar de nuevo",
+        "noLinkedLocalMindroomInstallationsYet": "Aún no hay instalaciones locales de MindRoom vinculadas.",
+        "revoke": "Revocar",
+        "confirmRevoke": "Confirmar revocación",
+        "cancel": "Cancelar",
+        "requestFailed": "La solicitud falló. Inténtalo de nuevo.",
+        "unknown": "Desconocida",
+        "createdAt": "Creada: {{timestamp}}",
+        "lastSeenAt": "Visto por última vez: {{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "Introduce el código que aparece en tu terminal.",
+        "continue": "Continuar",
+        "invalidCode": "Introduce el código de 8 caracteres, por ejemplo ABCD-EFGH.",
+        "code": "Código: {{code}}",
+        "chooseAccount": "Elige la cuenta que aprueba esta conexión",
+        "checkingCode": "Comprobando el código...",
+        "deviceQuestion": "¿Conectar {{clientName}}?",
+        "deviceStarted": "Iniciado {{age}}",
+        "requestedFrom": "Solicitado desde {{ip}}",
+        "requestedFromUnknown": "Solicitado desde una dirección desconocida",
+        "warning": "Aprueba solo si acabas de iniciar esto en tu propio equipo y tu terminal muestra el mismo código.",
+        "approveAs": "Aprobar como {{userId}}",
+        "approved": "Conectado. Ya puedes volver a tu terminal.",
+        "noAccount": "Inicia sesión con tu cuenta de MindRoom para aprobar esta conexión.",
+        "signIn": "Iniciar sesión para aprobar",
+        "accountSignedOut": "Esta cuenta debe volver a iniciar sesión antes de poder aprobar.",
+        "codeNotFound": "No se encontró este código. Comprueba el código que aparece en tu terminal.",
+        "codeExpired": "Este código ha caducado. Usa el nuevo enlace o código que aparece en tu terminal.",
+        "codeAlreadyApproved": "Este código ya se ha aprobado.",
+        "backToChat": "Volver al chat",
+        "enterNewCode": "Introduce el nuevo código:",
+        "noAccountAppGuidance": "¿Ya iniciaste sesión en la aplicación MindRoom? Abre Ajustes → MindRoom local allí e introduce {{code}}.",
+        "frameWarning": "Por seguridad, la aprobación del dispositivo no se puede completar dentro de un marco.",
+        "openInNewTab": "Abrir en una pestaña nueva"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "Agente verificado · dispositivo con firma cruzada",
+        "verifiedAgent": "Agente verificado"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "Ir arriba",
+        "searchMessages": "Buscar mensajes",
+        "searchDescription": "Busca mensajes útiles en tu comunidad con palabras clave relacionadas.",
+        "noResultsFor": "No se encontraron resultados para «{{term}}»",
+        "resultsFor": "Resultados para «{{term}}»"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (editado)"
+      },
+      "searchFilters": {
+        "sortBy": "Ordenar por",
+        "recent": "Recientes",
+        "relevance": "Relevancia",
+        "search": "Buscar",
+        "rooms": "Salas",
+        "noMatchFound": "¡No se encontraron coincidencias!",
+        "save": "Guardar",
+        "deselectAll": "Deseleccionar todo",
+        "selectRooms": "Seleccionar salas",
+        "filter": "Filtrar",
+        "global": "Global",
+        "saveCount": "Guardar ({{count}})",
+        "roomsFor": "Salas para «{{query}}»"
+      },
+      "searchInput": {
+        "search": "Buscar",
+        "searchForKeyword": "Buscar una palabra clave",
+        "clear": "Borrar",
+        "enter": "Introducir"
+      },
+      "searchResultGroup": {
+        "open": "Abrir",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "El contexto de la respuesta está oculto en los resultados de búsqueda. Abre el mensaje para ver el contexto completo del hilo."
+      },
+      "searchResultPreview": {
+        "redacted": "El mensaje fue censurado.",
+        "message": "Mensaje",
+        "image": "Imagen",
+        "video": "Vídeo",
+        "audio": "Audio",
+        "file": "Archivo",
+        "location": "Ubicación",
+        "reaction": "Reacción",
+        "unsupportedEvent": "Evento no compatible"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "Argumentos",
+        "loadingCompleteArguments": "Cargando todos los argumentos…",
+        "loadFailed": "No se pudieron cargar todos los argumentos.",
+        "onlyATruncatedPreviewIsAvailable": "Solo hay disponible una vista previa truncada.",
+        "retry": "Reintentar",
+        "sensitiveValuesMayBeRedacted": "Los valores confidenciales pueden estar censurados.",
+        "hideArguments": "Ocultar argumentos",
+        "showAllArguments": "Mostrar todos los argumentos"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "Esta solicitud no se puede aprobar aquí.",
+        "submittedWaitingForRoomUpdate": "Enviada. Esperando la actualización de la sala.",
+        "approveOnce": "Aprobar una vez",
+        "approve": "Aprobar",
+        "deny": "Denegar",
+        "autoApprovalDuration": "Duración de la aprobación automática",
+        "denyReasonOptional": "Motivo de la denegación (opcional)",
+        "denialReasonOptional": "Motivo de la denegación (opcional)",
+        "confirmDeny": "Confirmar denegación",
+        "confirmDeny2": "Confirmar denegación",
+        "cancel": "Cancelar",
+        "autoApproveMinutes_one": "Aprobar automáticamente durante {{count}} minuto",
+        "autoApproveMinutes_other": "Aprobar automáticamente durante {{count}} minutos",
+        "denyCallReasonOptional": "Motivo para denegar la llamada {{number}} (opcional)",
+        "approveExactCall": "Aprobar esta llamada exacta",
+        "approveAnyArguments": "Aprobar cualquier argumento",
+        "anyArgumentsWarning": "Con cualquier argumento, el agente puede hacer una llamada a {{tool}} con lo que decida, dentro de {{minutes}} minutos de la hora programada.",
+        "autoApproveMinutes_many": "Aprobar automáticamente durante {{count}} minutos"
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "Aprobación automática activa",
+        "autoApprovalStopped": "Aprobación automática detenida",
+        "autoApprovalExpired": "Aprobación automática caducada",
+        "argumentsMayDifferBetweenCalls": "Los argumentos pueden variar entre llamadas.",
+        "stopAutoApproval": "Detener aprobación automática",
+        "submittedWaitingForRoomUpdate": "Enviada. Esperando la actualización de la sala.",
+        "fixedExpiry": "Caducidad fija: {{timestamp}}",
+        "expiresInMinutes_one": "Caduca en {{count}} minuto",
+        "expiresInMinutes_other": "Caduca en {{count}} minutos",
+        "expiresInMinutes_many": "Caduca en {{count}} minutos"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "Solicitud de aprobación de herramienta resuelta",
+        "unknown": "desconocido",
+        "approvedOnce": "Aprobado una vez",
+        "decisionRecordedForThisCall": "Decisión registrada para esta llamada",
+        "statusExpired": "Aprobación caducada",
+        "statusApproved": "Aprobado",
+        "statusDenied": "Denegado",
+        "requestedBy": "{{agent}} · Solicitado por {{requester}}",
+        "resolvedByAt": "{{status}} por {{resolver}} · {{timestamp}}",
+        "resolvedBy": "{{status}} por {{resolver}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "Permiso temporal",
+        "timedPermissionMinutes_one": "Permiso temporal · {{count}} minuto",
+        "timedPermissionMinutes_other": "Permiso temporal · {{count}} minutos",
+        "grantedByAt": "Concedido por {{grantor}} · {{timestamp}}",
+        "grantedBy": "Concedido por {{grantor}}",
+        "originalFixedExpiry": "Caducidad fija original: {{timestamp}}",
+        "toolAndServer": "Herramienta: {{tool}} · Servidor: {{server}}",
+        "tool": "Herramienta: {{tool}}",
+        "reason": "Motivo: {{reason}}",
+        "approvedWhenScheduledByAt": "Aprobado al programarse por {{approver}} · {{timestamp}}",
+        "approvedWhenScheduledBy": "Aprobado al programarse por {{approver}}",
+        "timedPermissionMinutes_many": "Permiso temporal · {{count}} minutos"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "Programado para {{timestamp}}",
+        "approvedExactArguments": "Aprobado para estos argumentos exactos",
+        "approvedAnyArguments": "Aprobado para cualquier argumento de esta herramienta"
+      },
+      "approvalReviewCall": {
+        "pending": "pendiente",
+        "callStatus": "Llamada {{number}} · {{status}}",
+        "status": {
+          "pending": "Pendiente",
+          "sending": "Enviando",
+          "submitted": "Enviado",
+          "error": "Error",
+          "approved": "Aprobado",
+          "denied": "Denegado",
+          "expired": "Caducado"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "Copiar texto (cargando…)",
+        "copyText": "Copiar texto",
+        "copyTextWithToolCalls": "Copiar texto con llamadas de herramientas",
+        "copyLink": "Copiar enlace"
+      },
+      "bugReport": {
+        "report": "Informar de un error",
+        "download": "Descargar informe de error",
+        "sending": "Enviando informe…",
+        "failed": "No se pudo enviar el informe. Inténtalo de nuevo."
+      },
+      "messageInspectionActions": {
+        "readReceipts": "Confirmaciones de lectura",
+        "viewSource": "Ver fuente"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "Desfijar mensaje",
+        "pinMessage": "Fijar mensaje",
+        "deleteMessage": "Eliminar mensaje",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "¡Esta acción es irreversible! ¿Seguro que quieres eliminar este mensaje?",
+        "optional": "(opcional)",
+        "failedToDeleteMessagePleaseTryAgain": "¡No se pudo eliminar el mensaje! Inténtalo de nuevo.",
+        "deleting": "Eliminando...",
+        "delete": "Eliminar",
+        "reportMessage": "Denunciar mensaje",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "Denuncia este mensaje al servidor, que podrá avisar a las personas correspondientes para que actúen.",
+        "reason": "Motivo",
+        "failedToReportMessagePleaseTryAgain": "¡No se pudo denunciar el mensaje! Inténtalo de nuevo.",
+        "messageHasBeenReportedToServer": "El mensaje se ha denunciado al servidor.",
+        "reporting": "Denunciando...",
+        "report": "Denunciar"
+      },
+      "messageReactionActions": {
+        "viewReactions": "Ver reacciones"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "Todavía cargando…",
+        "toolDetailsUnavailable": "Detalles de la herramienta no disponibles.",
+        "pastedText": "Texto pegado",
+        "characterCount_one": "{{formattedCount}} carácter",
+        "characterCount_other": "{{formattedCount}} caracteres",
+        "blocks": {
+          "think": "Proceso de razonamiento de la IA",
+          "debug": "Información de depuración",
+          "system": "Procesamiento del sistema",
+          "plan": "Planificación y estrategia",
+          "analysis": "Análisis y evaluación",
+          "research": "Investigación y fuentes"
+        },
+        "toolNumber": "Herramienta n.º {{index}}: {{command}}",
+        "toolCallCount_one": "{{count}} llamada de herramienta",
+        "toolCallCount_other": "{{count}} llamadas de herramienta",
+        "characterCount_many": "{{formattedCount}} caracteres",
+        "toolCallCount_many": "{{count}} llamadas de herramienta",
+        "usedToolCount_one": "Se usó {{count}} herramienta",
+        "usedToolCount_many": "Se usaron {{count}} herramientas",
+        "usedToolCount_other": "Se usaron {{count}} herramientas",
+        "toolCallsRunning_one": "Ejecutando {{count}} llamada a herramienta",
+        "toolCallsRunning_many": "Ejecutando {{count}} llamadas a herramientas",
+        "toolCallsRunning_other": "Ejecutando {{count}} llamadas a herramientas",
+        "toolCallsWaiting_one": "{{count}} llamada a herramienta espera aprobación",
+        "toolCallsWaiting_many": "{{count}} llamadas a herramientas esperan aprobación",
+        "toolCallsWaiting_other": "{{count}} llamadas a herramientas esperan aprobación",
+        "toolCallsRan_one": "Se ejecutó {{count}} llamada a herramienta",
+        "toolCallsRan_many": "Se ejecutaron {{count}} llamadas a herramientas",
+        "toolCallsRan_other": "Se ejecutaron {{count}} llamadas a herramientas",
+        "toolCallsDenied_one": "Se denegó {{count}} llamada a herramienta",
+        "toolCallsDenied_many": "Se denegaron {{count}} llamadas a herramientas",
+        "toolCallsDenied_other": "Se denegaron {{count}} llamadas a herramientas",
+        "toolCallsExpired_one": "{{count}} llamada a herramienta caducó",
+        "toolCallsExpired_many": "{{count}} llamadas a herramientas caducaron",
+        "toolCallsExpired_other": "{{count}} llamadas a herramientas caducaron"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "Cargando la respuesta completa..."
+      },
+      "mindroomMessage": {
+        "addReaction": "Añadir reacción",
+        "reply": "Responder",
+        "replyInThread": "Responder en el hilo",
+        "editMessage": "Editar mensaje",
+        "moreOptions": "Más opciones"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "Ventana de contexto de la solicitud",
+        "aiRunMetadata": "Metadatos de ejecución de IA",
+        "close": "Cerrar",
+        "status": "Estado",
+        "model": "Modelo",
+        "tokens": "Tokens",
+        "runCache": "Caché de ejecución",
+        "requestContext": "Contexto de la solicitud",
+        "requestCache": "Caché de la solicitud",
+        "tools": "Herramientas",
+        "ttft": "TTFT",
+        "run": "Ejecución",
+        "session": "Sesión",
+        "openAiRunMetadata": "Abrir metadatos de ejecución de IA",
+        "tokenUsage": "Uso de tokens",
+        "downloadingOriginal": "Descargando original...",
+        "retryDownloadOriginal": "Reintentar descarga del original",
+        "downloadOriginal": "Descargar original",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} token",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} tokens",
+        "segmentTokenCount_many": "{{label}}: {{formattedCount}} tokens"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "Elementos adicionales del mensaje"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "Texto pegado",
+        "open": "Abrir",
+        "retry": "Reintentar",
+        "download": "Descargar",
+        "characterCount_one": "{{formattedCount}} carácter",
+        "characterCount_other": "{{formattedCount}} caracteres",
+        "characterCount_many": "{{formattedCount}} caracteres"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "Abrir",
+        "failedToLoadMessage": "¡No se pudo cargar el mensaje!",
+        "event": " evento",
+        "pinnedMessages": "Mensajes fijados",
+        "noPinnedMessages": "No hay mensajes fijados",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "Los usuarios con un nivel de poder suficiente pueden fijar mensajes desde su menú contextual."
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "La IA está respondiendo",
+        "thinking": "Pensando…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "Resumen del hilo de IA"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "La IA tituló este hilo",
+        "updated": "Título de IA actualizado",
+        "edited": "Título editado",
+        "previous": "Antes: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "Solicitud de aprobación de herramienta",
+        "submitted": "Enviado",
+        "pendingApproval": "Aprobación pendiente",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "La aprobación automática se aplica a este hilo, solicitante, agente y herramienta.",
+        "argumentsMayDifferBetweenCalls": "Los argumentos pueden variar entre llamadas.",
+        "requestedBy": "Solicitado por {{requester}}"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "El agente enrutador está transcribiendo"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "La IA está respondiendo"
+      },
+      "stopButton": {
+        "label": "Detener",
+        "tooltip": "Detener esta respuesta"
+      },
+      "threadApprovalControls": {
+        "close": "Cerrar",
+        "call": "llamada",
+        "calls": "llamadas",
+        "unknown": "desconocido",
+        "reasonForDenyingAllOptional": "Motivo para denegarlas todas (opcional)",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "Permite esta operación para este hilo, solicitante y agente. Los argumentos pueden variar entre llamadas.",
+        "submittedWaitingForRoomUpdate": "Enviada. Esperando la actualización de la sala.",
+        "threadApprovals": "Aprobaciones del hilo",
+        "checkingHistory": " · Comprobando historial…",
+        "historyIncomplete": " · Historial incompleto",
+        "retryHistory": "Reintentar historial",
+        "reviewToolCalls": "Revisar llamadas de herramientas",
+        "reviewAgentWants_one": "{{agent}} quiere hacer {{count}} cosa",
+        "reviewAgentWants_many": "{{agent}} quiere hacer {{count}} cosas",
+        "reviewAgentWants_other": "{{agent}} quiere hacer {{count}} cosas",
+        "reviewAgentsWant_one": "{{agents}} agentes quieren hacer {{count}} cosa",
+        "reviewAgentsWant_many": "{{agents}} agentes quieren hacer {{count}} cosas",
+        "reviewAgentsWant_other": "{{agents}} agentes quieren hacer {{count}} cosas",
+        "reviewRequestedBy": "Solicitado por {{requester}}",
+        "someRequestsAreNoLongerAvailable": "Algunas solicitudes ya no están disponibles.",
+        "permission": "permiso",
+        "permissions": "permisos",
+        "activePermissions": "Permisos activos",
+        "noActiveTimedPermissions": "No hay permisos temporales activos.",
+        "approval": "aprobación",
+        "approvals": "aprobaciones",
+        "operationCallCount_one": "{{operation}} · {{count}} llamada",
+        "operationCallCount_other": "{{operation}} · {{count}} llamadas",
+        "requestedBy": "{{agent}} · Solicitado por {{requester}}",
+        "approveAllOnce": "Aprobar las {{count}} una vez",
+        "denyAll": "Denegar las {{count}}",
+        "allowForMinutes_one": "Permitir durante {{count}} minuto",
+        "allowForMinutes_other": "Permitir durante {{count}} minutos",
+        "awaitingConfirmation_one": "{{count}} llamada en espera de confirmación",
+        "awaitingConfirmation_other": "{{count}} llamadas en espera de confirmación",
+        "pausedForApproval_one": "{{count}} llamada pausada para su aprobación",
+        "pausedForApproval_other": "{{count}} llamadas pausadas para su aprobación",
+        "statusCheckingHistory": "{{status}} · Comprobando historial…",
+        "statusHistoryIncomplete": "{{status}} · Historial incompleto",
+        "reviewCount": "Revisar {{count}}",
+        "activePermissionCount_one": "{{count}} permiso activo",
+        "activePermissionCount_other": "{{count}} permisos activos",
+        "permissionScope": "{{agent}} · {{requester}} · Este hilo",
+        "toolApprovalCount_one": "{{count}} aprobación de herramienta",
+        "toolApprovalCount_other": "{{count}} aprobaciones de herramientas",
+        "approvedCount_one": "{{count}} aprobadas",
+        "approvedCount_other": "{{count}} aprobadas",
+        "operationCallCount_many": "{{operation}} · {{count}} llamadas",
+        "allowForMinutes_many": "Permitir durante {{count}} minutos",
+        "awaitingConfirmation_many": "{{count}} llamadas en espera de confirmación",
+        "pausedForApproval_many": "{{count}} llamadas pausadas para su aprobación",
+        "activePermissionCount_many": "{{count}} permisos activos",
+        "toolApprovalCount_many": "{{count}} aprobaciones de herramientas",
+        "approvedCount_many": "{{count}} aprobadas",
+        "agentWaitingForYou": "{{agent}} te está esperando",
+        "agentsWaitingForYou_one": "{{count}} agente te está esperando",
+        "agentsWaitingForYou_many": "{{count}} agentes te están esperando",
+        "agentsWaitingForYou_other": "{{count}} agentes te están esperando",
+        "autoApproveFor": "Aprobar automáticamente durante",
+        "callCount_one": "{{count}} llamada",
+        "callCount_many": "{{count}} llamadas",
+        "callCount_other": "{{count}} llamadas",
+        "chipSending": "Enviando…",
+        "chipSubmitted": "Enviada",
+        "chipResolved": "Resuelta",
+        "confirmDenyAll": "Confirmar denegar las {{count}}",
+        "expires": "caduca {{time}}",
+        "hideCalls": "Ocultar llamadas",
+        "historyApproved": "Se aprobó {{operation}}",
+        "historyDenied": "Se denegó {{operation}}",
+        "historyExpired": "{{operation}} caducó",
+        "historyUserApproved": "{{user}} aprobó {{operation}}",
+        "historyUserDenied": "{{user}} denegó {{operation}}",
+        "historyUserExpired": "{{operation}} caducó",
+        "historyYouApproved": "Aprobaste {{operation}}",
+        "historyYouDenied": "Denegaste {{operation}}",
+        "historyYouExpired": "{{operation}} caducó",
+        "minutesShort_one": "{{count}} min",
+        "minutesShort_many": "{{count}} min",
+        "minutesShort_other": "{{count}} min",
+        "sectionMeta": "{{agent}} · solicitado por {{requester}}",
+        "showCalls_one": "Mostrar {{count}} llamada",
+        "showCalls_many": "Mostrar {{count}} llamadas",
+        "showCalls_other": "Mostrar {{count}} llamadas",
+        "waitingForApproval": "Esperando aprobación",
+        "waitingForYou": "Esperándote",
+        "you": "ti"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "Enviando mensaje",
+        "waitingForServer": "Esperando al servidor",
+        "messageFailedToSend": "No se pudo enviar el mensaje",
+        "notSent": "No enviado"
+      },
+      "failedSendActions": {
+        "retry": "Reintentar",
+        "delete": "Eliminar"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "entrada {{formattedCount}}",
+        "outputTokens": "salida {{formattedCount}}",
+        "totalTokens": "total {{formattedCount}}",
+        "readTokens": "leídos {{formattedCount}}",
+        "writeTokens": "escritos {{formattedCount}}",
+        "notReadTokens": "no leídos {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}} %)",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} token ({{percentage}} % de la ventana)",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} tokens ({{percentage}} % de la ventana)",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} token ({{percentage}} % de la ventana); {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} tokens ({{percentage}} % de la ventana); {{suffix}}",
+        "reportedCacheRead_one": "lectura de caché indicada: {{formattedCount}} token",
+        "reportedCacheRead_other": "lectura de caché indicada: {{formattedCount}} tokens",
+        "cacheWrite_one": "escritura en caché: {{formattedCount}} token",
+        "cacheWrite_other": "escritura en caché: {{formattedCount}} tokens",
+        "cacheRead": "Lectura de caché",
+        "newInput": "Entrada nueva",
+        "reserve": "Reserva",
+        "contextBarTitle_many": "{{label}}: {{formattedCount}} tokens ({{percentage}} % de la ventana)",
+        "contextBarTitleWithSuffix_many": "{{label}}: {{formattedCount}} tokens ({{percentage}} % de la ventana); {{suffix}}",
+        "reportedCacheRead_many": "lectura de caché indicada: {{formattedCount}} tokens",
+        "cacheWrite_many": "escritura en caché: {{formattedCount}} tokens"
+      },
+      "mindroomModelBadge": {
+        "model": "Modelo: {{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "Las notificaciones push nativas de iOS no están configuradas en el despliegue. Añade los ajustes de `push.ios` en `config.json`.",
+        "failedToUpdateNativePushSettings": "No se pudieron actualizar los ajustes de notificaciones push nativas.",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "Permite las notificaciones push nativas de iOS para recibir avisos de mensajes en segundo plano.",
+        "deviceRegisteredForNativeIosPushNotifications": "Dispositivo registrado para recibir notificaciones push nativas de iOS.",
+        "nativeIosPushIsDisabledForThisDevice": "Las notificaciones push nativas de iOS están desactivadas en este dispositivo.",
+        "unavailable": "No disponible",
+        "enable": "Activar",
+        "iosPushNotifications": "Notificaciones push de iOS",
+        "permissionDenied": "Se ha denegado el permiso de notificaciones. Activa las notificaciones de {{appName}} en los ajustes de iOS."
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "Marcar como leído"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "Marcar como leído"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "Marcar como leído"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "Haz una copia de seguridad de tu historial cifrado",
+        "dismissBackupReminder": "Descartar recordatorio de copia de seguridad",
+        "setUpSecureBackupSoYouCanStillReadYour": "Configura una copia de seguridad para poder seguir leyendo tus chats cifrados con agentes después de iniciar sesión en un dispositivo nuevo.",
+        "setUpSecureKeyBackup": "Configurar copia de seguridad segura de claves",
+        "setUpBackup": "Configurar copia de seguridad"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "MindRoom local"
+      },
+      "resizeNavigationPanel": "Cambiar el tamaño del panel de navegación",
+      "resizeMemberPanel": "Cambiar el tamaño del panel de miembros"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "No hay hilos"
+      },
+      "compactThreadCard": {
+        "streaming": "transmitiendo"
+      },
+      "mindroomCallChatView": {
+        "chat": "Chat",
+        "close": "Cerrar"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "Mensajes nuevos",
+        "jumpToUnread": "Ir a los no leídos",
+        "markAsRead": "Marcar como leído",
+        "failedToLoadThisThread": "No se pudo cargar este hilo.",
+        "loading": "Cargando...",
+        "loadOlderMessages": "Cargar mensajes anteriores",
+        "loadNewerMessages": "Cargar mensajes posteriores",
+        "jumpToLatest": "Ir al más reciente",
+        "today": "Hoy",
+        "yesterday": "Ayer"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "Las respuestas estarán disponibles cuando se confirme este mensaje.",
+        "youDoNotHavePermissionToPostInThisRoom": "No tienes permiso para publicar en esta sala"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "Mostrar ordenador",
+        "hideComputer": "Ocultar ordenador",
+        "showCanvas": "Mostrar panel",
+        "hideCanvas": "Ocultar panel",
+        "canvases": "Paneles interactivos",
+        "notifications": "Notificaciones",
+        "compact": "Compacto",
+        "threads": "Hilos",
+        "classic": "Clásico",
+        "invite": "Invitar",
+        "copyLink": "Copiar enlace",
+        "roomSettings": "Ajustes de la sala",
+        "jumpToTime": "Ir a una fecha y hora",
+        "leaveRoom": "Salir de la sala",
+        "pinnedMessages": "Mensajes fijados",
+        "members": "Miembros",
+        "hideMembers": "Ocultar miembros",
+        "showMembers": "Mostrar miembros",
+        "moreOptions": "Más opciones",
+        "back": "Atrás"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "Añadir filtro de etiqueta",
+        "tag": "+ etiqueta",
+        "availableTags": "Etiquetas disponibles",
+        "filterPresets": "Preajustes de filtros",
+        "preset": "Preajuste",
+        "searchThreads": "Buscar hilos",
+        "searchThreads2": "Buscar hilos...",
+        "roomViewMode": "Modo de vista de sala",
+        "natural": "Natural",
+        "lastReply": "Última respuesta",
+        "noThreadsMatchCurrentFilters": "Ningún hilo coincide con los filtros actuales.",
+        "resetAllThreadFilters": "Restablecer todos los filtros de hilos",
+        "reset": "Restablecer",
+        "threadFilters": "Filtros de hilos",
+        "statusFilters": "Filtros de estado",
+        "tagFilters": "Filtros de etiquetas",
+        "showingFilteredThreads_one": "Mostrando {{count}} de {{total}} hilo",
+        "showingFilteredThreads_other": "Mostrando {{count}} de {{total}} hilos",
+        "showingAllThreads_one": "Mostrando {{count}} hilo",
+        "showingAllThreads_other": "Mostrando {{count}} hilos",
+        "sortLockedSummary": "{{summary}} · Orden bloqueado",
+        "unlockSortOrder": "Desbloquear orden (actualmente {{sort}})",
+        "lockSortOrder": "Bloquear orden (actualmente {{sort}})",
+        "threadCount_one": "{{count}} hilo",
+        "threadCount_other": "{{count}} hilos",
+        "presets": {
+          "needs-attention": {
+            "label": "Requiere atención",
+            "description": "Hilos sin resolver, sin transmisión y sin programación"
+          },
+          "working": {
+            "label": "En curso",
+            "description": "En transmisión o programados: aquello en lo que estás trabajando ahora"
+          },
+          "review-queue": {
+            "label": "Cola de revisión",
+            "description": "Hilos sin resolver con respuestas sin leer"
+          },
+          "archived": {
+            "label": "Archivados",
+            "description": "Solo hilos resueltos"
+          },
+          "all": {
+            "label": "Todos",
+            "description": "Restablecer todos los filtros"
+          }
+        },
+        "showingFilteredThreads_many": "Mostrando {{count}} de {{total}} hilos",
+        "showingAllThreads_many": "Mostrando {{count}} hilos",
+        "threadCount_many": "{{count}} hilos"
+      },
+      "threadTagPicker": {
+        "addTag": "Añadir etiqueta",
+        "tag": "+ etiqueta",
+        "filterNew": "Filtrar/nueva...",
+        "filterOrCreateTag": "Filtrar o crear etiqueta",
+        "noMatches": "No hay coincidencias",
+        "typeToCreateATag": "Escribe para crear una etiqueta",
+        "createTag": "Crear «{{tag}}»"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "Ir al mensaje",
+        "message": "Mensaje"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> cambió el nombre de la sala",
+        "changedRoomTopic": "<sender>{{sender}}</sender> cambió el tema de la sala",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> cambió el avatar de la sala",
+        "joinedCall": "<sender>{{sender}}</sender> se unió a la llamada",
+        "endedCall": "<sender>{{sender}}</sender> terminó la llamada",
+        "sentStateEvent": "<sender>{{sender}}</sender> envió el evento de estado <eventType>{{eventType}}</eventType>",
+        "sentEvent": "<sender>{{sender}}</sender> envió el evento <eventType>{{eventType}}</eventType>"
+      },
+      "threadTagPill": {
+        "removeTag": "Eliminar etiqueta {{tag}}"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "dentro de {{count}} s",
+        "inMinutesSeconds": "dentro de {{minutes}} min {{seconds}} s",
+        "inMinutes": "dentro de {{count}} min",
+        "inHours": "dentro de {{count}} h",
+        "inHoursMinutes": "dentro de {{hours}} h {{minutes}} min",
+        "atTime": "a las {{time}}",
+        "scheduledTasks_one": "{{count}} tarea programada",
+        "scheduledTasks_other": "{{count}} tareas programadas",
+        "pendingScheduledTasks_one": "{{count}} tarea programada pendiente",
+        "pendingScheduledTasks_other": "{{count}} tareas programadas pendientes",
+        "scheduledTasksWithDetail": "{{tasks}}, {{detail}}",
+        "scheduledTasks_many": "{{count}} tareas programadas",
+        "pendingScheduledTasks_many": "{{count}} tareas programadas pendientes"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 respuestas",
+        "messageCount_one": "{{formattedCount}} mens.",
+        "messageCount_other": "{{formattedCount}} mens.",
+        "needsAttention": "Requiere atención",
+        "waitingOnResponse": "Esperando respuesta",
+        "agentStreaming": "El agente está transmitiendo",
+        "resolved": "Resuelto",
+        "idle": "Inactivo",
+        "threadStarted": "Hilo iniciado",
+        "noRepliesYet": "Aún no hay respuestas",
+        "messageCount_many": "{{formattedCount}} mens."
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "Siguiente tarea {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} tarea programada pendiente",
+        "pendingScheduledTasks_other": "{{count}} tareas programadas pendientes",
+        "pendingScheduledTasks_many": "{{count}} tareas programadas pendientes"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "Hilo cifrado",
+        "threadInRoom": "Hilo en {{roomName}}",
+        "thread": "Hilo"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "Ver ordenador",
+      "openMembers": "Abrir miembros",
+      "openCanvas": "Abrir panel",
+      "canvasDisabled": "Los paneles interactivos están desactivados en esta app.",
+      "canvasDuringCall": "Finaliza la llamada para abrir paneles interactivos.",
+      "computerUnavailable": "El ordenador de este agente no está disponible.",
+      "releaseControl": "Libera el control del ordenador antes de abrir otra vista.",
+      "openConversation": "Abre esta solicitud desde la conversación de la sala.",
+      "settingsUnavailable": "Desactiva el modo simple para abrir esta sección de ajustes."
+    },
+    "canvas": {
+      "panelLabel": "Panel interactivo",
+      "fromAgent": "Panel interactivo de {{agent}}",
+      "expand": "Expandir panel",
+      "close": "Cerrar panel",
+      "resize": "Cambiar el tamaño del panel",
+      "updated": "{{agent}} ha actualizado este panel.",
+      "loadUpdate": "Cargar actualización",
+      "version": "Versión {{current}} de {{total}}",
+      "previousVersion": "Versión anterior",
+      "nextVersion": "Versión siguiente",
+      "earlierVersion": "Esta es una versión anterior.",
+      "showLatest": "Ver la más reciente",
+      "loading": "Cargando panel…",
+      "loadFailed": "No se pudo cargar este panel.",
+      "retry": "Reintentar",
+      "escaped": "Este panel intentó salir de su entorno aislado y fue bloqueado.",
+      "reload": "Recargar panel",
+      "pageError": "Esta página informó de un error.",
+      "tellAgent": "Avisar a {{agent}}",
+      "errorsSent": "Errores enviados a {{agent}}.",
+      "errorsNotSent": "No se pudieron enviar los errores a {{agent}}.",
+      "sendTo": "Enviar a {{agent}}:",
+      "changeAnswer": "Para cambiar tu respuesta, descarta primero esta.",
+      "data": "Datos",
+      "send": "Enviar",
+      "discard": "Descartar",
+      "disclosure": "Creado por {{agent}}. No puede acceder a tu cuenta; lo que escribas aquí puede salir de este panel.",
+      "sharedNotice": "Guardado en esta sala: {{agent}} y los demás aquí pueden leer lo que escribas.",
+      "sending": "Enviando a {{agent}}…",
+      "sent": "Enviado a {{agent}}: {{label}}",
+      "sendFailed": "No se pudo enviar tu respuesta. Inténtalo de nuevo.",
+      "receiptData": "Mostrar los datos enviados al agente",
+      "unlabeled": "Enviado",
+      "notSent": "No enviado a {{agent}}: {{label}}"
+    },
+    "canvases": {
+      "title": "Paneles interactivos",
+      "note": "Paneles interactivos que tus agentes crearon para ti y que este navegador ha visto. Los fijados aparecen en todos tus dispositivos.",
+      "empty": "Aún no hay paneles interactivos. Cuando un agente te muestre uno, aparecerá aquí.",
+      "pinned": "Fijado",
+      "canvas": "Panel",
+      "thread": "Hilo",
+      "agent": "Agente",
+      "room": "Sala",
+      "updated": "Actualizado",
+      "created": "Creado",
+      "pin": "Fijar {{title}}",
+      "unpin": "Desfijar {{title}}",
+      "shared": "Compartido con el agente",
+      "saved": "Tiene tus valores"
+    },
+    "backgroundJobs": {
+      "running": "En ejecución: {{tool}}",
+      "awaitingApproval": "Esperando aprobación: {{tool}}",
+      "waiting": "Esperando aprobación",
+      "stoppingJob": "Deteniendo: {{tool}}",
+      "jobCount": "{{count}} tareas en segundo plano",
+      "subagent": "{{tool}} (subagente)",
+      "stopAll": "Detener todo",
+      "stopping": "Deteniendo…",
+      "stop": "Detener",
+      "stopJob": "Detener {{tool}}",
+      "stopFailed": "No se pudo detener {{tool}}. Inténtalo de nuevo.",
+      "stopAllFailed": "No se pudieron detener las tareas en segundo plano. Inténtalo de nuevo.",
+      "inRoom": "Tareas en segundo plano en curso"
+    }
+  },
+  "roomSchedules": {
+    "title": "Tareas programadas",
+    "openLabel": "Tareas programadas ({{total}})",
+    "empty": "No hay tareas programadas en esta sala.",
+    "emptyHint": "Pide a un agente de MindRoom que programe una tarea aquí.",
+    "prompt": "Instrucción",
+    "promptUnavailable": "Instrucción no disponible",
+    "once": "Una vez",
+    "recurring": "Periódica",
+    "executionTime": "Hora de ejecución",
+    "unknownTime": "Hora de ejecución no disponible",
+    "awaitingExecution": "Pendiente de ejecución",
+    "recurrence": "Recurrencia",
+    "silent": "Silenciosa",
+    "conditional": "Condicional",
+    "newThread": "Nuevo hilo",
+    "roomTimeline": "Cronología de la sala",
+    "openThread": "Abrir hilo",
+    "owner": "Propietario de la tarea",
+    "createdAt": "Creada",
+    "updatedAt": "Actualizada",
+    "model": "Modelo",
+    "inheritedModel": "De los ajustes del agente, la sala o el hilo",
+    "taskId": "ID de tarea",
+    "historyLimit": "Límite del historial",
+    "fullHistory": "Historial completo",
+    "noHistory": "Sin historial",
+    "recentMessages": "Mensajes recientes: {{total}}",
+    "close": "Cerrar"
+  },
+  "archivedRooms": {
+    "title": "Salas archivadas",
+    "archive": "Archivar sala",
+    "restore": "Restaurar sala",
+    "restoreNamed": "Restaurar {{room}}",
+    "failed": "No se pudieron guardar los cambios. Inténtalo de nuevo.",
+    "close": "Cerrar salas archivadas",
+    "description": "Oculta salas de la barra lateral sin salir de ellas. Ábrelas o restáuralas aquí.",
+    "empty": "No hay salas archivadas."
+  }
+}

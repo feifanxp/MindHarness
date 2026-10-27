@@ -88,6 +88,8 @@ from mindroom.orchestration.runtime import (
 )
 from mindroom.participation import ParticipationGate
 from mindroom.participation_judgment import create_participation_decider
+from mindroom.peer_discussion.policy import enforce_transcript_limits, room_discussion
+from mindroom.peer_discussion.runtime import speaking_slot
 from mindroom.post_response_effects import PostResponseEffectsSupport, ResponseOutcome
 from mindroom.reply_presentation import (
     AGENT_PLACEHOLDER,
@@ -5821,6 +5823,35 @@ class ResponseRunner:
         resolved_target: MessageTarget,
         early_placeholder_state: _EarlyPlaceholderState | None = None,
     ) -> str | None:
+        """Let opted-in peers read and answer one at a time under the normal reply lifecycle."""
+        enabled = (
+            request.participation is not None
+            and room_discussion(
+                self.deps.runtime.config,
+                self.deps.runtime_paths,
+                request.room_id,
+            )
+            is not None
+        )
+        async with speaking_slot(
+            self.deps.runtime_paths.storage_root,
+            request.room_id,
+            request.thread_id,
+            enabled=enabled,
+        ):
+            return await self._generate_response_in_speaking_slot_locked(
+                request,
+                resolved_target=resolved_target,
+                early_placeholder_state=early_placeholder_state,
+            )
+
+    async def _generate_response_in_speaking_slot_locked(
+        self,
+        request: ResponseRequest,
+        *,
+        resolved_target: MessageTarget,
+        early_placeholder_state: _EarlyPlaceholderState | None = None,
+    ) -> str | None:
         """Own participation before any fallible locked request preparation."""
         participation = _participation_for_request(request, self.deps.runtime.config, self.deps.runtime_paths)
         placeholder_state = early_placeholder_state or _EarlyPlaceholderState()
@@ -5973,6 +6004,16 @@ class ResponseRunner:
         if prepared_request is None:
             return None
         request = prepared_request
+        enforce_transcript_limits(
+            participation,
+            request.thread_history,
+            config=self.deps.runtime.config,
+            paths=self.deps.runtime_paths,
+            room_id=request.room_id,
+            agent_name=self.deps.agent_name,
+            source_event_ids=request.sources.logical_source_event_ids,
+            history_unavailable=request.requires_model_history_refresh,
+        )
         memory_prompt, memory_thread_history, model_prompt_text, model_thread_history = (
             _prepare_memory_and_model_context(
                 request.prompt,

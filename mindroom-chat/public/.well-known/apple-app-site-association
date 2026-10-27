@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["DNA6966LGZ.chat.mindroom.app"],
+        "components": [
+          { "/": "/connect", "comment": "Local MindRoom pairing" },
+          { "/": "/connect/" }
+        ]
+      }
+    ]
+  }
+}

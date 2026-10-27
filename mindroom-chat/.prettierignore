@@ -1,0 +1,11 @@
+dist
+node_modules
+package.json
+package-lock.json
+LICENSE
+README.md
+FORK_CHANGES.md
+src/app/mindroom/threads/__tests__/traces/
+
+# Preserve the generated MindRoom artwork from its source export.
+src/app/mindroom/messages/thinking-mark.svg

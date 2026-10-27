@@ -1,0 +1,117 @@
+diff --git a/node_modules/scheduler/cjs/mindroom-wakeup.js b/node_modules/scheduler/cjs/mindroom-wakeup.js
+new file mode 100644
+index 0000000..b25294c
+--- /dev/null
++++ b/node_modules/scheduler/cjs/mindroom-wakeup.js
+@@ -0,0 +1,78 @@
++'use strict';
++
++// MindRoom: WebKit brokers MessagePorts through its networking process, and
++// when that process exits existing ports silently stop delivering. A lost
++// wakeup would leave Scheduler's isMessageLoopRunning set forever, so replace
++// a channel whose wakeup has not arrived after a timer-driven grace period.
++// Both Scheduler builds use this module so their recovery cannot drift.
++var WAKEUP_TIMEOUT_MS = 250;
++var WAKEUP_REPLACED_EVENT = 'mindroom:scheduler-wakeup-replaced';
++
++function notifyWakeupReplaced(elapsedMs) {
++  try {
++    dispatchEvent(new CustomEvent(WAKEUP_REPLACED_EVENT, { detail: { elapsedMs: elapsedMs } }));
++  } catch (error) {
++    // Diagnostics must not affect scheduling, including where the DOM event API is missing.
++  }
++}
++
++module.exports = function createWakeupScheduler(performWork, setTimer, now) {
++  var receiver = null;
++  var port = null;
++  var pending = false;
++  var postedAt = -1;
++  var watchdogID = -1;
++
++  function receiveWakeup() {
++    pending = false;
++    performWork();
++  }
++
++  function connectWakeupPort() {
++    // A listening port stays alive in WebKit, and a merely delayed wakeup has
++    // been posted again, so close the replaced pair.
++    if (receiver !== null) {
++      receiver.close();
++      port.close();
++    }
++
++    var channel = new MessageChannel();
++    channel.port1.onmessage = receiveWakeup;
++    receiver = channel.port1;
++    port = channel.port2;
++  }
++
++  function armWatchdog(ms) {
++    if (watchdogID === -1) watchdogID = setTimer(checkWakeup, ms);
++  }
++
++  function postWakeup(reconnect) {
++    postedAt = now();
++    // Arm first so a failing port operation still retries.
++    armWatchdog(WAKEUP_TIMEOUT_MS);
++    if (reconnect) connectWakeupPort();
++    port.postMessage(null);
++  }
++
++  function checkWakeup() {
++    watchdogID = -1;
++    if (!pending) return;
++    var elapsed = now() - postedAt;
++
++    if (elapsed < WAKEUP_TIMEOUT_MS) {
++      armWatchdog(WAKEUP_TIMEOUT_MS - elapsed);
++      return;
++    }
++
++    postWakeup(true);
++    notifyWakeupReplaced(elapsed);
++  }
++
++  connectWakeupPort();
++
++  return function schedulePerformWorkUntilDeadline() {
++    if (pending) return;
++    pending = true;
++    postWakeup(false);
++  };
++};
+diff --git a/node_modules/scheduler/cjs/scheduler.development.js b/node_modules/scheduler/cjs/scheduler.development.js
+index 21bfb25..a7afee1 100644
+--- a/node_modules/scheduler/cjs/scheduler.development.js
++++ b/node_modules/scheduler/cjs/scheduler.development.js
+@@ -566,13 +566,8 @@ if (typeof localSetImmediate === 'function') {
+ } else if (typeof MessageChannel !== 'undefined') {
+   // DOM and Worker environments.
+   // We prefer MessageChannel because of the 4ms setTimeout clamping.
+-  var channel = new MessageChannel();
+-  var port = channel.port2;
+-  channel.port1.onmessage = performWorkUntilDeadline;
+-
+-  schedulePerformWorkUntilDeadline = function () {
+-    port.postMessage(null);
+-  };
++  // MindRoom: replace a channel whose wakeup WebKit lost; see mindroom-wakeup.js.
++  schedulePerformWorkUntilDeadline = require('./mindroom-wakeup.js')(performWorkUntilDeadline, localSetTimeout, exports.unstable_now);
+ } else {
+   // We should only fallback here in non-browser environments.
+   schedulePerformWorkUntilDeadline = function () {
+diff --git a/node_modules/scheduler/cjs/scheduler.production.min.js b/node_modules/scheduler/cjs/scheduler.production.min.js
+index 7f84d25..3f508bd 100644
+--- a/node_modules/scheduler/cjs/scheduler.production.min.js
++++ b/node_modules/scheduler/cjs/scheduler.production.min.js
+@@ -11,7 +11,7 @@
+ function g(a,b){var c=a.sortIndex-b.sortIndex;return 0!==c?c:a.id-b.id}if("object"===typeof performance&&"function"===typeof performance.now){var l=performance;exports.unstable_now=function(){return l.now()}}else{var p=Date,q=p.now();exports.unstable_now=function(){return p.now()-q}}var r=[],t=[],u=1,v=null,y=3,z=!1,A=!1,B=!1,D="function"===typeof setTimeout?setTimeout:null,E="function"===typeof clearTimeout?clearTimeout:null,F="undefined"!==typeof setImmediate?setImmediate:null;
+ "undefined"!==typeof navigator&&void 0!==navigator.scheduling&&void 0!==navigator.scheduling.isInputPending&&navigator.scheduling.isInputPending.bind(navigator.scheduling);function G(a){for(var b=h(t);null!==b;){if(null===b.callback)k(t);else if(b.startTime<=a)k(t),b.sortIndex=b.expirationTime,f(r,b);else break;b=h(t)}}function H(a){B=!1;G(a);if(!A)if(null!==h(r))A=!0,I(J);else{var b=h(t);null!==b&&K(H,b.startTime-a)}}
+ function J(a,b){A=!1;B&&(B=!1,E(L),L=-1);z=!0;var c=y;try{G(b);for(v=h(r);null!==v&&(!(v.expirationTime>b)||a&&!M());){var d=v.callback;if("function"===typeof d){v.callback=null;y=v.priorityLevel;var e=d(v.expirationTime<=b);b=exports.unstable_now();"function"===typeof e?v.callback=e:v===h(r)&&k(r);G(b)}else k(r);v=h(r)}if(null!==v)var w=!0;else{var m=h(t);null!==m&&K(H,m.startTime-b);w=!1}return w}finally{v=null,y=c,z=!1}}var N=!1,O=null,L=-1,P=5,Q=-1;
+-function M(){return exports.unstable_now()-Q<P?!1:!0}function R(){if(null!==O){var a=exports.unstable_now();Q=a;var b=!0;try{b=O(!0,a)}finally{b?S():(N=!1,O=null)}}else N=!1}var S;if("function"===typeof F)S=function(){F(R)};else if("undefined"!==typeof MessageChannel){var T=new MessageChannel,U=T.port2;T.port1.onmessage=R;S=function(){U.postMessage(null)}}else S=function(){D(R,0)};function I(a){O=a;N||(N=!0,S())}function K(a,b){L=D(function(){a(exports.unstable_now())},b)}
++function M(){return exports.unstable_now()-Q<P?!1:!0}function R(){if(null!==O){var a=exports.unstable_now();Q=a;var b=!0;try{b=O(!0,a)}finally{b?S():(N=!1,O=null)}}else N=!1}var S;if("function"===typeof F)S=function(){F(R)};else if("undefined"!==typeof MessageChannel){S=require("./mindroom-wakeup.js")(R,D,exports.unstable_now)}else S=function(){D(R,0)};function I(a){O=a;N||(N=!0,S())}function K(a,b){L=D(function(){a(exports.unstable_now())},b)}
+ exports.unstable_IdlePriority=5;exports.unstable_ImmediatePriority=1;exports.unstable_LowPriority=4;exports.unstable_NormalPriority=3;exports.unstable_Profiling=null;exports.unstable_UserBlockingPriority=2;exports.unstable_cancelCallback=function(a){a.callback=null};exports.unstable_continueExecution=function(){A||z||(A=!0,I(J))};
+ exports.unstable_forceFrameRate=function(a){0>a||125<a?console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported"):P=0<a?Math.floor(1E3/a):5};exports.unstable_getCurrentPriorityLevel=function(){return y};exports.unstable_getFirstCallbackNode=function(){return h(r)};exports.unstable_next=function(a){switch(y){case 1:case 2:case 3:var b=3;break;default:b=y}var c=y;y=b;try{return a()}finally{y=c}};exports.unstable_pauseExecution=function(){};
+ exports.unstable_requestPaint=function(){};exports.unstable_runWithPriority=function(a,b){switch(a){case 1:case 2:case 3:case 4:case 5:break;default:a=3}var c=y;y=a;try{return b()}finally{y=c}};

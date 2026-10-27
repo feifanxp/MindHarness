@@ -1,0 +1,12 @@
+"MSG_FROM_USER_WITH_CONTENT" = "%1$@: %2$@";
+"MSG_FROM_USER_IN_ROOM_WITH_CONTENT" = "%1$@ in %2$@: %3$@";
+"MSG_FROM_USER" = "Nachricht von %1$@";
+"MSG_FROM_USER_IN_ROOM" = "%1$@ in %2$@";
+"ACTION_FROM_USER" = "%1$@ %2$@";
+"ACTION_FROM_USER_IN_ROOM" = "%2$@ %3$@ in %1$@";
+"IMAGE_FROM_USER" = "%1$@ hat ein Bild gesendet: %2$@";
+"IMAGE_FROM_USER_IN_ROOM" = "%1$@ hat ein Bild in %3$@ gesendet: %2$@";
+"VOICE_CALL_FROM_USER" = "Sprachanruf von %1$@";
+"VIDEO_CALL_FROM_USER" = "Videoanruf von %1$@";
+"USER_INVITE_TO_NAMED_ROOM" = "%1$@ hat dich in %2$@ eingeladen";
+"USER_INVITE_TO_CHAT" = "%1$@ hat dich zu einem Chat eingeladen";

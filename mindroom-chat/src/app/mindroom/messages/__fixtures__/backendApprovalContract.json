@@ -1,0 +1,541 @@
+{
+  "original": {
+    "msgtype": "io.mindroom.tool_approval",
+    "body": "\ud83d\udd12 Approval required: workspace_call_tool",
+    "tool_name": "workspace_call_tool",
+    "arguments": {
+      "tool_name": "write_note",
+      "arguments": {
+        "text": "preview"
+      }
+    },
+    "status": "pending",
+    "approval_id": "approval-contract",
+    "approver_user_id": "@alice:example.org",
+    "requester_id": "@alice:example.org",
+    "requested_at": "2026-09-12T12:00:00+00:00",
+    "expires_at": "2026-09-12T13:00:00+00:00",
+    "thread_id": "$thread",
+    "agent_name": "assistant",
+    "arguments_truncated": true,
+    "full_arguments": {
+      "tool_name": "write_note",
+      "arguments": {
+        "text": "The complete reviewed note."
+      }
+    },
+    "approval_scope": {
+      "id": "scope-contract",
+      "entity_name": "assistant",
+      "invoking_agent": "assistant",
+      "operation": {
+        "tool_name": "workspace_call_tool",
+        "mcp_server_id": "workspace",
+        "mcp_tool_name": "write_note"
+      }
+    },
+    "auto_approve_options": [300, 600, 1800],
+    "response_event_id": "$response",
+    "continuation_id": "continuation-contract",
+    "continuation_generation": 0,
+    "tool_call_id": "call-contract"
+  },
+  "deliveries": {
+    "once": {
+      "msgtype": "io.mindroom.tool_approval",
+      "body": "Approved: workspace_call_tool",
+      "tool_name": "workspace_call_tool",
+      "arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "preview"
+        }
+      },
+      "status": "approved",
+      "approval_id": "approval-contract",
+      "approver_user_id": "@alice:example.org",
+      "requester_id": "@alice:example.org",
+      "requested_at": "2026-09-12T12:00:00+00:00",
+      "expires_at": "2026-09-12T13:00:00+00:00",
+      "thread_id": "$thread",
+      "agent_name": "assistant",
+      "arguments_truncated": true,
+      "approval_scope": {
+        "id": "scope-contract",
+        "entity_name": "assistant",
+        "invoking_agent": "assistant",
+        "operation": {
+          "tool_name": "workspace_call_tool",
+          "mcp_server_id": "workspace",
+          "mcp_tool_name": "write_note"
+        }
+      },
+      "response_event_id": "$response",
+      "continuation_id": "continuation-contract",
+      "continuation_generation": 0,
+      "tool_call_id": "call-contract",
+      "approvable": false,
+      "resolved_by": "@alice:example.org",
+      "resolved_at": "2026-09-12T12:01:00+00:00",
+      "approval_provenance": {
+        "kind": "once"
+      },
+      "m.new_content": {
+        "msgtype": "io.mindroom.tool_approval",
+        "body": "Approved: workspace_call_tool",
+        "tool_name": "workspace_call_tool",
+        "arguments": {
+          "tool_name": "write_note",
+          "arguments": {
+            "text": "preview"
+          }
+        },
+        "status": "approved",
+        "approval_id": "approval-contract",
+        "approver_user_id": "@alice:example.org",
+        "requester_id": "@alice:example.org",
+        "requested_at": "2026-09-12T12:00:00+00:00",
+        "expires_at": "2026-09-12T13:00:00+00:00",
+        "thread_id": "$thread",
+        "agent_name": "assistant",
+        "arguments_truncated": true,
+        "approval_scope": {
+          "id": "scope-contract",
+          "entity_name": "assistant",
+          "invoking_agent": "assistant",
+          "operation": {
+            "tool_name": "workspace_call_tool",
+            "mcp_server_id": "workspace",
+            "mcp_tool_name": "write_note"
+          }
+        },
+        "response_event_id": "$response",
+        "continuation_id": "continuation-contract",
+        "continuation_generation": 0,
+        "tool_call_id": "call-contract",
+        "approvable": false,
+        "resolved_by": "@alice:example.org",
+        "resolved_at": "2026-09-12T12:01:00+00:00",
+        "approval_provenance": {
+          "kind": "once"
+        }
+      },
+      "m.relates_to": {
+        "rel_type": "m.replace",
+        "event_id": "$origin"
+      }
+    },
+    "denied": {
+      "msgtype": "io.mindroom.tool_approval",
+      "body": "Denied: workspace_call_tool",
+      "tool_name": "workspace_call_tool",
+      "arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "preview"
+        }
+      },
+      "status": "denied",
+      "approval_id": "approval-contract",
+      "approver_user_id": "@alice:example.org",
+      "requester_id": "@alice:example.org",
+      "requested_at": "2026-09-12T12:00:00+00:00",
+      "expires_at": "2026-09-12T13:00:00+00:00",
+      "thread_id": "$thread",
+      "agent_name": "assistant",
+      "arguments_truncated": true,
+      "approval_scope": {
+        "id": "scope-contract",
+        "entity_name": "assistant",
+        "invoking_agent": "assistant",
+        "operation": {
+          "tool_name": "workspace_call_tool",
+          "mcp_server_id": "workspace",
+          "mcp_tool_name": "write_note"
+        }
+      },
+      "response_event_id": "$response",
+      "continuation_id": "continuation-contract",
+      "continuation_generation": 0,
+      "tool_call_id": "call-contract",
+      "approvable": false,
+      "resolved_by": "@alice:example.org",
+      "resolved_at": "2026-09-12T12:01:00+00:00",
+      "resolution_reason": "Wrong workspace",
+      "m.new_content": {
+        "msgtype": "io.mindroom.tool_approval",
+        "body": "Denied: workspace_call_tool",
+        "tool_name": "workspace_call_tool",
+        "arguments": {
+          "tool_name": "write_note",
+          "arguments": {
+            "text": "preview"
+          }
+        },
+        "status": "denied",
+        "approval_id": "approval-contract",
+        "approver_user_id": "@alice:example.org",
+        "requester_id": "@alice:example.org",
+        "requested_at": "2026-09-12T12:00:00+00:00",
+        "expires_at": "2026-09-12T13:00:00+00:00",
+        "thread_id": "$thread",
+        "agent_name": "assistant",
+        "arguments_truncated": true,
+        "approval_scope": {
+          "id": "scope-contract",
+          "entity_name": "assistant",
+          "invoking_agent": "assistant",
+          "operation": {
+            "tool_name": "workspace_call_tool",
+            "mcp_server_id": "workspace",
+            "mcp_tool_name": "write_note"
+          }
+        },
+        "response_event_id": "$response",
+        "continuation_id": "continuation-contract",
+        "continuation_generation": 0,
+        "tool_call_id": "call-contract",
+        "approvable": false,
+        "resolved_by": "@alice:example.org",
+        "resolved_at": "2026-09-12T12:01:00+00:00",
+        "resolution_reason": "Wrong workspace"
+      },
+      "m.relates_to": {
+        "rel_type": "m.replace",
+        "event_id": "$origin"
+      }
+    },
+    "timed_origin": {
+      "msgtype": "io.mindroom.tool_approval",
+      "body": "Approved: workspace_call_tool",
+      "tool_name": "workspace_call_tool",
+      "arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "preview"
+        }
+      },
+      "status": "approved",
+      "approval_id": "approval-contract",
+      "approver_user_id": "@alice:example.org",
+      "requester_id": "@alice:example.org",
+      "requested_at": "2026-09-12T12:00:00+00:00",
+      "expires_at": "2026-09-12T13:00:00+00:00",
+      "thread_id": "$thread",
+      "agent_name": "assistant",
+      "arguments_truncated": true,
+      "approval_scope": {
+        "id": "scope-contract",
+        "entity_name": "assistant",
+        "invoking_agent": "assistant",
+        "operation": {
+          "tool_name": "workspace_call_tool",
+          "mcp_server_id": "workspace",
+          "mcp_tool_name": "write_note"
+        }
+      },
+      "response_event_id": "$response",
+      "continuation_id": "continuation-contract",
+      "continuation_generation": 0,
+      "tool_call_id": "call-contract",
+      "approvable": false,
+      "resolved_by": "@alice:example.org",
+      "resolved_at": "2026-09-12T12:01:00+00:00",
+      "approval_provenance": {
+        "kind": "timed_grant",
+        "grant_id": "grant-contract",
+        "grant_card_event_id": "$origin",
+        "granted_by": "@alice:example.org",
+        "granted_at": "2026-09-12T12:01:00+00:00",
+        "duration_seconds": 600,
+        "expires_at": "2026-09-12T12:11:00+00:00"
+      },
+      "auto_approval": {
+        "grant_id": "grant-contract",
+        "expires_at": "2026-09-12T12:11:00+00:00",
+        "revoked_at": null
+      },
+      "m.new_content": {
+        "msgtype": "io.mindroom.tool_approval",
+        "body": "Approved: workspace_call_tool",
+        "tool_name": "workspace_call_tool",
+        "arguments": {
+          "tool_name": "write_note",
+          "arguments": {
+            "text": "preview"
+          }
+        },
+        "status": "approved",
+        "approval_id": "approval-contract",
+        "approver_user_id": "@alice:example.org",
+        "requester_id": "@alice:example.org",
+        "requested_at": "2026-09-12T12:00:00+00:00",
+        "expires_at": "2026-09-12T13:00:00+00:00",
+        "thread_id": "$thread",
+        "agent_name": "assistant",
+        "arguments_truncated": true,
+        "approval_scope": {
+          "id": "scope-contract",
+          "entity_name": "assistant",
+          "invoking_agent": "assistant",
+          "operation": {
+            "tool_name": "workspace_call_tool",
+            "mcp_server_id": "workspace",
+            "mcp_tool_name": "write_note"
+          }
+        },
+        "response_event_id": "$response",
+        "continuation_id": "continuation-contract",
+        "continuation_generation": 0,
+        "tool_call_id": "call-contract",
+        "approvable": false,
+        "resolved_by": "@alice:example.org",
+        "resolved_at": "2026-09-12T12:01:00+00:00",
+        "approval_provenance": {
+          "kind": "timed_grant",
+          "grant_id": "grant-contract",
+          "grant_card_event_id": "$origin",
+          "granted_by": "@alice:example.org",
+          "granted_at": "2026-09-12T12:01:00+00:00",
+          "duration_seconds": 600,
+          "expires_at": "2026-09-12T12:11:00+00:00"
+        },
+        "auto_approval": {
+          "grant_id": "grant-contract",
+          "expires_at": "2026-09-12T12:11:00+00:00",
+          "revoked_at": null
+        }
+      },
+      "m.relates_to": {
+        "rel_type": "m.replace",
+        "event_id": "$origin"
+      }
+    },
+    "timed_swept": {
+      "msgtype": "io.mindroom.tool_approval",
+      "body": "Approved: workspace_call_tool",
+      "tool_name": "workspace_call_tool",
+      "arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "preview"
+        }
+      },
+      "status": "approved",
+      "approval_id": "approval-contract",
+      "approver_user_id": "@alice:example.org",
+      "requester_id": "@alice:example.org",
+      "requested_at": "2026-09-12T12:00:00+00:00",
+      "expires_at": "2026-09-12T13:00:00+00:00",
+      "thread_id": "$thread",
+      "agent_name": "assistant",
+      "arguments_truncated": true,
+      "approval_scope": {
+        "id": "scope-contract",
+        "entity_name": "assistant",
+        "invoking_agent": "assistant",
+        "operation": {
+          "tool_name": "workspace_call_tool",
+          "mcp_server_id": "workspace",
+          "mcp_tool_name": "write_note"
+        }
+      },
+      "response_event_id": "$response",
+      "continuation_id": "continuation-contract",
+      "continuation_generation": 0,
+      "tool_call_id": "call-contract",
+      "approvable": false,
+      "resolved_by": "@alice:example.org",
+      "resolved_at": "2026-09-12T12:01:00+00:00",
+      "approval_provenance": {
+        "kind": "timed_grant",
+        "grant_id": "grant-contract",
+        "grant_card_event_id": "$origin",
+        "granted_by": "@alice:example.org",
+        "granted_at": "2026-09-12T12:01:00+00:00",
+        "duration_seconds": 600,
+        "expires_at": "2026-09-12T12:11:00+00:00"
+      },
+      "m.new_content": {
+        "msgtype": "io.mindroom.tool_approval",
+        "body": "Approved: workspace_call_tool",
+        "tool_name": "workspace_call_tool",
+        "arguments": {
+          "tool_name": "write_note",
+          "arguments": {
+            "text": "preview"
+          }
+        },
+        "status": "approved",
+        "approval_id": "approval-contract",
+        "approver_user_id": "@alice:example.org",
+        "requester_id": "@alice:example.org",
+        "requested_at": "2026-09-12T12:00:00+00:00",
+        "expires_at": "2026-09-12T13:00:00+00:00",
+        "thread_id": "$thread",
+        "agent_name": "assistant",
+        "arguments_truncated": true,
+        "approval_scope": {
+          "id": "scope-contract",
+          "entity_name": "assistant",
+          "invoking_agent": "assistant",
+          "operation": {
+            "tool_name": "workspace_call_tool",
+            "mcp_server_id": "workspace",
+            "mcp_tool_name": "write_note"
+          }
+        },
+        "response_event_id": "$response",
+        "continuation_id": "continuation-contract",
+        "continuation_generation": 0,
+        "tool_call_id": "call-contract",
+        "approvable": false,
+        "resolved_by": "@alice:example.org",
+        "resolved_at": "2026-09-12T12:01:00+00:00",
+        "approval_provenance": {
+          "kind": "timed_grant",
+          "grant_id": "grant-contract",
+          "grant_card_event_id": "$origin",
+          "granted_by": "@alice:example.org",
+          "granted_at": "2026-09-12T12:01:00+00:00",
+          "duration_seconds": 600,
+          "expires_at": "2026-09-12T12:11:00+00:00"
+        }
+      },
+      "m.relates_to": {
+        "rel_type": "m.replace",
+        "event_id": "$origin"
+      }
+    },
+    "automatic": {
+      "msgtype": "io.mindroom.tool_approval",
+      "body": "Auto-approved: workspace_call_tool",
+      "tool_name": "workspace_call_tool",
+      "arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "preview"
+        }
+      },
+      "status": "approved",
+      "approval_id": "approval-contract",
+      "approver_user_id": "@alice:example.org",
+      "requester_id": "@alice:example.org",
+      "requested_at": "2026-09-12T12:00:00+00:00",
+      "expires_at": "2026-09-12T13:00:00+00:00",
+      "thread_id": "$thread",
+      "agent_name": "assistant",
+      "arguments_truncated": true,
+      "full_arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "The complete reviewed note."
+        }
+      },
+      "approval_scope": {
+        "id": "scope-contract",
+        "entity_name": "assistant",
+        "invoking_agent": "assistant",
+        "operation": {
+          "tool_name": "workspace_call_tool",
+          "mcp_server_id": "workspace",
+          "mcp_tool_name": "write_note"
+        }
+      },
+      "response_event_id": "$response",
+      "continuation_id": "continuation-contract",
+      "continuation_generation": 0,
+      "tool_call_id": "call-contract",
+      "approvable": false,
+      "resolved_by": "@alice:example.org",
+      "resolved_at": "2026-09-12T12:01:00+00:00",
+      "approval_provenance": {
+        "kind": "timed_grant",
+        "grant_id": "grant-contract",
+        "grant_card_event_id": "$origin",
+        "granted_by": "@alice:example.org",
+        "granted_at": "2026-09-12T12:01:00+00:00",
+        "duration_seconds": 600,
+        "expires_at": "2026-09-12T12:11:00+00:00"
+      }
+    },
+    "expired": {
+      "msgtype": "io.mindroom.tool_approval",
+      "body": "Expired: workspace_call_tool",
+      "tool_name": "workspace_call_tool",
+      "arguments": {
+        "tool_name": "write_note",
+        "arguments": {
+          "text": "preview"
+        }
+      },
+      "status": "expired",
+      "approval_id": "approval-contract",
+      "approver_user_id": "@alice:example.org",
+      "requester_id": "@alice:example.org",
+      "requested_at": "2026-09-12T12:00:00+00:00",
+      "expires_at": "2026-09-12T13:00:00+00:00",
+      "thread_id": "$thread",
+      "agent_name": "assistant",
+      "arguments_truncated": true,
+      "approval_scope": {
+        "id": "scope-contract",
+        "entity_name": "assistant",
+        "invoking_agent": "assistant",
+        "operation": {
+          "tool_name": "workspace_call_tool",
+          "mcp_server_id": "workspace",
+          "mcp_tool_name": "write_note"
+        }
+      },
+      "response_event_id": "$response",
+      "continuation_id": "continuation-contract",
+      "continuation_generation": 0,
+      "tool_call_id": "call-contract",
+      "approvable": false,
+      "resolved_by": null,
+      "resolution_reason": "Tool approval request timed out.",
+      "m.new_content": {
+        "msgtype": "io.mindroom.tool_approval",
+        "body": "Expired: workspace_call_tool",
+        "tool_name": "workspace_call_tool",
+        "arguments": {
+          "tool_name": "write_note",
+          "arguments": {
+            "text": "preview"
+          }
+        },
+        "status": "expired",
+        "approval_id": "approval-contract",
+        "approver_user_id": "@alice:example.org",
+        "requester_id": "@alice:example.org",
+        "requested_at": "2026-09-12T12:00:00+00:00",
+        "expires_at": "2026-09-12T13:00:00+00:00",
+        "thread_id": "$thread",
+        "agent_name": "assistant",
+        "arguments_truncated": true,
+        "approval_scope": {
+          "id": "scope-contract",
+          "entity_name": "assistant",
+          "invoking_agent": "assistant",
+          "operation": {
+            "tool_name": "workspace_call_tool",
+            "mcp_server_id": "workspace",
+            "mcp_tool_name": "write_note"
+          }
+        },
+        "response_event_id": "$response",
+        "continuation_id": "continuation-contract",
+        "continuation_generation": 0,
+        "tool_call_id": "call-contract",
+        "approvable": false,
+        "resolved_by": null,
+        "resolution_reason": "Tool approval request timed out."
+      },
+      "m.relates_to": {
+        "rel_type": "m.replace",
+        "event_id": "$origin"
+      }
+    }
+  }
+}

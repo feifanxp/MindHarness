@@ -55,6 +55,13 @@ Entries starting with `!` are existing Matrix room IDs, which are joined as they
 A field set under `rooms.<key>` replaces the default, and a list replaces the whole default list instead of merging with it, so an empty list removes the inherited invitations or admins for that room.
 MindRoom logs `Administrators, room invitees, or room admins are on another homeserver; remove them unless you trust them` when any of these users is on a different homeserver.
 
+Set `rooms.<key>.peer_discussion: {}` to let authorized individual agents independently decide whether to join a discussion, including replying to one another without mentions.
+Agents speak under their own identities, take turns, and read the latest thread before deciding; the router does not pick a speaker and implicit teams do not form in these rooms.
+Explicitly mentioning a named team still invokes that team.
+`peer_discussion` defaults to `null` (disabled); its `max_agent_turns` integer defaults to `6` (range `1–12`) and its `max_turns_per_agent` integer defaults to `2` (range `1–4`), limiting consecutive agent replies until a human posts again.
+An agent may stay silent; these limits are ceilings, not required rounds or guarantees of participation.
+Newer human messages supersede waiting replies to older messages, and the participation decision respects requests to pause.
+
 MindRoom applies this policy to new and existing managed rooms on startup and on every config reload:
 
 - `invite_users` is the desired invitation list, so a listed user who leaves or is kicked is invited again; remove the user from configuration before intentionally removing access.

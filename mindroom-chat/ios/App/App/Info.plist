@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>MindRoom Chat</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.mindroom-ai.app.oauth</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>mindroom</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<!-- Keep voice-call audio alive when the screen locks or the app backgrounds -->
+		<string>audio</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<!-- App uses exempt encryption only (TLS and Matrix E2EE libraries) -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<!-- Restrict cleartext to local-network use only -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<!-- Local network access prompt -->
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>MindRoom Chat needs to connect to your local Matrix homeserver.</string>
+	<!-- Microphone access for voice messages and voice calls -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MindRoom Chat needs microphone access to record voice messages and talk in voice calls.</string>
+	<!-- Camera access for capturing attachments -->
+	<key>NSCameraUsageDescription</key>
+	<string>MindRoom Chat needs camera access to capture photos and videos to send in chats.</string>
+	<!-- Photo Library access for sending media attachments -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MindRoom Chat needs photo library access so you can share photos and videos in chats.</string>
+	<!-- Photo Library add access for saving media generated in chat flows -->
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MindRoom Chat needs permission to save images and videos from chats to your photo library.</string>
+</dict>
+</plist>

@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "MindRoom Chat 需要连接到你的本地 Matrix 主服务器。";
+"NSMicrophoneUsageDescription" = "MindRoom Chat 需要访问麦克风，以便录制语音消息和进行语音通话。";
+"NSCameraUsageDescription" = "MindRoom Chat 需要访问相机，以便拍摄照片和视频并在聊天中发送。";
+"NSPhotoLibraryUsageDescription" = "MindRoom Chat 需要访问照片图库，以便你在聊天中分享照片和视频。";
+"NSPhotoLibraryAddUsageDescription" = "MindRoom Chat 需要获得权限，才能将聊天中的图片和视频保存到你的照片图库。";

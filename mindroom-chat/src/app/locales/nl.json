@@ -1,0 +1,3123 @@
+{
+  "messageTable": {
+    "label": "Scrollbare tabel",
+    "scrollHint": "Horizontaal scrollen"
+  },
+  "messageCodeBlock": {
+    "actions": "Codeblokacties",
+    "code": "Code",
+    "language": "Taal: {{language}}",
+    "copy": "Code kopiëren",
+    "copied": "Gekopieerd",
+    "wrap": "Regels laten teruglopen",
+    "expand": "Uitvouwen",
+    "collapse": "Inklappen"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " heeft de kamernaam gewijzigd"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "Modern",
+      "compact": "Compact",
+      "bubble": "Tekstballonnen"
+    },
+    "messageSpacing": {
+      "none": "Geen",
+      "ultraSmall": "Piepklein",
+      "extraSmall": "Extra klein",
+      "small": "Klein",
+      "normal": "Normaal",
+      "large": "Groot"
+    },
+    "dateFormat": {
+      "custom": "Aangepast"
+    },
+    "themeName": {
+      "light": "Licht",
+      "silver": "Zilver",
+      "dark": "Donker",
+      "midnight": "Middernacht",
+      "butter": "Boter"
+    },
+    "prefetchScope": {
+      "myHomeserver": "Mijn homeserver",
+      "allRooms": "Alle kamers",
+      "currentRoomOnly": "Alleen huidige kamer"
+    }
+  },
+  "settings": {
+    "title": "Instellingen",
+    "logout": "Uitloggen",
+    "nav": {
+      "general": "Algemeen",
+      "account": "Account",
+      "notifications": "Meldingen",
+      "devices": "Apparaten",
+      "emojisStickers": "Emoji's & stickers",
+      "developerTools": "Ontwikkelaarstools",
+      "about": "Over"
+    },
+    "general": {
+      "title": "Algemeen",
+      "interface": {
+        "sectionTitle": "Interface",
+        "simpleMode": "Eenvoudige modus",
+        "simpleModeDescription": "Verbergt geavanceerde functies zoals het commandopalet en threadfilters. Gesynchroniseerd tussen je apparaten.",
+        "showCanvasesInSidebar": "Interactieve panelen in de zijbalk tonen",
+        "showCanvasesInSidebarDescription": "Toont een knop voor de interactieve panelen van je agents zodra je er een hebt. Gesynchroniseerd tussen je apparaten.",
+        "saveFailed": "De wijziging kon niet worden opgeslagen. Controleer je verbinding en probeer het opnieuw."
+      },
+      "language": {
+        "sectionTitle": "Taal",
+        "appLanguage": "Taal van de app",
+        "appLanguageDescription": "Geldt voor menu's en interfaceteksten. Berichten worden nooit vertaald."
+      },
+      "appearance": {
+        "sectionTitle": "Uiterlijk",
+        "systemTheme": "Systeemthema",
+        "systemThemeDescription": "Kiest automatisch tussen een licht en donker thema op basis van de systeemvoorkeur.",
+        "lightTheme": "Licht thema:",
+        "darkTheme": "Donker thema:",
+        "theme": "Thema",
+        "themeDescription": "Thema dat wordt gebruikt wanneer het systeemthema is uitgeschakeld.",
+        "monochromeMode": "Monochrome modus",
+        "twitterEmoji": "Twitter-emoji",
+        "pageZoom": "Paginazoom"
+      },
+      "dateTime": {
+        "sectionTitle": "Datum & tijd",
+        "hour24Clock": "24-uursnotatie",
+        "dateFormat": "Datumnotatie",
+        "save": "Opslaan",
+        "formatHints": {
+          "title": "Opmaak",
+          "year": "Jaar",
+          "twoDigitYear": "Tweecijferig jaar",
+          "fourDigitYear": "Viercijferig jaar",
+          "month": "Maand",
+          "theMonth": "De maand",
+          "twoDigitMonth": "Tweecijferige maand",
+          "shortMonthName": "Korte maandnaam",
+          "fullMonthName": "Volledige maandnaam",
+          "dayOfMonth": "Dag van de maand",
+          "theDayOfMonth": "Dag van de maand",
+          "twoDigitDayOfMonth": "Tweecijferige dag van de maand",
+          "dayOfWeek": "Dag van de week",
+          "theDayOfWeek": "Dag van de week (zondag = 0)",
+          "twoLetterDayName": "Tweeletterige dagnaam",
+          "shortDayName": "Korte dagnaam",
+          "fullDayName": "Volledige dagnaam"
+        }
+      },
+      "editor": {
+        "sectionTitle": "Editor",
+        "enterForNewline": "ENTER voor nieuwe regel",
+        "enterForNewlineDescription": "Verstuur met {{sendKey}} + ENTER en begin een nieuwe regel met ENTER.",
+        "markdownFormatting": "Markdown-opmaak",
+        "hideActivity": "Typstatus & leesbevestigingen verbergen",
+        "hideActivityDescription": "Schakelt typstatus en leesbevestigingen uit om je activiteit privé te houden."
+      },
+      "messages": {
+        "sectionTitle": "Berichten",
+        "messageLayout": "Berichtenindeling",
+        "messageSpacing": "Berichtenafstand",
+        "prefetchScope": "Bereik van vooraf laden",
+        "prefetchScopeDescription": "Welke kamers op de achtergrond gereed worden gehouden",
+        "historyDepth": "Geschiedenisdiepte van de huidige kamer",
+        "historyDepthDescription": "Beoogd aantal vooraf geladen gebeurtenissen voor de kamer die je bekijkt. Minimaal {{min}}, maximaal {{max}}.",
+        "legacyUsernameColor": "Klassieke gebruikersnaamkleuren",
+        "hideMembershipChange": "Lidmaatschapswijzigingen verbergen",
+        "hideProfileChange": "Profielwijzigingen verbergen",
+        "disableMediaAutoLoad": "Automatisch laden van media uitschakelen",
+        "urlPreview": "URL-voorvertoning",
+        "urlPreviewEncrypted": "URL-voorvertoning in versleutelde kamers",
+        "showHiddenEvents": "Verborgen gebeurtenissen tonen"
+      },
+      "computers": {
+        "sectionTitle": "Computers",
+        "apiUrl": "URL van computerservice",
+        "description": "Kies een vertrouwde MindRoom-backend; die ontvangt een kort geldig aanmeldingstoken. Opgeslagen op dit apparaat. Laat leeg om computers uit te schakelen.",
+        "save": "Computerservice opslaan",
+        "reset": "Appstandaard gebruiken",
+        "invalidUrl": "Voer een origin in zonder inloggegevens, pad, query of fragment. Gebruik HTTPS, of HTTP met localhost of een privé-IP-adres op het lokale netwerk.",
+        "httpNotice": "HTTP versleutelt je aanmelding of computerverkeer niet. Gebruik het alleen op een vertrouwd lokaal netwerk.",
+        "saveFailed": "De computerservice kon niet op dit apparaat worden opgeslagen.",
+        "saved": "Computerservice opgeslagen."
+      },
+      "connections": {
+        "sectionTitle": "Verbindingen",
+        "title": "Verbonden accounts",
+        "description": "Verbind de accounts die je agents gebruiken, zoals Google of GitHub, met je MindRoom-server.",
+        "open": "Verbindingen openen",
+        "noBackend": "Stel je MindRoom-server in onder ‘Computers’ om Verbindingen te gebruiken.",
+        "blocked": "Je browser heeft het venster Verbindingen geblokkeerd. Sta pop-ups toe voor deze site en probeer het opnieuw."
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "directMessages": "Directe berichten",
+    "threads": "Threads",
+    "canvases": "Interactieve panelen",
+    "inbox": "Inbox",
+    "exploreCommunity": "Community verkennen",
+    "addSpace": "Space toevoegen",
+    "createSpace": "Space aanmaken",
+    "createSpaceDescription": "Bouw een space voor je community.",
+    "joinWithAddress": "Deelnemen via adres",
+    "joinWithAddressDescription": "Word onderdeel van een bestaande community.",
+    "createRoom": "Kamer aanmaken",
+    "messageSearch": "Berichten zoeken",
+    "rooms": "Kamers",
+    "chats": "Chats",
+    "createChat": "Chat aanmaken",
+    "directMessage": "Direct bericht",
+    "noRooms": "Geen kamers",
+    "noRoomsDescription": "Je hebt nog geen kamers.",
+    "noDirectMessages": "Geen directe berichten",
+    "noDirectMessagesDescription": "Je hebt nog geen directe berichten.",
+    "exploreCommunityRooms": "Community-kamers verkennen",
+    "unverifiedDevice": "Niet-geverifieerd apparaat",
+    "unverifiedDevices": "Niet-geverifieerde apparaten"
+  },
+  "accountsRail": {
+    "settingsTooltip": "Instellingen: {{name}}",
+    "switchTooltip": "Wisselen naar {{name}} ({{userId}})",
+    "openSettingsAria": "Instellingen voor {{name}} openen",
+    "switchAria": "Wisselen naar account {{name}} ({{userId}})",
+    "manageAccounts": "Accounts beheren",
+    "addAccount": "Account toevoegen",
+    "addAccountAria": "Account toevoegen"
+  },
+  "commandPalette": {
+    "inputAria": "Commandopalet",
+    "placeholder": "Zoek of voer een opdracht uit…",
+    "closeAria": "Commandopalet sluiten",
+    "open": "Commandopalet openen",
+    "noResults": "Geen resultaten",
+    "resultCount_one": "{{count}} resultaat",
+    "resultCount_other": "{{count}} resultaten",
+    "sections": {
+      "actions": "Acties",
+      "threads": "Threads",
+      "rooms": "Kamers",
+      "users": "Gebruikers",
+      "messages": "Berichten",
+      "spaces": "Spaces"
+    },
+    "prefixes": {
+      "label": "Voorvoegsels:",
+      "actions": "acties",
+      "rooms": "kamers",
+      "users": "gebruikers",
+      "threads": "threads",
+      "spaces": "spaces"
+    },
+    "shortcut": "Sneltoets:",
+    "shortcutOpenSuffix": "openen.",
+    "actions": {
+      "openSettings": "Instellingen openen",
+      "openSettingsDescription": "Open het gedeelde instellingenvenster",
+      "goHome": "Naar Home",
+      "goHomeDescription": "Ga naar Home",
+      "goDirect": "Naar directe berichten",
+      "goDirectDescription": "Ga naar directe berichten",
+      "goInbox": "Naar Inbox",
+      "goInboxDescription": "Open Inbox-meldingen",
+      "createRoom": "Kamer aanmaken",
+      "createRoomDescription": "Open het venster om een kamer aan te maken",
+      "createSpace": "Space aanmaken",
+      "createSpaceDescription": "Open het venster om een space aan te maken",
+      "toggleTheme": "Thema wisselen",
+      "toggleThemeDescription": "Wissel tussen licht en donker",
+      "logout": "Uitloggen",
+      "logoutDescription": "Uitloggen bij MindRoom Chat",
+      "markCurrentRoomRead": "Huidige kamer als gelezen markeren",
+      "markCurrentRoomReadDescription": "{{room}} als gelezen markeren",
+      "copyCurrentRoomLink": "Link naar huidige kamer kopiëren",
+      "copyCurrentRoomLinkDescription": "App-link voor {{room}} kopiëren",
+      "openCurrentRoomSettings": "Instellingen van huidige kamer openen",
+      "openCurrentRoomSettingsDescription": "Instellingen voor {{room}} openen",
+      "unresolveCurrentThread": "Huidige thread heropenen",
+      "unresolveCurrentThreadDescription": "Zet de actieve thread terug in de onopgeloste wachtrij",
+      "resolveCurrentThread": "Huidige thread oplossen",
+      "resolveCurrentThreadDescription": "Markeer de actieve thread als opgelost",
+      "currentRoomFallback": "huidige kamer"
+    },
+    "messages": {
+      "searchIn": "Zoek {{query}} in {{scope}}",
+      "searchAll": "Zoek {{query}} in alle kamers",
+      "currentRoomFallback": "huidige kamer",
+      "currentRoomDescription": "Huidige kamer",
+      "currentSpaceFallback": "huidige space",
+      "currentSpaceDescription": "Huidige space",
+      "globalSearchDescription": "Globaal zoeken in berichten"
+    },
+    "all": "Alles",
+    "filterLabel": "Resultaten filteren",
+    "resultsLabel": "Zoekresultaten",
+    "emptyDescription": "Probeer een andere zoekopdracht of kies een andere categorie.",
+    "clearSearch": "Zoekopdracht wissen",
+    "navigate": "Navigeren",
+    "select": "Openen"
+  },
+  "accountSwitcher": {
+    "title": "Accounts",
+    "description": "Wissel van account, voeg een ander account toe of verwijder een inactief account.",
+    "active": "Actief",
+    "openSettings": "Instellingen openen",
+    "switch": "Wisselen",
+    "removing": "Verwijderen...",
+    "removeFromDevice": "Verwijderen van apparaat",
+    "addAccount": "Account toevoegen",
+    "close": "Sluiten",
+    "actionError": "Dit account kon niet worden bijgewerkt. Probeer het opnieuw."
+  },
+  "recentThreads": {
+    "title": "Recent geopend",
+    "empty": "Geen recent geopende threads",
+    "resizeAria": "Grootte van Recent geopend wijzigen",
+    "openedAt": "Geopend {{time}}"
+  },
+  "threadNav": {
+    "title": "Threads",
+    "empty": "Nog geen threads",
+    "loading": "Threads laden...",
+    "pin": "Thread vastmaken",
+    "unpin": "Thread losmaken",
+    "pinned": "Vastgemaakt",
+    "room": "Kamer",
+    "agents": "Agenten",
+    "agentsUnknown": "Geen agent herkend",
+    "messages": "Berichten",
+    "lastActivity": "Laatste activiteit",
+    "unknownActivity": "Onbekend"
+  },
+  "composer": {
+    "placeholder": "Stuur een bericht...",
+    "sendMessage": "Bericht verzenden",
+    "recordVoice": "Spraakbericht opnemen",
+    "formatting": "Opmaak",
+    "attach": "Bestanden bijvoegen",
+    "voicePausedInOtherRoom": "Spraakopname gepauzeerd — maak je niet-verzonden opname in {{roomName}} af of verwijder deze",
+    "dropFiles": "Bestanden neerzetten in \"{{roomName}}\"",
+    "dropFilesHint": "Sleep bestanden hierheen of klik om het selectievenster te openen",
+    "roomFallback": "Kamer",
+    "voiceRoomUnavailable": "Deze kamer is niet meer beschikbaar. Verwijder het niet-verzonden spraakbericht en probeer het later opnieuw.",
+    "voiceStillSending": "Er wordt nog een spraakbericht verzonden. Wacht even voordat je opnieuw opneemt.",
+    "voiceBundleBlocked": "Er wordt nog een bijlage verzonden of deze heeft aandacht nodig. Wacht even of probeer mislukte bijlagen opnieuw of verwijder ze en verzend dit bericht daarna opnieuw."
+  },
+  "threadActions": {
+    "more": "Threadopties",
+    "open": "Thread openen",
+    "tags": "Tags bewerken",
+    "editSummary": "Samenvatting bewerken",
+    "regenerate": "Samenvatting opnieuw genereren",
+    "reopen": "Thread heropenen",
+    "copy": "Threadlink kopiëren",
+    "summary": "Samenvatting",
+    "summaryHint": "Handmatige bewerkingen stoppen automatische updates van de samenvatting. Je kunt de samenvatting op elk moment opnieuw bewerken of genereren.",
+    "length": "{{count}} / {{max}} tekens",
+    "agent": "Agent",
+    "noAgents": "Er zijn geen agents lid van deze ruimte",
+    "regenerateHint": "Vraag een agent om de samenvatting van deze thread te vernieuwen. De agent heeft de tool voor threadsamenvattingen nodig.",
+    "requested": "Verzoek verzonden. De samenvatting wordt bijgewerkt wanneer de agent klaar is. Bekijk de thread voor het antwoord.",
+    "failed": "Deze actie kon niet worden voltooid. Probeer het opnieuw.",
+    "save": "Samenvatting opslaan",
+    "sendRequest": "Verzoek verzenden",
+    "saving": "Bezig met verzenden…",
+    "cancel": "Annuleren",
+    "done": "Klaar"
+  },
+  "thread": {
+    "pinFailed": "Vastmaken kon niet worden bijgewerkt. Probeer het opnieuw.",
+    "chip": "Thread",
+    "view": "Threadweergave",
+    "resolve": "Oplossen",
+    "resolved": "Opgelost",
+    "resolvedBy": "Opgelost door {{name}}",
+    "resolvedByShort": "door {{name}}",
+    "hideDetails": "Threaddetails verbergen",
+    "showDetails": "Threaddetails tonen",
+    "backToRoom": "Terug naar de kamer",
+    "replyCount_one": "{{count}} antwoord",
+    "replyCount_other": "{{count}} antwoorden",
+    "aria": {
+      "openThread": "Thread openen: {{title}}",
+      "resolvedThread": "Opgeloste thread",
+      "unresolvedThread": "Onopgeloste thread",
+      "unreadMessages": "Ongelezen berichten",
+      "agentStreaming": "Agent is aan het antwoorden",
+      "messageFailed": "Bericht kon niet worden verzonden",
+      "messageSending": "Bericht wordt verzonden",
+      "lastActivity": "Laatste activiteit {{time}}",
+      "removeTagFilter": "Filter {{tag}} verwijderen"
+    },
+    "status": {
+      "resolved": "Opgelost",
+      "streaming": "Streaming",
+      "scheduled": "Gepland",
+      "unread": "Ongelezen",
+      "idle": "Inactief",
+      "idleFilter": "Inactief (opgelost, geen streaming, geen taken)"
+    },
+    "stats": {
+      "aria": "Threadstatistieken",
+      "showing": "{{shown}} van {{total}} getoond",
+      "threadCount_one": "{{count}} thread",
+      "threadCount_other": "{{count}} threads",
+      "tags": "Tags"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: alles wordt getoond. Klik om alleen deze te tonen.",
+      "include": "{{label}}: alleen deze worden getoond. Klik om te verbergen.",
+      "exclude": "{{label}}: verborgen. Klik om het filter te wissen.",
+      "tagAny": "Tag \"{{tag}}\"",
+      "tagInclude": "Tag \"{{tag}}\": alleen tonen. Klik om te verbergen.",
+      "tagExclude": "Tag \"{{tag}}\": verborgen. Klik om het filter te wissen.",
+      "stateAny": "alles tonen",
+      "stateInclude": "alleen tonen",
+      "stateExclude": "verborgen"
+    },
+    "filters": {
+      "scope": "Bereik",
+      "scopeInvolved": "Betrokken",
+      "scopeAllRooms": "Alle kamers",
+      "status": "Status",
+      "statusAll": "Alle",
+      "statusUnresolved": "Onopgelost",
+      "statusResolved": "Opgelost",
+      "activity": "Activiteit",
+      "activityToday": "Vandaag",
+      "activity7d": "7d",
+      "activity30d": "30d",
+      "activityAll": "Alle",
+      "unread": "Ongelezen",
+      "attention": "Aandacht",
+      "roomIdsPlaceholder": "Kamer-ID's",
+      "roomIdsAria": "Kamer-ID-filters",
+      "spaceIdsPlaceholder": "Space-ID's",
+      "spaceIdsAria": "Space-ID-filters",
+      "tagsPlaceholder": "Tags",
+      "tagsIncludeAria": "Ingesloten tagfilters",
+      "excludeTagsPlaceholder": "Tags uitsluiten",
+      "tagsExcludeAria": "Uitgesloten tagfilters",
+      "clear": "Wissen",
+      "open": "Filters",
+      "search": "Threads doorzoeken",
+      "sheetAria": "Threadfilters",
+      "closeAria": "Threadfilters sluiten"
+    },
+    "simpleFilter": {
+      "unresolved": "Onopgelost",
+      "showingUnresolved": "Toont onopgeloste threads. Klik om alle threads te tonen.",
+      "showingAll": "Toont alle threads. Klik om alleen onopgeloste te tonen."
+    }
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "Accountgegevens",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "jsonContent": "JSON-inhoud",
+      "edit": "Bewerken",
+      "developerTools": "Ontwikkelaarstools"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "Informatie over de authenticatiestroom kon niet worden geladen.",
+      "retry": "Opnieuw proberen"
+    },
+    "backupRestore": {
+      "restoring0": "Herstellen: 0%",
+      "backupHasTrustedDecryptionKey": "De back-up heeft een vertrouwde ontsleutelingssleutel.",
+      "backupDoesNotHaveTrustedDecryptionKey": "De back-up heeft geen vertrouwde ontsleutelingssleutel!",
+      "backupHasTrustedBySignature": "De back-up heeft een vertrouwde handtekening.",
+      "backupDoesNotHaveTrustedSignature": "De back-up heeft geen vertrouwde handtekening!",
+      "encryptionBackup": "Back-up van versleuteling",
+      "backupDetails": "Back-upgegevens",
+      "restoreBackup": "Back-up herstellen",
+      "noBackupPresentOnServer": "Geen back-up aanwezig op de server!",
+      "connected": "Verbonden",
+      "disconnected": "Verbinding verbroken",
+      "nil": "NIL",
+      "syncing": "Synchroniseren ({{count}})",
+      "restoring": "Herstellen: {{progress}}%",
+      "version": "Versie: {{version}}",
+      "keys": "Sleutels: {{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "Melding",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "Deze functie wordt getest en kan in de loop van de tijd veranderen.",
+      "beta": "Bèta"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "Inkomende oproep",
+      "yourHomeserverDoesNotSupportCalling": "Je homeserver ondersteunt geen oproepen.",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "Je browser ondersteunt WebRTC niet, wat nodig is voor oproepen.",
+      "answer": "Beantwoorden",
+      "reject": "Weigeren",
+      "ignore": "Negeren"
+    },
+    "deviceVerification": {
+      "close": "Sluiten",
+      "pleaseAcceptTheRequestFromOtherDevice": "Accepteer het verzoek van het andere apparaat.",
+      "clickAcceptToStartTheVerificationProcess": "Klik op Accepteren om het verificatieproces te starten.",
+      "accept": "Accepteren",
+      "verificationRequestHasBeenAccepted": "Het verificatieverzoek is geaccepteerd.",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "Bevestig dat de onderstaande emoji's op beide apparaten in dezelfde volgorde worden weergegeven:",
+      "theyMatch": "Ze komen overeen",
+      "doNotMatch": "Ze komen niet overeen",
+      "yourDeviceIsVerified": "Je apparaat is geverifieerd.",
+      "okay": "Oké",
+      "verificationHasBeenCanceled": "De verificatie is geannuleerd.",
+      "deviceVerification": "Apparaatverificatie",
+      "waitingForRequestToBeAccepted": "Wachten tot het verzoek wordt geaccepteerd...",
+      "waitingForTheResponseFromOtherDevice": "Wachten op antwoord van het andere apparaat...",
+      "startingVerificationUsingEmojiComparison": "Verificatie met emoji-vergelijking starten...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "Onverwachte fout! De verificatie is gestart, maar de verificateur ontbreekt."
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "Herstelsleutel",
+      "passphraseOptional": "Wachtwoordzin (optioneel)",
+      "continue": "Doorgaan",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "De authenticatiestappen voor deze actie worden niet door de client ondersteund.",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "Bewaar de herstelsleutel op een veilige plaats voor later gebruik. Je hebt deze nodig om je identiteit te verifiëren als je geen toegang tot andere apparaten hebt.",
+      "copy": "Kopiëren",
+      "download": "Downloaden",
+      "setupDeviceVerification": "Apparaatverificatie instellen",
+      "resetDeviceVerification": "Apparaatverificatie opnieuw instellen",
+      "resettingDeviceVerificationIsPermanent": "Het opnieuw instellen van de apparaatverificatie is definitief.",
+      "recoveryPassphrase": "Herstelwachtwoordzin",
+      "reset": "Opnieuw instellen",
+      "unexpectedError": "Onverwachte fout!",
+      "hide": "Verbergen",
+      "show": "Tonen",
+      "recoveryDescription": "Genereer een <b>herstelsleutel</b> om je identiteit te verifiëren als je geen toegang tot andere apparaten hebt. Stel daarnaast een wachtwoordzin in als makkelijk te onthouden alternatief.",
+      "resetWarning": "Iedereen die je hebt geverifieerd, ziet beveiligingswaarschuwingen en je back-up van de versleuteling gaat verloren. Je wilt dit vrijwel zeker niet doen, tenzij je de <b>herstelsleutel</b> of <b>herstelwachtwoordzin</b> en elk apparaat waarmee je jezelf kunt verifiëren bent kwijtgeraakt."
+    },
+    "hexColorPickerPopOut": {
+      "remove": "Verwijderen"
+    },
+    "logoutDialog": {
+      "logout": "Uitloggen",
+      "unverifiedDevice": "Niet-geverifieerd apparaat",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "Verifieer je apparaat voordat je uitlogt om je versleutelde berichten te bewaren.",
+      "alert": "Waarschuwing",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "Schakel apparaatverificatie in of exporteer je versleutelde gegevens via de instellingen om te voorkomen dat je de toegang tot je berichten verliest.",
+      "youReAboutToLogOutAreYouSure": "Je staat op het punt uit te loggen. Weet je het zeker?",
+      "cancel": "Annuleren",
+      "logoutFailed": "Uitloggen mislukt! {{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "Herstelwachtwoordzin",
+      "recoveryKey": "Herstelsleutel",
+      "verifyManually": "Handmatig verifiëren",
+      "deviceVerified": "Apparaat geverifieerd!",
+      "selectAVerificationMethod": "Selecteer een verificatiemethode.",
+      "provideRecoveryKey": "Voer de herstelsleutel in."
+    },
+    "pdfViewer": {
+      "zoomOut": "Uitzoomen",
+      "zoomIn": "Inzoomen",
+      "failedToLoadPdf": "PDF kon niet worden geladen",
+      "retry": "Opnieuw proberen",
+      "previous": "Vorige",
+      "pageNumber": "Paginanummer",
+      "jumpToPage": "Naar pagina",
+      "next": "Volgende",
+      "saving": "Opslaan...",
+      "retryDownload": "Download opnieuw proberen",
+      "download": "Downloaden"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "Herstelwachtwoordzin",
+      "verify": "Verifiëren",
+      "recoveryKey": "Herstelsleutel",
+      "invalidRecoveryPassphrase": "Ongeldige herstelwachtzin.",
+      "invalidRecoveryKey": "Ongeldige herstelsleutel."
+    },
+    "uIAFlowOverlay": {
+      "exit": "Afsluiten",
+      "stepValue1Value2": "Stap {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "Oprichters",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "Tijdens het aanmaken kunnen gebruikers met speciale rechten worden toegewezen. Deze gebruikers hebben meer controle en kunnen alleen tijdens een upgrade worden gewijzigd.",
+      "enter": "Invoeren",
+      "noSuggestions": "Geen suggesties",
+      "pleaseProvideTheUserIdAndHitEnter": "Voer de gebruikers-ID in en druk op Enter."
+    },
+    "createRoomAccessSelector": {
+      "restricted": "Beperkt",
+      "onlyMemberOfParentSpaceCanJoin": "Alleen leden van de bovenliggende space kunnen deelnemen.",
+      "private": "Privé",
+      "onlyPeopleWithInviteCanJoin": "Alleen uitgenodigde personen kunnen deelnemen.",
+      "public": "Openbaar",
+      "anyoneWithTheAddressCanJoin": "Iedereen met het adres kan deelnemen."
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "Adres (optioneel)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "Kies een uniek adres om dit vindbaar te maken.",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "Dit adres is al in gebruik. Kies een ander adres."
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "Chatkamer",
+      "messagesPhotosAndVideos": "- Berichten, foto's en video's.",
+      "voiceRoom": "Spraakkamer",
+      "liveAudioAndVideoConversations": "- Live audio- en videogesprekken."
+    },
+    "roomVersionSelector": {
+      "version": "Versie",
+      "versions": "Versies"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "Emoji's"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "Kamers",
+      "unknownRoom": "Onbekende kamer"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "Vermeldingen"
+    },
+    "emojiBoard": {
+      "recent": "Recent",
+      "unknownPack": "Onbekend pakket",
+      "searchResults": "Zoekresultaten",
+      "noResultsFound": "Geen resultaten gevonden",
+      "personalPack": "Persoonlijk pakket",
+      "unknown": "Onbekend"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "Geen stickerpakketten!",
+      "addStickersFromUserRoomOrSpaceSettings": "Voeg stickers toe via de instellingen voor gebruikers, kamers of spaces."
+    },
+    "searchInput": {
+      "react": "Reageren",
+      "searchOrTextReaction": "Zoeken of tekstreactie ",
+      "search": "Zoeken"
+    },
+    "tabs": {
+      "sticker": "Sticker",
+      "emoji": "Emoji"
+    },
+    "eventReaders": {
+      "seenBy": "Gezien door"
+    },
+    "imageEditor": {
+      "imageEditor": "Afbeeldingseditor",
+      "save": "Opslaan"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "Wijzigingen konden niet worden toegepast! Probeer het opnieuw.",
+      "changesSavedApplyWhenReady": "Wijzigingen opgeslagen! Pas ze toe wanneer je klaar bent.",
+      "reset": "Opnieuw instellen",
+      "applyChanges": "Wijzigingen toepassen",
+      "pack": "Pakket",
+      "imagesUsage": "Gebruik van afbeeldingen",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "Selecteer hoe de afbeeldingen worden gebruikt: als emoji, als sticker of als beide.",
+      "images": "Afbeeldingen",
+      "uploadImages": "Afbeeldingen uploaden",
+      "selectImagesFromYourStorageToUploadThemInPack": "Selecteer afbeeldingen uit je opslag om ze naar het pakket te uploaden.",
+      "select": "Selecteren"
+    },
+    "imagePackView": {
+      "emojisStickers": "Emoji's & stickers"
+    },
+    "imageTile": {
+      "undo": "Ongedaan maken",
+      "edit": "Bewerken",
+      "shortcode": "Korte code:",
+      "body": "Inhoud:",
+      "save": "Opslaan",
+      "cancel": "Annuleren"
+    },
+    "packMeta": {
+      "edit": "Bewerken",
+      "packAvatar": "Pakketavatar",
+      "upload": "Uploaden",
+      "reset": "Opnieuw instellen",
+      "remove": "Verwijderen",
+      "name": "Naam",
+      "attribution": "Naamsvermelding",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "unknown": "Onbekend"
+    },
+    "imageViewer": {
+      "zoomOut": "Uitzoomen",
+      "zoomIn": "Inzoomen",
+      "saving": "Opslaan...",
+      "retryDownload": "Download opnieuw proberen",
+      "download": "Downloaden"
+    },
+    "inviteUserPrompt": {
+      "invite": "Uitnodigen",
+      "userId": "Gebruikers-ID",
+      "reasonOptional": "Reden (optioneel)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "Deelnemen via adres",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "Voer een openbaar adres in om deel te nemen aan de community. Adressen zien er zo uit:",
+      "address": "Adres",
+      "invalidAddress": "Ongeldig adres",
+      "open": "Openen"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "Kamer verlaten",
+      "areYouSureYouWantToLeaveThisRoom": "Weet je zeker dat je deze kamer wilt verlaten?",
+      "leaving": "Verlaten...",
+      "leave": "Verlaten",
+      "leaveFailed": "Kamer verlaten mislukt! {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "Space verlaten",
+      "areYouSureYouWantToLeaveThisSpace": "Weet je zeker dat je deze space wilt verlaten?",
+      "leaving": "Verlaten...",
+      "leave": "Verlaten",
+      "leaveFailed": "Space verlaten mislukt! {{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "Locatie openen",
+      "voiceMessage": "spraakbericht",
+      "audio": "audio",
+      "unnamedFile": "Naamloos bestand",
+      "file": "Bestand",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF-document",
+      "textFile": "Tekstbestand"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "Dit bericht is verwijderd",
+      "unsupportedMessage": "Niet-ondersteund bericht",
+      "failedToLoadMessage": "Bericht kon niet worden geladen",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "Dit bericht kon niet worden ontsleuteld — de versleutelingssleutel is niet beschikbaar",
+      "thisMessageIsNotDecryptedYet": "Dit bericht is nog niet ontsleuteld",
+      "brokenMessage": "Beschadigd bericht",
+      "emptyMessage": "Leeg bericht",
+      "edited": " (bewerkt)",
+      "deletedWithReason": "Dit bericht is verwijderd. {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "PDF openen",
+      "openFile": "Bestand openen",
+      "loadFailed": "Bestand kon niet worden geladen!",
+      "retryDownload": "Download opnieuw proberen ({{size}})",
+      "downloadSize": "Downloaden ({{size}})",
+      "openValue1": "{{value1}} openen"
+    },
+    "imageContent": {
+      "view": "Bekijken",
+      "spoiler": "Spoiler",
+      "failedToLoadImage": "Afbeelding kon niet worden geladen!",
+      "retry": "Opnieuw proberen"
+    },
+    "videoContent": {
+      "watch": "Bekijken",
+      "spoiler": "Spoiler",
+      "failedToLoadVideo": "Video kon niet worden geladen!",
+      "retry": "Opnieuw proberen"
+    },
+    "voiceAudioContent": {
+      "loadError": "Audio kon niet worden geladen. Druk op afspelen om opnieuw te proberen.",
+      "playbackError": "Deze audio kan hier niet worden afgespeeld. Probeer het te downloaden.",
+      "playbackPosition": "{{current}} van {{duration}}",
+      "moreAudioOptions": "Meer audio-opties",
+      "download": "Downloaden",
+      "name": "Naam",
+      "type": "Type",
+      "size": "Grootte",
+      "duration": "Duur",
+      "voiceMessage": "spraakbericht",
+      "pauseValue1": "{{value1}} pauzeren",
+      "playValue1": "{{value1}} afspelen",
+      "seekValue1": "Door {{value1}} bladeren"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "Een beheerder beoordeelt je verzoek.",
+      "messageOptional": "Bericht (optioneel)",
+      "cancel": "Annuleren",
+      "failedToSendRequest": "Verzoek kon niet worden verzonden.",
+      "sendingRequest": "Verzoek verzenden",
+      "sendRequest": "Verzoek verzenden",
+      "requestToJoinValue1": "Verzoek om deel te nemen aan {{value1}}"
+    },
+    "roomCard": {
+      "cancel": "Annuleren",
+      "checkingAccess": "Toegang controleren",
+      "space": "Space",
+      "view": "Bekijken",
+      "retry": "Opnieuw proberen",
+      "joinError": "Fout bij deelnemen",
+      "viewError": "Weergavefout",
+      "retryRoomInfo": "Kamerinformatie opnieuw laden",
+      "accessUnavailable": "Toegang niet beschikbaar",
+      "failedToJoinUnknownError": "Deelnemen mislukt. Onbekende fout.",
+      "sendingRequest": "Verzoek verzenden",
+      "requestSent": "Verzoek verzonden",
+      "requestToJoin": "Verzoek tot deelname",
+      "joining": "Deelnemen",
+      "join": "Deelnemen",
+      "members_one": "{{count, number}} lid",
+      "members_other": "{{count, number}} leden"
+    },
+    "roomIntro": {
+      "inviteMember": "Lid uitnodigen",
+      "openOldRoom": "Oude kamer openen",
+      "joinOldRoom": "Deelnemen aan oude kamer",
+      "thisIsTheBeginningOfConversation": "Dit is het begin van het gesprek.",
+      "createdBy": "Aangemaakt door ",
+      "onValue1Value2": " op {{value1}} om {{value2}}"
+    },
+    "textViewer": {
+      "copyAll": "Alles kopiëren"
+    },
+    "datePicker": {
+      "day": "Dag",
+      "month": "Maand",
+      "year": "Jaar"
+    },
+    "timePicker": {
+      "hour": "Uur",
+      "minutes": "Minuten",
+      "period": "Periode",
+      "am": "AM",
+      "pm": "PM"
+    },
+    "dummyStage": {
+      "retry": "Opnieuw proberen",
+      "cancel": "Annuleren",
+      "failedToRegister": "Registreren mislukt."
+    },
+    "emailStage": {
+      "email": "E-mail",
+      "sendVerificationEmail": "Verificatie-e-mail verzenden",
+      "cancel": "Annuleren",
+      "sendingVerificationEmail": "Verificatie-e-mail verzenden...",
+      "verificationRequestSent": "Verificatieverzoek verzonden",
+      "continue": "Doorgaan",
+      "provideEmail": "E-mailadres invoeren",
+      "verifyEmail": "E-mailadres verifiëren",
+      "failedToSendVerificationEmailRequest": "Verificatieverzoek per e-mail kon niet worden verzonden.",
+      "pleaseProvideEmailToSendVerificationRequest": "Voer een e-mailadres in om het verificatieverzoek te verzenden.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "Controleer je e-mail \"{{value1}}\" en bevestig deze voordat je verdergaat."
+    },
+    "passwordStage": {
+      "accountPassword": "Accountwachtwoord",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "Om deze actie uit te voeren, moet je jezelf verifiëren door je accountwachtwoord in te voeren.",
+      "password": "Wachtwoord",
+      "continue": "Doorgaan",
+      "invalidPassword": "Ongeldig wachtwoord!"
+    },
+    "reCaptchaStage": {
+      "cancel": "Annuleren",
+      "invalidData": "Ongeldige gegevens",
+      "pleaseCheckTheBoxBelowToProceed": "Vink het onderstaande vakje aan om door te gaan.",
+      "noValidDataFoundToProceedWithRecaptcha": "Geen geldige gegevens gevonden om door te gaan met reCAPTCHA."
+    },
+    "registrationTokenStage": {
+      "registrationToken": "Registratietoken",
+      "retry": "Opnieuw proberen",
+      "cancel": "Annuleren",
+      "invalidRegistrationTokenProvided": "Het opgegeven registratietoken is ongeldig.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "Voer het registratietoken in dat je van de beheerder van je homeserver hebt gekregen."
+    },
+    "sSOStage": {
+      "ssoLogin": "SSO-login",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "Om deze actie uit te voeren, moet je jezelf authenticeren via SSO-login.",
+      "continue": "Doorgaan",
+      "continueWithSso": "Doorgaan met SSO"
+    },
+    "termsStage": {
+      "retry": "Opnieuw proberen",
+      "cancel": "Annuleren",
+      "failedToSubmitTermsAndConditionAcceptance": "Akkoord met de algemene voorwaarden kon niet worden verzonden."
+    },
+    "uploadBoard": {
+      "files": "Bestanden",
+      "uploadFailed": "Upload mislukt",
+      "remove": "Verwijderen",
+      "removeAll": "Alles verwijderen"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "Upload opnieuw proberen",
+      "retry": "Opnieuw proberen",
+      "cancelUpload": "Upload annuleren"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "Spoiler",
+      "retryUpload": "Upload opnieuw proberen",
+      "retry": "Opnieuw proberen",
+      "cancelUpload": "Upload annuleren"
+    },
+    "creatorChip": {
+      "managePowers": "Bevoegdheden beheren"
+    },
+    "powerChip": {
+      "selfDemotion": "Zelfdegradatie",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "Je staat op het punt jezelf te degraderen! Je kunt deze bevoegdheid niet zelf terugkrijgen. Weet je het zeker?",
+      "demote": "Degraderen",
+      "sharedPower": "Gedeelde bevoegdheid",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "Je geeft de gebruiker dezelfde bevoegdheid als jezelf! Daarna kun je diens bevoegdheid niet meer wijzigen. Weet je het zeker?",
+      "promote": "Promoveren",
+      "managePowers": "Bevoegdheden beheren",
+      "errorName": "Fout: {{name}}"
+    },
+    "userChips": {
+      "copyServer": "Server kopiëren",
+      "exploreCommunity": "Community verkennen",
+      "openInBrowser": "Openen in browser",
+      "copyUserId": "Gebruikers-ID kopiëren",
+      "copyUserLink": "Gebruikerslink kopiëren",
+      "share": "Delen",
+      "spaces": "Spaces",
+      "rooms": "Kamers",
+      "directMessages": "Directe berichten",
+      "blockedUser": "Geblokkeerde gebruiker",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "Je ontvangt geen berichten of uitnodigingen van deze gebruiker.",
+      "mutualRooms": "Gemeenschappelijke kamers",
+      "unblockUser": "Gebruiker deblokkeren",
+      "blockUser": "Gebruiker blokkeren",
+      "mutualRooms_one": "{{count, number}} gemeenschappelijke kamer",
+      "mutualRooms_other": "{{count, number}} gemeenschappelijke kamers"
+    },
+    "userModeration": {
+      "kickedUser": "Verwijderde gebruiker",
+      "noReasonProvided": "Geen reden opgegeven.",
+      "bannedUser": "Verbannen gebruiker",
+      "unban": "Verbanning opheffen",
+      "invitedUser": "Uitgenodigde gebruiker",
+      "cancelInvite": "Uitnodiging annuleren",
+      "moderation": "Moderatie",
+      "reason": "Reden: <b>{{reason}}</b>",
+      "invite": "Uitnodigen",
+      "kick": "Verwijderen",
+      "ban": "Verbannen",
+      "kickedBy": "Verwijderd door: <b>{{name}}</b>",
+      "bannedBy": "Verbannen door: <b>{{name}}</b>",
+      "invitedBy": "Uitgenodigd door: <b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "Bericht"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "Spraakvolume",
+      "voiceVolumeCurrentlyValue1": "Spraakvolume, momenteel {{value1}}%"
+    },
+    "configConfig": {
+      "continueOffline": "Offline doorgaan",
+      "yourWebSessionHasExpired": "Je websessie is verlopen.",
+      "failedToLoadClientConfigurationFile": "Het clientconfiguratiebestand kon niet worden geladen.",
+      "signInAgainToReconnectOrContinueInOfflineMode": "Log opnieuw in om opnieuw verbinding te maken of ga offline verder.",
+      "signInAgainToReconnect": "Log opnieuw in om opnieuw verbinding te maken.",
+      "signInAgain": "Opnieuw inloggen",
+      "retry": "Opnieuw proberen"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "Ontbrekende browserfunctie",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "Geen ondersteuning voor IndexedDB gevonden. Deze toepassing heeft IndexedDB nodig om sessiegegevens lokaal op te slaan. Controleer of je browser IndexedDB ondersteunt en of het is ingeschakeld.",
+      "whatIsIndexeddb": "Wat is IndexedDB?"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "Terug naar huidig account",
+      "server": "Server",
+      "lookingForServer": "Server zoeken...",
+      "failedToFindServer": "Server kon niet worden gevonden.",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "Verbinding mislukt. De base_url in de serverconfiguratie lijkt ongeldig.",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "Alleen HTTPS-servers zijn toegestaan. HTTP wordt alleen ondersteund voor servers in het lokale netwerk.",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "Verbinding mislukt. De server is momenteel niet beschikbaar of bestaat niet.",
+      "loadingAuthenticationFlow": "Authenticatiestroom laden...",
+      "failedToGetAuthenticationFlowInformation": "Informatie over de authenticatiestroom kon niet worden opgehaald.",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "Verbinding mislukt. De serverconfiguratie met {{value1}} lijkt onbruikbaar.",
+      "connectingToValue1": "Verbinden met {{value1}}"
+    },
+    "orDivider": {
+      "or": "OF"
+    },
+    "sSOLogin": {
+      "continueWithSso": "Doorgaan met SSO"
+    },
+    "serverPicker": {
+      "server": "Server",
+      "serverList": "Serverlijst"
+    },
+    "login": {
+      "login": "Inloggen",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Deze client vereist Log in met Apple. Configureer de lijst met SSO-providers van de homeserver zodat Apple erin staat.",
+      "register": "Registreren",
+      "accountLink": "Heb je geen account? <authLink>Registreren</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "Inloggen met een wachtwoord is uitgeschakeld op \"{{value1}}\". Gebruik SSO om in te loggen.",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "Deze client ondersteunt inloggen op server \"{{value1}}\" niet. Er is geen inlogmethode met wachtwoord of SSO gevonden."
+    },
+    "passwordLoginForm": {
+      "hint": "Hint",
+      "username": "Gebruikersnaam:",
+      "matrixId": "Matrix-ID:",
+      "email": "E-mail:",
+      "username2": "Gebruikersnaam",
+      "password": "Wachtwoord",
+      "forgetPassword": "Wachtwoord vergeten?",
+      "login": "Inloggen",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "Inloggen met een aangepaste server is niet toegestaan door je clientinstantie.",
+      "failedToFindYourMatrixIdServer": "De server van je Matrix-ID kon niet worden gevonden.",
+      "invalidUsernameOrPassword": "Ongeldige gebruikersnaam of ongeldig wachtwoord.",
+      "thisAccountHasBeenDeactivated": "Dit account is gedeactiveerd.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Inloggen mislukt. Een deel van de aanvraaggegevens is ongeldig.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Inloggen mislukt. De server heeft het aantal inlogverzoeken beperkt. Probeer het later opnieuw.",
+      "failedToLoginUnknownReason": "Inloggen mislukt. Onbekende reden.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Inloggen is gelukt, maar deze browser kon het account niet opslaan. Controleer de opslagmachtigingen en probeer het opnieuw."
+    },
+    "tokenLogin": {
+      "tokenLogin": "Token-login",
+      "invalidLoginToken": "Ongeldig inlogtoken.",
+      "thisAccountHasBeenDeactivated": "Dit account is gedeactiveerd.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Inloggen mislukt. Een deel van de aanvraaggegevens is ongeldig.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Inloggen mislukt. De server heeft het aantal inlogverzoeken beperkt. Probeer het later opnieuw.",
+      "failedToLoginUnknownReason": "Inloggen mislukt. Onbekende reden.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Inloggen is gelukt, maar deze browser kon het account niet opslaan. Controleer de opslagmachtigingen en probeer het opnieuw."
+    },
+    "passwordRegisterForm": {
+      "username": "Gebruikersnaam",
+      "password": "Wachtwoord",
+      "confirmPassword": "Wachtwoord bevestigen",
+      "termsAndConditions": "Algemene voorwaarden",
+      "register": "Registreren",
+      "thisUsernameIsAlreadyTaken": "Deze gebruikersnaam is al in gebruik.",
+      "thisUsernameContainsInvalidCharacters": "Deze gebruikersnaam bevat ongeldige tekens.",
+      "thisUsernameIsReserved": "Deze gebruikersnaam is gereserveerd.",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "Zwak wachtwoord. De server heeft het wachtwoord geweigerd. Kies een sterker wachtwoord.",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "Kort wachtwoord. De server heeft het wachtwoord geweigerd. Kies een langer wachtwoord.",
+      "registrationToken": "Registratietoken",
+      "registrationTokenOptional": "Registratietoken (optioneel)",
+      "email": "E-mail",
+      "emailOptional": "E-mail (optioneel)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "Registreren mislukt. De server heeft het aantal registratieverzoeken beperkt. Probeer het later opnieuw.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "Registreren mislukt. De homeserver staat registratie niet toe.",
+      "failedToRegisterInvalidRequest": "Registreren mislukt. Ongeldig verzoek.",
+      "failedToRegisterUnknownReason": "Registreren mislukt. Onbekende reden.",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Registreren is gelukt, maar deze browser kon het account niet opslaan. Controleer de opslagmachtigingen en probeer in te loggen.",
+      "acceptTerms": "Ik accepteer de <terms>algemene voorwaarden</terms> van de server."
+    },
+    "register": {
+      "register": "Registreren",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Deze client vereist Log in met Apple. Configureer de lijst met SSO-providers van de homeserver zodat Apple erin staat.",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "Deze homeserver staat alleen registratie met Apple, Google of GitHub toe.",
+      "registrationHasBeenDisabledOnThisHomeserver": "Registratie is uitgeschakeld op deze homeserver.",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "Het aantal verzoeken is beperkt! Probeer het later opnieuw.",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "Ongeldig verzoek! Er konden geen registratieopties worden opgehaald.",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "Deze toepassing ondersteunt registratie op deze homeserver niet.",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "SSO-registratie is vereist op deze homeserver, maar er zijn geen SSO-providers bekendgemaakt.",
+      "login": "Inloggen",
+      "accountLink": "Heb je al een account? <authLink>Inloggen</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "Het wachtwoord is opnieuw ingesteld. Log in met je nieuwe wachtwoord.",
+      "login": "Inloggen",
+      "email": "E-mail",
+      "newPassword": "Nieuw wachtwoord",
+      "confirmPassword": "Wachtwoord bevestigen",
+      "resetPassword": "Wachtwoord opnieuw instellen",
+      "resetEmailDescription": "Homeserver <strong>{{server}}</strong> stuurt je een e-mail waarmee je je wachtwoord opnieuw kunt instellen.",
+      "failedToResetPassword": "Het wachtwoord kon niet opnieuw worden ingesteld."
+    },
+    "resetPassword": {
+      "resetPassword": "Wachtwoord opnieuw instellen",
+      "login": "Inloggen",
+      "accountLink": "Weet je je wachtwoord weer? <authLink>Inloggen</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "Bijwerken...",
+      "startupRecoveryOptions": "Herstelopties bij opstarten",
+      "logout": "Uitloggen",
+      "retry": "Opnieuw proberen",
+      "clearCacheAndReload": "Cache wissen en opnieuw laden",
+      "removeAccount": "Account verwijderen",
+      "clearing": "Wissen...",
+      "failedToStartAccountValue1Value2": "Account {{value1}} kon niet worden gestart. {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "Annuleren en terug naar inloggen",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "Kan geen verbinding maken met de homeserver. De homeserver of je internetverbinding is mogelijk niet beschikbaar.",
+      "retry": "Opnieuw proberen",
+      "continue": "Doorgaan",
+      "connectingToServer": "Verbinden met server",
+      "clearing": "Wissen...",
+      "clearCacheAndReload": "Cache wissen en opnieuw laden"
+    },
+    "syncStatus": {
+      "catchingUp": "Bijwerken...",
+      "connectionLostReconnecting": "Verbinding verbroken! Opnieuw verbinden...",
+      "connectionLost": "Verbinding verbroken!"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "Lokaal MindRoom instellen",
+      "openLocalMindroomSettings": "Instellingen van lokaal MindRoom openen",
+      "enterPairCode": "Heb je een code? Voer die in bij Lokale MindRoom",
+      "poweredBy": "Mogelijk gemaakt door <links />",
+      "title": "Welkom bij {{appName}}",
+      "subtitle": "AI-agenten die in je chatkamers leven.",
+      "docs": "Documentatie",
+      "sourceCode": "Broncode",
+      "setupStep1": "1. Voer {{command}} uit",
+      "setupStep2": "2. Voeg de inloggegevens voor het model toe aan {{envFile}} of voer {{command}} uit",
+      "setupStep3": "3. Start het met {{command}} en open daarna de getoonde link om de verbinding goed te keuren"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "Navigatiepaneel uitklappen",
+      "collapseNavigationPanel": "Navigatiepaneel inklappen"
+    },
+    "create": {
+      "createSpace": "Space aanmaken",
+      "buildASpaceForYourCommunity": "Bouw een space voor je community."
+    },
+    "directCreate": {
+      "createChat": "Chat aanmaken",
+      "startAPrivateEncryptedChatByEnteringAUserId": "Begin een privé, versleutelde chat door een gebruikers-ID in te voeren."
+    },
+    "explore": {
+      "addServer": "Server toevoegen",
+      "addServerNameToExplorePublicCommunities": "Voeg een servernaam toe om openbare communities te verkennen.",
+      "serverName": "Servernaam",
+      "failedToLoadPublicRoomsPleaseTryAgain": "Openbare kamers konden niet worden geladen. Probeer het opnieuw.",
+      "view": "Bekijken",
+      "exploreCommunity": "Community verkennen",
+      "featured": "Uitgelicht",
+      "servers": "Servers"
+    },
+    "featured": {
+      "featuredByClient": "Uitgelicht door client",
+      "featuredSpaces": "Uitgelichte spaces",
+      "featuredRooms": "Uitgelichte kamers",
+      "noRoomsOrSpacesFeaturedByClientProvider": "De clientprovider heeft geen kamers of spaces uitgelicht.",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "Zoek en verken openbare kamers en spaces die door de clientprovider zijn uitgelicht."
+    },
+    "server": {
+      "search": "Zoeken",
+      "searchForKeyword": "Zoeken op trefwoord",
+      "clear": "Wissen",
+      "enter": "Invoeren",
+      "protocols": "Protocollen",
+      "presets": "Voorinstellingen",
+      "customLimit": "Aangepaste limiet",
+      "perPageItemLimit": "Limiet voor items per pagina",
+      "changeLimit": "Limiet wijzigen",
+      "popularCommunities": "Populaire communities",
+      "previousPage": "Vorige pagina",
+      "nextPage": "Volgende pagina",
+      "noCommunitiesFound": "Geen communities gevonden!",
+      "pageLimitValue1": "Paginalimiet: {{value1}}",
+      "resultsForValue1": "Resultaten voor \"{{value1}}\""
+    },
+    "createRoom": {
+      "createRoom": "Kamer aanmaken",
+      "buildARoomForRealTimeConversations": "Maak een kamer voor realtime gesprekken."
+    },
+    "search": {
+      "messageSearch": "Berichten zoeken"
+    },
+    "inbox": {
+      "invites": "Uitnodigingen",
+      "inbox": "Inbox",
+      "notifications": "Meldingen"
+    },
+    "invites": {
+      "encrypted": "Versleuteld",
+      "directMessage": "Direct bericht",
+      "space": "Space",
+      "decline": "Weigeren",
+      "accept": "Accepteren",
+      "primary": "Primair",
+      "public": "Openbaar",
+      "spam": "Spam",
+      "noInvites": "Geen uitnodigingen",
+      "declineAll": "Alles weigeren",
+      "acceptAll": "Alles accepteren",
+      "reportAll": "Alles rapporteren",
+      "blockAll": "Alles blokkeren",
+      "noSpamInvites": "Geen spamuitnodigingen",
+      "invites": "Uitnodigingen",
+      "filter": "Filteren",
+      "hideAll": "Alles verbergen",
+      "viewAll": "Alles bekijken",
+      "reason": "Reden: {{reason}}",
+      "from": "Van: <b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "Wanneer iemand met wie je een kamer deelt je een uitnodiging stuurt, verschijnt deze hier.",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "Uitnodigingen van personen buiten je kamers verschijnen hier.",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "Sommige van de volgende uitnodigingen kunnen schadelijke inhoud bevatten of zijn verzonden door verbannen gebruikers.",
+      "invitesDetectedAsSpamAppearHere": "Uitnodigingen die als spam zijn herkend verschijnen hier.",
+      "spamInvites_one": "{{count, number}} spamuitnodiging",
+      "spamInvites_other": "{{count, number}} spamuitnodigingen"
+    },
+    "notifications": {
+      "open": "Openen",
+      "notificationMessages": "Meldingsberichten",
+      "filter": "Filteren",
+      "allNotifications": "Alle meldingen",
+      "highlighted": "Uitgelicht",
+      "scrollToTop": "Naar boven scrollen",
+      "noNotifications": "Geen meldingen",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "Je hebt nog geen nieuwe meldingen om weer te geven.",
+      "event": " gebeurtenis",
+      "roomTombstone": "Kamerverwijzing. {{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "Losmaken",
+      "invite": "Uitnodigen",
+      "copyLink": "Link kopiëren",
+      "spaceSettings": "Space-instellingen",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "Space {{value1}} opgepakt. Gebruik de pijltoetsen om te herschikken. Druk op de spatiebalk om neer te zetten."
+    },
+    "space": {
+      "invite": "Uitnodigen",
+      "copyLink": "Link kopiëren",
+      "spaceSettings": "Space-instellingen",
+      "eventTimeline": "Gebeurtenissentijdlijn",
+      "leaveSpace": "Space verlaten",
+      "spaceUpgraded": "Space bijgewerkt",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "Deze space is vervangen en niet meer actief.",
+      "openNewSpace": "Nieuwe space openen",
+      "joinNewSpace": "Deelnemen aan nieuwe space",
+      "lobby": "Lobby",
+      "messageSearch": "Berichten zoeken",
+      "failedToJoinReplacementSpace": "Deelnemen aan vervangende space mislukt!",
+      "rooms": "Kamers",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "Kamer {{value1}} opgepakt. Gebruik de pijltoetsen om te herschikken. Druk op de spatiebalk om neer te zetten."
+    },
+    "threads": {
+      "threads": "Threads"
+    },
+    "threadsView": {
+      "loadingThreads": "Threads laden",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "Je bent nog niet betrokken geweest bij threads",
+      "noThreadsMatchYourFilters": "Geen threads komen overeen met je filters",
+      "clearFilters": "Filters wissen",
+      "thread": "thread",
+      "threads": "threads"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "Niet ondersteund",
+      "option0": "Alleen op uitnodiging",
+      "option1": "Aankloppen en uitnodigen",
+      "option2": "Spaceleden of aankloppen",
+      "option3": "Spaceleden",
+      "option4": "Openbaar"
+    },
+    "toolbar": {
+      "heading1": "Kop 1",
+      "heading2": "Kop 2",
+      "heading3": "Kop 3",
+      "bold": "Vet",
+      "italic": "Cursief",
+      "underline": "Onderstrepen",
+      "strikeThrough": "Doorhalen",
+      "inlineCode": "Inlinecode",
+      "spoiler": "Spoiler",
+      "blockQuote": "Blokcitaat",
+      "blockCode": "Codeblok",
+      "orderedList": "Geordende lijst",
+      "unorderedList": "Ongeordende lijst",
+      "exitFormatting": "Opmaak afsluiten",
+      "disableMarkdown": "Markdown uitschakelen",
+      "enableMarkdown": "Markdown inschakelen",
+      "exitValue1": "{{value1}} afsluiten"
+    },
+    "reaction": {
+      "others_one": "{{count}} andere",
+      "reactionSummary": "<names>{{names}}</names> reageerde met :<reaction>{{reaction}}</reaction>:",
+      "others_other": "{{count}} anderen"
+    },
+    "audioContent": {
+      "pause": "Pauzeren",
+      "play": "Afspelen"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "Door spraakbericht bladeren"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "Standaard",
+      "option1": "Alle berichten",
+      "option2": "Vermeldingen en trefwoorden",
+      "option3": "Dempen"
+    },
+    "authFooter": {
+      "support": "Ondersteuning",
+      "privacy": "Privacy",
+      "terms": "Voorwaarden",
+      "poweredBy": "Mogelijk gemaakt door <app>{{appName}}</app>, <matrix>Matrix</matrix>, <cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "Deelnemen",
+      "notFound": "Pagina niet gevonden"
+    },
+    "ssoProviders": {
+      "signUpApple": "Registreren met Apple",
+      "signInApple": "Inloggen met Apple",
+      "continueGoogle": "Doorgaan met Google",
+      "continueGithub": "Doorgaan met GitHub",
+      "continueProvider": "Doorgaan met {{provider}}"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> heeft het deelnameverzoek van <b>{{userName}}</b> geaccepteerd {{reason}}",
+      "invited": "<b>{{senderName}}</b> heeft <b>{{userName}}</b> uitgenodigd {{reason}}",
+      "requested": "<b>{{userName}}</b> heeft verzocht om deel te nemen aan de kamer {{reason}}",
+      "joined": "<b>{{userName}}</b> is de kamer binnengekomen",
+      "rejectedInvitation": "<b>{{userName}}</b> heeft de uitnodiging geweigerd {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> heeft het deelnameverzoek van <b>{{userName}}</b> geweigerd {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> heeft het deelnameverzoek ingetrokken {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> heeft de uitnodiging van <b>{{userName}}</b> ingetrokken {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> heeft de verbanning van <b>{{userName}}</b> opgeheven {{reason}}",
+      "left": "<b>{{userName}}</b> heeft de kamer verlaten {{reason}}",
+      "kicked": "<b>{{senderName}}</b> heeft <b>{{userName}}</b> verwijderd {{reason}}",
+      "banned": "<b>{{senderName}}</b> heeft <b>{{userName}}</b> verbannen {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> heeft de weergavenaam gewijzigd in <b>{{userName}}</b>",
+      "removedName": "<b>{{prevUserName}}</b> heeft de weergavenaam verwijderd",
+      "changedAvatar": "<b>{{userName}}</b> heeft de avatar gewijzigd",
+      "removedAvatar": "<b>{{userName}}</b> heeft de avatar verwijderd",
+      "broken": "Beschadigde lidmaatschapsgebeurtenis",
+      "unchanged": "Lidmaatschapsgebeurtenis zonder wijzigingen"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "Suggesties voor gebruikersuitnodigingen",
+      "users": "Gebruikers",
+      "searching": "Gebruikers zoeken",
+      "noMatches": "Geen overeenkomende gebruikers",
+      "matchingUsers_one": "{{count}} overeenkomende gebruiker",
+      "matchingUsers_other": "{{count}} overeenkomende gebruikers"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "MindRoom Chat laden"
+    },
+    "commands": {
+      "CommandMe": "Actiebericht verzenden",
+      "CommandNotice": "Meldingsbericht verzenden",
+      "CommandShrug": "¯\\_(ツ)_/¯ als bericht verzenden",
+      "CommandTableFlip": "{{value1}} als bericht verzenden",
+      "CommandUnFlip": "{{value1}} als bericht verzenden",
+      "CommandStartDm": "Direct bericht met gebruiker starten. Voorbeeld: /startdm userId1",
+      "CommandJoin": "Deelnemen aan kamer via adres. Voorbeeld: /join address1 address2",
+      "CommandLeave": "Huidige kamer verlaten.",
+      "CommandInvite": "Gebruiker uitnodigen voor kamer. Voorbeeld: /invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "Uitnodiging van gebruiker voor kamer intrekken. Voorbeeld: /disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "Gebruiker uit kamer verwijderen. Voorbeeld: /kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "Gebruiker uit kamer verbannen. Voorbeeld: /ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "Verbanning van gebruiker uit kamer opheffen. Voorbeeld: /unban userId1 userId2",
+      "CommandIgnore": "Gebruiker negeren. Voorbeeld: /ignore userId1 userId2",
+      "CommandUnIgnore": "Gebruiker niet meer negeren. Voorbeeld: /unignore userId1 userId2",
+      "CommandMyRoomNick": "Bijnaam in huidige kamer wijzigen.",
+      "CommandMyRoomAvatar": "Profielfoto in huidige kamer wijzigen. Voorbeeld: /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "Kamer omzetten in direct bericht",
+      "CommandConvertToRoom": "Direct bericht omzetten in kamer",
+      "CommandDelete": "Berichten van gebruikers verwijderen. Voorbeeld: /delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "Toegangsbeheerlijst van server beheren. Voorbeeld: /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} emoji"
+    },
+    "fileHeader": {
+      "downloadValue1": "{{value1}} downloaden"
+    },
+    "time": {
+      "yesterdayValue1": "Gisteren {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "Afspeelsnelheid, momenteel {{value1}}, klik om te wisselen"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "Nieuwe Inbox-melding van {{value1}}"
+    },
+    "memberFilters": {
+      "joined": "Deelgenomen",
+      "invited": "Uitgenodigd",
+      "left": "Vertrokken",
+      "kicked": "Verwijderd",
+      "banned": "Verbannen"
+    },
+    "memberSort": {
+      "atoZ": "A tot Z",
+      "ztoA": "Z tot A",
+      "newest": "Nieuwste",
+      "oldest": "Oudste"
+    },
+    "presence": {
+      "active": "Actief",
+      "busy": "Bezet",
+      "away": "Afwezig"
+    },
+    "emojiGroups": {
+      "smileysPeople": "Smileys en mensen",
+      "animalsNature": "Dieren en natuur",
+      "foodDrinks": "Eten en drinken",
+      "activity": "Activiteit",
+      "travelPlaces": "Reizen en plaatsen",
+      "objects": "Objecten",
+      "symbols": "Symbolen",
+      "flags": "Vlaggen"
+    },
+    "roomTypes": {
+      "all": "Alle",
+      "spaces": "Spaces",
+      "rooms": "Kamers"
+    },
+    "imageUsage": {
+      "both": "Beide",
+      "sticker": "Sticker",
+      "emoji": "Emoji"
+    },
+    "powerLevels": {
+      "manager": "Beheerder",
+      "founder": "Oprichter",
+      "admin": "Beheerder",
+      "moderator": "Moderator",
+      "member": "Lid",
+      "muted": "Gedempt",
+      "team": "Team {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "Spraakbericht",
+      "tools_one": "{{count, number}} gereedschap",
+      "tools_other": "{{count, number}} gereedschappen"
+    },
+    "threadSummary": {
+      "manual": "Handmatig bewerkte samenvatting",
+      "title": "Threadsamenvatting",
+      "provenance": "Door AI gegenereerde threadsamenvatting",
+      "provenanceCount_one": "AI-samenvatting van het laatste {{count, number}} bericht",
+      "provenanceCount_other": "AI-samenvatting van de laatste {{count, number}} berichten"
+    },
+    "commandPalette": {
+      "shortcutHint": "Sneltoets: <shortcut>{{shortcut}}</shortcut> om te openen."
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "Bestaande toevoegen",
+      "search": "Zoeken",
+      "failedToApplyChangesPleaseTryAgain": "Wijzigingen konden niet worden toegepast! Probeer het opnieuw.",
+      "reset": "Opnieuw instellen",
+      "applyChanges": "Wijzigingen toepassen",
+      "applyWhenReadySelected_one": "Pas toe wanneer je klaar bent. ({{count}} geselecteerd)",
+      "applyWhenReadySelected_other": "Pas toe wanneer je klaar bent. ({{count}} geselecteerd)",
+      "noMatchForQuery": "Geen overeenkomst gevonden voor ‘{{query}}’.",
+      "noMatchFound": "Geen overeenkomst gevonden",
+      "noRooms": "Geen kamers",
+      "noRoomsDescription": "Je hebt nog geen kamers om weer te geven.",
+      "noSpaces": "Geen spaces",
+      "noSpacesDescription": "Je hebt nog geen spaces om weer te geven."
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "Beëindigen"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name> is aan het woord...",
+        "two": "<first>{{first}}</first> en <second>{{second}}</second> zijn aan het woord...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> en <third>{{third}}</third> zijn aan het woord...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> en <others>{{count}} andere persoon</others> zijn aan het woord...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> en <others>{{count}} andere personen</others> zijn aan het woord..."
+      },
+      "liveCount": "{{count}} live"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "Reacties",
+        "settings": "Instellingen",
+        "end": "Beëindigen",
+        "gridView": "Rasterweergave",
+        "spotlightView": "Spotlightweergave"
+      },
+      "callMemberCard": {
+        "collapse": "Inklappen",
+        "additionalParticipants_one": "+{{count}} andere",
+        "additionalParticipants_other": "+{{count}} andere"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "Je homeserver ondersteunt geen oproepen.",
+        "yourBrowserDoesNotSupportWebrtcWhich": "Je browser ondersteunt WebRTC niet, wat nodig is voor oproepen.",
+        "voiceChatSEmptyBeTheFirst": "De voicechat is leeg — wees de eerste die meedoet!",
+        "youDonTHavePermissionToJoin": "Je hebt geen toestemming om deel te nemen!",
+        "alreadyInAnotherCallEndTheCurrent": "Je neemt al deel aan een ander gesprek — beëindig het huidige gesprek om mee te doen!",
+        "participant": "Deelnemer",
+        "voiceCallError": "Fout bij spraakoproep",
+        "dismissVoiceCallError": "Fout bij spraakoproep sluiten"
+      },
+      "prescreenControls": {
+        "join": "Deelnemen"
+      },
+      "controls": {
+        "closeChat": "Chat sluiten",
+        "openChat": "Chat openen",
+        "startCamera": "Camera inschakelen",
+        "startScreenshare": "Scherm delen starten",
+        "stopCamera": "Camera uitschakelen",
+        "stopScreenshare": "Scherm delen stoppen",
+        "turnOffMicrophone": "Microfoon uitschakelen",
+        "turnOffSound": "Geluid uitschakelen",
+        "turnOnMicrophone": "Microfoon inschakelen",
+        "turnOnSound": "Geluid inschakelen"
+      },
+      "liveCount": "{{count}} live"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "Ontwikkelaarstools",
+          "options": "Opties",
+          "enableDeveloperTools": "Ontwikkelaarshulpmiddelen inschakelen",
+          "roomId": "Kamer-ID",
+          "copy": "Kopiëren",
+          "data": "Gegevens",
+          "newMessageEvent": "Nieuwe berichtgebeurtenis",
+          "createAndSendANewMessageEvent": "Maak en verstuur een nieuwe berichtgebeurtenis in de kamer.",
+          "compose": "Opstellen",
+          "roomState": "Kamerstatus",
+          "stateEventsOfTheRoom": "Statusgebeurtenissen van de kamer.",
+          "events": "Gebeurtenissen",
+          "addNew": "Nieuwe toevoegen",
+          "accountData": "Accountgegevens",
+          "privatePersonalizationDataStoredWithinRoom": "Persoonlijke aanpassingsgegevens die privé in de kamer zijn opgeslagen.",
+          "collapse": "Inklappen",
+          "copyRoomIdDescription": "Kamer-ID naar het klembord kopiëren. (‘{{roomId}}’)",
+          "expand": "Uitvouwen",
+          "total": "Totaal: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "Ontwikkelaarstools",
+          "send": "Versturen",
+          "stateKeyOptional": "Statussleutel (optioneel)",
+          "jsonContent": "JSON-inhoud",
+          "messageEventType": "Type berichtgebeurtenis",
+          "stateEventType": "Type statusgebeurtenis"
+        },
+        "stateEventEditor": {
+          "stateEvent": "Statusgebeurtenis",
+          "save": "Opslaan",
+          "cancel": "Annuleren",
+          "jsonContent": "JSON-inhoud",
+          "edit": "Bewerken",
+          "developerTools": "Ontwikkelaarstools"
+        },
+        "defaultStateKey": "Standaard"
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emoji's & stickers",
+        "roomPacks": {
+          "newPack": "Nieuw pakket",
+          "addYourOwnEmojiAndStickerPack": "Voeg je eigen emoji- en stickerpakket toe om in de kamer te gebruiken.",
+          "name": "Naam",
+          "create": "Maken",
+          "view": "Bekijken",
+          "packs": "Pakketten",
+          "noPacks": "Geen pakketten",
+          "thereAreNoEmojiOrStickerPacks": "Er zijn momenteel geen emoji- of stickerpakketten om weer te geven.",
+          "failedToRemovePacksPleaseTryAgain": "Kan pakketten niet verwijderen! Probeer het opnieuw.",
+          "cancel": "Annuleren",
+          "delete": "Verwijderen",
+          "deleteSelectedPacks_one": "Geselecteerde pakketten verwijderen. ({{count}} geselecteerd)",
+          "deleteSelectedPacks_other": "Geselecteerde pakketten verwijderen. ({{count}} geselecteerd)",
+          "unknown": "Onbekend"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "Kamerversleuteling",
+          "enabled": "Ingeschakeld",
+          "enable": "Inschakelen",
+          "enableEncryption": "Versleuteling inschakelen",
+          "areYouSureOnceEnabledEncryptionCannot": "Weet je het zeker? Zodra versleuteling is ingeschakeld, kan deze niet meer worden uitgeschakeld!",
+          "enableE2eEncryption": "E2E-versleuteling inschakelen",
+          "disabledDescription": "Zodra versleuteling is ingeschakeld, kan deze niet meer worden uitgeschakeld!",
+          "enabledDescription": "Berichten in deze kamer zijn beveiligd met end-to-endversleuteling."
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "Zichtbaarheid van berichtgeschiedenis",
+          "changesToHistoryVisibilityWillOnlyApply": "Wijzigingen in de zichtbaarheid van de geschiedenis gelden alleen voor toekomstige berichten. De zichtbaarheid van de bestaande geschiedenis verandert niet.",
+          "afterInvite": "Na uitnodiging",
+          "afterJoin": "Na deelname",
+          "allMessages": "Alle berichten",
+          "allMessagesGuests": "Alle berichten (gasten)"
+        },
+        "roomProfile": {
+          "avatar": "Avatar",
+          "upload": "Uploaden",
+          "reset": "Opnieuw instellen",
+          "remove": "Verwijderen",
+          "name": "Naam",
+          "topic": "Onderwerp",
+          "save": "Opslaan",
+          "cancel": "Annuleren",
+          "profile": "Profiel",
+          "edit": "Bewerken",
+          "unknown": "Onbekend"
+        },
+        "roomPublish": {
+          "publishToDirectory": "In de lijst publiceren",
+          "roomDescription": "Neem de kamer op in de openbare lijst, zodat anderen deze kunnen vinden.",
+          "spaceDescription": "Neem de space op in de openbare lijst, zodat anderen deze kunnen vinden."
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "Deze actie kan niet ongedaan worden gemaakt!",
+          "options": "Opties",
+          "upgrade": "Upgraden",
+          "currentVersion": "Huidige versie: {{version}}.",
+          "oldRoom": "Oude kamer",
+          "oldSpace": "Oude space",
+          "openNewRoom": "Nieuwe kamer openen",
+          "openNewSpace": "Nieuwe space openen",
+          "roomReplaced": "Deze kamer is vervangen!",
+          "roomUpgrade": "Kamerupgrade",
+          "spaceReplaced": "Deze space is vervangen!",
+          "spaceUpgrade": "Space-upgrade",
+          "upgradeRoom": "Kamer upgraden",
+          "upgradeSpace": "Space upgraden"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "Adres is al in gebruik!",
+          "collapse": "Inklappen",
+          "delete": "Verwijderen",
+          "expand": "Uitvouwen",
+          "loading": "Laden...",
+          "localAddresses": "Lokale adressen",
+          "localAddressesDescription": "Stel een lokaal adres in zodat gebruikers via je homeserver kunnen deelnemen.",
+          "main": "Hoofdadres",
+          "noAddresses": "Geen adressen",
+          "publish": "Publiceren",
+          "publishRequiresLocalAddress": "Om een adres te publiceren, moet het eerst als lokaal adres worden ingesteld",
+          "published": "Gepubliceerd",
+          "publishedAddresses": "Gepubliceerde adressen",
+          "publishedAddressesDescription": "Als de toegang <public>Openbaar</public> is, kan iedereen via gepubliceerde adressen deelnemen.",
+          "save": "Opslaan",
+          "selectedCount_one": "{{count}} geselecteerd",
+          "selectedCount_other": "{{count}} geselecteerd",
+          "setMain": "Als hoofdadres instellen",
+          "unpublish": "Publicatie intrekken",
+          "unsetMain": "Niet meer als hoofdadres gebruiken"
+        },
+        "roomJoinRules": {
+          "roomAccess": "Kamertoegang",
+          "roomDescription": "Bepaal hoe mensen aan de kamer kunnen deelnemen.",
+          "spaceAccess": "Toegang tot space",
+          "spaceDescription": "Bepaal hoe mensen aan de space kunnen deelnemen."
+        }
+      },
+      "members": {
+        "search": "Zoeken",
+        "scrollToTop": "Naar boven scrollen",
+        "memberCount_one": "{{count}} lid",
+        "memberCount_other": "{{count}} leden",
+        "noMembersForFilter": "Geen leden met ‘{{filter}}’",
+        "noResults": "Geen resultaten",
+        "resultCount_one": "{{count}} resultaat",
+        "resultCount_other": "{{count}} resultaten"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "Gebruikers",
+          "defaultPower": "Standaardbevoegdheid",
+          "defaultPowerLevelForAllUsers": "Standaardbevoegdheidsniveau voor alle gebruikers.",
+          "above": "& hoger",
+          "failedToApplyChangesPleaseTryAgain": "Wijzigingen konden niet worden toegepast! Probeer het opnieuw.",
+          "changesSavedApplyWhenReady": "Wijzigingen opgeslagen! Pas ze toe wanneer je klaar bent.",
+          "reset": "Opnieuw instellen",
+          "applyChanges": "Wijzigingen toepassen"
+        },
+        "powers": {
+          "founders": "Oprichters",
+          "foundingMembersHasAllPermissionsAndCan": "Oprichtende leden hebben alle bevoegdheden en kunnen alleen tijdens een upgrade worden gewijzigd.",
+          "powerLevels": "Bevoegdheidsniveaus",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "Beheer en pas de oplopende bevoegdheidsniveaus voor gebruikers aan.",
+          "edit": "Bewerken"
+        },
+        "powersEditor": {
+          "color": "Kleur",
+          "pick": "Kiezen",
+          "name": "Naam",
+          "bot": "Bot",
+          "power": "Bevoegdheid",
+          "icon": "Pictogram",
+          "remove": "Verwijderen",
+          "import": "Importeren",
+          "save": "Opslaan",
+          "cancel": "Annuleren",
+          "permissions": "Bevoegdheden",
+          "powerLevels": "Bevoegdheidsniveaus",
+          "newPowerLevel": "Nieuw bevoegdheidsniveau",
+          "createANewPowerLevel": "Maak een nieuw bevoegdheidsniveau.",
+          "create": "Maken",
+          "undo": "Ongedaan maken",
+          "usedPowerLevel": "Bevoegdheidsniveau in gebruik",
+          "youHaveToRemoveItsUseBefore": "Je moet eerst het gebruik ervan verwijderen voordat je het kunt verwijderen.",
+          "delete": "Verwijderen",
+          "edit": "Bewerken",
+          "failedToApplyChangesPleaseTryAgain": "Wijzigingen konden niet worden toegepast! Probeer het opnieuw.",
+          "changesSavedApplyWhenReady": "Wijzigingen opgeslagen! Pas ze toe wanneer je klaar bent.",
+          "reset": "Opnieuw instellen",
+          "applyChanges": "Wijzigingen toepassen"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "Gebruikers-ID",
+      "userSuggestions": "Gebruikerssuggesties",
+      "pleaseEnterAValidUserId": "Voer een geldige gebruikers-ID in.",
+      "options": "Opties",
+      "endToEndEncryption": "End-to-endversleuteling",
+      "onceThisFeatureIsEnabledItCan": "Zodra deze functie is ingeschakeld, kan deze na het maken van de kamer niet meer worden uitgeschakeld.",
+      "create": "Maken",
+      "rateLimited_one": "De server heeft je verzoek gedurende {{count}} minuut beperkt!",
+      "rateLimited_other": "De server heeft je verzoek gedurende {{count}} minuten beperkt!"
+    },
+    "createRoom": {
+      "type": "Type",
+      "access": "Toegang",
+      "name": "Naam",
+      "topicOptional": "Onderwerp (optioneel)",
+      "options": "Opties",
+      "advancedOptions": "Geavanceerde opties",
+      "endToEndEncryption": "End-to-endversleuteling",
+      "onceThisFeatureIsEnabledItCan": "Zodra deze functie is ingeschakeld, kan deze na het maken van de kamer niet meer worden uitgeschakeld.",
+      "knockToJoin": "Aankloppen om deel te nemen",
+      "anyoneCanSendRequestToJoinThis": "Iedereen kan een verzoek sturen om aan deze kamer deel te nemen.",
+      "allowFederation": "Federatie toestaan",
+      "usersFromOtherServersCanJoin": "Gebruikers van andere servers kunnen deelnemen.",
+      "create": "Maken",
+      "newChatRoom": "Nieuwe chatkamer",
+      "newVoiceRoom": "Nieuwe spraakkamer",
+      "rateLimited_one": "De server heeft je verzoek gedurende {{count}} minuut beperkt!",
+      "rateLimited_other": "De server heeft je verzoek gedurende {{count}} minuten beperkt!"
+    },
+    "createSpace": {
+      "access": "Toegang",
+      "name": "Naam",
+      "topicOptional": "Onderwerp (optioneel)",
+      "options": "Opties",
+      "advancedOptions": "Geavanceerde opties",
+      "knockToJoin": "Aankloppen om deel te nemen",
+      "anyoneCanSendRequestToJoinThis": "Iedereen kan een verzoek sturen om aan deze space deel te nemen.",
+      "allowFederation": "Federatie toestaan",
+      "usersFromOtherServersCanJoin": "Gebruikers van andere servers kunnen deelnemen.",
+      "create": "Maken",
+      "createSpaceModal": {
+        "newSpace": "Nieuwe space"
+      },
+      "rateLimited_one": "De server heeft je verzoek gedurende {{count}} minuut beperkt!",
+      "rateLimited_other": "De server heeft je verzoek gedurende {{count}} minuten beperkt!"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "Verwijderen",
+        "invite": "Uitnodigen",
+        "settings": "Instellingen",
+        "leave": "Verlaten",
+        "pinToSidebar": "Aan zijbalk vastmaken",
+        "setSuggested": "Als voorgesteld instellen",
+        "unpinFromSidebar": "Losmaken van zijbalk",
+        "unsetSuggested": "Niet meer als voorgesteld instellen"
+      },
+      "scrollToTop": "Naar boven scrollen",
+      "reordering": "Opnieuw ordenen",
+      "lobbyHeader": {
+        "invite": "Uitnodigen",
+        "spaceSettings": "Space-instellingen",
+        "leaveSpace": "Space verlaten",
+        "members": "Leden",
+        "moreOptions": "Meer opties"
+      },
+      "roomItem": {
+        "accessUnavailable": "Toegang niet beschikbaar",
+        "unknown": "Onbekend",
+        "suggested": "Voorgesteld",
+        "inaccessible": "Niet toegankelijk",
+        "openRoom": "Kamer openen",
+        "join": "Deelnemen",
+        "memberCount_one": "{{formattedCount}} lid",
+        "memberCount_other": "{{formattedCount}} leden",
+        "requestSent": "Verzoek verzonden",
+        "requestToJoin": "Verzoek tot deelname",
+        "sendingRequest": "Verzoek verzenden"
+      },
+      "spaceHierarchy": {
+        "noRooms": "Geen kamers",
+        "thisSpaceDoesNotContainsRoomsYet": "Deze space bevat nog geen kamers."
+      },
+      "spaceItem": {
+        "unknown": "Onbekend",
+        "inaccessible": "Niet toegankelijk",
+        "suggested": "Voorgesteld",
+        "accessUnavailable": "Toegang niet beschikbaar",
+        "rooms": "Kamers",
+        "chatRoom": "Chatkamer",
+        "voiceRoom": "Spraakkamer",
+        "existingRoom": "Bestaande kamer",
+        "addRoom": "Kamer toevoegen",
+        "newSpace": "Nieuwe space",
+        "existingSpace": "Bestaande space",
+        "addSpace": "Space toevoegen",
+        "requestSent": "Verzoek verzonden",
+        "requestToJoin": "Verzoek tot deelname"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "Meldingen",
+        "invite": "Uitnodigen",
+        "copyLink": "Link kopiëren",
+        "roomSettings": "Kamerinstellingen",
+        "leaveRoom": "Kamer verlaten",
+        "toggleChat": "Chat tonen/verbergen",
+        "moreOptions": "Meer opties"
+      },
+      "liveCount": "{{count}} live"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "Tijdlijn",
+        "general": "Algemeen",
+        "options": "Opties",
+        "addresses": "Adressen",
+        "advancedOptions": "Geavanceerde opties",
+        "compact": "Compact",
+        "threads": "Threads",
+        "classic": "Klassiek",
+        "offline": {
+          "title": "Offline toegang",
+          "checking": "Opgeslagen inhoud controleren…",
+          "unavailable": "Opgeslagen inhoud is niet beschikbaar op dit apparaat.",
+          "notSaved": "Deze kamer is nog niet opgeslagen voor offline gebruik.",
+          "downloading": "Deze kamer downloaden voor offline gebruik…",
+          "offlinePause": "Opslaan is gepauzeerd zolang het apparaat offline is.",
+          "backgroundPause": "Opslaan is gepauzeerd zolang de app op de achtergrond staat.",
+          "spacePause": "Opslaan is gepauzeerd omdat beschermde inhoud het opslagbudget vult.",
+          "readOnlyPause": "Opslag is mislukt. Open de app opnieuw om het opslaan te hervatten.",
+          "connectionPause": "Automatisch opslaan is gepauzeerd op deze verbinding.",
+          "errorPause": "Opslaan is na een fout gepauzeerd. Probeer het opnieuw.",
+          "partialHistory": "Een deel van de oudere geschiedenis is niet opgeslagen.",
+          "inaccessibleHistory": "Een deel van de geschiedenis is momenteel niet toegankelijk.",
+          "waitingForKeys": "Versleutelde gebeurtenissen die op sleutels wachten: {{count}}",
+          "unresolvedRelations": "Onopgeloste bewerkingen of antwoorden: {{count}}",
+          "missingEssential": "Ontbrekende essentiële berichtinhoud: {{count}}",
+          "historyEntries": "Opgeslagen geschiedenisitems: {{count}}",
+          "attachments": "Bijlagen: {{saved}} opgeslagen, {{missing}} ontbreken.",
+          "storageUsed": "Opslag gebruikt door bijlagen: {{size}}",
+          "pinFailed": "‘Offline bewaren’ kon niet worden bijgewerkt.",
+          "includeAllMedia": "Alle media opnemen",
+          "keepOffline": "Offline bewaren",
+          "keepOfflineDescription": "Bescherm opgeslagen media van deze kamer tijdens automatisch opruimen.",
+          "cancelDownload": "Download annuleren",
+          "downloadEntireRoom": "Hele kamer downloaden",
+          "clearDownloadedContent": "Gedownloade inhoud wissen",
+          "clearTitle": "Gedownloade inhoud wissen?",
+          "cancel": "Annuleren",
+          "clearDescription": "Opgeslagen geschiedenis en bijlagen van deze kamer worden van dit apparaat verwijderd.",
+          "clearFailed": "Gedownloade inhoud kon niet worden gewist.",
+          "clearConfirm": "Inhoud wissen"
+        }
+      },
+      "permissions": {
+        "permissions": "Bevoegdheden",
+        "ban": "Verbannen",
+        "changeAllPermission": "Alle bevoegdheden wijzigen",
+        "changeRoomAccess": "Kamertoegang wijzigen",
+        "changeServerAcls": "Server-ACL's wijzigen",
+        "deleteOthersMessages": "Berichten van anderen verwijderen",
+        "deleteSelfMessages": "Eigen berichten verwijderen",
+        "editPowerLevels": "Bevoegdheidsniveaus bewerken",
+        "enableEncryption": "Versleuteling inschakelen",
+        "groups": {
+          "calls": "Gesprekken",
+          "messages": "Berichten",
+          "moderation": "Moderatie",
+          "other": "Overig",
+          "roomOverview": "Kameroverzicht",
+          "settings": "Instellingen"
+        },
+        "historyVisibility": "Zichtbaarheid van geschiedenis",
+        "invite": "Uitnodigen",
+        "kick": "Verwijderen",
+        "manageEmojisStickers": "Emoji's en stickers beheren",
+        "modifyWidgets": "Widgets wijzigen",
+        "otherMessageEvents": "Andere berichtgebeurtenissen",
+        "otherSettings": "Overige instellingen",
+        "pinMessages": "Berichten vastmaken",
+        "pingRoom": "@room pingen",
+        "publishAddress": "Adres publiceren",
+        "roomAvatar": "Kameravatar",
+        "roomName": "Kamernaam",
+        "roomTopic": "Kameronderwerp",
+        "sendMessages": "Berichten versturen",
+        "sendReactions": "Reacties versturen",
+        "sendStickers": "Stickers versturen",
+        "startOrJoinCall": "Gesprek starten of eraan deelnemen",
+        "upgradeRoom": "Kamer upgraden"
+      },
+      "navigation": {
+        "developerTools": "Ontwikkelaarstools",
+        "emojisStickers": "Emoji's & stickers",
+        "general": "Algemeen",
+        "members": "Leden",
+        "permissions": "Bevoegdheden"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "Chat",
+        "close": "Sluiten"
+      },
+      "commandAutocomplete": {
+        "commands": "Opdrachten"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "Geen bericht opgegeven.",
+        "decline": "Weigeren",
+        "approve": "Goedkeuren",
+        "approveFromUser": "Deelnameverzoek van {{userId}} goedkeuren",
+        "approvedWaitingForSync": "Goedgekeurd. Wachten op kamersynchronisatie…",
+        "approving": "Goedkeuren…",
+        "declineFromUser": "Deelnameverzoek van {{userId}} afwijzen",
+        "declinedWaitingForSync": "Afgewezen. Wachten op kamersynchronisatie…",
+        "declining": "Afwijzen…",
+        "updateFailed": "Het verzoek kon niet worden bijgewerkt."
+      },
+      "membersDrawer": {
+        "invite": "Uitnodigen",
+        "invitePeople": "Mensen uitnodigen",
+        "close": "Sluiten",
+        "typeName": "Naam typen...",
+        "scrollToTop": "Naar boven scrollen",
+        "memberCount_one": "{{count}} lid",
+        "memberCount_other": "{{count}} leden",
+        "noMembersForFilter": "Geen leden met ‘{{filter}}’",
+        "noPendingJoinRequests": "Geen openstaande deelnameverzoeken",
+        "noResults": "Geen resultaten",
+        "requestCount_one": "Verzoeken ({{count}})",
+        "requestCount_other": "Verzoeken ({{count}})",
+        "invitedCount_one": "{{count}} uitgenodigd",
+        "invitedCount_other": "{{count}} uitgenodigd",
+        "resultCount_one": "{{count}} resultaat",
+        "resultCount_other": "{{count}} resultaten",
+        "formattedMemberCount_one": "{{formattedCount}} lid",
+        "formattedMemberCount_other": "{{formattedCount}} leden"
+      },
+      "roomTombstone": {
+        "openNewRoom": "Nieuwe kamer openen",
+        "joinNewRoom": "Deelnemen aan nieuwe kamer",
+        "joinReplacementFailed": "Kan niet deelnemen aan vervangende kamer!",
+        "replacedDescription": "Deze kamer is vervangen en is niet meer actief."
+      },
+      "jumpToTime": {
+        "jumpToTime": "Naar tijdstip gaan",
+        "time": "Tijd",
+        "date": "Datum",
+        "preset": "Voorinstelling",
+        "today": "Vandaag",
+        "yesterday": "Gisteren",
+        "beginning": "Begin",
+        "openTimeline": "Tijdlijn openen"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "Bericht bewerken...",
+          "save": "Opslaan",
+          "cancel": "Annuleren"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> is aan het typen...",
+        "two": "<first>{{first}}</first> en <second>{{second}}</second> zijn aan het typen...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> en <third>{{third}}</third> zijn aan het typen...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> en <others>{{count}} andere persoon</others> zijn aan het typen...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> en <others>{{count}} andere personen</others> zijn aan het typen...",
+        "dropTypingStatus": "Typstatus laten vallen"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> volgt het gesprek.",
+        "two": "<first>{{first}}</first> en <second>{{second}}</second> volgen het gesprek.",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> en <third>{{third}}</third> volgen het gesprek.",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> en <others>{{count}} andere persoon</others> volgen het gesprek.",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> en <others>{{count}} andere personen</others> volgen het gesprek."
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}, {{count}} openstaand deelnameverzoek",
+        "accessibleLabel_other": "{{baseLabel}}, {{count}} openstaande deelnameverzoeken"
+      },
+      "reactionViewer": {
+        "reactedWith": "Reageerde met :{{shortcode}}:"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "Account",
+        "accountDeactivation": {
+          "accountManagement": "Accountbeheer",
+          "deleteDeactivateAccount": "Account verwijderen/deactiveren",
+          "deleteDeactivate": "Verwijderen/deactiveren",
+          "openProviderPortal": "Providerportaal openen",
+          "thisWillRequestAccountDeactivationOnYour": "Hiermee vraag je deactivering van je account op je Matrix-homeserver aan. Je kunt de toegang tot je berichten en sessies verliezen.",
+          "eraseAccountDataIfSupported": "Accountgegevens wissen (indien ondersteund)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "Als dit is ingeschakeld, kan de homeserver naast deactivering ook je accountgegevens permanent wissen.",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "Er is aanvullende verificatie vereist om het account te deactiveren.",
+          "thisClientDoesNotSupportTheRequired": "Deze client ondersteunt de vereiste verificatiestappen voor deze homeserver niet.",
+          "continueInProviderPortal": "Doorgaan in providerportaal",
+          "cancel": "Annuleren",
+          "deactivationFailed": "Kan account niet deactiveren. {{error}}",
+          "descriptionWithProvider": "Start de accountdeactivering vanuit deze client. Indien nodig kun je doorgaan op de accountbeheerpagina van de provider.",
+          "descriptionWithoutProvider": "Start de accountdeactivering vanuit deze client. Sommige homeservers kunnen aanvullende verificatiestappen vereisen."
+        },
+        "contactInfo": {
+          "contactInformation": "Contactgegevens",
+          "emailAddress": "E-mailadres",
+          "emailAddressAttachedToYourAccount": "E-mailadres dat aan je account is gekoppeld."
+        },
+        "ignoredUserList": {
+          "block": "Blokkeren",
+          "blockedUsers": "Geblokkeerde gebruikers",
+          "selectUser": "Gebruiker selecteren",
+          "preventReceivingMessagesOrInvitesFromUser": "Voeg de userId van een gebruiker toe om geen berichten of uitnodigingen van die gebruiker meer te ontvangen.",
+          "users": "Gebruikers"
+        },
+        "matrixId": {
+          "matrixId": "Matrix-ID",
+          "copy": "Kopiëren",
+          "copied": "Gekopieerd"
+        },
+        "profile": {
+          "avatar": "Avatar",
+          "upload": "Uploaden",
+          "remove": "Verwijderen",
+          "removeAvatar": "Avatar verwijderen",
+          "areYouSureYouWantToRemove": "Weet je zeker dat je de profielavatar wilt verwijderen?",
+          "displayName": "Weergavenaam",
+          "save": "Opslaan",
+          "profile": "Profiel",
+          "unnamedFile": "Naamloos"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "Accountgegevens",
+          "global": "Globaal",
+          "dataStoredInYourGlobalAccountData": "Gegevens die in je algemene accountgegevens zijn opgeslagen.",
+          "events": "Gebeurtenissen",
+          "addNew": "Nieuwe toevoegen",
+          "collapse": "Inklappen",
+          "expand": "Uitvouwen",
+          "total": "Totaal: {{count}}"
+        },
+        "developTools": {
+          "developerTools": "Ontwikkelaarstools",
+          "options": "Opties",
+          "enableDeveloperTools": "Ontwikkelaarshulpmiddelen inschakelen",
+          "accessToken": "Toegangstoken",
+          "copyAccessTokenToClipboard": "Toegangstoken naar het klembord kopiëren.",
+          "copy": "Kopiëren"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "Laatste activiteit:",
+          "deviceName": "Apparaatnaam",
+          "save": "Opslaan",
+          "cancel": "Annuleren",
+          "deviceNamesAreVisibleToPublic": "Apparaatnamen zijn openbaar zichtbaar.",
+          "logout": "Uitloggen",
+          "undo": "Ongedaan maken",
+          "edit": "Bewerken",
+          "deviceIdValue": "Apparaat-ID: <value>{{id}}</value>",
+          "deviceKeyValue": "Apparaatsleutel: <value>{{key}}</value>",
+          "ipAddressValue": "IP-adres: <value>{{address}}</value>",
+          "loading": "Laden...",
+          "today": "Vandaag",
+          "yesterday": "Gisteren"
+        },
+        "devices": "Apparaten",
+        "security": "Beveiliging",
+        "deviceVerification": "Apparaatverificatie",
+        "toVerifyDeviceIdentityAndGrantAccess": "Om de identiteit van het apparaat te verifiëren en toegang tot versleutelde berichten te verlenen.",
+        "current": "Huidig",
+        "localBackup": {
+          "newPassword": "Nieuw wachtwoord",
+          "confirmPassword": "Wachtwoord bevestigen",
+          "export": "Exporteren",
+          "exportMessagesData": "Berichtgegevens exporteren",
+          "savePasswordProtectedCopyOfEncryptionData": "Sla een met een wachtwoord beveiligde kopie van de versleutelingsgegevens op je apparaat op om berichten later te ontsleutelen.",
+          "password": "Wachtwoord",
+          "decrypt": "Ontsleutelen",
+          "importMessagesData": "Berichtgegevens importeren",
+          "loadPasswordProtectedCopyOfEncryptionData": "Laad een met een wachtwoord beveiligde kopie van de versleutelingsgegevens van het apparaat om je berichten te ontsleutelen.",
+          "import": "Importeren",
+          "localBackup": "Lokale back-up",
+          "collapse": "Inklappen",
+          "cryptoModuleNotFound": "Onverwachte fout! Cryptomodule niet gevonden!",
+          "expand": "Uitvouwen"
+        },
+        "otherDevices": {
+          "others": "Anderen",
+          "deviceDashboard": "Apparaatdashboard",
+          "manageYourDevicesOnOidcDashboard": "Beheer je apparaten op het OIDC-dashboard.",
+          "open": "Openen",
+          "authenticationStepsToPerformThisActionAre": "De authenticatiestappen voor deze actie worden niet door de client ondersteund.",
+          "cancel": "Annuleren",
+          "logout": "Uitloggen",
+          "logoutFailed": "Kan apparaten niet afmelden! Probeer het opnieuw. {{error}}",
+          "logoutSelectedDevices_one": "Afmelden bij geselecteerde apparaten. ({{count}} geselecteerd)",
+          "logoutSelectedDevices_other": "Afmelden bij geselecteerde apparaten. ({{count}} geselecteerd)"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "Start de verificatie vanaf een ander apparaat of verifieer handmatig. <toggle><strong>Minder weergeven</strong></toggle>",
+          "currentDeviceHelpMore": "Start de verificatie vanaf een ander apparaat of verifieer handmatig. <toggle><strong>Meer informatie</strong></toggle>",
+          "enable": "Inschakelen",
+          "findDevice": "Zoek dit apparaat in het gedeelte <section>Apparaten/sessies</section>.",
+          "initiateVerification": "Start de verificatie.",
+          "manualVerificationHint": "Als je geen geverifieerd apparaat hebt, druk je op de knop <action>‘Handmatig verifiëren’</action>.",
+          "openSettings": "Open de <settings>Instellingen</settings>.",
+          "openVerifiedDevice": "Open je andere geverifieerde apparaat.",
+          "reset": "Opnieuw instellen",
+          "stepsFromOtherDevice": "Stappen om vanaf een ander apparaat te verifiëren.",
+          "unverified": "Niet geverifieerd",
+          "unverifiedCount_one": "{{count}} niet geverifieerd",
+          "unverifiedCount_other": "{{count}} niet geverifieerd",
+          "verified": "Geverifieerd",
+          "verify": "Verifiëren",
+          "verifyDeviceDescription": "Verifieer de identiteit van het apparaat en verleen toegang tot versleutelde berichten.",
+          "verifyManually": "Handmatig verifiëren"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emoji's & stickers",
+        "globalPacks": {
+          "roomPacks": "Kamerpakketten",
+          "noPacks": "Geen pakketten",
+          "packFromRoomsWillAppearHereYou": "Pakketten uit kamers verschijnen hier. Je hebt nog geen kamers met pakketten.",
+          "view": "Bekijken",
+          "favoritePacks": "Favoriete pakketten",
+          "selectPack": "Pakket selecteren",
+          "pickEmojisAndStickersPackFromRooms": "Kies emoji- en stickerpakketten uit kamers om in alle kamers te gebruiken.",
+          "select": "Selecteren",
+          "failedToApplyChangesPleaseTryAgain": "Wijzigingen konden niet worden toegepast! Probeer het opnieuw.",
+          "changesSavedApplyWhenReady": "Wijzigingen opgeslagen! Pas ze toe wanneer je klaar bent.",
+          "reset": "Opnieuw instellen",
+          "applyChanges": "Wijzigingen toepassen",
+          "selectAll": "Alles selecteren",
+          "unknown": "Onbekend",
+          "unselectAll": "Alles deselecteren",
+          "save": "Opslaan",
+          "close": "Sluiten"
+        },
+        "userPack": {
+          "defaultPack": "Standaardpakket",
+          "view": "Bekijken",
+          "unknown": "Onbekend"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "Alle berichten",
+          "badge": "Badge:",
+          "1To1Chats": "1-op-1-chats",
+          "1To1ChatsEncrypted": "1-op-1-chats (versleuteld)",
+          "rooms": "Kamers",
+          "roomsEncrypted": "Kamers (versleuteld)"
+        },
+        "keywordMessages": {
+          "save": "Opslaan",
+          "keywordMessages": "Berichten met trefwoorden",
+          "badge": "Badge:",
+          "selectKeyword": "Trefwoord selecteren",
+          "setANotificationPreferenceForMessageContaining": "Stel een meldingsvoorkeur in voor berichten met het opgegeven trefwoord."
+        },
+        "notifications": "Meldingen",
+        "blockMessages": "Berichten blokkeren",
+        "thisOptionHasBeenMovedToAccount": "Deze optie is verplaatst naar het gedeelte ‘Account > Gebruikers blokkeren’.",
+        "specialMessages": {
+          "specialMessages": "Speciale berichten",
+          "badge": "Badge:",
+          "mentionRoom": "@room vermelden",
+          "containsRoom": "Bevat @room",
+          "containsDisplayName": "Bevat weergavenaam (‘{{displayName}}’)",
+          "containsDisplayNameGeneric": "Bevat weergavenaam",
+          "containsUsername": "Bevat gebruikersnaam (‘{{username}}’)",
+          "mentionUserId": "Vermeldt gebruikers-ID (‘{{userId}}’)"
+        },
+        "systemNotification": {
+          "emailNotification": "E-mailmelding",
+          "yourAccountDoesNotHaveAnyEmail": "Er is geen e-mailadres aan je account gekoppeld.",
+          "unexpectedError": "Onverwachte fout!",
+          "system": "Systeem",
+          "desktopNotifications": "Bureaubladmeldingen",
+          "showDesktopNotificationsWhenMessageArrive": "Bureaubladmeldingen weergeven wanneer er een bericht binnenkomt.",
+          "enable": "Inschakelen",
+          "notificationSound": "Meldingsgeluid",
+          "playSoundWhenNewMessageArrive": "Speel een geluid af wanneer er een nieuw bericht binnenkomt.",
+          "notSupported": "Meldingen worden niet door het systeem ondersteund.",
+          "permissionBlocked": "Toestemming voor meldingen is geblokkeerd. Sta meldingen toe via de adresbalk van de browser.",
+          "sendToEmail": "Melding naar je e-mailadres sturen.",
+          "sendToEmailAddress": "Melding naar je e-mailadres sturen. (‘{{email}}’)"
+        },
+        "mode": {
+          "disable": "Uitschakelen",
+          "notifyLoud": "Met geluid melden",
+          "notifySilent": "Stil melden"
+        }
+      },
+      "about": {
+        "clearCache": "Cache wissen",
+        "clearCacheAndReload": "Cache wissen en opnieuw laden",
+        "clearCacheDescription": "Wist gegevens in de cache en laadt opnieuw. Je blijft aangemeld.",
+        "clearTrace": "Trace wissen",
+        "clearing": "Wissen...",
+        "credits": "Dankbetuigingen",
+        "deepDiagnosticTracing": "Uitgebreide diagnostische tracering",
+        "deepTraceMemoryOnly": "Opname in het geheugen omdat traceopslag niet beschikbaar is. Exporteer voordat je de app opnieuw start; deze recente gebeurtenissen gaan bij het opnieuw starten verloren.",
+        "deepTraceEnabledStorageUnavailable": "Ingeschakeld, maar traceopslag is momenteel niet beschikbaar.",
+        "deepTraceOff": "Uit. Schakel dit in voordat je een vastloper reproduceert om prestaties, Matrix, netwerk, levenscyclus en interactietiming vast te leggen.",
+        "deepTracePreferenceSaveFailed": "{{description}} Uit voor deze sessie, maar de voorkeur kon niet worden opgeslagen en wordt mogelijk na opnieuw opstarten weer ingeschakeld.",
+        "deepTraceRecording": "Er wordt op dit apparaat een begrensde, privacyveilige prestatie- en interactietrace opgenomen.",
+        "deepTraceStarting": "Er wordt op dit apparaat een begrensde, privacyveilige prestatie- en interactietrace gestart.",
+        "diagnosticsExportFailed": "{{description}} Exporteren mislukt. Probeer het opnieuw.",
+        "diagnosticsNone": "Geen onverwachte sessie bewaard.",
+        "diagnosticsUnavailable": "Diagnostische opslag niet beschikbaar.",
+        "diagnosticsUnexpected": "De vorige sessie is onverwacht beëindigd; de oorzaak is onbekend.",
+        "emojiArtCredit": "De <art>Twemoji</art>-emoji-art is © <owner>Twitter, Inc en andere bijdragers</owner> en wordt gebruikt onder de voorwaarden van <license>CC-BY 4.0</license>.",
+        "emojiFontCredit": "Het lettertype <font>twemoji-colr</font> is © <owner>Mozilla Foundation</owner> en wordt gebruikt onder de voorwaarden van <license>Apache 2.0</license>.",
+        "exportDiagnostics": "Diagnostiek exporteren",
+        "exporting": "Exporteren...",
+        "matrixSdkCredit": "De <sdk>matrix-js-sdk</sdk> is © <owner>The Matrix.org Foundation C.I.C</owner> en wordt gebruikt onder de voorwaarden van <license>Apache 2.0</license>.",
+        "onDeviceDiagnostics": "Diagnostiek op het apparaat",
+        "options": "Opties",
+        "soundResourcesCredit": "De <resources>Material-geluidsbronnen</resources> zijn © <owner>Google</owner> en worden gebruikt onder de voorwaarden van <license>CC-BY 4.0</license>.",
+        "sourceCode": "Broncode",
+        "support": "Ondersteuning",
+        "title": "Over",
+        "traceStorageUnavailable": "Traceopslag niet beschikbaar."
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "Algemeen",
+        "options": "Opties",
+        "addresses": "Adressen",
+        "advancedOptions": "Geavanceerde opties"
+      },
+      "permissions": {
+        "permissions": "Bevoegdheden",
+        "ban": "Verbannen",
+        "changeAllPermission": "Alle bevoegdheden wijzigen",
+        "changeServerAcls": "Server-ACL's wijzigen",
+        "changeSpaceAccess": "Toegang tot space wijzigen",
+        "editPowerLevels": "Bevoegdheidsniveaus bewerken",
+        "groups": {
+          "manage": "Beheren",
+          "moderation": "Moderatie",
+          "other": "Overig",
+          "settings": "Instellingen",
+          "spaceOverview": "Space-overzicht"
+        },
+        "invite": "Uitnodigen",
+        "kick": "Verwijderen",
+        "manageEmojisStickers": "Emoji's en stickers beheren",
+        "manageSpaceRooms": "Kamers in space beheren",
+        "messageEvents": "Berichtgebeurtenissen",
+        "otherSettings": "Overige instellingen",
+        "publishAddress": "Adres publiceren",
+        "spaceAvatar": "Space-avatar",
+        "spaceName": "Spacenaam",
+        "spaceTopic": "Space-onderwerp",
+        "upgradeSpace": "Space upgraden"
+      },
+      "navigation": {
+        "developerTools": "Ontwikkelaarstools",
+        "emojisStickers": "Emoji's & stickers",
+        "general": "Algemeen",
+        "members": "Leden",
+        "permissions": "Bevoegdheden"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "Geen overeenkomst gevonden voor ‘{{query}}’.",
+      "noMatchFound": "Geen overeenkomst gevonden",
+      "noRooms": "Geen kamers",
+      "noRoomsDescription": "Je hebt nog geen kamers om weer te geven.",
+      "placeholder": "Zoeken",
+      "syntaxHint": "Typ <rooms>#</rooms> voor kamers, <directs>@</directs> voor privéberichten en <spaces>*</spaces> voor spaces. Sneltoets: <hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "Spraakopname verwijderen",
+      "pauseRecording": "Spraakopname pauzeren",
+      "resumeRecording": "Spraakopname hervatten",
+      "statusActive": "Spraakopname actief",
+      "statusPaused": "Spraakopname gepauzeerd",
+      "statusProcessing": "Spraakopname wordt verwerkt",
+      "statusReadyToRetry": "Spraakopname kan opnieuw worden geprobeerd",
+      "statusSending": "Spraakopname wordt verstuurd",
+      "statusStarting": "Spraakopname wordt gestart",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "Versturen van spraakopname mislukt",
+        "yourRecordingIsStillSaved": "Je opname is nog steeds opgeslagen.",
+        "discard": "Verwijderen",
+        "retry": "Opnieuw proberen",
+        "discardVoiceRecording": "Spraakopname verwijderen?",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "Deze opname is niet verstuurd. Permanent verwijderen?",
+        "cancel": "Annuleren",
+        "voiceRecordingError": "Fout bij spraakopname",
+        "ok": "OK"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "Microfoontoegang is geblokkeerd. Geef MindRoom Chat toegang tot de microfoon in de Android-appinstellingen en probeer het opnieuw.",
+        "microphoneBlockedIos": "Microfoontoegang is geblokkeerd. Geef MindRoom Chat toegang tot de microfoon in de iPhone-instellingen en probeer het opnieuw.",
+        "microphoneBlockedBrowser": "Microfoontoegang is geblokkeerd. Geef deze site/app toegang tot de microfoon in je browser- of systeeminstellingen en probeer het opnieuw.",
+        "noMicrophone": "Er is geen microfoon gevonden op dit apparaat.",
+        "microphoneUnavailable": "De microfoon is momenteel niet beschikbaar (mogelijk wordt deze door een andere app gebruikt).",
+        "microphoneFailed": "Kan geen toegang krijgen tot de microfoon.",
+        "microphoneUnsupported": "Microfoontoegang wordt niet ondersteund op dit apparaat.",
+        "recordingStopped": "De spraakopname is onverwacht gestopt. Neem opnieuw op.",
+        "noAudio": "Er zijn geen audiogegevens opgenomen.",
+        "recordingUnsupported": "Spraakopname wordt niet ondersteund in deze browser.",
+        "httpsRequired": "Voor spraakopname is HTTPS (of localhost) vereist. Open MindRoom via HTTPS.",
+        "sendBusy": "Er wordt nog een ander spraakbericht verstuurd. Even geduld.",
+        "sendFailed": "Kan spraakbericht niet versturen."
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "Bellen",
+        "homeserverUnsupported": "Je homeserver ondersteunt geen oproepen.",
+        "browserUnsupported": "Je browser ondersteunt WebRTC niet.",
+        "endCurrentCall": "Beëindig eerst je huidige oproep.",
+        "failedToStart": "De oproep kon niet worden gestart."
+      },
+      "agentCallHeaderButton": {
+        "call": "Een agent bellen",
+        "callAgent": "{{name}} bellen",
+        "chooseAgent": "Kies een agent om te bellen",
+        "close": "Sluiten"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "MindRoom-opdrachten"
+      },
+      "descriptions": {
+        "help": "Krijg hulp over beschikbare mogelijkheden of een specifiek onderwerp.",
+        "reload-plugins": "Geconfigureerde plugins opnieuw laden (alleen beheerders).",
+        "schedule": "Plan een taak om later uit te voeren.",
+        "list_schedules": "Alle geplande taken weergeven.",
+        "cancel_schedule": "Annuleer één planning op ID of alle planningen.",
+        "edit_schedule": "Werk een bestaande geplande taak bij.",
+        "config": "Beheer de MindRoom-configuratie (alleen beheerders).",
+        "desktop": "Beheer je Desktop-doel.",
+        "model": "Toon of wijzig het model dat in de huidige thread wordt gebruikt.",
+        "room_model": "Toon of wijzig het standaardmodel van de kamer (instellen/herstellen vereist een kamerbeheerder).",
+        "thread_mode": "Toon of wijzig de threadmodus die in de huidige kamer wordt gebruikt (alleen kamerbeheerders).",
+        "encrypt": "Controleer of schakel end-to-endversleuteling in voor de huidige kamer.",
+        "e2ee": "Toon versleutelingsdiagnostiek voor de huidige kamer.",
+        "hi": "Welkomstinformatie weergeven."
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "Geplakte tekst",
+        "characterCount_one": "{{formattedCount}} teken",
+        "characterCount_other": "{{formattedCount}} tekens"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Lokale MindRoom",
+        "connectLocalMindroom": "Lokale MindRoom verbinden",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "Koppel dit chataccount aan je lokale MindRoom-proces",
+        "enterCodeDescription": "Voer {{command}} uit op je computer en open daarna de getoonde link of voer de code hier in.",
+        "pairCode": "Koppelcode",
+        "mindroomDocs": "MindRoom-documentatie",
+        "linkedInstallations": "Gekoppelde installaties",
+        "linkedInstallationsUnavailable": "Gekoppelde installaties zijn alleen beschikbaar voor accounts op {{server}}.",
+        "loadingLinkedInstallations": "Gekoppelde installaties laden...",
+        "tryAgain": "Opnieuw proberen",
+        "noLinkedLocalMindroomInstallationsYet": "Er zijn nog geen lokale MindRoom-installaties gekoppeld.",
+        "revoke": "Intrekken",
+        "confirmRevoke": "Intrekken bevestigen",
+        "cancel": "Annuleren",
+        "requestFailed": "Verzoek mislukt. Probeer het opnieuw.",
+        "unknown": "Onbekend",
+        "createdAt": "Aangemaakt: {{timestamp}}",
+        "lastSeenAt": "Laatst gezien: {{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "Voer de code in die in je terminal wordt getoond.",
+        "continue": "Doorgaan",
+        "invalidCode": "Voer de code van 8 tekens in, bijvoorbeeld ABCD-EFGH.",
+        "code": "Code: {{code}}",
+        "chooseAccount": "Kies het account dat deze verbinding goedkeurt",
+        "checkingCode": "Code controleren...",
+        "deviceQuestion": "{{clientName}} verbinden?",
+        "deviceStarted": "{{age}} gestart",
+        "requestedFrom": "Aangevraagd vanaf {{ip}}",
+        "requestedFromUnknown": "Aangevraagd vanaf een onbekend adres",
+        "warning": "Keur alleen goed als je dit zelf net op je eigen computer hebt gestart en je terminal dezelfde code toont.",
+        "approveAs": "Goedkeuren als {{userId}}",
+        "approved": "Verbonden. Je kunt teruggaan naar je terminal.",
+        "noAccount": "Log in met je MindRoom-account om deze verbinding goed te keuren.",
+        "signIn": "Inloggen om goed te keuren",
+        "accountSignedOut": "Dit account moet opnieuw inloggen voordat het kan goedkeuren.",
+        "codeNotFound": "Deze code is niet gevonden. Controleer de code in je terminal.",
+        "codeExpired": "Deze code is verlopen. Gebruik de nieuwe link of code in je terminal.",
+        "codeAlreadyApproved": "Deze code is al goedgekeurd.",
+        "backToChat": "Terug naar de chat",
+        "enterNewCode": "Voer de nieuwe code in:",
+        "noAccountAppGuidance": "Al ingelogd in de MindRoom-app? Open daar Instellingen → Lokale MindRoom en voer {{code}} in.",
+        "frameWarning": "Om veiligheidsredenen kan de apparaatgoedkeuring niet binnen een frame worden voltooid.",
+        "openInNewTab": "Openen in nieuw tabblad"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "Geverifieerde agent · kruislings ondertekend apparaat",
+        "verifiedAgent": "Geverifieerde agent"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "Naar boven scrollen",
+        "searchMessages": "Berichten zoeken",
+        "searchDescription": "Vind nuttige berichten in je community door met verwante trefwoorden te zoeken.",
+        "noResultsFor": "Geen resultaten gevonden voor ‘{{term}}’",
+        "resultsFor": "Resultaten voor ‘{{term}}’"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (bewerkt)"
+      },
+      "searchFilters": {
+        "sortBy": "Sorteren op",
+        "recent": "Recent",
+        "relevance": "Relevantie",
+        "search": "Zoeken",
+        "rooms": "Kamers",
+        "noMatchFound": "Geen overeenkomst gevonden!",
+        "save": "Opslaan",
+        "deselectAll": "Alles deselecteren",
+        "selectRooms": "Kamers selecteren",
+        "filter": "Filteren",
+        "global": "Globaal",
+        "saveCount": "Opslaan ({{count}})",
+        "roomsFor": "Kamers voor ‘{{query}}’"
+      },
+      "searchInput": {
+        "search": "Zoeken",
+        "searchForKeyword": "Zoeken op trefwoord",
+        "clear": "Wissen",
+        "enter": "Invoeren"
+      },
+      "searchResultGroup": {
+        "open": "Openen",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "De antwoordcontext is verborgen in zoekresultaten. Open het bericht voor de volledige threadcontext."
+      },
+      "searchResultPreview": {
+        "redacted": "Bericht is geredigeerd.",
+        "message": "Bericht",
+        "image": "Afbeelding",
+        "video": "Video",
+        "audio": "Audio",
+        "file": "Bestand",
+        "location": "Locatie",
+        "reaction": "Reactie",
+        "unsupportedEvent": "Niet-ondersteunde gebeurtenis"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "Argumenten",
+        "loadingCompleteArguments": "Volledige argumenten laden…",
+        "loadFailed": "De volledige argumenten konden niet worden geladen.",
+        "onlyATruncatedPreviewIsAvailable": "Alleen een ingekort voorbeeld is beschikbaar.",
+        "retry": "Opnieuw proberen",
+        "sensitiveValuesMayBeRedacted": "Gevoelige waarden kunnen zijn geredigeerd.",
+        "hideArguments": "Argumenten verbergen",
+        "showAllArguments": "Alle argumenten tonen"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "Dit verzoek kan hier niet worden goedgekeurd.",
+        "submittedWaitingForRoomUpdate": "Ingediend. Wachten op kamerupdate.",
+        "approveOnce": "Eenmalig goedkeuren",
+        "approve": "Goedkeuren",
+        "deny": "Weigeren",
+        "autoApprovalDuration": "Duur van automatische goedkeuring",
+        "denyReasonOptional": "Reden voor weigering (optioneel)",
+        "denialReasonOptional": "Weigeringsreden (optioneel)",
+        "confirmDeny": "Weigering bevestigen",
+        "confirmDeny2": "Weigering bevestigen",
+        "cancel": "Annuleren",
+        "autoApproveMinutes_one": "Automatisch goedkeuren gedurende {{count}} minuut",
+        "autoApproveMinutes_other": "Automatisch goedkeuren gedurende {{count}} minuten",
+        "denyCallReasonOptional": "Reden voor weigering van aanroep {{number}} (optioneel)",
+        "approveExactCall": "Precies deze aanroep goedkeuren",
+        "approveAnyArguments": "Willekeurige argumenten goedkeuren",
+        "anyArgumentsWarning": "Met willekeurige argumenten mag de agent binnen {{minutes}} minuten van het geplande tijdstip één {{tool}}-aanroep doen met wat hij kiest."
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "Automatische goedkeuring actief",
+        "autoApprovalStopped": "Automatische goedkeuring gestopt",
+        "autoApprovalExpired": "Automatische goedkeuring verlopen",
+        "argumentsMayDifferBetweenCalls": "Argumenten kunnen per aanroep verschillen.",
+        "stopAutoApproval": "Automatische goedkeuring stoppen",
+        "submittedWaitingForRoomUpdate": "Ingediend. Wachten op kamerupdate.",
+        "fixedExpiry": "Vaste vervaltijd: {{timestamp}}",
+        "expiresInMinutes_one": "Verloopt over {{count}} minuut",
+        "expiresInMinutes_other": "Verloopt over {{count}} minuten"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "Afgehandeld verzoek om gereedschapsgoedkeuring",
+        "unknown": "onbekend",
+        "approvedOnce": "Eenmalig goedgekeurd",
+        "decisionRecordedForThisCall": "Beslissing voor deze aanroep vastgelegd",
+        "statusExpired": "Goedkeuring verlopen",
+        "statusApproved": "Goedgekeurd",
+        "statusDenied": "Geweigerd",
+        "requestedBy": "{{agent}} · Aangevraagd door {{requester}}",
+        "resolvedByAt": "{{status}} door {{resolver}} · {{timestamp}}",
+        "resolvedBy": "{{status}} door {{resolver}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "Tijdelijke toestemming",
+        "timedPermissionMinutes_one": "Tijdelijke toestemming · {{count}} minuut",
+        "timedPermissionMinutes_other": "Tijdelijke toestemming · {{count}} minuten",
+        "grantedByAt": "Toegekend door {{grantor}} · {{timestamp}}",
+        "grantedBy": "Toegekend door {{grantor}}",
+        "originalFixedExpiry": "Oorspronkelijke vaste vervaltijd: {{timestamp}}",
+        "toolAndServer": "Gereedschap: {{tool}} · Server: {{server}}",
+        "tool": "Gereedschap: {{tool}}",
+        "reason": "Reden: {{reason}}",
+        "approvedWhenScheduledByAt": "Goedgekeurd bij het plannen door {{approver}} · {{timestamp}}",
+        "approvedWhenScheduledBy": "Goedgekeurd bij het plannen door {{approver}}"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "Gepland voor {{timestamp}}",
+        "approvedExactArguments": "Goedgekeurd voor precies deze argumenten",
+        "approvedAnyArguments": "Goedgekeurd voor willekeurige argumenten van deze tool"
+      },
+      "approvalReviewCall": {
+        "pending": "in behandeling",
+        "callStatus": "Aanroep {{number}} · {{status}}",
+        "status": {
+          "pending": "In behandeling",
+          "sending": "Wordt verstuurd",
+          "submitted": "Ingediend",
+          "error": "Fout",
+          "approved": "Goedgekeurd",
+          "denied": "Geweigerd",
+          "expired": "Verlopen"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "Tekst kopiëren (laden…)",
+        "copyText": "Tekst kopiëren",
+        "copyTextWithToolCalls": "Tekst kopiëren met gereedschapsaanroepen",
+        "copyLink": "Link kopiëren"
+      },
+      "bugReport": {
+        "report": "Een bug melden",
+        "download": "Bugrapport downloaden",
+        "sending": "Rapport verzenden…",
+        "failed": "Het rapport kon niet worden verzonden. Probeer het opnieuw."
+      },
+      "messageInspectionActions": {
+        "readReceipts": "Leesbevestigingen",
+        "viewSource": "Bron weergeven"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "Bericht losmaken",
+        "pinMessage": "Bericht vastmaken",
+        "deleteMessage": "Bericht verwijderen",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "Deze actie kan niet ongedaan worden gemaakt! Weet je zeker dat je dit bericht wilt verwijderen?",
+        "optional": "(optioneel)",
+        "failedToDeleteMessagePleaseTryAgain": "Kan bericht niet verwijderen! Probeer het opnieuw.",
+        "deleting": "Verwijderen...",
+        "delete": "Verwijderen",
+        "reportMessage": "Bericht rapporteren",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "Rapporteer dit bericht aan de server, die vervolgens de juiste mensen kan waarschuwen om actie te ondernemen.",
+        "reason": "Reden",
+        "failedToReportMessagePleaseTryAgain": "Kan bericht niet rapporteren! Probeer het opnieuw.",
+        "messageHasBeenReportedToServer": "Het bericht is aan de server gerapporteerd.",
+        "reporting": "Rapporteren...",
+        "report": "Rapporteren"
+      },
+      "messageReactionActions": {
+        "viewReactions": "Reacties weergeven"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "Nog aan het laden…",
+        "toolDetailsUnavailable": "Tooldetails niet beschikbaar.",
+        "pastedText": "Geplakte tekst",
+        "characterCount_one": "{{formattedCount}} teken",
+        "characterCount_other": "{{formattedCount}} tekens",
+        "blocks": {
+          "think": "AI-denkproces",
+          "debug": "Foutopsporingsinformatie",
+          "system": "Systeemverwerking",
+          "plan": "Planning en strategie",
+          "analysis": "Analyse en evaluatie",
+          "research": "Onderzoek en bronnen"
+        },
+        "toolNumber": "Gereedschap {{index}}: {{command}}",
+        "toolCallCount_one": "{{count}} gereedschapsaanroep",
+        "toolCallCount_other": "{{count}} gereedschapsaanroepen",
+        "usedToolCount_one": "{{count}} tool gebruikt",
+        "usedToolCount_other": "{{count}} tools gebruikt",
+        "toolCallsRunning_one": "{{count}} toolaanroep wordt uitgevoerd",
+        "toolCallsRunning_other": "{{count}} toolaanroepen worden uitgevoerd",
+        "toolCallsWaiting_one": "{{count}} toolaanroep wacht op goedkeuring",
+        "toolCallsWaiting_other": "{{count}} toolaanroepen wachten op goedkeuring",
+        "toolCallsRan_one": "{{count}} toolaanroep uitgevoerd",
+        "toolCallsRan_other": "{{count}} toolaanroepen uitgevoerd",
+        "toolCallsDenied_one": "{{count}} toolaanroep geweigerd",
+        "toolCallsDenied_other": "{{count}} toolaanroepen geweigerd",
+        "toolCallsExpired_one": "{{count}} toolaanroep verlopen",
+        "toolCallsExpired_other": "{{count}} toolaanroepen verlopen"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "Volledig antwoord laden..."
+      },
+      "mindroomMessage": {
+        "addReaction": "Reactie toevoegen",
+        "reply": "Beantwoorden",
+        "replyInThread": "Beantwoorden in thread",
+        "editMessage": "Bericht bewerken",
+        "moreOptions": "Meer opties"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "Contextvenster van verzoek",
+        "aiRunMetadata": "Metadata van AI-run",
+        "close": "Sluiten",
+        "status": "Status",
+        "model": "Model",
+        "tokens": "Tokens",
+        "runCache": "Run-cache",
+        "requestContext": "Verzoekcontext",
+        "requestCache": "Verzoekcache",
+        "tools": "Gereedschappen",
+        "ttft": "TTFT",
+        "run": "Run",
+        "session": "Sessie",
+        "openAiRunMetadata": "Metadata van AI-run openen",
+        "tokenUsage": "Tokengebruik",
+        "downloadingOriginal": "Origineel downloaden...",
+        "retryDownloadOriginal": "Download van origineel opnieuw proberen",
+        "downloadOriginal": "Origineel downloaden",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} token",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} tokens"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "Berichtextra's"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "Geplakte tekst",
+        "open": "Openen",
+        "retry": "Opnieuw proberen",
+        "download": "Downloaden",
+        "characterCount_one": "{{formattedCount}} teken",
+        "characterCount_other": "{{formattedCount}} tekens"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "Openen",
+        "failedToLoadMessage": "Kan bericht niet laden!",
+        "event": " gebeurtenis",
+        "pinnedMessages": "Vastgemaakte berichten",
+        "noPinnedMessages": "Geen vastgemaakte berichten",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "Gebruikers met voldoende bevoegdheidsniveau kunnen berichten via het contextmenu vastmaken."
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "AI antwoordt",
+        "thinking": "Denken…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "AI-threadsamenvatting"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "AI heeft deze thread een titel gegeven",
+        "updated": "AI-titel bijgewerkt",
+        "edited": "Titel bewerkt",
+        "previous": "Eerder: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "Verzoek om gereedschapsgoedkeuring",
+        "submitted": "Ingediend",
+        "pendingApproval": "Goedkeuring in behandeling",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "Automatische goedkeuring geldt voor deze thread, aanvrager, agent en dit gereedschap.",
+        "argumentsMayDifferBetweenCalls": "Argumenten kunnen per aanroep verschillen.",
+        "requestedBy": "Aangevraagd door {{requester}}"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "Router-agent transcribeert"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "AI antwoordt"
+      },
+      "stopButton": {
+        "label": "Stoppen",
+        "tooltip": "Dit antwoord stoppen"
+      },
+      "threadApprovalControls": {
+        "close": "Sluiten",
+        "call": "aanroep",
+        "calls": "aanroepen",
+        "unknown": "onbekend",
+        "reasonForDenyingAllOptional": "Reden voor weigering van alles (optioneel)",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "Sta deze bewerking toe voor deze thread, aanvrager en agent. Argumenten kunnen per aanroep verschillen.",
+        "submittedWaitingForRoomUpdate": "Ingediend. Wachten op kamerupdate.",
+        "threadApprovals": "Threadgoedkeuringen",
+        "checkingHistory": " · Geschiedenis controleren…",
+        "historyIncomplete": " · Geschiedenis onvolledig",
+        "retryHistory": "Geschiedenis opnieuw proberen",
+        "reviewToolCalls": "Gereedschapsaanroepen controleren",
+        "reviewAgentWants_one": "{{agent}} wil {{count}} ding doen",
+        "reviewAgentWants_other": "{{agent}} wil {{count}} dingen doen",
+        "reviewAgentsWant_one": "{{agents}} agents willen {{count}} ding doen",
+        "reviewAgentsWant_other": "{{agents}} agents willen {{count}} dingen doen",
+        "reviewRequestedBy": "Aangevraagd door {{requester}}",
+        "someRequestsAreNoLongerAvailable": "Sommige verzoeken zijn niet meer beschikbaar.",
+        "permission": "toestemming",
+        "permissions": "toestemmingen",
+        "activePermissions": "Actieve toestemmingen",
+        "noActiveTimedPermissions": "Geen actieve tijdelijke toestemmingen.",
+        "approval": "goedkeuring",
+        "approvals": "goedkeuringen",
+        "operationCallCount_one": "{{operation}} · {{count}} aanroep",
+        "operationCallCount_other": "{{operation}} · {{count}} aanroepen",
+        "requestedBy": "{{agent}} · Aangevraagd door {{requester}}",
+        "approveAllOnce": "Alle {{count}} eenmalig goedkeuren",
+        "denyAll": "Alle {{count}} weigeren",
+        "allowForMinutes_one": "Toestaan gedurende {{count}} minuut",
+        "allowForMinutes_other": "Toestaan gedurende {{count}} minuten",
+        "awaitingConfirmation_one": "{{count}} aanroep wacht op bevestiging",
+        "awaitingConfirmation_other": "{{count}} aanroepen wachten op bevestiging",
+        "pausedForApproval_one": "{{count}} aanroep gepauzeerd voor goedkeuring",
+        "pausedForApproval_other": "{{count}} aanroepen gepauzeerd voor goedkeuring",
+        "statusCheckingHistory": "{{status}} · Geschiedenis controleren…",
+        "statusHistoryIncomplete": "{{status}} · Geschiedenis onvolledig",
+        "reviewCount": "{{count}} beoordelen",
+        "activePermissionCount_one": "{{count}} actieve toestemming",
+        "activePermissionCount_other": "{{count}} actieve toestemmingen",
+        "permissionScope": "{{agent}} · {{requester}} · Deze thread",
+        "toolApprovalCount_one": "{{count}} gereedschapsgoedkeuring",
+        "toolApprovalCount_other": "{{count}} gereedschapsgoedkeuringen",
+        "approvedCount_one": "{{count}} goedgekeurd",
+        "approvedCount_other": "{{count}} goedgekeurd",
+        "agentWaitingForYou": "{{agent}} wacht op je",
+        "agentsWaitingForYou_one": "{{count}} agent wacht op je",
+        "agentsWaitingForYou_other": "{{count}} agents wachten op je",
+        "autoApproveFor": "Automatisch goedkeuren voor",
+        "callCount_one": "{{count}} aanroep",
+        "callCount_other": "{{count}} aanroepen",
+        "chipSending": "Verzenden…",
+        "chipSubmitted": "Verzonden",
+        "chipResolved": "Afgehandeld",
+        "confirmDenyAll": "Alle {{count}} weigeren bevestigen",
+        "expires": "verloopt {{time}}",
+        "hideCalls": "Aanroepen verbergen",
+        "historyApproved": "{{operation}} goedgekeurd",
+        "historyDenied": "{{operation}} geweigerd",
+        "historyExpired": "{{operation}} verlopen",
+        "historyUserApproved": "{{user}} heeft {{operation}} goedgekeurd",
+        "historyUserDenied": "{{user}} heeft {{operation}} geweigerd",
+        "historyUserExpired": "{{operation}} verlopen",
+        "historyYouApproved": "Je hebt {{operation}} goedgekeurd",
+        "historyYouDenied": "Je hebt {{operation}} geweigerd",
+        "historyYouExpired": "{{operation}} verlopen",
+        "minutesShort_one": "{{count}} min",
+        "minutesShort_other": "{{count}} min",
+        "sectionMeta": "{{agent}} · aangevraagd door {{requester}}",
+        "showCalls_one": "{{count}} aanroep tonen",
+        "showCalls_other": "{{count}} aanroepen tonen",
+        "waitingForApproval": "Wacht op goedkeuring",
+        "waitingForYou": "Wacht op jou",
+        "you": "jou"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "Bericht wordt verzonden",
+        "waitingForServer": "Wachten op server",
+        "messageFailedToSend": "Bericht kon niet worden verzonden",
+        "notSent": "Niet verstuurd"
+      },
+      "failedSendActions": {
+        "retry": "Opnieuw proberen",
+        "delete": "Verwijderen"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "in {{formattedCount}}",
+        "outputTokens": "uit {{formattedCount}}",
+        "totalTokens": "totaal {{formattedCount}}",
+        "readTokens": "gelezen {{formattedCount}}",
+        "writeTokens": "geschreven {{formattedCount}}",
+        "notReadTokens": "niet gelezen {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}}%)",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} token ({{percentage}}% van venster)",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} tokens ({{percentage}}% van venster)",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} token ({{percentage}}% van venster); {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} tokens ({{percentage}}% van venster); {{suffix}}",
+        "reportedCacheRead_one": "gerapporteerd uit cache gelezen: {{formattedCount}} token",
+        "reportedCacheRead_other": "gerapporteerd uit cache gelezen: {{formattedCount}} tokens",
+        "cacheWrite_one": "naar cache geschreven: {{formattedCount}} token",
+        "cacheWrite_other": "naar cache geschreven: {{formattedCount}} tokens",
+        "cacheRead": "Uit cache gelezen",
+        "newInput": "Nieuwe invoer",
+        "reserve": "Reserve"
+      },
+      "mindroomModelBadge": {
+        "model": "Model: {{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "Native iOS-push is niet geconfigureerd voor deze implementatie. Voeg de instellingen voor `push.ios` toe in `config.json`.",
+        "failedToUpdateNativePushSettings": "Kan instellingen voor native push niet bijwerken.",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "Native iOS-pushmeldingen toestaan voor berichtwaarschuwingen op de achtergrond.",
+        "deviceRegisteredForNativeIosPushNotifications": "Apparaat geregistreerd voor native iOS-pushmeldingen.",
+        "nativeIosPushIsDisabledForThisDevice": "Native iOS-push is uitgeschakeld voor dit apparaat.",
+        "unavailable": "Niet beschikbaar",
+        "enable": "Inschakelen",
+        "iosPushNotifications": "iOS-pushmeldingen",
+        "permissionDenied": "Toestemming voor meldingen is geweigerd. Schakel meldingen voor {{appName}} in via de iOS-instellingen."
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "Markeren als gelezen"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "Markeren als gelezen"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "Markeren als gelezen"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "Maak een back-up van je versleutelde geschiedenis",
+        "dismissBackupReminder": "Back-upherinnering sluiten",
+        "setUpSecureBackupSoYouCanStillReadYour": "Stel een veilige back-up in zodat je je versleutelde agentchats ook na aanmelding op een nieuw apparaat kunt lezen.",
+        "setUpSecureKeyBackup": "Veilige sleutelback-up instellen",
+        "setUpBackup": "Back-up instellen"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Lokale MindRoom"
+      },
+      "resizeNavigationPanel": "Navigatiepaneel vergroten of verkleinen",
+      "resizeMemberPanel": "Ledenpaneel vergroten of verkleinen"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "Geen threads"
+      },
+      "compactThreadCard": {
+        "streaming": "streaming"
+      },
+      "mindroomCallChatView": {
+        "chat": "Chat",
+        "close": "Sluiten"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "Nieuwe berichten",
+        "jumpToUnread": "Naar ongelezen gaan",
+        "markAsRead": "Markeren als gelezen",
+        "failedToLoadThisThread": "Kan deze thread niet laden.",
+        "loading": "Laden...",
+        "loadOlderMessages": "Oudere berichten laden",
+        "loadNewerMessages": "Nieuwere berichten laden",
+        "jumpToLatest": "Naar nieuwste gaan",
+        "today": "Vandaag",
+        "yesterday": "Gisteren"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "Antwoorden zijn beschikbaar nadat dit bericht is bevestigd.",
+        "youDoNotHavePermissionToPostInThisRoom": "Je hebt geen toestemming om in deze kamer te schrijven"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "Toon computer",
+        "hideComputer": "Verberg computer",
+        "showCanvas": "Toon paneel",
+        "hideCanvas": "Verberg paneel",
+        "canvases": "Interactieve panelen",
+        "notifications": "Meldingen",
+        "compact": "Compact",
+        "threads": "Threads",
+        "classic": "Klassiek",
+        "invite": "Uitnodigen",
+        "copyLink": "Link kopiëren",
+        "roomSettings": "Kamerinstellingen",
+        "jumpToTime": "Naar tijdstip gaan",
+        "leaveRoom": "Kamer verlaten",
+        "pinnedMessages": "Vastgemaakte berichten",
+        "members": "Leden",
+        "hideMembers": "Leden verbergen",
+        "showMembers": "Leden weergeven",
+        "moreOptions": "Meer opties",
+        "back": "Terug"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "Tagfilter toevoegen",
+        "tag": "+ tag",
+        "availableTags": "Beschikbare tags",
+        "filterPresets": "Filtervoorinstellingen",
+        "preset": "Voorinstelling",
+        "searchThreads": "Threads doorzoeken",
+        "searchThreads2": "Threads zoeken...",
+        "roomViewMode": "Kamerweergavemodus",
+        "natural": "Natuurlijk",
+        "lastReply": "Laatste antwoord",
+        "noThreadsMatchCurrentFilters": "Geen threads komen overeen met de huidige filters.",
+        "resetAllThreadFilters": "Alle threadfilters resetten",
+        "reset": "Opnieuw instellen",
+        "threadFilters": "Threadfilters",
+        "statusFilters": "Statusfilters",
+        "tagFilters": "Tagfilters",
+        "showingFilteredThreads_one": "{{count}} van {{total}} thread wordt weergegeven",
+        "showingFilteredThreads_other": "{{count}} van {{total}} threads worden weergegeven",
+        "showingAllThreads_one": "{{count}} thread wordt weergegeven",
+        "showingAllThreads_other": "{{count}} threads worden weergegeven",
+        "sortLockedSummary": "{{summary}} · Sortering vergrendeld",
+        "unlockSortOrder": "Sorteervolgorde ontgrendelen (momenteel {{sort}})",
+        "lockSortOrder": "Sorteervolgorde vergrendelen (momenteel {{sort}})",
+        "threadCount_one": "{{count}} thread",
+        "threadCount_other": "{{count}} threads",
+        "presets": {
+          "needs-attention": {
+            "label": "Aandacht vereist",
+            "description": "Onopgeloste, niet-streamende, niet-geplande threads"
+          },
+          "working": {
+            "label": "Bezig",
+            "description": "Streaming of gepland — waar je nu aan werkt"
+          },
+          "review-queue": {
+            "label": "Beoordelingswachtrij",
+            "description": "Onopgeloste threads met ongelezen antwoorden"
+          },
+          "archived": {
+            "label": "Gearchiveerd",
+            "description": "Alleen opgeloste threads"
+          },
+          "all": {
+            "label": "Alle",
+            "description": "Alle filters resetten"
+          }
+        }
+      },
+      "threadTagPicker": {
+        "addTag": "Tag toevoegen",
+        "tag": "+ tag",
+        "filterNew": "Filteren/nieuw...",
+        "filterOrCreateTag": "Tag filteren of maken",
+        "noMatches": "Geen overeenkomsten",
+        "typeToCreateATag": "Typ om een tag te maken",
+        "createTag": "‘{{tag}}’ maken"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "Naar bericht gaan",
+        "message": "Bericht"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> heeft de kamernaam gewijzigd",
+        "changedRoomTopic": "<sender>{{sender}}</sender> heeft het kameronderwerp gewijzigd",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> heeft de kameravatar gewijzigd",
+        "joinedCall": "<sender>{{sender}}</sender> neemt deel aan het gesprek",
+        "endedCall": "<sender>{{sender}}</sender> heeft het gesprek beëindigd",
+        "sentStateEvent": "<sender>{{sender}}</sender> heeft statusgebeurtenis <eventType>{{eventType}}</eventType> verstuurd",
+        "sentEvent": "<sender>{{sender}}</sender> heeft gebeurtenis <eventType>{{eventType}}</eventType> verstuurd"
+      },
+      "threadTagPill": {
+        "removeTag": "Tag {{tag}} verwijderen"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "over {{count}} s",
+        "inMinutesSeconds": "over {{minutes}} min. {{seconds}} s",
+        "inMinutes": "over {{count}} min.",
+        "inHours": "over {{count}} u",
+        "inHoursMinutes": "over {{hours}} u {{minutes}} min.",
+        "atTime": "om {{time}}",
+        "scheduledTasks_one": "{{count}} geplande taak",
+        "scheduledTasks_other": "{{count}} geplande taken",
+        "pendingScheduledTasks_one": "{{count}} openstaande geplande taak",
+        "pendingScheduledTasks_other": "{{count}} openstaande geplande taken",
+        "scheduledTasksWithDetail": "{{tasks}}, {{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 antwoorden",
+        "messageCount_one": "{{formattedCount}} ber.",
+        "messageCount_other": "{{formattedCount}} ber.",
+        "needsAttention": "Aandacht vereist",
+        "waitingOnResponse": "Wachten op antwoord",
+        "agentStreaming": "Agent is aan het antwoorden",
+        "resolved": "Opgelost",
+        "idle": "Inactief",
+        "threadStarted": "Thread gestart",
+        "noRepliesYet": "Nog geen antwoorden"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "Volgende taak {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} openstaande geplande taak",
+        "pendingScheduledTasks_other": "{{count}} openstaande geplande taken"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "Versleutelde thread",
+        "threadInRoom": "Thread in {{roomName}}",
+        "thread": "Thread"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "Computer bekijken",
+      "openMembers": "Leden openen",
+      "openCanvas": "Paneel openen",
+      "canvasDisabled": "Interactieve panelen staan uit in deze app.",
+      "canvasDuringCall": "Beëindig het gesprek om interactieve panelen te openen.",
+      "computerUnavailable": "De computer van deze agent is niet beschikbaar.",
+      "releaseControl": "Geef de computerbediening vrij voordat je een andere weergave opent.",
+      "openConversation": "Open dit verzoek vanuit het gesprek in de kamer.",
+      "settingsUnavailable": "Schakel de eenvoudige modus uit om dit onderdeel van de instellingen te openen."
+    },
+    "canvas": {
+      "panelLabel": "Interactief paneel",
+      "fromAgent": "Interactief paneel van {{agent}}",
+      "expand": "Paneel uitklappen",
+      "close": "Paneel sluiten",
+      "resize": "Paneel vergroten of verkleinen",
+      "updated": "{{agent}} heeft dit paneel bijgewerkt.",
+      "loadUpdate": "Update laden",
+      "version": "Versie {{current}} van {{total}}",
+      "previousVersion": "Vorige versie",
+      "nextVersion": "Volgende versie",
+      "earlierVersion": "Dit is een eerdere versie.",
+      "showLatest": "Nieuwste tonen",
+      "loading": "Paneel laden…",
+      "loadFailed": "Dit paneel kon niet worden geladen.",
+      "retry": "Opnieuw proberen",
+      "escaped": "Dit paneel probeerde zijn sandbox te verlaten en is gestopt.",
+      "reload": "Paneel opnieuw laden",
+      "pageError": "Deze pagina heeft een fout gemeld.",
+      "tellAgent": "{{agent}} laten weten",
+      "errorsSent": "Fouten naar {{agent}} verzonden.",
+      "errorsNotSent": "De fouten konden niet naar {{agent}} worden verzonden.",
+      "sendTo": "Versturen naar {{agent}}:",
+      "changeAnswer": "Verwijder eerst dit antwoord als je het wilt wijzigen.",
+      "data": "Gegevens",
+      "send": "Versturen",
+      "discard": "Verwijderen",
+      "disclosure": "Gemaakt door {{agent}}. Het paneel heeft geen toegang tot je account, maar wat je hier invoert, kan het paneel verlaten.",
+      "sharedNotice": "Opgeslagen in deze ruimte: {{agent}} en anderen hier kunnen lezen wat je invoert.",
+      "sending": "Wordt verstuurd naar {{agent}}…",
+      "sent": "Verstuurd naar {{agent}}: {{label}}",
+      "sendFailed": "Je antwoord kon niet worden verstuurd. Probeer het opnieuw.",
+      "receiptData": "Gegevens tonen die naar de agent zijn verstuurd",
+      "unlabeled": "Verzonden",
+      "notSent": "Niet verzonden naar {{agent}}: {{label}}"
+    },
+    "canvases": {
+      "title": "Interactieve panelen",
+      "note": "Interactieve panelen die je agents voor je hebben gemaakt en die deze browser heeft gezien. Vastgemaakte panelen zie je op al je apparaten.",
+      "empty": "Nog geen interactieve panelen. Als een agent je er een laat zien, verschijnt het hier.",
+      "pinned": "Vastgemaakt",
+      "canvas": "Paneel",
+      "thread": "Thread",
+      "agent": "Agent",
+      "room": "Kamer",
+      "updated": "Bijgewerkt",
+      "created": "Gemaakt",
+      "pin": "{{title}} vastmaken",
+      "unpin": "{{title}} losmaken",
+      "shared": "Gedeeld met agent",
+      "saved": "Bevat je waarden"
+    },
+    "backgroundJobs": {
+      "running": "Bezig: {{tool}}",
+      "awaitingApproval": "Wacht op goedkeuring: {{tool}}",
+      "waiting": "Wacht op goedkeuring",
+      "stoppingJob": "Wordt gestopt: {{tool}}",
+      "jobCount": "{{count}} achtergrondtaken",
+      "subagent": "{{tool}} (subagent)",
+      "stopAll": "Alles stoppen",
+      "stopping": "Wordt gestopt…",
+      "stop": "Stoppen",
+      "stopJob": "{{tool}} stoppen",
+      "stopFailed": "Kon {{tool}} niet stoppen. Probeer het opnieuw.",
+      "stopAllFailed": "Kon de achtergrondtaken niet stoppen. Probeer het opnieuw.",
+      "inRoom": "Achtergrondtaken actief"
+    }
+  },
+  "roomSchedules": {
+    "title": "Geplande taken",
+    "openLabel": "Geplande taken ({{total}})",
+    "empty": "Geen geplande taken in deze ruimte.",
+    "emptyHint": "Vraag een MindRoom-agent om hier een taak te plannen.",
+    "prompt": "Prompt",
+    "promptUnavailable": "Prompt niet beschikbaar",
+    "once": "Eenmalig",
+    "recurring": "Terugkerend",
+    "executionTime": "Uitvoeringstijd",
+    "unknownTime": "Uitvoeringstijd niet beschikbaar",
+    "awaitingExecution": "In afwachting van uitvoering",
+    "recurrence": "Herhaling",
+    "silent": "Stil",
+    "conditional": "Voorwaardelijk",
+    "newThread": "Nieuwe thread",
+    "roomTimeline": "Ruimtetijdlijn",
+    "openThread": "Thread openen",
+    "owner": "Taakeigenaar",
+    "createdAt": "Gemaakt",
+    "updatedAt": "Bijgewerkt",
+    "model": "Model",
+    "inheritedModel": "Uit agent-, ruimte- of threadinstellingen",
+    "taskId": "Taak-ID",
+    "historyLimit": "Geschiedenislimiet",
+    "fullHistory": "Volledige geschiedenis",
+    "noHistory": "Geen geschiedenis",
+    "recentMessages": "Recente berichten: {{total}}",
+    "close": "Sluiten"
+  },
+  "archivedRooms": {
+    "title": "Gearchiveerde kamers",
+    "archive": "Kamer archiveren",
+    "restore": "Kamer herstellen",
+    "restoreNamed": "{{room}} herstellen",
+    "failed": "Wijzigingen opslaan mislukt. Probeer opnieuw.",
+    "close": "Gearchiveerde kamers sluiten",
+    "description": "Verberg kamers in de zijbalk zonder ze te verlaten. Open of herstel ze hier.",
+    "empty": "Geen gearchiveerde kamers."
+  }
+}

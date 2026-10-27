@@ -1,0 +1,6 @@
+# more info: https://caddyserver.com/docs/caddyfile/patterns#single-page-apps-spas
+chat.domain.tld {
+  root * /path/to/mindroom-chat/dist
+  try_files {path} / index.html
+  file_server
+}

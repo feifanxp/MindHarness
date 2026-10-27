@@ -22,8 +22,8 @@ logger = get_logger(__name__)
 PARTICIPATION_QUESTION = JudgmentQuestion(
     id="participation",
     instructions=(
-        "You have already participated in this thread. Decide whether to reply again now. Multiple humans are talking "
-        "and nobody explicitly addressed the assistant in the latest messages."
+        "Decide whether your next reply adds value to the current conversation. "
+        "Use the participation guidance and the latest messages to decide whether to speak or stay silent."
     ),
     when_true="Add clear value: answer an open question, provide requested help, or correct a consequential misunderstanding.",
     when_false="Acknowledgements, human-to-human coordination, unfinished thoughts, already answered questions, or repeating yourself.",

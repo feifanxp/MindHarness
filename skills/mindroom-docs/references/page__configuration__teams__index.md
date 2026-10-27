@@ -43,6 +43,7 @@ teams:
 |-------|------|---------|-------------|
 | `display_name` | string | *required* | Name shown in Matrix |
 | `role` | string | *required* | Description of the team's purpose |
+| `instructions` | list of strings | `[]` | Guidance for this named team's coordinator, such as discussion pace or summary format; member instructions remain separate and ad hoc teams do not inherit this field |
 | `agents` | list | *required* | Names of agents under `agents:` that form the team; at least one, no duplicates |
 | `mode` | string | `coordinate` | `coordinate` or `collaborate` |
 | `rooms` | list | `[]` | Room keys, aliases, or Matrix room IDs the team joins and responds in |

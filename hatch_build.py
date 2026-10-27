@@ -1,4 +1,4 @@
-"""Hatch build hook for bundling the frontend into distributable builds."""
+"""Hatch build hook for bundling the MindRoom Chat-based frontend."""
 
 from __future__ import annotations
 
@@ -10,14 +10,14 @@ from pathlib import Path
 
 from hatchling.builders.hooks.plugin.interface import BuildHookInterface
 
-_BUN_INSTALL_MAX_ATTEMPTS = 3
-_BUN_INSTALL_RETRY_DELAY_SECONDS = 2.0
+_INSTALL_MAX_ATTEMPTS = 3
+_INSTALL_RETRY_DELAY_SECONDS = 2.0
 _BUILD_FRONTEND_ENV = "MINDROOM_BUILD_FRONTEND"
 _GIT_LFS_POINTER_PREFIX = b"version https://git-lfs.github.com/spec/v1\n"
 
 
 class FrontendBuildHook(BuildHookInterface):
-    """Build the bundled dashboard before creating a distributable wheel."""
+    """Build the bundled project chat frontend before creating a distributable wheel."""
 
     def initialize(self, version: str, build_data: dict[str, object]) -> None:
         """Build dashboard assets when the current build target needs them."""
@@ -25,18 +25,22 @@ class FrontendBuildHook(BuildHookInterface):
         if self.target_name != "wheel" or (version != "standard" and not should_build_editable):
             return
 
-        frontend_dir = Path(self.root) / "frontend"
+        frontend_dir = Path(self.root) / "mindroom-chat"
         if not frontend_dir.is_dir():
             msg = f"Frontend sources not found at {frontend_dir}"
             raise RuntimeError(msg)
 
+        npm = shutil.which("npm")
+        if npm is None:
+            msg = _missing_npm_message(version)
+            raise RuntimeError(msg)
         bun = shutil.which("bun")
         if bun is None:
             msg = _missing_bun_message(version)
             raise RuntimeError(msg)
 
         output_dir = _get_output_dir(frontend_dir, self.directory, version)
-        _build_frontend(frontend_dir, output_dir, bun)
+        _build_frontend(frontend_dir, output_dir, npm, bun)
 
         if version == "editable":
             return
@@ -53,13 +57,16 @@ def _env_flag_enabled(name: str) -> bool:
     return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _missing_npm_message(version: str) -> str:
+    if version == "editable":
+        return f"npm is required when {_BUILD_FRONTEND_ENV}=1. Install Node.js or unset {_BUILD_FRONTEND_ENV}."
+    return "npm is required to build the bundled frontend for wheel distributions. Install Node.js or use a prebuilt wheel."
+
+
 def _missing_bun_message(version: str) -> str:
     if version == "editable":
         return f"bun is required when {_BUILD_FRONTEND_ENV}=1. Install bun or unset {_BUILD_FRONTEND_ENV}."
-    return (
-        "bun is required to build the bundled frontend for wheel distributions. "
-        "Install bun or build from a prebuilt wheel instead."
-    )
+    return "bun is required to build the bundled Connections page for wheel distributions. Install bun or use a prebuilt wheel."
 
 
 def _get_output_dir(frontend_dir: Path, build_directory: str, version: str) -> Path:
@@ -69,20 +76,27 @@ def _get_output_dir(frontend_dir: Path, build_directory: str, version: str) -> P
     return Path(build_directory).parent / ".frontend-build" / "frontend-dist"
 
 
-def _build_frontend(frontend_dir: Path, output_dir: Path, bun: str) -> None:
+def _build_frontend(frontend_dir: Path, output_dir: Path, npm: str, bun: str) -> None:
     """Install frontend deps and write a production build to the output directory."""
     shutil.rmtree(output_dir, ignore_errors=True)
     output_dir.mkdir(parents=True, exist_ok=True)
     _run_command(
-        [bun, "install", "--frozen-lockfile"],
+        [npm, "ci"],
         cwd=frontend_dir,
-        retries=_BUN_INSTALL_MAX_ATTEMPTS,
-        retry_delay_seconds=_BUN_INSTALL_RETRY_DELAY_SECONDS,
+        retries=_INSTALL_MAX_ATTEMPTS,
+        retry_delay_seconds=_INSTALL_RETRY_DELAY_SECONDS,
     )
-    _run_command([bun, "run", "tsc"], cwd=frontend_dir)
+    _run_command([npm, "run", "typecheck"], cwd=frontend_dir)
+    _run_command([npm, "run", "build"], cwd=frontend_dir)
+    built_dist = frontend_dir / "dist"
+    if output_dir.resolve() != built_dist.resolve():
+        shutil.copytree(built_dist, output_dir, dirs_exist_ok=True)
+    dashboard_dir = Path(__file__).resolve().parent / "frontend"
     _run_command(
-        [bun, "run", "vite", "build", "--outDir", str(output_dir)],
-        cwd=frontend_dir,
+        [bun, "install", "--frozen-lockfile"],
+        cwd=dashboard_dir,
+        retries=_INSTALL_MAX_ATTEMPTS,
+        retry_delay_seconds=_INSTALL_RETRY_DELAY_SECONDS,
     )
     _run_command(
         [
@@ -95,7 +109,7 @@ def _build_frontend(frontend_dir: Path, output_dir: Path, bun: str) -> None:
             "--outDir",
             str(output_dir / "connections"),
         ],
-        cwd=frontend_dir,
+        cwd=dashboard_dir,
     )
     _assert_no_git_lfs_pointers(output_dir)
 

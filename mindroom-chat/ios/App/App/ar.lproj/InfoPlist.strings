@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "يحتاج MindRoom Chat إلى الاتصال بخادم Matrix المنزلي المحلي لديك.";
+"NSMicrophoneUsageDescription" = "يحتاج MindRoom Chat إلى الوصول إلى الميكروفون لتسجيل الرسائل الصوتية والتحدث في المكالمات الصوتية.";
+"NSCameraUsageDescription" = "يحتاج MindRoom Chat إلى الوصول إلى الكاميرا لالتقاط الصور ومقاطع الفيديو وإرسالها في المحادثات.";
+"NSPhotoLibraryUsageDescription" = "يحتاج MindRoom Chat إلى الوصول إلى مكتبة الصور لتتمكن من مشاركة الصور ومقاطع الفيديو في المحادثات.";
+"NSPhotoLibraryAddUsageDescription" = "يحتاج MindRoom Chat إلى إذن لحفظ الصور ومقاطع الفيديو من المحادثات في مكتبة الصور لديك.";

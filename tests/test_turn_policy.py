@@ -16,9 +16,9 @@ import pytest
 
 from mindroom.authorization import ReplyMembershipPendingError
 from mindroom.config.access import ResponderAccessConfig
-from mindroom.config.agent import AgentConfig
+from mindroom.config.agent import AgentConfig, RoomConfig
 from mindroom.config.main import Config
-from mindroom.config.participation import ParticipationConfig
+from mindroom.config.participation import ParticipationConfig, PeerDiscussionConfig
 from mindroom.constants import ROUTER_AGENT_NAME
 from mindroom.conversation_resolver import MessageContext
 from mindroom.dispatch_source import ACTIVE_THREAD_FOLLOW_UP_SOURCE_KIND
@@ -184,6 +184,33 @@ async def test_mentioned_agent_responds_individually(config: Config) -> None:
     assert plan.kind == "respond"
     assert plan.response_action is not None
     assert plan.response_action.kind == "individual"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("name", ["general", "research"])
+async def test_peer_room_recruits_each_authorized_member_without_a_mention(config: Config, name: str) -> None:
+    """Every peer gets its own participation decision, including before its first reply."""
+    config.rooms[_ROOM_ID] = RoomConfig(peer_discussion=PeerDiscussionConfig())
+    for agent in config.agents.values():
+        agent.rooms = [_ROOM_ID]
+    room = _room_with_members(_SENDER, _entity_id(config, "general").full_id, _entity_id(config, "research").full_id)
+    plan = await _plan(_policy_for(config, name), room, _dispatch(_context(), agent_name=name))
+    assert plan.kind == "respond"
+    assert plan.response_action.kind == "individual"
+    assert plan.response_action.participation is not None
+
+
+@pytest.mark.asyncio
+async def test_peer_room_router_does_not_choose_a_speaker(config: Config) -> None:
+    """The router stays out of peer selection rather than appointing a lead responder."""
+    config.rooms[_ROOM_ID] = RoomConfig(peer_discussion=PeerDiscussionConfig())
+    room = _room_with_members(_SENDER, _entity_id(config, "general").full_id, _entity_id(config, "research").full_id)
+    plan = await _plan(
+        _policy_for(config, ROUTER_AGENT_NAME),
+        room,
+        _dispatch(_context(), agent_name=ROUTER_AGENT_NAME),
+    )
+    assert plan.kind == "ignore"
 
 
 @pytest.mark.asyncio

@@ -1,0 +1,3255 @@
+{
+  "messageTable": {
+    "label": "Прокручиваемая таблица",
+    "scrollHint": "Прокрутить по горизонтали"
+  },
+  "messageCodeBlock": {
+    "actions": "Действия с блоком кода",
+    "code": "Код",
+    "language": "Язык: {{language}}",
+    "copy": "Копировать код",
+    "copied": "Скопировано",
+    "wrap": "Переносить строки",
+    "expand": "Развернуть",
+    "collapse": "Свернуть"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " изменил(а) название комнаты"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "Современный",
+      "compact": "Компактный",
+      "bubble": "Пузырьки"
+    },
+    "messageSpacing": {
+      "none": "Нет",
+      "ultraSmall": "Крошечный",
+      "extraSmall": "Очень маленький",
+      "small": "Маленький",
+      "normal": "Обычный",
+      "large": "Большой"
+    },
+    "dateFormat": {
+      "custom": "Другой"
+    },
+    "themeName": {
+      "light": "Светлая",
+      "silver": "Серебристая",
+      "dark": "Тёмная",
+      "midnight": "Полночь",
+      "butter": "Сливочная"
+    },
+    "prefetchScope": {
+      "myHomeserver": "Мой домашний сервер",
+      "allRooms": "Все комнаты",
+      "currentRoomOnly": "Только текущая комната"
+    }
+  },
+  "settings": {
+    "title": "Настройки",
+    "logout": "Выйти",
+    "nav": {
+      "general": "Общие",
+      "account": "Учётная запись",
+      "notifications": "Уведомления",
+      "devices": "Устройства",
+      "emojisStickers": "Эмодзи и стикеры",
+      "developerTools": "Инструменты разработчика",
+      "about": "О приложении"
+    },
+    "general": {
+      "title": "Общие",
+      "interface": {
+        "sectionTitle": "Интерфейс",
+        "simpleMode": "Упрощённый режим",
+        "simpleModeDescription": "Скрывает расширенные функции, такие как палитра команд и фильтры веток. Настройка синхронизируется между вашими устройствами.",
+        "showCanvasesInSidebar": "Показывать интерактивные панели на боковой панели",
+        "showCanvasesInSidebarDescription": "Показывает кнопку для интерактивных панелей ваших агентов, как только появится хотя бы одна. Настройка синхронизируется между вашими устройствами.",
+        "saveFailed": "Не удалось сохранить изменение. Проверьте подключение и повторите попытку."
+      },
+      "language": {
+        "sectionTitle": "Язык",
+        "appLanguage": "Язык приложения",
+        "appLanguageDescription": "Используется для меню и текста интерфейса. Содержимое сообщений никогда не переводится."
+      },
+      "appearance": {
+        "sectionTitle": "Оформление",
+        "systemTheme": "Системная тема",
+        "systemThemeDescription": "Выбирать светлую или тёмную тему согласно настройкам системы.",
+        "lightTheme": "Светлая тема:",
+        "darkTheme": "Тёмная тема:",
+        "theme": "Тема",
+        "themeDescription": "Тема, которая используется, когда системная тема отключена.",
+        "monochromeMode": "Монохромный режим",
+        "twitterEmoji": "Эмодзи Twitter",
+        "pageZoom": "Масштаб страницы"
+      },
+      "dateTime": {
+        "sectionTitle": "Дата и время",
+        "hour24Clock": "24-часовой формат времени",
+        "dateFormat": "Формат даты",
+        "save": "Сохранить",
+        "formatHints": {
+          "title": "Форматирование",
+          "year": "Год",
+          "twoDigitYear": "Год из двух цифр",
+          "fourDigitYear": "Год из четырёх цифр",
+          "month": "Месяц",
+          "theMonth": "Месяц",
+          "twoDigitMonth": "Месяц из двух цифр",
+          "shortMonthName": "Краткое название месяца",
+          "fullMonthName": "Полное название месяца",
+          "dayOfMonth": "День месяца",
+          "theDayOfMonth": "День месяца",
+          "twoDigitDayOfMonth": "День месяца из двух цифр",
+          "dayOfWeek": "День недели",
+          "theDayOfWeek": "День недели (воскресенье = 0)",
+          "twoLetterDayName": "Название дня из двух букв",
+          "shortDayName": "Краткое название дня",
+          "fullDayName": "Полное название дня"
+        }
+      },
+      "editor": {
+        "sectionTitle": "Редактор",
+        "enterForNewline": "ENTER для новой строки",
+        "enterForNewlineDescription": "Используйте {{sendKey}} + ENTER, чтобы отправить сообщение, и ENTER, чтобы перейти на новую строку.",
+        "markdownFormatting": "Форматирование Markdown",
+        "hideActivity": "Скрыть ввод текста и отчёты о прочтении",
+        "hideActivityDescription": "Отключите статус набора текста и отчёты о прочтении, чтобы сохранить конфиденциальность своей активности."
+      },
+      "messages": {
+        "sectionTitle": "Сообщения",
+        "messageLayout": "Вид сообщений",
+        "messageSpacing": "Интервал между сообщениями",
+        "prefetchScope": "Область предварительной загрузки",
+        "prefetchScopeDescription": "Какие комнаты поддерживать готовыми в фоновом режиме",
+        "historyDepth": "Глубина истории текущей комнаты",
+        "historyDepthDescription": "Целевое число событий, заранее загружаемых для просматриваемой комнаты. Минимум: {{min}}, максимум: {{max}}.",
+        "legacyUsernameColor": "Устаревшие цвета имён пользователей",
+        "hideMembershipChange": "Скрывать изменения состава участников",
+        "hideProfileChange": "Скрывать изменения профиля",
+        "disableMediaAutoLoad": "Отключить автоматическую загрузку медиафайлов",
+        "urlPreview": "Предпросмотр URL",
+        "urlPreviewEncrypted": "Предпросмотр URL в зашифрованной комнате",
+        "showHiddenEvents": "Показывать скрытые события"
+      },
+      "computers": {
+        "sectionTitle": "Компьютеры",
+        "apiUrl": "URL сервиса компьютеров",
+        "description": "Выберите доверенный сервер MindRoom; он получит краткосрочный токен входа. Сохраняется на этом устройстве. Оставьте пустым, чтобы отключить компьютеры.",
+        "save": "Сохранить сервис компьютеров",
+        "reset": "Использовать настройку приложения",
+        "invalidUrl": "Введите источник без учётных данных, пути, запроса или фрагмента. Используйте HTTPS либо HTTP с localhost или частным IP-адресом локальной сети.",
+        "httpNotice": "HTTP не шифрует данные входа или трафик компьютера. Используйте его только в доверенной локальной сети.",
+        "saveFailed": "Не удалось сохранить сервис компьютеров на этом устройстве.",
+        "saved": "Сервис компьютеров сохранён."
+      },
+      "connections": {
+        "sectionTitle": "Подключения",
+        "title": "Подключённые аккаунты",
+        "description": "Подключите аккаунты, которые используют ваши агенты, например Google или GitHub, на своём сервере MindRoom.",
+        "open": "Открыть подключения",
+        "noBackend": "Укажите свой сервер MindRoom в разделе «Компьютеры», чтобы использовать подключения.",
+        "blocked": "Браузер заблокировал окно подключений. Разрешите всплывающие окна для этого сайта и повторите попытку."
+      }
+    }
+  },
+  "nav": {
+    "home": "Главная",
+    "directMessages": "Личные сообщения",
+    "threads": "Ветки",
+    "canvases": "Интерактивные панели",
+    "inbox": "Входящие",
+    "exploreCommunity": "Обзор сообществ",
+    "addSpace": "Добавить пространство",
+    "createSpace": "Создать пространство",
+    "createSpaceDescription": "Создайте пространство для своего сообщества.",
+    "joinWithAddress": "Войти по адресу",
+    "joinWithAddressDescription": "Присоединитесь к существующему сообществу.",
+    "createRoom": "Создать комнату",
+    "messageSearch": "Поиск сообщений",
+    "rooms": "Комнаты",
+    "chats": "Чаты",
+    "createChat": "Создать чат",
+    "directMessage": "Личное сообщение",
+    "noRooms": "Нет комнат",
+    "noRoomsDescription": "У вас пока нет комнат.",
+    "noDirectMessages": "Нет личных сообщений",
+    "noDirectMessagesDescription": "У вас пока нет личных сообщений.",
+    "exploreCommunityRooms": "Обзор комнат сообщества",
+    "unverifiedDevice": "Непроверенное устройство",
+    "unverifiedDevices": "Непроверенные устройства"
+  },
+  "accountsRail": {
+    "settingsTooltip": "Настройки: {{name}}",
+    "switchTooltip": "Переключиться на {{name}} ({{userId}})",
+    "openSettingsAria": "Открыть настройки {{name}}",
+    "switchAria": "Переключиться на учётную запись {{name}} ({{userId}})",
+    "manageAccounts": "Управление учётными записями",
+    "addAccount": "Добавить учётную запись",
+    "addAccountAria": "Добавить учётную запись"
+  },
+  "commandPalette": {
+    "inputAria": "Палитра команд",
+    "placeholder": "Поиск или выполнение команды…",
+    "closeAria": "Закрыть палитру команд",
+    "open": "Открыть палитру команд",
+    "noResults": "Нет результатов",
+    "resultCount_one": "{{count}} результат",
+    "resultCount_other": "{{count}} результатов",
+    "sections": {
+      "actions": "Действия",
+      "threads": "Ветки",
+      "rooms": "Комнаты",
+      "users": "Пользователи",
+      "messages": "Сообщения",
+      "spaces": "Пространства"
+    },
+    "prefixes": {
+      "label": "Префиксы:",
+      "actions": "действия",
+      "rooms": "комнаты",
+      "users": "пользователи",
+      "threads": "ветки",
+      "spaces": "пространства"
+    },
+    "shortcut": "Сочетание клавиш:",
+    "shortcutOpenSuffix": "открыть.",
+    "actions": {
+      "openSettings": "Открыть настройки",
+      "openSettingsDescription": "Открыть общие настройки",
+      "goHome": "На главную",
+      "goHomeDescription": "Перейти на главную",
+      "goDirect": "К личным сообщениям",
+      "goDirectDescription": "Перейти к личным сообщениям",
+      "goInbox": "Во входящие",
+      "goInboxDescription": "Открыть уведомления во входящих",
+      "createRoom": "Создать комнату",
+      "createRoomDescription": "Открыть окно создания комнаты",
+      "createSpace": "Создать пространство",
+      "createSpaceDescription": "Открыть окно создания пространства",
+      "toggleTheme": "Сменить тему",
+      "toggleThemeDescription": "Переключиться между светлой и тёмной темой",
+      "logout": "Выйти",
+      "logoutDescription": "Выйти из MindRoom Chat",
+      "markCurrentRoomRead": "Отметить текущую комнату прочитанной",
+      "markCurrentRoomReadDescription": "Отметить {{room}} прочитанной",
+      "copyCurrentRoomLink": "Копировать ссылку на текущую комнату",
+      "copyCurrentRoomLinkDescription": "Копировать ссылку приложения на {{room}}",
+      "openCurrentRoomSettings": "Открыть настройки текущей комнаты",
+      "openCurrentRoomSettingsDescription": "Открыть настройки {{room}}",
+      "unresolveCurrentThread": "Снять отметку о решении с текущей ветки",
+      "unresolveCurrentThreadDescription": "Вернуть активную ветку в очередь нерешённых",
+      "resolveCurrentThread": "Отметить текущую ветку решённой",
+      "resolveCurrentThreadDescription": "Отметить активную ветку решённой",
+      "currentRoomFallback": "текущей комнате"
+    },
+    "messages": {
+      "searchIn": "Искать {{query}} в {{scope}}",
+      "searchAll": "Искать {{query}} во всех комнатах",
+      "currentRoomFallback": "текущей комнате",
+      "currentRoomDescription": "Текущая комната",
+      "currentSpaceFallback": "текущем пространстве",
+      "currentSpaceDescription": "Текущее пространство",
+      "globalSearchDescription": "Глобальный поиск сообщений"
+    },
+    "resultCount_few": "{{count}} результатов",
+    "resultCount_many": "{{count}} результатов",
+    "all": "Все",
+    "filterLabel": "Фильтр результатов",
+    "resultsLabel": "Результаты поиска",
+    "emptyDescription": "Попробуйте другой запрос или выберите другую категорию.",
+    "clearSearch": "Очистить поиск",
+    "navigate": "Навигация",
+    "select": "Открыть"
+  },
+  "accountSwitcher": {
+    "title": "Учётные записи",
+    "description": "Переключайтесь между учётными записями, добавляйте новые и удаляйте неактивные.",
+    "active": "Активная",
+    "openSettings": "Открыть настройки",
+    "switch": "Переключиться",
+    "removing": "Удаление…",
+    "removeFromDevice": "Удалить с устройства",
+    "addAccount": "Добавить учётную запись",
+    "close": "Закрыть",
+    "actionError": "Не удалось обновить эту учётную запись. Повторите попытку."
+  },
+  "recentThreads": {
+    "title": "Недавно открытые",
+    "empty": "Нет недавно открытых веток",
+    "resizeAria": "Изменить размер раздела недавних веток",
+    "openedAt": "Открыто {{time}}"
+  },
+  "threadNav": {
+    "title": "Ветки",
+    "empty": "Веток пока нет",
+    "loading": "Загрузка веток…",
+    "pin": "Закрепить ветку",
+    "unpin": "Открепить ветку",
+    "pinned": "Закреплена",
+    "room": "Комната",
+    "agents": "Агенты",
+    "agentsUnknown": "Агент не определён",
+    "messages": "Сообщения",
+    "lastActivity": "Последняя активность",
+    "unknownActivity": "Неизвестно"
+  },
+  "composer": {
+    "placeholder": "Введите сообщение…",
+    "sendMessage": "Отправить сообщение",
+    "recordVoice": "Записать голосовое сообщение",
+    "formatting": "Форматирование",
+    "attach": "Прикрепить файлы",
+    "voicePausedInOtherRoom": "Запись голоса приостановлена — завершите или удалите неотправленную запись в {{roomName}}",
+    "dropFiles": "Перетащите файлы в «{{roomName}}»",
+    "dropFilesHint": "Перетащите файлы сюда или нажмите, чтобы выбрать их",
+    "roomFallback": "Комната",
+    "voiceRoomUnavailable": "Эта комната больше недоступна. Удалите неотправленное голосовое сообщение и повторите попытку позже.",
+    "voiceStillSending": "Другое голосовое сообщение ещё отправляется. Дождитесь завершения отправки.",
+    "voiceBundleBlocked": "Другое вложение ещё отправляется или требует внимания. Дождитесь его, повторите отправку неудачных вложений или удалите их, а затем снова отправьте сообщение."
+  },
+  "threadActions": {
+    "more": "Параметры ветки",
+    "open": "Открыть ветку",
+    "tags": "Изменить теги",
+    "editSummary": "Изменить сводку",
+    "regenerate": "Создать сводку заново",
+    "reopen": "Открыть ветку снова",
+    "copy": "Скопировать ссылку на ветку",
+    "summary": "Сводка",
+    "summaryHint": "Изменения, внесённые вручную, останавливают автоматическое обновление сводки. Вы можете в любое время снова изменить или создать сводку заново.",
+    "length": "{{count}} / {{max}} символов",
+    "agent": "Агент",
+    "noAgents": "В этой комнате нет присоединившихся агентов",
+    "regenerateHint": "Попросите агента обновить сводку этой ветки. Агенту нужен инструмент сводки веток.",
+    "requested": "Запрос отправлен. Сводка обновится, когда агент завершит работу. Ответ агента появится в ветке.",
+    "failed": "Не удалось выполнить это действие. Повторите попытку.",
+    "save": "Сохранить сводку",
+    "sendRequest": "Отправить запрос",
+    "saving": "Отправка…",
+    "cancel": "Отмена",
+    "done": "Готово"
+  },
+  "thread": {
+    "pinFailed": "Не удалось обновить закрепление. Попробуйте ещё раз.",
+    "chip": "Ветка",
+    "view": "Просмотр ветки",
+    "resolve": "Отметить решённой",
+    "resolved": "Решена",
+    "resolvedBy": "Решил(а) {{name}}",
+    "resolvedByShort": "от {{name}}",
+    "hideDetails": "Скрыть сведения о ветке",
+    "showDetails": "Показать сведения о ветке",
+    "backToRoom": "Вернуться в комнату",
+    "replyCount_one": "{{count}} ответ",
+    "replyCount_other": "{{count}} ответов",
+    "aria": {
+      "openThread": "Открыть ветку: {{title}}",
+      "resolvedThread": "Решённая ветка",
+      "unresolvedThread": "Нерешённая ветка",
+      "unreadMessages": "Непрочитанные сообщения",
+      "agentStreaming": "Агент передаёт ответ",
+      "messageFailed": "Не удалось отправить сообщение",
+      "messageSending": "Сообщение отправляется",
+      "lastActivity": "Последняя активность: {{time}}",
+      "removeTagFilter": "Удалить фильтр {{tag}}"
+    },
+    "status": {
+      "resolved": "Решена",
+      "streaming": "Передача",
+      "scheduled": "Запланировано",
+      "unread": "Не прочитано",
+      "idle": "Неактивна",
+      "idleFilter": "Неактивна (решена, без передачи и задач)"
+    },
+    "stats": {
+      "aria": "Статистика веток",
+      "showing": "Показано {{shown}} из {{total}}",
+      "threadCount_one": "{{count}} ветка",
+      "threadCount_other": "{{count}} веток",
+      "tags": "Теги",
+      "threadCount_few": "{{count}} веток",
+      "threadCount_many": "{{count}} веток"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: показаны все. Нажмите, чтобы оставить только это.",
+      "include": "{{label}}: показано только это. Нажмите, чтобы скрыть.",
+      "exclude": "{{label}}: скрыто. Нажмите, чтобы убрать фильтр.",
+      "tagAny": "Тег «{{tag}}»",
+      "tagInclude": "Тег «{{tag}}»: показан только он. Нажмите, чтобы скрыть.",
+      "tagExclude": "Тег «{{tag}}»: скрыт. Нажмите, чтобы убрать фильтр.",
+      "stateAny": "показаны все",
+      "stateInclude": "показано только это",
+      "stateExclude": "скрыто"
+    },
+    "filters": {
+      "scope": "Область",
+      "scopeInvolved": "С моим участием",
+      "scopeAllRooms": "Все комнаты",
+      "status": "Статус",
+      "statusAll": "Все",
+      "statusUnresolved": "Нерешённые",
+      "statusResolved": "Решена",
+      "activity": "Активность",
+      "activityToday": "Сегодня",
+      "activity7d": "7 дн.",
+      "activity30d": "30 дн.",
+      "activityAll": "Все",
+      "unread": "Не прочитано",
+      "attention": "Требуют внимания",
+      "roomIdsPlaceholder": "Идентификаторы комнат",
+      "roomIdsAria": "Фильтры по идентификаторам комнат",
+      "spaceIdsPlaceholder": "Идентификаторы пространств",
+      "spaceIdsAria": "Фильтры по идентификаторам пространств",
+      "tagsPlaceholder": "Теги",
+      "tagsIncludeAria": "Фильтры включённых тегов",
+      "excludeTagsPlaceholder": "Исключить теги",
+      "tagsExcludeAria": "Фильтры исключённых тегов",
+      "clear": "Очистить",
+      "open": "Фильтры",
+      "search": "Поиск веток",
+      "sheetAria": "Фильтры веток",
+      "closeAria": "Закрыть фильтры веток"
+    },
+    "simpleFilter": {
+      "unresolved": "Нерешённые",
+      "showingUnresolved": "Показаны нерешённые ветки. Нажмите, чтобы показать все.",
+      "showingAll": "Показаны все ветки. Нажмите, чтобы показать только нерешённые."
+    },
+    "replyCount_few": "{{count}} ответа",
+    "replyCount_many": "{{count}} ответов"
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "Данные учётной записи",
+      "save": "Сохранить",
+      "cancel": "Отмена",
+      "jsonContent": "Содержимое JSON",
+      "edit": "Изменить",
+      "developerTools": "Инструменты разработчика"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "Не удалось загрузить сведения о процессе аутентификации.",
+      "retry": "Повторить"
+    },
+    "backupRestore": {
+      "restoring0": "Восстановление: 0 %",
+      "backupHasTrustedDecryptionKey": "Резервная копия содержит доверенный ключ расшифровки.",
+      "backupDoesNotHaveTrustedDecryptionKey": "Резервная копия не содержит доверенного ключа расшифровки!",
+      "backupHasTrustedBySignature": "Резервная копия подтверждена доверенной подписью.",
+      "backupDoesNotHaveTrustedSignature": "У резервной копии нет доверенной подписи!",
+      "encryptionBackup": "Резервное копирование шифрования",
+      "backupDetails": "Сведения о резервной копии",
+      "restoreBackup": "Восстановить резервную копию",
+      "noBackupPresentOnServer": "На сервере нет резервной копии!",
+      "connected": "Подключено",
+      "disconnected": "Отключено",
+      "nil": "NIL",
+      "syncing": "Синхронизация ({{count}})",
+      "restoring": "Восстановление: {{progress}} %",
+      "version": "Версия: {{version}}",
+      "keys": "Ключи: {{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "Примечание",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "Эта функция проходит тестирование и со временем может измениться.",
+      "beta": "Бета"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "Входящий звонок",
+      "yourHomeserverDoesNotSupportCalling": "Ваш домашний сервер не поддерживает звонки.",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "Ваш браузер не поддерживает WebRTC, необходимый для звонков.",
+      "answer": "Ответить",
+      "reject": "Отклонить",
+      "ignore": "Игнорировать"
+    },
+    "deviceVerification": {
+      "close": "Закрыть",
+      "pleaseAcceptTheRequestFromOtherDevice": "Примите запрос на другом устройстве.",
+      "clickAcceptToStartTheVerificationProcess": "Нажмите «Принять», чтобы начать проверку.",
+      "accept": "Принять",
+      "verificationRequestHasBeenAccepted": "Запрос на проверку принят.",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "Убедитесь, что эмодзи ниже отображаются на обоих устройствах в одинаковом порядке:",
+      "theyMatch": "Совпадают",
+      "doNotMatch": "Не совпадают",
+      "yourDeviceIsVerified": "Ваше устройство проверено.",
+      "okay": "Хорошо",
+      "verificationHasBeenCanceled": "Проверка отменена.",
+      "deviceVerification": "Проверка устройства",
+      "waitingForRequestToBeAccepted": "Ожидание принятия запроса…",
+      "waitingForTheResponseFromOtherDevice": "Ожидание ответа другого устройства…",
+      "startingVerificationUsingEmojiComparison": "Запуск проверки путём сравнения эмодзи…",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "Непредвиденная ошибка! Проверка началась, но средство проверки отсутствует."
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "Ключ восстановления",
+      "passphraseOptional": "Парольная фраза (необязательно)",
+      "continue": "Продолжить",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "Клиент не поддерживает действия аутентификации, необходимые для этой операции.",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "Храните ключ восстановления в надёжном месте. Он понадобится для подтверждения личности, если у вас не будет доступа к другим устройствам.",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "setupDeviceVerification": "Настроить проверку устройства",
+      "resetDeviceVerification": "Сбросить проверку устройства",
+      "resettingDeviceVerificationIsPermanent": "Сброс проверки устройства необратим.",
+      "recoveryPassphrase": "Парольная фраза восстановления",
+      "reset": "Сбросить",
+      "unexpectedError": "Непредвиденная ошибка!",
+      "hide": "Скрыть",
+      "show": "Показать",
+      "recoveryDescription": "Создайте <b>ключ восстановления</b> для подтверждения личности, если у вас не будет доступа к другим устройствам. Также можно настроить запоминающуюся парольную фразу как альтернативу.",
+      "resetWarning": "Все пользователи, с которыми вы прошли проверку, увидят предупреждения безопасности, а резервная копия шифрования будет потеряна. Почти наверняка этого не следует делать, если только вы не потеряли <b>ключ восстановления</b> или <b>парольную фразу восстановления</b>, а также все устройства, с которых можно пройти проверку."
+    },
+    "hexColorPickerPopOut": {
+      "remove": "Удалить"
+    },
+    "logoutDialog": {
+      "logout": "Выйти",
+      "unverifiedDevice": "Непроверенное устройство",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "Проверьте устройство перед выходом, чтобы сохранить зашифрованные сообщения.",
+      "alert": "Предупреждение",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "Включите проверку устройства или экспортируйте зашифрованные данные в настройках, чтобы не потерять доступ к сообщениям.",
+      "youReAboutToLogOutAreYouSure": "Вы собираетесь выйти. Продолжить?",
+      "cancel": "Отмена",
+      "logoutFailed": "Не удалось выйти! {{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "Парольная фраза восстановления",
+      "recoveryKey": "Ключ восстановления",
+      "verifyManually": "Проверить вручную",
+      "deviceVerified": "Устройство проверено!",
+      "selectAVerificationMethod": "Выберите способ проверки.",
+      "provideRecoveryKey": "Введите ключ восстановления."
+    },
+    "pdfViewer": {
+      "zoomOut": "Уменьшить масштаб",
+      "zoomIn": "Увеличить масштаб",
+      "failedToLoadPdf": "Не удалось загрузить PDF",
+      "retry": "Повторить",
+      "previous": "Назад",
+      "pageNumber": "Номер страницы",
+      "jumpToPage": "Перейти на страницу",
+      "next": "Далее",
+      "saving": "Сохранение…",
+      "retryDownload": "Повторить скачивание",
+      "download": "Скачать"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "Парольная фраза восстановления",
+      "verify": "Проверить",
+      "recoveryKey": "Ключ восстановления",
+      "invalidRecoveryPassphrase": "Неверная фраза восстановления.",
+      "invalidRecoveryKey": "Неверный ключ восстановления."
+    },
+    "uIAFlowOverlay": {
+      "exit": "Выйти",
+      "stepValue1Value2": "Шаг {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "Основатели",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "При создании можно назначить пользователей с особыми полномочиями. Они получают расширенный контроль, и изменить их можно только при обновлении.",
+      "enter": "Ввести",
+      "noSuggestions": "Нет предложений",
+      "pleaseProvideTheUserIdAndHitEnter": "Введите идентификатор пользователя и нажмите Enter."
+    },
+    "createRoomAccessSelector": {
+      "restricted": "Ограниченная",
+      "onlyMemberOfParentSpaceCanJoin": "Войти могут только участники родительского пространства.",
+      "private": "Закрытая",
+      "onlyPeopleWithInviteCanJoin": "Войти можно только по приглашению.",
+      "public": "Открытая",
+      "anyoneWithTheAddressCanJoin": "Войти может любой, у кого есть адрес."
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "Адрес (необязательно)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "Выберите уникальный адрес, чтобы пространство можно было найти.",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "Этот адрес уже занят. Выберите другой."
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "Комната чата",
+      "messagesPhotosAndVideos": "— Сообщения, фотографии и видео.",
+      "voiceRoom": "Голосовая комната",
+      "liveAudioAndVideoConversations": "— Голосовые и видеобеседы в реальном времени."
+    },
+    "roomVersionSelector": {
+      "version": "Версия",
+      "versions": "Версии"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "Эмодзи"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "Комнаты",
+      "unknownRoom": "Неизвестная комната"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "Упоминания"
+    },
+    "emojiBoard": {
+      "recent": "Недавние",
+      "unknownPack": "Неизвестный набор",
+      "searchResults": "Результаты поиска",
+      "noResultsFound": "Ничего не найдено",
+      "personalPack": "Личный набор",
+      "unknown": "Неизвестно"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "Нет наборов стикеров!",
+      "addStickersFromUserRoomOrSpaceSettings": "Добавьте стикеры в настройках пользователя, комнаты или пространства."
+    },
+    "searchInput": {
+      "react": "Отреагировать",
+      "searchOrTextReaction": "Поиск или текстовая реакция ",
+      "search": "Поиск"
+    },
+    "tabs": {
+      "sticker": "Стикер",
+      "emoji": "Эмодзи"
+    },
+    "eventReaders": {
+      "seenBy": "Просмотрено"
+    },
+    "imageEditor": {
+      "imageEditor": "Редактор изображений",
+      "save": "Сохранить"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "Не удалось применить изменения! Повторите попытку.",
+      "changesSavedApplyWhenReady": "Изменения сохранены! Примените их, когда будете готовы.",
+      "reset": "Сбросить",
+      "applyChanges": "Применить изменения",
+      "pack": "Набор",
+      "imagesUsage": "Использование изображений",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "Выберите, как использовать изображения: как эмодзи, стикеры или и то и другое.",
+      "images": "Изображения",
+      "uploadImages": "Загрузить изображения",
+      "selectImagesFromYourStorageToUploadThemInPack": "Выберите изображения на устройстве, чтобы загрузить их в набор.",
+      "select": "Выбрать"
+    },
+    "imagePackView": {
+      "emojisStickers": "Эмодзи и стикеры"
+    },
+    "imageTile": {
+      "undo": "Отменить действие",
+      "edit": "Изменить",
+      "shortcode": "Короткий код:",
+      "body": "Содержимое:",
+      "save": "Сохранить",
+      "cancel": "Отмена"
+    },
+    "packMeta": {
+      "edit": "Изменить",
+      "packAvatar": "Аватар набора",
+      "upload": "Загрузить",
+      "reset": "Сбросить",
+      "remove": "Удалить",
+      "name": "Название",
+      "attribution": "Атрибуция",
+      "save": "Сохранить",
+      "cancel": "Отмена",
+      "unknown": "Неизвестно"
+    },
+    "imageViewer": {
+      "zoomOut": "Уменьшить масштаб",
+      "zoomIn": "Увеличить масштаб",
+      "saving": "Сохранение…",
+      "retryDownload": "Повторить скачивание",
+      "download": "Скачать"
+    },
+    "inviteUserPrompt": {
+      "invite": "Пригласить",
+      "userId": "Идентификатор пользователя",
+      "reasonOptional": "Причина (необязательно)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "Войти по адресу",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "Введите публичный адрес, чтобы войти в сообщество. Адрес выглядит так:",
+      "address": "Адрес",
+      "invalidAddress": "Недопустимый адрес",
+      "open": "Открыть"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "Покинуть комнату",
+      "areYouSureYouWantToLeaveThisRoom": "Вы действительно хотите покинуть эту комнату?",
+      "leaving": "Выход…",
+      "leave": "Покинуть",
+      "leaveFailed": "Не удалось покинуть комнату! {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "Покинуть пространство",
+      "areYouSureYouWantToLeaveThisSpace": "Вы действительно хотите покинуть это пространство?",
+      "leaving": "Выход…",
+      "leave": "Покинуть",
+      "leaveFailed": "Не удалось покинуть пространство! {{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "Открыть местоположение",
+      "voiceMessage": "голосовое сообщение",
+      "audio": "аудио",
+      "unnamedFile": "Файл без названия",
+      "file": "Файл",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF-документ",
+      "textFile": "Текстовый файл"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "Это сообщение удалено",
+      "unsupportedMessage": "Неподдерживаемое сообщение",
+      "failedToLoadMessage": "Не удалось загрузить сообщение",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "Не удалось расшифровать сообщение — ключ шифрования недоступен",
+      "thisMessageIsNotDecryptedYet": "Сообщение ещё не расшифровано",
+      "brokenMessage": "Повреждённое сообщение",
+      "emptyMessage": "Пустое сообщение",
+      "edited": " (изменено)",
+      "deletedWithReason": "Это сообщение удалено. {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "Открыть PDF",
+      "openFile": "Открыть файл",
+      "loadFailed": "Не удалось загрузить файл!",
+      "retryDownload": "Повторить скачивание ({{size}})",
+      "downloadSize": "Скачать ({{size}})",
+      "openValue1": "Открыть {{value1}}"
+    },
+    "imageContent": {
+      "view": "Просмотреть",
+      "spoiler": "Спойлер",
+      "failedToLoadImage": "Не удалось загрузить изображение!",
+      "retry": "Повторить"
+    },
+    "videoContent": {
+      "watch": "Смотреть",
+      "spoiler": "Спойлер",
+      "failedToLoadVideo": "Не удалось загрузить видео!",
+      "retry": "Повторить"
+    },
+    "voiceAudioContent": {
+      "loadError": "Не удалось загрузить аудио. Нажмите воспроизведение, чтобы повторить попытку.",
+      "playbackError": "Это аудио нельзя воспроизвести здесь. Попробуйте скачать его.",
+      "playbackPosition": "{{current}} из {{duration}}",
+      "moreAudioOptions": "Другие параметры аудио",
+      "download": "Скачать",
+      "name": "Название",
+      "type": "Тип",
+      "size": "Размер",
+      "duration": "Длительность",
+      "voiceMessage": "голосовое сообщение",
+      "pauseValue1": "Приостановить {{value1}}",
+      "playValue1": "Воспроизвести {{value1}}",
+      "seekValue1": "Перемотать {{value1}}"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "Администратор рассмотрит ваш запрос.",
+      "messageOptional": "Сообщение (необязательно)",
+      "cancel": "Отмена",
+      "failedToSendRequest": "Не удалось отправить запрос.",
+      "sendingRequest": "Запрос отправляется",
+      "sendRequest": "Отправить запрос",
+      "requestToJoinValue1": "Запросить вход в {{value1}}"
+    },
+    "roomCard": {
+      "cancel": "Отмена",
+      "checkingAccess": "Проверка доступа",
+      "space": "Пространство",
+      "view": "Просмотреть",
+      "retry": "Повторить",
+      "joinError": "Ошибка входа",
+      "viewError": "Ошибка просмотра",
+      "retryRoomInfo": "Повторить загрузку сведений о комнате",
+      "accessUnavailable": "Доступ недоступен",
+      "failedToJoinUnknownError": "Не удалось войти. Неизвестная ошибка.",
+      "sendingRequest": "Запрос отправляется",
+      "requestSent": "Запрос отправлен",
+      "requestToJoin": "Запросить вход",
+      "joining": "Вход…",
+      "join": "Войти",
+      "members_one": "{{count, number}} участник",
+      "members_other": "{{count, number}} участников",
+      "members_few": "{{count, number}} участника",
+      "members_many": "{{count, number}} участников"
+    },
+    "roomIntro": {
+      "inviteMember": "Пригласить участника",
+      "openOldRoom": "Открыть прежнюю комнату",
+      "joinOldRoom": "Войти в прежнюю комнату",
+      "thisIsTheBeginningOfConversation": "Это начало беседы.",
+      "createdBy": "Создатель: ",
+      "onValue1Value2": " {{value1}} {{value2}}"
+    },
+    "textViewer": {
+      "copyAll": "Копировать всё"
+    },
+    "datePicker": {
+      "day": "День",
+      "month": "Месяц",
+      "year": "Год"
+    },
+    "timePicker": {
+      "hour": "Час",
+      "minutes": "Минуты",
+      "period": "Период",
+      "am": "AM",
+      "pm": "PM"
+    },
+    "dummyStage": {
+      "retry": "Повторить",
+      "cancel": "Отмена",
+      "failedToRegister": "Не удалось зарегистрироваться."
+    },
+    "emailStage": {
+      "email": "Электронная почта",
+      "sendVerificationEmail": "Отправить письмо для проверки",
+      "cancel": "Отмена",
+      "sendingVerificationEmail": "Письмо для проверки отправляется…",
+      "verificationRequestSent": "Запрос на проверку отправлен",
+      "continue": "Продолжить",
+      "provideEmail": "Указать адрес электронной почты",
+      "verifyEmail": "Подтвердить адрес электронной почты",
+      "failedToSendVerificationEmailRequest": "Не удалось отправить запрос на проверку электронной почты.",
+      "pleaseProvideEmailToSendVerificationRequest": "Укажите адрес электронной почты, чтобы отправить запрос на проверку.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "Проверьте почту «{{value1}}» и подтвердите адрес, прежде чем продолжить."
+    },
+    "passwordStage": {
+      "accountPassword": "Пароль учётной записи",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "Чтобы выполнить это действие, подтвердите личность паролем своей учётной записи.",
+      "password": "Пароль",
+      "continue": "Продолжить",
+      "invalidPassword": "Неверный пароль!"
+    },
+    "reCaptchaStage": {
+      "cancel": "Отмена",
+      "invalidData": "Недопустимые данные",
+      "pleaseCheckTheBoxBelowToProceed": "Установите флажок ниже, чтобы продолжить.",
+      "noValidDataFoundToProceedWithRecaptcha": "Нет допустимых данных для продолжения ReCAPTCHA."
+    },
+    "registrationTokenStage": {
+      "registrationToken": "Токен регистрации",
+      "retry": "Повторить",
+      "cancel": "Отмена",
+      "invalidRegistrationTokenProvided": "Указан недопустимый токен регистрации.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "Введите токен регистрации, выданный администратором домашнего сервера."
+    },
+    "sSOStage": {
+      "ssoLogin": "Вход через SSO",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "Чтобы выполнить это действие, пройдите аутентификацию через SSO.",
+      "continue": "Продолжить",
+      "continueWithSso": "Продолжить через SSO"
+    },
+    "termsStage": {
+      "retry": "Повторить",
+      "cancel": "Отмена",
+      "failedToSubmitTermsAndConditionAcceptance": "Не удалось подтвердить принятие условий."
+    },
+    "uploadBoard": {
+      "files": "Файлы",
+      "uploadFailed": "Сбой загрузки",
+      "remove": "Удалить",
+      "removeAll": "Удалить всё"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "Повторить загрузку",
+      "retry": "Повторить",
+      "cancelUpload": "Отменить загрузку"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "Спойлер",
+      "retryUpload": "Повторить загрузку",
+      "retry": "Повторить",
+      "cancelUpload": "Отменить загрузку"
+    },
+    "creatorChip": {
+      "managePowers": "Управление полномочиями"
+    },
+    "powerChip": {
+      "selfDemotion": "Понижение собственных полномочий",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "Вы собираетесь понизить собственные полномочия и не сможете вернуть их самостоятельно. Продолжить?",
+      "demote": "Понизить",
+      "sharedPower": "Равные полномочия",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "Вы собираетесь предоставить пользователю те же полномочия, что и у вас. После этого вы не сможете изменить его полномочия. Продолжить?",
+      "promote": "Повысить",
+      "managePowers": "Управление полномочиями",
+      "errorName": "Ошибка: {{name}}"
+    },
+    "userChips": {
+      "copyServer": "Копировать сервер",
+      "exploreCommunity": "Обзор сообществ",
+      "openInBrowser": "Открыть в браузере",
+      "copyUserId": "Копировать идентификатор пользователя",
+      "copyUserLink": "Копировать ссылку на пользователя",
+      "share": "Поделиться",
+      "spaces": "Пространства",
+      "rooms": "Комнаты",
+      "directMessages": "Личные сообщения",
+      "blockedUser": "Заблокированный пользователь",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "Вы не будете получать сообщения и приглашения от этого пользователя.",
+      "mutualRooms": "Общие комнаты",
+      "unblockUser": "Разблокировать пользователя",
+      "blockUser": "Заблокировать пользователя",
+      "mutualRooms_one": "{{count, number}} общая комната",
+      "mutualRooms_other": "{{count, number}} общих комнат",
+      "mutualRooms_few": "{{count, number}} общие комнаты",
+      "mutualRooms_many": "{{count, number}} общих комнат"
+    },
+    "userModeration": {
+      "kickedUser": "Исключённый пользователь",
+      "noReasonProvided": "Причина не указана.",
+      "bannedUser": "Забаненный пользователь",
+      "unban": "Снять бан",
+      "invitedUser": "Приглашённый пользователь",
+      "cancelInvite": "Отменить приглашение",
+      "moderation": "Модерация",
+      "reason": "Причина: <b>{{reason}}</b>",
+      "invite": "Пригласить",
+      "kick": "Исключить",
+      "ban": "Забанить",
+      "kickedBy": "Исключил(а): <b>{{name}}</b>",
+      "bannedBy": "Забанил(а): <b>{{name}}</b>",
+      "invitedBy": "Пригласил(а): <b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "Сообщение"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "Громкость",
+      "voiceVolumeCurrentlyValue1": "Текущая громкость: {{value1}} %"
+    },
+    "configConfig": {
+      "continueOffline": "Продолжить без подключения",
+      "yourWebSessionHasExpired": "Срок действия веб-сеанса истёк.",
+      "failedToLoadClientConfigurationFile": "Не удалось загрузить файл конфигурации клиента.",
+      "signInAgainToReconnectOrContinueInOfflineMode": "Войдите снова, чтобы восстановить подключение, или продолжите без подключения.",
+      "signInAgainToReconnect": "Войдите снова, чтобы восстановить подключение.",
+      "signInAgain": "Войти снова",
+      "retry": "Повторить"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "Необходимая функция браузера недоступна",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "Поддержка IndexedDB не обнаружена. Приложению требуется IndexedDB для локального хранения данных сеанса. Убедитесь, что браузер поддерживает IndexedDB и эта функция включена.",
+      "whatIsIndexeddb": "Что такое IndexedDB?"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "Вернуться к текущей учётной записи",
+      "server": "Сервер",
+      "lookingForServer": "Поиск сервера…",
+      "failedToFindServer": "Не удалось найти сервер.",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "Не удалось подключиться. Параметр base_url в конфигурации сервера недопустим.",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "Разрешены только серверы HTTPS. HTTP поддерживается лишь для серверов в локальной сети.",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "Не удалось подключиться. Возможно, сервер сейчас недоступен или не существует.",
+      "loadingAuthenticationFlow": "Загрузка процесса аутентификации…",
+      "failedToGetAuthenticationFlowInformation": "Не удалось получить сведения о процессе аутентификации.",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "Не удалось подключиться. Конфигурация сервера, найденная по адресу {{value1}}, непригодна.",
+      "connectingToValue1": "Подключение к {{value1}}"
+    },
+    "orDivider": {
+      "or": "ИЛИ"
+    },
+    "sSOLogin": {
+      "continueWithSso": "Продолжить через SSO"
+    },
+    "serverPicker": {
+      "server": "Сервер",
+      "serverList": "Список серверов"
+    },
+    "login": {
+      "login": "Вход",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Этот клиент требует входа через Apple. Добавьте Apple в список поставщиков SSO домашнего сервера.",
+      "register": "Регистрация",
+      "accountLink": "Нет учётной записи? <authLink>Зарегистрируйтесь</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "Вход по паролю отключён на «{{value1}}». Используйте SSO.",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "Этот клиент не поддерживает вход на сервер «{{value1}}»: не найдены способы входа по паролю или через SSO."
+    },
+    "passwordLoginForm": {
+      "hint": "Подсказка",
+      "username": "Имя пользователя:",
+      "matrixId": "Matrix ID:",
+      "email": "Электронная почта:",
+      "username2": "Имя пользователя",
+      "password": "Пароль",
+      "forgetPassword": "Забыли пароль?",
+      "login": "Вход",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "Этот клиент не разрешает вход через другой сервер.",
+      "failedToFindYourMatrixIdServer": "Не удалось найти сервер вашего Matrix ID.",
+      "invalidUsernameOrPassword": "Неверное имя пользователя или пароль.",
+      "thisAccountHasBeenDeactivated": "Эта учётная запись деактивирована.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Не удалось войти: часть данных запроса недопустима.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Не удалось войти: сервер ограничил частоту запросов. Повторите попытку позже.",
+      "failedToLoginUnknownReason": "Не удалось войти по неизвестной причине.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Вход выполнен, но браузеру не удалось сохранить учётную запись. Проверьте разрешения хранилища и повторите попытку."
+    },
+    "tokenLogin": {
+      "tokenLogin": "Вход по токену",
+      "invalidLoginToken": "Недопустимый токен входа.",
+      "thisAccountHasBeenDeactivated": "Эта учётная запись деактивирована.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Не удалось войти: часть данных запроса недопустима.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Не удалось войти: сервер ограничил частоту запросов. Повторите попытку позже.",
+      "failedToLoginUnknownReason": "Не удалось войти по неизвестной причине.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Вход выполнен, но браузеру не удалось сохранить учётную запись. Проверьте разрешения хранилища и повторите попытку."
+    },
+    "passwordRegisterForm": {
+      "username": "Имя пользователя",
+      "password": "Пароль",
+      "confirmPassword": "Подтвердите пароль",
+      "termsAndConditions": "Условия использования",
+      "register": "Регистрация",
+      "thisUsernameIsAlreadyTaken": "Это имя пользователя уже занято.",
+      "thisUsernameContainsInvalidCharacters": "Имя пользователя содержит недопустимые символы.",
+      "thisUsernameIsReserved": "Это имя пользователя зарезервировано.",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "Сервер отклонил слишком простой пароль. Выберите более надёжный.",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "Сервер отклонил слишком короткий пароль. Выберите более длинный.",
+      "registrationToken": "Токен регистрации",
+      "registrationTokenOptional": "Токен регистрации (необязательно)",
+      "email": "Электронная почта",
+      "emailOptional": "Электронная почта (необязательно)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "Не удалось зарегистрироваться: сервер ограничил частоту запросов. Повторите попытку позже.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "Не удалось зарегистрироваться: домашний сервер не разрешает регистрацию.",
+      "failedToRegisterInvalidRequest": "Не удалось зарегистрироваться: недопустимый запрос.",
+      "failedToRegisterUnknownReason": "Не удалось зарегистрироваться по неизвестной причине.",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Регистрация завершена, но браузеру не удалось сохранить учётную запись. Проверьте разрешения хранилища и попробуйте войти.",
+      "acceptTerms": "Я принимаю <terms>условия использования сервера</terms>."
+    },
+    "register": {
+      "register": "Регистрация",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Этот клиент требует входа через Apple. Добавьте Apple в список поставщиков SSO домашнего сервера.",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "На этом домашнем сервере можно зарегистрироваться только через Apple, Google или GitHub.",
+      "registrationHasBeenDisabledOnThisHomeserver": "Регистрация на этом домашнем сервере отключена.",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "Частота ваших запросов ограничена. Повторите попытку позже.",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "Недопустимый запрос: не удалось получить варианты регистрации.",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "Приложение не поддерживает регистрацию на этом домашнем сервере.",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "На этом домашнем сервере требуется регистрация через SSO, но сервер не сообщил ни об одном поставщике SSO.",
+      "login": "Вход",
+      "accountLink": "Уже есть учётная запись? <authLink>Войдите</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "Пароль успешно сброшен. Войдите с новым паролем.",
+      "login": "Вход",
+      "email": "Электронная почта",
+      "newPassword": "Новый пароль",
+      "confirmPassword": "Подтвердите пароль",
+      "resetPassword": "Сбросить пароль",
+      "resetEmailDescription": "Домашний сервер <strong>{{server}}</strong> отправит вам письмо для сброса пароля.",
+      "failedToResetPassword": "Не удалось сбросить пароль."
+    },
+    "resetPassword": {
+      "resetPassword": "Сбросить пароль",
+      "login": "Вход",
+      "accountLink": "Вспомнили пароль? <authLink>Войдите</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "Синхронизация…",
+      "startupRecoveryOptions": "Варианты восстановления при запуске",
+      "logout": "Выйти",
+      "retry": "Повторить",
+      "clearCacheAndReload": "Очистить кеш и перезагрузить",
+      "removeAccount": "Удалить учётную запись",
+      "clearing": "Очистка…",
+      "failedToStartAccountValue1Value2": "Не удалось запустить учётную запись {{value1}}. {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "Отменить и вернуться ко входу",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "Не удаётся подключиться к домашнему серверу. Возможно, сервер или интернет-соединение недоступны.",
+      "retry": "Повторить",
+      "continue": "Продолжить",
+      "connectingToServer": "Подключение к серверу",
+      "clearing": "Очистка…",
+      "clearCacheAndReload": "Очистить кеш и перезагрузить"
+    },
+    "syncStatus": {
+      "catchingUp": "Синхронизация…",
+      "connectionLostReconnecting": "Соединение потеряно! Повторное подключение…",
+      "connectionLost": "Соединение потеряно!"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "Настроить Local MindRoom",
+      "openLocalMindroomSettings": "Открыть настройки Local MindRoom",
+      "enterPairCode": "Есть код? Введите его в Local MindRoom",
+      "poweredBy": "На базе <links />",
+      "title": "Добро пожаловать в {{appName}}",
+      "subtitle": "ИИ-агенты, которые живут в ваших чат-комнатах.",
+      "docs": "Документация",
+      "sourceCode": "Исходный код",
+      "setupStep1": "1. Выполните {{command}}",
+      "setupStep2": "2. Добавьте данные доступа к модели в {{envFile}} или выполните {{command}}",
+      "setupStep3": "3. Запустите его с помощью {{command}}, затем откройте показанную ссылку, чтобы подтвердить подключение"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "Развернуть панель навигации",
+      "collapseNavigationPanel": "Свернуть панель навигации"
+    },
+    "create": {
+      "createSpace": "Создать пространство",
+      "buildASpaceForYourCommunity": "Создайте пространство для своего сообщества."
+    },
+    "directCreate": {
+      "createChat": "Создать чат",
+      "startAPrivateEncryptedChatByEnteringAUserId": "Начните закрытый зашифрованный чат, указав идентификатор пользователя."
+    },
+    "explore": {
+      "addServer": "Добавить сервер",
+      "addServerNameToExplorePublicCommunities": "Добавьте имя сервера для просмотра открытых сообществ.",
+      "serverName": "Имя сервера",
+      "failedToLoadPublicRoomsPleaseTryAgain": "Не удалось загрузить открытые комнаты. Повторите попытку.",
+      "view": "Просмотреть",
+      "exploreCommunity": "Обзор сообществ",
+      "featured": "Рекомендуемое",
+      "servers": "Серверы"
+    },
+    "featured": {
+      "featuredByClient": "Рекомендации клиента",
+      "featuredSpaces": "Рекомендуемые пространства",
+      "featuredRooms": "Рекомендуемые комнаты",
+      "noRoomsOrSpacesFeaturedByClientProvider": "Поставщик клиента не рекомендует комнаты или пространства.",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "Найдите и просмотрите открытые комнаты и пространства, рекомендованные поставщиком клиента."
+    },
+    "server": {
+      "search": "Поиск",
+      "searchForKeyword": "Поиск по ключевому слову",
+      "clear": "Очистить",
+      "enter": "Ввести",
+      "protocols": "Протоколы",
+      "presets": "Предустановки",
+      "customLimit": "Другой лимит",
+      "perPageItemLimit": "Элементов на странице",
+      "changeLimit": "Изменить лимит",
+      "popularCommunities": "Популярные сообщества",
+      "previousPage": "Предыдущая страница",
+      "nextPage": "Следующая страница",
+      "noCommunitiesFound": "Сообщества не найдены!",
+      "pageLimitValue1": "Лимит страницы: {{value1}}",
+      "resultsForValue1": "Результаты для «{{value1}}»"
+    },
+    "createRoom": {
+      "createRoom": "Создать комнату",
+      "buildARoomForRealTimeConversations": "Создайте комнату для общения в реальном времени."
+    },
+    "search": {
+      "messageSearch": "Поиск сообщений"
+    },
+    "inbox": {
+      "invites": "Приглашения",
+      "inbox": "Входящие",
+      "notifications": "Уведомления"
+    },
+    "invites": {
+      "encrypted": "Зашифровано",
+      "directMessage": "Личное сообщение",
+      "space": "Пространство",
+      "decline": "Отклонить",
+      "accept": "Принять",
+      "primary": "Основные",
+      "public": "Открытая",
+      "spam": "Спам",
+      "noInvites": "Нет приглашений",
+      "declineAll": "Отклонить все",
+      "acceptAll": "Принять все",
+      "reportAll": "Пожаловаться на все",
+      "blockAll": "Заблокировать всех",
+      "noSpamInvites": "Нет спам-приглашений",
+      "invites": "Приглашения",
+      "filter": "Фильтр",
+      "hideAll": "Скрыть все",
+      "viewAll": "Показать все",
+      "reason": "Причина: {{reason}}",
+      "from": "От: <b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "Здесь появятся приглашения от пользователей, с которыми у вас есть общие комнаты.",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "Здесь появятся приглашения от пользователей, с которыми у вас нет общих комнат.",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "Некоторые приглашения ниже могут содержать вредоносные материалы или быть отправлены заблокированными пользователями.",
+      "invitesDetectedAsSpamAppearHere": "Здесь появляются приглашения, распознанные как спам.",
+      "spamInvites_one": "{{count, number}} спам-приглашение",
+      "spamInvites_other": "{{count, number}} спам-приглашений",
+      "spamInvites_few": "{{count, number}} спам-приглашения",
+      "spamInvites_many": "{{count, number}} спам-приглашения"
+    },
+    "notifications": {
+      "open": "Открыть",
+      "notificationMessages": "Уведомления",
+      "filter": "Фильтр",
+      "allNotifications": "Все уведомления",
+      "highlighted": "Выделенные",
+      "scrollToTop": "Прокрутить вверх",
+      "noNotifications": "Нет уведомлений",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "Новых уведомлений пока нет.",
+      "event": " событие",
+      "roomTombstone": "Событие замены комнаты. {{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "Открепить",
+      "invite": "Пригласить",
+      "copyLink": "Копировать ссылку",
+      "spaceSettings": "Настройки пространства",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "Пространство {{value1}} выбрано. Изменяйте порядок клавишами со стрелками. Нажмите пробел, чтобы отпустить."
+    },
+    "space": {
+      "invite": "Пригласить",
+      "copyLink": "Копировать ссылку",
+      "spaceSettings": "Настройки пространства",
+      "eventTimeline": "Хронология событий",
+      "leaveSpace": "Покинуть пространство",
+      "spaceUpgraded": "Пространство обновлено",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "Это пространство заменено и больше не активно.",
+      "openNewSpace": "Открыть новое пространство",
+      "joinNewSpace": "Войти в новое пространство",
+      "lobby": "Обзор",
+      "messageSearch": "Поиск сообщений",
+      "failedToJoinReplacementSpace": "Не удалось войти в заменившее пространство!",
+      "rooms": "Комнаты",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "Комната {{value1}} выбрана. Изменяйте порядок клавишами со стрелками. Нажмите пробел, чтобы отпустить."
+    },
+    "threads": {
+      "threads": "Ветки"
+    },
+    "threadsView": {
+      "loadingThreads": "Загрузка веток",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "Вы ещё не участвовали ни в одной ветке",
+      "noThreadsMatchYourFilters": "Нет веток, соответствующих фильтрам",
+      "clearFilters": "Очистить фильтры",
+      "thread": "ветка",
+      "threads": "ветки"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "Не поддерживается",
+      "option0": "Только по приглашению",
+      "option1": "Запрос или приглашение",
+      "option2": "Участники пространства или запрос",
+      "option3": "Участники пространства",
+      "option4": "Открытая"
+    },
+    "toolbar": {
+      "heading1": "Заголовок 1",
+      "heading2": "Заголовок 2",
+      "heading3": "Заголовок 3",
+      "bold": "Полужирный",
+      "italic": "Курсив",
+      "underline": "Подчёркнутый",
+      "strikeThrough": "Зачёркнутый",
+      "inlineCode": "Встроенный код",
+      "spoiler": "Спойлер",
+      "blockQuote": "Блочная цитата",
+      "blockCode": "Блок кода",
+      "orderedList": "Нумерованный список",
+      "unorderedList": "Маркированный список",
+      "exitFormatting": "Завершить форматирование",
+      "disableMarkdown": "Отключить Markdown",
+      "enableMarkdown": "Включить Markdown",
+      "exitValue1": "Завершить {{value1}}"
+    },
+    "reaction": {
+      "others_one": "ещё {{count}} пользователь",
+      "reactionSummary": "<names>{{names}}</names> отреагировали :<reaction>{{reaction}}</reaction>:",
+      "others_other": "ещё {{count}} пользователей",
+      "others_few": "{{count}} других",
+      "others_many": "{{count}} других"
+    },
+    "audioContent": {
+      "pause": "Пауза",
+      "play": "Воспроизвести"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "Перемотать голосовое сообщение"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "По умолчанию",
+      "option1": "Все сообщения",
+      "option2": "Упоминания и ключевые слова",
+      "option3": "Без звука"
+    },
+    "authFooter": {
+      "support": "Поддержка",
+      "privacy": "Конфиденциальность",
+      "terms": "Условия",
+      "poweredBy": "На базе <app>{{appName}}</app>, <matrix>Matrix</matrix> и <cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "Войти",
+      "notFound": "Страница не найдена"
+    },
+    "ssoProviders": {
+      "signUpApple": "Зарегистрироваться через Apple",
+      "signInApple": "Войти через Apple",
+      "continueGoogle": "Продолжить через Google",
+      "continueGithub": "Продолжить через GitHub",
+      "continueProvider": "Продолжить через {{provider}}"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> принял(а) запрос <b>{{userName}}</b> на вступление {{reason}}",
+      "invited": "<b>{{senderName}}</b> пригласил(а) <b>{{userName}}</b> {{reason}}",
+      "requested": "<b>{{userName}}</b> запросил(а) вход в комнату {{reason}}",
+      "joined": "<b>{{userName}}</b> вошёл (вошла) в комнату",
+      "rejectedInvitation": "<b>{{userName}}</b> отклонил(а) приглашение {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> отклонил(а) запрос <b>{{userName}}</b> на вступление {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> отозвал(а) запрос на вступление {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> отозвал(а) приглашение для <b>{{userName}}</b> {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> снял(а) бан с <b>{{userName}}</b> {{reason}}",
+      "left": "<b>{{userName}}</b> покинул(а) комнату {{reason}}",
+      "kicked": "<b>{{senderName}}</b> исключил(а) <b>{{userName}}</b> {{reason}}",
+      "banned": "<b>{{senderName}}</b> забанил(а) <b>{{userName}}</b> {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> сменил(а) отображаемое имя на <b>{{userName}}</b>",
+      "removedName": "<b>{{prevUserName}}</b> удалил(а) отображаемое имя",
+      "changedAvatar": "<b>{{userName}}</b> сменил(а) аватар",
+      "removedAvatar": "<b>{{userName}}</b> удалил(а) аватар",
+      "broken": "Повреждённое событие членства",
+      "unchanged": "Событие членства без изменений"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "Предложения пользователей для приглашения",
+      "users": "Пользователи",
+      "searching": "Поиск пользователей",
+      "noMatches": "Нет подходящих пользователей",
+      "matchingUsers_one": "{{count}} подходящий пользователь",
+      "matchingUsers_other": "{{count}} подходящих пользователей",
+      "matchingUsers_few": "{{count}} подходящих пользователя",
+      "matchingUsers_many": "{{count}} подходящих пользователей"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "Загрузка MindRoom Chat"
+    },
+    "commands": {
+      "CommandMe": "Отправить сообщение-действие",
+      "CommandNotice": "Отправить сообщение-уведомление",
+      "CommandShrug": "Отправить ¯\\_(ツ)_/¯ сообщением",
+      "CommandTableFlip": "Отправить {{value1}} сообщением",
+      "CommandUnFlip": "Отправить {{value1}} сообщением",
+      "CommandStartDm": "Начать личную переписку с пользователем. Пример: /startdm userId1",
+      "CommandJoin": "Войти в комнату по адресу. Пример: /join address1 address2",
+      "CommandLeave": "Покинуть текущую комнату.",
+      "CommandInvite": "Пригласить пользователя в комнату. Пример: /invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "Отозвать приглашение пользователя. Пример: /disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "Исключить пользователя из комнаты. Пример: /kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "Забанить пользователя в комнате. Пример: /ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "Снять бан с пользователя. Пример: /unban userId1 userId2",
+      "CommandIgnore": "Игнорировать пользователя. Пример: /ignore userId1 userId2",
+      "CommandUnIgnore": "Перестать игнорировать пользователя. Пример: /unignore userId1 userId2",
+      "CommandMyRoomNick": "Изменить псевдоним в текущей комнате.",
+      "CommandMyRoomAvatar": "Изменить аватар в текущей комнате. Пример /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "Преобразовать комнату в личную переписку",
+      "CommandConvertToRoom": "Преобразовать личную переписку в комнату",
+      "CommandDelete": "Удалить сообщения пользователей. Пример: /delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "Управлять списком контроля доступа сервера. Пример /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "Эмодзи {{value1}}"
+    },
+    "fileHeader": {
+      "downloadValue1": "Скачать {{value1}}"
+    },
+    "time": {
+      "yesterdayValue1": "Вчера, {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "Текущая скорость воспроизведения: {{value1}}. Нажмите, чтобы изменить"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "Новое уведомление во входящих от {{value1}}"
+    },
+    "memberFilters": {
+      "joined": "В комнате",
+      "invited": "Приглашён",
+      "left": "Вышел",
+      "kicked": "Исключён",
+      "banned": "Забанен"
+    },
+    "memberSort": {
+      "atoZ": "От А до Я",
+      "ztoA": "От Я до А",
+      "newest": "Сначала новые",
+      "oldest": "Сначала старые"
+    },
+    "presence": {
+      "active": "Активная",
+      "busy": "Занят",
+      "away": "Отошёл"
+    },
+    "emojiGroups": {
+      "smileysPeople": "Смайлы и люди",
+      "animalsNature": "Животные и природа",
+      "foodDrinks": "Еда и напитки",
+      "activity": "Активность",
+      "travelPlaces": "Путешествия и места",
+      "objects": "Предметы",
+      "symbols": "Символы",
+      "flags": "Флаги"
+    },
+    "roomTypes": {
+      "all": "Все",
+      "spaces": "Пространства",
+      "rooms": "Комнаты"
+    },
+    "imageUsage": {
+      "both": "Оба",
+      "sticker": "Стикер",
+      "emoji": "Эмодзи"
+    },
+    "powerLevels": {
+      "manager": "Управляющий",
+      "founder": "Основатель",
+      "admin": "Администратор",
+      "moderator": "Модератор",
+      "member": "Участник",
+      "muted": "Без права писать",
+      "team": "Команда {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "Голосовое сообщение",
+      "tools_one": "{{count, number}} инструмент",
+      "tools_other": "{{count, number}} инструментов",
+      "tools_few": "{{count, number}} инструмента",
+      "tools_many": "{{count, number}} инструментов"
+    },
+    "threadSummary": {
+      "manual": "Сводка изменена вручную",
+      "title": "Сводка ветки",
+      "provenance": "Сводка ветки, созданная ИИ",
+      "provenanceCount_one": "Сводка последнего {{count, number}} сообщения от ИИ",
+      "provenanceCount_other": "Сводка последних {{count, number}} сообщений от ИИ",
+      "provenanceCount_few": "Сводка последних {{count, number}} сообщений от ИИ",
+      "provenanceCount_many": "Сводка последних {{count, number}} сообщений от ИИ"
+    },
+    "commandPalette": {
+      "shortcutHint": "Сочетание клавиш: <shortcut>{{shortcut}}</shortcut>, чтобы открыть."
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "Добавить существующее",
+      "search": "Поиск",
+      "failedToApplyChangesPleaseTryAgain": "Не удалось применить изменения! Повторите попытку.",
+      "reset": "Сбросить",
+      "applyChanges": "Применить изменения",
+      "applyWhenReadySelected_one": "Примените, когда будете готовы. (Выбрано: {{count}})",
+      "applyWhenReadySelected_other": "Примените, когда будете готовы. (Выбрано: {{count}})",
+      "noMatchForQuery": "Нет совпадений для «{{query}}».",
+      "noMatchFound": "Совпадений нет",
+      "noRooms": "Нет комнат",
+      "noRoomsDescription": "У вас пока нет комнат для отображения.",
+      "noSpaces": "Нет пространств",
+      "noSpacesDescription": "У вас пока нет пространств для отображения.",
+      "applyWhenReadySelected_few": "Примените, когда будете готовы. (Выбрано {{count}})",
+      "applyWhenReadySelected_many": "Примените, когда будете готовы. (Выбрано {{count}})"
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "Завершить"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name> говорит…",
+        "two": "<first>{{first}}</first> и <second>{{second}}</second> говорят…",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> и <third>{{third}}</third> говорят…",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> и <others>ещё {{count}}</others> говорят…",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> и <others>ещё {{count}}</others> говорят…"
+      },
+      "liveCount": "В эфире: {{count}}"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "Реакции",
+        "settings": "Настройки",
+        "end": "Завершить",
+        "gridView": "Сетка",
+        "spotlightView": "Активный участник"
+      },
+      "callMemberCard": {
+        "collapse": "Свернуть",
+        "additionalParticipants_one": "+ ещё {{count}}",
+        "additionalParticipants_other": "+ ещё {{count}}",
+        "additionalParticipants_few": "+{{count}} других",
+        "additionalParticipants_many": "+{{count}} других"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "Ваш домашний сервер не поддерживает звонки.",
+        "yourBrowserDoesNotSupportWebrtcWhich": "Ваш браузер не поддерживает WebRTC, необходимый для звонков.",
+        "voiceChatSEmptyBeTheFirst": "Голосовой чат пуст — присоединяйтесь первым!",
+        "youDonTHavePermissionToJoin": "У вас нет разрешения на вход!",
+        "alreadyInAnotherCallEndTheCurrent": "Вы уже участвуете в другом звонке. Завершите его, чтобы войти!",
+        "participant": "Участник",
+        "voiceCallError": "Ошибка голосового звонка",
+        "dismissVoiceCallError": "Закрыть ошибку голосового звонка"
+      },
+      "prescreenControls": {
+        "join": "Войти"
+      },
+      "controls": {
+        "closeChat": "Закрыть чат",
+        "openChat": "Открыть чат",
+        "startCamera": "Включить камеру",
+        "startScreenshare": "Начать демонстрацию экрана",
+        "stopCamera": "Выключить камеру",
+        "stopScreenshare": "Остановить демонстрацию экрана",
+        "turnOffMicrophone": "Выключить микрофон",
+        "turnOffSound": "Выключить звук",
+        "turnOnMicrophone": "Включить микрофон",
+        "turnOnSound": "Включить звук"
+      },
+      "liveCount": "В эфире: {{count}}"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "Инструменты разработчика",
+          "options": "Параметры",
+          "enableDeveloperTools": "Включить инструменты разработчика",
+          "roomId": "Идентификатор комнаты",
+          "copy": "Копировать",
+          "data": "Данные",
+          "newMessageEvent": "Новое событие сообщения",
+          "createAndSendANewMessageEvent": "Создать и отправить новое событие сообщения в комнате.",
+          "compose": "Создать",
+          "roomState": "Состояние комнаты",
+          "stateEventsOfTheRoom": "События состояния комнаты.",
+          "events": "События",
+          "addNew": "Добавить",
+          "accountData": "Данные учётной записи",
+          "privatePersonalizationDataStoredWithinRoom": "Личные данные персонализации, сохранённые в комнате.",
+          "collapse": "Свернуть",
+          "copyRoomIdDescription": "Копировать идентификатор комнаты в буфер обмена. («{{roomId}}»)",
+          "expand": "Развернуть",
+          "total": "Всего: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "Инструменты разработчика",
+          "send": "Отправить",
+          "stateKeyOptional": "Ключ состояния (необязательно)",
+          "jsonContent": "Содержимое JSON",
+          "messageEventType": "Тип события сообщения",
+          "stateEventType": "Тип события состояния"
+        },
+        "stateEventEditor": {
+          "stateEvent": "Событие состояния",
+          "save": "Сохранить",
+          "cancel": "Отмена",
+          "jsonContent": "Содержимое JSON",
+          "edit": "Изменить",
+          "developerTools": "Инструменты разработчика"
+        },
+        "defaultStateKey": "По умолчанию"
+      },
+      "emojisStickers": {
+        "emojisStickers": "Эмодзи и стикеры",
+        "roomPacks": {
+          "newPack": "Новый набор",
+          "addYourOwnEmojiAndStickerPack": "Добавьте собственный набор эмодзи и стикеров для этой комнаты.",
+          "name": "Название",
+          "create": "Создать",
+          "view": "Просмотреть",
+          "packs": "Наборы",
+          "noPacks": "Нет наборов",
+          "thereAreNoEmojiOrStickerPacks": "Сейчас нет наборов эмодзи или стикеров.",
+          "failedToRemovePacksPleaseTryAgain": "Не удалось удалить наборы! Повторите попытку.",
+          "cancel": "Отмена",
+          "delete": "Удалить",
+          "deleteSelectedPacks_one": "Удалить выбранные наборы. (Выбрано: {{count}})",
+          "deleteSelectedPacks_other": "Удалить выбранные наборы. (Выбрано: {{count}})",
+          "unknown": "Неизвестно",
+          "deleteSelectedPacks_few": "Удалить выбранные наборы. (Выбрано: {{count}})",
+          "deleteSelectedPacks_many": "Удалить выбранные наборы. (Выбрано: {{count}})"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "Шифрование комнаты",
+          "enabled": "Включено",
+          "enable": "Включить",
+          "enableEncryption": "Включить шифрование",
+          "areYouSureOnceEnabledEncryptionCannot": "Продолжить? После включения шифрование нельзя отключить!",
+          "enableE2eEncryption": "Включить сквозное шифрование",
+          "disabledDescription": "После включения шифрование нельзя отключить!",
+          "enabledDescription": "Сообщения в этой комнате защищены сквозным шифрованием."
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "Видимость истории сообщений",
+          "changesToHistoryVisibilityWillOnlyApply": "Изменения видимости истории применяются только к будущим сообщениям и не затрагивают существующую историю.",
+          "afterInvite": "После приглашения",
+          "afterJoin": "После входа",
+          "allMessages": "Все сообщения",
+          "allMessagesGuests": "Все сообщения (гости)"
+        },
+        "roomProfile": {
+          "avatar": "Аватар",
+          "upload": "Загрузить",
+          "reset": "Сбросить",
+          "remove": "Удалить",
+          "name": "Название",
+          "topic": "Тема",
+          "save": "Сохранить",
+          "cancel": "Отмена",
+          "profile": "Профиль",
+          "edit": "Изменить",
+          "unknown": "Неизвестно"
+        },
+        "roomPublish": {
+          "publishToDirectory": "Опубликовать в каталоге",
+          "roomDescription": "Добавьте комнату в открытый каталог, чтобы другие могли её найти.",
+          "spaceDescription": "Добавьте пространство в открытый каталог, чтобы другие могли его найти."
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "Это действие необратимо!",
+          "options": "Параметры",
+          "upgrade": "Обновить",
+          "currentVersion": "Текущая версия: {{version}}.",
+          "oldRoom": "Прежняя комната",
+          "oldSpace": "Прежнее пространство",
+          "openNewRoom": "Открыть новую комнату",
+          "openNewSpace": "Открыть новое пространство",
+          "roomReplaced": "Эта комната заменена!",
+          "roomUpgrade": "Обновление комнаты",
+          "spaceReplaced": "Это пространство заменено!",
+          "spaceUpgrade": "Обновление пространства",
+          "upgradeRoom": "Обновить комнату",
+          "upgradeSpace": "Обновить пространство"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "Адрес уже используется!",
+          "collapse": "Свернуть",
+          "delete": "Удалить",
+          "expand": "Развернуть",
+          "loading": "Загрузка…",
+          "localAddresses": "Локальные адреса",
+          "localAddressesDescription": "Задайте локальный адрес, чтобы пользователи могли войти через ваш домашний сервер.",
+          "main": "Основной",
+          "noAddresses": "Нет адресов",
+          "publish": "Опубликовать",
+          "publishRequiresLocalAddress": "Чтобы опубликовать адрес, сначала задайте его как локальный",
+          "published": "Опубликован",
+          "publishedAddresses": "Опубликованные адреса",
+          "publishedAddressesDescription": "Если доступ <public>открытый</public>, любой пользователь сможет войти по опубликованным адресам.",
+          "save": "Сохранить",
+          "selectedCount_one": "Выбрано: {{count}}",
+          "selectedCount_other": "Выбрано: {{count}}",
+          "setMain": "Сделать основным",
+          "unpublish": "Снять с публикации",
+          "unsetMain": "Убрать основной",
+          "selectedCount_few": "Выбрано: {{count}}",
+          "selectedCount_many": "Выбрано: {{count}}"
+        },
+        "roomJoinRules": {
+          "roomAccess": "Доступ к комнате",
+          "roomDescription": "Настройте, как пользователи могут входить в комнату.",
+          "spaceAccess": "Доступ к пространству",
+          "spaceDescription": "Настройте, как пользователи могут входить в пространство."
+        }
+      },
+      "members": {
+        "search": "Поиск",
+        "scrollToTop": "Прокрутить вверх",
+        "memberCount_one": "{{count}} участник",
+        "memberCount_other": "{{count}} участников",
+        "noMembersForFilter": "Нет участников по фильтру «{{filter}}»",
+        "noResults": "Нет результатов",
+        "resultCount_one": "{{count}} результат",
+        "resultCount_other": "{{count}} результатов",
+        "memberCount_few": "{{count}} участника",
+        "memberCount_many": "{{count}} участников",
+        "resultCount_few": "{{count}} результата",
+        "resultCount_many": "{{count}} результатов"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "Пользователи",
+          "defaultPower": "Полномочия по умолчанию",
+          "defaultPowerLevelForAllUsers": "Уровень полномочий по умолчанию для всех пользователей.",
+          "above": "и выше",
+          "failedToApplyChangesPleaseTryAgain": "Не удалось применить изменения! Повторите попытку.",
+          "changesSavedApplyWhenReady": "Изменения сохранены! Примените их, когда будете готовы.",
+          "reset": "Сбросить",
+          "applyChanges": "Применить изменения"
+        },
+        "powers": {
+          "founders": "Основатели",
+          "foundingMembersHasAllPermissionsAndCan": "У основателей есть все разрешения; изменить их можно только при обновлении.",
+          "powerLevels": "Уровни полномочий",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "Настройте последовательные уровни полномочий пользователей.",
+          "edit": "Изменить"
+        },
+        "powersEditor": {
+          "color": "Цвет",
+          "pick": "Выбрать",
+          "name": "Название",
+          "bot": "Бот",
+          "power": "Полномочия",
+          "icon": "Значок",
+          "remove": "Удалить",
+          "import": "Импортировать",
+          "save": "Сохранить",
+          "cancel": "Отмена",
+          "permissions": "Разрешения",
+          "powerLevels": "Уровни полномочий",
+          "newPowerLevel": "Новый уровень полномочий",
+          "createANewPowerLevel": "Создать новый уровень полномочий.",
+          "create": "Создать",
+          "undo": "Отменить действие",
+          "usedPowerLevel": "Используемый уровень полномочий",
+          "youHaveToRemoveItsUseBefore": "Перед удалением нужно убрать все его назначения.",
+          "delete": "Удалить",
+          "edit": "Изменить",
+          "failedToApplyChangesPleaseTryAgain": "Не удалось применить изменения! Повторите попытку.",
+          "changesSavedApplyWhenReady": "Изменения сохранены! Примените их, когда будете готовы.",
+          "reset": "Сбросить",
+          "applyChanges": "Применить изменения"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "Идентификатор пользователя",
+      "userSuggestions": "Предложения пользователей",
+      "pleaseEnterAValidUserId": "Введите допустимый идентификатор пользователя.",
+      "options": "Параметры",
+      "endToEndEncryption": "Сквозное шифрование",
+      "onceThisFeatureIsEnabledItCan": "После включения эту функцию нельзя отключить после создания комнаты.",
+      "create": "Создать",
+      "rateLimited_one": "Сервер ограничил ваши запросы на {{count}} минуту!",
+      "rateLimited_other": "Сервер ограничил ваши запросы на {{count}} минут!",
+      "rateLimited_few": "Сервер ограничил ваши запросы на {{count}} минут!",
+      "rateLimited_many": "Сервер ограничил ваши запросы на {{count}} минут!"
+    },
+    "createRoom": {
+      "type": "Тип",
+      "access": "Доступ",
+      "name": "Название",
+      "topicOptional": "Тема (необязательно)",
+      "options": "Параметры",
+      "advancedOptions": "Дополнительные параметры",
+      "endToEndEncryption": "Сквозное шифрование",
+      "onceThisFeatureIsEnabledItCan": "После включения эту функцию нельзя отключить после создания комнаты.",
+      "knockToJoin": "Вход по запросу",
+      "anyoneCanSendRequestToJoinThis": "Любой пользователь может запросить вход в эту комнату.",
+      "allowFederation": "Разрешить федерацию",
+      "usersFromOtherServersCanJoin": "Пользователи с других серверов смогут войти.",
+      "create": "Создать",
+      "newChatRoom": "Новая комната чата",
+      "newVoiceRoom": "Новая голосовая комната",
+      "rateLimited_one": "Сервер ограничил ваши запросы на {{count}} минуту!",
+      "rateLimited_other": "Сервер ограничил ваши запросы на {{count}} минут!",
+      "rateLimited_few": "Сервер ограничил ваши запросы на {{count}} минут!",
+      "rateLimited_many": "Сервер ограничил ваши запросы на {{count}} минут!"
+    },
+    "createSpace": {
+      "access": "Доступ",
+      "name": "Название",
+      "topicOptional": "Тема (необязательно)",
+      "options": "Параметры",
+      "advancedOptions": "Дополнительные параметры",
+      "knockToJoin": "Вход по запросу",
+      "anyoneCanSendRequestToJoinThis": "Любой пользователь может запросить вход в это пространство.",
+      "allowFederation": "Разрешить федерацию",
+      "usersFromOtherServersCanJoin": "Пользователи с других серверов смогут войти.",
+      "create": "Создать",
+      "createSpaceModal": {
+        "newSpace": "Новое пространство"
+      },
+      "rateLimited_one": "Сервер ограничил ваши запросы на {{count}} минуту!",
+      "rateLimited_other": "Сервер ограничил ваши запросы на {{count}} минут!",
+      "rateLimited_few": "Сервер ограничил ваши запросы на {{count}} минут!",
+      "rateLimited_many": "Сервер ограничил ваши запросы на {{count}} минут!"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "Удалить",
+        "invite": "Пригласить",
+        "settings": "Настройки",
+        "leave": "Покинуть",
+        "pinToSidebar": "Закрепить на боковой панели",
+        "setSuggested": "Сделать рекомендуемой",
+        "unpinFromSidebar": "Открепить от боковой панели",
+        "unsetSuggested": "Убрать из рекомендуемых"
+      },
+      "scrollToTop": "Прокрутить вверх",
+      "reordering": "Изменение порядка",
+      "lobbyHeader": {
+        "invite": "Пригласить",
+        "spaceSettings": "Настройки пространства",
+        "leaveSpace": "Покинуть пространство",
+        "members": "Участники",
+        "moreOptions": "Другие параметры"
+      },
+      "roomItem": {
+        "accessUnavailable": "Доступ недоступен",
+        "unknown": "Неизвестно",
+        "suggested": "Рекомендуется",
+        "inaccessible": "Недоступно",
+        "openRoom": "Открыть комнату",
+        "join": "Войти",
+        "memberCount_one": "{{formattedCount}} участник",
+        "memberCount_other": "{{formattedCount}} участников",
+        "requestSent": "Запрос отправлен",
+        "requestToJoin": "Запросить вход",
+        "sendingRequest": "Запрос отправляется",
+        "memberCount_few": "{{formattedCount}} участника",
+        "memberCount_many": "{{formattedCount}} участников"
+      },
+      "spaceHierarchy": {
+        "noRooms": "Нет комнат",
+        "thisSpaceDoesNotContainsRoomsYet": "В этом пространстве пока нет комнат."
+      },
+      "spaceItem": {
+        "unknown": "Неизвестно",
+        "inaccessible": "Недоступно",
+        "suggested": "Рекомендуется",
+        "accessUnavailable": "Доступ недоступен",
+        "rooms": "Комнаты",
+        "chatRoom": "Комната чата",
+        "voiceRoom": "Голосовая комната",
+        "existingRoom": "Существующая комната",
+        "addRoom": "Добавить комнату",
+        "newSpace": "Новое пространство",
+        "existingSpace": "Существующее пространство",
+        "addSpace": "Добавить пространство",
+        "requestSent": "Запрос отправлен",
+        "requestToJoin": "Запросить вход"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "Уведомления",
+        "invite": "Пригласить",
+        "copyLink": "Копировать ссылку",
+        "roomSettings": "Настройки комнаты",
+        "leaveRoom": "Покинуть комнату",
+        "toggleChat": "Переключить чат",
+        "moreOptions": "Другие параметры"
+      },
+      "liveCount": "В эфире: {{count}}"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "Хронология",
+        "general": "Общие",
+        "options": "Параметры",
+        "addresses": "Адреса",
+        "advancedOptions": "Дополнительные параметры",
+        "compact": "Компактный",
+        "threads": "Ветки",
+        "classic": "Классический",
+        "offline": {
+          "title": "Офлайн-доступ",
+          "checking": "Проверка сохранённого содержимого…",
+          "unavailable": "Сохранённое содержимое недоступно на этом устройстве.",
+          "notSaved": "Эта комната ещё не сохранена для работы офлайн.",
+          "downloading": "Комната скачивается для работы офлайн…",
+          "offlinePause": "Сохранение приостановлено, пока устройство не в сети.",
+          "backgroundPause": "Сохранение приостановлено, пока приложение работает в фоновом режиме.",
+          "spacePause": "Сохранение приостановлено: защищённое содержимое заняло весь выделенный объём.",
+          "readOnlyPause": "Ошибка хранилища. Снова откройте приложение, чтобы возобновить сохранение.",
+          "connectionPause": "Автоматическое сохранение приостановлено для этого подключения.",
+          "errorPause": "Сохранение приостановлено после ошибки. Повторите попытку.",
+          "partialHistory": "Часть ранней истории не сохранена.",
+          "inaccessibleHistory": "Часть истории сейчас недоступна.",
+          "waitingForKeys": "Зашифрованные события, ожидающие ключи: {{count}}",
+          "unresolvedRelations": "Неразрешённые изменения или ответы: {{count}}",
+          "missingEssential": "Отсутствующие важные тела сообщений: {{count}}",
+          "historyEntries": "Сохранённые записи истории: {{count}}",
+          "attachments": "Вложения: сохранено {{saved}}, отсутствует {{missing}}.",
+          "storageUsed": "Место, занятое вложениями: {{size}}",
+          "pinFailed": "Не удалось обновить параметр «Хранить офлайн».",
+          "includeAllMedia": "Включить все медиафайлы",
+          "keepOffline": "Хранить офлайн",
+          "keepOfflineDescription": "Защищать сохранённые медиафайлы этой комнаты при автоматической очистке.",
+          "cancelDownload": "Отменить скачивание",
+          "downloadEntireRoom": "Скачать всю комнату",
+          "clearDownloadedContent": "Очистить скачанное содержимое",
+          "clearTitle": "Очистить скачанное содержимое?",
+          "cancel": "Отмена",
+          "clearDescription": "Сохранённая история и вложения этой комнаты будут удалены с устройства.",
+          "clearFailed": "Не удалось очистить скачанное содержимое.",
+          "clearConfirm": "Очистить содержимое"
+        }
+      },
+      "permissions": {
+        "permissions": "Разрешения",
+        "ban": "Забанить",
+        "changeAllPermission": "Изменять все разрешения",
+        "changeRoomAccess": "Изменять доступ к комнате",
+        "changeServerAcls": "Изменять ACL серверов",
+        "deleteOthersMessages": "Удалять чужие сообщения",
+        "deleteSelfMessages": "Удалять свои сообщения",
+        "editPowerLevels": "Изменять уровни полномочий",
+        "enableEncryption": "Включить шифрование",
+        "groups": {
+          "calls": "Звонки",
+          "messages": "Сообщения",
+          "moderation": "Модерация",
+          "other": "Другое",
+          "roomOverview": "Обзор комнаты",
+          "settings": "Настройки"
+        },
+        "historyVisibility": "Видимость истории",
+        "invite": "Пригласить",
+        "kick": "Исключить",
+        "manageEmojisStickers": "Управлять эмодзи и стикерами",
+        "modifyWidgets": "Изменять виджеты",
+        "otherMessageEvents": "Другие события сообщений",
+        "otherSettings": "Другие настройки",
+        "pinMessages": "Закреплять сообщения",
+        "pingRoom": "Уведомлять @room",
+        "publishAddress": "Публиковать адрес",
+        "roomAvatar": "Аватар комнаты",
+        "roomName": "Название комнаты",
+        "roomTopic": "Тема комнаты",
+        "sendMessages": "Отправлять сообщения",
+        "sendReactions": "Отправлять реакции",
+        "sendStickers": "Отправлять стикеры",
+        "startOrJoinCall": "Начинать звонки и входить в них",
+        "upgradeRoom": "Обновить комнату"
+      },
+      "navigation": {
+        "developerTools": "Инструменты разработчика",
+        "emojisStickers": "Эмодзи и стикеры",
+        "general": "Общие",
+        "members": "Участники",
+        "permissions": "Разрешения"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "Чат",
+        "close": "Закрыть"
+      },
+      "commandAutocomplete": {
+        "commands": "Команды"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "Сообщение не указано.",
+        "decline": "Отклонить",
+        "approve": "Одобрить",
+        "approveFromUser": "Одобрить запрос {{userId}} на вступление",
+        "approvedWaitingForSync": "Одобрено. Ожидание синхронизации комнаты…",
+        "approving": "Одобрение…",
+        "declineFromUser": "Отклонить запрос {{userId}} на вступление",
+        "declinedWaitingForSync": "Отклонено. Ожидание синхронизации комнаты…",
+        "declining": "Отклонение…",
+        "updateFailed": "Не удалось обновить запрос."
+      },
+      "membersDrawer": {
+        "invite": "Пригласить",
+        "invitePeople": "Пригласить пользователей",
+        "close": "Закрыть",
+        "typeName": "Введите имя…",
+        "scrollToTop": "Прокрутить вверх",
+        "memberCount_one": "{{count}} участник",
+        "memberCount_other": "{{count}} участников",
+        "noMembersForFilter": "Нет участников по фильтру «{{filter}}»",
+        "noPendingJoinRequests": "Нет ожидающих запросов на вступление",
+        "noResults": "Нет результатов",
+        "requestCount_one": "Запросы ({{count}})",
+        "requestCount_other": "Запросы ({{count}})",
+        "invitedCount_one": "{{count}} приглашённый",
+        "invitedCount_other": "{{count}} приглашённых",
+        "invitedCount_few": "{{count}} приглашённых",
+        "invitedCount_many": "{{count}} приглашённых",
+        "resultCount_one": "{{count}} результат",
+        "resultCount_other": "{{count}} результатов",
+        "formattedMemberCount_one": "{{formattedCount}} участник",
+        "formattedMemberCount_other": "{{formattedCount}} участников",
+        "formattedMemberCount_few": "{{formattedCount}} участника",
+        "formattedMemberCount_many": "{{formattedCount}} участников",
+        "memberCount_few": "{{count}} участника",
+        "memberCount_many": "{{count}} участников",
+        "requestCount_few": "Запросы ({{count}})",
+        "requestCount_many": "Запросы ({{count}})",
+        "resultCount_few": "{{count}} результата",
+        "resultCount_many": "{{count}} результатов"
+      },
+      "roomTombstone": {
+        "openNewRoom": "Открыть новую комнату",
+        "joinNewRoom": "Войти в новую комнату",
+        "joinReplacementFailed": "Не удалось войти в заменившую комнату!",
+        "replacedDescription": "Эта комната заменена и больше не активна."
+      },
+      "jumpToTime": {
+        "jumpToTime": "Перейти ко времени",
+        "time": "Время",
+        "date": "Дата",
+        "preset": "Предустановка",
+        "today": "Сегодня",
+        "yesterday": "Вчера",
+        "beginning": "Начало",
+        "openTimeline": "Открыть хронологию"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "Изменить сообщение…",
+          "save": "Сохранить",
+          "cancel": "Отмена"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> печатает…",
+        "two": "<first>{{first}}</first> и <second>{{second}}</second> печатают…",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> и <third>{{third}}</third> печатают…",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> и <others>ещё {{count}}</others> печатают…",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> и <others>ещё {{count}}</others> печатают…",
+        "dropTypingStatus": "Скрыть статус набора текста"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> следит за беседой.",
+        "two": "<first>{{first}}</first> и <second>{{second}}</second> следят за беседой.",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> и <third>{{third}}</third> следят за беседой.",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> и <others>ещё {{count}}</others> следят за беседой.",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> и <others>ещё {{count}}</others> следят за беседой."
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}, {{count}} ожидающий запрос на вступление",
+        "accessibleLabel_other": "{{baseLabel}}, {{count}} ожидающих запросов на вступление",
+        "accessibleLabel_few": "{{baseLabel}}, {{count}} ожидающих запроса на вступление",
+        "accessibleLabel_many": "{{baseLabel}}, {{count}} ожидающих запросов на присоединение"
+      },
+      "reactionViewer": {
+        "reactedWith": "Реакция :{{shortcode}}:"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "Учётная запись",
+        "accountDeactivation": {
+          "accountManagement": "Управление учётной записью",
+          "deleteDeactivateAccount": "Удалить или деактивировать учётную запись",
+          "deleteDeactivate": "Удалить или деактивировать",
+          "openProviderPortal": "Открыть портал поставщика",
+          "thisWillRequestAccountDeactivationOnYour": "Будет отправлен запрос на деактивацию учётной записи на домашнем сервере Matrix. Вы можете потерять доступ к сообщениям и сеансам.",
+          "eraseAccountDataIfSupported": "Удалить данные учётной записи (если поддерживается)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "Если включено, домашний сервер может окончательно удалить данные учётной записи при деактивации.",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "Для завершения деактивации требуется дополнительная аутентификация.",
+          "thisClientDoesNotSupportTheRequired": "Клиент не поддерживает этапы аутентификации, необходимые этому домашнему серверу.",
+          "continueInProviderPortal": "Продолжить на портале поставщика",
+          "cancel": "Отмена",
+          "deactivationFailed": "Не удалось деактивировать учётную запись. {{error}}",
+          "descriptionWithProvider": "Начните деактивацию в этом клиенте. При необходимости продолжите на странице управления учётной записью поставщика.",
+          "descriptionWithoutProvider": "Начните деактивацию в этом клиенте. Некоторые домашние серверы могут потребовать дополнительные этапы аутентификации."
+        },
+        "contactInfo": {
+          "contactInformation": "Контактные данные",
+          "emailAddress": "Адрес электронной почты",
+          "emailAddressAttachedToYourAccount": "Адрес электронной почты, привязанный к учётной записи."
+        },
+        "ignoredUserList": {
+          "block": "Заблокировать",
+          "blockedUsers": "Заблокированные пользователи",
+          "selectUser": "Выбрать пользователя",
+          "preventReceivingMessagesOrInvitesFromUser": "Чтобы не получать сообщения и приглашения от пользователя, добавьте его userId.",
+          "users": "Пользователи"
+        },
+        "matrixId": {
+          "matrixId": "Matrix ID",
+          "copy": "Копировать",
+          "copied": "Скопировано"
+        },
+        "profile": {
+          "avatar": "Аватар",
+          "upload": "Загрузить",
+          "remove": "Удалить",
+          "removeAvatar": "Удалить аватар",
+          "areYouSureYouWantToRemove": "Удалить аватар профиля?",
+          "displayName": "Отображаемое имя",
+          "save": "Сохранить",
+          "profile": "Профиль",
+          "unnamedFile": "Без имени"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "Данные учётной записи",
+          "global": "Глобальные",
+          "dataStoredInYourGlobalAccountData": "Данные, сохранённые в глобальных данных учётной записи.",
+          "events": "События",
+          "addNew": "Добавить",
+          "collapse": "Свернуть",
+          "expand": "Развернуть",
+          "total": "Всего: {{count}}"
+        },
+        "developTools": {
+          "developerTools": "Инструменты разработчика",
+          "options": "Параметры",
+          "enableDeveloperTools": "Включить инструменты разработчика",
+          "accessToken": "Токен доступа",
+          "copyAccessTokenToClipboard": "Копировать токен доступа в буфер обмена.",
+          "copy": "Копировать"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "Последняя активность:",
+          "deviceName": "Название устройства",
+          "save": "Сохранить",
+          "cancel": "Отмена",
+          "deviceNamesAreVisibleToPublic": "Названия устройств видны всем.",
+          "logout": "Выйти",
+          "undo": "Отменить действие",
+          "edit": "Изменить",
+          "deviceIdValue": "Идентификатор устройства: <value>{{id}}</value>",
+          "deviceKeyValue": "Ключ устройства: <value>{{key}}</value>",
+          "ipAddressValue": "IP-адрес: <value>{{address}}</value>",
+          "loading": "загрузка…",
+          "today": "Сегодня",
+          "yesterday": "Вчера"
+        },
+        "devices": "Устройства",
+        "security": "Безопасность",
+        "deviceVerification": "Проверка устройства",
+        "toVerifyDeviceIdentityAndGrantAccess": "Для проверки устройства и предоставления доступа к зашифрованным сообщениям.",
+        "current": "Текущее",
+        "localBackup": {
+          "newPassword": "Новый пароль",
+          "confirmPassword": "Подтвердите пароль",
+          "export": "Экспортировать",
+          "exportMessagesData": "Экспортировать данные сообщений",
+          "savePasswordProtectedCopyOfEncryptionData": "Сохраните на устройстве защищённую паролем копию данных шифрования, чтобы расшифровать сообщения позже.",
+          "password": "Пароль",
+          "decrypt": "Расшифровать",
+          "importMessagesData": "Импортировать данные сообщений",
+          "loadPasswordProtectedCopyOfEncryptionData": "Загрузите с устройства защищённую паролем копию данных шифрования, чтобы расшифровать сообщения.",
+          "import": "Импортировать",
+          "localBackup": "Локальная резервная копия",
+          "collapse": "Свернуть",
+          "cryptoModuleNotFound": "Непредвиденная ошибка! Модуль шифрования не найден!",
+          "expand": "Развернуть"
+        },
+        "otherDevices": {
+          "others": "Другие",
+          "deviceDashboard": "Панель устройств",
+          "manageYourDevicesOnOidcDashboard": "Управляйте устройствами на панели OIDC.",
+          "open": "Открыть",
+          "authenticationStepsToPerformThisActionAre": "Клиент не поддерживает действия аутентификации, необходимые для этой операции.",
+          "cancel": "Отмена",
+          "logout": "Выйти",
+          "logoutFailed": "Не удалось завершить сеансы на устройствах! Повторите попытку. {{error}}",
+          "logoutSelectedDevices_one": "Завершить сеансы на выбранных устройствах. (Выбрано: {{count}})",
+          "logoutSelectedDevices_other": "Завершить сеансы на выбранных устройствах. (Выбрано: {{count}})",
+          "logoutSelectedDevices_few": "Завершить сеансы на выбранных устройствах. (Выбрано: {{count}})",
+          "logoutSelectedDevices_many": "Завершить сеансы на выбранных устройствах. (Выбрано: {{count}})"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "Начните проверку с другого устройства или проверьте вручную. <toggle><strong>Скрыть</strong></toggle>",
+          "currentDeviceHelpMore": "Начните проверку с другого устройства или проверьте вручную. <toggle><strong>Подробнее</strong></toggle>",
+          "enable": "Включить",
+          "findDevice": "Найдите это устройство в разделе <section>Устройства/Сеансы</section>.",
+          "initiateVerification": "Начните проверку.",
+          "manualVerificationHint": "Если у вас нет проверенного устройства, нажмите <action>«Проверить вручную»</action>.",
+          "openSettings": "Откройте <settings>Настройки</settings>.",
+          "openVerifiedDevice": "Откройте другое проверенное устройство.",
+          "reset": "Сбросить",
+          "stepsFromOtherDevice": "Проверка с другого устройства.",
+          "unverified": "Не проверено",
+          "unverifiedCount_one": "Не проверено: {{count}}",
+          "unverifiedCount_other": "Не проверено: {{count}}",
+          "verified": "Проверено",
+          "verify": "Проверить",
+          "verifyDeviceDescription": "Проверьте устройство и предоставьте ему доступ к зашифрованным сообщениям.",
+          "verifyManually": "Проверить вручную",
+          "unverifiedCount_few": "Не проверено: {{count}}",
+          "unverifiedCount_many": "Не проверено: {{count}}"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "Эмодзи и стикеры",
+        "globalPacks": {
+          "roomPacks": "Наборы из комнат",
+          "noPacks": "Нет наборов",
+          "packFromRoomsWillAppearHereYou": "Здесь появятся наборы из комнат. Пока у вас нет комнат с наборами.",
+          "view": "Просмотреть",
+          "favoritePacks": "Избранные наборы",
+          "selectPack": "Выбрать набор",
+          "pickEmojisAndStickersPackFromRooms": "Выберите наборы эмодзи и стикеров из комнат для использования во всех комнатах.",
+          "select": "Выбрать",
+          "failedToApplyChangesPleaseTryAgain": "Не удалось применить изменения! Повторите попытку.",
+          "changesSavedApplyWhenReady": "Изменения сохранены! Примените их, когда будете готовы.",
+          "reset": "Сбросить",
+          "applyChanges": "Применить изменения",
+          "selectAll": "Выбрать все",
+          "unknown": "Неизвестно",
+          "unselectAll": "Снять выделение",
+          "save": "Сохранить",
+          "close": "Закрыть"
+        },
+        "userPack": {
+          "defaultPack": "Набор по умолчанию",
+          "view": "Просмотреть",
+          "unknown": "Неизвестно"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "Все сообщения",
+          "badge": "Значок:",
+          "1To1Chats": "Чаты один на один",
+          "1To1ChatsEncrypted": "Чаты один на один (зашифрованные)",
+          "rooms": "Комнаты",
+          "roomsEncrypted": "Комнаты (зашифрованные)"
+        },
+        "keywordMessages": {
+          "save": "Сохранить",
+          "keywordMessages": "Сообщения с ключевыми словами",
+          "badge": "Значок:",
+          "selectKeyword": "Выбрать ключевое слово",
+          "setANotificationPreferenceForMessageContaining": "Настройте уведомления для сообщений с указанным ключевым словом."
+        },
+        "notifications": "Уведомления",
+        "blockMessages": "Блокировка сообщений",
+        "thisOptionHasBeenMovedToAccount": "Этот параметр перенесён в раздел «Учётная запись > Заблокированные пользователи».",
+        "specialMessages": {
+          "specialMessages": "Особые сообщения",
+          "badge": "Значок:",
+          "mentionRoom": "Упоминание @room",
+          "containsRoom": "Содержит @room",
+          "containsDisplayName": "Содержит отображаемое имя («{{displayName}}»)",
+          "containsDisplayNameGeneric": "Содержит отображаемое имя",
+          "containsUsername": "Содержит имя пользователя («{{username}}»)",
+          "mentionUserId": "Упоминание идентификатора пользователя («{{userId}}»)"
+        },
+        "systemNotification": {
+          "emailNotification": "Уведомления по электронной почте",
+          "yourAccountDoesNotHaveAnyEmail": "К учётной записи не привязан адрес электронной почты.",
+          "unexpectedError": "Непредвиденная ошибка!",
+          "system": "Система",
+          "desktopNotifications": "Уведомления на рабочем столе",
+          "showDesktopNotificationsWhenMessageArrive": "Показывать уведомления на рабочем столе при получении сообщений.",
+          "enable": "Включить",
+          "notificationSound": "Звук уведомлений",
+          "playSoundWhenNewMessageArrive": "Воспроизводить звук при получении нового сообщения.",
+          "notSupported": "Система не поддерживает уведомления.",
+          "permissionBlocked": "Разрешение на уведомления заблокировано. Разрешите уведомления в адресной строке браузера.",
+          "sendToEmail": "Отправлять уведомления на электронную почту.",
+          "sendToEmailAddress": "Отправлять уведомления на электронную почту. («{{email}}»)"
+        },
+        "mode": {
+          "disable": "Отключить",
+          "notifyLoud": "Уведомлять со звуком",
+          "notifySilent": "Уведомлять без звука"
+        }
+      },
+      "about": {
+        "clearCache": "Очистить кеш",
+        "clearCacheAndReload": "Очистить кеш и перезагрузить",
+        "clearCacheDescription": "Очищает кешированные данные и перезагружает приложение. Вы останетесь в системе.",
+        "clearTrace": "Очистить трассировку",
+        "clearing": "Очистка…",
+        "credits": "Авторы и лицензии",
+        "deepDiagnosticTracing": "Подробная диагностическая трассировка",
+        "deepTraceMemoryOnly": "Запись ведётся в памяти, поскольку хранилище трассировки недоступно. Экспортируйте данные перед перезапуском приложения: эти недавние события будут потеряны при перезапуске.",
+        "deepTraceEnabledStorageUnavailable": "Включено, но хранилище трассировки сейчас недоступно.",
+        "deepTraceOff": "Выключено. Включите перед воспроизведением зависания, чтобы записать данные о производительности, Matrix, сети, жизненном цикле и взаимодействиях.",
+        "deepTracePreferenceSaveFailed": "{{description}} выключена для этого сеанса, но настройку не удалось сохранить; после перезапуска она может включиться снова.",
+        "deepTraceRecording": "На устройстве записывается ограниченная безопасная для конфиденциальности трассировка производительности и взаимодействий.",
+        "deepTraceStarting": "Запускается ограниченная безопасная для конфиденциальности трассировка производительности и взаимодействий на устройстве.",
+        "diagnosticsExportFailed": "{{description}}: экспорт не удался. Повторите попытку.",
+        "diagnosticsNone": "Непредвиденный сеанс не сохранён.",
+        "diagnosticsUnavailable": "Хранилище диагностики недоступно.",
+        "diagnosticsUnexpected": "Предыдущий сеанс завершился неожиданно; причина неизвестна.",
+        "emojiArtCredit": "Графика эмодзи <art>Twemoji</art> © <owner>Twitter, Inc и другие участники</owner>, используется по лицензии <license>CC-BY 4.0</license>.",
+        "emojiFontCredit": "Шрифт <font>twemoji-colr</font> © <owner>Mozilla Foundation</owner>, используется по лицензии <license>Apache 2.0</license>.",
+        "exportDiagnostics": "Экспортировать диагностику",
+        "exporting": "Экспорт…",
+        "matrixSdkCredit": "Пакет <sdk>matrix-js-sdk</sdk> © <owner>The Matrix.org Foundation C.I.C</owner>, используется по лицензии <license>Apache 2.0</license>.",
+        "onDeviceDiagnostics": "Диагностика на устройстве",
+        "options": "Параметры",
+        "soundResourcesCredit": "<resources>Звуковые ресурсы Material</resources> © <owner>Google</owner>, используются по лицензии <license>CC-BY 4.0</license>.",
+        "sourceCode": "Исходный код",
+        "support": "Поддержка",
+        "title": "О приложении",
+        "traceStorageUnavailable": "Хранилище трассировки недоступно."
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "Общие",
+        "options": "Параметры",
+        "addresses": "Адреса",
+        "advancedOptions": "Дополнительные параметры"
+      },
+      "permissions": {
+        "permissions": "Разрешения",
+        "ban": "Забанить",
+        "changeAllPermission": "Изменять все разрешения",
+        "changeServerAcls": "Изменять ACL серверов",
+        "changeSpaceAccess": "Изменять доступ к пространству",
+        "editPowerLevels": "Изменять уровни полномочий",
+        "groups": {
+          "manage": "Управлять",
+          "moderation": "Модерация",
+          "other": "Другое",
+          "settings": "Настройки",
+          "spaceOverview": "Обзор пространства"
+        },
+        "invite": "Пригласить",
+        "kick": "Исключить",
+        "manageEmojisStickers": "Управлять эмодзи и стикерами",
+        "manageSpaceRooms": "Управлять комнатами пространства",
+        "messageEvents": "События сообщений",
+        "otherSettings": "Другие настройки",
+        "publishAddress": "Публиковать адрес",
+        "spaceAvatar": "Аватар пространства",
+        "spaceName": "Название пространства",
+        "spaceTopic": "Тема пространства",
+        "upgradeSpace": "Обновить пространство"
+      },
+      "navigation": {
+        "developerTools": "Инструменты разработчика",
+        "emojisStickers": "Эмодзи и стикеры",
+        "general": "Общие",
+        "members": "Участники",
+        "permissions": "Разрешения"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "Нет совпадений для «{{query}}».",
+      "noMatchFound": "Совпадений нет",
+      "noRooms": "Нет комнат",
+      "noRoomsDescription": "У вас пока нет комнат для отображения.",
+      "placeholder": "Поиск",
+      "syntaxHint": "Введите <rooms>#</rooms> для комнат, <directs>@</directs> для личных сообщений и <spaces>*</spaces> для пространств. Сочетание клавиш: <hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "Удалить голосовую запись",
+      "pauseRecording": "Приостановить запись",
+      "resumeRecording": "Продолжить запись",
+      "statusActive": "Идёт запись голоса",
+      "statusPaused": "Запись приостановлена",
+      "statusProcessing": "Обработка записи",
+      "statusReadyToRetry": "Запись готова к повторной отправке",
+      "statusSending": "Отправка записи",
+      "statusStarting": "Запуск записи",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "Не удалось отправить запись",
+        "yourRecordingIsStillSaved": "Ваша запись сохранена.",
+        "discard": "Удалить",
+        "retry": "Повторить",
+        "discardVoiceRecording": "Удалить голосовую запись?",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "Запись не отправлена. Удалить её безвозвратно?",
+        "cancel": "Отмена",
+        "voiceRecordingError": "Ошибка записи голоса",
+        "ok": "ОК"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "Доступ к микрофону заблокирован. Разрешите MindRoom Chat доступ в настройках приложения Android и повторите попытку.",
+        "microphoneBlockedIos": "Доступ к микрофону заблокирован. Разрешите MindRoom Chat доступ в настройках iPhone и повторите попытку.",
+        "microphoneBlockedBrowser": "Доступ к микрофону заблокирован. Разрешите его для сайта или приложения в настройках браузера или системы и повторите попытку.",
+        "noMicrophone": "На устройстве не найден микрофон.",
+        "microphoneUnavailable": "Микрофон сейчас недоступен (возможно, его использует другое приложение).",
+        "microphoneFailed": "Не удалось получить доступ к микрофону.",
+        "microphoneUnsupported": "Устройство не поддерживает доступ к микрофону.",
+        "recordingStopped": "Запись неожиданно остановилась. Запишите сообщение снова.",
+        "noAudio": "Звуковые данные не записаны.",
+        "recordingUnsupported": "Браузер не поддерживает запись голоса.",
+        "httpsRequired": "Для записи голоса требуется HTTPS (или localhost). Откройте MindRoom по HTTPS.",
+        "sendBusy": "Другое голосовое сообщение ещё отправляется. Подождите.",
+        "sendFailed": "Не удалось отправить голосовое сообщение."
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "Позвонить",
+        "homeserverUnsupported": "Ваш домашний сервер не поддерживает звонки.",
+        "browserUnsupported": "Ваш браузер не поддерживает WebRTC.",
+        "endCurrentCall": "Сначала завершите текущий звонок.",
+        "failedToStart": "Не удалось начать звонок."
+      },
+      "agentCallHeaderButton": {
+        "call": "Позвонить агенту",
+        "callAgent": "Позвонить {{name}}",
+        "chooseAgent": "Выберите агента для звонка",
+        "close": "Закрыть"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "Команды MindRoom"
+      },
+      "descriptions": {
+        "help": "Показать справку по доступным возможностям или теме.",
+        "reload-plugins": "Перезагрузить настроенные плагины (только для администратора).",
+        "schedule": "Запланировать выполнение задачи.",
+        "list_schedules": "Показать все запланированные задачи.",
+        "cancel_schedule": "Отменить задачу по идентификатору или все задачи.",
+        "edit_schedule": "Обновить существующую запланированную задачу.",
+        "config": "Управлять конфигурацией MindRoom (только для администратора).",
+        "desktop": "Управлять целью Desktop.",
+        "model": "Показать или сменить модель текущей ветки.",
+        "room_model": "Показать или сменить модель комнаты по умолчанию (установка и сброс требуют прав администратора комнаты).",
+        "thread_mode": "Показать или сменить режим веток текущей комнаты (только для администратора комнаты).",
+        "encrypt": "Проверить или включить сквозное шифрование текущей комнаты.",
+        "e2ee": "Показать диагностику шифрования текущей комнаты.",
+        "hi": "Показать приветственную информацию."
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "Вставленный текст",
+        "characterCount_one": "{{formattedCount}} символ",
+        "characterCount_other": "{{formattedCount}} символов",
+        "characterCount_few": "{{formattedCount}} символа",
+        "characterCount_many": "{{formattedCount}} символов"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Local MindRoom",
+        "connectLocalMindroom": "Подключить Local MindRoom",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "Свяжите эту учётную запись чата с локальным процессом MindRoom",
+        "enterCodeDescription": "Запустите {{command}} на своём компьютере, затем откройте показанную ссылку или введите код здесь.",
+        "pairCode": "Код сопряжения",
+        "mindroomDocs": "Документация MindRoom",
+        "linkedInstallations": "Связанные установки",
+        "linkedInstallationsUnavailable": "Связанные установки доступны только для учётных записей на {{server}}.",
+        "loadingLinkedInstallations": "Загрузка связанных установок…",
+        "tryAgain": "Повторить",
+        "noLinkedLocalMindroomInstallationsYet": "Связанных локальных установок MindRoom пока нет.",
+        "revoke": "Отозвать",
+        "confirmRevoke": "Подтвердить отзыв",
+        "cancel": "Отмена",
+        "requestFailed": "Запрос не выполнен. Повторите попытку.",
+        "unknown": "Неизвестно",
+        "createdAt": "Создано: {{timestamp}}",
+        "lastSeenAt": "Последняя активность: {{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "Введите код, показанный в терминале.",
+        "continue": "Продолжить",
+        "invalidCode": "Введите 8-символьный код, например ABCD-EFGH.",
+        "code": "Код: {{code}}",
+        "chooseAccount": "Выберите учётную запись, которая подтвердит это подключение",
+        "checkingCode": "Проверка кода...",
+        "deviceQuestion": "Подключить {{clientName}}?",
+        "deviceStarted": "Запущено {{age}}",
+        "requestedFrom": "Запрошено с {{ip}}",
+        "requestedFromUnknown": "Запрошено с неизвестного адреса",
+        "warning": "Подтверждайте, только если вы только что сами запустили это на своём компьютере и ваш терминал показывает тот же код.",
+        "approveAs": "Подтвердить как {{userId}}",
+        "approved": "Подключено. Можно вернуться в терминал.",
+        "noAccount": "Войдите в свою учётную запись MindRoom, чтобы подтвердить это подключение.",
+        "signIn": "Войти для подтверждения",
+        "accountSignedOut": "Этой учётной записи нужно войти снова, прежде чем подтверждать.",
+        "codeNotFound": "Код не найден. Проверьте код, показанный в терминале.",
+        "codeExpired": "Срок действия кода истёк. Используйте новую ссылку или код из терминала.",
+        "codeAlreadyApproved": "Этот код уже подтверждён.",
+        "backToChat": "Вернуться в чат",
+        "enterNewCode": "Введите новый код:",
+        "noAccountAppGuidance": "Уже вошли в приложение MindRoom? Откройте Настройки → Local MindRoom и введите {{code}}.",
+        "frameWarning": "По соображениям безопасности подтверждение устройства не может быть выполнено внутри фрейма.",
+        "openInNewTab": "Открыть в новой вкладке"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "Проверенный агент · устройство с перекрёстной подписью",
+        "verifiedAgent": "Проверенный агент"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "Прокрутить вверх",
+        "searchMessages": "Поиск сообщений",
+        "searchDescription": "Находите полезные сообщения в сообществе по связанным ключевым словам.",
+        "noResultsFor": "По запросу «{{term}}» ничего не найдено",
+        "resultsFor": "Результаты для «{{term}}»"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (изменено)"
+      },
+      "searchFilters": {
+        "sortBy": "Сортировать по",
+        "recent": "Недавние",
+        "relevance": "Релевантности",
+        "search": "Поиск",
+        "rooms": "Комнаты",
+        "noMatchFound": "Совпадений нет!",
+        "save": "Сохранить",
+        "deselectAll": "Снять выделение",
+        "selectRooms": "Выбрать комнаты",
+        "filter": "Фильтр",
+        "global": "Глобальные",
+        "saveCount": "Сохранить ({{count}})",
+        "roomsFor": "Комнаты для «{{query}}»"
+      },
+      "searchInput": {
+        "search": "Поиск",
+        "searchForKeyword": "Поиск по ключевому слову",
+        "clear": "Очистить",
+        "enter": "Ввести"
+      },
+      "searchResultGroup": {
+        "open": "Открыть",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "Контекст ответа скрыт в результатах поиска. Откройте сообщение, чтобы увидеть всю ветку."
+      },
+      "searchResultPreview": {
+        "redacted": "Сообщение скрыто.",
+        "message": "Сообщение",
+        "image": "Изображение",
+        "video": "Видео",
+        "audio": "Аудио",
+        "file": "Файл",
+        "location": "Местоположение",
+        "reaction": "Реакция",
+        "unsupportedEvent": "Неподдерживаемое событие"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "Аргументы",
+        "loadingCompleteArguments": "Загрузка полных аргументов…",
+        "onlyATruncatedPreviewIsAvailable": "Доступен только сокращённый предпросмотр.",
+        "retry": "Повторить",
+        "sensitiveValuesMayBeRedacted": "Конфиденциальные значения могут быть скрыты.",
+        "loadFailed": "Не удалось загрузить аргументы целиком.",
+        "hideArguments": "Скрыть аргументы",
+        "showAllArguments": "Показать все аргументы"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "Этот запрос нельзя одобрить здесь.",
+        "submittedWaitingForRoomUpdate": "Отправлено. Ожидание обновления комнаты.",
+        "approveOnce": "Одобрить один раз",
+        "approve": "Одобрить",
+        "deny": "Запретить",
+        "autoApprovalDuration": "Срок автоодобрения",
+        "denyReasonOptional": "Причина запрета (необязательно)",
+        "denialReasonOptional": "Причина отказа (необязательно)",
+        "confirmDeny": "Подтвердить запрет",
+        "confirmDeny2": "Подтвердить запрет",
+        "cancel": "Отмена",
+        "autoApproveMinutes_one": "Автоодобрение на {{count}} минуту",
+        "autoApproveMinutes_other": "Автоодобрение на {{count}} минут",
+        "denyCallReasonOptional": "Причина запрета вызова {{number}} (необязательно)",
+        "approveExactCall": "Одобрить именно этот вызов",
+        "approveAnyArguments": "Одобрить любые аргументы",
+        "anyArgumentsWarning": "С любыми аргументами агент может один раз вызвать {{tool}} с выбранными им аргументами в пределах {{minutes}} мин от запланированного времени.",
+        "autoApproveMinutes_few": "Автоодобрение на {{count}} минуты",
+        "autoApproveMinutes_many": "Автоодобрение на {{count}} минут"
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "Автоодобрение активно",
+        "autoApprovalStopped": "Автоодобрение остановлено",
+        "autoApprovalExpired": "Срок автоодобрения истёк",
+        "argumentsMayDifferBetweenCalls": "Аргументы разных вызовов могут отличаться.",
+        "stopAutoApproval": "Остановить автоодобрение",
+        "submittedWaitingForRoomUpdate": "Отправлено. Ожидание обновления комнаты.",
+        "fixedExpiry": "Фиксированное окончание: {{timestamp}}",
+        "expiresInMinutes_one": "Истекает через {{count}} минуту",
+        "expiresInMinutes_other": "Истекает через {{count}} минут",
+        "expiresInMinutes_few": "Истекает через {{count}} минуты.",
+        "expiresInMinutes_many": "Истекает через {{count}} минут."
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "Решённый запрос на одобрение инструмента",
+        "unknown": "неизвестно",
+        "approvedOnce": "Одобрено один раз",
+        "decisionRecordedForThisCall": "Решение для этого вызова записано",
+        "statusExpired": "Срок одобрения истёк",
+        "statusApproved": "Одобрено",
+        "statusDenied": "Запрещено",
+        "requestedBy": "{{agent}} · запросил(а) {{requester}}",
+        "resolvedByAt": "{{status}}: {{resolver}} · {{timestamp}}",
+        "resolvedBy": "{{status}}: {{resolver}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "Временное разрешение",
+        "timedPermissionMinutes_one": "Временное разрешение · {{count}} минута",
+        "timedPermissionMinutes_other": "Временное разрешение · {{count}} минут",
+        "grantedByAt": "Предоставил(а) {{grantor}} · {{timestamp}}",
+        "grantedBy": "Предоставил(а) {{grantor}}",
+        "originalFixedExpiry": "Исходное фиксированное окончание: {{timestamp}}",
+        "toolAndServer": "Инструмент: {{tool}} · сервер: {{server}}",
+        "tool": "Инструмент: {{tool}}",
+        "reason": "Причина: {{reason}}",
+        "approvedWhenScheduledByAt": "Одобрено при планировании пользователем {{approver}} · {{timestamp}}",
+        "approvedWhenScheduledBy": "Одобрено при планировании пользователем {{approver}}",
+        "timedPermissionMinutes_few": "Временное разрешение · {{count}} минуты",
+        "timedPermissionMinutes_many": "Временное разрешение · {{count}} минут"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "Запланировано на {{timestamp}}",
+        "approvedExactArguments": "Одобрено для этих точных аргументов",
+        "approvedAnyArguments": "Одобрено для любых аргументов этого инструмента"
+      },
+      "approvalReviewCall": {
+        "pending": "ожидает",
+        "callStatus": "Вызов {{number}} · {{status}}",
+        "status": {
+          "pending": "Ожидает",
+          "sending": "Отправляется",
+          "submitted": "Отправлено",
+          "error": "Ошибка",
+          "approved": "Одобрено",
+          "denied": "Запрещено",
+          "expired": "Истёк"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "Копировать текст (загрузка…)",
+        "copyText": "Копировать текст",
+        "copyTextWithToolCalls": "Копировать текст с вызовами инструментов",
+        "copyLink": "Копировать ссылку"
+      },
+      "bugReport": {
+        "report": "Сообщить об ошибке",
+        "download": "Скачать отчёт об ошибке",
+        "sending": "Отправка отчёта…",
+        "failed": "Не удалось отправить отчёт. Повторите попытку."
+      },
+      "messageInspectionActions": {
+        "readReceipts": "Отчёты о прочтении",
+        "viewSource": "Просмотреть исходный код"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "Открепить сообщение",
+        "pinMessage": "Закрепить сообщение",
+        "deleteMessage": "Удалить сообщение",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "Это действие необратимо. Удалить сообщение?",
+        "optional": "(необязательно)",
+        "failedToDeleteMessagePleaseTryAgain": "Не удалось удалить сообщение! Повторите попытку.",
+        "deleting": "Удаление…",
+        "delete": "Удалить",
+        "reportMessage": "Пожаловаться на сообщение",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "Отправить жалобу на сообщение серверу, который может уведомить ответственных лиц.",
+        "reason": "Причина",
+        "failedToReportMessagePleaseTryAgain": "Не удалось пожаловаться на сообщение! Повторите попытку.",
+        "messageHasBeenReportedToServer": "Жалоба на сообщение отправлена серверу.",
+        "reporting": "Отправка жалобы…",
+        "report": "Пожаловаться"
+      },
+      "messageReactionActions": {
+        "viewReactions": "Просмотреть реакции"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "Всё ещё загружается…",
+        "toolDetailsUnavailable": "Сведения об инструменте недоступны.",
+        "pastedText": "Вставленный текст",
+        "characterCount_one": "{{formattedCount}} символ",
+        "characterCount_other": "{{formattedCount}} символов",
+        "blocks": {
+          "think": "Процесс рассуждения ИИ",
+          "debug": "Отладочная информация",
+          "system": "Системная обработка",
+          "plan": "Планирование и стратегия",
+          "analysis": "Анализ и оценка",
+          "research": "Исследование и источники"
+        },
+        "toolNumber": "Инструмент № {{index}}: {{command}}",
+        "toolCallCount_one": "{{count}} вызов инструмента",
+        "toolCallCount_other": "{{count}} вызовов инструментов",
+        "characterCount_few": "{{formattedCount}} символа",
+        "characterCount_many": "{{formattedCount}} символов",
+        "toolCallCount_few": "{{count}} вызова инструмента",
+        "toolCallCount_many": "{{count}} вызовов инструмента",
+        "usedToolCount_one": "Использован {{count}} инструмент",
+        "usedToolCount_few": "Использовано {{count}} инструмента",
+        "usedToolCount_many": "Использовано {{count}} инструментов",
+        "usedToolCount_other": "Использовано {{count}} инструмента",
+        "toolCallsRunning_one": "Выполняется {{count}} вызов инструмента",
+        "toolCallsRunning_few": "Выполняются {{count}} вызова инструментов",
+        "toolCallsRunning_many": "Выполняются {{count}} вызовов инструментов",
+        "toolCallsRunning_other": "Выполняются {{count}} вызова инструментов",
+        "toolCallsWaiting_one": "{{count}} вызов инструмента ждёт одобрения",
+        "toolCallsWaiting_few": "{{count}} вызова инструментов ждут одобрения",
+        "toolCallsWaiting_many": "{{count}} вызовов инструментов ждут одобрения",
+        "toolCallsWaiting_other": "{{count}} вызова инструментов ждут одобрения",
+        "toolCallsRan_one": "Выполнен {{count}} вызов инструмента",
+        "toolCallsRan_few": "Выполнено {{count}} вызова инструментов",
+        "toolCallsRan_many": "Выполнено {{count}} вызовов инструментов",
+        "toolCallsRan_other": "Выполнено {{count}} вызова инструментов",
+        "toolCallsDenied_one": "Запрещён {{count}} вызов инструмента",
+        "toolCallsDenied_few": "Запрещено {{count}} вызова инструментов",
+        "toolCallsDenied_many": "Запрещено {{count}} вызовов инструментов",
+        "toolCallsDenied_other": "Запрещено {{count}} вызова инструментов",
+        "toolCallsExpired_one": "Истёк {{count}} вызов инструмента",
+        "toolCallsExpired_few": "Истекло {{count}} вызова инструментов",
+        "toolCallsExpired_many": "Истекло {{count}} вызовов инструментов",
+        "toolCallsExpired_other": "Истекло {{count}} вызова инструментов"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "Загрузка полного ответа…"
+      },
+      "mindroomMessage": {
+        "addReaction": "Добавить реакцию",
+        "reply": "Ответить",
+        "replyInThread": "Ответить в ветке",
+        "editMessage": "Изменить сообщение",
+        "moreOptions": "Другие параметры"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "Контекстное окно запроса",
+        "aiRunMetadata": "Метаданные запуска ИИ",
+        "close": "Закрыть",
+        "status": "Статус",
+        "model": "Модель",
+        "tokens": "Токены",
+        "runCache": "Кеш запуска",
+        "requestContext": "Контекст запроса",
+        "requestCache": "Кеш запроса",
+        "tools": "Инструменты",
+        "ttft": "TTFT",
+        "run": "Запуск",
+        "session": "Сеанс",
+        "openAiRunMetadata": "Открыть метаданные запуска ИИ",
+        "tokenUsage": "Использование токенов",
+        "downloadingOriginal": "Скачивание оригинала…",
+        "retryDownloadOriginal": "Повторить скачивание оригинала",
+        "downloadOriginal": "Скачать оригинал",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} токен",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} токенов",
+        "segmentTokenCount_few": "{{label}}: {{formattedCount}} токена",
+        "segmentTokenCount_many": "{{label}}: {{formattedCount}} токенов"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "Дополнительные данные сообщения"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "Вставленный текст",
+        "open": "Открыть",
+        "retry": "Повторить",
+        "download": "Скачать",
+        "characterCount_one": "{{formattedCount}} символ",
+        "characterCount_other": "{{formattedCount}} символов",
+        "characterCount_few": "{{formattedCount}} символа",
+        "characterCount_many": "{{formattedCount}} символов"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "Открыть",
+        "failedToLoadMessage": "Не удалось загрузить сообщение!",
+        "event": " событие",
+        "pinnedMessages": "Закреплённые сообщения",
+        "noPinnedMessages": "Нет закреплённых сообщений",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "Пользователи с достаточным уровнем полномочий могут закрепить сообщение через контекстное меню."
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "ИИ отвечает",
+        "thinking": "Размышляет…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "Сводка ветки от ИИ"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "ИИ дал ветке название",
+        "updated": "ИИ обновил название",
+        "edited": "Название изменено",
+        "previous": "Было: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "Запрос на одобрение инструмента",
+        "submitted": "Отправлено",
+        "pendingApproval": "Ожидает одобрения",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "Автоодобрение действует для этой ветки, инициатора, агента и инструмента.",
+        "argumentsMayDifferBetweenCalls": "Аргументы разных вызовов могут отличаться.",
+        "requestedBy": "Запросил(а) {{requester}}"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "Агент маршрутизации расшифровывает речь"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "ИИ отвечает"
+      },
+      "stopButton": {
+        "label": "Остановить",
+        "tooltip": "Остановить этот ответ"
+      },
+      "threadApprovalControls": {
+        "close": "Закрыть",
+        "call": "вызов",
+        "calls": "вызовы",
+        "unknown": "неизвестно",
+        "reasonForDenyingAllOptional": "Причина запрета всех вызовов (необязательно)",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "Разрешить операцию для этой ветки, инициатора и агента. Аргументы разных вызовов могут отличаться.",
+        "submittedWaitingForRoomUpdate": "Отправлено. Ожидание обновления комнаты.",
+        "threadApprovals": "Одобрения ветки",
+        "checkingHistory": " · Проверка истории…",
+        "historyIncomplete": " · История неполна",
+        "retryHistory": "Повторить загрузку истории",
+        "reviewToolCalls": "Проверить вызовы инструментов",
+        "reviewAgentWants_one": "{{agent}} хочет выполнить {{count}} действие",
+        "reviewAgentWants_few": "{{agent}} хочет выполнить {{count}} действия",
+        "reviewAgentWants_many": "{{agent}} хочет выполнить {{count}} действий",
+        "reviewAgentWants_other": "{{agent}} хочет выполнить {{count}} действия",
+        "reviewAgentsWant_one": "Агентов: {{agents}}, действие: {{count}}",
+        "reviewAgentsWant_few": "Агентов: {{agents}}, действия: {{count}}",
+        "reviewAgentsWant_many": "Агентов: {{agents}}, действий: {{count}}",
+        "reviewAgentsWant_other": "Агентов: {{agents}}, действия: {{count}}",
+        "reviewRequestedBy": "Запрос от {{requester}}",
+        "someRequestsAreNoLongerAvailable": "Некоторые запросы больше недоступны.",
+        "permission": "разрешение",
+        "permissions": "разрешения",
+        "activePermissions": "Активные разрешения",
+        "noActiveTimedPermissions": "Нет активных временных разрешений.",
+        "approval": "одобрение",
+        "approvals": "одобрения",
+        "operationCallCount_one": "{{operation}} · {{count}} вызов",
+        "operationCallCount_other": "{{operation}} · {{count}} вызовов",
+        "requestedBy": "{{agent}} · запросил(а) {{requester}}",
+        "approveAllOnce": "Одобрить все {{count}} один раз",
+        "denyAll": "Запретить все {{count}}",
+        "allowForMinutes_one": "Разрешить на {{count}} минуту",
+        "allowForMinutes_other": "Разрешить на {{count}} минут",
+        "awaitingConfirmation_one": "{{count}} вызов ожидает подтверждения",
+        "awaitingConfirmation_other": "{{count}} вызовов ожидают подтверждения",
+        "pausedForApproval_one": "{{count}} вызов приостановлен для одобрения",
+        "pausedForApproval_other": "{{count}} вызовов приостановлены для одобрения",
+        "statusCheckingHistory": "{{status}} · Проверка истории…",
+        "statusHistoryIncomplete": "{{status}} · История неполна",
+        "reviewCount": "Проверить {{count}}",
+        "activePermissionCount_one": "{{count}} активное разрешение",
+        "activePermissionCount_other": "{{count}} активных разрешений",
+        "permissionScope": "{{agent}} · {{requester}} · эта ветка",
+        "toolApprovalCount_one": "{{count}} одобрение инструмента",
+        "toolApprovalCount_other": "{{count}} одобрений инструментов",
+        "approvedCount_one": "Одобрено: {{count}}",
+        "approvedCount_other": "Одобрено: {{count}}",
+        "activePermissionCount_few": "{{count}} активных разрешения",
+        "activePermissionCount_many": "{{count}} активных разрешений",
+        "allowForMinutes_few": "Разрешить на {{count}} минуты",
+        "allowForMinutes_many": "Разрешить на {{count}} минут",
+        "approvedCount_few": "{{count}} одобрено",
+        "approvedCount_many": "{{count}} одобрено",
+        "awaitingConfirmation_few": "{{count}} вызова ожидают подтверждения",
+        "awaitingConfirmation_many": "{{count}} вызовов ожидают подтверждения",
+        "operationCallCount_few": "{{operation}} · {{count}} вызова",
+        "operationCallCount_many": "{{operation}} · {{count}} вызовов",
+        "pausedForApproval_few": "{{count}} вызова приостановлено для одобрения",
+        "pausedForApproval_many": "{{count}} вызовов приостановлено для одобрения",
+        "toolApprovalCount_few": "{{count}} одобрения инструмента",
+        "toolApprovalCount_many": "{{count}} одобрений инструмента",
+        "agentWaitingForYou": "{{agent}} ждёт вас",
+        "agentsWaitingForYou_one": "{{count}} агент ждёт вас",
+        "agentsWaitingForYou_few": "{{count}} агента ждут вас",
+        "agentsWaitingForYou_many": "{{count}} агентов ждут вас",
+        "agentsWaitingForYou_other": "{{count}} агента ждут вас",
+        "autoApproveFor": "Автоодобрение на",
+        "callCount_one": "{{count}} вызов",
+        "callCount_few": "{{count}} вызова",
+        "callCount_many": "{{count}} вызовов",
+        "callCount_other": "{{count}} вызова",
+        "chipSending": "Отправка…",
+        "chipSubmitted": "Отправлено",
+        "chipResolved": "Решено",
+        "confirmDenyAll": "Подтвердить запрет всех {{count}}",
+        "expires": "истекает {{time}}",
+        "hideCalls": "Скрыть вызовы",
+        "historyApproved": "{{operation}}: одобрено",
+        "historyDenied": "{{operation}}: запрещено",
+        "historyExpired": "{{operation}}: срок истёк",
+        "historyUserApproved": "{{operation}} — одобрил(а) {{user}}",
+        "historyUserDenied": "{{operation}} — запретил(а) {{user}}",
+        "historyUserExpired": "{{operation}}: срок истёк",
+        "historyYouApproved": "Вы одобрили {{operation}}",
+        "historyYouDenied": "Вы запретили {{operation}}",
+        "historyYouExpired": "{{operation}}: срок истёк",
+        "minutesShort_one": "{{count}} мин",
+        "minutesShort_few": "{{count}} мин",
+        "minutesShort_many": "{{count}} мин",
+        "minutesShort_other": "{{count}} мин",
+        "sectionMeta": "{{agent}} · запрос от {{requester}}",
+        "showCalls_one": "Показать {{count}} вызов",
+        "showCalls_few": "Показать {{count}} вызова",
+        "showCalls_many": "Показать {{count}} вызовов",
+        "showCalls_other": "Показать {{count}} вызова",
+        "waitingForApproval": "Ожидает одобрения",
+        "waitingForYou": "Ждёт вас",
+        "you": "вас"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "Сообщение отправляется",
+        "waitingForServer": "Ожидание сервера",
+        "messageFailedToSend": "Не удалось отправить сообщение",
+        "notSent": "Не отправлено"
+      },
+      "failedSendActions": {
+        "retry": "Повторить",
+        "delete": "Удалить"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "вход: {{formattedCount}}",
+        "outputTokens": "выход: {{formattedCount}}",
+        "totalTokens": "всего: {{formattedCount}}",
+        "readTokens": "чтение: {{formattedCount}}",
+        "writeTokens": "запись: {{formattedCount}}",
+        "notReadTokens": "не прочитано: {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}} %)",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} токен ({{percentage}} % окна)",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} токенов ({{percentage}} % окна)",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} токен ({{percentage}} % окна); {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} токенов ({{percentage}} % окна); {{suffix}}",
+        "reportedCacheRead_one": "заявлено чтение кеша: {{formattedCount}} токен",
+        "reportedCacheRead_other": "заявлено чтение кеша: {{formattedCount}} токенов",
+        "cacheWrite_one": "запись в кеш: {{formattedCount}} токен",
+        "cacheWrite_other": "запись в кеш: {{formattedCount}} токенов",
+        "cacheRead": "Чтение кеша",
+        "newInput": "Новый ввод",
+        "reserve": "Резерв",
+        "cacheWrite_few": "запись в кэш: {{formattedCount}} токена",
+        "cacheWrite_many": "запись в кэш: {{formattedCount}} токенов",
+        "contextBarTitle_few": "{{label}}: {{formattedCount}} токена ({{percentage}}% окна)",
+        "contextBarTitle_many": "{{label}}: {{formattedCount}} токенов ({{percentage}}% окна)",
+        "contextBarTitleWithSuffix_few": "{{label}}: {{formattedCount}} токена ({{percentage}}% окна); {{suffix}}",
+        "contextBarTitleWithSuffix_many": "{{label}}: {{formattedCount}} токенов ({{percentage}}% окна); {{suffix}}",
+        "reportedCacheRead_few": "зарегистрировано чтение кэша: {{formattedCount}} токена",
+        "reportedCacheRead_many": "зарегистрировано чтение кэша: {{formattedCount}} токенов"
+      },
+      "mindroomModelBadge": {
+        "model": "Модель: {{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "Нативные push-уведомления iOS не настроены для этого развёртывания. Добавьте параметры `push.ios` в `config.json`.",
+        "failedToUpdateNativePushSettings": "Не удалось обновить настройки нативных push-уведомлений.",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "Разрешить нативные push-уведомления iOS для сообщений в фоне.",
+        "deviceRegisteredForNativeIosPushNotifications": "Устройство зарегистрировано для нативных push-уведомлений iOS.",
+        "nativeIosPushIsDisabledForThisDevice": "Нативные push-уведомления iOS отключены на этом устройстве.",
+        "unavailable": "Недоступно",
+        "enable": "Включить",
+        "iosPushNotifications": "Push-уведомления iOS",
+        "permissionDenied": "Разрешение на уведомления отклонено. Включите уведомления для {{appName}} в настройках iOS."
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "Отметить прочитанным"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "Отметить прочитанным"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "Отметить прочитанным"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "Создайте резервную копию зашифрованной истории",
+        "dismissBackupReminder": "Скрыть напоминание о резервной копии",
+        "setUpSecureBackupSoYouCanStillReadYour": "Настройте защищённую резервную копию, чтобы читать зашифрованные чаты с агентами после входа на новом устройстве.",
+        "setUpSecureKeyBackup": "Настроить защищённую резервную копию ключей",
+        "setUpBackup": "Настроить резервное копирование"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Local MindRoom"
+      },
+      "resizeNavigationPanel": "Изменить размер панели навигации",
+      "resizeMemberPanel": "Изменить размер панели участников"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "Нет веток"
+      },
+      "compactThreadCard": {
+        "streaming": "передача"
+      },
+      "mindroomCallChatView": {
+        "chat": "Чат",
+        "close": "Закрыть"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "Новые сообщения",
+        "jumpToUnread": "Перейти к непрочитанному",
+        "markAsRead": "Отметить прочитанным",
+        "failedToLoadThisThread": "Не удалось загрузить ветку.",
+        "loading": "Загрузка…",
+        "loadOlderMessages": "Загрузить более ранние сообщения",
+        "loadNewerMessages": "Загрузить более новые сообщения",
+        "jumpToLatest": "Перейти к последним",
+        "today": "Сегодня",
+        "yesterday": "Вчера"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "Ответы станут доступны после подтверждения сообщения.",
+        "youDoNotHavePermissionToPostInThisRoom": "У вас нет разрешения писать в этой комнате"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "Показать компьютер",
+        "hideComputer": "Скрыть компьютер",
+        "showCanvas": "Показать панель",
+        "hideCanvas": "Скрыть панель",
+        "canvases": "Интерактивные панели",
+        "notifications": "Уведомления",
+        "compact": "Компактный",
+        "threads": "Ветки",
+        "classic": "Классический",
+        "invite": "Пригласить",
+        "copyLink": "Копировать ссылку",
+        "roomSettings": "Настройки комнаты",
+        "jumpToTime": "Перейти ко времени",
+        "leaveRoom": "Покинуть комнату",
+        "pinnedMessages": "Закреплённые сообщения",
+        "members": "Участники",
+        "hideMembers": "Скрыть участников",
+        "showMembers": "Показать участников",
+        "moreOptions": "Другие параметры",
+        "back": "Назад"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "Добавить фильтр по тегу",
+        "tag": "+ тег",
+        "availableTags": "Доступные теги",
+        "filterPresets": "Предустановки фильтров",
+        "preset": "Предустановка",
+        "searchThreads": "Поиск веток",
+        "searchThreads2": "Поиск веток…",
+        "roomViewMode": "Режим просмотра комнаты",
+        "natural": "Обычный",
+        "lastReply": "Последний ответ",
+        "noThreadsMatchCurrentFilters": "Нет веток, соответствующих текущим фильтрам.",
+        "resetAllThreadFilters": "Сбросить все фильтры веток",
+        "reset": "Сбросить",
+        "threadFilters": "Фильтры веток",
+        "statusFilters": "Фильтры статуса",
+        "tagFilters": "Фильтры тегов",
+        "showingFilteredThreads_one": "Показана {{count}} из {{total}} ветки",
+        "showingFilteredThreads_other": "Показано {{count}} из {{total}} веток",
+        "showingAllThreads_one": "Показана {{count}} ветка",
+        "showingAllThreads_other": "Показано {{count}} веток",
+        "sortLockedSummary": "{{summary}} · порядок заблокирован",
+        "unlockSortOrder": "Разблокировать порядок сортировки (сейчас: {{sort}})",
+        "lockSortOrder": "Заблокировать порядок сортировки (сейчас: {{sort}})",
+        "threadCount_one": "{{count}} ветка",
+        "threadCount_other": "{{count}} веток",
+        "presets": {
+          "needs-attention": {
+            "label": "Требуют внимания",
+            "description": "Нерешённые ветки без передачи и запланированных задач"
+          },
+          "working": {
+            "label": "В работе",
+            "description": "Передаются или запланированы — текущая работа"
+          },
+          "review-queue": {
+            "label": "Очередь проверки",
+            "description": "Нерешённые ветки с непрочитанными ответами"
+          },
+          "archived": {
+            "label": "Архив",
+            "description": "Только решённые ветки"
+          },
+          "all": {
+            "label": "Все",
+            "description": "Сбросить все фильтры"
+          }
+        },
+        "showingAllThreads_few": "Показано {{count}} веток",
+        "showingAllThreads_many": "Показано {{count}} веток",
+        "showingFilteredThreads_few": "Показано {{count}} из {{total}} веток",
+        "showingFilteredThreads_many": "Показано {{count}} веток из {{total}}",
+        "threadCount_few": "{{count}} веток",
+        "threadCount_many": "{{count}} веток"
+      },
+      "threadTagPicker": {
+        "addTag": "Добавить тег",
+        "tag": "+ тег",
+        "filterNew": "Фильтр / новый…",
+        "filterOrCreateTag": "Найти или создать тег",
+        "noMatches": "Нет совпадений",
+        "typeToCreateATag": "Введите название нового тега",
+        "createTag": "Создать «{{tag}}»"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "Перейти к сообщению",
+        "message": "Сообщение"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> изменил(а) название комнаты",
+        "changedRoomTopic": "<sender>{{sender}}</sender> изменил(а) тему комнаты",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> изменил(а) аватар комнаты",
+        "joinedCall": "<sender>{{sender}}</sender> присоединился (присоединилась) к звонку",
+        "endedCall": "<sender>{{sender}}</sender> завершил(а) звонок",
+        "sentStateEvent": "<sender>{{sender}}</sender> отправил(а) событие состояния <eventType>{{eventType}}</eventType>",
+        "sentEvent": "<sender>{{sender}}</sender> отправил(а) событие <eventType>{{eventType}}</eventType>"
+      },
+      "threadTagPill": {
+        "removeTag": "Удалить тег {{tag}}"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "через {{count}} с",
+        "inMinutesSeconds": "через {{minutes}} мин {{seconds}} с",
+        "inMinutes": "через {{count}} мин",
+        "inHours": "через {{count}} ч",
+        "inHoursMinutes": "через {{hours}} ч {{minutes}} мин",
+        "atTime": "в {{time}}",
+        "scheduledTasks_one": "{{count}} запланированная задача",
+        "scheduledTasks_other": "{{count}} запланированных задач",
+        "pendingScheduledTasks_one": "{{count}} ожидающая запланированная задача",
+        "pendingScheduledTasks_other": "{{count}} ожидающих запланированных задач",
+        "scheduledTasksWithDetail": "{{tasks}}, {{detail}}",
+        "pendingScheduledTasks_few": "{{count}} ожидающих запланированных задач",
+        "pendingScheduledTasks_many": "{{count}} ожидающих запланированных задач",
+        "scheduledTasks_few": "{{count}} запланированные задачи",
+        "scheduledTasks_many": "{{count}} запланированных задач"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "Нет ответов",
+        "messageCount_one": "{{formattedCount}} сообщ.",
+        "messageCount_other": "{{formattedCount}} сообщ.",
+        "needsAttention": "Требуют внимания",
+        "waitingOnResponse": "Ожидание ответа",
+        "agentStreaming": "Агент передаёт ответ",
+        "resolved": "Решена",
+        "idle": "Неактивна",
+        "threadStarted": "Ветка начата",
+        "noRepliesYet": "Ответов пока нет",
+        "messageCount_few": "{{formattedCount}} сообщения",
+        "messageCount_many": "{{formattedCount}} сообщений"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "Следующая задача {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} ожидающая запланированная задача",
+        "pendingScheduledTasks_other": "{{count}} ожидающих запланированных задач",
+        "pendingScheduledTasks_few": "{{count}} ожидающих запланированных задач",
+        "pendingScheduledTasks_many": "{{count}} ожидающих запланированных задач"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "Зашифрованная ветка",
+        "threadInRoom": "Ветка в {{roomName}}",
+        "thread": "Ветка"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "Посмотреть компьютер",
+      "openMembers": "Открыть участников",
+      "openCanvas": "Открыть панель",
+      "canvasDisabled": "Интерактивные панели отключены в этом приложении.",
+      "canvasDuringCall": "Завершите звонок, чтобы открыть интерактивные панели.",
+      "computerUnavailable": "Компьютер этого агента недоступен.",
+      "releaseControl": "Отпустите управление компьютером, прежде чем открывать другое представление.",
+      "openConversation": "Откройте этот запрос из беседы в комнате.",
+      "settingsUnavailable": "Отключите простой режим, чтобы открыть этот раздел настроек."
+    },
+    "canvas": {
+      "panelLabel": "Интерактивная панель",
+      "fromAgent": "Интерактивная панель от агента {{agent}}",
+      "expand": "Развернуть панель",
+      "close": "Закрыть панель",
+      "resize": "Изменить размер панели",
+      "updated": "Агент {{agent}} обновил эту панель.",
+      "loadUpdate": "Загрузить обновление",
+      "version": "Версия {{current}} из {{total}}",
+      "previousVersion": "Предыдущая версия",
+      "nextVersion": "Следующая версия",
+      "earlierVersion": "Это более ранняя версия.",
+      "showLatest": "Показать последнюю",
+      "loading": "Загрузка панели…",
+      "loadFailed": "Не удалось загрузить эту панель.",
+      "retry": "Повторить",
+      "escaped": "Эта панель попыталась выйти из песочницы и была остановлена.",
+      "reload": "Перезагрузить панель",
+      "pageError": "Эта страница сообщила об ошибке.",
+      "tellAgent": "Сообщить агенту {{agent}}",
+      "errorsSent": "Ошибки отправлены агенту {{agent}}.",
+      "errorsNotSent": "Не удалось отправить ошибки агенту {{agent}}.",
+      "sendTo": "Отправить агенту {{agent}}:",
+      "changeAnswer": "Чтобы изменить ответ, сначала удалите текущий.",
+      "data": "Данные",
+      "send": "Отправить",
+      "discard": "Удалить",
+      "disclosure": "Создано агентом {{agent}}. Панель не имеет доступа к вашей учётной записи, но то, что вы здесь вводите, может быть передано за её пределы.",
+      "sharedNotice": "Сохраняется в этой комнате: агент {{agent}} и другие участники могут читать то, что вы вводите.",
+      "sending": "Отправка агенту {{agent}}…",
+      "sent": "Отправлено агенту {{agent}}: {{label}}",
+      "sendFailed": "Не удалось отправить ответ. Попробуйте снова.",
+      "receiptData": "Показать данные, отправленные агенту",
+      "unlabeled": "Отправлено",
+      "notSent": "Не отправлено агенту {{agent}}: {{label}}"
+    },
+    "canvases": {
+      "title": "Интерактивные панели",
+      "note": "Интерактивные панели, которые агенты создали для вас и которые видел этот браузер. Закреплённые панели видны на всех ваших устройствах.",
+      "empty": "Интерактивных панелей пока нет. Когда агент покажет вам панель, она появится здесь.",
+      "pinned": "Закреплена",
+      "canvas": "Панель",
+      "thread": "Ветка",
+      "agent": "Агент",
+      "room": "Комната",
+      "updated": "Обновлено",
+      "created": "Создано",
+      "pin": "Закрепить «{{title}}»",
+      "unpin": "Открепить «{{title}}»",
+      "shared": "Доступна агенту",
+      "saved": "Есть ваши значения"
+    },
+    "backgroundJobs": {
+      "running": "Выполняется: {{tool}}",
+      "awaitingApproval": "Ожидает одобрения: {{tool}}",
+      "waiting": "Ожидает одобрения",
+      "stoppingJob": "Остановка: {{tool}}",
+      "jobCount": "Фоновых задач: {{count}}",
+      "subagent": "{{tool}} (субагент)",
+      "stopAll": "Остановить все",
+      "stopping": "Остановка…",
+      "stop": "Остановить",
+      "stopJob": "Остановить {{tool}}",
+      "stopFailed": "Не удалось остановить {{tool}}. Попробуйте ещё раз.",
+      "stopAllFailed": "Не удалось остановить фоновые задачи. Попробуйте ещё раз.",
+      "inRoom": "Выполняются фоновые задачи"
+    }
+  },
+  "roomSchedules": {
+    "title": "Запланированные задачи",
+    "openLabel": "Запланированные задачи ({{total}})",
+    "empty": "В этой комнате нет запланированных задач.",
+    "emptyHint": "Попросите агента MindRoom запланировать здесь задачу.",
+    "prompt": "Промпт",
+    "promptUnavailable": "Промпт недоступен",
+    "once": "Однократная",
+    "recurring": "Повторяющаяся",
+    "executionTime": "Время выполнения",
+    "unknownTime": "Время выполнения недоступно",
+    "awaitingExecution": "Ожидает выполнения",
+    "recurrence": "Повторение",
+    "silent": "Без уведомлений",
+    "conditional": "Условная",
+    "newThread": "Новая ветка",
+    "roomTimeline": "Хронология комнаты",
+    "openThread": "Открыть ветку",
+    "owner": "Владелец задачи",
+    "createdAt": "Создано",
+    "updatedAt": "Обновлено",
+    "model": "Модель",
+    "inheritedModel": "Из настроек агента, комнаты или ветки",
+    "taskId": "ID задачи",
+    "historyLimit": "Лимит истории",
+    "fullHistory": "Полная история",
+    "noHistory": "Без истории",
+    "recentMessages": "Недавние сообщения: {{total}}",
+    "close": "Закрыть"
+  },
+  "archivedRooms": {
+    "title": "Архивные комнаты",
+    "archive": "Архивировать комнату",
+    "restore": "Восстановить комнату",
+    "restoreNamed": "Восстановить {{room}}",
+    "failed": "Не удалось сохранить изменения. Попробуйте снова.",
+    "close": "Закрыть архивные комнаты",
+    "description": "Скрывайте комнаты с боковой панели, не покидая их. Открывайте или восстанавливайте их здесь.",
+    "empty": "Нет архивных комнат."
+  }
+}

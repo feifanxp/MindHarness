@@ -1,0 +1,23 @@
+name: cinny-e2e-matrix
+
+services:
+  tuwunel:
+    image: ${MINDROOM_TUWUNEL_IMAGE:-ghcr.io/mindroom-ai/mindroom-tuwunel:latest}
+    environment:
+      TUWUNEL_SERVER_NAME: ${E2E_MATRIX_SERVER_NAME:-matrix.localhost}
+      TUWUNEL_DATABASE_PATH: /var/lib/tuwunel
+      TUWUNEL_PORT: 8008
+      TUWUNEL_ADDRESS: 0.0.0.0
+      TUWUNEL_ALLOW_LEGACY_MEDIA: 'true'
+      TUWUNEL_ALLOW_REGISTRATION: 'true'
+      TUWUNEL_YES_I_AM_VERY_VERY_SURE_I_WANT_AN_OPEN_REGISTRATION_SERVER_PRONE_TO_ABUSE: 'true'
+      TUWUNEL_CREATE_ADMIN_ROOM: 'true'
+      TUWUNEL_WELL_KNOWN__CLIENT: ${E2E_HOMESERVER_PUBLIC_URL:-http://127.0.0.1:28008}
+    ports:
+      - '${E2E_MATRIX_PORT:-28008}:8008'
+    volumes:
+      - cinny_e2e_tuwunel_data:/var/lib/tuwunel
+    restart: unless-stopped
+
+volumes:
+  cinny_e2e_tuwunel_data:

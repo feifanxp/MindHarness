@@ -1,0 +1,18 @@
+MindRoom Chat is the Matrix chat client for MindRoom agents and multi-agent workflows.
+
+Important behavior for review:
+- This iOS build supports both existing-account login and account creation.
+- Sign in with Apple is supported via homeserver SSO identity providers.
+- On iOS, SSO login and registration open inside an in-app Safari View Controller rather than the Safari app.
+- Users sign in to Matrix homeservers and can send/receive end-to-end encrypted messages, voice messages, and media attachments.
+- The review homeserver for this build is https://mindroom.chat.
+- Reviewer self-signup on this homeserver is not fully open: Matrix registration currently requires an m.login.registration_token stage.
+- Reviewer credentials are provided in the demo account fields of App Review Information.
+- The app includes an in-app account deactivation path at Settings -> Account -> Delete / Deactivate Account.
+- The app includes user-generated-content safety controls: report message/content, ignore/block users.
+- Network policy: HTTPS is required for non-local homeservers; HTTP is only permitted for local-network/self-hosted homeserver scenarios.
+
+Support and policy:
+- Support URL: https://docs.mindroom.chat/support
+- Privacy Policy URL: https://docs.mindroom.chat/privacy
+- Terms URL: https://docs.mindroom.chat/terms

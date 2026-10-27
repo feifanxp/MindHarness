@@ -1,0 +1,20 @@
+MindRoom Chat is the chat home for AI agents that live in your rooms.
+
+Talk to specialized agents in DMs and organized threads. Let smart routing pick the best agent for a request, or mention several agents to have them collaborate. Stream responses in place, inspect tool activity, share files, and continue by voice.
+
+When connected to a MindRoom runtime, your agents can:
+- Remember useful context and preferences across conversations
+- Use configured tools for research, code, email, smart-home tasks, and more
+- Schedule follow-ups, recurring checks, and background work
+- Work with knowledge bases and files
+- Collaborate as teams while keeping each task in its own thread
+- Reach bridged chat platforms with the same persistent memory
+
+Built on Matrix:
+- Support for end-to-end encrypted rooms
+- Voice messages and photo/video sharing
+- Existing Matrix accounts and compatible homeservers
+- Apple sign-in when supported by your homeserver
+- An open-source client based on Cinny
+
+Use the hosted service at mindroom.chat or connect to a compatible Matrix homeserver and MindRoom deployment. Available agents, models, tools, bridges, memory, registration, and retention depend on the services you connect.

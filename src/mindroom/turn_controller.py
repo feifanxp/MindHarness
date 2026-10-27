@@ -87,6 +87,7 @@ from mindroom.matrix.member_display_names import room_member_display_names
 from mindroom.matrix.message_content import is_v2_sidecar_text_preview
 from mindroom.matrix.thread_history_result import ThreadHistoryResult
 from mindroom.matrix.thread_membership import RelatedEventUnavailableError, ThreadMembershipLookupError
+from mindroom.peer_discussion.policy import allows_peer_source
 from mindroom.response_admission import admitted_response_decision
 from mindroom.response_lifecycle import response_lifecycle_reservation_context
 from mindroom.response_payload_preparation import (
@@ -1205,6 +1206,7 @@ class TurnController:
         )
         if (
             not policy.origin.blocks_unmentioned_managed_sender
+            or allows_peer_source(self.deps.runtime.config, self.deps.runtime_paths, room.room_id, policy.origin)
             or policy.am_i_mentioned
             or not handled_turn.replay_sources_all_from_requester(requester_user_id)
         ):
@@ -1439,7 +1441,12 @@ class TurnController:
 
         origin = envelope.origin
         sender_agent_name = origin.requester_entity_name
-        blocks_unmentioned_managed_sender = origin.blocks_unmentioned_managed_sender
+        blocks_unmentioned_managed_sender = origin.blocks_unmentioned_managed_sender and not allows_peer_source(
+            self.deps.runtime.config,
+            self.deps.runtime_paths,
+            room.room_id,
+            origin,
+        )
         if (
             blocks_unmentioned_managed_sender
             and not context.am_i_mentioned

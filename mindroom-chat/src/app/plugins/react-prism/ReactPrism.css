@@ -1,0 +1,125 @@
+/* Syntax colors on the same OKLCH ramp as the rest of the app.
+
+   These used to be two unrelated palettes: an ad-hoc light one and Monokai for
+   dark. Monokai's hot pink and acid green are a whole design language of their
+   own, and agent output is mostly code, so the loudest surface in the app was
+   the one speaking a different dialect from everything around it.
+
+   The rule is the same one the --mx-uc-* user colors and accessibleColor() use.
+   Hue carries the token's identity, because that is what distinguishes a string
+   from a keyword. Lightness and chroma belong to the theme.
+
+   Three tokens sit off the semantic ramp on purpose, because they are
+   scaffolding rather than content:
+
+     operator      body weight - `=>`, `===` and `+` carry meaning
+     punctuation   one step down - braces and commas are structure
+     comment       quietest - still >= 4.5:1, just not competing
+
+   Note "quieter" flips direction between the groups: darker in light, lighter
+   in dark. The dark comment therefore comes DOWN off the ramp's L 0.82 rather
+   than sitting on it, or the quietest token would be the brightest thing in the
+   block. */
+
+.prism-light {
+  /* L 0.48, chroma capped at 0.135. Two steps darker than the user colors
+     because code sits on SurfaceVariant.Container, and silver's is darker than
+     any message background. Worst case 4.72:1 there. */
+  --prism-comment: #5d5c66;
+  --prism-punctuation: #525257;
+  --prism-property: #9b363d;
+  --prism-boolean: #6a489d;
+  --prism-selector: #037132;
+  --prism-operator: #1f1e26;
+  --prism-atrule: #775804;
+  --prism-keyword: #036494;
+  --prism-regex: #934404;
+}
+
+.prism-dark {
+  /* L 0.82, chroma capped at 0.115, worst case 6.56:1 against butter's
+     container, the lightest of the three dark ones. */
+  --prism-comment: #a4a3ae;
+  --prism-punctuation: #bdbdc3;
+  --prism-property: #ffaaa9;
+  --prism-boolean: #ceb5fe;
+  --prism-selector: #8cd99c;
+  --prism-operator: #ececef;
+  --prism-atrule: #e6be68;
+  --prism-keyword: #87cdfe;
+  --prism-regex: #feaf82;
+}
+
+code .token.comment,
+code .token.prolog,
+code .token.doctype,
+code .token.cdata {
+  color: var(--prism-comment);
+}
+
+code .token.punctuation {
+  color: var(--prism-punctuation);
+}
+
+code .token.namespace {
+  opacity: 0.7;
+}
+
+code .token.property,
+code .token.tag,
+code .token.constant,
+code .token.symbol,
+code .token.deleted {
+  color: var(--prism-property);
+}
+
+code .token.boolean,
+code .token.number {
+  color: var(--prism-boolean);
+}
+
+code .token.selector,
+code .token.attr-name,
+code .token.string,
+code .token.char,
+code .token.builtin,
+code .token.inserted {
+  color: var(--prism-selector);
+}
+
+code .token.operator,
+code .token.entity,
+code .token.url,
+.language-css code .token.string,
+.style code .token.string,
+code .token.variable {
+  color: var(--prism-operator);
+}
+
+code .token.atrule,
+code .token.attr-value,
+code .token.function,
+code .token.class-name {
+  color: var(--prism-atrule);
+}
+
+code .token.keyword {
+  color: var(--prism-keyword);
+}
+
+code .token.regex,
+code .token.important {
+  color: var(--prism-regex);
+}
+
+code .token.important,
+code .token.bold {
+  font-weight: bold;
+}
+code .token.italic {
+  font-style: italic;
+}
+
+code .token.entity {
+  cursor: help;
+}

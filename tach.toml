@@ -1166,6 +1166,7 @@ depends_on = [
 visibility = ["mindroom.judgment.llm",
     "mindroom.ai",
     "mindroom.api.provider_setup",
+    "mindroom.api.project_wizard",
     "mindroom.cli.config",
     "mindroom.cli.doctor",
     "mindroom.agents",
@@ -1895,6 +1896,7 @@ depends_on = [
     "mindroom.api.openai_compat",
     "mindroom.api.oauth",
     "mindroom.api.provider_setup",
+    "mindroom.api.project_wizard",
     "mindroom.api.report_publishing",
     "mindroom.api.request_body_limit",
     "mindroom.api.schedules",
@@ -1944,6 +1946,33 @@ depends_on = [
     "mindroom.logging_config",
     "mindroom.model_defaults",
     "mindroom.providers.model_loading",
+]
+
+[[modules]]
+path = "mindroom.project_wizard"
+depends_on = [
+    "mindroom.api.config_lifecycle",
+    "mindroom.background_tasks",
+    "mindroom.constants",
+    "mindroom.credentials.manager",
+    "mindroom.durable_write",
+    "mindroom.file_locks",
+    "mindroom.matrix.health",
+    "mindroom.matrix.state",
+    "mindroom.matrix.users",
+    "mindroom.runtime_state",
+]
+
+[[modules]]
+path = "mindroom.api.project_wizard"
+depends_on = [
+    "mindroom.api.config_lifecycle",
+    "mindroom.api.auth",
+    "mindroom.background_tasks",
+    "mindroom.project_wizard",
+    "mindroom.logging_config",
+    "mindroom.providers.model_loading",
+    "mindroom.providers.tool_policy",
 ]
 
 [[modules]]
@@ -2999,6 +3028,7 @@ depends_on = [
 [[modules]]
 path = "mindroom.response_runner"
 depends_on = [
+    "mindroom.peer_discussion",
     "mindroom.agent_modes",
     "mindroom.judgment.cold_cache",
     "mindroom.thread_models",
@@ -5644,6 +5674,7 @@ visibility = ["mindroom.turn_controller"]
 [[modules]]
 path = "mindroom.turn_controller"
 depends_on = [
+    "mindroom.peer_discussion",
     "mindroom.matrix.client_visible_messages",
     "mindroom.matrix.conversation_reads",
     "mindroom.response_admission",
@@ -5731,6 +5762,7 @@ depends_on = [
 [[modules]]
 path = "mindroom.turn_policy"
 depends_on = [
+    "mindroom.peer_discussion",
     "mindroom.config.participation",
     "mindroom.authorization",
     "mindroom.constants",
@@ -7619,7 +7651,7 @@ visibility = ["mindroom.judgment.client", "mindroom.judgment.llm", "mindroom.agn
 [[modules]]
 path = "mindroom.providers.tool_policy"
 depends_on = []
-visibility = ["mindroom.judgment.llm", "mindroom.agno_participation", "mindroom.providers.claude_prompt_cache", "mindroom.providers.openai_models", "mindroom.providers.google_gemini", "mindroom.providers.groq_model", "mindroom.providers.cerebras_model", "mindroom.providers.ollama_model"]
+visibility = ["mindroom.api.project_wizard", "mindroom.judgment.llm", "mindroom.agno_participation", "mindroom.providers.claude_prompt_cache", "mindroom.providers.openai_models", "mindroom.providers.google_gemini", "mindroom.providers.groq_model", "mindroom.providers.cerebras_model", "mindroom.providers.ollama_model"]
 
 [[modules]]
 path = "mindroom.providers.groq_model"
@@ -7634,7 +7666,8 @@ visibility = ["mindroom.config.agent"]
 [[modules]]
 path = "mindroom.config.participation"
 depends_on = ["mindroom.config.judgment", "mindroom.config.schema_hints"]
-visibility = ["mindroom.config.agent", "mindroom.turn_policy", "mindroom.response_runner"]
+visibility = [
+    "mindroom.peer_discussion","mindroom.config.agent", "mindroom.turn_policy", "mindroom.response_runner"]
 
 [[modules]]
 path = "mindroom.delegation.sessions"
@@ -9316,3 +9349,7 @@ visibility = [
     "mindroom.history.agno_compat_message_builder",
     "mindroom.history.mid_turn_compaction",
 ]
+
+[[modules]]
+path = "mindroom.peer_discussion"
+depends_on = ["mindroom.config.judgment", "mindroom.config.participation", "mindroom.constants", "mindroom.entity_resolution", "mindroom.matrix.state"]

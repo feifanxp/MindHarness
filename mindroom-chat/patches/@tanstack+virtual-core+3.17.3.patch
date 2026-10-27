@@ -1,0 +1,28 @@
+diff --git a/node_modules/@tanstack/virtual-core/dist/cjs/index.cjs b/node_modules/@tanstack/virtual-core/dist/cjs/index.cjs
+index 52ae6ca..bce7170 100644
+--- a/node_modules/@tanstack/virtual-core/dist/cjs/index.cjs
++++ b/node_modules/@tanstack/virtual-core/dist/cjs/index.cjs
+@@ -378,6 +378,9 @@ class Virtualizer {
+         this.rafId = null;
+       }
+       this.scrollState = null;
++      this._iosDeferredAdjustment = 0;
++      this._iosTouching = false;
++      this._iosJustTouchEnded = false;
+       this.scrollElement = null;
+       this.targetWindow = null;
+     };
+diff --git a/node_modules/@tanstack/virtual-core/dist/esm/index.js b/node_modules/@tanstack/virtual-core/dist/esm/index.js
+index 3032c0c..07193fa 100644
+--- a/node_modules/@tanstack/virtual-core/dist/esm/index.js
++++ b/node_modules/@tanstack/virtual-core/dist/esm/index.js
+@@ -376,6 +376,9 @@ class Virtualizer {
+         this.rafId = null;
+       }
+       this.scrollState = null;
++      this._iosDeferredAdjustment = 0;
++      this._iosTouching = false;
++      this._iosJustTouchEnded = false;
+       this.scrollElement = null;
+       this.targetWindow = null;
+     };

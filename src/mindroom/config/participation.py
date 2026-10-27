@@ -6,6 +6,20 @@ from mindroom.config.judgment import JudgmentConfig
 from mindroom.config.schema_hints import dashboard_hint
 
 
+class PeerDiscussionConfig(BaseModel):
+    """Opt-in equal participation for individual agents in a managed room."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    max_agent_turns: int = Field(default=6, ge=1, le=12, description="Maximum agent messages between human messages")
+    max_turns_per_agent: int = Field(
+        default=2,
+        ge=1,
+        le=4,
+        description="Maximum turns by one agent between human messages",
+    )
+
+
 class ParticipationConfig(BaseModel):
     """Pause and judgment settings for an agent's existing threads in any room."""
 

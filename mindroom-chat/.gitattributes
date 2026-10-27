@@ -1,0 +1,9 @@
+# These files are intentional MindRoom wrapper seams over upstream-owned files.
+# The merge driver keeps the fork wrapper while rebasing onto upstream releases.
+src/app/features/room/Room.tsx merge=mindroom-wrapper
+src/app/features/room/RoomInput.tsx merge=mindroom-wrapper
+src/app/features/room/RoomTimeline.tsx merge=mindroom-wrapper
+src/app/features/room/RoomView.tsx merge=mindroom-wrapper
+src/app/features/room/RoomViewHeader.tsx merge=mindroom-wrapper
+src/app/features/room/message/Message.tsx merge=mindroom-wrapper
+src/app/features/room/room-pin-menu/RoomPinMenu.tsx merge=mindroom-wrapper

@@ -1,0 +1,3123 @@
+{
+  "messageTable": {
+    "label": "Kaydırılabilir tablo",
+    "scrollHint": "Yatay kaydır"
+  },
+  "messageCodeBlock": {
+    "actions": "Kod bloğu işlemleri",
+    "code": "Kod",
+    "language": "Dil: {{language}}",
+    "copy": "Kodu kopyala",
+    "copied": "Kopyalandı",
+    "wrap": "Satırları kaydır",
+    "expand": "Genişlet",
+    "collapse": "Daralt"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " oda adını değiştirdi"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "Modern",
+      "compact": "Kompakt",
+      "bubble": "Baloncuk"
+    },
+    "messageSpacing": {
+      "none": "Yok",
+      "ultraSmall": "Çok küçük",
+      "extraSmall": "Ekstra küçük",
+      "small": "Küçük",
+      "normal": "Normal",
+      "large": "Büyük"
+    },
+    "dateFormat": {
+      "custom": "Özel"
+    },
+    "themeName": {
+      "light": "Açık",
+      "silver": "Gümüş",
+      "dark": "Koyu",
+      "midnight": "Gece yarısı",
+      "butter": "Tereyağı"
+    },
+    "prefetchScope": {
+      "myHomeserver": "Ana sunucum",
+      "allRooms": "Tüm odalar",
+      "currentRoomOnly": "Yalnızca geçerli oda"
+    }
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "logout": "Çıkış yap",
+    "nav": {
+      "general": "Genel",
+      "account": "Hesap",
+      "notifications": "Bildirimler",
+      "devices": "Cihazlar",
+      "emojisStickers": "Emojiler ve çıkartmalar",
+      "developerTools": "Geliştirici araçları",
+      "about": "Hakkında"
+    },
+    "general": {
+      "title": "Genel",
+      "interface": {
+        "sectionTitle": "Arayüz",
+        "simpleMode": "Basit mod",
+        "simpleModeDescription": "Komut paleti ve konu filtreleri gibi gelişmiş özellikleri gizler. Cihazlarınız arasında eşitlenir.",
+        "showCanvasesInSidebar": "Etkileşimli panelleri kenar çubuğunda göster",
+        "showCanvasesInSidebarDescription": "Ajanlarınızın oluşturduğu etkileşimli paneller için, en az bir tane olduğunda bir düğme gösterir. Cihazlarınız arasında eşitlenir.",
+        "saveFailed": "Değişiklik kaydedilemedi. Bağlantınızı kontrol edip tekrar deneyin."
+      },
+      "language": {
+        "sectionTitle": "Dil",
+        "appLanguage": "Uygulama dili",
+        "appLanguageDescription": "Menülere ve arayüz metinlerine uygulanır. Mesaj içeriği hiçbir zaman çevrilmez."
+      },
+      "appearance": {
+        "sectionTitle": "Görünüm",
+        "systemTheme": "Sistem teması",
+        "systemThemeDescription": "Sistem tercihine göre açık veya koyu temayı seçer.",
+        "lightTheme": "Açık tema:",
+        "darkTheme": "Koyu tema:",
+        "theme": "Tema",
+        "themeDescription": "Sistem teması etkin değilken kullanılacak tema.",
+        "monochromeMode": "Tek renkli mod",
+        "twitterEmoji": "Twitter emojileri",
+        "pageZoom": "Sayfa yakınlaştırması"
+      },
+      "dateTime": {
+        "sectionTitle": "Tarih ve saat",
+        "hour24Clock": "24 saat biçimi",
+        "dateFormat": "Tarih biçimi",
+        "save": "Kaydet",
+        "formatHints": {
+          "title": "Biçimlendirme",
+          "year": "Yıl",
+          "twoDigitYear": "İki haneli yıl",
+          "fourDigitYear": "Dört haneli yıl",
+          "month": "Ay",
+          "theMonth": "Ay numarası",
+          "twoDigitMonth": "İki haneli ay",
+          "shortMonthName": "Kısa ay adı",
+          "fullMonthName": "Tam ay adı",
+          "dayOfMonth": "Ayın günü",
+          "theDayOfMonth": "Ayın günü",
+          "twoDigitDayOfMonth": "İki haneli ayın günü",
+          "dayOfWeek": "Haftanın günü",
+          "theDayOfWeek": "Haftanın günü (Pazar = 0)",
+          "twoLetterDayName": "İki harfli gün adı",
+          "shortDayName": "Kısa gün adı",
+          "fullDayName": "Tam gün adı"
+        }
+      },
+      "editor": {
+        "sectionTitle": "Düzenleyici",
+        "enterForNewline": "Yeni satır için ENTER",
+        "enterForNewlineDescription": "Mesaj göndermek için {{sendKey}} + ENTER, yeni satır için ENTER kullanın.",
+        "markdownFormatting": "Markdown biçimlendirmesi",
+        "hideActivity": "Yazma ve okundu bildirimlerini gizle",
+        "hideActivityDescription": "Etkinliğinizi gizli tutmak için yazma durumunu ve okundu bildirimlerini kapatın."
+      },
+      "messages": {
+        "sectionTitle": "Mesajlar",
+        "messageLayout": "Mesaj düzeni",
+        "messageSpacing": "Mesaj aralığı",
+        "prefetchScope": "Ön yükleme kapsamı",
+        "prefetchScopeDescription": "Arka planda hazır tutulan odalar",
+        "historyDepth": "Geçerli oda geçmişinin derinliği",
+        "historyDepthDescription": "Görüntülediğiniz oda için önceden yüklenecek hedef olay sayısı. En az {{min}}, en fazla {{max}}.",
+        "legacyUsernameColor": "Eski kullanıcı adı renkleri",
+        "hideMembershipChange": "Üyelik değişikliklerini gizle",
+        "hideProfileChange": "Profil değişikliklerini gizle",
+        "disableMediaAutoLoad": "Otomatik medya yüklemeyi kapat",
+        "urlPreview": "URL önizlemesi",
+        "urlPreviewEncrypted": "Şifreli odada URL önizlemesi",
+        "showHiddenEvents": "Gizli olayları göster"
+      },
+      "computers": {
+        "sectionTitle": "Bilgisayarlar",
+        "apiUrl": "Bilgisayar hizmeti URL’si",
+        "description": "Güvenilir bir MindRoom sunucusu seçin; kısa süreli bir oturum açma belirteci alır. Bu cihazda kaydedilir. Bilgisayarları kapatmak için boş bırakın.",
+        "save": "Bilgisayar hizmetini kaydet",
+        "reset": "Uygulama varsayılanını kullan",
+        "invalidUrl": "Kimlik bilgisi, yol, sorgu veya parça içermeyen bir origin girin. HTTPS veya localhost ya da özel bir LAN IP adresiyle HTTP kullanın.",
+        "httpNotice": "HTTP, oturum açma bilgilerinizi veya bilgisayar trafiğini şifrelemez. Yalnızca güvenilir bir yerel ağda kullanın.",
+        "saveFailed": "Bilgisayar hizmeti bu cihazda kaydedilemedi.",
+        "saved": "Bilgisayar hizmeti kaydedildi."
+      },
+      "connections": {
+        "sectionTitle": "Bağlantılar",
+        "title": "Bağlı hesaplar",
+        "description": "Ajanlarınızın kullandığı Google veya GitHub gibi hesapları MindRoom sunucunuza bağlayın.",
+        "open": "Bağlantıları aç",
+        "noBackend": "Bağlantıları kullanmak için MindRoom sunucunuzu “Bilgisayarlar” bölümünden ayarlayın.",
+        "blocked": "Tarayıcınız Bağlantılar penceresini engelledi. Bu site için açılır pencerelere izin verin ve tekrar deneyin."
+      }
+    }
+  },
+  "nav": {
+    "home": "Ana sayfa",
+    "directMessages": "Doğrudan mesajlar",
+    "threads": "Konular",
+    "canvases": "Etkileşimli paneller",
+    "inbox": "Gelen kutusu",
+    "exploreCommunity": "Toplulukları keşfet",
+    "addSpace": "Alan ekle",
+    "createSpace": "Alan oluştur",
+    "createSpaceDescription": "Topluluğunuz için bir alan oluşturun.",
+    "joinWithAddress": "Adresle katıl",
+    "joinWithAddressDescription": "Mevcut bir topluluğa katılın.",
+    "createRoom": "Oda oluştur",
+    "messageSearch": "Mesaj arama",
+    "rooms": "Odalar",
+    "chats": "Sohbetler",
+    "createChat": "Sohbet oluştur",
+    "directMessage": "Doğrudan mesaj",
+    "noRooms": "Oda yok",
+    "noRoomsDescription": "Henüz hiçbir odanız yok.",
+    "noDirectMessages": "Doğrudan mesaj yok",
+    "noDirectMessagesDescription": "Henüz hiçbir doğrudan mesajınız yok.",
+    "exploreCommunityRooms": "Topluluk odalarını keşfet",
+    "unverifiedDevice": "Doğrulanmamış cihaz",
+    "unverifiedDevices": "Doğrulanmamış cihazlar"
+  },
+  "accountsRail": {
+    "settingsTooltip": "Ayarlar: {{name}}",
+    "switchTooltip": "{{name}} ({{userId}}) hesabına geç",
+    "openSettingsAria": "{{name}} için ayarları aç",
+    "switchAria": "{{name}} ({{userId}}) hesabına geç",
+    "manageAccounts": "Hesapları yönet",
+    "addAccount": "Hesap ekle",
+    "addAccountAria": "Hesap ekle"
+  },
+  "commandPalette": {
+    "inputAria": "Komut paleti",
+    "placeholder": "Arayın veya bir komut çalıştırın…",
+    "closeAria": "Komut paletini kapat",
+    "open": "Komut paletini aç",
+    "noResults": "Sonuç yok",
+    "resultCount_one": "{{count}} sonuç",
+    "resultCount_other": "{{count}} sonuç",
+    "sections": {
+      "actions": "İşlemler",
+      "threads": "Konular",
+      "rooms": "Odalar",
+      "users": "Kullanıcılar",
+      "messages": "Mesajlar",
+      "spaces": "Alanlar"
+    },
+    "prefixes": {
+      "label": "Önekler:",
+      "actions": "işlemler",
+      "rooms": "odalar",
+      "users": "kullanıcılar",
+      "threads": "konular",
+      "spaces": "alanlar"
+    },
+    "shortcut": "Kısayol:",
+    "shortcutOpenSuffix": "ile açın.",
+    "actions": {
+      "openSettings": "Ayarları aç",
+      "openSettingsDescription": "Ortak ayarlar penceresini aç",
+      "goHome": "Ana sayfaya git",
+      "goHomeDescription": "Ana sayfaya geç",
+      "goDirect": "Doğrudan mesajlara git",
+      "goDirectDescription": "Doğrudan mesajlara geç",
+      "goInbox": "Gelen kutusuna git",
+      "goInboxDescription": "Gelen kutusu bildirimlerini aç",
+      "createRoom": "Oda oluştur",
+      "createRoomDescription": "Oda oluşturma penceresini aç",
+      "createSpace": "Alan oluştur",
+      "createSpaceDescription": "Alan oluşturma penceresini aç",
+      "toggleTheme": "Temayı değiştir",
+      "toggleThemeDescription": "Açık ve koyu tema arasında geçiş yap",
+      "logout": "Çıkış yap",
+      "logoutDescription": "MindRoom Chat oturumunu kapat",
+      "markCurrentRoomRead": "Geçerli odayı okundu işaretle",
+      "markCurrentRoomReadDescription": "{{room}} odasını okundu işaretle",
+      "copyCurrentRoomLink": "Geçerli odanın bağlantısını kopyala",
+      "copyCurrentRoomLinkDescription": "{{room}} için uygulama bağlantısını kopyala",
+      "openCurrentRoomSettings": "Geçerli odanın ayarlarını aç",
+      "openCurrentRoomSettingsDescription": "{{room}} için ayarları aç",
+      "unresolveCurrentThread": "Geçerli konuyu yeniden aç",
+      "unresolveCurrentThreadDescription": "Etkin konuyu çözülmemişler kuyruğuna geri taşı",
+      "resolveCurrentThread": "Geçerli konuyu çözüldü işaretle",
+      "resolveCurrentThreadDescription": "Etkin konuyu çözüldü olarak işaretle",
+      "currentRoomFallback": "geçerli oda"
+    },
+    "messages": {
+      "searchIn": "{{scope}} kapsamında {{query}} ara",
+      "searchAll": "Tüm odalarda {{query}} ara",
+      "currentRoomFallback": "geçerli oda",
+      "currentRoomDescription": "Geçerli oda",
+      "currentSpaceFallback": "geçerli alan",
+      "currentSpaceDescription": "Geçerli alan",
+      "globalSearchDescription": "Genel mesaj araması"
+    },
+    "all": "Tümü",
+    "filterLabel": "Sonuçları filtrele",
+    "resultsLabel": "Arama sonuçları",
+    "emptyDescription": "Farklı bir arama deneyin veya başka bir kategori seçin.",
+    "clearSearch": "Aramayı temizle",
+    "navigate": "Gezin",
+    "select": "Aç"
+  },
+  "accountSwitcher": {
+    "title": "Hesaplar",
+    "description": "Hesaplar arasında geçiş yapın, başka bir hesap ekleyin veya etkin olmayan bir hesabı kaldırın.",
+    "active": "Etkin",
+    "openSettings": "Ayarları aç",
+    "switch": "Geçiş yap",
+    "removing": "Kaldırılıyor...",
+    "removeFromDevice": "Cihazdan kaldır",
+    "addAccount": "Hesap ekle",
+    "close": "Kapat",
+    "actionError": "Bu hesap güncellenemedi. Lütfen tekrar deneyin."
+  },
+  "recentThreads": {
+    "title": "Son açılanlar",
+    "empty": "Son açılan konu yok",
+    "resizeAria": "Son açılanlar bölümünü yeniden boyutlandır",
+    "openedAt": "{{time}} açıldı"
+  },
+  "threadNav": {
+    "title": "Konular",
+    "empty": "Henüz konu yok",
+    "loading": "Konular yükleniyor...",
+    "pin": "Konuyu sabitle",
+    "unpin": "Konunun sabitlemesini kaldır",
+    "pinned": "Sabitlenmiş",
+    "room": "Oda",
+    "agents": "Ajanlar",
+    "agentsUnknown": "Ajan belirlenemedi",
+    "messages": "Mesajlar",
+    "lastActivity": "Son etkinlik",
+    "unknownActivity": "Bilinmiyor"
+  },
+  "composer": {
+    "placeholder": "Bir mesaj yazın...",
+    "sendMessage": "Mesaj gönder",
+    "recordVoice": "Sesli mesaj kaydet",
+    "formatting": "Biçimlendirme",
+    "attach": "Dosya ekle",
+    "voicePausedInOtherRoom": "Ses kaydı duraklatıldı — {{roomName}} odasındaki gönderilmemiş kaydınızı tamamlayın veya silin",
+    "dropFiles": "Dosyaları \"{{roomName}}\" odasına bırakın",
+    "dropFilesHint": "Dosyaları buraya sürükleyip bırakın veya seçim penceresini açmak için tıklayın",
+    "roomFallback": "Oda",
+    "voiceRoomUnavailable": "Bu oda artık kullanılamıyor. Gönderilmemiş sesli mesajı silip daha sonra tekrar deneyin.",
+    "voiceStillSending": "Başka bir sesli mesaj hâlâ gönderiliyor. Yeniden kaydetmeden önce lütfen bekleyin.",
+    "voiceBundleBlocked": "Başka bir ekin gönderimi sürüyor veya müdahale gerekiyor. Tamamlanmasını bekleyin ya da başarısız ekleri yeniden deneyin veya kaldırın, ardından bu mesajı tekrar gönderin."
+  },
+  "threadActions": {
+    "more": "Konu seçenekleri",
+    "open": "Konuyu aç",
+    "tags": "Etiketleri düzenle",
+    "editSummary": "Özeti düzenle",
+    "regenerate": "Özeti yeniden oluştur",
+    "reopen": "Konuyu yeniden aç",
+    "copy": "Konu bağlantısını kopyala",
+    "summary": "Özet",
+    "summaryHint": "Elle yapılan düzenlemeler otomatik özet güncellemelerini durdurur. Özeti istediğiniz zaman yeniden düzenleyebilir veya oluşturabilirsiniz.",
+    "length": "{{count}} / {{max}} karakter",
+    "agent": "Ajan",
+    "noAgents": "Bu odada katılmış bir ajan yok",
+    "regenerateHint": "Bir ajandan bu konunun özetini yenilemesini isteyin. Ajanın konu özeti aracına ihtiyacı vardır.",
+    "requested": "İstek gönderildi. Ajan işlemi tamamladığında özet güncellenecek. Yanıtı için konuyu kontrol edin.",
+    "failed": "Bu işlem tamamlanamadı. Lütfen tekrar deneyin.",
+    "save": "Özeti kaydet",
+    "sendRequest": "İstek gönder",
+    "saving": "Gönderiliyor…",
+    "cancel": "İptal",
+    "done": "Bitti"
+  },
+  "thread": {
+    "pinFailed": "Sabitleme güncellenemedi. Lütfen tekrar deneyin.",
+    "chip": "Konu",
+    "view": "Konu görünümü",
+    "resolve": "Çözüldü işaretle",
+    "resolved": "Çözüldü",
+    "resolvedBy": "{{name}} tarafından çözüldü",
+    "resolvedByShort": "{{name}} tarafından",
+    "hideDetails": "Konu ayrıntılarını gizle",
+    "showDetails": "Konu ayrıntılarını göster",
+    "backToRoom": "Odaya dön",
+    "replyCount_one": "{{count}} yanıt",
+    "replyCount_other": "{{count}} yanıt",
+    "aria": {
+      "openThread": "Konuyu aç: {{title}}",
+      "resolvedThread": "Çözülmüş konu",
+      "unresolvedThread": "Çözülmemiş konu",
+      "unreadMessages": "Okunmamış mesajlar",
+      "agentStreaming": "Ajan yanıt üretiyor",
+      "messageFailed": "Mesaj gönderilemedi",
+      "messageSending": "Mesaj gönderiliyor",
+      "lastActivity": "Son etkinlik {{time}}",
+      "removeTagFilter": "{{tag}} filtresini kaldır"
+    },
+    "status": {
+      "resolved": "Çözüldü",
+      "streaming": "Yanıt üretiyor",
+      "scheduled": "Zamanlanmış",
+      "unread": "Okunmamış",
+      "idle": "Boşta",
+      "idleFilter": "Boşta (çözülmüş, yanıt üretmiyor, görev yok)"
+    },
+    "stats": {
+      "aria": "Konu istatistikleri",
+      "showing": "{{total}} öğeden {{shown}} gösteriliyor",
+      "threadCount_one": "{{count}} konu",
+      "threadCount_other": "{{count}} konu",
+      "tags": "Etiketler"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: tümü gösteriliyor. Yalnızca bunu göstermek için tıklayın.",
+      "include": "{{label}}: yalnızca bu gösteriliyor. Gizlemek için tıklayın.",
+      "exclude": "{{label}}: gizleniyor. Filtreyi temizlemek için tıklayın.",
+      "tagAny": "\"{{tag}}\" etiketi",
+      "tagInclude": "\"{{tag}}\" etiketi: yalnızca bu gösteriliyor. Gizlemek için tıklayın.",
+      "tagExclude": "\"{{tag}}\" etiketi: gizleniyor. Filtreyi temizlemek için tıklayın.",
+      "stateAny": "tümü gösteriliyor",
+      "stateInclude": "yalnızca bu gösteriliyor",
+      "stateExclude": "gizleniyor"
+    },
+    "filters": {
+      "scope": "Kapsam",
+      "scopeInvolved": "Katılım",
+      "scopeAllRooms": "Tüm odalar",
+      "status": "Durum",
+      "statusAll": "Tümü",
+      "statusUnresolved": "Çözülmemiş",
+      "statusResolved": "Çözüldü",
+      "activity": "Etkinlik",
+      "activityToday": "Bugün",
+      "activity7d": "7 gün",
+      "activity30d": "30 gün",
+      "activityAll": "Tümü",
+      "unread": "Okunmamış",
+      "attention": "İlgi gerektiren",
+      "roomIdsPlaceholder": "Oda kimlikleri",
+      "roomIdsAria": "Oda kimliği filtreleri",
+      "spaceIdsPlaceholder": "Alan kimlikleri",
+      "spaceIdsAria": "Alan kimliği filtreleri",
+      "tagsPlaceholder": "Etiketler",
+      "tagsIncludeAria": "Dahil edilen etiket filtreleri",
+      "excludeTagsPlaceholder": "Etiketleri hariç tut",
+      "tagsExcludeAria": "Hariç tutulan etiket filtreleri",
+      "clear": "Temizle",
+      "open": "Filtreler",
+      "search": "Konularda ara",
+      "sheetAria": "Konu filtreleri",
+      "closeAria": "Konu filtrelerini kapat"
+    },
+    "simpleFilter": {
+      "unresolved": "Çözülmemiş",
+      "showingUnresolved": "Çözülmemiş konular gösteriliyor. Tümünü göstermek için tıklayın.",
+      "showingAll": "Tüm konular gösteriliyor. Yalnızca çözülmemişleri göstermek için tıklayın."
+    }
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "Hesap verileri",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "jsonContent": "JSON içeriği",
+      "edit": "Düzenle",
+      "developerTools": "Geliştirici araçları"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "Kimlik doğrulama akışı bilgileri yüklenemedi.",
+      "retry": "Tekrar dene"
+    },
+    "backupRestore": {
+      "restoring0": "Geri yükleniyor: %0",
+      "backupHasTrustedDecryptionKey": "Yedeğin güvenilir bir şifre çözme anahtarı var.",
+      "backupDoesNotHaveTrustedDecryptionKey": "Yedeğin güvenilir bir şifre çözme anahtarı yok!",
+      "backupHasTrustedBySignature": "Yedek, imzasıyla doğrulanmış.",
+      "backupDoesNotHaveTrustedSignature": "Yedeğin güvenilir bir imzası yok!",
+      "encryptionBackup": "Şifreleme yedeği",
+      "backupDetails": "Yedek ayrıntıları",
+      "restoreBackup": "Yedeği geri yükle",
+      "noBackupPresentOnServer": "Sunucuda yedek yok!",
+      "connected": "Bağlı",
+      "disconnected": "Bağlantı kesildi",
+      "nil": "NIL",
+      "syncing": "Eşitleniyor ({{count}})",
+      "restoring": "Geri yükleniyor: %{{progress}}",
+      "version": "Sürüm: {{version}}",
+      "keys": "Anahtarlar: {{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "Bilgilendirme",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "Bu özellik test aşamasındadır ve zamanla değişebilir.",
+      "beta": "Beta"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "Gelen arama",
+      "yourHomeserverDoesNotSupportCalling": "Ana sunucunuz aramaları desteklemiyor.",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "Tarayıcınız aramalar için gerekli olan WebRTC'yi desteklemiyor.",
+      "answer": "Yanıtla",
+      "reject": "Reddet",
+      "ignore": "Yoksay"
+    },
+    "deviceVerification": {
+      "close": "Kapat",
+      "pleaseAcceptTheRequestFromOtherDevice": "Lütfen diğer cihazdaki isteği kabul edin.",
+      "clickAcceptToStartTheVerificationProcess": "Doğrulama işlemini başlatmak için Kabul et'e tıklayın.",
+      "accept": "Kabul et",
+      "verificationRequestHasBeenAccepted": "Doğrulama isteği kabul edildi.",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "Aşağıdaki emojilerin her iki cihazda da aynı sırayla görüntülendiğini doğrulayın:",
+      "theyMatch": "Eşleşiyor",
+      "doNotMatch": "Eşleşmiyor",
+      "yourDeviceIsVerified": "Cihazınız doğrulandı.",
+      "okay": "Tamam",
+      "verificationHasBeenCanceled": "Doğrulama iptal edildi.",
+      "deviceVerification": "Cihaz doğrulama",
+      "waitingForRequestToBeAccepted": "İsteğin kabul edilmesi bekleniyor...",
+      "waitingForTheResponseFromOtherDevice": "Diğer cihazdan yanıt bekleniyor...",
+      "startingVerificationUsingEmojiComparison": "Emoji karşılaştırmasıyla doğrulama başlatılıyor...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "Beklenmeyen hata! Doğrulama başladı ancak doğrulayıcı bulunamadı."
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "Kurtarma anahtarı",
+      "passphraseOptional": "Parola ifadesi (isteğe bağlı)",
+      "continue": "Devam et",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "Bu işlem için gerekli kimlik doğrulama adımları istemci tarafından desteklenmiyor.",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "Diğer cihazlarınıza erişemediğinizde kimliğinizi doğrulamak için Kurtarma Anahtarına ihtiyaç duyacağınızdan, anahtarı ileride kullanmak üzere güvenli bir yerde saklayın.",
+      "copy": "Kopyala",
+      "download": "İndir",
+      "setupDeviceVerification": "Cihaz doğrulamasını ayarla",
+      "resetDeviceVerification": "Cihaz doğrulamasını sıfırla",
+      "resettingDeviceVerificationIsPermanent": "Cihaz doğrulamasını sıfırlamak kalıcıdır.",
+      "recoveryPassphrase": "Kurtarma parolası",
+      "reset": "Sıfırla",
+      "unexpectedError": "Beklenmeyen hata!",
+      "hide": "Gizle",
+      "show": "Göster",
+      "recoveryDescription": "Diğer cihazlarınıza erişemediğinizde kimliğinizi doğrulamak için bir <b>Kurtarma Anahtarı</b> oluşturun. Ayrıca, hatırlaması kolay bir alternatif olarak bir parola ifadesi ayarlayın.",
+      "resetWarning": "Birlikte doğrulama yaptığınız herkes güvenlik uyarıları görecek ve şifreleme yedeğiniz kaybolacak. <b>Kurtarma Anahtarınızı</b> veya <b>Kurtarma Parolanızı</b> ve doğrulama yapabileceğiniz tüm cihazları kaybetmediyseniz, bu işlemi büyük olasılıkla yapmak istemezsiniz."
+    },
+    "hexColorPickerPopOut": {
+      "remove": "Kaldır"
+    },
+    "logoutDialog": {
+      "logout": "Çıkış yap",
+      "unverifiedDevice": "Doğrulanmamış cihaz",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "Şifreli mesajlarınızı korumak için çıkış yapmadan önce cihazınızı doğrulayın.",
+      "alert": "Uyarı",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "Mesajlarınıza erişiminizi kaybetmemek için cihaz doğrulamasını etkinleştirin veya ayarlardan şifreli verilerinizi dışa aktarın.",
+      "youReAboutToLogOutAreYouSure": "Çıkış yapmak üzeresiniz. Emin misiniz?",
+      "cancel": "İptal",
+      "logoutFailed": "Çıkış yapılamadı! {{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "Kurtarma parolası",
+      "recoveryKey": "Kurtarma anahtarı",
+      "verifyManually": "Elle doğrula",
+      "deviceVerified": "Cihaz doğrulandı!",
+      "selectAVerificationMethod": "Bir doğrulama yöntemi seçin.",
+      "provideRecoveryKey": "Kurtarma anahtarını girin."
+    },
+    "pdfViewer": {
+      "zoomOut": "Uzaklaştır",
+      "zoomIn": "Yakınlaştır",
+      "failedToLoadPdf": "PDF yüklenemedi",
+      "retry": "Tekrar dene",
+      "previous": "Önceki",
+      "pageNumber": "Sayfa numarası",
+      "jumpToPage": "Sayfaya git",
+      "next": "Sonraki",
+      "saving": "Kaydediliyor...",
+      "retryDownload": "İndirmeyi tekrar dene",
+      "download": "İndir"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "Kurtarma parolası",
+      "verify": "Doğrula",
+      "recoveryKey": "Kurtarma anahtarı",
+      "invalidRecoveryPassphrase": "Geçersiz kurtarma parolası.",
+      "invalidRecoveryKey": "Geçersiz kurtarma anahtarı."
+    },
+    "uIAFlowOverlay": {
+      "exit": "Çık",
+      "stepValue1Value2": "Adım {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "Kurucular",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "Oluşturma sırasında özel ayrıcalıklı kullanıcılar atanabilir. Bu kullanıcılar daha fazla kontrole sahiptir ve yalnızca yükseltme sırasında değiştirilebilir.",
+      "enter": "Enter",
+      "noSuggestions": "Öneri yok",
+      "pleaseProvideTheUserIdAndHitEnter": "Lütfen kullanıcı kimliğini girip Enter'a basın."
+    },
+    "createRoomAccessSelector": {
+      "restricted": "Kısıtlı",
+      "onlyMemberOfParentSpaceCanJoin": "Yalnızca üst alanın üyeleri katılabilir.",
+      "private": "Özel",
+      "onlyPeopleWithInviteCanJoin": "Yalnızca davet edilenler katılabilir.",
+      "public": "Herkese açık",
+      "anyoneWithTheAddressCanJoin": "Adresi bilen herkes katılabilir."
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "Adres (isteğe bağlı)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "Keşfedilebilir olması için benzersiz bir adres seçin.",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "Bu adres zaten kullanılıyor. Lütfen başka bir adres seçin."
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "Sohbet odası",
+      "messagesPhotosAndVideos": "- Mesajlar, fotoğraflar ve videolar.",
+      "voiceRoom": "Sesli oda",
+      "liveAudioAndVideoConversations": "- Canlı sesli ve görüntülü görüşmeler."
+    },
+    "roomVersionSelector": {
+      "versions": "Sürümler",
+      "version": "Sürüm"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "Emojiler"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "Odalar",
+      "unknownRoom": "Bilinmeyen oda"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "Bahsetmeler"
+    },
+    "emojiBoard": {
+      "recent": "Son kullanılanlar",
+      "unknownPack": "Bilinmeyen paket",
+      "searchResults": "Arama sonuçları",
+      "noResultsFound": "Sonuç bulunamadı",
+      "personalPack": "Kişisel paket",
+      "unknown": "Bilinmiyor"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "Çıkartma paketi yok!",
+      "addStickersFromUserRoomOrSpaceSettings": "Kullanıcı, oda veya alan ayarlarından çıkartma ekleyin."
+    },
+    "searchInput": {
+      "react": "Tepki ver",
+      "searchOrTextReaction": "Ara veya metin tepkisi yaz ",
+      "search": "Ara"
+    },
+    "tabs": {
+      "sticker": "Çıkartma",
+      "emoji": "Emoji"
+    },
+    "eventReaders": {
+      "seenBy": "Görenler"
+    },
+    "imageEditor": {
+      "imageEditor": "Görsel düzenleyici",
+      "save": "Kaydet"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "Değişiklikler uygulanamadı! Lütfen tekrar deneyin.",
+      "changesSavedApplyWhenReady": "Değişiklikler kaydedildi! Hazır olduğunuzda uygulayın.",
+      "reset": "Sıfırla",
+      "applyChanges": "Değişiklikleri uygula",
+      "pack": "Paket",
+      "imagesUsage": "Görsel kullanımı",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "Görsellerin emoji, çıkartma veya her ikisi olarak nasıl kullanılacağını seçin.",
+      "images": "Görseller",
+      "uploadImages": "Görsel yükle",
+      "selectImagesFromYourStorageToUploadThemInPack": "Pakete yüklemek için depolamanızdan görseller seçin.",
+      "select": "Seç"
+    },
+    "imagePackView": {
+      "emojisStickers": "Emojiler ve çıkartmalar"
+    },
+    "imageTile": {
+      "undo": "Geri al",
+      "edit": "Düzenle",
+      "shortcode": "Kısa kod:",
+      "body": "Gövde:",
+      "save": "Kaydet",
+      "cancel": "İptal"
+    },
+    "packMeta": {
+      "edit": "Düzenle",
+      "packAvatar": "Paket avatarı",
+      "upload": "Yükle",
+      "reset": "Sıfırla",
+      "remove": "Kaldır",
+      "name": "Ad",
+      "attribution": "Atıf",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "unknown": "Bilinmiyor"
+    },
+    "imageViewer": {
+      "zoomOut": "Uzaklaştır",
+      "zoomIn": "Yakınlaştır",
+      "saving": "Kaydediliyor...",
+      "retryDownload": "İndirmeyi tekrar dene",
+      "download": "İndir"
+    },
+    "inviteUserPrompt": {
+      "invite": "Davet et",
+      "userId": "Kullanıcı kimliği",
+      "reasonOptional": "Neden (isteğe bağlı)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "Adresle katıl",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "Topluluğa katılmak için herkese açık adresi girin. Adresler şöyle görünür:",
+      "address": "Adres",
+      "invalidAddress": "Geçersiz adres",
+      "open": "Aç"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "Odadan ayrıl",
+      "areYouSureYouWantToLeaveThisRoom": "Bu odadan ayrılmak istediğinizden emin misiniz?",
+      "leaving": "Ayrılınıyor...",
+      "leave": "Ayrıl",
+      "leaveFailed": "Odadan ayrılınamadı! {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "Alandan ayrıl",
+      "areYouSureYouWantToLeaveThisSpace": "Bu alandan ayrılmak istediğinizden emin misiniz?",
+      "leaving": "Ayrılınıyor...",
+      "leave": "Ayrıl",
+      "leaveFailed": "Alandan ayrılınamadı! {{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "Konumu aç",
+      "voiceMessage": "sesli mesaj",
+      "audio": "ses",
+      "unnamedFile": "Adsız dosya",
+      "file": "Dosya",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF belgesi",
+      "textFile": "Metin dosyası"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "Bu mesaj silindi",
+      "unsupportedMessage": "Desteklenmeyen mesaj",
+      "failedToLoadMessage": "Mesaj yüklenemedi",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "Bu mesajın şifresi çözülemedi — şifreleme anahtarı kullanılamıyor",
+      "thisMessageIsNotDecryptedYet": "Bu mesajın şifresi henüz çözülmedi",
+      "brokenMessage": "Bozuk mesaj",
+      "emptyMessage": "Boş mesaj",
+      "edited": " (düzenlendi)",
+      "deletedWithReason": "Bu mesaj silindi. {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "PDF'yi aç",
+      "openFile": "Dosyayı aç",
+      "loadFailed": "Dosya yüklenemedi!",
+      "retryDownload": "İndirmeyi tekrar dene ({{size}})",
+      "downloadSize": "İndir ({{size}})",
+      "openValue1": "{{value1}} dosyasını aç"
+    },
+    "imageContent": {
+      "view": "Görüntüle",
+      "spoiler": "Spoiler",
+      "failedToLoadImage": "Görsel yüklenemedi!",
+      "retry": "Tekrar dene"
+    },
+    "videoContent": {
+      "watch": "İzle",
+      "spoiler": "Spoiler",
+      "failedToLoadVideo": "Video yüklenemedi!",
+      "retry": "Tekrar dene"
+    },
+    "voiceAudioContent": {
+      "loadError": "Ses yüklenemedi. Yeniden denemek için oynat düğmesine basın.",
+      "playbackError": "Bu ses burada oynatılamıyor. İndirmeyi deneyin.",
+      "playbackPosition": "{{current}} / {{duration}}",
+      "moreAudioOptions": "Diğer ses seçenekleri",
+      "download": "İndir",
+      "name": "Ad",
+      "type": "Tür",
+      "size": "Boyut",
+      "duration": "Süre",
+      "voiceMessage": "sesli mesaj",
+      "pauseValue1": "{{value1}} duraklat",
+      "playValue1": "{{value1}} oynat",
+      "seekValue1": "{{value1}} içinde konuma git"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "İsteğinizi bir yönetici inceleyecek.",
+      "messageOptional": "Mesaj (isteğe bağlı)",
+      "cancel": "İptal",
+      "failedToSendRequest": "İstek gönderilemedi.",
+      "sendingRequest": "İstek gönderiliyor",
+      "sendRequest": "İstek gönder",
+      "requestToJoinValue1": "{{value1}} için katılma isteği"
+    },
+    "roomCard": {
+      "cancel": "İptal",
+      "checkingAccess": "Erişim kontrol ediliyor",
+      "space": "Alan",
+      "view": "Görüntüle",
+      "retry": "Tekrar dene",
+      "joinError": "Katılma hatası",
+      "viewError": "Görüntüleme hatası",
+      "retryRoomInfo": "Oda bilgilerini tekrar yükle",
+      "accessUnavailable": "Erişim kullanılamıyor",
+      "failedToJoinUnknownError": "Katılınamadı. Bilinmeyen hata.",
+      "sendingRequest": "İstek gönderiliyor",
+      "requestSent": "İstek gönderildi",
+      "requestToJoin": "Katılma isteği",
+      "joining": "Katılınıyor",
+      "join": "Katıl",
+      "members_one": "{{count, number}} üye",
+      "members_other": "{{count, number}} üye"
+    },
+    "roomIntro": {
+      "inviteMember": "Üye davet et",
+      "openOldRoom": "Eski odayı aç",
+      "joinOldRoom": "Eski odaya katıl",
+      "thisIsTheBeginningOfConversation": "Sohbetin başlangıcı burasıdır.",
+      "createdBy": "Oluşturan: ",
+      "onValue1Value2": " {{value1}} {{value2}} tarihinde"
+    },
+    "textViewer": {
+      "copyAll": "Tümünü kopyala"
+    },
+    "datePicker": {
+      "day": "Gün",
+      "month": "Ay",
+      "year": "Yıl"
+    },
+    "timePicker": {
+      "hour": "Saat",
+      "minutes": "Dakika",
+      "period": "Dönem",
+      "am": "ÖÖ",
+      "pm": "ÖS"
+    },
+    "dummyStage": {
+      "retry": "Tekrar dene",
+      "cancel": "İptal",
+      "failedToRegister": "Kayıt başarısız."
+    },
+    "emailStage": {
+      "email": "E-posta",
+      "sendVerificationEmail": "Doğrulama e-postası gönder",
+      "cancel": "İptal",
+      "sendingVerificationEmail": "Doğrulama e-postası gönderiliyor...",
+      "verificationRequestSent": "Doğrulama isteği gönderildi",
+      "continue": "Devam et",
+      "provideEmail": "E-posta adresini girin",
+      "verifyEmail": "E-postayı doğrula",
+      "failedToSendVerificationEmailRequest": "E-posta doğrulama isteği gönderilemedi.",
+      "pleaseProvideEmailToSendVerificationRequest": "Doğrulama isteği göndermek için lütfen e-posta adresinizi girin.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "Devam etmeden önce lütfen \"{{value1}}\" e-posta adresinizi kontrol edip doğrulayın."
+    },
+    "passwordStage": {
+      "accountPassword": "Hesap parolası",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "Bu işlemi yapmak için hesap parolanızı girerek kimliğinizi doğrulamanız gerekiyor.",
+      "password": "Parola",
+      "continue": "Devam et",
+      "invalidPassword": "Geçersiz parola!"
+    },
+    "reCaptchaStage": {
+      "cancel": "İptal",
+      "invalidData": "Geçersiz veri",
+      "pleaseCheckTheBoxBelowToProceed": "Devam etmek için lütfen aşağıdaki kutuyu işaretleyin.",
+      "noValidDataFoundToProceedWithRecaptcha": "ReCAPTCHA ile devam etmek için geçerli veri bulunamadı."
+    },
+    "registrationTokenStage": {
+      "registrationToken": "Kayıt belirteci",
+      "retry": "Tekrar dene",
+      "cancel": "İptal",
+      "invalidRegistrationTokenProvided": "Geçersiz bir kayıt belirteci girildi.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "Lütfen ana sunucu yöneticinizin verdiği kayıt belirtecini girin."
+    },
+    "sSOStage": {
+      "ssoLogin": "SSO ile giriş",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "Bu işlemi yapmak için SSO ile giriş yaparak kimliğinizi doğrulamanız gerekiyor.",
+      "continue": "Devam et",
+      "continueWithSso": "SSO ile devam et"
+    },
+    "termsStage": {
+      "retry": "Tekrar dene",
+      "cancel": "İptal",
+      "failedToSubmitTermsAndConditionAcceptance": "Hüküm ve Koşulları kabul ettiğiniz bilgisi gönderilemedi."
+    },
+    "uploadBoard": {
+      "files": "Dosyalar",
+      "uploadFailed": "Yükleme başarısız",
+      "remove": "Kaldır",
+      "removeAll": "Tümünü kaldır"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "Yüklemeyi tekrar dene",
+      "retry": "Tekrar dene",
+      "cancelUpload": "Yüklemeyi iptal et"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "Spoiler",
+      "retryUpload": "Yüklemeyi tekrar dene",
+      "retry": "Tekrar dene",
+      "cancelUpload": "Yüklemeyi iptal et"
+    },
+    "creatorChip": {
+      "managePowers": "Yetkileri yönet"
+    },
+    "powerChip": {
+      "selfDemotion": "Kendi yetkini düşürme",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "Kendi yetkinizi düşürmek üzeresiniz! Bu yetkiyi kendi başınıza geri alamayacaksınız. Emin misiniz?",
+      "demote": "Yetkisini düşür",
+      "sharedPower": "Eşit yetki",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "Kullanıcıya kendinizle aynı yetkiyi vermek üzeresiniz! Sonrasında yetkisini değiştiremeyeceksiniz. Emin misiniz?",
+      "promote": "Yetkisini yükselt",
+      "managePowers": "Yetkileri yönet",
+      "errorName": "Hata: {{name}}"
+    },
+    "userChips": {
+      "copyServer": "Sunucuyu kopyala",
+      "exploreCommunity": "Toplulukları keşfet",
+      "openInBrowser": "Tarayıcıda aç",
+      "copyUserId": "Kullanıcı kimliğini kopyala",
+      "copyUserLink": "Kullanıcı bağlantısını kopyala",
+      "share": "Paylaş",
+      "spaces": "Alanlar",
+      "rooms": "Odalar",
+      "directMessages": "Doğrudan mesajlar",
+      "blockedUser": "Engellenen kullanıcı",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "Bu kullanıcıdan mesaj veya davet almıyorsunuz.",
+      "mutualRooms": "Ortak odalar",
+      "unblockUser": "Kullanıcının engelini kaldır",
+      "blockUser": "Kullanıcıyı engelle",
+      "mutualRooms_one": "{{count, number}} ortak oda",
+      "mutualRooms_other": "{{count, number}} ortak oda"
+    },
+    "userModeration": {
+      "kickedUser": "Odadan çıkarılan kullanıcı",
+      "noReasonProvided": "Neden belirtilmedi.",
+      "bannedUser": "Yasaklanan kullanıcı",
+      "unban": "Yasağı kaldır",
+      "invitedUser": "Davet edilen kullanıcı",
+      "cancelInvite": "Daveti iptal et",
+      "moderation": "Moderasyon",
+      "reason": "Neden: <b>{{reason}}</b>",
+      "invite": "Davet et",
+      "kick": "Odadan çıkar",
+      "ban": "Yasakla",
+      "kickedBy": "Çıkaran: <b>{{name}}</b>",
+      "bannedBy": "Yasaklayan: <b>{{name}}</b>",
+      "invitedBy": "Davet eden: <b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "Mesaj"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "Ses düzeyi",
+      "voiceVolumeCurrentlyValue1": "Ses düzeyi, şu anda %{{value1}}"
+    },
+    "configConfig": {
+      "continueOffline": "Çevrimdışı devam et",
+      "yourWebSessionHasExpired": "Web oturumunuzun süresi doldu.",
+      "failedToLoadClientConfigurationFile": "İstemci yapılandırma dosyası yüklenemedi.",
+      "signInAgainToReconnectOrContinueInOfflineMode": "Yeniden bağlanmak için tekrar giriş yapın veya çevrimdışı modda devam edin.",
+      "signInAgainToReconnect": "Yeniden bağlanmak için tekrar giriş yapın.",
+      "signInAgain": "Tekrar giriş yap",
+      "retry": "Tekrar dene"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "Eksik tarayıcı özelliği",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "IndexedDB desteği bulunamadı. Bu uygulama, oturum verilerini yerel olarak saklamak için IndexedDB gerektirir. Lütfen tarayıcınızın IndexedDB'yi desteklediğinden ve etkin olduğundan emin olun.",
+      "whatIsIndexeddb": "IndexedDB nedir?"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "Geçerli hesaba dön",
+      "server": "Sunucu",
+      "lookingForServer": "Sunucu aranıyor...",
+      "failedToFindServer": "Sunucu bulunamadı.",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "Bağlanılamadı. Sunucu yapılandırmasındaki base_url geçersiz görünüyor.",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "Yalnızca HTTPS sunucularına izin verilir. HTTP yalnızca yerel ağ sunucularında desteklenir.",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "Bağlanılamadı. Sunucu şu anda kullanılamıyor veya mevcut değil.",
+      "loadingAuthenticationFlow": "Kimlik doğrulama akışı yükleniyor...",
+      "failedToGetAuthenticationFlowInformation": "Kimlik doğrulama akışı bilgileri alınamadı.",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "Bağlanılamadı. {{value1}} ile bulunan sunucu yapılandırması kullanılamıyor görünüyor.",
+      "connectingToValue1": "{{value1}} sunucusuna bağlanılıyor"
+    },
+    "orDivider": {
+      "or": "VEYA"
+    },
+    "sSOLogin": {
+      "continueWithSso": "SSO ile devam et"
+    },
+    "serverPicker": {
+      "server": "Sunucu",
+      "serverList": "Sunucu listesi"
+    },
+    "login": {
+      "login": "Giriş yap",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Bu istemci Apple ile giriş yapılmasını gerektirir. Ana sunucunun SSO sağlayıcı listesine Apple'ı ekleyin.",
+      "register": "Kayıt ol",
+      "accountLink": "Hesabınız yok mu? <authLink>Kayıt olun</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "\"{{value1}}\" sunucusunda parolayla giriş kapalıdır. Giriş yapmak için SSO kullanın.",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "Bu istemci \"{{value1}}\" sunucusuna girişi desteklemiyor. Parola veya SSO tabanlı giriş yöntemi bulunamadı."
+    },
+    "passwordLoginForm": {
+      "hint": "İpucu",
+      "username": "Kullanıcı adı:",
+      "matrixId": "Matrix kimliği:",
+      "email": "E-posta:",
+      "username2": "Kullanıcı adı",
+      "password": "Parola",
+      "forgetPassword": "Parolanızı mı unuttunuz?",
+      "login": "Giriş yap",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "İstemci kurulumunuz özel sunuculara girişe izin vermiyor.",
+      "failedToFindYourMatrixIdServer": "Matrix kimliğinizin sunucusu bulunamadı.",
+      "invalidUsernameOrPassword": "Geçersiz kullanıcı adı veya parola.",
+      "thisAccountHasBeenDeactivated": "Bu hesap devre dışı bırakıldı.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Giriş yapılamadı. İstek verilerinizin bir bölümü geçersiz.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Giriş yapılamadı. Sunucu giriş isteğinizi hız sınırına taktı. Lütfen bir süre sonra tekrar deneyin.",
+      "failedToLoginUnknownReason": "Giriş yapılamadı. Nedeni bilinmiyor.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Giriş başarılı, ancak bu tarayıcı hesabı kaydedemedi. Depolama izinlerini kontrol edip tekrar deneyin."
+    },
+    "tokenLogin": {
+      "tokenLogin": "Belirteçle giriş",
+      "invalidLoginToken": "Geçersiz giriş belirteci.",
+      "thisAccountHasBeenDeactivated": "Bu hesap devre dışı bırakıldı.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Giriş yapılamadı. İstek verilerinizin bir bölümü geçersiz.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Giriş yapılamadı. Sunucu giriş isteğinizi hız sınırına taktı. Lütfen bir süre sonra tekrar deneyin.",
+      "failedToLoginUnknownReason": "Giriş yapılamadı. Nedeni bilinmiyor.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Giriş başarılı, ancak bu tarayıcı hesabı kaydedemedi. Depolama izinlerini kontrol edip tekrar deneyin."
+    },
+    "passwordRegisterForm": {
+      "username": "Kullanıcı adı",
+      "password": "Parola",
+      "confirmPassword": "Parolayı onayla",
+      "termsAndConditions": "Hüküm ve Koşullar",
+      "register": "Kayıt ol",
+      "thisUsernameIsAlreadyTaken": "Bu kullanıcı adı zaten alınmış.",
+      "thisUsernameContainsInvalidCharacters": "Bu kullanıcı adı geçersiz karakterler içeriyor.",
+      "thisUsernameIsReserved": "Bu kullanıcı adı ayrılmış.",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "Zayıf parola. Sunucu parolayı reddetti, lütfen daha güçlü bir parola seçin.",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "Kısa parola. Sunucu parolayı reddetti, lütfen daha uzun bir parola seçin.",
+      "registrationToken": "Kayıt belirteci",
+      "registrationTokenOptional": "Kayıt belirteci (isteğe bağlı)",
+      "email": "E-posta",
+      "emailOptional": "E-posta (isteğe bağlı)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "Kayıt olunamadı. Sunucu kayıt isteğinizi hız sınırına taktı. Lütfen bir süre sonra tekrar deneyin.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "Kayıt olunamadı. Ana sunucu kayda izin vermiyor.",
+      "failedToRegisterInvalidRequest": "Kayıt olunamadı. Geçersiz istek.",
+      "failedToRegisterUnknownReason": "Kayıt olunamadı. Nedeni bilinmiyor.",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Kayıt başarılı, ancak bu tarayıcı hesabı kaydedemedi. Depolama izinlerini kontrol edip giriş yapmayı deneyin.",
+      "acceptTerms": "Sunucunun <terms>Hüküm ve Koşullarını</terms> kabul ediyorum."
+    },
+    "register": {
+      "register": "Kayıt ol",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Bu istemci Apple ile giriş yapılmasını gerektirir. Ana sunucunun SSO sağlayıcı listesine Apple'ı ekleyin.",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "Bu ana sunucu yalnızca Apple, Google veya GitHub ile kayda izin veriyor.",
+      "registrationHasBeenDisabledOnThisHomeserver": "Bu ana sunucuda kayıt devre dışı bırakılmış.",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "Hız sınırına takıldınız! Lütfen bir süre sonra tekrar deneyin.",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "Geçersiz istek! Hiçbir kayıt seçeneği alınamadı.",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "Bu uygulama bu ana sunucuda kaydı desteklemiyor.",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "Bu ana sunucuda SSO ile kayıt gerekiyor, ancak hiçbir SSO sağlayıcısı bildirilmedi.",
+      "login": "Giriş yap",
+      "accountLink": "Zaten hesabınız var mı? <authLink>Giriş yapın</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "Parola başarıyla sıfırlandı. Lütfen yeni parolanızla giriş yapın.",
+      "login": "Giriş yap",
+      "email": "E-posta",
+      "newPassword": "Yeni parola",
+      "confirmPassword": "Parolayı onayla",
+      "resetPassword": "Parolayı sıfırla",
+      "resetEmailDescription": "<strong>{{server}}</strong> ana sunucusu, parolanızı sıfırlayabilmeniz için size bir e-posta gönderecek.",
+      "failedToResetPassword": "Parola sıfırlanamadı."
+    },
+    "resetPassword": {
+      "resetPassword": "Parolayı sıfırla",
+      "login": "Giriş yap",
+      "accountLink": "Parolanızı hatırladınız mı? <authLink>Giriş yapın</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "Güncelleniyor...",
+      "startupRecoveryOptions": "Başlangıç kurtarma seçenekleri",
+      "logout": "Çıkış yap",
+      "retry": "Tekrar dene",
+      "clearCacheAndReload": "Önbelleği temizle ve yeniden yükle",
+      "removeAccount": "Hesabı kaldır",
+      "clearing": "Temizleniyor...",
+      "failedToStartAccountValue1Value2": "{{value1}} hesabı başlatılamadı. {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "İptal et ve girişe dön",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "Ana sunucuya bağlanılamıyor. Ana sunucu veya internet bağlantınız çalışmıyor olabilir.",
+      "retry": "Tekrar dene",
+      "continue": "Devam et",
+      "connectingToServer": "Sunucuya bağlanılıyor",
+      "clearing": "Temizleniyor...",
+      "clearCacheAndReload": "Önbelleği temizle ve yeniden yükle"
+    },
+    "syncStatus": {
+      "catchingUp": "Güncelleniyor...",
+      "connectionLostReconnecting": "Bağlantı kesildi! Yeniden bağlanılıyor...",
+      "connectionLost": "Bağlantı kesildi!"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "Yerel MindRoom'u ayarla",
+      "openLocalMindroomSettings": "Yerel MindRoom ayarlarını aç",
+      "enterPairCode": "Kodunuz mu var? Yerel MindRoom'da girin",
+      "poweredBy": "Altyapı: <links />",
+      "title": "{{appName}} uygulamasına hoş geldiniz",
+      "subtitle": "Sohbet odalarınızda yaşayan yapay zekâ ajanları.",
+      "docs": "Belgeler",
+      "sourceCode": "Kaynak kodu",
+      "setupStep1": "1. {{command}} komutunu çalıştırın",
+      "setupStep2": "2. Model kimlik bilgilerini {{envFile}} dosyasına ekleyin veya {{command}} komutunu çalıştırın",
+      "setupStep3": "3. {{command}} ile başlatın, ardından bağlantıyı onaylamak için yazdırdığı bağlantıyı açın"
+    },
+    "create": {
+      "createSpace": "Alan oluştur",
+      "buildASpaceForYourCommunity": "Topluluğunuz için bir alan oluşturun."
+    },
+    "directCreate": {
+      "createChat": "Sohbet oluştur",
+      "startAPrivateEncryptedChatByEnteringAUserId": "Bir kullanıcı kimliği girerek özel, şifreli bir sohbet başlatın."
+    },
+    "explore": {
+      "addServer": "Sunucu ekle",
+      "addServerNameToExplorePublicCommunities": "Herkese açık toplulukları keşfetmek için sunucu adı ekleyin.",
+      "serverName": "Sunucu adı",
+      "failedToLoadPublicRoomsPleaseTryAgain": "Herkese açık odalar yüklenemedi. Lütfen tekrar deneyin.",
+      "view": "Görüntüle",
+      "exploreCommunity": "Toplulukları keşfet",
+      "featured": "Öne çıkanlar",
+      "servers": "Sunucular"
+    },
+    "featured": {
+      "featuredByClient": "İstemcinin öne çıkardıkları",
+      "featuredSpaces": "Öne çıkan alanlar",
+      "featuredRooms": "Öne çıkan odalar",
+      "noRoomsOrSpacesFeaturedByClientProvider": "İstemci sağlayıcısının öne çıkardığı oda veya alan yok.",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "İstemci sağlayıcısının öne çıkardığı herkese açık odaları ve alanları bulun ve keşfedin."
+    },
+    "server": {
+      "search": "Ara",
+      "searchForKeyword": "Anahtar sözcük ara",
+      "clear": "Temizle",
+      "enter": "Enter",
+      "protocols": "Protokoller",
+      "presets": "Ön ayarlar",
+      "customLimit": "Özel sınır",
+      "perPageItemLimit": "Sayfa başına öğe sınırı",
+      "changeLimit": "Sınırı değiştir",
+      "popularCommunities": "Popüler topluluklar",
+      "previousPage": "Önceki sayfa",
+      "nextPage": "Sonraki sayfa",
+      "noCommunitiesFound": "Topluluk bulunamadı!",
+      "pageLimitValue1": "Sayfa sınırı: {{value1}}",
+      "resultsForValue1": "\"{{value1}}\" için sonuçlar"
+    },
+    "createRoom": {
+      "createRoom": "Oda oluştur",
+      "buildARoomForRealTimeConversations": "Gerçek zamanlı sohbetler için bir oda oluşturun."
+    },
+    "search": {
+      "messageSearch": "Mesaj arama"
+    },
+    "inbox": {
+      "invites": "Davetler",
+      "inbox": "Gelen kutusu",
+      "notifications": "Bildirimler"
+    },
+    "invites": {
+      "encrypted": "Şifreli",
+      "directMessage": "Doğrudan mesaj",
+      "space": "Alan",
+      "decline": "Geri çevir",
+      "accept": "Kabul et",
+      "primary": "Birincil",
+      "public": "Herkese açık",
+      "spam": "Spam",
+      "noInvites": "Davet yok",
+      "declineAll": "Tümünü geri çevir",
+      "acceptAll": "Tümünü kabul et",
+      "reportAll": "Tümünü bildir",
+      "blockAll": "Tümünü engelle",
+      "noSpamInvites": "Spam davet yok",
+      "invites": "Davetler",
+      "filter": "Filtre",
+      "hideAll": "Tümünü gizle",
+      "viewAll": "Tümünü görüntüle",
+      "reason": "Neden: {{reason}}",
+      "from": "Gönderen: <b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "Ortak bir odada bulunduğunuz biri size davet gönderdiğinde burada görünür.",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "Odalarınızın dışındaki kişilerden gelen davetler burada görünür.",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "Aşağıdaki davetlerden bazıları zararlı içerik barındırabilir veya yasaklanmış kullanıcılar tarafından gönderilmiş olabilir.",
+      "invitesDetectedAsSpamAppearHere": "Spam olarak algılanan davetler burada görünür.",
+      "spamInvites_one": "{{count, number}} spam davet",
+      "spamInvites_other": "{{count, number}} spam davet"
+    },
+    "notifications": {
+      "open": "Aç",
+      "notificationMessages": "Bildirim mesajları",
+      "filter": "Filtre",
+      "allNotifications": "Tüm bildirimler",
+      "highlighted": "Vurgulananlar",
+      "scrollToTop": "En üste kaydır",
+      "noNotifications": "Bildirim yok",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "Henüz görüntülenecek yeni bildiriminiz yok.",
+      "event": " olayı",
+      "roomTombstone": "Oda değiştirildi. {{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "Sabitlemeyi kaldır",
+      "invite": "Davet et",
+      "copyLink": "Bağlantıyı kopyala",
+      "spaceSettings": "Alan ayarları",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "{{value1}} alanı seçildi. Yeniden sıralamak için ok tuşlarını kullanın. Bırakmak için boşluk tuşuna basın."
+    },
+    "space": {
+      "invite": "Davet et",
+      "copyLink": "Bağlantıyı kopyala",
+      "spaceSettings": "Alan ayarları",
+      "eventTimeline": "Olay zaman çizelgesi",
+      "leaveSpace": "Alandan ayrıl",
+      "spaceUpgraded": "Alan yükseltildi",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "Bu alan değiştirildi ve artık etkin değil.",
+      "openNewSpace": "Yeni alanı aç",
+      "joinNewSpace": "Yeni alana katıl",
+      "lobby": "Lobi",
+      "messageSearch": "Mesaj arama",
+      "failedToJoinReplacementSpace": "Yeni alana katılınamadı!",
+      "rooms": "Odalar",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "{{value1}} odası seçildi. Yeniden sıralamak için ok tuşlarını kullanın. Bırakmak için boşluk tuşuna basın."
+    },
+    "threads": {
+      "threads": "Konular"
+    },
+    "threadsView": {
+      "loadingThreads": "Konular yükleniyor",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "Henüz hiçbir konuya katılmadınız",
+      "noThreadsMatchYourFilters": "Filtrelerinize uyan konu yok",
+      "clearFilters": "Filtreleri temizle",
+      "thread": "konu",
+      "threads": "konular"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "Desteklenmiyor",
+      "option0": "Yalnızca davetle",
+      "option1": "Katılma isteği ve davet",
+      "option2": "Alan üyeleri veya katılma isteği",
+      "option3": "Alan üyeleri",
+      "option4": "Herkese açık"
+    },
+    "toolbar": {
+      "heading1": "Başlık 1",
+      "heading2": "Başlık 2",
+      "heading3": "Başlık 3",
+      "bold": "Kalın",
+      "italic": "İtalik",
+      "underline": "Altı çizili",
+      "strikeThrough": "Üstü çizili",
+      "inlineCode": "Satır içi kod",
+      "spoiler": "Spoiler",
+      "blockQuote": "Alıntı bloğu",
+      "blockCode": "Kod bloğu",
+      "orderedList": "Sıralı liste",
+      "unorderedList": "Sırasız liste",
+      "exitFormatting": "Biçimlendirmeden çık",
+      "disableMarkdown": "Markdown'ı kapat",
+      "enableMarkdown": "Markdown'ı etkinleştir",
+      "exitValue1": "{{value1}} biçiminden çık"
+    },
+    "reaction": {
+      "others_one": "{{count}} kişi daha",
+      "reactionSummary": "<names>{{names}}</names> :<reaction>{{reaction}}</reaction>: ile tepki verdi",
+      "others_other": "{{count}} kişi daha"
+    },
+    "audioContent": {
+      "pause": "Duraklat",
+      "play": "Oynat"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "Sesli mesajda konuma git"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "Varsayılan",
+      "option1": "Tüm mesajlar",
+      "option2": "Bahsetmeler ve anahtar sözcükler",
+      "option3": "Sessize al"
+    },
+    "authFooter": {
+      "support": "Destek",
+      "privacy": "Gizlilik",
+      "terms": "Koşullar",
+      "poweredBy": "Altyapı: <app>{{appName}}</app>, <matrix>Matrix</matrix>, <cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "Katıl",
+      "notFound": "Sayfa bulunamadı"
+    },
+    "ssoProviders": {
+      "signUpApple": "Apple ile kayıt ol",
+      "signInApple": "Apple ile giriş yap",
+      "continueGoogle": "Google ile devam et",
+      "continueGithub": "GitHub ile devam et",
+      "continueProvider": "{{provider}} ile devam et"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcının katılma isteğini kabul etti {{reason}}",
+      "invited": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcıyı davet etti {{reason}}",
+      "requested": "<b>{{userName}}</b> odaya katılmak istedi {{reason}}",
+      "joined": "<b>{{userName}}</b> odaya katıldı",
+      "rejectedInvitation": "<b>{{userName}}</b> daveti reddetti {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcının katılma isteğini reddetti {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> katılma isteğini geri çekti {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcının davetini iptal etti {{reason}}",
+      "unbanned": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcının yasağını kaldırdı {{reason}}",
+      "left": "<b>{{userName}}</b> odadan ayrıldı {{reason}}",
+      "kicked": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcıyı odadan çıkardı {{reason}}",
+      "banned": "<b>{{senderName}}</b>, <b>{{userName}}</b> adlı kullanıcıyı yasakladı {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> görünen adını <b>{{userName}}</b> olarak değiştirdi",
+      "removedName": "<b>{{prevUserName}}</b> görünen adını kaldırdı",
+      "changedAvatar": "<b>{{userName}}</b> avatarını değiştirdi",
+      "removedAvatar": "<b>{{userName}}</b> avatarını kaldırdı",
+      "broken": "Bozuk üyelik olayı",
+      "unchanged": "Değişiklik içermeyen üyelik olayı"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "Davet edilecek kullanıcı önerileri",
+      "users": "Kullanıcılar",
+      "searching": "Kullanıcılar aranıyor",
+      "noMatches": "Eşleşen kullanıcı yok",
+      "matchingUsers_one": "{{count}} eşleşen kullanıcı",
+      "matchingUsers_other": "{{count}} eşleşen kullanıcı"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "MindRoom Chat yükleniyor"
+    },
+    "commands": {
+      "CommandMe": "Eylem mesajı gönder",
+      "CommandNotice": "Bilgilendirme mesajı gönder",
+      "CommandShrug": "Mesaj olarak ¯\\_(ツ)_/¯ gönder",
+      "CommandTableFlip": "Mesaj olarak {{value1}} gönder",
+      "CommandUnFlip": "Mesaj olarak {{value1}} gönder",
+      "CommandStartDm": "Kullanıcıyla doğrudan mesaj başlat. Örnek: /startdm userId1",
+      "CommandJoin": "Adresiyle odaya katıl. Örnek: /join address1 address2",
+      "CommandLeave": "Geçerli odadan ayrıl.",
+      "CommandInvite": "Kullanıcıyı odaya davet et. Örnek: /invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "Kullanıcının oda davetini iptal et. Örnek: /disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "Kullanıcıyı odadan çıkar. Örnek: /kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "Kullanıcıyı odadan yasakla. Örnek: /ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "Kullanıcının oda yasağını kaldır. Örnek: /unban userId1 userId2",
+      "CommandIgnore": "Kullanıcıyı yoksay. Örnek: /ignore userId1 userId2",
+      "CommandUnIgnore": "Kullanıcıyı yoksaymayı bırak. Örnek: /unignore userId1 userId2",
+      "CommandMyRoomNick": "Geçerli odadaki takma adı değiştir.",
+      "CommandMyRoomAvatar": "Geçerli odadaki profil resmini değiştir. Örnek /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "Odayı doğrudan mesaja dönüştür",
+      "CommandConvertToRoom": "Doğrudan mesajı odaya dönüştür",
+      "CommandDelete": "Kullanıcıların mesajlarını sil. Örnek: /delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "Sunucu erişim denetim listesini yönet. Örnek /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} emojisi"
+    },
+    "fileHeader": {
+      "downloadValue1": "{{value1}} indir"
+    },
+    "time": {
+      "yesterdayValue1": "Dün {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "Oynatma hızı şu anda {{value1}}, değiştirmek için tıklayın"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "{{value1}} tarafından yeni gelen kutusu bildirimi"
+    },
+    "memberFilters": {
+      "joined": "Katılmış",
+      "invited": "Davet edilmiş",
+      "left": "Ayrılmış",
+      "kicked": "Çıkarılmış",
+      "banned": "Yasaklanmış"
+    },
+    "memberSort": {
+      "atoZ": "A'dan Z'ye",
+      "ztoA": "Z'den A'ya",
+      "newest": "En yeni",
+      "oldest": "En eski"
+    },
+    "presence": {
+      "active": "Etkin",
+      "busy": "Meşgul",
+      "away": "Uzakta"
+    },
+    "emojiGroups": {
+      "smileysPeople": "Yüzler ve insanlar",
+      "animalsNature": "Hayvanlar ve doğa",
+      "foodDrinks": "Yiyecek ve içecekler",
+      "activity": "Etkinlik",
+      "travelPlaces": "Seyahat ve yerler",
+      "objects": "Nesneler",
+      "symbols": "Simgeler",
+      "flags": "Bayraklar"
+    },
+    "roomTypes": {
+      "all": "Tümü",
+      "spaces": "Alanlar",
+      "rooms": "Odalar"
+    },
+    "imageUsage": {
+      "both": "Her ikisi",
+      "sticker": "Çıkartma",
+      "emoji": "Emoji"
+    },
+    "powerLevels": {
+      "manager": "Yönetici",
+      "founder": "Kurucu",
+      "admin": "Yönetici",
+      "moderator": "Moderatör",
+      "member": "Üye",
+      "muted": "Sessize alınmış",
+      "team": "Takım {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "Sesli mesaj",
+      "tools_one": "{{count, number}} araç",
+      "tools_other": "{{count, number}} araç"
+    },
+    "threadSummary": {
+      "manual": "Elle düzenlenmiş özet",
+      "title": "Konu özeti",
+      "provenance": "Yapay zekâ tarafından oluşturulan konu özeti",
+      "provenanceCount_one": "Son {{count, number}} mesajın yapay zekâ özeti",
+      "provenanceCount_other": "Son {{count, number}} mesajın yapay zekâ özeti"
+    },
+    "commandPalette": {
+      "shortcutHint": "Açmak için kısayol: <shortcut>{{shortcut}}</shortcut>."
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "Gezinme panelini genişlet",
+      "collapseNavigationPanel": "Gezinme panelini daralt"
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "Mevcut olanı ekle",
+      "search": "Ara",
+      "failedToApplyChangesPleaseTryAgain": "Değişiklikler uygulanamadı! Lütfen tekrar deneyin.",
+      "reset": "Sıfırla",
+      "applyChanges": "Değişiklikleri uygula",
+      "applyWhenReadySelected_one": "Hazır olduğunuzda uygulayın. ({{count}} seçili)",
+      "applyWhenReadySelected_other": "Hazır olduğunuzda uygulayın. ({{count}} seçili)",
+      "noMatchForQuery": "\"{{query}}\" için eşleşme bulunamadı.",
+      "noMatchFound": "Eşleşme bulunamadı",
+      "noRooms": "Oda yok",
+      "noRoomsDescription": "Henüz görüntülenecek odanız yok.",
+      "noSpaces": "Alan yok",
+      "noSpacesDescription": "Henüz görüntülenecek alanınız yok."
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "Bitir"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name> konuşuyor...",
+        "two": "<first>{{first}}</first> ve <second>{{second}}</second> konuşuyor...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> ve <third>{{third}}</third> konuşuyor...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> ve <others>{{count}} kişi daha</others> konuşuyor...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> ve <others>{{count}} kişi daha</others> konuşuyor..."
+      },
+      "liveCount": "{{count}} canlı"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "Tepkiler",
+        "settings": "Ayarlar",
+        "end": "Bitir",
+        "gridView": "Izgara görünümü",
+        "spotlightView": "Odak görünümü"
+      },
+      "callMemberCard": {
+        "collapse": "Daralt",
+        "additionalParticipants_one": "+{{count}} kişi daha",
+        "additionalParticipants_other": "+{{count}} kişi daha"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "Ana sunucunuz aramaları desteklemiyor.",
+        "yourBrowserDoesNotSupportWebrtcWhich": "Tarayıcınız aramalar için gerekli olan WebRTC'yi desteklemiyor.",
+        "voiceChatSEmptyBeTheFirst": "Sesli sohbet boş — İlk katılan siz olun!",
+        "youDonTHavePermissionToJoin": "Katılma izniniz yok!",
+        "alreadyInAnotherCallEndTheCurrent": "Zaten başka bir aramadasınız — Katılmak için geçerli aramayı bitirin!",
+        "participant": "Katılımcı",
+        "voiceCallError": "Sesli arama hatası",
+        "dismissVoiceCallError": "Sesli arama hatasını kapat"
+      },
+      "prescreenControls": {
+        "join": "Katıl"
+      },
+      "controls": {
+        "closeChat": "Sohbeti kapat",
+        "openChat": "Sohbeti aç",
+        "startCamera": "Kamerayı başlat",
+        "startScreenshare": "Ekran paylaşımını başlat",
+        "stopCamera": "Kamerayı durdur",
+        "stopScreenshare": "Ekran paylaşımını durdur",
+        "turnOffMicrophone": "Mikrofonu kapat",
+        "turnOffSound": "Sesi kapat",
+        "turnOnMicrophone": "Mikrofonu aç",
+        "turnOnSound": "Sesi aç"
+      },
+      "liveCount": "{{count}} canlı"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "Geliştirici araçları",
+          "options": "Seçenekler",
+          "enableDeveloperTools": "Geliştirici araçlarını etkinleştir",
+          "roomId": "Oda kimliği",
+          "copy": "Kopyala",
+          "data": "Veriler",
+          "newMessageEvent": "Yeni mesaj olayı",
+          "createAndSendANewMessageEvent": "Odada yeni bir mesaj olayı oluşturun ve gönderin.",
+          "compose": "Oluştur",
+          "roomState": "Oda durumu",
+          "stateEventsOfTheRoom": "Odanın durum olayları.",
+          "events": "Olaylar",
+          "addNew": "Yeni ekle",
+          "accountData": "Hesap verileri",
+          "privatePersonalizationDataStoredWithinRoom": "Odada saklanan özel kişiselleştirme verileri.",
+          "collapse": "Daralt",
+          "copyRoomIdDescription": "Oda kimliğini panoya kopyala. (\"{{roomId}}\")",
+          "expand": "Genişlet",
+          "total": "Toplam: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "Geliştirici araçları",
+          "send": "Gönder",
+          "stateKeyOptional": "Durum anahtarı (isteğe bağlı)",
+          "jsonContent": "JSON içeriği",
+          "messageEventType": "Mesaj olayı türü",
+          "stateEventType": "Durum olayı türü"
+        },
+        "stateEventEditor": {
+          "stateEvent": "Durum olayı",
+          "save": "Kaydet",
+          "cancel": "İptal",
+          "jsonContent": "JSON içeriği",
+          "edit": "Düzenle",
+          "developerTools": "Geliştirici araçları"
+        },
+        "defaultStateKey": "Varsayılan"
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emojiler ve çıkartmalar",
+        "roomPacks": {
+          "newPack": "Yeni paket",
+          "addYourOwnEmojiAndStickerPack": "Odada kullanmak için kendi emoji ve çıkartma paketinizi ekleyin.",
+          "name": "Ad",
+          "create": "Oluştur",
+          "view": "Görüntüle",
+          "packs": "Paketler",
+          "noPacks": "Paket yok",
+          "thereAreNoEmojiOrStickerPacks": "Şu anda görüntülenecek emoji veya çıkartma paketi yok.",
+          "failedToRemovePacksPleaseTryAgain": "Paketler kaldırılamadı! Lütfen tekrar deneyin.",
+          "cancel": "İptal",
+          "delete": "Sil",
+          "deleteSelectedPacks_one": "Seçili paketleri sil. ({{count}} seçili)",
+          "deleteSelectedPacks_other": "Seçili paketleri sil. ({{count}} seçili)",
+          "unknown": "Bilinmiyor"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "Oda şifrelemesi",
+          "enabled": "Etkin",
+          "enable": "Etkinleştir",
+          "enableEncryption": "Şifrelemeyi etkinleştir",
+          "areYouSureOnceEnabledEncryptionCannot": "Emin misiniz? Şifreleme etkinleştirildikten sonra kapatılamaz!",
+          "enableE2eEncryption": "Uçtan uca şifrelemeyi etkinleştir",
+          "disabledDescription": "Şifreleme etkinleştirildikten sonra kapatılamaz!",
+          "enabledDescription": "Bu odadaki mesajlar uçtan uca şifrelemeyle korunuyor."
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "Mesaj geçmişi görünürlüğü",
+          "changesToHistoryVisibilityWillOnlyApply": "Geçmiş görünürlüğü değişiklikleri yalnızca gelecekteki mesajlara uygulanır. Mevcut geçmişin görünürlüğü değişmez.",
+          "afterInvite": "Davetten sonra",
+          "afterJoin": "Katıldıktan sonra",
+          "allMessages": "Tüm mesajlar",
+          "allMessagesGuests": "Tüm mesajlar (misafirler)"
+        },
+        "roomProfile": {
+          "avatar": "Avatar",
+          "upload": "Yükle",
+          "reset": "Sıfırla",
+          "remove": "Kaldır",
+          "name": "Ad",
+          "topic": "Konu açıklaması",
+          "save": "Kaydet",
+          "cancel": "İptal",
+          "profile": "Profil",
+          "edit": "Düzenle",
+          "unknown": "Bilinmiyor"
+        },
+        "roomPublish": {
+          "publishToDirectory": "Dizinde yayımla",
+          "roomDescription": "Başkalarının bulabilmesi için odayı herkese açık dizinde listeleyin.",
+          "spaceDescription": "Başkalarının bulabilmesi için alanı herkese açık dizinde listeleyin."
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "Bu işlem geri alınamaz!",
+          "options": "Seçenekler",
+          "upgrade": "Yükselt",
+          "currentVersion": "Geçerli sürüm: {{version}}.",
+          "oldRoom": "Eski oda",
+          "oldSpace": "Eski alan",
+          "openNewRoom": "Yeni odayı aç",
+          "openNewSpace": "Yeni alanı aç",
+          "roomReplaced": "Bu oda değiştirildi!",
+          "roomUpgrade": "Oda yükseltmesi",
+          "spaceReplaced": "Bu alan değiştirildi!",
+          "spaceUpgrade": "Alan yükseltmesi",
+          "upgradeRoom": "Odayı yükselt",
+          "upgradeSpace": "Alanı yükselt"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "Adres zaten kullanılıyor!",
+          "collapse": "Daralt",
+          "delete": "Sil",
+          "expand": "Genişlet",
+          "loading": "Yükleniyor...",
+          "localAddresses": "Yerel adresler",
+          "localAddressesDescription": "Kullanıcıların ana sunucunuz üzerinden katılabilmesi için yerel adres ayarlayın.",
+          "main": "Ana",
+          "noAddresses": "Adres yok",
+          "publish": "Yayımla",
+          "publishRequiresLocalAddress": "Bir adresi yayımlamak için önce yerel adres olarak ayarlanması gerekir",
+          "published": "Yayımlanmış",
+          "publishedAddresses": "Yayımlanmış adresler",
+          "publishedAddressesDescription": "Erişim <public>Herkese açık</public> ise herkes yayımlanmış adresleri kullanarak katılabilir.",
+          "save": "Kaydet",
+          "selectedCount_one": "{{count}} seçili",
+          "selectedCount_other": "{{count}} seçili",
+          "setMain": "Ana adres yap",
+          "unpublish": "Yayından kaldır",
+          "unsetMain": "Ana adres olmaktan çıkar"
+        },
+        "roomJoinRules": {
+          "roomAccess": "Oda erişimi",
+          "roomDescription": "İnsanların odaya nasıl katılabileceğini değiştirin.",
+          "spaceAccess": "Alan erişimi",
+          "spaceDescription": "İnsanların alana nasıl katılabileceğini değiştirin."
+        }
+      },
+      "members": {
+        "search": "Ara",
+        "scrollToTop": "En üste kaydır",
+        "memberCount_one": "{{count}} üye",
+        "memberCount_other": "{{count}} üye",
+        "noMembersForFilter": "\"{{filter}}\" üye yok",
+        "noResults": "Sonuç yok",
+        "resultCount_one": "{{count}} sonuç",
+        "resultCount_other": "{{count}} sonuç"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "Kullanıcılar",
+          "defaultPower": "Varsayılan yetki",
+          "defaultPowerLevelForAllUsers": "Tüm kullanıcılar için varsayılan yetki düzeyi.",
+          "above": "ve üstü",
+          "failedToApplyChangesPleaseTryAgain": "Değişiklikler uygulanamadı! Lütfen tekrar deneyin.",
+          "changesSavedApplyWhenReady": "Değişiklikler kaydedildi! Hazır olduğunuzda uygulayın.",
+          "reset": "Sıfırla",
+          "applyChanges": "Değişiklikleri uygula"
+        },
+        "powers": {
+          "founders": "Kurucular",
+          "foundingMembersHasAllPermissionsAndCan": "Kurucu üyeler tüm izinlere sahiptir ve yalnızca yükseltme sırasında değiştirilebilir.",
+          "powerLevels": "Yetki düzeyleri",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "Kullanıcılar için kademeli yetki düzeylerini yönetin ve özelleştirin.",
+          "edit": "Düzenle"
+        },
+        "powersEditor": {
+          "color": "Renk",
+          "pick": "Seç",
+          "name": "Ad",
+          "bot": "Bot",
+          "power": "Yetki",
+          "icon": "Simge",
+          "remove": "Kaldır",
+          "import": "İçe aktar",
+          "save": "Kaydet",
+          "cancel": "İptal",
+          "permissions": "İzinler",
+          "powerLevels": "Yetki düzeyleri",
+          "newPowerLevel": "Yeni yetki düzeyi",
+          "createANewPowerLevel": "Yeni bir yetki düzeyi oluşturun.",
+          "create": "Oluştur",
+          "undo": "Geri al",
+          "usedPowerLevel": "Kullanılan yetki düzeyi",
+          "youHaveToRemoveItsUseBefore": "Silebilmek için önce kullanımını kaldırmanız gerekir.",
+          "delete": "Sil",
+          "edit": "Düzenle",
+          "failedToApplyChangesPleaseTryAgain": "Değişiklikler uygulanamadı! Lütfen tekrar deneyin.",
+          "changesSavedApplyWhenReady": "Değişiklikler kaydedildi! Hazır olduğunuzda uygulayın.",
+          "reset": "Sıfırla",
+          "applyChanges": "Değişiklikleri uygula"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "Kullanıcı kimliği",
+      "userSuggestions": "Kullanıcı önerileri",
+      "pleaseEnterAValidUserId": "Lütfen geçerli bir kullanıcı kimliği girin.",
+      "options": "Seçenekler",
+      "endToEndEncryption": "Uçtan uca şifreleme",
+      "onceThisFeatureIsEnabledItCan": "Bu özellik etkinleştirildiğinde, oda oluşturulduktan sonra kapatılamaz.",
+      "create": "Oluştur",
+      "rateLimited_one": "Sunucu isteğinizi {{count}} dakika boyunca hız sınırına taktı!",
+      "rateLimited_other": "Sunucu isteğinizi {{count}} dakika boyunca hız sınırına taktı!"
+    },
+    "createRoom": {
+      "type": "Tür",
+      "access": "Erişim",
+      "name": "Ad",
+      "topicOptional": "Konu açıklaması (isteğe bağlı)",
+      "options": "Seçenekler",
+      "advancedOptions": "Gelişmiş seçenekler",
+      "endToEndEncryption": "Uçtan uca şifreleme",
+      "onceThisFeatureIsEnabledItCan": "Bu özellik etkinleştirildiğinde, oda oluşturulduktan sonra kapatılamaz.",
+      "knockToJoin": "Katılma isteği gönder",
+      "anyoneCanSendRequestToJoinThis": "Herkes bu odaya katılma isteği gönderebilir.",
+      "allowFederation": "Federasyona izin ver",
+      "usersFromOtherServersCanJoin": "Diğer sunuculardaki kullanıcılar katılabilir.",
+      "create": "Oluştur",
+      "newChatRoom": "Yeni sohbet odası",
+      "newVoiceRoom": "Yeni sesli oda",
+      "rateLimited_one": "Sunucu isteğinizi {{count}} dakika boyunca hız sınırına taktı!",
+      "rateLimited_other": "Sunucu isteğinizi {{count}} dakika boyunca hız sınırına taktı!"
+    },
+    "createSpace": {
+      "access": "Erişim",
+      "name": "Ad",
+      "topicOptional": "Konu açıklaması (isteğe bağlı)",
+      "options": "Seçenekler",
+      "advancedOptions": "Gelişmiş seçenekler",
+      "knockToJoin": "Katılma isteği gönder",
+      "anyoneCanSendRequestToJoinThis": "Herkes bu alana katılma isteği gönderebilir.",
+      "allowFederation": "Federasyona izin ver",
+      "usersFromOtherServersCanJoin": "Diğer sunuculardaki kullanıcılar katılabilir.",
+      "create": "Oluştur",
+      "createSpaceModal": {
+        "newSpace": "Yeni alan"
+      },
+      "rateLimited_one": "Sunucu isteğinizi {{count}} dakika boyunca hız sınırına taktı!",
+      "rateLimited_other": "Sunucu isteğinizi {{count}} dakika boyunca hız sınırına taktı!"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "Kaldır",
+        "invite": "Davet et",
+        "settings": "Ayarlar",
+        "leave": "Ayrıl",
+        "pinToSidebar": "Kenar çubuğuna sabitle",
+        "setSuggested": "Önerilen olarak ayarla",
+        "unpinFromSidebar": "Kenar çubuğundan kaldır",
+        "unsetSuggested": "Önerilenlerden çıkar"
+      },
+      "scrollToTop": "En üste kaydır",
+      "reordering": "Yeniden sıralanıyor",
+      "lobbyHeader": {
+        "invite": "Davet et",
+        "spaceSettings": "Alan ayarları",
+        "leaveSpace": "Alandan ayrıl",
+        "members": "Üyeler",
+        "moreOptions": "Diğer seçenekler"
+      },
+      "roomItem": {
+        "accessUnavailable": "Erişim kullanılamıyor",
+        "unknown": "Bilinmiyor",
+        "suggested": "Önerilen",
+        "inaccessible": "Erişilemiyor",
+        "openRoom": "Odayı aç",
+        "join": "Katıl",
+        "memberCount_one": "{{formattedCount}} üye",
+        "memberCount_other": "{{formattedCount}} üye",
+        "requestSent": "İstek gönderildi",
+        "requestToJoin": "Katılma isteği",
+        "sendingRequest": "İstek gönderiliyor"
+      },
+      "spaceHierarchy": {
+        "noRooms": "Oda yok",
+        "thisSpaceDoesNotContainsRoomsYet": "Bu alanda henüz oda yok."
+      },
+      "spaceItem": {
+        "unknown": "Bilinmiyor",
+        "inaccessible": "Erişilemiyor",
+        "suggested": "Önerilen",
+        "accessUnavailable": "Erişim kullanılamıyor",
+        "rooms": "Odalar",
+        "chatRoom": "Sohbet odası",
+        "voiceRoom": "Sesli oda",
+        "existingRoom": "Mevcut oda",
+        "addRoom": "Oda ekle",
+        "newSpace": "Yeni alan",
+        "existingSpace": "Mevcut alan",
+        "addSpace": "Alan ekle",
+        "requestSent": "İstek gönderildi",
+        "requestToJoin": "Katılma isteği"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "Bildirimler",
+        "invite": "Davet et",
+        "copyLink": "Bağlantıyı kopyala",
+        "roomSettings": "Oda ayarları",
+        "leaveRoom": "Odadan ayrıl",
+        "toggleChat": "Sohbeti aç/kapat",
+        "moreOptions": "Diğer seçenekler"
+      },
+      "liveCount": "{{count}} canlı"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "Zaman çizelgesi",
+        "general": "Genel",
+        "options": "Seçenekler",
+        "addresses": "Adresler",
+        "advancedOptions": "Gelişmiş seçenekler",
+        "compact": "Kompakt",
+        "threads": "Konular",
+        "classic": "Klasik",
+        "offline": {
+          "title": "Çevrimdışı erişim",
+          "checking": "Kaydedilen içerik kontrol ediliyor…",
+          "unavailable": "Kaydedilen içerik bu cihazda kullanılamıyor.",
+          "notSaved": "Bu oda henüz çevrimdışı kullanım için kaydedilmedi.",
+          "downloading": "Bu oda çevrimdışı kullanım için indiriliyor…",
+          "offlinePause": "Cihaz çevrimdışıyken kaydetme duraklatılır.",
+          "backgroundPause": "Uygulama arka plandayken kaydetme duraklatılır.",
+          "spacePause": "Korunan içerik depolama sınırını doldurduğu için kaydetme duraklatıldı.",
+          "readOnlyPause": "Depolama başarısız oldu. Kaydetmeye devam etmek için uygulamayı yeniden açın.",
+          "connectionPause": "Bu bağlantıda otomatik kaydetme duraklatıldı.",
+          "errorPause": "Bir hatadan sonra kaydetme duraklatıldı. Tekrar deneyin.",
+          "partialHistory": "Önceki geçmişin bir bölümü kaydedilmedi.",
+          "inaccessibleHistory": "Geçmişin bir bölümüne şu anda erişilemiyor.",
+          "waitingForKeys": "Anahtar bekleyen şifrelenmiş etkinlikler: {{count}}",
+          "unresolvedRelations": "Çözümlenmemiş düzenlemeler veya yanıtlar: {{count}}",
+          "missingEssential": "Eksik temel mesaj gövdeleri: {{count}}",
+          "historyEntries": "Kaydedilen geçmiş girdileri: {{count}}",
+          "attachments": "Ekler: {{saved}} kaydedildi, {{missing}} eksik.",
+          "storageUsed": "Eklerin kullandığı depolama alanı: {{size}}",
+          "pinFailed": "“Çevrimdışı tut” güncellenemedi.",
+          "includeAllMedia": "Tüm medyayı dahil et",
+          "keepOffline": "Çevrimdışı tut",
+          "keepOfflineDescription": "Otomatik temizleme sırasında bu odanın kaydedilmiş medyasını koru.",
+          "cancelDownload": "İndirmeyi iptal et",
+          "downloadEntireRoom": "Tüm odayı indir",
+          "clearDownloadedContent": "İndirilen içeriği temizle",
+          "clearTitle": "İndirilen içerik temizlensin mi?",
+          "cancel": "İptal",
+          "clearDescription": "Bu odanın kaydedilen geçmişi ve ekleri bu cihazdan kaldırılacak.",
+          "clearFailed": "İndirilen içerik temizlenemedi.",
+          "clearConfirm": "İçeriği temizle"
+        }
+      },
+      "permissions": {
+        "permissions": "İzinler",
+        "ban": "Yasakla",
+        "changeAllPermission": "Tüm izinleri değiştir",
+        "changeRoomAccess": "Oda erişimini değiştir",
+        "changeServerAcls": "Sunucu erişim denetim listelerini değiştir",
+        "deleteOthersMessages": "Başkalarının mesajlarını sil",
+        "deleteSelfMessages": "Kendi mesajlarını sil",
+        "editPowerLevels": "Yetki düzeylerini düzenle",
+        "enableEncryption": "Şifrelemeyi etkinleştir",
+        "groups": {
+          "calls": "Aramalar",
+          "messages": "Mesajlar",
+          "moderation": "Moderasyon",
+          "other": "Diğer",
+          "roomOverview": "Oda genel görünümü",
+          "settings": "Ayarlar"
+        },
+        "historyVisibility": "Geçmiş görünürlüğü",
+        "invite": "Davet et",
+        "kick": "Odadan çıkar",
+        "manageEmojisStickers": "Emoji ve çıkartmaları yönet",
+        "modifyWidgets": "Widget'ları değiştir",
+        "otherMessageEvents": "Diğer mesaj olayları",
+        "otherSettings": "Diğer ayarlar",
+        "pinMessages": "Mesajları sabitle",
+        "pingRoom": "@room ile herkese bildirim gönder",
+        "publishAddress": "Adresi yayımla",
+        "roomAvatar": "Oda avatarı",
+        "roomName": "Oda adı",
+        "roomTopic": "Oda konu açıklaması",
+        "sendMessages": "Mesaj gönder",
+        "sendReactions": "Tepki gönder",
+        "sendStickers": "Çıkartma gönder",
+        "startOrJoinCall": "Arama başlat veya katıl",
+        "upgradeRoom": "Odayı yükselt"
+      },
+      "navigation": {
+        "developerTools": "Geliştirici araçları",
+        "emojisStickers": "Emojiler ve çıkartmalar",
+        "general": "Genel",
+        "members": "Üyeler",
+        "permissions": "İzinler"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "Sohbet",
+        "close": "Kapat"
+      },
+      "commandAutocomplete": {
+        "commands": "Komutlar"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "Mesaj belirtilmedi.",
+        "decline": "Geri çevir",
+        "approve": "Onayla",
+        "approveFromUser": "{{userId}} kullanıcısının katılma isteğini onayla",
+        "approvedWaitingForSync": "Onaylandı. Odanın eşitlenmesi bekleniyor…",
+        "approving": "Onaylanıyor…",
+        "declineFromUser": "{{userId}} kullanıcısının katılma isteğini reddet",
+        "declinedWaitingForSync": "Reddedildi. Odanın eşitlenmesi bekleniyor…",
+        "declining": "Reddediliyor…",
+        "updateFailed": "İstek güncellenemedi."
+      },
+      "membersDrawer": {
+        "invite": "Davet et",
+        "invitePeople": "Kişileri davet et",
+        "close": "Kapat",
+        "typeName": "Ad yazın...",
+        "scrollToTop": "En üste kaydır",
+        "memberCount_one": "{{count}} üye",
+        "memberCount_other": "{{count}} üye",
+        "noMembersForFilter": "\"{{filter}}\" üye yok",
+        "noPendingJoinRequests": "Bekleyen katılma isteği yok",
+        "noResults": "Sonuç yok",
+        "requestCount_one": "İstekler ({{count}})",
+        "requestCount_other": "İstekler ({{count}})",
+        "invitedCount_one": "{{count}} davetli",
+        "invitedCount_other": "{{count}} davetli",
+        "resultCount_one": "{{count}} sonuç",
+        "resultCount_other": "{{count}} sonuç",
+        "formattedMemberCount_one": "{{formattedCount}} üye",
+        "formattedMemberCount_other": "{{formattedCount}} üye"
+      },
+      "roomTombstone": {
+        "openNewRoom": "Yeni odayı aç",
+        "joinNewRoom": "Yeni odaya katıl",
+        "joinReplacementFailed": "Yeni odaya katılınamadı!",
+        "replacedDescription": "Bu oda değiştirildi ve artık etkin değil."
+      },
+      "jumpToTime": {
+        "jumpToTime": "Zamana git",
+        "time": "Saat",
+        "date": "Tarih",
+        "preset": "Ön ayar",
+        "today": "Bugün",
+        "yesterday": "Dün",
+        "beginning": "Başlangıç",
+        "openTimeline": "Zaman çizelgesini aç"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "Mesajı düzenle...",
+          "save": "Kaydet",
+          "cancel": "İptal"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> yazıyor...",
+        "two": "<first>{{first}}</first> ve <second>{{second}}</second> yazıyor...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> ve <third>{{third}}</third> yazıyor...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> ve <others>{{count}} kişi daha</others> yazıyor...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> ve <others>{{count}} kişi daha</others> yazıyor...",
+        "dropTypingStatus": "Yazma durumunu kaldır"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> sohbeti takip ediyor.",
+        "two": "<first>{{first}}</first> ve <second>{{second}}</second> sohbeti takip ediyor.",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> ve <third>{{third}}</third> sohbeti takip ediyor.",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> ve <others>{{count}} kişi daha</others> sohbeti takip ediyor.",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> ve <others>{{count}} kişi daha</others> sohbeti takip ediyor."
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}, {{count}} bekleyen katılma isteği",
+        "accessibleLabel_other": "{{baseLabel}}, {{count}} bekleyen katılma isteği"
+      },
+      "reactionViewer": {
+        "reactedWith": ":{{shortcode}}: ile tepki verdi"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "Hesap",
+        "accountDeactivation": {
+          "accountManagement": "Hesap yönetimi",
+          "deleteDeactivateAccount": "Hesabı sil / devre dışı bırak",
+          "deleteDeactivate": "Sil / devre dışı bırak",
+          "openProviderPortal": "Sağlayıcı portalını aç",
+          "thisWillRequestAccountDeactivationOnYour": "Bu işlem Matrix ana sunucunuzdan hesabınızın devre dışı bırakılmasını isteyecek. Mesajlarınıza ve oturumlarınıza erişiminizi kaybedebilirsiniz.",
+          "eraseAccountDataIfSupported": "Hesap verilerini sil (destekleniyorsa)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "Etkinleştirilirse ana sunucu hesabınızı devre dışı bırakmanın yanı sıra hesap verilerinizi kalıcı olarak silebilir.",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "Hesabı devre dışı bırakmayı tamamlamak için ek kimlik doğrulama gerekiyor.",
+          "thisClientDoesNotSupportTheRequired": "Bu istemci bu ana sunucunun gerektirdiği kimlik doğrulama adımlarını desteklemiyor.",
+          "continueInProviderPortal": "Sağlayıcı portalında devam et",
+          "cancel": "İptal",
+          "deactivationFailed": "Hesap devre dışı bırakılamadı. {{error}}",
+          "descriptionWithProvider": "Hesabınızı devre dışı bırakmayı bu istemciden başlatın. Gerekirse sağlayıcının hesap yönetimi sayfasında devam edebilirsiniz.",
+          "descriptionWithoutProvider": "Hesabınızı devre dışı bırakmayı bu istemciden başlatın. Bazı ana sunucular ek kimlik doğrulama adımları gerektirebilir."
+        },
+        "contactInfo": {
+          "contactInformation": "İletişim bilgileri",
+          "emailAddress": "E-posta adresi",
+          "emailAddressAttachedToYourAccount": "Hesabınıza bağlı e-posta adresi."
+        },
+        "ignoredUserList": {
+          "block": "Engelle",
+          "blockedUsers": "Engellenen kullanıcılar",
+          "selectUser": "Kullanıcı seç",
+          "preventReceivingMessagesOrInvitesFromUser": "Kullanıcı kimliğini ekleyerek bu kişiden mesaj veya davet alınmasını engelleyin.",
+          "users": "Kullanıcılar"
+        },
+        "matrixId": {
+          "matrixId": "Matrix kimliği",
+          "copy": "Kopyala",
+          "copied": "Kopyalandı"
+        },
+        "profile": {
+          "avatar": "Avatar",
+          "upload": "Yükle",
+          "remove": "Kaldır",
+          "removeAvatar": "Avatarı kaldır",
+          "areYouSureYouWantToRemove": "Profil avatarını kaldırmak istediğinizden emin misiniz?",
+          "displayName": "Görünen ad",
+          "save": "Kaydet",
+          "profile": "Profil",
+          "unnamedFile": "Adsız"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "Hesap verileri",
+          "global": "Genel",
+          "dataStoredInYourGlobalAccountData": "Hesabınızın genel verilerinde saklanan veriler.",
+          "events": "Olaylar",
+          "addNew": "Yeni ekle",
+          "collapse": "Daralt",
+          "expand": "Genişlet",
+          "total": "Toplam: {{count}}"
+        },
+        "developTools": {
+          "developerTools": "Geliştirici araçları",
+          "options": "Seçenekler",
+          "enableDeveloperTools": "Geliştirici araçlarını etkinleştir",
+          "accessToken": "Erişim belirteci",
+          "copyAccessTokenToClipboard": "Erişim belirtecini panoya kopyala.",
+          "copy": "Kopyala"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "Son etkinlik:",
+          "deviceName": "Cihaz adı",
+          "save": "Kaydet",
+          "cancel": "İptal",
+          "deviceNamesAreVisibleToPublic": "Cihaz adları herkese açıktır.",
+          "logout": "Çıkış yap",
+          "undo": "Geri al",
+          "edit": "Düzenle",
+          "deviceIdValue": "Cihaz kimliği: <value>{{id}}</value>",
+          "deviceKeyValue": "Cihaz anahtarı: <value>{{key}}</value>",
+          "ipAddressValue": "IP adresi: <value>{{address}}</value>",
+          "loading": "yükleniyor...",
+          "today": "Bugün",
+          "yesterday": "Dün"
+        },
+        "devices": "Cihazlar",
+        "security": "Güvenlik",
+        "deviceVerification": "Cihaz doğrulama",
+        "toVerifyDeviceIdentityAndGrantAccess": "Cihaz kimliğini doğrulamak ve şifrelenmiş mesajlara erişim vermek için.",
+        "current": "Geçerli",
+        "localBackup": {
+          "newPassword": "Yeni parola",
+          "confirmPassword": "Parolayı onayla",
+          "export": "Dışa aktar",
+          "exportMessagesData": "Mesaj verilerini dışa aktar",
+          "savePasswordProtectedCopyOfEncryptionData": "Mesajların şifresini daha sonra çözmek için şifreleme verilerinin parola korumalı bir kopyasını cihazınıza kaydedin.",
+          "password": "Parola",
+          "decrypt": "Şifreyi çöz",
+          "importMessagesData": "Mesaj verilerini içe aktar",
+          "loadPasswordProtectedCopyOfEncryptionData": "Mesajlarınızın şifresini çözmek için cihazdan parola korumalı şifreleme verisi kopyasını yükleyin.",
+          "import": "İçe aktar",
+          "localBackup": "Yerel yedek",
+          "collapse": "Daralt",
+          "cryptoModuleNotFound": "Beklenmeyen hata! Şifreleme modülü bulunamadı!",
+          "expand": "Genişlet"
+        },
+        "otherDevices": {
+          "others": "Diğerleri",
+          "deviceDashboard": "Cihaz panosu",
+          "manageYourDevicesOnOidcDashboard": "Cihazlarınızı OIDC panosunda yönetin.",
+          "open": "Aç",
+          "authenticationStepsToPerformThisActionAre": "Bu işlem için gerekli kimlik doğrulama adımları istemci tarafından desteklenmiyor.",
+          "cancel": "İptal",
+          "logout": "Çıkış yap",
+          "logoutFailed": "Cihazlardan çıkış yapılamadı! Lütfen tekrar deneyin. {{error}}",
+          "logoutSelectedDevices_one": "Seçili cihazlardan çıkış yap. ({{count}} seçili)",
+          "logoutSelectedDevices_other": "Seçili cihazlardan çıkış yap. ({{count}} seçili)"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "Başka bir cihazdan doğrulamayı başlatın veya elle doğrulayın. <toggle><strong>Daha az göster</strong></toggle>",
+          "currentDeviceHelpMore": "Başka bir cihazdan doğrulamayı başlatın veya elle doğrulayın. <toggle><strong>Daha fazla bilgi</strong></toggle>",
+          "enable": "Etkinleştir",
+          "findDevice": "Bu cihazı <section>Cihazlar/Oturumlar</section> bölümünde bulun.",
+          "initiateVerification": "Doğrulamayı başlatın.",
+          "manualVerificationHint": "Doğrulanmış bir cihazınız yoksa <action>\"Elle doğrula\"</action> düğmesine basın.",
+          "openSettings": "<settings>Ayarlar</settings>'ı açın.",
+          "openVerifiedDevice": "Doğrulanmış diğer cihazınızı açın.",
+          "reset": "Sıfırla",
+          "stepsFromOtherDevice": "Başka bir cihazdan doğrulama adımları.",
+          "unverified": "Doğrulanmadı",
+          "unverifiedCount_one": "{{count}} doğrulanmamış",
+          "unverifiedCount_other": "{{count}} doğrulanmamış",
+          "verified": "Doğrulandı",
+          "verify": "Doğrula",
+          "verifyDeviceDescription": "Cihaz kimliğini doğrulayın ve şifrelenmiş mesajlara erişim verin.",
+          "verifyManually": "Elle doğrula"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emojiler ve çıkartmalar",
+        "globalPacks": {
+          "roomPacks": "Oda paketleri",
+          "noPacks": "Paket yok",
+          "packFromRoomsWillAppearHereYou": "Odalardaki paketler burada görünür. Henüz paket içeren bir odanız yok.",
+          "view": "Görüntüle",
+          "favoritePacks": "Favori paketler",
+          "selectPack": "Paket seç",
+          "pickEmojisAndStickersPackFromRooms": "Tüm odalarda kullanmak için odalardan emoji ve çıkartma paketleri seçin.",
+          "select": "Seç",
+          "failedToApplyChangesPleaseTryAgain": "Değişiklikler uygulanamadı! Lütfen tekrar deneyin.",
+          "changesSavedApplyWhenReady": "Değişiklikler kaydedildi! Hazır olduğunuzda uygulayın.",
+          "reset": "Sıfırla",
+          "applyChanges": "Değişiklikleri uygula",
+          "selectAll": "Tümünü seç",
+          "unknown": "Bilinmiyor",
+          "unselectAll": "Tüm seçimleri kaldır",
+          "save": "Kaydet",
+          "close": "Kapat"
+        },
+        "userPack": {
+          "defaultPack": "Varsayılan paket",
+          "view": "Görüntüle",
+          "unknown": "Bilinmiyor"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "Tüm mesajlar",
+          "badge": "Rozet:",
+          "1To1Chats": "Bire bir sohbetler",
+          "1To1ChatsEncrypted": "Bire bir sohbetler (şifreli)",
+          "rooms": "Odalar",
+          "roomsEncrypted": "Odalar (şifreli)"
+        },
+        "keywordMessages": {
+          "save": "Kaydet",
+          "keywordMessages": "Anahtar kelime mesajları",
+          "badge": "Rozet:",
+          "selectKeyword": "Anahtar kelime seç",
+          "setANotificationPreferenceForMessageContaining": "Belirtilen anahtar kelimeyi içeren mesajlar için bildirim tercihi belirleyin."
+        },
+        "notifications": "Bildirimler",
+        "blockMessages": "Mesajları engelle",
+        "thisOptionHasBeenMovedToAccount": "Bu seçenek \"Hesap > Kullanıcıları engelle\" bölümüne taşındı.",
+        "specialMessages": {
+          "specialMessages": "Özel mesajlar",
+          "badge": "Rozet:",
+          "mentionRoom": "@room etiketlemesi",
+          "containsRoom": "@room içerir",
+          "containsDisplayName": "Görünen adı içerir (\"{{displayName}}\")",
+          "containsDisplayNameGeneric": "Görünen adı içerir",
+          "containsUsername": "Kullanıcı adını içerir (\"{{username}}\")",
+          "mentionUserId": "Kullanıcı kimliği etiketlemesi (\"{{userId}}\")"
+        },
+        "systemNotification": {
+          "emailNotification": "E-posta bildirimi",
+          "yourAccountDoesNotHaveAnyEmail": "Hesabınıza bağlı bir e-posta adresi yok.",
+          "unexpectedError": "Beklenmeyen hata!",
+          "system": "Sistem",
+          "desktopNotifications": "Masaüstü bildirimleri",
+          "showDesktopNotificationsWhenMessageArrive": "Mesaj geldiğinde masaüstü bildirimlerini göster.",
+          "enable": "Etkinleştir",
+          "notificationSound": "Bildirim sesi",
+          "playSoundWhenNewMessageArrive": "Yeni mesaj geldiğinde ses çal.",
+          "notSupported": "Sistem bildirimleri desteklemiyor.",
+          "permissionBlocked": "Bildirim izni engellenmiş. Lütfen tarayıcının adres çubuğundan bildirimlere izin verin.",
+          "sendToEmail": "E-posta adresinize bildirim gönder.",
+          "sendToEmailAddress": "E-posta adresinize bildirim gönder. (\"{{email}}\")"
+        },
+        "mode": {
+          "disable": "Devre dışı bırak",
+          "notifyLoud": "Sesli bildir",
+          "notifySilent": "Sessiz bildir"
+        }
+      },
+      "about": {
+        "clearCache": "Önbelleği temizle",
+        "clearCacheAndReload": "Önbelleği temizle ve yeniden yükle",
+        "clearCacheDescription": "Önbellekteki verileri temizler ve yeniden yükler. Oturumunuz açık kalır.",
+        "clearTrace": "İzi temizle",
+        "clearing": "Temizleniyor...",
+        "credits": "Katkıda bulunanlar",
+        "deepDiagnosticTracing": "Ayrıntılı tanılama izleme",
+        "deepTraceMemoryOnly": "İz depolama kullanılamadığı için belleğe kaydediliyor. Uygulamayı yeniden başlatmadan önce dışa aktarın; bu son olaylar yeniden başlatıldığında kaybolur.",
+        "deepTraceEnabledStorageUnavailable": "Etkin, ancak iz depolama şu anda kullanılamıyor.",
+        "deepTraceOff": "Kapalı. Performans, Matrix, ağ, yaşam döngüsü ve etkileşim zamanlarını kaydetmek için donmayı yeniden oluşturmadan önce etkinleştirin.",
+        "deepTracePreferenceSaveFailed": "{{description}} Bu oturum için kapalı, ancak tercih kaydedilemedi ve yeniden başlatıldığında tekrar etkinleşebilir.",
+        "deepTraceRecording": "Bu cihazda sınırlı boyutlu, gizliliği koruyan bir performans ve etkileşim izi kaydediliyor.",
+        "deepTraceStarting": "Bu cihazda sınırlı boyutlu, gizliliği koruyan bir performans ve etkileşim izi başlatılıyor.",
+        "diagnosticsExportFailed": "{{description}} Dışa aktarma başarısız. Tekrar deneyin.",
+        "diagnosticsNone": "Beklenmedik şekilde sonlanan bir oturum saklanmadı.",
+        "diagnosticsUnavailable": "Tanılama depolaması kullanılamıyor.",
+        "diagnosticsUnexpected": "Önceki oturum beklenmedik şekilde sona erdi; nedeni bilinmiyor.",
+        "emojiArtCredit": "<art>Twemoji</art> emoji çizimleri © <owner>Twitter, Inc ve diğer katkıda bulunanlara</owner> aittir ve <license>CC-BY 4.0</license> koşulları altında kullanılır.",
+        "emojiFontCredit": "<font>twemoji-colr</font> yazı tipi © <owner>Mozilla Foundation</owner>'a aittir ve <license>Apache 2.0</license> koşulları altında kullanılır.",
+        "exportDiagnostics": "Tanılamayı dışa aktar",
+        "exporting": "Dışa aktarılıyor...",
+        "matrixSdkCredit": "<sdk>matrix-js-sdk</sdk> © <owner>The Matrix.org Foundation C.I.C</owner>'ye aittir ve <license>Apache 2.0</license> koşulları altında kullanılır.",
+        "onDeviceDiagnostics": "Cihaz üzerindeki tanılama",
+        "options": "Seçenekler",
+        "soundResourcesCredit": "<resources>Material ses kaynakları</resources> © <owner>Google</owner>'a aittir ve <license>CC-BY 4.0</license> koşulları altında kullanılır.",
+        "sourceCode": "Kaynak kodu",
+        "support": "Destek",
+        "title": "Hakkında",
+        "traceStorageUnavailable": "İz depolama kullanılamıyor."
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "Genel",
+        "options": "Seçenekler",
+        "addresses": "Adresler",
+        "advancedOptions": "Gelişmiş seçenekler"
+      },
+      "permissions": {
+        "permissions": "İzinler",
+        "ban": "Yasakla",
+        "changeAllPermission": "Tüm izinleri değiştir",
+        "changeServerAcls": "Sunucu erişim denetim listelerini değiştir",
+        "changeSpaceAccess": "Alan erişimini değiştir",
+        "editPowerLevels": "Yetki düzeylerini düzenle",
+        "groups": {
+          "manage": "Yönet",
+          "moderation": "Moderasyon",
+          "other": "Diğer",
+          "settings": "Ayarlar",
+          "spaceOverview": "Alana genel bakış"
+        },
+        "invite": "Davet et",
+        "kick": "Odadan çıkar",
+        "manageEmojisStickers": "Emoji ve çıkartmaları yönet",
+        "manageSpaceRooms": "Alan odalarını yönet",
+        "messageEvents": "Mesaj olayları",
+        "otherSettings": "Diğer ayarlar",
+        "publishAddress": "Adresi yayımla",
+        "spaceAvatar": "Alan avatarı",
+        "spaceName": "Alan adı",
+        "spaceTopic": "Alan konusu",
+        "upgradeSpace": "Alanı yükselt"
+      },
+      "navigation": {
+        "developerTools": "Geliştirici araçları",
+        "emojisStickers": "Emojiler ve çıkartmalar",
+        "general": "Genel",
+        "members": "Üyeler",
+        "permissions": "İzinler"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "\"{{query}}\" için eşleşme bulunamadı.",
+      "noMatchFound": "Eşleşme bulunamadı",
+      "noRooms": "Oda yok",
+      "noRoomsDescription": "Henüz görüntülenecek odanız yok.",
+      "placeholder": "Ara",
+      "syntaxHint": "Odalar için <rooms>#</rooms>, doğrudan mesajlar için <directs>@</directs> ve alanlar için <spaces>*</spaces> yazın. Kısayol: <hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "Ses kaydını sil",
+      "pauseRecording": "Ses kaydını duraklat",
+      "resumeRecording": "Ses kaydını sürdür",
+      "statusActive": "Ses kaydı etkin",
+      "statusPaused": "Ses kaydı duraklatıldı",
+      "statusProcessing": "Ses kaydı işleniyor",
+      "statusReadyToRetry": "Ses kaydı yeniden denemeye hazır",
+      "statusSending": "Ses kaydı gönderiliyor",
+      "statusStarting": "Ses kaydı başlatılıyor",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "Ses gönderilemedi",
+        "yourRecordingIsStillSaved": "Kaydınız hâlâ saklanıyor.",
+        "discard": "Sil",
+        "retry": "Tekrar dene",
+        "discardVoiceRecording": "Ses kaydı silinsin mi?",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "Bu kayıt gönderilmedi. Kalıcı olarak silinsin mi?",
+        "cancel": "İptal",
+        "voiceRecordingError": "Ses kaydı hatası",
+        "ok": "Tamam"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "Mikrofon erişimi engellenmiş. Android uygulama ayarlarında MindRoom Chat için mikrofon erişimine izin verip tekrar deneyin.",
+        "microphoneBlockedIos": "Mikrofon erişimi engellenmiş. iPhone ayarlarında MindRoom Chat için mikrofon erişimine izin verip tekrar deneyin.",
+        "microphoneBlockedBrowser": "Mikrofon erişimi engellenmiş. Tarayıcı veya sistem ayarlarınızda bu site/uygulama için mikrofon erişimine izin verip tekrar deneyin.",
+        "noMicrophone": "Bu cihazda mikrofon bulunamadı.",
+        "microphoneUnavailable": "Mikrofon şu anda kullanılamıyor (başka bir uygulama kullanıyor olabilir).",
+        "microphoneFailed": "Mikrofona erişilemedi.",
+        "microphoneUnsupported": "Bu cihaz mikrofon erişimini desteklemiyor.",
+        "recordingStopped": "Ses kaydı beklenmedik şekilde durdu. Lütfen tekrar kaydedin.",
+        "noAudio": "Ses verisi kaydedilemedi.",
+        "recordingUnsupported": "Bu tarayıcı ses kaydını desteklemiyor.",
+        "httpsRequired": "Ses kaydı HTTPS (veya localhost) gerektirir. MindRoom'u HTTPS üzerinden açın.",
+        "sendBusy": "Başka bir sesli mesaj hâlâ gönderiliyor. Lütfen bekleyin.",
+        "sendFailed": "Sesli mesaj gönderilemedi."
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "Ara",
+        "homeserverUnsupported": "Ana sunucunuz aramaları desteklemiyor.",
+        "browserUnsupported": "Tarayıcınız WebRTC desteklemiyor.",
+        "endCurrentCall": "Önce mevcut aramanızı sonlandırın.",
+        "failedToStart": "Arama başlatılamadı."
+      },
+      "agentCallHeaderButton": {
+        "call": "Bir ajanla arama başlat",
+        "callAgent": "{{name}} ile arama başlat",
+        "chooseAgent": "Aranacak ajanı seçin",
+        "close": "Kapat"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "MindRoom komutları"
+      },
+      "descriptions": {
+        "help": "Kullanılabilir özellikler veya belirli bir konu hakkında yardım alın.",
+        "reload-plugins": "Yapılandırılmış eklentileri yeniden yükleyin (yalnızca yöneticiler).",
+        "schedule": "Daha sonra çalıştırılacak bir görev zamanlayın.",
+        "list_schedules": "Tüm zamanlanmış görevleri listeleyin.",
+        "cancel_schedule": "Kimliğine göre bir zamanlamayı veya tüm zamanlamaları iptal edin.",
+        "edit_schedule": "Mevcut bir zamanlanmış görevi güncelleyin.",
+        "config": "MindRoom yapılandırmasını yönetin (yalnızca yöneticiler).",
+        "desktop": "Masaüstü hedefinizi yönetin.",
+        "model": "Geçerli konuda kullanılan modeli gösterin veya değiştirin.",
+        "room_model": "Odanın varsayılan modelini gösterin veya değiştirin (ayarlama/sıfırlama için oda yöneticisi gerekir).",
+        "thread_mode": "Geçerli odada kullanılan konu modunu gösterin veya değiştirin (yalnızca oda yöneticileri).",
+        "encrypt": "Geçerli odanın uçtan uca şifrelemesini inceleyin veya etkinleştirin.",
+        "e2ee": "Geçerli odanın şifreleme tanılamasını gösterin.",
+        "hi": "Karşılama bilgilerini gösterin."
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "Yapıştırılan metin",
+        "characterCount_one": "{{formattedCount}} karakter",
+        "characterCount_other": "{{formattedCount}} karakter"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Yerel MindRoom",
+        "connectLocalMindroom": "Yerel MindRoom'a bağlan",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "Bu sohbet hesabını yerel MindRoom işleminizle eşleştirin",
+        "enterCodeDescription": "Bilgisayarınızda {{command}} komutunu çalıştırın, ardından yazdırdığı bağlantıyı açın veya kodunu buraya girin.",
+        "pairCode": "Eşleştirme kodu",
+        "mindroomDocs": "MindRoom belgeleri",
+        "linkedInstallations": "Bağlı kurulumlar",
+        "linkedInstallationsUnavailable": "Bağlı kurulumlar yalnızca {{server}} üzerindeki hesaplar için kullanılabilir.",
+        "loadingLinkedInstallations": "Bağlı kurulumlar yükleniyor...",
+        "tryAgain": "Tekrar dene",
+        "noLinkedLocalMindroomInstallationsYet": "Henüz bağlı yerel MindRoom kurulumu yok.",
+        "revoke": "İptal et",
+        "confirmRevoke": "İptali onayla",
+        "cancel": "İptal",
+        "requestFailed": "İstek başarısız. Lütfen tekrar deneyin.",
+        "unknown": "Bilinmiyor",
+        "createdAt": "Oluşturulma: {{timestamp}}",
+        "lastSeenAt": "Son görülme: {{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "Terminalinizde gösterilen kodu girin.",
+        "continue": "Devam",
+        "invalidCode": "8 karakterlik kodu girin, örneğin ABCD-EFGH.",
+        "code": "Kod: {{code}}",
+        "chooseAccount": "Bu bağlantıyı onaylayacak hesabı seçin",
+        "checkingCode": "Kod kontrol ediliyor...",
+        "deviceQuestion": "{{clientName}} bağlansın mı?",
+        "deviceStarted": "{{age}} başlatıldı",
+        "requestedFrom": "{{ip}} adresinden istendi",
+        "requestedFromUnknown": "Bilinmeyen bir adresten istendi",
+        "warning": "Yalnızca bunu az önce kendi bilgisayarınızda kendiniz başlattıysanız ve terminaliniz aynı kodu gösteriyorsa onaylayın.",
+        "approveAs": "{{userId}} olarak onayla",
+        "approved": "Bağlandı. Terminalinize dönebilirsiniz.",
+        "noAccount": "Bu bağlantıyı onaylamak için MindRoom hesabınızla oturum açın.",
+        "signIn": "Onaylamak için oturum aç",
+        "accountSignedOut": "Bu hesabın onaylayabilmesi için yeniden oturum açması gerekiyor.",
+        "codeNotFound": "Bu kod bulunamadı. Terminalinizde gösterilen kodu kontrol edin.",
+        "codeExpired": "Bu kodun süresi doldu. Terminalinizde gösterilen yeni bağlantıyı veya kodu kullanın.",
+        "codeAlreadyApproved": "Bu kod zaten onaylandı.",
+        "backToChat": "Sohbete dön",
+        "enterNewCode": "Yeni kodu girin:",
+        "noAccountAppGuidance": "MindRoom uygulamasında zaten oturum açtınız mı? Orada Ayarlar → Yerel MindRoom'u açın ve {{code}} girin.",
+        "frameWarning": "Güvenlik nedeniyle, cihaz onayı bir çerçeve içinde tamamlanamaz.",
+        "openInNewTab": "Yeni sekmede aç"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "Doğrulanmış ajan · çapraz imzalı cihaz",
+        "verifiedAgent": "Doğrulanmış ajan"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "En üste kaydır",
+        "searchMessages": "Mesaj ara",
+        "searchDescription": "İlgili anahtar kelimelerle arama yaparak topluluğunuzdaki yararlı mesajları bulun.",
+        "noResultsFor": "“{{term}}” için sonuç bulunamadı",
+        "resultsFor": "“{{term}}” için sonuçlar"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (düzenlendi)"
+      },
+      "searchFilters": {
+        "sortBy": "Sıralama ölçütü",
+        "recent": "Son kullanılanlar",
+        "relevance": "Alaka düzeyi",
+        "search": "Ara",
+        "rooms": "Odalar",
+        "noMatchFound": "Eşleşme bulunamadı!",
+        "save": "Kaydet",
+        "deselectAll": "Tüm seçimleri kaldır",
+        "selectRooms": "Oda seç",
+        "filter": "Filtre",
+        "global": "Genel",
+        "saveCount": "Kaydet ({{count}})",
+        "roomsFor": "“{{query}}” için odalar"
+      },
+      "searchInput": {
+        "search": "Ara",
+        "searchForKeyword": "Anahtar sözcük ara",
+        "clear": "Temizle",
+        "enter": "Enter"
+      },
+      "searchResultGroup": {
+        "open": "Aç",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "Yanıt bağlamı arama sonuçlarında gizlenir. Konunun tüm bağlamını görmek için mesajı açın."
+      },
+      "searchResultPreview": {
+        "redacted": "Mesaj silindi.",
+        "message": "Mesaj",
+        "image": "Görsel",
+        "video": "Video",
+        "audio": "Ses",
+        "file": "Dosya",
+        "location": "Konum",
+        "reaction": "Tepki",
+        "unsupportedEvent": "Desteklenmeyen olay"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "Bağımsız değişkenler",
+        "loadingCompleteArguments": "Tam bağımsız değişkenler yükleniyor…",
+        "onlyATruncatedPreviewIsAvailable": "Yalnızca kısaltılmış bir önizleme mevcut.",
+        "retry": "Tekrar dene",
+        "sensitiveValuesMayBeRedacted": "Hassas değerler gizlenmiş olabilir.",
+        "loadFailed": "Tam bağımsız değişkenler yüklenemedi.",
+        "hideArguments": "Argümanları gizle",
+        "showAllArguments": "Tüm argümanları göster"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "Bu istek burada onaylanamaz.",
+        "submittedWaitingForRoomUpdate": "Gönderildi. Oda güncellemesi bekleniyor.",
+        "approveOnce": "Bir kez onayla",
+        "approve": "Onayla",
+        "deny": "Reddet",
+        "autoApprovalDuration": "Otomatik onay süresi",
+        "denyReasonOptional": "Ret nedeni (isteğe bağlı)",
+        "denialReasonOptional": "Ret nedeni (isteğe bağlı)",
+        "confirmDeny": "Reddi onayla",
+        "confirmDeny2": "Reddi onayla",
+        "cancel": "İptal",
+        "autoApproveMinutes_one": "{{count}} dakika boyunca otomatik onayla",
+        "autoApproveMinutes_other": "{{count}} dakika boyunca otomatik onayla",
+        "denyCallReasonOptional": "{{number}} numaralı çağrı için ret nedeni (isteğe bağlı)",
+        "approveExactCall": "Tam olarak bu çağrıyı onayla",
+        "approveAnyArguments": "Herhangi bir bağımsız değişkeni onayla",
+        "anyArgumentsWarning": "Herhangi bir bağımsız değişkenle aracı, planlanan zamanın {{minutes}} dakika yakınında kendi seçtiği değerlerle bir {{tool}} çağrısı yapabilir."
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "Otomatik onay etkin",
+        "autoApprovalStopped": "Otomatik onay durduruldu",
+        "autoApprovalExpired": "Otomatik onayın süresi doldu",
+        "argumentsMayDifferBetweenCalls": "Bağımsız değişkenler çağrılar arasında farklılık gösterebilir.",
+        "stopAutoApproval": "Otomatik onayı durdur",
+        "submittedWaitingForRoomUpdate": "Gönderildi. Oda güncellemesi bekleniyor.",
+        "fixedExpiry": "Sabit bitiş zamanı: {{timestamp}}",
+        "expiresInMinutes_one": "{{count}} dakika içinde sona erer",
+        "expiresInMinutes_other": "{{count}} dakika içinde sona erer"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "Sonuçlandırılmış araç onay isteği",
+        "unknown": "bilinmiyor",
+        "approvedOnce": "Bir kez onaylandı",
+        "decisionRecordedForThisCall": "Bu çağrı için karar kaydedildi",
+        "statusExpired": "Onayın süresi doldu",
+        "statusApproved": "Onaylandı",
+        "statusDenied": "Reddedildi",
+        "requestedBy": "{{agent}} · İsteyen: {{requester}}",
+        "resolvedByAt": "{{status}} · Karar veren: {{resolver}} · {{timestamp}}",
+        "resolvedBy": "{{status}} · Karar veren: {{resolver}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "Süreli izin",
+        "timedPermissionMinutes_one": "Süreli izin · {{count}} dakika",
+        "timedPermissionMinutes_other": "Süreli izin · {{count}} dakika",
+        "grantedByAt": "İzin veren: {{grantor}} · {{timestamp}}",
+        "grantedBy": "İzin veren: {{grantor}}",
+        "originalFixedExpiry": "İlk sabit bitiş zamanı: {{timestamp}}",
+        "toolAndServer": "Araç: {{tool}} · Sunucu: {{server}}",
+        "tool": "Araç: {{tool}}",
+        "reason": "Neden: {{reason}}",
+        "approvedWhenScheduledByAt": "Planlanırken {{approver}} tarafından onaylandı · {{timestamp}}",
+        "approvedWhenScheduledBy": "Planlanırken {{approver}} tarafından onaylandı"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "{{timestamp}} için planlandı",
+        "approvedExactArguments": "Tam olarak bu bağımsız değişkenler için onaylandı",
+        "approvedAnyArguments": "Bu aracın herhangi bir bağımsız değişkeni için onaylandı"
+      },
+      "approvalReviewCall": {
+        "pending": "bekliyor",
+        "callStatus": "Çağrı {{number}} · {{status}}",
+        "status": {
+          "pending": "Bekliyor",
+          "sending": "Gönderiliyor",
+          "submitted": "Gönderildi",
+          "error": "Hata",
+          "approved": "Onaylandı",
+          "denied": "Reddedildi",
+          "expired": "Süresi doldu"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "Metni kopyala (yükleniyor…)",
+        "copyText": "Metni kopyala",
+        "copyTextWithToolCalls": "Metni araç çağrılarıyla kopyala",
+        "copyLink": "Bağlantıyı kopyala"
+      },
+      "bugReport": {
+        "report": "Hata bildir",
+        "download": "Hata raporunu indir",
+        "sending": "Rapor gönderiliyor…",
+        "failed": "Rapor gönderilemedi. Tekrar deneyin."
+      },
+      "messageInspectionActions": {
+        "readReceipts": "Okundu bilgileri",
+        "viewSource": "Kaynağı görüntüle"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "Mesajın sabitlemesini kaldır",
+        "pinMessage": "Mesajı sabitle",
+        "deleteMessage": "Mesajı sil",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "Bu işlem geri alınamaz! Bu mesajı silmek istediğinizden emin misiniz?",
+        "optional": "(isteğe bağlı)",
+        "failedToDeleteMessagePleaseTryAgain": "Mesaj silinemedi! Lütfen tekrar deneyin.",
+        "deleting": "Siliniyor...",
+        "delete": "Sil",
+        "reportMessage": "Mesajı bildir",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "Bu mesajı sunucuya bildirin. Sunucu işlem yapmaları için ilgili kişilere haber verebilir.",
+        "reason": "Neden",
+        "failedToReportMessagePleaseTryAgain": "Mesaj bildirilemedi! Lütfen tekrar deneyin.",
+        "messageHasBeenReportedToServer": "Mesaj sunucuya bildirildi.",
+        "reporting": "Bildiriliyor...",
+        "report": "Bildir"
+      },
+      "messageReactionActions": {
+        "viewReactions": "Tepkileri görüntüle"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "Hâlâ yükleniyor…",
+        "toolDetailsUnavailable": "Araç ayrıntıları kullanılamıyor.",
+        "pastedText": "Yapıştırılan metin",
+        "characterCount_one": "{{formattedCount}} karakter",
+        "characterCount_other": "{{formattedCount}} karakter",
+        "blocks": {
+          "think": "Yapay zekâ düşünme süreci",
+          "debug": "Hata ayıklama bilgileri",
+          "system": "Sistem işlemleri",
+          "plan": "Planlama ve strateji",
+          "analysis": "Analiz ve değerlendirme",
+          "research": "Araştırma ve kaynaklar"
+        },
+        "toolNumber": "Araç #{{index}}: {{command}}",
+        "toolCallCount_one": "{{count}} araç çağrısı",
+        "toolCallCount_other": "{{count}} araç çağrısı",
+        "usedToolCount_one": "{{count}} araç kullanıldı",
+        "usedToolCount_other": "{{count}} araç kullanıldı",
+        "toolCallsRunning_one": "{{count}} araç çağrısı çalışıyor",
+        "toolCallsRunning_other": "{{count}} araç çağrısı çalışıyor",
+        "toolCallsWaiting_one": "{{count}} araç çağrısı onay bekliyor",
+        "toolCallsWaiting_other": "{{count}} araç çağrısı onay bekliyor",
+        "toolCallsRan_one": "{{count}} araç çağrısı çalıştırıldı",
+        "toolCallsRan_other": "{{count}} araç çağrısı çalıştırıldı",
+        "toolCallsDenied_one": "{{count}} araç çağrısı reddedildi",
+        "toolCallsDenied_other": "{{count}} araç çağrısı reddedildi",
+        "toolCallsExpired_one": "{{count}} araç çağrısının süresi doldu",
+        "toolCallsExpired_other": "{{count}} araç çağrısının süresi doldu"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "Tam yanıt yükleniyor..."
+      },
+      "mindroomMessage": {
+        "addReaction": "Tepki ekle",
+        "reply": "Yanıtla",
+        "replyInThread": "Konuda yanıtla",
+        "editMessage": "Mesajı düzenle",
+        "moreOptions": "Diğer seçenekler"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "İstek bağlam penceresi",
+        "aiRunMetadata": "Yapay zekâ çalıştırma üst verileri",
+        "close": "Kapat",
+        "status": "Durum",
+        "model": "Model",
+        "tokens": "Tokenler",
+        "runCache": "Çalıştırma önbelleği",
+        "requestContext": "İstek bağlamı",
+        "requestCache": "İstek önbelleği",
+        "tools": "Araçlar",
+        "ttft": "İlk token süresi",
+        "run": "Çalıştırma",
+        "session": "Oturum",
+        "openAiRunMetadata": "Yapay zekâ çalıştırma üst verilerini aç",
+        "tokenUsage": "Token kullanımı",
+        "downloadingOriginal": "Özgün dosya indiriliyor...",
+        "retryDownloadOriginal": "Özgün dosya indirmesini tekrar dene",
+        "downloadOriginal": "Özgün dosyayı indir",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} token",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} token"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "Mesaj ekleri"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "Yapıştırılan metin",
+        "open": "Aç",
+        "retry": "Tekrar dene",
+        "download": "İndir",
+        "characterCount_one": "{{formattedCount}} karakter",
+        "characterCount_other": "{{formattedCount}} karakter"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "Aç",
+        "failedToLoadMessage": "Mesaj yüklenemedi!",
+        "event": " olayı",
+        "pinnedMessages": "Sabitlenmiş mesajlar",
+        "noPinnedMessages": "Sabitlenmiş mesaj yok",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "Yeterli yetki düzeyine sahip kullanıcılar mesajları bağlam menüsünden sabitleyebilir."
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "Yapay zekâ yanıtlıyor",
+        "thinking": "Düşünüyor…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "Yapay zekâ konu özeti"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "Yapay zekâ bu konuya başlık verdi",
+        "updated": "Yapay zekâ başlığı güncelledi",
+        "edited": "Başlık düzenlendi",
+        "previous": "Önceki: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "Araç onay isteği",
+        "submitted": "Gönderildi",
+        "pendingApproval": "Onay bekliyor",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "Otomatik onay bu konu, istekte bulunan kişi, ajan ve araç için geçerlidir.",
+        "argumentsMayDifferBetweenCalls": "Bağımsız değişkenler çağrılar arasında farklılık gösterebilir.",
+        "requestedBy": "İsteyen: {{requester}}"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "Yönlendirici ajan sesi metne dönüştürüyor"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "Yapay zekâ yanıtlıyor"
+      },
+      "stopButton": {
+        "label": "Durdur",
+        "tooltip": "Bu yanıtı durdur"
+      },
+      "threadApprovalControls": {
+        "close": "Kapat",
+        "call": "çağrı",
+        "calls": "çağrı",
+        "unknown": "bilinmiyor",
+        "reasonForDenyingAllOptional": "Tümünü reddetme nedeni (isteğe bağlı)",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "Bu işleme bu konu, istekte bulunan kişi ve ajan için izin verin. Bağımsız değişkenler çağrılar arasında farklılık gösterebilir.",
+        "submittedWaitingForRoomUpdate": "Gönderildi. Oda güncellemesi bekleniyor.",
+        "threadApprovals": "Konu onayları",
+        "checkingHistory": " · Geçmiş denetleniyor…",
+        "historyIncomplete": " · Geçmiş eksik",
+        "retryHistory": "Geçmişi yeniden dene",
+        "reviewToolCalls": "Araç çağrılarını incele",
+        "reviewAgentWants_one": "{{agent}} {{count}} şey yapmak istiyor",
+        "reviewAgentWants_other": "{{agent}} {{count}} şey yapmak istiyor",
+        "reviewAgentsWant_one": "{{agents}} ajan {{count}} şey yapmak istiyor",
+        "reviewAgentsWant_other": "{{agents}} ajan {{count}} şey yapmak istiyor",
+        "reviewRequestedBy": "İsteyen: {{requester}}",
+        "someRequestsAreNoLongerAvailable": "Bazı istekler artık kullanılamıyor.",
+        "permission": "izin",
+        "permissions": "izin",
+        "activePermissions": "Etkin izinler",
+        "noActiveTimedPermissions": "Etkin süreli izin yok.",
+        "approval": "onay",
+        "approvals": "onay",
+        "operationCallCount_one": "{{operation}} · {{count}} çağrı",
+        "operationCallCount_other": "{{operation}} · {{count}} çağrı",
+        "requestedBy": "{{agent}} · İsteyen: {{requester}}",
+        "approveAllOnce": "{{count}} çağrının tümünü bir kez onayla",
+        "denyAll": "{{count}} çağrının tümünü reddet",
+        "allowForMinutes_one": "{{count}} dakika boyunca izin ver",
+        "allowForMinutes_other": "{{count}} dakika boyunca izin ver",
+        "awaitingConfirmation_one": "{{count}} çağrı onay bekliyor",
+        "awaitingConfirmation_other": "{{count}} çağrı onay bekliyor",
+        "pausedForApproval_one": "{{count}} çağrı onay için duraklatıldı",
+        "pausedForApproval_other": "{{count}} çağrı onay için duraklatıldı",
+        "statusCheckingHistory": "{{status}} · Geçmiş denetleniyor…",
+        "statusHistoryIncomplete": "{{status}} · Geçmiş eksik",
+        "reviewCount": "{{count}} isteği incele",
+        "activePermissionCount_one": "{{count}} etkin izin",
+        "activePermissionCount_other": "{{count}} etkin izin",
+        "permissionScope": "{{agent}} · {{requester}} · Bu konu",
+        "toolApprovalCount_one": "{{count}} araç onayı",
+        "toolApprovalCount_other": "{{count}} araç onayı",
+        "approvedCount_one": "{{count}} onaylandı",
+        "approvedCount_other": "{{count}} onaylandı",
+        "agentWaitingForYou": "{{agent}} sizi bekliyor",
+        "agentsWaitingForYou_one": "{{count}} ajan sizi bekliyor",
+        "agentsWaitingForYou_other": "{{count}} ajan sizi bekliyor",
+        "autoApproveFor": "Şu süre için otomatik onayla",
+        "callCount_one": "{{count}} çağrı",
+        "callCount_other": "{{count}} çağrı",
+        "chipSending": "Gönderiliyor…",
+        "chipSubmitted": "Gönderildi",
+        "chipResolved": "Sonuçlandı",
+        "confirmDenyAll": "{{count}} çağrının tümünü reddetmeyi onayla",
+        "expires": "{{time}} sona eriyor",
+        "hideCalls": "Çağrıları gizle",
+        "historyApproved": "{{operation}} onaylandı",
+        "historyDenied": "{{operation}} reddedildi",
+        "historyExpired": "{{operation}} süresi doldu",
+        "historyUserApproved": "{{user}}, {{operation}} işlemini onayladı",
+        "historyUserDenied": "{{user}}, {{operation}} işlemini reddetti",
+        "historyUserExpired": "{{operation}} süresi doldu",
+        "historyYouApproved": "{{operation}} işlemini onayladınız",
+        "historyYouDenied": "{{operation}} işlemini reddettiniz",
+        "historyYouExpired": "{{operation}} süresi doldu",
+        "minutesShort_one": "{{count}} dk",
+        "minutesShort_other": "{{count}} dk",
+        "sectionMeta": "{{agent}} · isteyen: {{requester}}",
+        "showCalls_one": "{{count}} çağrıyı göster",
+        "showCalls_other": "{{count}} çağrıyı göster",
+        "waitingForApproval": "Onay bekleniyor",
+        "waitingForYou": "Sizi bekliyor",
+        "you": "siz"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "Mesaj gönderiliyor",
+        "waitingForServer": "Sunucu bekleniyor",
+        "messageFailedToSend": "Mesaj gönderilemedi",
+        "notSent": "Gönderilmedi"
+      },
+      "failedSendActions": {
+        "retry": "Tekrar dene",
+        "delete": "Sil"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "girdi {{formattedCount}}",
+        "outputTokens": "çıktı {{formattedCount}}",
+        "totalTokens": "toplam {{formattedCount}}",
+        "readTokens": "okuma {{formattedCount}}",
+        "writeTokens": "yazma {{formattedCount}}",
+        "notReadTokens": "okunmayan {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} (%{{percentage}})",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} token (pencerenin %{{percentage}} kadarı)",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} token (pencerenin %{{percentage}} kadarı)",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} token (pencerenin %{{percentage}} kadarı); {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} token (pencerenin %{{percentage}} kadarı); {{suffix}}",
+        "reportedCacheRead_one": "bildirilen önbellek okuması: {{formattedCount}} token",
+        "reportedCacheRead_other": "bildirilen önbellek okuması: {{formattedCount}} token",
+        "cacheWrite_one": "önbellek yazması: {{formattedCount}} token",
+        "cacheWrite_other": "önbellek yazması: {{formattedCount}} token",
+        "cacheRead": "Önbellek okuması",
+        "newInput": "Yeni girdi",
+        "reserve": "Ayrılan"
+      },
+      "mindroomModelBadge": {
+        "model": "Model: {{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "Yerel iOS anlık bildirimleri bu dağıtımda yapılandırılmamış. `config.json` dosyasına `push.ios` ayarlarını ekleyin.",
+        "failedToUpdateNativePushSettings": "Yerel anlık bildirim ayarları güncellenemedi.",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "Arka plan mesaj uyarıları için yerel iOS anlık bildirimlerine izin verin.",
+        "deviceRegisteredForNativeIosPushNotifications": "Cihaz yerel iOS anlık bildirimleri için kaydedildi.",
+        "nativeIosPushIsDisabledForThisDevice": "Bu cihazda yerel iOS anlık bildirimleri devre dışı.",
+        "unavailable": "Kullanılamıyor",
+        "enable": "Etkinleştir",
+        "iosPushNotifications": "iOS anlık bildirimleri",
+        "permissionDenied": "Bildirim izni reddedildi. iOS Ayarları'nda {{appName}} için bildirimleri etkinleştirin."
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "Okundu olarak işaretle"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "Okundu olarak işaretle"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "Okundu olarak işaretle"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "Şifreli geçmişinizi yedekleyin",
+        "dismissBackupReminder": "Yedekleme hatırlatıcısını kapat",
+        "setUpSecureBackupSoYouCanStillReadYour": "Yeni bir cihazda oturum açtıktan sonra şifreli ajan sohbetlerinizi okumaya devam edebilmek için güvenli yedeklemeyi ayarlayın.",
+        "setUpSecureKeyBackup": "Güvenli anahtar yedeklemesini ayarla",
+        "setUpBackup": "Yedeklemeyi ayarla"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Yerel MindRoom"
+      },
+      "resizeNavigationPanel": "Gezinme panelini yeniden boyutlandır",
+      "resizeMemberPanel": "Üye panelini yeniden boyutlandır"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "Konu yok"
+      },
+      "compactThreadCard": {
+        "streaming": "akışta"
+      },
+      "mindroomCallChatView": {
+        "chat": "Sohbet",
+        "close": "Kapat"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "Yeni mesajlar",
+        "jumpToUnread": "Okunmamışa git",
+        "markAsRead": "Okundu olarak işaretle",
+        "failedToLoadThisThread": "Bu konu yüklenemedi.",
+        "loading": "Yükleniyor...",
+        "loadOlderMessages": "Eski mesajları yükle",
+        "loadNewerMessages": "Yeni mesajları yükle",
+        "jumpToLatest": "En yeniye git",
+        "today": "Bugün",
+        "yesterday": "Dün"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "Bu mesaj onaylandıktan sonra yanıt verilebilir.",
+        "youDoNotHavePermissionToPostInThisRoom": "Bu odada mesaj gönderme izniniz yok"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "Bilgisayarı göster",
+        "hideComputer": "Bilgisayarı gizle",
+        "showCanvas": "Paneli göster",
+        "hideCanvas": "Paneli gizle",
+        "canvases": "Etkileşimli paneller",
+        "notifications": "Bildirimler",
+        "compact": "Kompakt",
+        "threads": "Konular",
+        "classic": "Klasik",
+        "invite": "Davet et",
+        "copyLink": "Bağlantıyı kopyala",
+        "roomSettings": "Oda ayarları",
+        "jumpToTime": "Zamana git",
+        "leaveRoom": "Odadan ayrıl",
+        "pinnedMessages": "Sabitlenmiş mesajlar",
+        "members": "Üyeler",
+        "hideMembers": "Üyeleri gizle",
+        "showMembers": "Üyeleri göster",
+        "moreOptions": "Diğer seçenekler",
+        "back": "Geri"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "Etiket filtresi ekle",
+        "tag": "+ etiket",
+        "availableTags": "Kullanılabilir etiketler",
+        "filterPresets": "Filtre ön ayarları",
+        "preset": "Ön ayar",
+        "searchThreads": "Konularda ara",
+        "searchThreads2": "Konularda ara...",
+        "roomViewMode": "Oda görünüm modu",
+        "natural": "Doğal",
+        "lastReply": "Son yanıt",
+        "noThreadsMatchCurrentFilters": "Geçerli filtrelerle eşleşen konu yok.",
+        "resetAllThreadFilters": "Tüm konu filtrelerini sıfırla",
+        "reset": "Sıfırla",
+        "threadFilters": "Konu filtreleri",
+        "statusFilters": "Durum filtreleri",
+        "tagFilters": "Etiket filtreleri",
+        "showingFilteredThreads_one": "{{total}} konudan {{count}} tanesi gösteriliyor",
+        "showingFilteredThreads_other": "{{total}} konudan {{count}} tanesi gösteriliyor",
+        "showingAllThreads_one": "{{count}} konu gösteriliyor",
+        "showingAllThreads_other": "{{count}} konu gösteriliyor",
+        "sortLockedSummary": "{{summary}} · Sıralama kilitli",
+        "unlockSortOrder": "Sıralama kilidini aç (şu anda {{sort}})",
+        "lockSortOrder": "Sıralamayı kilitle (şu anda {{sort}})",
+        "threadCount_one": "{{count}} konu",
+        "threadCount_other": "{{count}} konu",
+        "presets": {
+          "needs-attention": {
+            "label": "İlgi gerekiyor",
+            "description": "Çözümlenmemiş, akışta olmayan ve zamanlanmamış konular"
+          },
+          "working": {
+            "label": "Çalışılıyor",
+            "description": "Akışta veya zamanlanmış — şu anda üzerinde çalıştıklarınız"
+          },
+          "review-queue": {
+            "label": "İnceleme kuyruğu",
+            "description": "Okunmamış yanıtları olan çözümlenmemiş konular"
+          },
+          "archived": {
+            "label": "Arşivlenmiş",
+            "description": "Yalnızca çözümlenmiş konular"
+          },
+          "all": {
+            "label": "Tümü",
+            "description": "Tüm filtreleri sıfırla"
+          }
+        }
+      },
+      "threadTagPicker": {
+        "addTag": "Etiket ekle",
+        "tag": "+ etiket",
+        "filterNew": "Filtrele / yeni...",
+        "filterOrCreateTag": "Etiketi filtrele veya oluştur",
+        "noMatches": "Eşleşme yok",
+        "typeToCreateATag": "Etiket oluşturmak için yazın",
+        "createTag": "“{{tag}}” oluştur"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "Mesaja git",
+        "message": "Mesaj"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> oda adını değiştirdi",
+        "changedRoomTopic": "<sender>{{sender}}</sender> oda konusunu değiştirdi",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> oda avatarını değiştirdi",
+        "joinedCall": "<sender>{{sender}}</sender> aramaya katıldı",
+        "endedCall": "<sender>{{sender}}</sender> aramayı sonlandırdı",
+        "sentStateEvent": "<sender>{{sender}}</sender> <eventType>{{eventType}}</eventType> durum olayını gönderdi",
+        "sentEvent": "<sender>{{sender}}</sender> <eventType>{{eventType}}</eventType> olayını gönderdi"
+      },
+      "threadTagPill": {
+        "removeTag": "{{tag}} etiketini kaldır"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "{{count}} sn sonra",
+        "inMinutesSeconds": "{{minutes}} dk {{seconds}} sn sonra",
+        "inMinutes": "{{count}} dk sonra",
+        "inHours": "{{count}} sa sonra",
+        "inHoursMinutes": "{{hours}} sa {{minutes}} dk sonra",
+        "atTime": "{{time}} zamanında",
+        "scheduledTasks_one": "{{count}} zamanlanmış görev",
+        "scheduledTasks_other": "{{count}} zamanlanmış görev",
+        "pendingScheduledTasks_one": "{{count}} bekleyen zamanlanmış görev",
+        "pendingScheduledTasks_other": "{{count}} bekleyen zamanlanmış görev",
+        "scheduledTasksWithDetail": "{{tasks}}, {{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 yanıt",
+        "messageCount_one": "{{formattedCount}} mesaj",
+        "messageCount_other": "{{formattedCount}} mesaj",
+        "needsAttention": "İlgi gerekiyor",
+        "waitingOnResponse": "Yanıt bekleniyor",
+        "agentStreaming": "Ajan yanıt üretiyor",
+        "resolved": "Çözüldü",
+        "idle": "Boşta",
+        "threadStarted": "Konu başlatıldı",
+        "noRepliesYet": "Henüz yanıt yok"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "Sonraki görev {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} bekleyen zamanlanmış görev",
+        "pendingScheduledTasks_other": "{{count}} bekleyen zamanlanmış görev"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "Şifreli konu",
+        "threadInRoom": "{{roomName}} odasındaki konu",
+        "thread": "Konu"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "Bilgisayarı görüntüle",
+      "openMembers": "Üyeleri aç",
+      "openCanvas": "Paneli aç",
+      "canvasDisabled": "Etkileşimli paneller bu uygulamada kapalı.",
+      "canvasDuringCall": "Etkileşimli panelleri açmak için aramayı sonlandırın.",
+      "computerUnavailable": "Bu ajanın bilgisayarı kullanılamıyor.",
+      "releaseControl": "Başka bir görünüm açmadan önce bilgisayarın kontrolünü bırakın.",
+      "openConversation": "Bu isteği oda sohbetinden açın.",
+      "settingsUnavailable": "Bu Ayarlar bölümünü açmak için Basit Modu kapatın."
+    },
+    "canvas": {
+      "panelLabel": "Etkileşimli panel",
+      "fromAgent": "Etkileşimli panel · {{agent}}",
+      "expand": "Paneli genişlet",
+      "close": "Paneli kapat",
+      "resize": "Paneli yeniden boyutlandır",
+      "updated": "{{agent}} bu paneli güncelledi.",
+      "loadUpdate": "Güncellemeyi yükle",
+      "version": "Sürüm {{current}}/{{total}}",
+      "previousVersion": "Önceki sürüm",
+      "nextVersion": "Sonraki sürüm",
+      "earlierVersion": "Bu daha eski bir sürüm.",
+      "showLatest": "En yenisini göster",
+      "loading": "Panel yükleniyor…",
+      "loadFailed": "Bu panel yüklenemedi.",
+      "retry": "Tekrar dene",
+      "escaped": "Bu panel korumalı alanının dışına çıkmaya çalıştı ve durduruldu.",
+      "reload": "Paneli yeniden yükle",
+      "pageError": "Bu sayfa bir hata bildirdi.",
+      "tellAgent": "{{agent}} ajanına bildir",
+      "errorsSent": "Hatalar {{agent}} ajanına gönderildi.",
+      "errorsNotSent": "Hatalar {{agent}} ajanına gönderilemedi.",
+      "sendTo": "{{agent}} ajanına gönder:",
+      "changeAnswer": "Yanıtınızı değiştirmek için önce bunu silin.",
+      "data": "Veriler",
+      "send": "Gönder",
+      "discard": "Sil",
+      "disclosure": "{{agent}} tarafından oluşturuldu. Hesabınıza erişemez; buraya girdikleriniz bu panelin dışına çıkabilir.",
+      "sharedNotice": "Bu odaya kaydedilir: {{agent}} ve buradaki diğer kişiler girdiklerinizi okuyabilir.",
+      "sending": "{{agent}} ajanına gönderiliyor…",
+      "sent": "{{agent}} ajanına gönderildi: {{label}}",
+      "sendFailed": "Yanıtınız gönderilemedi. Tekrar deneyin.",
+      "receiptData": "Ajana gönderilen verileri göster",
+      "unlabeled": "Gönderildi",
+      "notSent": "{{agent}} ajanına gönderilemedi: {{label}}"
+    },
+    "canvases": {
+      "title": "Etkileşimli paneller",
+      "note": "Ajanlarınızın sizin için oluşturduğu ve bu tarayıcının gördüğü etkileşimli paneller. Sabitlenen paneller tüm cihazlarınızda görünür.",
+      "empty": "Henüz etkileşimli panel yok. Bir ajan size bir panel gösterdiğinde burada listelenir.",
+      "pinned": "Sabitlenmiş",
+      "canvas": "Panel",
+      "thread": "Konu",
+      "agent": "Ajan",
+      "room": "Oda",
+      "updated": "Güncellendi",
+      "created": "Oluşturulma",
+      "pin": "{{title}} panelini sabitle",
+      "unpin": "{{title}} panelinin sabitlemesini kaldır",
+      "shared": "Ajanla paylaşılıyor",
+      "saved": "Değerleriniz kayıtlı"
+    },
+    "backgroundJobs": {
+      "running": "Çalışıyor: {{tool}}",
+      "awaitingApproval": "Onay bekliyor: {{tool}}",
+      "waiting": "Onay bekliyor",
+      "stoppingJob": "Durduruluyor: {{tool}}",
+      "jobCount": "{{count}} arka plan işi",
+      "subagent": "{{tool}} (alt ajan)",
+      "stopAll": "Tümünü durdur",
+      "stopping": "Durduruluyor…",
+      "stop": "Durdur",
+      "stopJob": "{{tool}} durdur",
+      "stopFailed": "{{tool}} durdurulamadı. Tekrar deneyin.",
+      "stopAllFailed": "Arka plan işleri durdurulamadı. Tekrar deneyin.",
+      "inRoom": "Arka plan işleri çalışıyor"
+    }
+  },
+  "roomSchedules": {
+    "title": "Zamanlanmış görevler",
+    "openLabel": "Zamanlanmış görevler ({{total}})",
+    "empty": "Bu odada zamanlanmış görev yok.",
+    "emptyHint": "Bir MindRoom ajanından burada bir görev zamanlamasını isteyin.",
+    "prompt": "İstem",
+    "promptUnavailable": "İstem kullanılamıyor",
+    "once": "Tek seferlik",
+    "recurring": "Yinelenen",
+    "executionTime": "Yürütme zamanı",
+    "unknownTime": "Yürütme zamanı kullanılamıyor",
+    "awaitingExecution": "Yürütülmeyi bekliyor",
+    "recurrence": "Yineleme",
+    "silent": "Sessiz",
+    "conditional": "Koşullu",
+    "newThread": "Yeni konu",
+    "roomTimeline": "Oda zaman çizelgesi",
+    "openThread": "Konuyu aç",
+    "owner": "Görev sahibi",
+    "createdAt": "Oluşturulma",
+    "updatedAt": "Güncellendi",
+    "model": "Model",
+    "inheritedModel": "Ajan, oda veya konu ayarlarından",
+    "taskId": "Görev kimliği",
+    "historyLimit": "Geçmiş sınırı",
+    "fullHistory": "Tüm geçmiş",
+    "noHistory": "Geçmiş yok",
+    "recentMessages": "Son mesajlar: {{total}}",
+    "close": "Kapat"
+  },
+  "archivedRooms": {
+    "title": "Arşivlenmiş odalar",
+    "archive": "Odayı arşivle",
+    "restore": "Odayı geri yükle",
+    "restoreNamed": "{{room}} odasını geri yükle",
+    "failed": "Değişiklikler kaydedilemedi. Tekrar deneyin.",
+    "close": "Arşivlenmiş odaları kapat",
+    "description": "Odalardan ayrılmadan onları kenar çubuğundan gizleyin. Buradan açın veya geri yükleyin.",
+    "empty": "Arşivlenmiş oda yok."
+  }
+}

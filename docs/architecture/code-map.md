@@ -52,6 +52,7 @@ Matrix sync callback
 | `text_ingress_dispatch.py` | Text ingress dispatch path used by TurnController |
 | `turn_policy.py` | Pure turn policy: decide ignore, route, or respond for inbound turns |
 | `participation.py` | Framework-independent participation state: one immutable decision, concurrent checks, and approval-preserving settlement |
+| `peer_discussion/` | Opt-in room participation policy, transcript limits, and fair shared speaking slots |
 | `agno_participation.py` | Agno participation adapter: prepared request checks, primary-run isolation, metrics, and scoped model interception |
 | `judgment/` | Backend-independent boolean and choice questions, minimized context, shared execution limits, the bounded HTTP client, and LLM, System One, and OpenAI Decisions adapters |
 | `participation_judgment.py` | Bind the participation rubric to an opt-in LLM, TypeSafe, or OpenAI Decisions judge and map its result to a participation decision |
@@ -297,6 +298,11 @@ Matrix sync callback
 | `attachments/media.py` | Convert attachment records to Agno media objects |
 | `media_inputs.py` | Shared media-input container passed across bot, teams, and AI layers |
 | `api/` | FastAPI REST API (dashboard, credentials, OpenAI-compatible endpoint) |
+| `api/project_wizard.py` | Authenticated project-guidance, saved drafts, versioned edits, and explicit confirmation and provisioning endpoints |
+| `project_wizard/models.py` | Validated proposal, persisted conversation, and confirmation request models |
+| `project_wizard/store.py` | Owner-scoped atomic snapshots and per-draft operation locks under tracking |
+| `project_wizard/chat_session.py` | Owner-scoped login handoff to the existing Matrix web client |
+| `project_wizard/provisioning.py` | Stable project keys, validated config mapping, runtime reload wait, and verified Matrix membership |
 | `api/open_access.py` | Host allow-list and browser-origin guard for requests served without a credential (open dashboard auth, unauthenticated `/v1`) |
 | `api/request_body_limit.py` | Pure ASGI middleware answering 413 for dashboard API request bodies over 16 MiB, except knowledge uploads |
 | `api/validation_errors.py` | 422 handler for the dashboard API and sandbox runner that returns FastAPI's validation error detail without the rejected request values |
@@ -386,3 +392,5 @@ Matrix sync callback
 [Data Persistence](../deployment/storage.md#data-persistence) lists the main directories under the storage root (`mindroom_data/` by default, overridable via `MINDROOM_STORAGE_PATH`).
 An agent's Agno session database, including its traces, is `agents/<agent>/sessions/<agent>.db`, and private agents keep the same per-agent layout under their resolved private state roots.
 Its `<agent>_sessions_summaries` table holds compaction summary rows, and `<agent>_sessions_removed_runs` records runs that edits and redactions removed.
+
+Project-creation drafts and project provisioning records are stored per authenticated dashboard identity under `tracking/project_wizard/`.

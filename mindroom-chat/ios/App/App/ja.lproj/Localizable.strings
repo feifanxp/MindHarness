@@ -1,0 +1,12 @@
+"MSG_FROM_USER_WITH_CONTENT" = "%1$@：%2$@";
+"MSG_FROM_USER_IN_ROOM_WITH_CONTENT" = "%2$@ の %1$@：%3$@";
+"MSG_FROM_USER" = "%1$@ からのメッセージ";
+"MSG_FROM_USER_IN_ROOM" = "%2$@ の %1$@";
+"ACTION_FROM_USER" = "%1$@ %2$@";
+"ACTION_FROM_USER_IN_ROOM" = "%1$@ で %2$@ %3$@";
+"IMAGE_FROM_USER" = "%1$@ が画像を送信しました：%2$@";
+"IMAGE_FROM_USER_IN_ROOM" = "%1$@ が %3$@ で画像を送信しました：%2$@";
+"VOICE_CALL_FROM_USER" = "%1$@ からの音声通話";
+"VIDEO_CALL_FROM_USER" = "%1$@ からのビデオ通話";
+"USER_INVITE_TO_NAMED_ROOM" = "%1$@ があなたを %2$@ に招待しました";
+"USER_INVITE_TO_CHAT" = "%1$@ があなたをチャットに招待しました";

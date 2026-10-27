@@ -1,0 +1,118 @@
+diff --git a/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewAssetHandler.swift b/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewAssetHandler.swift
+index 2e5961d..dce1340 100644
+--- a/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewAssetHandler.swift
++++ b/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewAssetHandler.swift
+@@ -57,6 +57,8 @@ open class WebViewAssetHandler: NSObject, WKURLSchemeHandler {
+         do {
+             var data = Data()
+-            let mimeType = mimeTypeForExtension(pathExtension: url.pathExtension)
++            // A custom router can map a dot-suffixed SPA route to index.html.
++            // Classify the resolved file, not a server name in the requested URL.
++            let mimeType = mimeTypeForExtension(pathExtension: fileUrl.pathExtension)
+             var headers =  [
+                 "Content-Type": mimeType,
+                 "Cache-Control": "no-cache"
+@@ -88,8 +90,8 @@ open class WebViewAssetHandler: NSObject, WKURLSchemeHandler {
+                 urlSchemeTask.didReceive(response!)
+                 try fileHandle.close()
+             } else {
+-                if !stringToLoad.contains("cordova.js") {
+-                    if isMediaExtension(pathExtension: url.pathExtension) {
++                if fileUrl.lastPathComponent != "cordova.js" {
++                    if isMediaExtension(pathExtension: fileUrl.pathExtension) {
+                         data = try Data(contentsOf: fileUrl, options: Data.ReadingOptions.mappedIfSafe)
+                     } else {
+                         data = try Data(contentsOf: fileUrl)
+@@ -97,7 +99,7 @@ open class WebViewAssetHandler: NSObject, WKURLSchemeHandler {
+                 }
+                 let urlResponse = URLResponse(url: localUrl, mimeType: mimeType, expectedContentLength: data.count, textEncodingName: nil)
+                 let httpResponse = HTTPURLResponse(url: localUrl, statusCode: 200, httpVersion: nil, headerFields: headers)
+-                if isMediaExtension(pathExtension: url.pathExtension) {
++                if isMediaExtension(pathExtension: fileUrl.pathExtension) {
+                     urlSchemeTask.didReceive(urlResponse)
+                 } else {
+                     urlSchemeTask.didReceive(httpResponse!)
+diff --git a/node_modules/@capacitor/ios/Capacitor/Capacitor/CAPNotifications.swift b/node_modules/@capacitor/ios/Capacitor/Capacitor/CAPNotifications.swift
+--- a/node_modules/@capacitor/ios/Capacitor/Capacitor/CAPNotifications.swift
++++ b/node_modules/@capacitor/ios/Capacitor/Capacitor/CAPNotifications.swift
+@@ -23,3 +23,13 @@ extension Notification.Name {
+     public static let capacitorSceneOpenUniversalLink =
+         Notification.Name(rawValue: "CapacitorSceneOpenUniversalLinkNotification")
++    public static let capacitorWebViewNavigationStarted =
++        Notification.Name(rawValue: "CapacitorWebViewNavigationStartedNotification")
++    public static let capacitorWebViewNavigationFinished =
++        Notification.Name(rawValue: "CapacitorWebViewNavigationFinishedNotification")
++    public static let capacitorWebViewNavigationFailed =
++        Notification.Name(rawValue: "CapacitorWebViewNavigationFailedNotification")
++    public static let capacitorWebViewNavigationProvisionalFailed =
++        Notification.Name(rawValue: "CapacitorWebViewNavigationProvisionalFailedNotification")
++    public static let capacitorWebViewTerminated =
++        Notification.Name(rawValue: "CapacitorWebViewTerminatedNotification")
+ }
+diff --git a/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewDelegationHandler.swift b/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewDelegationHandler.swift
+--- a/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewDelegationHandler.swift
++++ b/node_modules/@capacitor/ios/Capacitor/Capacitor/WebViewDelegationHandler.swift
+@@ -43,5 +43,6 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     // swiftlint:disable:next implicitly_unwrapped_optional
+     open func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
++        NotificationCenter.default.post(name: .capacitorWebViewNavigationStarted, object: webView)
+         // Reset the bridge on each navigation
+         bridge?.reset()
+     }
+@@ -128,5 +129,6 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     // swiftlint:disable:next implicitly_unwrapped_optional
+     open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
++        NotificationCenter.default.post(name: .capacitorWebViewNavigationFinished, object: webView)
+         if case .initialLoad(let isOpaque) = webViewLoadingState {
+             webView.isOpaque = isOpaque
+             webViewLoadingState = .subsequentLoad
+@@ -138,5 +140,10 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     // swiftlint:disable:next implicitly_unwrapped_optional
+     open func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
++        NotificationCenter.default.post(
++            name: .capacitorWebViewNavigationFailed,
++            object: webView,
++            userInfo: ["error": error]
++        )
+         if case .initialLoad(let isOpaque) = webViewLoadingState {
+             webView.isOpaque = isOpaque
+             webViewLoadingState = .subsequentLoad
+@@ -154,5 +161,10 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     // swiftlint:disable:next implicitly_unwrapped_optional
+     open func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
++        NotificationCenter.default.post(
++            name: .capacitorWebViewNavigationProvisionalFailed,
++            object: webView,
++            userInfo: ["error": error]
++        )
+         if let errorURL = bridge?.config.errorPathURL {
+             webView.load(URLRequest(url: errorURL))
+         }
+@@ -164,4 +176,5 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     open func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
++        NotificationCenter.default.post(name: .capacitorWebViewTerminated, object: webView)
+         CAPLog.print("⚡️  WebView process terminated")
+         bridge?.reset()
+         webView.reload()
+@@ -190,6 +203,9 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     // MARK: - WKScriptMessageHandler
+ 
+     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
++        // WebKit exposes message handlers to every frame, including opaque canvas sandboxes.
++        // Trust the native sender metadata, never a field supplied by JavaScript.
++        guard message.frameInfo.isMainFrame else { return }
+         guard let bridge = bridge else {
+             return
+         }
+@@ -269,6 +285,11 @@ open class WebViewDelegationHandler: NSObject, WKNavigationDelegate, WKUIDelegat
+     }
+ 
+     open func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
++        // Synchronous cookie/HTTP bridge calls also arrive through prompt(), outside postMessage.
++        guard frame.isMainFrame else {
++            completionHandler(nil)
++            return
++        }
+ 
+         // Check if this is synchronous cookie or http call
+         do {

@@ -1,0 +1,166 @@
+{
+  "reply with one tool call": {
+    "body": "Let me check.\n\n🔧 `search_web` [1]\n\nIt is sunny.",
+    "formatted_body": "<p>Let me check.</p>\n<p>🔧 <code>search_web</code> [1]</p>\n<p>It is sunny.</p>\n"
+  },
+  "grouped and pending tool calls": {
+    "body": "Let me check.\n\n🔧 `search_web` [1]\n\n🔧 `read_file` [2] ⏳\n\nIt is sunny.",
+    "formatted_body": "<p>Let me check.</p>\n<p>🔧 <code>search_web</code> [1]</p>\n<p>🔧 <code>read_file</code> [2] ⏳</p>\n<p>It is sunny.</p>\n"
+  },
+  "leading and trailing tool calls": {
+    "body": "🔧 `a` [1]\n\nAnswer\n\n🔧 `b` [2]\n",
+    "formatted_body": "<p>🔧 <code>a</code> [1]</p>\n<p>Answer</p>\n<p>🔧 <code>b</code> [2]</p>\n"
+  },
+  "tool calls only": {
+    "body": "🔧 `shell` [1] ⏳",
+    "formatted_body": "<p>🔧 <code>shell</code> [1] ⏳</p>\n"
+  },
+  "LaTeX around a tool call": {
+    "body": "$$\nE = mc^2\n$$\n\n🔧 `calculator` [1]\n\nInline $x^2$ stays.",
+    "formatted_body": "<div>$$\nE = mc^2\n$$</div>\n<p>🔧 <code>calculator</code> [1]</p>\n<p>Inline $x^2$ stays.</p>\n"
+  },
+  "list-marker line inside a fence": {
+    "body": "```\n- ```\n🔧 `inside` [1]\n```\n\n🔧 `search` [2]\n\nAnswer",
+    "formatted_body": "<pre><code>- ```\n🔧 `inside` [1]\n</code></pre>\n<p>🔧 <code>search</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "quote-marker line inside a fence": {
+    "body": "```markdown\n> ```\n🔧 `inside` [1]\n```\n\n🔧 `search` [2]\n\nAnswer",
+    "formatted_body": "<pre><code class=\"language-markdown\"><span style=\"color: #008000; font-weight: bold\">&gt; </span><span style=\"font-style: italic\">```</span>\n🔧 <span style=\"color: #BA2121\">`inside`</span> [1]\n</code></pre>\n<p>🔧 <code>search</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "indented fence-like line inside a fence": {
+    "body": "```text\n    ```\n🔧 `inside` [1]\n```\n\n🔧 `search` [2]\n\nAnswer",
+    "formatted_body": "<pre><code class=\"language-text\">    ```\n🔧 `inside` [1]\n</code></pre>\n<p>🔧 <code>search</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "indented code block containing a fence": {
+    "body": "Example:\n\n    ```\n    code\n\n🔧 `search` [1]\n\nAnswer",
+    "formatted_body": "<p>Example:</p>\n<pre><code>```\ncode\n</code></pre>\n<p>🔧 <code>search</code> [1]</p>\n<p>Answer</p>\n"
+  },
+  "fence closed by the end of its block quote": {
+    "body": "> ```\n> code\n\n🔧 `search` [1]\n\nAnswer",
+    "formatted_body": "<blockquote>\n<pre><code>code\n</code></pre>\n</blockquote>\n<p>🔧 <code>search</code> [1]</p>\n<p>Answer</p>\n"
+  },
+  "fence closed by the end of its list item": {
+    "body": "- ```\n  code\n\n🔧 `search` [1]\n\nAnswer",
+    "formatted_body": "<ul>\n<li>\n<pre><code>code\n\n</code></pre>\n</li>\n</ul>\n<p>🔧 <code>search</code> [1]</p>\n<p>Answer</p>\n"
+  },
+  "unclosed fence while streaming": {
+    "body": "```py\nx = 1\n\n🔧 `inside` [1]\n\ny = 2",
+    "formatted_body": "<pre><code class=\"language-py\">x <span style=\"color: #666\">=</span> <span style=\"color: #666\">1</span>\n\n<span style=\"border: 1px solid #F00\">🔧</span> <span style=\"border: 1px solid #F00\">`</span>inside<span style=\"border: 1px solid #F00\">`</span> [<span style=\"color: #666\">1</span>]\n\ny <span style=\"color: #666\">=</span> <span style=\"color: #666\">2</span>\n</code></pre>\n"
+  },
+  "tool call inside display math": {
+    "body": "$$\nx = 1\n\n🔧 `calc` [1]\n\ny\n$$\n\n🔧 `search` [2]\n\nAnswer",
+    "formatted_body": "<div>$$\nx = 1\n\n🔧 `calc` [1]\n\ny\n$$</div>\n<p>🔧 <code>search</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "tool call after an escaped HTML comment opener": {
+    "body": "<!--\n\n🔧 `search` [1]\n\nAnswer",
+    "formatted_body": "<p>&lt;!--</p>\n<p>🔧 <code>search</code> [1]</p>\n<p>Answer</p>\n"
+  },
+  "tool call inside an allowed HTML block": {
+    "body": "<details>\n🔧 `inside` [1]\n</details>\n\n🔧 `search` [2]\n\nAnswer",
+    "formatted_body": "<details>\n🔧 `inside` [1]\n</details>\n<p>🔧 <code>search</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "unspaced tool call inside a paragraph": {
+    "body": "text\n🔧 `search` [1]\nmore",
+    "formatted_body": "<p>text<br>\n🔧 <code>search</code> [1]<br>\nmore</p>\n"
+  },
+  "tool call as a list item": {
+    "body": "- 🔧 `search` [1]",
+    "formatted_body": "<ul>\n<li>🔧 <code>search</code> [1]</li>\n</ul>\n"
+  },
+  "code example repeating a real tool call": {
+    "body": "Markers look like:\n\n```\n🔧 `search` [1]\n```\n\n🔧 `search` [1]\n\nAnswer",
+    "formatted_body": "<p>Markers look like:</p>\n<pre><code>🔧 `search` [1]\n</code></pre>\n<p>🔧 <code>search</code> [1]</p>\n<p>Answer</p>\n"
+  },
+  "inline mention of a real tool call": {
+    "body": "I used 🔧 `search` [1] before.\n\n🔧 `search` [1]\n\nAnswer",
+    "formatted_body": "<p>I used 🔧 <code>search</code> [1] before.</p>\n<p>🔧 <code>search</code> [1]</p>\n<p>Answer</p>\n"
+  },
+  "CRLF line endings": {
+    "body": "A\r\n\r\n🔧 `search` [1]\r\n\r\nB\r\n",
+    "formatted_body": "<p>A</p>\n<p>🔧 <code>search</code> [1]</p>\n<p>B</p>\n"
+  },
+  "tool call inside a block quote": {
+    "body": "> 🔧 `x` [1]\n\n🔧 `y` [2]\n\nAnswer",
+    "formatted_body": "<blockquote>\n<p>🔧 <code>x</code> [1]</p>\n</blockquote>\n<p>🔧 <code>y</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "tool call between list items": {
+    "body": "- a\n- 🔧 `x` [1]\n- b",
+    "formatted_body": "<ul>\n<li>a</li>\n<li>🔧 <code>x</code> [1]</li>\n<li>b</li>\n</ul>\n"
+  },
+  "tool call inside a heading": {
+    "body": "# 🔧 `x` [1]\n\n🔧 `y` [2]\n\nAnswer",
+    "formatted_body": "<h1>🔧 <code>x</code> [1]</h1>\n<p>🔧 <code>y</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "unspaced consecutive tool calls": {
+    "body": "🔧 `a` [1]\n🔧 `b` [2]\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>a</code> [1]<br>\n🔧 <code>b</code> [2]</p>\n<p>Answer</p>\n"
+  },
+  "tool call inside a raw div": {
+    "body": "<div>\n\n🔧 `x` [1]\n\n</div>\n\nAnswer",
+    "formatted_body": "<div>\n<p>🔧 <code>x</code> [1]</p>\n</div>\n<p>Answer</p>\n"
+  },
+  "double-backtick marker with a canonical copy in code": {
+    "body": "🔧 ``x`` [1]\n\nExample:\n\n```\n🔧 `x` [1]\n```\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>x</code> [1]</p>\n<p>Example:</p>\n<pre><code>🔧 `x` [1]\n</code></pre>\n<p>Answer</p>\n"
+  },
+  "HTML-code marker with a canonical copy in code": {
+    "body": "🔧 <code>x</code> [1]\n\nExample:\n\n```\n🔧 `x` [1]\n```\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>x</code> [1]</p>\n<p>Example:</p>\n<pre><code>🔧 `x` [1]\n</code></pre>\n<p>Answer</p>\n"
+  },
+  "escaped-bracket marker with a canonical copy in code": {
+    "body": "🔧 `x` \\[1\\]\n\nExample:\n\n```\n🔧 `x` [1]\n```\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>x</code> [1]</p>\n<p>Example:</p>\n<pre><code>🔧 `x` [1]\n</code></pre>\n<p>Answer</p>\n"
+  },
+  "entity-bracket marker with a canonical copy in code": {
+    "body": "🔧 `x` &#91;1&#93;\n\nExample:\n\n```\n🔧 `x` [1]\n```\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>x</code> [1]</p>\n<p>Example:</p>\n<pre><code>🔧 `x` [1]\n</code></pre>\n<p>Answer</p>\n"
+  },
+  "tool call inside a details block": {
+    "body": "<details>\n\n🔧 `x` [1]\n\n</details>\n\nAnswer",
+    "formatted_body": "<details>\n<p>🔧 <code>x</code> [1]</p>\n</details>\n<p>Answer</p>\n"
+  },
+  "tool call followed by text on the same line": {
+    "body": "🔧 `x` [1] extra words\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>x</code> [1] extra words</p>\n<p>Answer</p>\n"
+  },
+  "reference link definition sharing a marker index": {
+    "body": "🔧 ``search_web`` \\[1\\]\n🔧 `search_web` [1]\n\n[1]: https://weather.example\n",
+    "formatted_body": "<p>🔧 <code>search_web</code> [1]<br>\n🔧 <code>search_web</code> <a href=\"https://weather.example\">1</a></p>\n"
+  },
+  "reference-style link in a reply with a tool call": {
+    "body": "Let me search.\n\n🔧 `search_web` [1]\n\nIt is sunny [1].\n\n[1]: https://weather.example\n",
+    "formatted_body": "<p>Let me search.</p>\n<p>🔧 <code>search_web</code> <a href=\"https://weather.example\">1</a></p>\n<p>It is sunny <a href=\"https://weather.example\">1</a>.</p>\n"
+  },
+  "table row with a pipe in the tool name": {
+    "body": "🔧 ``a|b`` \\[1\\]\n\n| h | k |\n| - | - |\n🔧 `a|b` [1]\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>a|b</code> [1]</p>\n<table>\n<thead>\n<tr>\n<th>h</th>\n<th>k</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>🔧 `a</td>\n<td>b` [1]</td>\n</tr>\n</tbody>\n</table>\n<p>Answer</p>\n"
+  },
+  "tool name containing another index": {
+    "body": "🔧 ``a [2] b`` \\[1\\]\n\nNote 🔧 see [1].\n\n```\n🔧 `a [2] b` [1]\n```\n\nAnswer",
+    "formatted_body": "<p>🔧 <code>a [2] b</code> [1]</p>\n<p>Note 🔧 see [1].</p>\n<pre><code>🔧 `a [2] b` [1]\n</code></pre>\n<p>Answer</p>\n"
+  },
+  "tool name containing an earlier index": {
+    "body": "🔧 `x` [1]\n\nMiddle.\n\n🔧 `a [1] b` [2]",
+    "formatted_body": "<p>🔧 <code>x</code> [1]</p>\n<p>Middle.</p>\n<p>🔧 <code>a [1] b</code> [2]</p>\n"
+  },
+  "wide gap before the pending marker": {
+    "body": "Intro\n\n🔧 `x` [1]  ⏳\n\nAnswer",
+    "formatted_body": "<p>Intro</p>\n<p>🔧 <code>x</code> [1]  ⏳</p>\n<p>Answer</p>\n"
+  },
+  "entity tool block beside a marker in indented code": {
+    "body": "&#x1F527; `x` [1]\n\n    🔧 `x` [1]",
+    "formatted_body": "<p>🔧 <code>x</code> [1]</p>\n<pre><code>🔧 `x` [1]\n</code></pre>\n"
+  },
+  "entity tool block beside a marker in display math": {
+    "body": "$$\n🔧 `x` [1]\n$$\n\n&#x1F527; `x` [1]",
+    "formatted_body": "<div>$$\n🔧 `x` [1]\n$$</div>\n<p>🔧 <code>x</code> [1]</p>\n"
+  },
+  "entity tool block beside a marker in a code span": {
+    "body": "``a\n🔧 `x` [1]\nb``\n\n&#x1F527; `x` [1]",
+    "formatted_body": "<p><code>a 🔧 `x` [1] b</code></p>\n<p>🔧 <code>x</code> [1]</p>\n"
+  },
+  "entity tool block beside a marker after a comment opener": {
+    "body": "<!--\n🔧 `x` [1]\n-->\n\n&#x1F527; `x` [1]",
+    "formatted_body": "<p>&lt;!--<br>\n🔧 <code>x</code> [1]<br>\n--&gt;</p>\n<p>🔧 <code>x</code> [1]</p>\n"
+  }
+}

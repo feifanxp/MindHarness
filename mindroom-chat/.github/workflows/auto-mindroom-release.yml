@@ -1,0 +1,200 @@
+name: Create MindRoom Release
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-mindroom-release-dev
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Create release tag and GitHub release
+    runs-on: ubuntu-latest
+    outputs:
+      base_version: ${{ steps.version.outputs.base_version }}
+      release_tag: ${{ steps.version.outputs.release_tag }}
+      release_iteration: ${{ steps.version.outputs.release_iteration }}
+      release_created: ${{ steps.create_release.outputs.created }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Refresh remote tags
+        run: git fetch --force --tags origin
+      - name: Compute MindRoom release tag
+        id: version
+        env:
+          RELEASE_TAG_PREFIX: v
+          RELEASE_TAG_SUFFIX: mindroom
+        run: python3 scripts/fork_release_tag.py
+      - name: Create release (or skip if it already exists)
+        id: create_release
+        env:
+          GH_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.version.outputs.release_tag }}
+          BASE_VERSION: ${{ steps.version.outputs.base_version }}
+          RELEASE_ITERATION: ${{ steps.version.outputs.release_iteration }}
+        run: |
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            echo "Release $RELEASE_TAG already exists; skipping."
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          gh release create "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "$RELEASE_TAG" \
+            --generate-notes \
+            --notes "Automated release based on Cinny ${BASE_VERSION} (MindRoom iteration ${RELEASE_ITERATION})."
+          echo "created=true" >> "$GITHUB_OUTPUT"
+
+  publish-android-internal:
+    name: Publish Android internal testing release
+    needs: release
+    if: ${{ needs.release.outputs.release_created == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.node-version'
+          cache: npm
+
+      - name: Setup Java
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3.2.2
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@48b5f213c81028ace310571dc5ec0fbbca0b2947 # v4.4.3
+
+      - name: Configure Android upload signing
+        env:
+          ANDROID_UPLOAD_KEYSTORE_BASE64: ${{ secrets.ANDROID_UPLOAD_KEYSTORE_BASE64 }}
+          ANDROID_UPLOAD_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_UPLOAD_KEYSTORE_PASSWORD }}
+          ANDROID_UPLOAD_KEY_ALIAS: ${{ secrets.ANDROID_UPLOAD_KEY_ALIAS }}
+          ANDROID_UPLOAD_KEY_PASSWORD: ${{ secrets.ANDROID_UPLOAD_KEY_PASSWORD }}
+          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+        run: |
+          set -euo pipefail
+
+          missing=0
+          for secret_name in \
+            ANDROID_UPLOAD_KEYSTORE_BASE64 \
+            ANDROID_UPLOAD_KEYSTORE_PASSWORD \
+            ANDROID_UPLOAD_KEY_ALIAS \
+            ANDROID_UPLOAD_KEY_PASSWORD \
+            GOOGLE_PLAY_SERVICE_ACCOUNT_JSON
+          do
+            if [ -z "${!secret_name}" ]; then
+              echo "::error::Missing required GitHub secret: ${secret_name}"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            exit 1
+          fi
+
+          mkdir -p "$HOME/.android"
+          printf '%s' "$ANDROID_UPLOAD_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/mindroom-upload-keystore.jks"
+          test -s "$HOME/.android/mindroom-upload-keystore.jks"
+          chmod 600 "$HOME/.android/mindroom-upload-keystore.jks"
+
+          cat > "$HOME/.android/mindroom-upload-keystore.properties" <<EOF
+          storeFile=$HOME/.android/mindroom-upload-keystore.jks
+          storePassword=$ANDROID_UPLOAD_KEYSTORE_PASSWORD
+          keyAlias=$ANDROID_UPLOAD_KEY_ALIAS
+          keyPassword=$ANDROID_UPLOAD_KEY_PASSWORD
+          EOF
+
+      - name: Install JS deps
+        run: npm ci
+
+      - name: Build web bundle
+        env:
+          MINDROOM_RELEASE_VERSION: ${{ needs.release.outputs.release_tag }}
+        run: npm run build
+
+      - name: Sync Capacitor to Android
+        run: npx cap sync android
+
+      - name: Compute Android release metadata
+        id: android_version
+        env:
+          BASE_VERSION: ${{ needs.release.outputs.base_version }}
+          RELEASE_ITERATION: ${{ needs.release.outputs.release_iteration }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import os
+          import re
+
+          base_version = os.environ["BASE_VERSION"]
+          release_iteration = os.environ["RELEASE_ITERATION"]
+
+          match = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", base_version)
+          if not match:
+              raise SystemExit(f"Unsupported MindRoom base version: {base_version}")
+          if not release_iteration.isdigit():
+              raise SystemExit(f"Unsupported MindRoom release iteration: {release_iteration}")
+
+          major, minor, patch = (int(value) for value in match.groups())
+          iteration = int(release_iteration)
+          version_code = major * 1_000_000 + minor * 10_000 + patch * 100 + iteration
+          print(f"version_code={version_code}")
+          print(f"version_name={base_version}")
+          PY
+
+      - name: Build signed release AAB
+        working-directory: android
+        env:
+          MINDROOM_ANDROID_VERSION_CODE: ${{ steps.android_version.outputs.version_code }}
+          MINDROOM_ANDROID_VERSION_NAME: ${{ steps.android_version.outputs.version_name }}
+        run: ./gradlew --no-daemon :app:bundleRelease
+
+      - name: Verify release AAB signature
+        run: jarsigner -verify android/app/build/outputs/bundle/release/app-release.aab
+
+      - name: Create Play release notes
+        env:
+          RELEASE_TAG: ${{ needs.release.outputs.release_tag }}
+        run: |
+          mkdir -p distribution/whatsnew
+          printf 'MindRoom Android update %s.\n' "$RELEASE_TAG" > distribution/whatsnew/whatsnew-en-US
+
+      - name: Upload release AAB artifact
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: mindroom-android-release-aab-${{ needs.release.outputs.release_tag }}
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish to Google Play internal testing
+        uses: r0adkll/upload-google-play@e738b9dd8f2476ea806d921b64aacd24f34515a5 # v1.1.5
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.mindroom_ai.app
+          releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
+          tracks: internal
+          status: completed
+          releaseName: ${{ needs.release.outputs.release_tag }}
+          whatsNewDirectory: distribution/whatsnew

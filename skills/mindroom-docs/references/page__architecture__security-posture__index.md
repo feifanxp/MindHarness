@@ -28,6 +28,11 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 
 ### Config and state kept out of workers
 
+Project-creation conversations, proposals, revision counters, and simulated confirmation results live under `tracking/project_wizard/`, outside worker mounts.
+Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
+Real provisioning refuses to run unless the complete orchestrator is ready and a concrete owner Matrix identity is available; a dashboard-only API cannot claim a room or Bot exists.
+Only the authenticated confirmation endpoint can freeze a proposal and run project provisioning; model output cannot create rooms, accounts, or tool grants. Project roles always receive an empty tool list and explicitly disabled learning/automations; room membership is deterministic and derived from the authenticated owner.
+
 Runners and dedicated workers never receive the primary's config file, its directory, its `.env`, a ConfigMap holding it, or the credential encryption key.
 The config sent to runners with each request, and the config file projected into each Docker worker, hold only the fields runners resolve; models, MCP servers, plugin settings, and every other section stay in the primary, and a worker-routed call carries only the called tool's own inline overrides.
 
@@ -264,3 +269,6 @@ Classify every finding before proposing a change.
 
 A fix that restricts a trusted setup, or that blocks workspace and attachment flows an agent legitimately needs, is not a security fix.
 When a maintainer rejects a finding as intended behavior, add it to the list above in the same change so the next reviewer does not rediscover it.
+
+The optional project-chat handoff uses the operator-configured project_chat_owner credential only for the frozen project owner, and only for that verified Matrix user or the standalone operator.
+It creates a normal Matrix device session and sends it only in the authenticated, no-store response to the same-origin web client, which stores it through the existing Matrix session store.

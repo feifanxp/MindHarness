@@ -35,6 +35,7 @@ from mindroom.hooks import (
 from mindroom.inbound_turn_normalizer import DispatchPayload
 from mindroom.managed_room_notice import managed_room_notice, responder_display_names
 from mindroom.matrix.rooms import is_dm_room
+from mindroom.peer_discussion.policy import peer_action_kind, peer_participation, room_discussion
 from mindroom.responder_availability import (
     filter_materializable_responders,
     live_responder_entity_names,
@@ -703,6 +704,8 @@ class TurnPolicy:
         """Return one router-specific dispatch plan when this entity is the router."""
         if self.deps.agent_name != ROUTER_AGENT_NAME:
             return None
+        if room_discussion(self.deps.runtime.config, self.deps.runtime_paths, room.room_id) is not None:
+            return _DispatchPlan(kind="ignore", ignore_reason="router")
 
         context = dispatch.context
         planning_thread_history = context.planning_thread_history
@@ -788,6 +791,38 @@ class TurnPolicy:
             return _DispatchPlan(kind="ignore")
         return _DispatchPlan(kind="respond", response_action=action)
 
+    def _peer_response_action(
+        self,
+        dispatch: PreparedDispatch,
+        room: nio.MatrixRoom,
+        *,
+        available: bool,
+    ) -> ResponseAction | None:
+        """Keep peer participation separate from automatic team formation."""
+        context = dispatch.context
+        action = peer_action_kind(
+            config=self.deps.runtime.config,
+            paths=self.deps.runtime_paths,
+            room_id=room.room_id,
+            origin=dispatch.envelope.origin,
+            agent_name=self.deps.agent_name,
+            available=available,
+            mentioned=context.mentioned_agents,
+            am_i_mentioned=context.am_i_mentioned,
+        )
+        if action is None:
+            return None
+        participation = None
+        if action == "individual":
+            participation = peer_participation(
+                self.deps.runtime.config,
+                self.deps.runtime_paths,
+                agent_name=self.deps.agent_name,
+                room_id=room.room_id,
+                thread_id=dispatch.target.resolved_thread_id,
+            )
+        return ResponseAction(kind=action, participation=participation)
+
     def _adaptive_response_action(
         self,
         dispatch: PreparedDispatch,
@@ -867,7 +902,11 @@ class TurnPolicy:
             if should_continue_active_thread or single_visible_self:
                 return ResponseAction(kind="individual")
             return ResponseAction(kind="skip")
-        participation_action = self._adaptive_response_action(dispatch, available_responders_in_room)
+        participation_action = self._peer_response_action(
+            dispatch,
+            room,
+            available=agent_is_responder_candidate,
+        ) or self._adaptive_response_action(dispatch, available_responders_in_room)
         if participation_action is not None:
             return participation_action
         agents_in_thread = get_agents_in_thread(

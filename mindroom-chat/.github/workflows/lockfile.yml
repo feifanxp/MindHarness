@@ -1,0 +1,24 @@
+name: NPM Lockfile Changes
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lockfile.yml'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  lockfile_changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Setup node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.node-version'
+          package-manager-cache: false
+      - name: Validate npm lockfile
+        run: npm ci --ignore-scripts

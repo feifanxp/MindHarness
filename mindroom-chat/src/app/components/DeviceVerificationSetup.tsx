@@ -1,0 +1,403 @@
+import { Trans, useTranslation } from 'react-i18next';
+import React, { FormEventHandler, forwardRef, useCallback, useState } from 'react';
+import { Box, Text, IconButton, Icon, Icons, config, Button, Chip, color, Spinner } from 'folds';
+import FileSaver from 'file-saver';
+import to from 'await-to-js';
+import { AuthDict, IAuthData, MatrixError, UIAuthCallback } from 'matrix-js-sdk';
+import { Dialog, Header } from './glass/GlassPrimitives';
+import { PasswordInput } from './password-input';
+import { ContainerColor } from '../styles/ContainerColor.css';
+import { copyToClipboard } from '../utils/dom';
+import { AsyncStatus, useAsyncCallback } from '../hooks/useAsyncCallback';
+import { clearSecretStorageKeys } from '../../client/secretStorageKeys';
+import { ActionUIA, ActionUIAFlowsLoader } from './ActionUIA';
+import { useMatrixClient } from '../hooks/useMatrixClient';
+import { useAlive } from '../hooks/useAlive';
+import { UseStateProvider } from './UseStateProvider';
+
+type UIACallback<T> = (
+  authDict: AuthDict | null
+) => Promise<[IAuthData, undefined] | [undefined, T]>;
+
+type PerformAction<T> = (authDict: AuthDict | null) => Promise<T>;
+
+type UIAAction<T> = {
+  authData: IAuthData;
+  callback: UIACallback<T>;
+  cancelCallback: () => void;
+};
+
+const INTERNAL_SETUP_ERROR_MESSAGES = new Set([
+  'Unexpected Error! UIA action is perform without data.',
+  'Authentication failed! Failed to setup device verification.',
+  'Unexpected Error! Crypto module not found!',
+  'Unexpected Error! Failed to create recovery key.',
+]);
+
+function makeUIAAction<T>(
+  authData: IAuthData,
+  performAction: PerformAction<T>,
+  resolve: (data: T) => void,
+  reject: (error?: any) => void
+): UIAAction<T> {
+  const action: UIAAction<T> = {
+    authData,
+    callback: async (authDict) => {
+      const [error, data] = await to<T, MatrixError | Error>(performAction(authDict));
+
+      if (error instanceof MatrixError && error.httpStatus === 401) {
+        return [error.data as IAuthData, undefined];
+      }
+
+      if (error) {
+        reject(error);
+        throw error;
+      }
+
+      resolve(data);
+      return [undefined, data];
+    },
+    cancelCallback: reject,
+  };
+
+  return action;
+}
+
+type SetupVerificationProps = {
+  onComplete: (recoveryKey: string) => void;
+};
+function SetupVerification({ onComplete }: SetupVerificationProps) {
+  const { t } = useTranslation();
+  const mx = useMatrixClient();
+  const alive = useAlive();
+
+  const [uiaAction, setUIAAction] = useState<UIAAction<void>>();
+  const [nextAuthData, setNextAuthData] = useState<IAuthData | null>(); // null means no next action.
+
+  const handleAction = useCallback(
+    async (authDict: AuthDict) => {
+      if (!uiaAction) {
+        throw new Error('Unexpected Error! UIA action is perform without data.');
+      }
+      if (alive()) {
+        setNextAuthData(null);
+      }
+      const [authData] = await uiaAction.callback(authDict);
+
+      if (alive() && authData) {
+        setNextAuthData(authData);
+      }
+    },
+    [uiaAction, alive]
+  );
+
+  const resetUIA = useCallback(() => {
+    if (!alive()) return;
+    setUIAAction(undefined);
+    setNextAuthData(undefined);
+  }, [alive]);
+
+  const authUploadDeviceSigningKeys: UIAuthCallback<void> = useCallback(
+    (makeRequest) =>
+      new Promise<void>((resolve, reject) => {
+        makeRequest(null)
+          .then(() => {
+            resolve();
+            resetUIA();
+          })
+          .catch((error) => {
+            if (error instanceof MatrixError && error.httpStatus === 401) {
+              const authData = error.data as IAuthData;
+              const action = makeUIAAction(
+                authData,
+                makeRequest as PerformAction<void>,
+                resolve,
+                (err) => {
+                  resetUIA();
+                  reject(err);
+                }
+              );
+              if (alive()) {
+                setUIAAction(action);
+              } else {
+                reject(new Error('Authentication failed! Failed to setup device verification.'));
+              }
+              return;
+            }
+            reject(error);
+          });
+      }),
+    [alive, resetUIA]
+  );
+
+  const [setupState, setup] = useAsyncCallback<void, Error, [string | undefined]>(
+    useCallback(
+      async (passphrase) => {
+        const crypto = mx.getCrypto();
+        if (!crypto) throw new Error('Unexpected Error! Crypto module not found!');
+
+        const recoveryKeyData = await crypto.createRecoveryKeyFromPassphrase(passphrase);
+        if (!recoveryKeyData.encodedPrivateKey) {
+          throw new Error('Unexpected Error! Failed to create recovery key.');
+        }
+        clearSecretStorageKeys();
+
+        await crypto.bootstrapSecretStorage({
+          createSecretStorageKey: async () => recoveryKeyData,
+          setupNewSecretStorage: true,
+        });
+
+        await crypto.bootstrapCrossSigning({
+          authUploadDeviceSigningKeys,
+          setupNewCrossSigning: true,
+        });
+
+        await crypto.resetKeyBackup();
+
+        onComplete(recoveryKeyData.encodedPrivateKey);
+      },
+      [mx, onComplete, authUploadDeviceSigningKeys]
+    )
+  );
+
+  const loading = setupState.status === AsyncStatus.Loading;
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (evt) => {
+    evt.preventDefault();
+    if (loading) return;
+
+    const target = evt.target as HTMLFormElement | undefined;
+    const passphraseInput = target?.passphraseInput as HTMLInputElement | undefined;
+    let passphrase: string | undefined;
+    if (passphraseInput && passphraseInput.value.length > 0) {
+      passphrase = passphraseInput.value;
+    }
+
+    setup(passphrase);
+  };
+
+  return (
+    <Box as="form" onSubmit={handleSubmit} direction="Column" gap="400">
+      <Text size="T300">
+        <Trans
+          t={t}
+          shouldUnescape
+          tOptions={{ interpolation: { escapeValue: true } }}
+          i18nKey="sharedUi.deviceVerificationSetup.recoveryDescription"
+          components={{ b: <b /> }}
+        />
+      </Text>
+      <Box direction="Column" gap="100">
+        <Text size="L400">{t('sharedUi.deviceVerificationSetup.passphraseOptional')}</Text>
+        <PasswordInput name="passphraseInput" size="400" readOnly={loading} />
+      </Box>
+      <Button
+        type="submit"
+        disabled={loading}
+        before={loading && <Spinner size="200" variant="Primary" fill="Soft" />}
+        outlined
+        radii="300"
+        fill="Soft"
+      >
+        <Text size="B400">{t('sharedUi.deviceVerificationSetup.continue')}</Text>
+      </Button>
+      {setupState.status === AsyncStatus.Error && (
+        <Text size="T200" style={{ color: color.Critical.Main }}>
+          <b>
+            {setupState.error && !INTERNAL_SETUP_ERROR_MESSAGES.has(setupState.error.message)
+              ? setupState.error.message
+              : t('sharedUi.deviceVerificationSetup.unexpectedError')}
+          </b>
+        </Text>
+      )}
+      {nextAuthData !== null && uiaAction && (
+        <ActionUIAFlowsLoader
+          authData={nextAuthData ?? uiaAction.authData}
+          unsupported={() => (
+            <Text size="T200">
+              {t(
+                'sharedUi.deviceVerificationSetup.authenticationStepsToPerformThisActionAreNotSupportedByClient'
+              )}
+            </Text>
+          )}
+        >
+          {(ongoingFlow) => (
+            <ActionUIA
+              authData={nextAuthData ?? uiaAction.authData}
+              ongoingFlow={ongoingFlow}
+              action={handleAction}
+              onCancel={uiaAction.cancelCallback}
+            />
+          )}
+        </ActionUIAFlowsLoader>
+      )}
+    </Box>
+  );
+}
+
+type RecoveryKeyDisplayProps = {
+  recoveryKey: string;
+};
+function RecoveryKeyDisplay({ recoveryKey }: RecoveryKeyDisplayProps) {
+  const { t } = useTranslation();
+  const [show, setShow] = useState(false);
+
+  const handleCopy = () => {
+    copyToClipboard(recoveryKey);
+  };
+
+  const handleDownload = () => {
+    const blob = new Blob([recoveryKey], {
+      type: 'text/plain;charset=us-ascii',
+    });
+    FileSaver.saveAs(blob, 'recovery-key.txt');
+  };
+
+  const safeToDisplayKey = show ? recoveryKey : recoveryKey.replace(/[^\s]/g, '*');
+
+  return (
+    <Box direction="Column" gap="400">
+      <Text size="T300">
+        {t('sharedUi.deviceVerificationSetup.storeTheRecoveryKeyInASafePlaceForFutureUseAs')}
+      </Text>
+      <Box direction="Column" gap="100">
+        <Text size="L400">{t('sharedUi.deviceVerificationSetup.recoveryKey')}</Text>
+        <Box
+          className={ContainerColor({ variant: 'SurfaceVariant' })}
+          style={{
+            padding: config.space.S300,
+            borderRadius: config.radii.R400,
+          }}
+          alignItems="Center"
+          justifyContent="Center"
+          gap="400"
+        >
+          <Text style={{ fontFamily: 'var(--font-mono)' }} size="T200" priority="300">
+            {safeToDisplayKey}
+          </Text>
+          <Chip onClick={() => setShow(!show)} variant="Secondary" radii="Pill">
+            <Text size="B300">
+              {show
+                ? t('sharedUi.deviceVerificationSetup.hide')
+                : t('sharedUi.deviceVerificationSetup.show')}
+            </Text>
+          </Chip>
+        </Box>
+      </Box>
+      <Box direction="Column" gap="200">
+        <Button onClick={handleCopy} fill="Soft" outlined radii="300">
+          <Text size="B400">{t('sharedUi.deviceVerificationSetup.copy')}</Text>
+        </Button>
+        <Button onClick={handleDownload} fill="Soft" outlined radii="300">
+          <Text size="B400">{t('sharedUi.deviceVerificationSetup.download')}</Text>
+        </Button>
+      </Box>
+    </Box>
+  );
+}
+
+type DeviceVerificationSetupProps = {
+  onCancel: () => void;
+};
+export const DeviceVerificationSetup = forwardRef<HTMLDivElement, DeviceVerificationSetupProps>(
+  ({ onCancel }, ref) => {
+    const { t } = useTranslation();
+    const [recoveryKey, setRecoveryKey] = useState<string>();
+
+    return (
+      <Dialog ref={ref}>
+        <Header
+          style={{
+            padding: `0 ${config.space.S200} 0 ${config.space.S400}`,
+            borderBottomWidth: config.borderWidth.B300,
+          }}
+          variant="Surface"
+          size="500"
+        >
+          <Box grow="Yes">
+            <Text size="H4">{t('sharedUi.deviceVerificationSetup.setupDeviceVerification')}</Text>
+          </Box>
+          <IconButton size="300" radii="300" onClick={onCancel}>
+            <Icon src={Icons.Cross} />
+          </IconButton>
+        </Header>
+        <Box style={{ padding: config.space.S400 }} direction="Column" gap="400">
+          {recoveryKey ? (
+            <RecoveryKeyDisplay recoveryKey={recoveryKey} />
+          ) : (
+            <SetupVerification onComplete={setRecoveryKey} />
+          )}
+        </Box>
+      </Dialog>
+    );
+  }
+);
+type DeviceVerificationResetProps = {
+  onCancel: () => void;
+};
+export const DeviceVerificationReset = forwardRef<HTMLDivElement, DeviceVerificationResetProps>(
+  ({ onCancel }, ref) => {
+    const { t } = useTranslation();
+    const [reset, setReset] = useState(false);
+
+    return (
+      <Dialog ref={ref}>
+        <Header
+          style={{
+            padding: `0 ${config.space.S200} 0 ${config.space.S400}`,
+            borderBottomWidth: config.borderWidth.B300,
+          }}
+          variant="Surface"
+          size="500"
+        >
+          <Box grow="Yes">
+            <Text size="H4">{t('sharedUi.deviceVerificationSetup.resetDeviceVerification')}</Text>
+          </Box>
+          <IconButton size="300" radii="300" onClick={onCancel}>
+            <Icon src={Icons.Cross} />
+          </IconButton>
+        </Header>
+        {reset ? (
+          <Box style={{ padding: config.space.S400 }} direction="Column" gap="400">
+            <UseStateProvider initial={undefined}>
+              {(recoveryKey: string | undefined, setRecoveryKey) =>
+                recoveryKey ? (
+                  <RecoveryKeyDisplay recoveryKey={recoveryKey} />
+                ) : (
+                  <SetupVerification onComplete={setRecoveryKey} />
+                )
+              }
+            </UseStateProvider>
+          </Box>
+        ) : (
+          <Box style={{ padding: config.space.S400 }} direction="Column" gap="400">
+            <Box direction="Column" gap="200">
+              <Text size="H1">✋🧑‍🚒🤚</Text>
+              <Text size="T300">
+                {t('sharedUi.deviceVerificationSetup.resettingDeviceVerificationIsPermanent')}
+              </Text>
+              <Text size="T300">
+                <Trans
+                  t={t}
+                  shouldUnescape
+                  tOptions={{ interpolation: { escapeValue: true } }}
+                  i18nKey="sharedUi.deviceVerificationSetup.resetWarning"
+                  components={{ b: <b /> }}
+                />
+              </Text>
+            </Box>
+            <Button
+              variant="Critical"
+              onClick={() => setReset(true)}
+              fill="Soft"
+              outlined
+              radii="300"
+            >
+              <Text size="B400">{t('sharedUi.deviceVerificationSetup.reset')}</Text>
+            </Button>
+          </Box>
+        )}
+      </Dialog>
+    );
+  }
+);

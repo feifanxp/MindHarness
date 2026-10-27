@@ -1,0 +1,3111 @@
+{
+  "messageTable": {
+    "label": "可滚动表格",
+    "scrollHint": "水平滚动"
+  },
+  "messageCodeBlock": {
+    "actions": "代码块操作",
+    "code": "代码",
+    "language": "语言：{{language}}",
+    "copy": "复制代码",
+    "copied": "已复制",
+    "wrap": "自动换行",
+    "expand": "展开",
+    "collapse": "折叠"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " 更改了房间名称"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "现代",
+      "compact": "紧凑",
+      "bubble": "气泡"
+    },
+    "messageSpacing": {
+      "none": "无",
+      "ultraSmall": "超小型",
+      "extraSmall": "特小号",
+      "small": "小",
+      "normal": "常规",
+      "large": "大"
+    },
+    "dateFormat": {
+      "custom": "自定义"
+    },
+    "themeName": {
+      "light": "浅色",
+      "silver": "银",
+      "dark": "深色",
+      "midnight": "午夜",
+      "butter": "奶油色"
+    },
+    "prefetchScope": {
+      "myHomeserver": "我的主服务器",
+      "allRooms": "所有房间",
+      "currentRoomOnly": "仅限当前房间"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "logout": "退出登录",
+    "nav": {
+      "general": "常规",
+      "account": "账户",
+      "notifications": "通知",
+      "devices": "设备",
+      "emojisStickers": "表情符号和贴纸",
+      "developerTools": "开发者工具",
+      "about": "关于"
+    },
+    "general": {
+      "title": "常规",
+      "interface": {
+        "sectionTitle": "界面",
+        "simpleMode": "简单模式",
+        "simpleModeDescription": "隐藏命令选项板和讨论串过滤器等高级功能。在您的设备之间同步。",
+        "showCanvasesInSidebar": "在侧边栏显示交互式面板",
+        "showCanvasesInSidebarDescription": "有交互式面板后，显示一个按钮来查看智能体为您创建的面板。此设置会在您的设备之间同步。",
+        "saveFailed": "无法保存更改。检查您的连接并重试。"
+      },
+      "language": {
+        "sectionTitle": "语言",
+        "appLanguage": "应用程序语言",
+        "appLanguageDescription": "适用于菜单和界面文本。消息内容永远不会被翻译。"
+      },
+      "appearance": {
+        "sectionTitle": "外观",
+        "systemTheme": "系统主题",
+        "systemThemeDescription": "根据系统偏好选择浅色和深色主题。",
+        "lightTheme": "浅色主题：",
+        "darkTheme": "深色主题：",
+        "theme": "主题",
+        "themeDescription": "未启用系统主题时使用的主题。",
+        "monochromeMode": "单色模式",
+        "twitterEmoji": "Twitter 表情符号",
+        "pageZoom": "页面缩放"
+      },
+      "dateTime": {
+        "sectionTitle": "日期和时间",
+        "hour24Clock": "24 小时时间格式",
+        "dateFormat": "日期格式",
+        "save": "保存",
+        "formatHints": {
+          "title": "格式化",
+          "year": "年",
+          "twoDigitYear": "两位数年份",
+          "fourDigitYear": "四位数年份",
+          "month": "月",
+          "theMonth": "月份",
+          "twoDigitMonth": "两位数月份",
+          "shortMonthName": "简短的月份名称",
+          "fullMonthName": "完整的月份名称",
+          "dayOfMonth": "每月的某一天",
+          "theDayOfMonth": "该月的哪一天",
+          "twoDigitDayOfMonth": "两位数的月份日期",
+          "dayOfWeek": "一周中的某一天",
+          "theDayOfWeek": "星期几（星期日 = 0）",
+          "twoLetterDayName": "两个字母的日期名称",
+          "shortDayName": "短日名称",
+          "fullDayName": "全日名称"
+        }
+      },
+      "editor": {
+        "sectionTitle": "编辑",
+        "enterForNewline": "ENTER 换行",
+        "enterForNewlineDescription": "使用 {{sendKey}} + ENTER 发送消息，使用 ENTER 换行。",
+        "markdownFormatting": "Markdown 格式",
+        "hideActivity": "隐藏打字和已读回执",
+        "hideActivityDescription": "关闭输入状态和已读回执，让您的活动保持私密。"
+      },
+      "messages": {
+        "sectionTitle": "消息",
+        "messageLayout": "消息布局",
+        "messageSpacing": "消息间距",
+        "prefetchScope": "预取范围",
+        "prefetchScopeDescription": "哪些房间在后台准备就绪",
+        "historyDepth": "当前房间历史深度",
+        "historyDepthDescription": "为您正在查看的房间预加载的目标事件数。最小值 {{min}}，最大值 {{max}}。",
+        "legacyUsernameColor": "旧用户名颜色",
+        "hideMembershipChange": "隐藏会员变更",
+        "hideProfileChange": "隐藏个人资料更改",
+        "disableMediaAutoLoad": "禁用媒体自动加载",
+        "urlPreview": "网址预览",
+        "urlPreviewEncrypted": "加密房间网址预览",
+        "showHiddenEvents": "显示隐藏的事件"
+      },
+      "computers": {
+        "sectionTitle": "计算机",
+        "apiUrl": "计算机服务 URL",
+        "description": "请选择可信的 MindRoom 后端；它会收到短期有效的登录令牌。保存在此设备上。留空可关闭计算机。",
+        "save": "保存计算机服务",
+        "reset": "使用应用默认值",
+        "invalidUrl": "请输入不含凭据、路径、查询或片段的源。请使用 HTTPS，或对 localhost 或私有局域网 IP 地址使用 HTTP。",
+        "httpNotice": "HTTP 不会加密您的登录信息或计算机流量。请仅在可信任的局域网上使用。",
+        "saveFailed": "无法在此设备上保存计算机服务。",
+        "saved": "计算机服务已保存。"
+      },
+      "connections": {
+        "sectionTitle": "连接",
+        "title": "已连接的账户",
+        "description": "在您的 MindRoom 服务器上连接智能体使用的账户，例如 Google 或 GitHub。",
+        "open": "打开连接",
+        "noBackend": "请在“计算机”中设置您的 MindRoom 服务器，以使用连接。",
+        "blocked": "浏览器拦截了连接窗口。请允许此网站的弹出窗口，然后重试。"
+      }
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "directMessages": "私信",
+    "threads": "讨论串",
+    "canvases": "交互式面板",
+    "inbox": "收件箱",
+    "exploreCommunity": "探索社区",
+    "addSpace": "添加空间",
+    "createSpace": "创建空间",
+    "createSpaceDescription": "为您的社区打造一个空间。",
+    "joinWithAddress": "使用地址加入",
+    "joinWithAddressDescription": "成为现有社区的一部分。",
+    "createRoom": "创建房间",
+    "messageSearch": "消息搜索",
+    "rooms": "房间",
+    "chats": "聊天",
+    "createChat": "创建聊天",
+    "directMessage": "私信",
+    "noRooms": "没有房间",
+    "noRoomsDescription": "您还没有任何房间。",
+    "noDirectMessages": "没有私信",
+    "noDirectMessagesDescription": "您还没有任何直接消息。",
+    "exploreCommunityRooms": "探索社区房间",
+    "unverifiedDevice": "未验证设备",
+    "unverifiedDevices": "未验证设备"
+  },
+  "accountsRail": {
+    "settingsTooltip": "设置：{{name}}",
+    "switchTooltip": "切换到 {{name}} ({{userId}})",
+    "openSettingsAria": "打开 {{name}} 的设置",
+    "switchAria": "切换到账户 {{name}} ({{userId}})",
+    "manageAccounts": "管理账户",
+    "addAccount": "添加账户",
+    "addAccountAria": "添加账户"
+  },
+  "commandPalette": {
+    "inputAria": "命令面板",
+    "placeholder": "搜索或运行命令…",
+    "closeAria": "关闭命令面板",
+    "open": "打开命令面板",
+    "noResults": "没有结果",
+    "resultCount_one": "{{count}} 个结果",
+    "resultCount_other": "{{count}} 个结果",
+    "sections": {
+      "actions": "操作",
+      "threads": "讨论串",
+      "rooms": "房间",
+      "users": "用户",
+      "messages": "消息",
+      "spaces": "空间"
+    },
+    "prefixes": {
+      "label": "前缀：",
+      "actions": "操作",
+      "rooms": "房间",
+      "users": "用户",
+      "threads": "讨论串",
+      "spaces": "空间"
+    },
+    "shortcut": "快捷键：",
+    "shortcutOpenSuffix": "打开。",
+    "actions": {
+      "openSettings": "打开设置",
+      "openSettingsDescription": "打开共享设置对话框",
+      "goHome": "前往首页",
+      "goHomeDescription": "跳转到首页",
+      "goDirect": "前往私信",
+      "goDirectDescription": "跳转至直接消息",
+      "goInbox": "转到收件箱",
+      "goInboxDescription": "打开收件箱通知",
+      "createRoom": "创建房间",
+      "createRoomDescription": "打开房间创建对话框",
+      "createSpace": "创建空间",
+      "createSpaceDescription": "打开空间创建对话框",
+      "toggleTheme": "切换主题",
+      "toggleThemeDescription": "明暗切换",
+      "logout": "退出登录",
+      "logoutDescription": "退出 MindRoom Chat",
+      "markCurrentRoomRead": "标记当前房间已读",
+      "markCurrentRoomReadDescription": "将 {{room}} 标记为已读",
+      "copyCurrentRoomLink": "复制当前房间链接",
+      "copyCurrentRoomLinkDescription": "复制 {{room}} 的应用链接",
+      "openCurrentRoomSettings": "打开当前房间设置",
+      "openCurrentRoomSettingsDescription": "打开 {{room}} 的设置",
+      "unresolveCurrentThread": "取消解决当前讨论串",
+      "unresolveCurrentThreadDescription": "将活动讨论串移回未解析队列",
+      "resolveCurrentThread": "解决当前讨论串",
+      "resolveCurrentThreadDescription": "将活动讨论串标记为已解决",
+      "currentRoomFallback": "当前房间"
+    },
+    "messages": {
+      "searchIn": "在 {{query}} 中搜索 {{scope}}",
+      "searchAll": "在所有房间中搜索 {{query}}",
+      "currentRoomFallback": "当前房间",
+      "currentRoomDescription": "当前房间",
+      "currentSpaceFallback": "当前空间",
+      "currentSpaceDescription": "当前空间",
+      "globalSearchDescription": "全球消息搜索"
+    },
+    "all": "全部",
+    "filterLabel": "筛选结果",
+    "resultsLabel": "搜索结果",
+    "emptyDescription": "请尝试其他搜索词或选择其他类别。",
+    "clearSearch": "清除搜索",
+    "navigate": "导航",
+    "select": "打开"
+  },
+  "accountSwitcher": {
+    "title": "账户",
+    "description": "切换账户、添加另一个账户或删除不活动的账户。",
+    "active": "活跃",
+    "openSettings": "打开设置",
+    "switch": "切换",
+    "removing": "正在删除...",
+    "removeFromDevice": "从设备中删除",
+    "addAccount": "添加账户",
+    "close": "关闭",
+    "actionError": "无法更新此账户。请再试一次。"
+  },
+  "recentThreads": {
+    "title": "最近打开",
+    "empty": "没有最近打开的讨论串",
+    "resizeAria": "调整最近打开的大小",
+    "openedAt": "打开于 {{time}}"
+  },
+  "threadNav": {
+    "title": "讨论串",
+    "empty": "还没有讨论串",
+    "loading": "正在加载讨论串...",
+    "pin": "置顶讨论串",
+    "unpin": "取消置顶讨论串",
+    "pinned": "已置顶",
+    "room": "房间",
+    "agents": "智能体",
+    "agentsUnknown": "未识别智能体",
+    "messages": "消息",
+    "lastActivity": "上次活动",
+    "unknownActivity": "未知"
+  },
+  "composer": {
+    "placeholder": "发送消息…",
+    "sendMessage": "发送消息",
+    "recordVoice": "录制语音消息",
+    "formatting": "格式",
+    "attach": "添加附件",
+    "voicePausedInOtherRoom": "录音已暂停 — 完成或放弃在 {{roomName}} 中未发送的录音",
+    "dropFiles": "将文件拖放到“{{roomName}}”中",
+    "dropFilesHint": "将文件拖放到此处或单击以打开选择对话框",
+    "roomFallback": "房间",
+    "voiceRoomUnavailable": "该房间已不再可用。放弃未发送的语音消息，稍后重试。",
+    "voiceStillSending": "另一条语音消息仍在发送中。请等待后再重新录制。",
+    "voiceBundleBlocked": "另一个附件发送仍在进行中或需要注意。等待，或者重试或删除失败的附件，然后再次发送此消息。"
+  },
+  "threadActions": {
+    "more": "讨论串选项",
+    "open": "打开讨论串",
+    "tags": "编辑标签",
+    "editSummary": "编辑摘要",
+    "regenerate": "重新生成摘要",
+    "reopen": "重新打开讨论串",
+    "copy": "复制讨论串链接",
+    "summary": "摘要",
+    "summaryHint": "手动编辑会停止自动更新摘要。你可以随时再次编辑或重新生成摘要。",
+    "length": "{{count}} / {{max}} 个字符",
+    "agent": "智能体",
+    "noAgents": "此房间中没有已加入的智能体",
+    "regenerateHint": "请智能体更新此讨论串的摘要。智能体需要讨论串摘要工具。",
+    "requested": "请求已发送。智能体完成后，摘要将会更新。请在讨论串中查看其回复。",
+    "failed": "无法完成此操作。请重试。",
+    "save": "保存摘要",
+    "sendRequest": "发送请求",
+    "saving": "正在发送…",
+    "cancel": "取消",
+    "done": "完成"
+  },
+  "thread": {
+    "pinFailed": "无法更新置顶状态。请重试。",
+    "chip": "讨论串",
+    "view": "讨论串视图",
+    "resolve": "解决",
+    "resolved": "已解决",
+    "resolvedBy": "由 {{name}} 解决",
+    "resolvedByShort": "由 {{name}}",
+    "hideDetails": "隐藏讨论串详情",
+    "showDetails": "显示讨论串详情",
+    "backToRoom": "返回房间",
+    "replyCount_one": "{{count}} 条回复",
+    "replyCount_other": "{{count}} 条回复",
+    "aria": {
+      "openThread": "打开讨论串：{{title}}",
+      "resolvedThread": "已解决的讨论串",
+      "unresolvedThread": "未解决的讨论串",
+      "unreadMessages": "未读消息",
+      "agentStreaming": "智能体正在流式响应",
+      "messageFailed": "消息发送失败",
+      "messageSending": "消息发送",
+      "lastActivity": "上次活动 {{time}}",
+      "removeTagFilter": "删除 {{tag}} 过滤器"
+    },
+    "status": {
+      "resolved": "已解决",
+      "streaming": "流式响应",
+      "scheduled": "已计划",
+      "unread": "未读",
+      "idle": "空闲",
+      "idleFilter": "空闲（已解决，不流式传输，无任务）"
+    },
+    "stats": {
+      "aria": "讨论串统计",
+      "showing": "显示 {{shown}}，共 {{total}}",
+      "threadCount_one": "{{count}} 个讨论串",
+      "threadCount_other": "{{count}} 个讨论串",
+      "tags": "标签"
+    },
+    "filterTooltip": {
+      "any": "{{label}}：显示全部。单击仅显示。",
+      "include": "{{label}}：仅显示。单击即可隐藏。",
+      "exclude": "{{label}}：隐藏。单击以清除过滤器。",
+      "tagAny": "标签“{{tag}}”",
+      "tagInclude": "标签“{{tag}}”：仅显示。单击即可隐藏。",
+      "tagExclude": "标签“{{tag}}”：隐藏。单击以清除过滤器。",
+      "stateAny": "显示全部",
+      "stateInclude": "仅显示",
+      "stateExclude": "隐藏"
+    },
+    "filters": {
+      "scope": "范围",
+      "scopeInvolved": "涉及",
+      "scopeAllRooms": "所有房间",
+      "status": "状态",
+      "statusAll": "全部",
+      "statusUnresolved": "未解决",
+      "statusResolved": "已解决",
+      "activity": "活动",
+      "activityToday": "今天",
+      "activity7d": "7 天",
+      "activity30d": "30 天",
+      "activityAll": "全部",
+      "unread": "未读",
+      "attention": "需关注",
+      "roomIdsPlaceholder": "房间 ID",
+      "roomIdsAria": "房间 ID 过滤器",
+      "spaceIdsPlaceholder": "空间 ID",
+      "spaceIdsAria": "空间 ID 过滤器",
+      "tagsPlaceholder": "标签",
+      "tagsIncludeAria": "包含标签过滤器",
+      "excludeTagsPlaceholder": "排除标签",
+      "tagsExcludeAria": "排除的标签过滤器",
+      "clear": "清除",
+      "open": "过滤器",
+      "search": "搜索讨论串",
+      "sheetAria": "讨论串过滤器",
+      "closeAria": "关闭讨论串过滤器"
+    },
+    "simpleFilter": {
+      "unresolved": "未解决",
+      "showingUnresolved": "显示未解决的讨论串。单击以显示全部。",
+      "showingAll": "显示所有讨论串。单击仅显示未解决的问题。"
+    }
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "账户数据",
+      "save": "保存",
+      "cancel": "取消",
+      "jsonContent": "JSON 内容",
+      "edit": "编辑",
+      "developerTools": "开发者工具"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "加载认证流程信息失败。",
+      "retry": "重试"
+    },
+    "backupRestore": {
+      "restoring0": "恢复：0%",
+      "backupHasTrustedDecryptionKey": "备份具有受信任的解密密钥。",
+      "backupDoesNotHaveTrustedDecryptionKey": "备份没有可信解密密钥！",
+      "backupHasTrustedBySignature": "备份已通过签名信任。",
+      "backupDoesNotHaveTrustedSignature": "备份没有可信签名！",
+      "encryptionBackup": "加密备份",
+      "backupDetails": "备份详情",
+      "restoreBackup": "恢复备份",
+      "noBackupPresentOnServer": "服务器上没有备份！",
+      "connected": "已连接",
+      "disconnected": "已断开连接",
+      "nil": "NIL",
+      "syncing": "正在同步（{{count}}）",
+      "restoring": "正在恢复：{{progress}}%",
+      "version": "版本：{{version}}",
+      "keys": "密钥：{{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "提示",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "此功能正在测试中，可能会随着时间的推移而改变。",
+      "beta": "测试版"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "来电",
+      "yourHomeserverDoesNotSupportCalling": "您的主服务器不支持通话。",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "您的浏览器不支持通话所需的WebRTC。",
+      "answer": "回答",
+      "reject": "拒绝",
+      "ignore": "忽略"
+    },
+    "deviceVerification": {
+      "close": "关闭",
+      "pleaseAcceptTheRequestFromOtherDevice": "请接受来自其他设备的请求。",
+      "clickAcceptToStartTheVerificationProcess": "单击接受开始验证过程。",
+      "accept": "接受",
+      "verificationRequestHasBeenAccepted": "验证请求已被接受。",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "确认以下表情符号以相同的顺序显示在两个设备上：",
+      "theyMatch": "匹配",
+      "doNotMatch": "不匹配",
+      "yourDeviceIsVerified": "您的设备已通过验证。",
+      "okay": "确定",
+      "verificationHasBeenCanceled": "验证已取消。",
+      "deviceVerification": "设备验证",
+      "waitingForRequestToBeAccepted": "正在等待请求被接受...",
+      "waitingForTheResponseFromOtherDevice": "正在等待其他设备的响应...",
+      "startingVerificationUsingEmojiComparison": "开始使用表情符号比较进行验证...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "意外错误！验证已开始，但缺少验证者。"
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "恢复密钥",
+      "passphraseOptional": "密码（可选）",
+      "continue": "继续",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "客户端不支持执行此操作的身份验证步骤。",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "请将恢复密钥妥善保管。无法访问其他设备时，您需要使用它来验证身份。",
+      "copy": "复制",
+      "download": "下载",
+      "setupDeviceVerification": "设置设备验证",
+      "resetDeviceVerification": "重置设备验证",
+      "resettingDeviceVerificationIsPermanent": "重置设备验证是永久性的。",
+      "recoveryPassphrase": "恢复口令",
+      "reset": "重置",
+      "unexpectedError": "意外错误！",
+      "hide": "隐藏",
+      "show": "显示",
+      "recoveryDescription": "生成<b>恢复密钥</b>，以便无法访问其他设备时验证身份。您还可以设置易于记忆的恢复口令。",
+      "resetWarning": "所有与您互相验证过的用户都会看到安全警报，并且您的加密备份将会丢失。除非您已遗失<b>恢复密钥</b>、<b>恢复口令</b>以及所有可用于验证的设备，否则请勿执行此操作。"
+    },
+    "hexColorPickerPopOut": {
+      "remove": "移除"
+    },
+    "logoutDialog": {
+      "logout": "退出登录",
+      "unverifiedDevice": "未验证设备",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "退出登录前请先验证设备，以保存加密消息。",
+      "alert": "警告",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "请启用设备验证，或从设置中导出加密数据，以免失去消息访问权限。",
+      "youReAboutToLogOutAreYouSure": "即将退出登录。确定吗？",
+      "cancel": "取消",
+      "logoutFailed": "退出登录失败！{{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "恢复口令",
+      "recoveryKey": "恢复密钥",
+      "verifyManually": "手动验证",
+      "deviceVerified": "设备已验证！",
+      "selectAVerificationMethod": "选择验证方法。",
+      "provideRecoveryKey": "提供恢复密钥。"
+    },
+    "pdfViewer": {
+      "zoomOut": "缩小",
+      "zoomIn": "放大",
+      "failedToLoadPdf": "无法加载 PDF",
+      "retry": "重试",
+      "previous": "上一页",
+      "pageNumber": "页码",
+      "jumpToPage": "跳转到页面",
+      "next": "下一页",
+      "saving": "保存...",
+      "retryDownload": "重试下载",
+      "download": "下载"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "恢复口令",
+      "verify": "验证",
+      "recoveryKey": "恢复密钥",
+      "invalidRecoveryPassphrase": "恢复口令无效。",
+      "invalidRecoveryKey": "恢复密钥无效。"
+    },
+    "uIAFlowOverlay": {
+      "exit": "退出",
+      "stepValue1Value2": "步骤 {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "创始人",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "可以在创建过程中分配特殊权限的用户。这些用户拥有更高的控制权，并且只能在升级期间进行修改。",
+      "enter": "输入",
+      "noSuggestions": "没有建议",
+      "pleaseProvideTheUserIdAndHitEnter": "请提供用户 ID 并按 Enter 键。"
+    },
+    "createRoomAccessSelector": {
+      "restricted": "受限制的",
+      "onlyMemberOfParentSpaceCanJoin": "只有父空间的成员才能加入。",
+      "private": "私人的",
+      "onlyPeopleWithInviteCanJoin": "只有获得邀请的人才能加入。",
+      "public": "公开",
+      "anyoneWithTheAddressCanJoin": "任何知道地址的人都可以加入。"
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "地址（可选）",
+      "pickAnUniqueAddressToMakeItDiscoverable": "选择一个唯一的地址以使其易于被发现。",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "该地址已被占用。请选择一个不同的。"
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "聊天室",
+      "messagesPhotosAndVideos": "- 消息、照片和视频。",
+      "voiceRoom": "语音室",
+      "liveAudioAndVideoConversations": "- 实时音频和视频对话。"
+    },
+    "roomVersionSelector": {
+      "versions": "版本",
+      "version": "版本"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "表情符号"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "房间",
+      "unknownRoom": "未知房间"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "提及"
+    },
+    "emojiBoard": {
+      "recent": "最近的",
+      "unknownPack": "未知包",
+      "searchResults": "搜索结果",
+      "noResultsFound": "没有找到结果",
+      "personalPack": "个人包",
+      "unknown": "未知"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "没有贴纸包！",
+      "addStickersFromUserRoomOrSpaceSettings": "从用户、房间或空间设置添加贴纸。"
+    },
+    "searchInput": {
+      "react": "反应",
+      "searchOrTextReaction": "搜索或文本反应 ",
+      "search": "搜索"
+    },
+    "tabs": {
+      "sticker": "贴纸",
+      "emoji": "表情符号"
+    },
+    "eventReaders": {
+      "seenBy": "看过的人"
+    },
+    "imageEditor": {
+      "imageEditor": "图像编辑器",
+      "save": "保存"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "无法应用更改！请再试一次。",
+      "changesSavedApplyWhenReady": "更改已保存！准备好后即可应用。",
+      "reset": "重置",
+      "applyChanges": "应用更改",
+      "pack": "包",
+      "imagesUsage": "图片使用",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "选择图像的使用方式：作为表情符号、作为贴纸或两者兼而有之。",
+      "images": "图片",
+      "uploadImages": "上传图片",
+      "selectImagesFromYourStorageToUploadThemInPack": "从您的存储中选择图像以打包上传。",
+      "select": "选择"
+    },
+    "imagePackView": {
+      "emojisStickers": "表情符号和贴纸"
+    },
+    "imageTile": {
+      "undo": "撤消",
+      "edit": "编辑",
+      "shortcode": "简码：",
+      "body": "内容：",
+      "save": "保存",
+      "cancel": "取消"
+    },
+    "packMeta": {
+      "edit": "编辑",
+      "packAvatar": "包头像",
+      "upload": "上传",
+      "reset": "重置",
+      "remove": "移除",
+      "name": "名称",
+      "attribution": "归因",
+      "save": "保存",
+      "cancel": "取消",
+      "unknown": "未知"
+    },
+    "imageViewer": {
+      "zoomOut": "缩小",
+      "zoomIn": "放大",
+      "saving": "保存...",
+      "retryDownload": "重试下载",
+      "download": "下载"
+    },
+    "inviteUserPrompt": {
+      "invite": "邀请",
+      "userId": "用户 ID",
+      "reasonOptional": "原因（可选）"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "使用地址加入",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "输入公共地址以加入社区。地址看起来像：",
+      "address": "地址",
+      "invalidAddress": "地址无效",
+      "open": "打开"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "离开房间",
+      "areYouSureYouWantToLeaveThisRoom": "您确定要离开这个房间吗？",
+      "leaving": "离开...",
+      "leave": "离开",
+      "leaveFailed": "未能离开房间！ {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "离开空间",
+      "areYouSureYouWantToLeaveThisSpace": "您确定要离开此空间吗？",
+      "leaving": "离开...",
+      "leave": "离开",
+      "leaveFailed": "无法离开空间！{{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "打开位置",
+      "voiceMessage": "语音消息",
+      "audio": "音频",
+      "unnamedFile": "未命名文件",
+      "file": "文件",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF 文档",
+      "textFile": "文本文件"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "此消息已被删除",
+      "unsupportedMessage": "不支持的消息",
+      "failedToLoadMessage": "无法加载消息",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "无法解密此消息——加密密钥不可用",
+      "thisMessageIsNotDecryptedYet": "此消息尚未解密",
+      "brokenMessage": "消息损坏",
+      "emptyMessage": "空消息",
+      "edited": " （已编辑）",
+      "deletedWithReason": "此消息已被删除。 {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "打开 PDF",
+      "openFile": "打开文件",
+      "loadFailed": "加载文件失败！",
+      "retryDownload": "重试下载 ({{size}})",
+      "downloadSize": "下载（{{size}}）",
+      "openValue1": "打开 {{value1}}"
+    },
+    "imageContent": {
+      "view": "查看",
+      "spoiler": "剧透",
+      "failedToLoadImage": "加载图片失败！",
+      "retry": "重试"
+    },
+    "videoContent": {
+      "watch": "观看",
+      "spoiler": "剧透",
+      "failedToLoadVideo": "视频加载失败！",
+      "retry": "重试"
+    },
+    "voiceAudioContent": {
+      "loadError": "无法加载音频。点击播放以重试。",
+      "playbackError": "无法在此播放该音频。请尝试下载。",
+      "playbackPosition": "{{current}}，共 {{duration}}",
+      "moreAudioOptions": "更多音频选项",
+      "download": "下载",
+      "name": "名称",
+      "type": "类型",
+      "size": "尺寸",
+      "duration": "时长",
+      "voiceMessage": "语音消息",
+      "pauseValue1": "暂停 {{value1}}",
+      "playValue1": "播放 {{value1}}",
+      "seekValue1": "跳转至 {{value1}}"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "管理员将审核您的请求。",
+      "messageOptional": "消息（可选）",
+      "cancel": "取消",
+      "failedToSendRequest": "发送请求失败。",
+      "sendingRequest": "发送请求",
+      "sendRequest": "发送请求",
+      "requestToJoinValue1": "请求加入 {{value1}}"
+    },
+    "roomCard": {
+      "cancel": "取消",
+      "checkingAccess": "检查访问权限",
+      "space": "空间",
+      "view": "查看",
+      "retry": "重试",
+      "joinError": "加入错误",
+      "viewError": "查看错误",
+      "retryRoomInfo": "重试房间信息",
+      "accessUnavailable": "无法访问",
+      "failedToJoinUnknownError": "加入失败。未知错误。",
+      "sendingRequest": "发送请求",
+      "requestSent": "请求已发送",
+      "requestToJoin": "请求加入",
+      "joining": "正在加入",
+      "join": "加入",
+      "members_one": "{{count, number}} 名成员",
+      "members_other": "{{count, number}} 名成员"
+    },
+    "roomIntro": {
+      "inviteMember": "邀请成员",
+      "openOldRoom": "打开旧房间",
+      "joinOldRoom": "加入旧房间",
+      "thisIsTheBeginningOfConversation": "这是谈话的开始。",
+      "createdBy": "创建者： ",
+      "onValue1Value2": " 在 {{value1}} {{value2}} 上"
+    },
+    "textViewer": {
+      "copyAll": "全部复制"
+    },
+    "datePicker": {
+      "day": "天",
+      "month": "月",
+      "year": "年"
+    },
+    "timePicker": {
+      "hour": "小时",
+      "minutes": "分钟",
+      "period": "时段",
+      "am": "上午",
+      "pm": "下午"
+    },
+    "dummyStage": {
+      "retry": "重试",
+      "cancel": "取消",
+      "failedToRegister": "注册失败。"
+    },
+    "emailStage": {
+      "email": "电子邮件",
+      "sendVerificationEmail": "发送验证邮件",
+      "cancel": "取消",
+      "sendingVerificationEmail": "正在发送验证电子邮件...",
+      "verificationRequestSent": "已发送验证请求",
+      "continue": "继续",
+      "provideEmail": "提供电子邮件",
+      "verifyEmail": "验证邮箱",
+      "failedToSendVerificationEmailRequest": "无法发送验证电子邮件请求。",
+      "pleaseProvideEmailToSendVerificationRequest": "请输入用于接收验证请求的电子邮件地址。",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "请检查您的电子邮件“{{value1}}”并进行验证，然后再继续。"
+    },
+    "passwordStage": {
+      "accountPassword": "账户密码",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "要执行此操作，您需要输入账户密码来验证自己的身份。",
+      "password": "密码",
+      "continue": "继续",
+      "invalidPassword": "密码无效！"
+    },
+    "reCaptchaStage": {
+      "cancel": "取消",
+      "invalidData": "无效数据",
+      "pleaseCheckTheBoxBelowToProceed": "请选中下面的框以继续。",
+      "noValidDataFoundToProceedWithRecaptcha": "找不到继续进行 ReCAPTCHA 的有效数据。"
+    },
+    "registrationTokenStage": {
+      "registrationToken": "注册令牌",
+      "retry": "重试",
+      "cancel": "取消",
+      "invalidRegistrationTokenProvided": "提供的注册令牌无效。",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "请提交您的主服务器管理员提供的注册令牌。"
+    },
+    "sSOStage": {
+      "ssoLogin": "SSO 登录",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "要执行此操作，您需要通过 SSO 登录来验证自己的身份。",
+      "continue": "继续",
+      "continueWithSso": "继续使用SSO 登录"
+    },
+    "termsStage": {
+      "retry": "重试",
+      "cancel": "取消",
+      "failedToSubmitTermsAndConditionAcceptance": "无法提交条款和条件接受。"
+    },
+    "uploadBoard": {
+      "files": "文件",
+      "uploadFailed": "上传失败",
+      "remove": "移除",
+      "removeAll": "全部删除"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "重试上传",
+      "retry": "重试",
+      "cancelUpload": "取消上传"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "剧透",
+      "retryUpload": "重试上传",
+      "retry": "重试",
+      "cancelUpload": "取消上传"
+    },
+    "creatorChip": {
+      "managePowers": "管理权限"
+    },
+    "powerChip": {
+      "selfDemotion": "自我降级",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "你这是要自我贬低啊！你自己将无法重新获得这种力量。你确定吗？",
+      "demote": "降级",
+      "sharedPower": "同等权限",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "你是在提升用户拥有和你一样的权力！之后你将无法改变他们的力量。你确定吗？",
+      "promote": "提升权限",
+      "managePowers": "管理权限",
+      "errorName": "错误：{{name}}"
+    },
+    "userChips": {
+      "copyServer": "复制服务器",
+      "exploreCommunity": "探索社区",
+      "openInBrowser": "在浏览器中打开",
+      "copyUserId": "复制用户 ID",
+      "copyUserLink": "复制用户链接",
+      "share": "分享",
+      "spaces": "空间",
+      "rooms": "房间",
+      "directMessages": "私信",
+      "blockedUser": "被阻止的用户",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "您不会收到此用户的任何消息或邀请。",
+      "mutualRooms": "共同房间",
+      "unblockUser": "解除阻止用户",
+      "blockUser": "阻止用户",
+      "mutualRooms_one": "{{count, number}} 共同房间",
+      "mutualRooms_other": "{{count, number}} 个共同房间"
+    },
+    "userModeration": {
+      "kickedUser": "被踢出的用户",
+      "noReasonProvided": "没有提供理由。",
+      "bannedUser": "被禁止的用户",
+      "unban": "解禁",
+      "invitedUser": "受邀用户",
+      "cancelInvite": "取消邀请",
+      "moderation": "管理",
+      "reason": "原因：<b>{{reason}}</b>",
+      "invite": "邀请",
+      "kick": "踢",
+      "ban": "禁止",
+      "kickedBy": "被踢：<b>{{name}}</b>",
+      "bannedBy": "禁止者：<b>{{name}}</b>",
+      "invitedBy": "邀请人：<b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "消息"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "语音音量",
+      "voiceVolumeCurrentlyValue1": "语音音量，当前为 {{value1}}%"
+    },
+    "configConfig": {
+      "continueOffline": "继续离线",
+      "yourWebSessionHasExpired": "您的网络会话已过期。",
+      "failedToLoadClientConfigurationFile": "无法加载客户端配置文件。",
+      "signInAgainToReconnectOrContinueInOfflineMode": "重新登录以恢复连接，或继续使用离线模式。",
+      "signInAgainToReconnect": "重新登录以恢复连接。",
+      "signInAgain": "重新登录",
+      "retry": "重试"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "缺少浏览器功能",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "未找到 IndexedDB 支持。该应用程序需要 IndexedDB 在本地存储会话数据。请确保您的浏览器支持 IndexedDB 并启用它。",
+      "whatIsIndexeddb": "什么是 IndexedDB？"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "返回当前账户",
+      "server": "服务器",
+      "lookingForServer": "正在寻找服务器...",
+      "failedToFindServer": "找不到服务器。",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "连接失败。服务器配置 base_url 似乎无效。",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "仅允许 HTTPS 服务器。仅本地网络服务器支持 HTTP。",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "连接失败。服务器此时不可用或不存在。",
+      "loadingAuthenticationFlow": "正在加载身份验证流程...",
+      "failedToGetAuthenticationFlowInformation": "获取认证流程信息失败。",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "连接失败。使用 {{value1}} 找到的服务器配置似乎不可用。",
+      "connectingToValue1": "连接到 {{value1}}"
+    },
+    "orDivider": {
+      "or": "或"
+    },
+    "sSOLogin": {
+      "continueWithSso": "继续使用SSO 登录"
+    },
+    "serverPicker": {
+      "server": "服务器",
+      "serverList": "服务器列表"
+    },
+    "login": {
+      "login": "登录",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "此客户端要求使用 Apple 登录。请在主服务器的 SSO 提供商列表中加入 Apple。",
+      "register": "注册",
+      "accountLink": "没有账户？ <authLink>注册</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "“{{value1}}”已禁用密码登录。请使用 SSO 登录。",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "该客户端不支持登录“{{value1}}”服务器。未找到基于密码和 SSO 的登录方法。"
+    },
+    "passwordLoginForm": {
+      "hint": "提示",
+      "username": "用户名：",
+      "matrixId": "Matrix ID：",
+      "email": "电子邮件：",
+      "username2": "用户名",
+      "password": "密码",
+      "forgetPassword": "忘记密码？",
+      "login": "登录",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "您的客户端实例不允许使用自定义服务器登录。",
+      "failedToFindYourMatrixIdServer": "找不到您的 Matrix ID 服务器。",
+      "invalidUsernameOrPassword": "用户名或密码无效。",
+      "thisAccountHasBeenDeactivated": "该账户已被停用。",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "登录失败。您的请求数据的一部分无效。",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "登录失败。您的登录请求已被服务器限速，请稍后再试。",
+      "failedToLoginUnknownReason": "登录失败。原因不明。",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "登录成功，但该浏览器无法保存账户。检查存储权限并重试。"
+    },
+    "tokenLogin": {
+      "tokenLogin": "令牌登录",
+      "invalidLoginToken": "登录令牌无效。",
+      "thisAccountHasBeenDeactivated": "该账户已被停用。",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "登录失败。您的请求数据的一部分无效。",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "登录失败。您的登录请求已被服务器限速，请稍后再试。",
+      "failedToLoginUnknownReason": "登录失败。原因不明。",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "登录成功，但该浏览器无法保存账户。检查存储权限并重试。"
+    },
+    "passwordRegisterForm": {
+      "username": "用户名",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "termsAndConditions": "条款和条件",
+      "register": "注册",
+      "thisUsernameIsAlreadyTaken": "该用户名已被占用。",
+      "thisUsernameContainsInvalidCharacters": "该用户名包含无效字符。",
+      "thisUsernameIsReserved": "该用户名已保留。",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "弱密码。密码被服务器拒绝，请选择更强的密码。",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "短密码。密码被服务器拒绝，请选择更长的密码。",
+      "registrationToken": "注册令牌",
+      "registrationTokenOptional": "注册令牌（可选）",
+      "email": "电子邮件",
+      "emailOptional": "电子邮件（可选）",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "注册失败。您的注册请求已被服务器限速，请稍后再试。",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "注册失败。主服务器不允许注册。",
+      "failedToRegisterInvalidRequest": "注册失败。无效请求。",
+      "failedToRegisterUnknownReason": "注册失败。原因不明。",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "注册成功，但该浏览器无法保存账户。检查存储权限并尝试登录。",
+      "acceptTerms": "我接受服务器<terms>条款和条件</terms>。"
+    },
+    "register": {
+      "register": "注册",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "此客户端要求使用 Apple 登录。请在主服务器的 SSO 提供商列表中加入 Apple。",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "此主服务器仅允许通过 Apple、Google 或 GitHub 注册。",
+      "registrationHasBeenDisabledOnThisHomeserver": "该主服务器上的注册已被禁用。",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "您已受到速率限制！请过一段时间再尝试。",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "无效请求！无法获取任何注册选项。",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "此应用程序不支持在此主服务器上注册。",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "该主服务器需要 SSO 注册，但没有公布 SSO 提供商。",
+      "login": "登录",
+      "accountLink": "已经有账户？ <authLink>登录</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "密码已成功重置。请使用您的新密码登录。",
+      "login": "登录",
+      "email": "电子邮件",
+      "newPassword": "新密码",
+      "confirmPassword": "确认密码",
+      "resetPassword": "重置密码",
+      "resetEmailDescription": "Homeserver <strong>{{server}}</strong> 将向您发送一封电子邮件，让您重置密码。",
+      "failedToResetPassword": "密码重置失败。"
+    },
+    "resetPassword": {
+      "resetPassword": "重置密码",
+      "login": "登录",
+      "accountLink": "还记得您的密码吗？ <authLink>登录</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "正在同步…",
+      "startupRecoveryOptions": "启动恢复选项",
+      "logout": "退出登录",
+      "retry": "重试",
+      "clearCacheAndReload": "清除缓存并重新加载",
+      "removeAccount": "删除账户",
+      "clearing": "正在清除…",
+      "failedToStartAccountValue1Value2": "无法启动账户 {{value1}}。 {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "取消并返回登录",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "无法连接到主服务器。主服务器或您的互联网连接可能已关闭。",
+      "retry": "重试",
+      "continue": "继续",
+      "connectingToServer": "连接到服务器",
+      "clearing": "正在清除…",
+      "clearCacheAndReload": "清除缓存并重新加载"
+    },
+    "syncStatus": {
+      "catchingUp": "正在同步…",
+      "connectionLostReconnecting": "连接丢失！正在重新连接...",
+      "connectionLost": "连接丢失！"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "设置Local MindRoom",
+      "openLocalMindroomSettings": "打开Local MindRoom 设置",
+      "enterPairCode": "已有代码？在 Local MindRoom 中输入",
+      "poweredBy": "由 <links /> 提供支持",
+      "title": "欢迎来到{{appName}}",
+      "subtitle": "活跃于聊天房间中的 AI 智能体。",
+      "docs": "文档",
+      "sourceCode": "源代码",
+      "setupStep1": "1. 运行 {{command}}",
+      "setupStep2": "2. 在 {{envFile}} 中添加模型凭据，或运行 {{command}}",
+      "setupStep3": "3. 使用 {{command}} 启动，然后打开它输出的链接以批准连接"
+    },
+    "create": {
+      "createSpace": "创建空间",
+      "buildASpaceForYourCommunity": "为您的社区打造一个空间。"
+    },
+    "directCreate": {
+      "createChat": "创建聊天",
+      "startAPrivateEncryptedChatByEnteringAUserId": "输入用户 ID 即可开始私人加密聊天。"
+    },
+    "explore": {
+      "addServer": "添加服务器",
+      "addServerNameToExplorePublicCommunities": "添加服务器名称以探索公共社区。",
+      "serverName": "服务器名称",
+      "failedToLoadPublicRoomsPleaseTryAgain": "公共房间加载失败。请再试一次。",
+      "view": "查看",
+      "exploreCommunity": "探索社区",
+      "featured": "精选",
+      "servers": "服务器"
+    },
+    "featured": {
+      "featuredByClient": "客户端推荐",
+      "featuredSpaces": "特色空间",
+      "featuredRooms": "精选房间",
+      "noRoomsOrSpacesFeaturedByClientProvider": "客户端提供方没有推荐任何房间或空间。",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "查找并探索客户端提供方推荐的公开房间和空间。"
+    },
+    "server": {
+      "search": "搜索",
+      "searchForKeyword": "搜索关键字",
+      "clear": "清除",
+      "enter": "输入",
+      "protocols": "协议",
+      "presets": "预设",
+      "customLimit": "自定义限额",
+      "perPageItemLimit": "每页项目限制",
+      "changeLimit": "变更限额",
+      "popularCommunities": "热门社区",
+      "previousPage": "上一页",
+      "nextPage": "下一页",
+      "noCommunitiesFound": "没有找到社区！",
+      "pageLimitValue1": "页数限制：{{value1}}",
+      "resultsForValue1": "“{{value1}}”的结果"
+    },
+    "createRoom": {
+      "createRoom": "创建房间",
+      "buildARoomForRealTimeConversations": "建立一个实时对话的房间。"
+    },
+    "search": {
+      "messageSearch": "消息搜索"
+    },
+    "inbox": {
+      "invites": "邀请",
+      "inbox": "收件箱",
+      "notifications": "通知"
+    },
+    "invites": {
+      "encrypted": "已加密",
+      "directMessage": "私信",
+      "space": "空间",
+      "decline": "拒绝",
+      "accept": "接受",
+      "primary": "主要",
+      "public": "公开",
+      "spam": "垃圾邀请",
+      "noInvites": "没有邀请",
+      "declineAll": "全部拒绝",
+      "acceptAll": "全部接受",
+      "reportAll": "全部举报",
+      "blockAll": "全部屏蔽",
+      "noSpamInvites": "没有垃圾邀请",
+      "invites": "邀请",
+      "filter": "筛选",
+      "hideAll": "全部隐藏",
+      "viewAll": "查看全部",
+      "reason": "原因：{{reason}}",
+      "from": "发件人：<b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "与您共享房间的用户发来邀请时，邀请会显示在这里。",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "来自您所在房间以外用户的邀请会显示在这里。",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "以下部分邀请可能包含有害内容，或由已封禁用户发送。",
+      "invitesDetectedAsSpamAppearHere": "检测为垃圾邮件的邀请会显示在此处。",
+      "spamInvites_one": "{{count, number}} 垃圾邮件邀请",
+      "spamInvites_other": "{{count, number}} 个垃圾邮件邀请"
+    },
+    "notifications": {
+      "open": "打开",
+      "notificationMessages": "通知消息",
+      "filter": "筛选",
+      "allNotifications": "所有通知",
+      "highlighted": "突出显示",
+      "scrollToTop": "滚动到顶部",
+      "noNotifications": "无通知",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "您还没有任何可显示的新通知。",
+      "event": " 事件",
+      "roomTombstone": "房间替换事件：{{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "取消固定",
+      "invite": "邀请",
+      "copyLink": "复制链接",
+      "spaceSettings": "空间设置",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "已拾取空间 {{value1}}。使用方向键重新排序，按空格键放下。"
+    },
+    "space": {
+      "invite": "邀请",
+      "copyLink": "复制链接",
+      "spaceSettings": "空间设置",
+      "eventTimeline": "事件时间表",
+      "leaveSpace": "离开空间",
+      "spaceUpgraded": "空间升级",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "该空间已被替换并且不再活跃。",
+      "openNewSpace": "打开新空间",
+      "joinNewSpace": "加入新空间",
+      "lobby": "大堂",
+      "messageSearch": "消息搜索",
+      "failedToJoinReplacementSpace": "加入替换空间失败！",
+      "rooms": "房间",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "已拾取房间 {{value1}}。使用方向键重新排序，按空格键放下。"
+    },
+    "threads": {
+      "threads": "讨论串"
+    },
+    "threadsView": {
+      "loadingThreads": "加载讨论串",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "您还没有参与任何讨论串",
+      "noThreadsMatchYourFilters": "没有符合筛选条件的讨论串",
+      "clearFilters": "清除过滤器",
+      "thread": "讨论串",
+      "threads": "讨论串"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "不支持",
+      "option0": "仅限受邀者",
+      "option1": "敲门并邀请",
+      "option2": "空间成员或请求加入",
+      "option3": "空间成员",
+      "option4": "公开"
+    },
+    "toolbar": {
+      "heading1": "标题 1",
+      "heading2": "标题 2",
+      "heading3": "标题 3",
+      "bold": "粗体",
+      "italic": "斜体",
+      "underline": "下划线",
+      "strikeThrough": "删除线",
+      "inlineCode": "内联代码",
+      "spoiler": "剧透",
+      "blockQuote": "块引用",
+      "blockCode": "块代码",
+      "orderedList": "有序列表",
+      "unorderedList": "无序列表",
+      "exitFormatting": "退出格式化",
+      "disableMarkdown": "禁用 Markdown",
+      "enableMarkdown": "启用 Markdown",
+      "exitValue1": "退出{{value1}}"
+    },
+    "reaction": {
+      "others_one": "其他 {{count}} 个",
+      "reactionSummary": "<names>{{names}}</names> 做出反应：<reaction>{{reaction}}</reaction>：",
+      "others_other": "其他 {{count}} 个"
+    },
+    "audioContent": {
+      "pause": "暂停",
+      "play": "播放"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "调整语音消息进度"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "默认",
+      "option1": "所有消息",
+      "option2": "提及和关键词",
+      "option3": "静音"
+    },
+    "authFooter": {
+      "support": "支持",
+      "privacy": "隐私",
+      "terms": "条款",
+      "poweredBy": "由 <app>{{appName}}</app>、<matrix>Matrix</matrix>、<cinny>Cinny</cinny> 提供支持"
+    },
+    "router": {
+      "join": "加入",
+      "notFound": "找不到页面"
+    },
+    "ssoProviders": {
+      "signUpApple": "使用 Apple 注册",
+      "signInApple": "使用 Apple 登录",
+      "continueGoogle": "继续使用Google",
+      "continueGithub": "继续使用 GitHub",
+      "continueProvider": "继续使用 {{provider}}"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> 已接受 <b>{{userName}}</b> 的加入请求 {{reason}}",
+      "invited": "<b>{{senderName}}</b> 已邀请 <b>{{userName}}</b> {{reason}}",
+      "requested": "<b>{{userName}}</b> 请求加入房间 {{reason}}",
+      "joined": "<b>{{userName}}</b> 加入了房间",
+      "rejectedInvitation": "<b>{{userName}}</b>拒绝了邀请{{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> 拒绝了 <b>{{userName}}</b> 的加入请求 {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> 已撤销加入请求 {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> 已撤销 <b>{{userName}}</b> 的邀请 {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> 已取消禁止 <b>{{userName}}</b> {{reason}}",
+      "left": "<b>{{userName}}</b> 离开房间{{reason}}",
+      "kicked": "<b>{{senderName}}</b> 踢了 <b>{{userName}}</b> {{reason}}",
+      "banned": "<b>{{senderName}}</b> 封禁了 <b>{{userName}}</b> {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> 将显示名称更改为 <b>{{userName}}</b>",
+      "removedName": "<b>{{prevUserName}}</b> 删除了他们的显示名称",
+      "changedAvatar": "<b>{{userName}}</b>更改了他们的头像",
+      "removedAvatar": "<b>{{userName}}</b> 删除了他们的头像",
+      "broken": "损坏的成员事件",
+      "unchanged": "没有变更的成员事件"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "邀请用户提出建议",
+      "users": "用户",
+      "searching": "搜索用户",
+      "noMatches": "没有匹配的用户",
+      "matchingUsers_one": "{{count}} 个匹配的用户",
+      "matchingUsers_other": "{{count}} 个匹配用户"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "正在加载 MindRoom Chat"
+    },
+    "commands": {
+      "CommandMe": "发送操作消息",
+      "CommandNotice": "发送通知消息",
+      "CommandShrug": "将 ¯\\_(ツ)_/¯ 作为消息发送",
+      "CommandTableFlip": "将 {{value1}} 作为消息发送",
+      "CommandUnFlip": "将 {{value1}} 作为消息发送",
+      "CommandStartDm": "与用户开始私信。示例：/startdm userId1",
+      "CommandJoin": "通过地址加入房间。示例：/join address1 address2",
+      "CommandLeave": "离开当前房间。",
+      "CommandInvite": "邀请用户加入房间。示例：/invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "撤销用户的房间邀请。示例：/disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "将用户移出房间。示例：/kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "在房间中封禁用户。示例：/ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "解除用户的房间封禁。示例：/unban userId1 userId2",
+      "CommandIgnore": "忽略用户。示例：/ignore userId1 userId2",
+      "CommandUnIgnore": "取消忽略用户。示例：/unignore userId1 userId2",
+      "CommandMyRoomNick": "更改当前房间的昵称。",
+      "CommandMyRoomAvatar": "更改当前房间中的头像。示例 /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "将房间转换为直接消息",
+      "CommandConvertToRoom": "将私信转换为房间",
+      "CommandDelete": "删除用户的消息。示例：/delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "管理服务器访问控制列表。示例 /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} 表情符号"
+    },
+    "fileHeader": {
+      "downloadValue1": "下载{{value1}}"
+    },
+    "time": {
+      "yesterdayValue1": "昨天 {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "播放速度，当前为{{value1}}，点击循环"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "来自 {{value1}} 的新收件箱通知"
+    },
+    "memberFilters": {
+      "joined": "已加入",
+      "invited": "受邀",
+      "left": "已离开",
+      "kicked": "已被移出",
+      "banned": "已封禁"
+    },
+    "memberSort": {
+      "atoZ": "A 到 Z",
+      "ztoA": "Z 到 A",
+      "newest": "最新",
+      "oldest": "最早"
+    },
+    "presence": {
+      "active": "活跃",
+      "busy": "忙碌的",
+      "away": "离开"
+    },
+    "emojiGroups": {
+      "smileysPeople": "表情符号与人物",
+      "animalsNature": "动物与自然",
+      "foodDrinks": "食品和饮料",
+      "activity": "活动",
+      "travelPlaces": "旅行与地点",
+      "objects": "对象",
+      "symbols": "符号",
+      "flags": "旗帜"
+    },
+    "roomTypes": {
+      "all": "全部",
+      "spaces": "空间",
+      "rooms": "房间"
+    },
+    "imageUsage": {
+      "both": "两个都",
+      "sticker": "贴纸",
+      "emoji": "表情符号"
+    },
+    "powerLevels": {
+      "manager": "经理",
+      "founder": "创始人",
+      "admin": "管理员",
+      "moderator": "版主",
+      "member": "成员",
+      "muted": "静音",
+      "team": "团队 {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "语音消息",
+      "tools_one": "{{count, number}} 工具",
+      "tools_other": "{{count, number}} 工具"
+    },
+    "threadSummary": {
+      "manual": "手动编辑的摘要",
+      "title": "讨论串摘要",
+      "provenance": "AI 生成的讨论串摘要",
+      "provenanceCount_one": "最后 {{count, number}} 条消息的 AI 摘要",
+      "provenanceCount_other": "最后 {{count, number}} 条消息的 AI 摘要"
+    },
+    "commandPalette": {
+      "shortcutHint": "快捷方式： <shortcut>{{shortcut}}</shortcut> 打开。"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "展开导航面板",
+      "collapseNavigationPanel": "折叠导航面板"
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "添加现有项目",
+      "search": "搜索",
+      "failedToApplyChangesPleaseTryAgain": "无法应用更改！请再试一次。",
+      "reset": "重置",
+      "applyChanges": "应用更改",
+      "applyWhenReadySelected_one": "准备好后即可应用。（已选择 {{count}} 个）",
+      "applyWhenReadySelected_other": "准备好后即可应用。（已选择 {{count}} 个）",
+      "noMatchForQuery": "未找到“{{query}}”的匹配项。",
+      "noMatchFound": "未找到匹配项",
+      "noRooms": "没有房间",
+      "noRoomsDescription": "您还没有任何可显示的房间。",
+      "noSpaces": "没有空间",
+      "noSpacesDescription": "您还没有任何可显示的空间。"
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "结束"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name>正在讲话...",
+        "two": "<first>{{first}}</first> 和 <second>{{second}}</second> 正在讲话...",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>和<third>{{third}}</third>正在讲话...",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在发言...",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在发言..."
+      },
+      "liveCount": "{{count}} 人在线"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "反应",
+        "settings": "设置",
+        "end": "结束",
+        "gridView": "网格视图",
+        "spotlightView": "聚光灯视图"
+      },
+      "callMemberCard": {
+        "collapse": "折叠",
+        "additionalParticipants_one": "+{{count}} 其他",
+        "additionalParticipants_other": "+{{count}} 其他"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "您的主服务器不支持通话。",
+        "yourBrowserDoesNotSupportWebrtcWhich": "您的浏览器不支持通话所需的WebRTC。",
+        "voiceChatSEmptyBeTheFirst": "语音聊天是空的——成为第一个加入的人！",
+        "youDonTHavePermissionToJoin": "您没有加入权限！",
+        "alreadyInAnotherCallEndTheCurrent": "您已在另一通话中——请先结束当前通话再加入！",
+        "participant": "参加者",
+        "voiceCallError": "语音通话错误",
+        "dismissVoiceCallError": "关闭语音通话错误"
+      },
+      "prescreenControls": {
+        "join": "加入"
+      },
+      "controls": {
+        "closeChat": "关闭聊天",
+        "openChat": "打开聊天",
+        "startCamera": "启动相机",
+        "startScreenshare": "开始屏幕共享",
+        "stopCamera": "停止摄像头",
+        "stopScreenshare": "停止屏幕共享",
+        "turnOffMicrophone": "关闭麦克风",
+        "turnOffSound": "关闭声音",
+        "turnOnMicrophone": "打开麦克风",
+        "turnOnSound": "打开声音"
+      },
+      "liveCount": "{{count}} 人在线"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "开发者工具",
+          "options": "选项",
+          "enableDeveloperTools": "启用开发者工具",
+          "roomId": "房间 ID",
+          "copy": "复制",
+          "data": "数据",
+          "newMessageEvent": "新消息事件",
+          "createAndSendANewMessageEvent": "在房间内创建并发送新消息事件。",
+          "compose": "撰写",
+          "roomState": "房间状态",
+          "stateEventsOfTheRoom": "房间的状态事件。",
+          "events": "事件",
+          "addNew": "新增",
+          "accountData": "账户数据",
+          "privatePersonalizationDataStoredWithinRoom": "存储在房间内的私人个性化数据。",
+          "collapse": "折叠",
+          "copyRoomIdDescription": "将房间 ID 复制到剪贴板。 (“{{roomId}}”)",
+          "expand": "展开",
+          "total": "总计：{{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "开发者工具",
+          "send": "发送",
+          "stateKeyOptional": "状态密钥（可选）",
+          "jsonContent": "JSON 内容",
+          "messageEventType": "消息事件类型",
+          "stateEventType": "状态事件类型"
+        },
+        "stateEventEditor": {
+          "stateEvent": "状态事件",
+          "save": "保存",
+          "cancel": "取消",
+          "jsonContent": "JSON 内容",
+          "edit": "编辑",
+          "developerTools": "开发者工具"
+        },
+        "defaultStateKey": "默认"
+      },
+      "emojisStickers": {
+        "emojisStickers": "表情符号和贴纸",
+        "roomPacks": {
+          "newPack": "新包",
+          "addYourOwnEmojiAndStickerPack": "添加您自己的表情符号和贴纸包以在房间中使用。",
+          "name": "名称",
+          "create": "创建",
+          "view": "查看",
+          "packs": "包",
+          "noPacks": "没有包",
+          "thereAreNoEmojiOrStickerPacks": "目前没有可显示的表情符号或贴纸包。",
+          "failedToRemovePacksPleaseTryAgain": "删除包失败！请再试一次。",
+          "cancel": "取消",
+          "delete": "删除",
+          "deleteSelectedPacks_one": "删除选定的包。 （已选择 {{count}} 个）",
+          "deleteSelectedPacks_other": "删除选定的包。 （已选择 {{count}} 个）",
+          "unknown": "未知"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "房间加密",
+          "enabled": "已启用",
+          "enable": "启用",
+          "enableEncryption": "启用加密",
+          "areYouSureOnceEnabledEncryptionCannot": "确定吗？加密一旦启用便无法关闭！",
+          "enableE2eEncryption": "启用端到端加密",
+          "disabledDescription": "一旦启用，加密就无法禁用！",
+          "enabledDescription": "该房间中的消息受到端到端加密的保护。"
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "消息历史记录可见性",
+          "changesToHistoryVisibilityWillOnlyApply": "对历史可见性的更改仅适用于未来的消息。现有历史的可见性不会产生任何影响。",
+          "afterInvite": "邀请后",
+          "afterJoin": "加入后",
+          "allMessages": "所有消息",
+          "allMessagesGuests": "所有消息（访客）"
+        },
+        "roomProfile": {
+          "avatar": "头像",
+          "upload": "上传",
+          "reset": "重置",
+          "remove": "移除",
+          "name": "名称",
+          "topic": "主题",
+          "save": "保存",
+          "cancel": "取消",
+          "profile": "个人资料",
+          "edit": "编辑",
+          "unknown": "未知"
+        },
+        "roomPublish": {
+          "publishToDirectory": "发布到目录",
+          "roomDescription": "在公共目录中列出房间，以便其他人可以发现它。",
+          "spaceDescription": "列出公共目录中的空间以使其可以被其他人发现。"
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "此操作不可逆转！",
+          "options": "选项",
+          "upgrade": "升级",
+          "currentVersion": "当前版本：{{version}}。",
+          "oldRoom": "旧房间",
+          "oldSpace": "旧空间",
+          "openNewRoom": "打开新房间",
+          "openNewSpace": "打开新空间",
+          "roomReplaced": "这个房间已经换了！",
+          "roomUpgrade": "房间升级",
+          "spaceReplaced": "该空间已被替换！",
+          "spaceUpgrade": "空间升级",
+          "upgradeRoom": "升级房间",
+          "upgradeSpace": "升级空间"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "地址已被使用！",
+          "collapse": "折叠",
+          "delete": "删除",
+          "expand": "展开",
+          "loading": "加载中...",
+          "localAddresses": "本地地址",
+          "localAddressesDescription": "设置本地地址，以便用户可以通过您的主服务器加入。",
+          "main": "主要地址",
+          "noAddresses": "没有地址",
+          "publish": "发布",
+          "publishRequiresLocalAddress": "要发布地址，需要先将其设置为本地地址",
+          "published": "已发布",
+          "publishedAddresses": "发布地址",
+          "publishedAddressesDescription": "如果访问权限为<public>公开</public>，则任何人都将使用已发布的地址加入。",
+          "save": "保存",
+          "selectedCount_one": "已选择 {{count}} 个",
+          "selectedCount_other": "已选择 {{count}} 个",
+          "setMain": "设为主要地址",
+          "unpublish": "取消发布",
+          "unsetMain": "取消主要地址"
+        },
+        "roomJoinRules": {
+          "roomAccess": "房间访问权限",
+          "roomDescription": "更改人们加入房间的方式。",
+          "spaceAccess": "空间访问权限",
+          "spaceDescription": "改变人们加入空间的方式。"
+        }
+      },
+      "members": {
+        "search": "搜索",
+        "scrollToTop": "滚动到顶部",
+        "memberCount_one": "{{count}} 名成员",
+        "memberCount_other": "{{count}} 名成员",
+        "noMembersForFilter": "没有“{{filter}}”成员",
+        "noResults": "没有结果",
+        "resultCount_one": "{{count}} 结果",
+        "resultCount_other": "{{count}} 个结果"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "用户",
+          "defaultPower": "默认权限",
+          "defaultPowerLevelForAllUsers": "所有用户的默认权限等级。",
+          "above": "＆ 多于",
+          "failedToApplyChangesPleaseTryAgain": "无法应用更改！请再试一次。",
+          "changesSavedApplyWhenReady": "更改已保存！准备好后即可应用。",
+          "reset": "重置",
+          "applyChanges": "应用更改"
+        },
+        "powers": {
+          "founders": "创始人",
+          "foundingMembersHasAllPermissionsAndCan": "创始成员拥有所有权限，只能在升级过程中更改。",
+          "powerLevels": "权限等级",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "管理并自定义用户的分级权限。",
+          "edit": "编辑"
+        },
+        "powersEditor": {
+          "color": "颜色",
+          "pick": "挑选",
+          "name": "名称",
+          "bot": "机器人",
+          "power": "权限",
+          "icon": "图标",
+          "remove": "移除",
+          "import": "导入",
+          "save": "保存",
+          "cancel": "取消",
+          "permissions": "权限",
+          "powerLevels": "权限等级",
+          "newPowerLevel": "新权限等级",
+          "createANewPowerLevel": "创建新的权限等级。",
+          "create": "创建",
+          "undo": "撤消",
+          "usedPowerLevel": "使用中的权限等级",
+          "youHaveToRemoveItsUseBefore": "您必须先取消其使用，然后才能将其删除。",
+          "delete": "删除",
+          "edit": "编辑",
+          "failedToApplyChangesPleaseTryAgain": "无法应用更改！请再试一次。",
+          "changesSavedApplyWhenReady": "更改已保存！准备好后即可应用。",
+          "reset": "重置",
+          "applyChanges": "应用更改"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "用户 ID",
+      "userSuggestions": "用户建议",
+      "pleaseEnterAValidUserId": "请输入有效的用户 ID。",
+      "options": "选项",
+      "endToEndEncryption": "端到端加密",
+      "onceThisFeatureIsEnabledItCan": "该功能一旦启用，房间创建后将无法禁用。",
+      "create": "创建",
+      "rateLimited_one": "服务器限制了您的请求，请在 {{count}} 分钟后重试！",
+      "rateLimited_other": "服务器限制了您的请求，请在 {{count}} 分钟后重试！"
+    },
+    "createRoom": {
+      "type": "类型",
+      "access": "访问权限",
+      "name": "名称",
+      "topicOptional": "主题（可选）",
+      "options": "选项",
+      "advancedOptions": "高级选项",
+      "endToEndEncryption": "端到端加密",
+      "onceThisFeatureIsEnabledItCan": "该功能一旦启用，房间创建后将无法禁用。",
+      "knockToJoin": "敲门加入",
+      "anyoneCanSendRequestToJoinThis": "任何人都可以发送加入此房间的请求。",
+      "allowFederation": "允许联合",
+      "usersFromOtherServersCanJoin": "其他服务器的用户也可以加入。",
+      "create": "创建",
+      "newChatRoom": "新聊天室",
+      "newVoiceRoom": "新语音室",
+      "rateLimited_one": "服务器限制了您的请求，请在 {{count}} 分钟后重试！",
+      "rateLimited_other": "服务器限制了您的请求，请在 {{count}} 分钟后重试！"
+    },
+    "createSpace": {
+      "access": "访问权限",
+      "name": "名称",
+      "topicOptional": "主题（可选）",
+      "options": "选项",
+      "advancedOptions": "高级选项",
+      "knockToJoin": "敲门加入",
+      "anyoneCanSendRequestToJoinThis": "任何人都可以发送加入此空间的请求。",
+      "allowFederation": "允许联合",
+      "usersFromOtherServersCanJoin": "其他服务器的用户也可以加入。",
+      "create": "创建",
+      "createSpaceModal": {
+        "newSpace": "新空间"
+      },
+      "rateLimited_one": "服务器限制了您的请求，请在 {{count}} 分钟后重试！",
+      "rateLimited_other": "服务器限制了您的请求，请在 {{count}} 分钟后重试！"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "移除",
+        "invite": "邀请",
+        "settings": "设置",
+        "leave": "离开",
+        "pinToSidebar": "固定到侧边栏",
+        "setSuggested": "设置建议",
+        "unpinFromSidebar": "从侧边栏取消固定",
+        "unsetSuggested": "取消设置建议"
+      },
+      "scrollToTop": "滚动到顶部",
+      "reordering": "重新排序",
+      "lobbyHeader": {
+        "invite": "邀请",
+        "spaceSettings": "空间设置",
+        "leaveSpace": "离开空间",
+        "members": "成员",
+        "moreOptions": "更多选项"
+      },
+      "roomItem": {
+        "accessUnavailable": "无法访问",
+        "unknown": "未知",
+        "suggested": "建议",
+        "inaccessible": "无法进入",
+        "openRoom": "打开房间",
+        "join": "加入",
+        "memberCount_one": "{{formattedCount}} 名成员",
+        "memberCount_other": "{{formattedCount}} 名成员",
+        "requestSent": "请求已发送",
+        "requestToJoin": "请求加入",
+        "sendingRequest": "发送请求"
+      },
+      "spaceHierarchy": {
+        "noRooms": "没有房间",
+        "thisSpaceDoesNotContainsRoomsYet": "该空间尚不包含房间。"
+      },
+      "spaceItem": {
+        "unknown": "未知",
+        "inaccessible": "无法进入",
+        "suggested": "建议",
+        "accessUnavailable": "无法访问",
+        "rooms": "房间",
+        "chatRoom": "聊天室",
+        "voiceRoom": "语音室",
+        "existingRoom": "现有房间",
+        "addRoom": "添加房间",
+        "newSpace": "新空间",
+        "existingSpace": "现有空间",
+        "addSpace": "添加空间",
+        "requestSent": "请求已发送",
+        "requestToJoin": "请求加入"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "通知",
+        "invite": "邀请",
+        "copyLink": "复制链接",
+        "roomSettings": "房间设置",
+        "leaveRoom": "离开房间",
+        "toggleChat": "切换聊天",
+        "moreOptions": "更多选项"
+      },
+      "liveCount": "{{count}} 人在线"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "时间轴",
+        "general": "常规",
+        "options": "选项",
+        "addresses": "地址",
+        "advancedOptions": "高级选项",
+        "compact": "紧凑",
+        "threads": "讨论串",
+        "classic": "经典",
+        "offline": {
+          "title": "离线访问",
+          "checking": "正在检查已保存的内容…",
+          "unavailable": "此设备无法使用已保存的内容。",
+          "notSaved": "此房间尚未保存以供离线使用。",
+          "downloading": "正在下载此房间以供离线使用…",
+          "offlinePause": "设备离线时会暂停保存。",
+          "backgroundPause": "应用在后台运行时会暂停保存。",
+          "spacePause": "受保护的内容已占满存储配额，保存已暂停。",
+          "readOnlyPause": "存储失败。请重新打开应用以继续保存。",
+          "connectionPause": "此连接下的自动保存已暂停。",
+          "errorPause": "发生错误后保存已暂停。请重试。",
+          "partialHistory": "部分较早的历史记录尚未保存。",
+          "inaccessibleHistory": "部分历史记录目前无法访问。",
+          "waitingForKeys": "正在等待密钥的加密事件：{{count}}",
+          "unresolvedRelations": "未解析的编辑或回复：{{count}}",
+          "missingEssential": "缺少的必要消息正文：{{count}}",
+          "historyEntries": "已保存的历史记录条目：{{count}}",
+          "attachments": "附件：已保存 {{saved}} 个，缺少 {{missing}} 个。",
+          "storageUsed": "附件使用的存储空间：{{size}}",
+          "pinFailed": "无法更新“保持离线”。",
+          "includeAllMedia": "包含所有媒体",
+          "keepOffline": "保持离线",
+          "keepOfflineDescription": "自动清理时保护此房间已保存的媒体。",
+          "cancelDownload": "取消下载",
+          "downloadEntireRoom": "下载整个房间",
+          "clearDownloadedContent": "清除已下载的内容",
+          "clearTitle": "要清除已下载的内容吗？",
+          "cancel": "取消",
+          "clearDescription": "此房间已保存的历史记录和附件将从此设备移除。",
+          "clearFailed": "无法清除已下载的内容。",
+          "clearConfirm": "清除内容"
+        }
+      },
+      "permissions": {
+        "permissions": "权限",
+        "ban": "禁止",
+        "changeAllPermission": "更改所有权限",
+        "changeRoomAccess": "更改房间访问权限",
+        "changeServerAcls": "更改服务器 ACL",
+        "deleteOthersMessages": "删除其他消息",
+        "deleteSelfMessages": "删除自己的消息",
+        "editPowerLevels": "编辑权限等级",
+        "enableEncryption": "启用加密",
+        "groups": {
+          "calls": "通话",
+          "messages": "消息",
+          "moderation": "管理",
+          "other": "其他",
+          "roomOverview": "房间概览",
+          "settings": "设置"
+        },
+        "historyVisibility": "历史可见性",
+        "invite": "邀请",
+        "kick": "踢",
+        "manageEmojisStickers": "管理表情符号和贴纸",
+        "modifyWidgets": "修改小部件",
+        "otherMessageEvents": "其他消息事件",
+        "otherSettings": "其他设置",
+        "pinMessages": "置顶消息",
+        "pingRoom": "提醒 @room",
+        "publishAddress": "发布地址",
+        "roomAvatar": "房间头像",
+        "roomName": "房间名称",
+        "roomTopic": "房间主题",
+        "sendMessages": "发送消息",
+        "sendReactions": "发送反应",
+        "sendStickers": "发送贴纸",
+        "startOrJoinCall": "开始或加入通话",
+        "upgradeRoom": "升级房间"
+      },
+      "navigation": {
+        "developerTools": "开发者工具",
+        "emojisStickers": "表情符号和贴纸",
+        "general": "常规",
+        "members": "成员",
+        "permissions": "权限"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "聊天",
+        "close": "关闭"
+      },
+      "commandAutocomplete": {
+        "commands": "命令"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "没有提供消息。",
+        "decline": "拒绝",
+        "approve": "批准",
+        "approveFromUser": "批准来自 {{userId}} 的加入请求",
+        "approvedWaitingForSync": "已批准。正在等待房间同步…",
+        "approving": "正在批准…",
+        "declineFromUser": "拒绝来自 {{userId}} 的加入请求",
+        "declinedWaitingForSync": "已拒绝。正在等待房间同步…",
+        "declining": "正在拒绝…",
+        "updateFailed": "无法更新请求。"
+      },
+      "membersDrawer": {
+        "invite": "邀请",
+        "invitePeople": "邀请人",
+        "close": "关闭",
+        "typeName": "输入名称...",
+        "scrollToTop": "滚动到顶部",
+        "memberCount_one": "{{count}} 名成员",
+        "memberCount_other": "{{count}} 名成员",
+        "noMembersForFilter": "没有“{{filter}}”成员",
+        "noPendingJoinRequests": "没有待处理的加入请求",
+        "noResults": "没有结果",
+        "requestCount_one": "请求 ({{count}})",
+        "requestCount_other": "请求 ({{count}})",
+        "invitedCount_one": "{{count}} 人受邀",
+        "invitedCount_other": "{{count}} 人受邀",
+        "resultCount_one": "{{count}} 结果",
+        "resultCount_other": "{{count}} 个结果",
+        "formattedMemberCount_one": "{{formattedCount}} 名成员",
+        "formattedMemberCount_other": "{{formattedCount}} 名成员"
+      },
+      "roomTombstone": {
+        "openNewRoom": "打开新房间",
+        "joinNewRoom": "加入新房间",
+        "joinReplacementFailed": "加入替换房间失败！",
+        "replacedDescription": "该房间已被更换，不再有效。"
+      },
+      "jumpToTime": {
+        "jumpToTime": "跳转到时间",
+        "time": "时间",
+        "date": "日期",
+        "preset": "预设",
+        "today": "今天",
+        "yesterday": "昨天",
+        "beginning": "开始",
+        "openTimeline": "打开时间轴"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "编辑消息…",
+          "save": "保存",
+          "cancel": "取消"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> 正在输入...",
+        "two": "<first>{{first}}</first> 和 <second>{{second}}</second> 正在输入...",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>和<third>{{third}}</third>正在输入...",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在输入...",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在输入...",
+        "dropTypingStatus": "删除打字状态"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> 正在关注对话。",
+        "two": "<first>{{first}}</first> 和 <second>{{second}}</second> 正在关注对话。",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second> 和 <third>{{third}}</third> 正在关注对话。",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> 和 <others>{{count}} other</others> 正在关注对话。",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> 和 <others>{{count}} other</others> 正在关注对话。"
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}，{{count}} 待处理的加入请求",
+        "accessibleLabel_other": "{{baseLabel}}，{{count}} 个待处理的加入请求"
+      },
+      "reactionViewer": {
+        "reactedWith": "反应：{{shortcode}}："
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "账户",
+        "accountDeactivation": {
+          "accountManagement": "账户管理",
+          "deleteDeactivateAccount": "删除/停用账户",
+          "deleteDeactivate": "删除/停用",
+          "openProviderPortal": "打开提供商门户",
+          "thisWillRequestAccountDeactivationOnYour": "这将请求在您的 Matrix 主服务器上停用账户。您可能无法访问您的消息和会话。",
+          "eraseAccountDataIfSupported": "删除账户数据（如果支持）",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "如果启用，主服务器除了停用之外还可能永久删除您的账户数据。",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "需要额外的身份验证才能完成账户停用。",
+          "thisClientDoesNotSupportTheRequired": "该客户端不支持该主服务器所需的身份验证步骤。",
+          "continueInProviderPortal": "在提供商门户中继续",
+          "cancel": "取消",
+          "deactivationFailed": "无法停用账户。 {{error}}",
+          "descriptionWithProvider": "从此客户端开始账户停用。如果需要，您可以在提供商账户管理页面中继续。",
+          "descriptionWithoutProvider": "从此客户端开始账户停用。某些主服务器可能需要额外的身份验证步骤。"
+        },
+        "contactInfo": {
+          "contactInformation": "联系信息",
+          "emailAddress": "电子邮件",
+          "emailAddressAttachedToYourAccount": "电子邮件地址已关联到您的账户。"
+        },
+        "ignoredUserList": {
+          "block": "屏蔽",
+          "blockedUsers": "被阻止的用户",
+          "selectUser": "选择用户",
+          "preventReceivingMessagesOrInvitesFromUser": "通过添加用户 ID 来防止接收来自用户的消息或邀请。",
+          "users": "用户"
+        },
+        "matrixId": {
+          "matrixId": "Matrix ID",
+          "copy": "复制",
+          "copied": "已复制"
+        },
+        "profile": {
+          "avatar": "头像",
+          "upload": "上传",
+          "remove": "移除",
+          "removeAvatar": "删除头像",
+          "areYouSureYouWantToRemove": "您确定要删除个人资料头像吗？",
+          "displayName": "显示名称",
+          "save": "保存",
+          "profile": "个人资料",
+          "unnamedFile": "未命名"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "账户数据",
+          "global": "全局",
+          "dataStoredInYourGlobalAccountData": "存储在您的全球账户数据中的数据。",
+          "events": "事件",
+          "addNew": "新增",
+          "collapse": "折叠",
+          "expand": "展开",
+          "total": "总计：{{count}}"
+        },
+        "developTools": {
+          "developerTools": "开发者工具",
+          "options": "选项",
+          "enableDeveloperTools": "启用开发者工具",
+          "accessToken": "访问令牌",
+          "copyAccessTokenToClipboard": "将访问令牌复制到剪贴板。",
+          "copy": "复制"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "上次活动：",
+          "deviceName": "设备名称",
+          "save": "保存",
+          "cancel": "取消",
+          "deviceNamesAreVisibleToPublic": "设备名称对公众可见。",
+          "logout": "退出登录",
+          "undo": "撤消",
+          "edit": "编辑",
+          "deviceIdValue": "设备 ID：<value>{{id}}</value>",
+          "deviceKeyValue": "设备密钥：<value>{{key}}</value>",
+          "ipAddressValue": "IP 地址：<value>{{address}}</value>",
+          "loading": "加载中...",
+          "today": "今天",
+          "yesterday": "昨天"
+        },
+        "devices": "设备",
+        "security": "安全",
+        "deviceVerification": "设备验证",
+        "toVerifyDeviceIdentityAndGrantAccess": "验证设备身份并授予对加密消息的访问权限。",
+        "current": "当前",
+        "localBackup": {
+          "newPassword": "新密码",
+          "confirmPassword": "确认密码",
+          "export": "导出",
+          "exportMessagesData": "导出消息数据",
+          "savePasswordProtectedCopyOfEncryptionData": "在您的设备上保存受密码保护的加密数据副本，以便稍后解密消息。",
+          "password": "密码",
+          "decrypt": "解密",
+          "importMessagesData": "导入消息数据",
+          "loadPasswordProtectedCopyOfEncryptionData": "从设备加载受密码保护的加密数据副本以解密您的消息。",
+          "import": "导入",
+          "localBackup": "本地备份",
+          "collapse": "折叠",
+          "cryptoModuleNotFound": "意外错误！未找到加密模块！",
+          "expand": "展开"
+        },
+        "otherDevices": {
+          "others": "其他",
+          "deviceDashboard": "设备面板",
+          "manageYourDevicesOnOidcDashboard": "在 OIDC 仪表板上管理您的设备。",
+          "open": "打开",
+          "authenticationStepsToPerformThisActionAre": "客户端不支持执行此操作的身份验证步骤。",
+          "cancel": "取消",
+          "logout": "退出登录",
+          "logoutFailed": "设备退出登录失败！请重试。{{error}}",
+          "logoutSelectedDevices_one": "从所选设备退出登录。（已选择 {{count}} 个）",
+          "logoutSelectedDevices_other": "从所选设备退出登录。（已选择 {{count}} 个）"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "从其他设备开始验证或手动验证。<toggle><strong>收起</strong></toggle>",
+          "currentDeviceHelpMore": "从其他设备开始验证或手动验证。 <toggle><strong>了解更多</strong></toggle>",
+          "enable": "启用",
+          "findDevice": "在<section>设备/会话</section>部分中找到此设备。",
+          "initiateVerification": "启动验证。",
+          "manualVerificationHint": "如果您没有任何经过验证的设备，请按<action>“手动验证”</action>按钮。",
+          "openSettings": "打开<settings>设置</settings>。",
+          "openVerifiedDevice": "打开您的其他经过验证的设备。",
+          "reset": "重置",
+          "stepsFromOtherDevice": "从其他设备验证的步骤。",
+          "unverified": "未验证",
+          "unverifiedCount_one": "{{count}} 未验证",
+          "unverifiedCount_other": "{{count}} 未验证",
+          "verified": "已验证",
+          "verify": "验证",
+          "verifyDeviceDescription": "验证设备身份并授予对加密消息的访问权限。",
+          "verifyManually": "手动验证"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "表情符号和贴纸",
+        "globalPacks": {
+          "roomPacks": "房间表情包",
+          "noPacks": "没有包",
+          "packFromRoomsWillAppearHereYou": "房间中的表情包会显示在这里。您还没有包含表情包的房间。",
+          "view": "查看",
+          "favoritePacks": "收藏的表情包",
+          "selectPack": "选择表情包",
+          "pickEmojisAndStickersPackFromRooms": "从房间中挑选表情符号和贴纸包以在所有房间中使用。",
+          "select": "选择",
+          "failedToApplyChangesPleaseTryAgain": "无法应用更改！请再试一次。",
+          "changesSavedApplyWhenReady": "更改已保存！准备好后即可应用。",
+          "reset": "重置",
+          "applyChanges": "应用更改",
+          "selectAll": "选择全部",
+          "unknown": "未知",
+          "unselectAll": "取消全选",
+          "save": "保存",
+          "close": "关闭"
+        },
+        "userPack": {
+          "defaultPack": "默认表情包",
+          "view": "查看",
+          "unknown": "未知"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "所有消息",
+          "badge": "徽章：",
+          "1To1Chats": "一对一聊天",
+          "1To1ChatsEncrypted": "一对一聊天（加密）",
+          "rooms": "房间",
+          "roomsEncrypted": "房间（加密）"
+        },
+        "keywordMessages": {
+          "save": "保存",
+          "keywordMessages": "关键字消息",
+          "badge": "徽章：",
+          "selectKeyword": "选择关键字",
+          "setANotificationPreferenceForMessageContaining": "为包含给定关键字的消息设置通知首选项。"
+        },
+        "notifications": "通知",
+        "blockMessages": "屏蔽消息",
+        "thisOptionHasBeenMovedToAccount": "此选项已移至“账户 > 阻止用户”部分。",
+        "specialMessages": {
+          "specialMessages": "特别讯息",
+          "badge": "徽章：",
+          "mentionRoom": "提及@room",
+          "containsRoom": "包含@room",
+          "containsDisplayName": "包含显示名称（“{{displayName}}”）",
+          "containsDisplayNameGeneric": "包含显示名称",
+          "containsUsername": "包含用户名（“{{username}}”）",
+          "mentionUserId": "提及用户 ID（“{{userId}}”）"
+        },
+        "systemNotification": {
+          "emailNotification": "电子邮件通知",
+          "yourAccountDoesNotHaveAnyEmail": "您的账户没有附加任何电子邮件。",
+          "unexpectedError": "意外错误！",
+          "system": "系统",
+          "desktopNotifications": "桌面通知",
+          "showDesktopNotificationsWhenMessageArrive": "消息到达时显示桌面通知。",
+          "enable": "启用",
+          "notificationSound": "通知声音",
+          "playSoundWhenNewMessageArrive": "新消息到达时播放声音。",
+          "notSupported": "系统不支持通知。",
+          "permissionBlocked": "通知权限被阻止。请允许浏览器地址栏的通知权限。",
+          "sendToEmail": "将通知发送到您的电子邮件。",
+          "sendToEmailAddress": "将通知发送到您的电子邮件。 （“{{email}}”）"
+        },
+        "mode": {
+          "disable": "禁用",
+          "notifyLoud": "响铃通知",
+          "notifySilent": "静默通知"
+        }
+      },
+      "about": {
+        "clearCache": "清除缓存",
+        "clearCacheAndReload": "清除缓存并重新加载",
+        "clearCacheDescription": "清除缓存数据并重新加载。您将保持登录状态。",
+        "clearTrace": "清除跟踪记录",
+        "clearing": "正在清除…",
+        "credits": "鸣谢",
+        "deepDiagnosticTracing": "深度诊断追踪",
+        "deepTraceMemoryOnly": "跟踪存储不可用，正在内存中记录。请在重启应用前导出；重启后这些近期事件将丢失。",
+        "deepTraceEnabledStorageUnavailable": "已启用，但跟踪存储当前不可用。",
+        "deepTraceOff": "已关闭。在重现卡顿前启用，以记录性能、Matrix、网络、生命周期和交互计时。",
+        "deepTracePreferenceSaveFailed": "{{description}} 此会话已关闭，但无法保存首选项，并且可能会在重新启动后重新启用。",
+        "deepTraceRecording": "正在此设备上记录范围有限且保护隐私的性能与交互跟踪。",
+        "deepTraceStarting": "正在此设备上启动范围有限且保护隐私的性能与交互跟踪。",
+        "diagnosticsExportFailed": "{{description}} 导出失败。再试一次。",
+        "diagnosticsNone": "没有保留意外的会话。",
+        "diagnosticsUnavailable": "诊断存储不可用。",
+        "diagnosticsUnexpected": "上次会话意外结束；原因未知。",
+        "emojiArtCredit": "<art>Twemoji</art> 表情图稿版权所有 © <owner>Twitter, Inc 及其他贡献者</owner>，依据 <license>CC-BY 4.0</license> 条款使用。",
+        "emojiFontCredit": "<font>twemoji-colr</font> 字体版权所有 © <owner>Mozilla Foundation</owner>，依据 <license>Apache 2.0</license> 条款使用。",
+        "exportDiagnostics": "导出诊断",
+        "exporting": "正在导出…",
+        "matrixSdkCredit": "<sdk>matrix-js-sdk</sdk> 版权所有 © <owner>The Matrix.org Foundation C.I.C</owner>，依据 <license>Apache 2.0</license> 条款使用。",
+        "onDeviceDiagnostics": "设备上的诊断",
+        "options": "选项",
+        "soundResourcesCredit": "<resources>Material 音效资源</resources>版权所有 © <owner>Google</owner>，依据 <license>CC-BY 4.0</license> 条款使用。",
+        "sourceCode": "源代码",
+        "support": "支持",
+        "title": "关于",
+        "traceStorageUnavailable": "跟踪存储不可用。"
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "常规",
+        "options": "选项",
+        "addresses": "地址",
+        "advancedOptions": "高级选项"
+      },
+      "permissions": {
+        "permissions": "权限",
+        "ban": "禁止",
+        "changeAllPermission": "更改所有权限",
+        "changeServerAcls": "更改服务器 ACL",
+        "changeSpaceAccess": "更改空间访问权限",
+        "editPowerLevels": "编辑权限等级",
+        "groups": {
+          "manage": "管理",
+          "moderation": "管理",
+          "other": "其他",
+          "settings": "设置",
+          "spaceOverview": "空间概览"
+        },
+        "invite": "邀请",
+        "kick": "踢",
+        "manageEmojisStickers": "管理表情符号和贴纸",
+        "manageSpaceRooms": "管理空间房间",
+        "messageEvents": "消息事件",
+        "otherSettings": "其他设置",
+        "publishAddress": "发布地址",
+        "spaceAvatar": "空间头像",
+        "spaceName": "空间名称",
+        "spaceTopic": "空间主题",
+        "upgradeSpace": "升级空间"
+      },
+      "navigation": {
+        "developerTools": "开发者工具",
+        "emojisStickers": "表情符号和贴纸",
+        "general": "常规",
+        "members": "成员",
+        "permissions": "权限"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "未找到“{{query}}”的匹配项。",
+      "noMatchFound": "未找到匹配项",
+      "noRooms": "没有房间",
+      "noRoomsDescription": "您还没有任何可显示的房间。",
+      "placeholder": "搜索",
+      "syntaxHint": "输入 <rooms>#</rooms> 表示房间，输入 <directs>@</directs> 表示 DM，输入 <spaces>*</spaces> 表示空间。热键：<hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "放弃录音",
+      "pauseRecording": "暂停录音",
+      "resumeRecording": "继续录音",
+      "statusActive": "正在录音",
+      "statusPaused": "录音已暂停",
+      "statusProcessing": "处理录音",
+      "statusReadyToRetry": "录音准备重试",
+      "statusSending": "发送录音",
+      "statusStarting": "开始录音",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "语音发送失败",
+        "yourRecordingIsStillSaved": "您的录音仍已保存。",
+        "discard": "丢弃",
+        "retry": "重试",
+        "discardVoiceRecording": "放弃录音？",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "该录音尚未发送。永久丢弃吗？",
+        "cancel": "取消",
+        "voiceRecordingError": "录音错误",
+        "ok": "确定"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "麦克风访问被阻止。在 Android 应用程序设置中允许 MindRoom Chat 的麦克风访问权限，然后重试。",
+        "microphoneBlockedIos": "麦克风访问被阻止。在 iPhone 设置中允许 MindRoom Chat 访问麦克风，然后重试。",
+        "microphoneBlockedBrowser": "麦克风访问被阻止。在您的浏览器或系统设置中允许访问此网站/应用程序的麦克风，然后重试。",
+        "noMicrophone": "在此设备上找不到麦克风。",
+        "microphoneUnavailable": "麦克风目前不可用（可能正被其他应用程序使用）。",
+        "microphoneFailed": "无法访问麦克风。",
+        "microphoneUnsupported": "此设备不支持麦克风访问。",
+        "recordingStopped": "录音意外停止。请再次录制。",
+        "noAudio": "未捕获任何音频数据。",
+        "recordingUnsupported": "此浏览器不支持录音。",
+        "httpsRequired": "录音需要 HTTPS（或本地主机）。通过 HTTPS 打开 MindRoom。",
+        "sendBusy": "另一条语音消息仍在发送中。请稍等。",
+        "sendFailed": "发送语音消息失败。"
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "通话",
+        "homeserverUnsupported": "您的主服务器不支持通话。",
+        "browserUnsupported": "您的浏览器不支持 WebRTC。",
+        "endCurrentCall": "请先结束当前通话。",
+        "failedToStart": "无法开始通话。"
+      },
+      "agentCallHeaderButton": {
+        "call": "与智能体通话",
+        "callAgent": "与 {{name}} 通话",
+        "chooseAgent": "选择要通话的智能体",
+        "close": "关闭"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "MindRoom 命令"
+      },
+      "descriptions": {
+        "help": "获取可用功能或特定主题的帮助。",
+        "reload-plugins": "重新加载配置的插件（仅限管理员）。",
+        "schedule": "安排任务以供稍后执行。",
+        "list_schedules": "列出所有计划任务。",
+        "cancel_schedule": "按 ID 取消一个计划或所有计划。",
+        "edit_schedule": "更新现有计划任务。",
+        "config": "管理 MindRoom 配置（仅限管理员）。",
+        "desktop": "管理您的桌面目标。",
+        "model": "显示或切换当前讨论串中使用的模型。",
+        "room_model": "显示房间模型默认值或切换它（设置/重置需要房间管理员）。",
+        "thread_mode": "显示或切换当前房间使用的讨论串模式（仅限房间管理员）。",
+        "encrypt": "查看或启用当前房间的端到端加密。",
+        "e2ee": "显示当前房间的加密诊断。",
+        "hi": "显示欢迎信息。"
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "粘贴的文本",
+        "characterCount_one": "{{formattedCount}} 字符",
+        "characterCount_other": "{{formattedCount}} 个字符"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Local MindRoom",
+        "connectLocalMindroom": "连接Local MindRoom",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "将此聊天账户与您本地的 MindRoom 流程配对",
+        "enterCodeDescription": "在您的设备上运行 {{command}}，然后打开它输出的链接，或在此处输入其代码。",
+        "pairCode": "配对码",
+        "mindroomDocs": "MindRoom 文档",
+        "linkedInstallations": "已关联的安装",
+        "linkedInstallationsUnavailable": "已关联的安装仅适用于 {{server}} 上的账户。",
+        "loadingLinkedInstallations": "正在加载链接的安装...",
+        "tryAgain": "再试一次",
+        "noLinkedLocalMindroomInstallationsYet": "尚未链接本地 MindRoom 安装。",
+        "revoke": "撤销",
+        "confirmRevoke": "确认撤销",
+        "cancel": "取消",
+        "requestFailed": "请求失败。请再试一次。",
+        "unknown": "未知",
+        "createdAt": "创建时间：{{timestamp}}",
+        "lastSeenAt": "最后查看时间：{{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "输入终端中显示的代码。",
+        "continue": "继续",
+        "invalidCode": "请输入 8 位代码，例如 ABCD-EFGH。",
+        "code": "代码：{{code}}",
+        "chooseAccount": "选择批准此连接的账户",
+        "checkingCode": "正在检查代码...",
+        "deviceQuestion": "连接 {{clientName}}？",
+        "deviceStarted": "{{age}}启动",
+        "requestedFrom": "请求来源：{{ip}}",
+        "requestedFromUnknown": "请求来源：未知地址",
+        "warning": "仅当您刚刚在自己的设备上启动此操作，且终端显示相同的代码时才批准。",
+        "approveAs": "以 {{userId}} 身份批准",
+        "approved": "已连接。您可以返回终端了。",
+        "noAccount": "请使用您的 MindRoom 账户登录以批准此连接。",
+        "signIn": "登录以批准",
+        "accountSignedOut": "此账户需要重新登录后才能批准。",
+        "codeNotFound": "未找到此代码。请检查终端中显示的代码。",
+        "codeExpired": "此代码已过期。请使用终端中显示的新链接或代码。",
+        "codeAlreadyApproved": "此代码已被批准。",
+        "backToChat": "返回聊天",
+        "enterNewCode": "输入新代码：",
+        "noAccountAppGuidance": "已在 MindRoom 应用中登录？在应用的设置 → Local MindRoom 中输入 {{code}}。",
+        "frameWarning": "出于安全考虑，无法在框架内完成设备批准。",
+        "openInNewTab": "在新标签页中打开"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "已验证智能体 · 已交叉签名设备",
+        "verifiedAgent": "已验证智能体"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "滚动到顶部",
+        "searchMessages": "搜索消息",
+        "searchDescription": "通过搜索相关关键字在您的社区中查找有用的消息。",
+        "noResultsFor": "未找到“{{term}}”的结果",
+        "resultsFor": "“{{term}}”的结果"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " （已编辑）"
+      },
+      "searchFilters": {
+        "sortBy": "排序方式",
+        "recent": "最近的",
+        "relevance": "相关性",
+        "search": "搜索",
+        "rooms": "房间",
+        "noMatchFound": "未找到匹配项！",
+        "save": "保存",
+        "deselectAll": "取消全选",
+        "selectRooms": "选择房间",
+        "filter": "筛选",
+        "global": "全局",
+        "saveCount": "保存 ({{count}})",
+        "roomsFor": "“{{query}}”的房间"
+      },
+      "searchInput": {
+        "search": "搜索",
+        "searchForKeyword": "搜索关键字",
+        "clear": "清除",
+        "enter": "输入"
+      },
+      "searchResultGroup": {
+        "open": "打开",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "回复上下文隐藏在搜索结果中。打开消息以获得完整的讨论串上下文。"
+      },
+      "searchResultPreview": {
+        "redacted": "消息已撤回。",
+        "message": "消息",
+        "image": "图像",
+        "video": "视频",
+        "audio": "音频",
+        "file": "文件",
+        "location": "位置",
+        "reaction": "反应",
+        "unsupportedEvent": "不支持的事件"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "参数",
+        "loadingCompleteArguments": "正在加载完整的参数...",
+        "onlyATruncatedPreviewIsAvailable": "仅提供截断的预览。",
+        "retry": "重试",
+        "sensitiveValuesMayBeRedacted": "敏感值可能会被隐去。",
+        "loadFailed": "无法加载完整参数。",
+        "hideArguments": "隐藏参数",
+        "showAllArguments": "显示所有参数"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "此请求无法在此获得批准。",
+        "submittedWaitingForRoomUpdate": "已提交。等待房间更新。",
+        "approveOnce": "批准一次",
+        "approve": "批准",
+        "deny": "拒绝",
+        "autoApprovalDuration": "自动审批时长",
+        "denyReasonOptional": "拒绝原因（可选）",
+        "denialReasonOptional": "拒绝原因（可选）",
+        "confirmDeny": "确认 拒绝",
+        "confirmDeny2": "确认拒绝",
+        "cancel": "取消",
+        "autoApproveMinutes_one": "自动批准 {{count}} 分钟",
+        "autoApproveMinutes_other": "自动批准 {{count}} 分钟",
+        "denyCallReasonOptional": "拒绝调用 {{number}} 的原因（可选）",
+        "approveExactCall": "批准这次确切调用",
+        "approveAnyArguments": "批准任意参数",
+        "anyArgumentsWarning": "选择任意参数后，智能体可在预定时间前后 {{minutes}} 分钟内，按自己决定的内容调用一次 {{tool}}。"
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "自动批准已激活",
+        "autoApprovalStopped": "自动批准已停止",
+        "autoApprovalExpired": "自动批准已过期",
+        "argumentsMayDifferBetweenCalls": "每次调用的参数可能不同。",
+        "stopAutoApproval": "停止自动批准",
+        "submittedWaitingForRoomUpdate": "已提交。等待房间更新。",
+        "fixedExpiry": "固定到期时间：{{timestamp}}",
+        "expiresInMinutes_one": "{{count}} 分钟后到期",
+        "expiresInMinutes_other": "{{count}} 分钟后过期"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "已解决的工具批准请求",
+        "unknown": "未知",
+        "approvedOnce": "批准一次",
+        "decisionRecordedForThisCall": "已记录此次调用的决定",
+        "statusExpired": "批准已过期",
+        "statusApproved": "已批准",
+        "statusDenied": "被拒绝",
+        "requestedBy": "{{agent}} · 由 {{requester}} 请求",
+        "resolvedByAt": "{{resolver}}：{{status}} · {{timestamp}}",
+        "resolvedBy": "{{resolver}}：{{status}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "限时许可",
+        "timedPermissionMinutes_one": "限时许可 · {{count}} 分钟",
+        "timedPermissionMinutes_other": "限时许可 · {{count}} 分钟",
+        "grantedByAt": "由 {{grantor}} 授予 · {{timestamp}}",
+        "grantedBy": "由{{grantor}}授予",
+        "originalFixedExpiry": "原始固定到期日：{{timestamp}}",
+        "toolAndServer": "工具：{{tool}} · 服务器：{{server}}",
+        "tool": "工具：{{tool}}",
+        "reason": "原因：{{reason}}",
+        "approvedWhenScheduledByAt": "安排时由 {{approver}} 批准 · {{timestamp}}",
+        "approvedWhenScheduledBy": "安排时由 {{approver}} 批准"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "预定于 {{timestamp}}",
+        "approvedExactArguments": "已按这些确切参数批准",
+        "approvedAnyArguments": "已批准此工具的任意参数"
+      },
+      "approvalReviewCall": {
+        "pending": "待处理",
+        "callStatus": "调用 {{number}} · {{status}}",
+        "status": {
+          "pending": "待处理",
+          "sending": "发送",
+          "submitted": "已提交",
+          "error": "错误",
+          "approved": "已批准",
+          "denied": "被拒绝",
+          "expired": "已到期"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "复制文本（正在加载...）",
+        "copyText": "复制文本",
+        "copyTextWithToolCalls": "复制文本（含工具调用）",
+        "copyLink": "复制链接"
+      },
+      "bugReport": {
+        "report": "报告问题",
+        "download": "下载问题报告",
+        "sending": "正在发送报告…",
+        "failed": "无法发送报告，请重试。"
+      },
+      "messageInspectionActions": {
+        "readReceipts": "已读回执",
+        "viewSource": "查看源代码"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "取消置顶消息",
+        "pinMessage": "置顶消息",
+        "deleteMessage": "删除消息",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "此操作不可逆转！您确定要删除此消息吗？",
+        "optional": "（可选）",
+        "failedToDeleteMessagePleaseTryAgain": "删除消息失败！请再试一次。",
+        "deleting": "正在删除...",
+        "delete": "删除",
+        "reportMessage": "举报消息",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "将此消息报告给服务器，然后服务器可能会通知适当的人员采取行动。",
+        "reason": "原因",
+        "failedToReportMessagePleaseTryAgain": "举报消息失败！请再试一次。",
+        "messageHasBeenReportedToServer": "消息已报告给服务器。",
+        "reporting": "正在举报…",
+        "report": "举报"
+      },
+      "messageReactionActions": {
+        "viewReactions": "查看反应"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "仍在加载…",
+        "toolDetailsUnavailable": "工具详情不可用。",
+        "pastedText": "粘贴的文本",
+        "characterCount_one": "{{formattedCount}} 个字符",
+        "characterCount_other": "{{formattedCount}} 个字符",
+        "blocks": {
+          "think": "AI 思考过程",
+          "debug": "调试信息",
+          "system": "系统处理",
+          "plan": "规划与策略",
+          "analysis": "分析与评估",
+          "research": "研究与来源"
+        },
+        "toolNumber": "工具#{{index}}：{{command}}",
+        "toolCallCount_one": "{{count}} 工具调用",
+        "toolCallCount_other": "{{count}} 工具调用",
+        "usedToolCount_other": "使用了 {{count}} 个工具",
+        "toolCallsRunning_other": "正在执行 {{count}} 次工具调用",
+        "toolCallsWaiting_other": "{{count}} 次工具调用等待批准",
+        "toolCallsRan_other": "已执行 {{count}} 次工具调用",
+        "toolCallsDenied_other": "已拒绝 {{count}} 次工具调用",
+        "toolCallsExpired_other": "{{count}} 次工具调用已过期"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "正在加载完整回复..."
+      },
+      "mindroomMessage": {
+        "addReaction": "添加反应",
+        "reply": "回复",
+        "replyInThread": "在讨论串中回复",
+        "editMessage": "编辑消息",
+        "moreOptions": "更多选项"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "请求上下文窗口",
+        "aiRunMetadata": "AI运行元数据",
+        "close": "关闭",
+        "status": "状态",
+        "model": "模型",
+        "tokens": "词元",
+        "runCache": "运行缓存",
+        "requestContext": "请求上下文",
+        "requestCache": "请求缓存",
+        "tools": "工具",
+        "ttft": "TTFT",
+        "run": "运行",
+        "session": "会话",
+        "openAiRunMetadata": "查看 AI 运行元数据",
+        "tokenUsage": "词元用量",
+        "downloadingOriginal": "正在下载原版...",
+        "retryDownloadOriginal": "重试下载原件",
+        "downloadOriginal": "下载原版",
+        "segmentTokenCount_one": "{{label}}：{{formattedCount}} 个词元",
+        "segmentTokenCount_other": "{{label}}：{{formattedCount}} 个词元"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "消息附加信息"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "粘贴的文本",
+        "open": "打开",
+        "retry": "重试",
+        "download": "下载",
+        "characterCount_one": "{{formattedCount}} 个字符",
+        "characterCount_other": "{{formattedCount}} 个字符"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "打开",
+        "failedToLoadMessage": "无法加载消息！",
+        "event": " 事件",
+        "pinnedMessages": "置顶消息",
+        "noPinnedMessages": "没有置顶消息",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "拥有足够权限等级的用户可以从消息的上下文菜单中将其置顶。"
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "AI正在响应",
+        "thinking": "正在思考…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "AI 讨论串摘要"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "AI 为此讨论串命名",
+        "updated": "AI 已更新标题",
+        "edited": "标题已编辑",
+        "previous": "原为：<old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "工具批准请求",
+        "submitted": "已提交",
+        "pendingApproval": "待批准",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "自动批准适用于此讨论串、请求者、智能体和工具。",
+        "argumentsMayDifferBetweenCalls": "每次调用的参数可能不同。",
+        "requestedBy": "由{{requester}}请求"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "路由智能体正在转写"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "AI正在响应"
+      },
+      "stopButton": {
+        "label": "停止",
+        "tooltip": "停止此回复"
+      },
+      "threadApprovalControls": {
+        "close": "关闭",
+        "call": "调用",
+        "calls": "调用",
+        "unknown": "未知",
+        "reasonForDenyingAllOptional": "全部拒绝的原因（可选）",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "允许此讨论串、请求者和智能体执行该操作。每次调用的参数可能不同。",
+        "submittedWaitingForRoomUpdate": "已提交。等待房间更新。",
+        "threadApprovals": "讨论串批准",
+        "checkingHistory": " · 检查历史记录...",
+        "historyIncomplete": " · 历史不完整",
+        "retryHistory": "重试历史记录",
+        "reviewToolCalls": "审核工具调用",
+        "reviewAgentWants_other": "{{agent}} 想执行 {{count}} 项操作",
+        "reviewAgentsWant_other": "{{agents}} 个智能体想执行 {{count}} 项操作",
+        "reviewRequestedBy": "请求者：{{requester}}",
+        "someRequestsAreNoLongerAvailable": "有些请求不再可用。",
+        "permission": "权限",
+        "permissions": "权限",
+        "activePermissions": "有效权限",
+        "noActiveTimedPermissions": "没有有效的限时权限。",
+        "approval": "批准",
+        "approvals": "批准",
+        "operationCallCount_one": "{{operation}} · {{count}} 次调用",
+        "operationCallCount_other": "{{operation}} · {{count}} 次调用",
+        "requestedBy": "{{agent}} · 由 {{requester}} 请求",
+        "approveAllOnce": "一次性批准全部 {{count}} 项",
+        "denyAll": "拒绝全部 {{count}} 项",
+        "allowForMinutes_one": "允许 {{count}} 分钟",
+        "allowForMinutes_other": "允许 {{count}} 分钟",
+        "awaitingConfirmation_one": "{{count}} 个调用等待确认",
+        "awaitingConfirmation_other": "{{count}} 个调用等待确认",
+        "pausedForApproval_one": "{{count}} 个调用已暂停，等待批准",
+        "pausedForApproval_other": "{{count}} 个调用已暂停，等待批准",
+        "statusCheckingHistory": "{{status}} · 检查历史记录...",
+        "statusHistoryIncomplete": "{{status}} · 历史记录不完整",
+        "reviewCount": "审核 {{count}} 项",
+        "activePermissionCount_one": "{{count}} 项有效权限",
+        "activePermissionCount_other": "{{count}} 项有效权限",
+        "permissionScope": "{{agent}} · {{requester}} · 此讨论串",
+        "toolApprovalCount_one": "{{count}} 工具批准",
+        "toolApprovalCount_other": "{{count}} 个工具批准",
+        "approvedCount_one": "{{count}} 已批准",
+        "approvedCount_other": "{{count}} 已批准",
+        "agentWaitingForYou": "{{agent}} 正在等您",
+        "agentsWaitingForYou_other": "{{count}} 个智能体正在等您",
+        "autoApproveFor": "自动批准时长",
+        "callCount_other": "{{count}} 次调用",
+        "chipSending": "发送中…",
+        "chipSubmitted": "已提交",
+        "chipResolved": "已处理",
+        "confirmDenyAll": "确认全部拒绝 {{count}} 项",
+        "expires": "{{time}}过期",
+        "hideCalls": "隐藏调用",
+        "historyApproved": "{{operation}} 已批准",
+        "historyDenied": "{{operation}} 已拒绝",
+        "historyExpired": "{{operation}} 已过期",
+        "historyUserApproved": "{{user}} 批准了 {{operation}}",
+        "historyUserDenied": "{{user}} 拒绝了 {{operation}}",
+        "historyUserExpired": "{{operation}} 已过期",
+        "historyYouApproved": "您批准了 {{operation}}",
+        "historyYouDenied": "您拒绝了 {{operation}}",
+        "historyYouExpired": "{{operation}} 已过期",
+        "minutesShort_other": "{{count}} 分钟",
+        "sectionMeta": "{{agent}} · 请求者：{{requester}}",
+        "showCalls_other": "显示 {{count}} 次调用",
+        "waitingForApproval": "等待批准",
+        "waitingForYou": "等您处理",
+        "you": "您"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "消息发送",
+        "waitingForServer": "等待服务器",
+        "messageFailedToSend": "消息发送失败",
+        "notSent": "未发送"
+      },
+      "failedSendActions": {
+        "retry": "重试",
+        "delete": "删除"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "输入 {{formattedCount}}",
+        "outputTokens": "输出 {{formattedCount}}",
+        "totalTokens": "总计 {{formattedCount}}",
+        "readTokens": "读取 {{formattedCount}}",
+        "writeTokens": "写入 {{formattedCount}}",
+        "notReadTokens": "未读取 {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}}%)",
+        "contextBarTitle_one": "{{label}}：{{formattedCount}} 个词元（占上下文窗口的 {{percentage}}%）",
+        "contextBarTitle_other": "{{label}}：{{formattedCount}} 个词元（占上下文窗口的 {{percentage}}%）",
+        "contextBarTitleWithSuffix_one": "{{label}}：{{formattedCount}} 个词元（占上下文窗口的 {{percentage}}%）；{{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}：{{formattedCount}} 个词元（占上下文窗口的 {{percentage}}%）；{{suffix}}",
+        "reportedCacheRead_one": "报告的缓存读取：{{formattedCount}} 个词元",
+        "reportedCacheRead_other": "报告的缓存读取：{{formattedCount}} 个词元",
+        "cacheWrite_one": "缓存写入：{{formattedCount}} 个词元",
+        "cacheWrite_other": "缓存写入：{{formattedCount}} 个词元",
+        "cacheRead": "缓存读取",
+        "newInput": "新输入",
+        "reserve": "预留"
+      },
+      "mindroomModelBadge": {
+        "model": "模型：{{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "部署未配置原生 iOS 推送。请在 `config.json` 中添加 `push.ios` 设置。",
+        "failedToUpdateNativePushSettings": "无法更新本机推送设置。",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "允许本机 iOS 推送通知作为后台消息警报。",
+        "deviceRegisteredForNativeIosPushNotifications": "设备已注册原生 iOS 推送通知。",
+        "nativeIosPushIsDisabledForThisDevice": "此设备禁用本机 iOS 推送。",
+        "unavailable": "不可用",
+        "enable": "启用",
+        "iosPushNotifications": "iOS 推送通知",
+        "permissionDenied": "通知权限已被拒绝。请在 iOS“设置”中为 {{appName}} 启用通知。"
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "标记为已读"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "标记为已读"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "标记为已读"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "备份您的加密历史记录",
+        "dismissBackupReminder": "关闭备份提醒",
+        "setUpSecureBackupSoYouCanStillReadYour": "设置安全备份，以便在新设备上登录后仍能阅读加密的智能体聊天记录。",
+        "setUpSecureKeyBackup": "设置安全密钥备份",
+        "setUpBackup": "设置备份"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Local MindRoom"
+      },
+      "resizeNavigationPanel": "调整导航面板大小",
+      "resizeMemberPanel": "调整成员面板大小"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "没有讨论串"
+      },
+      "compactThreadCard": {
+        "streaming": "流式响应"
+      },
+      "mindroomCallChatView": {
+        "chat": "聊天",
+        "close": "关闭"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "新消息",
+        "jumpToUnread": "跳转至未读",
+        "markAsRead": "标记为已读",
+        "failedToLoadThisThread": "无法加载该讨论串。",
+        "loading": "加载中...",
+        "loadOlderMessages": "加载较旧的消息",
+        "loadNewerMessages": "加载较新的消息",
+        "jumpToLatest": "跳转到最新内容",
+        "today": "今天",
+        "yesterday": "昨天"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "此消息确认后即可回复。",
+        "youDoNotHavePermissionToPostInThisRoom": "您没有在此房间发送消息的权限"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "显示计算机",
+        "hideComputer": "隐藏计算机",
+        "showCanvas": "显示面板",
+        "hideCanvas": "隐藏面板",
+        "canvases": "交互式面板",
+        "notifications": "通知",
+        "compact": "紧凑",
+        "threads": "讨论串",
+        "classic": "经典",
+        "invite": "邀请",
+        "copyLink": "复制链接",
+        "roomSettings": "房间设置",
+        "jumpToTime": "跳转到时间",
+        "leaveRoom": "离开房间",
+        "pinnedMessages": "置顶消息",
+        "members": "成员",
+        "hideMembers": "隐藏成员",
+        "showMembers": "显示成员",
+        "moreOptions": "更多选项",
+        "back": "返回"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "添加标签过滤器",
+        "tag": "+ 标签",
+        "availableTags": "可用标签",
+        "filterPresets": "筛选预设",
+        "preset": "预设",
+        "searchThreads": "搜索讨论串",
+        "searchThreads2": "搜索讨论串…",
+        "roomViewMode": "房间视图模式",
+        "natural": "自然",
+        "lastReply": "最后回复",
+        "noThreadsMatchCurrentFilters": "没有符合当前筛选条件的讨论串。",
+        "resetAllThreadFilters": "重置所有讨论串筛选条件",
+        "reset": "重置",
+        "threadFilters": "讨论串过滤器",
+        "statusFilters": "状态筛选条件",
+        "tagFilters": "标签筛选条件",
+        "showingFilteredThreads_one": "显示 {{count}} 个讨论串，共 {{total}} 个讨论串",
+        "showingFilteredThreads_other": "显示 {{count}} 个讨论串，共 {{total}} 个讨论串",
+        "showingAllThreads_one": "显示 {{count}} 个讨论串",
+        "showingAllThreads_other": "显示 {{count}} 个讨论串",
+        "sortLockedSummary": "{{summary}} · 排序已锁定",
+        "unlockSortOrder": "解锁排序顺序（当前为{{sort}}）",
+        "lockSortOrder": "锁定排序顺序（当前为{{sort}}）",
+        "threadCount_one": "{{count}} 个讨论串",
+        "threadCount_other": "{{count}} 个讨论串",
+        "presets": {
+          "needs-attention": {
+            "label": "需要注意",
+            "description": "未解决、未流式响应且未计划的讨论串"
+          },
+          "working": {
+            "label": "处理中",
+            "description": "正在流式响应或已计划——您当前处理的内容"
+          },
+          "review-queue": {
+            "label": "审核队列",
+            "description": "有未读回复的未解决讨论串"
+          },
+          "archived": {
+            "label": "已存档",
+            "description": "仅已解决的讨论串"
+          },
+          "all": {
+            "label": "全部",
+            "description": "重置所有筛选条件"
+          }
+        }
+      },
+      "threadTagPicker": {
+        "addTag": "添加标签",
+        "tag": "+ 标签",
+        "filterNew": "筛选/新建…",
+        "filterOrCreateTag": "筛选或创建标签",
+        "noMatches": "没有符合项",
+        "typeToCreateATag": "输入以创建标签",
+        "createTag": "创建“{{tag}}”"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "跳转至消息",
+        "message": "消息"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> 更改了房间名称",
+        "changedRoomTopic": "<sender>{{sender}}</sender> 更改了房间主题",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> 更改了房间头像",
+        "joinedCall": "<sender>{{sender}}</sender> 加入通话",
+        "endedCall": "<sender>{{sender}}</sender> 结束通话",
+        "sentStateEvent": "<sender>{{sender}}</sender> 发送 <eventType>{{eventType}}</eventType> 状态事件",
+        "sentEvent": "<sender>{{sender}}</sender> 发送了 <eventType>{{eventType}}</eventType> 事件"
+      },
+      "threadTagPill": {
+        "removeTag": "删除 {{tag}} 标签"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "{{count}} 秒后",
+        "inMinutesSeconds": "{{minutes}} 分 {{seconds}} 秒后",
+        "inMinutes": "{{count}} 分钟后",
+        "inHours": "{{count}} 小时后",
+        "inHoursMinutes": "{{hours}} 小时 {{minutes}} 分钟后",
+        "atTime": "于 {{time}}",
+        "scheduledTasks_one": "{{count}} 个计划任务",
+        "scheduledTasks_other": "{{count}} 个计划任务",
+        "pendingScheduledTasks_one": "{{count}} 待处理的计划任务",
+        "pendingScheduledTasks_other": "{{count}} 待处理的计划任务",
+        "scheduledTasksWithDetail": "{{tasks}}，{{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 条回复",
+        "messageCount_one": "{{formattedCount}} 条消息",
+        "messageCount_other": "{{formattedCount}} 条消息",
+        "needsAttention": "需要注意",
+        "waitingOnResponse": "等待回复",
+        "agentStreaming": "智能体正在流式响应",
+        "resolved": "已解决",
+        "idle": "空闲",
+        "threadStarted": "讨论串已开始",
+        "noRepliesYet": "还没有回复"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "下一个任务：{{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} 待处理的计划任务",
+        "pendingScheduledTasks_other": "{{count}} 待处理的计划任务"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "加密讨论串",
+        "threadInRoom": "{{roomName}} 中的讨论串",
+        "thread": "讨论串"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "查看电脑",
+      "openMembers": "打开成员列表",
+      "openCanvas": "打开面板",
+      "canvasDisabled": "此应用已关闭交互式面板。",
+      "canvasDuringCall": "结束通话后才能打开交互式面板。",
+      "computerUnavailable": "此代理的电脑不可用。",
+      "releaseControl": "打开其他视图前，请先释放电脑控制权。",
+      "openConversation": "请从房间对话中打开此请求。",
+      "settingsUnavailable": "关闭简单模式以打开此设置部分。"
+    },
+    "canvas": {
+      "panelLabel": "交互式面板",
+      "fromAgent": "来自 {{agent}} 的交互式面板",
+      "expand": "展开面板",
+      "close": "关闭面板",
+      "resize": "调整面板大小",
+      "updated": "{{agent}} 更新了此面板。",
+      "loadUpdate": "加载更新",
+      "version": "第 {{current}} 版，共 {{total}} 版",
+      "previousVersion": "上一版",
+      "nextVersion": "下一版",
+      "earlierVersion": "这是较早的版本。",
+      "showLatest": "显示最新版",
+      "loading": "正在加载面板…",
+      "loadFailed": "无法加载此面板。",
+      "retry": "重试",
+      "escaped": "此面板试图离开沙盒，已被阻止。",
+      "reload": "重新加载面板",
+      "pageError": "此页面报告了一个错误。",
+      "tellAgent": "告诉 {{agent}}",
+      "errorsSent": "已将错误发送给 {{agent}}。",
+      "errorsNotSent": "无法将错误发送给 {{agent}}。",
+      "sendTo": "发送给 {{agent}}：",
+      "changeAnswer": "如需更改回答，请先丢弃当前回答。",
+      "data": "数据",
+      "send": "发送",
+      "discard": "丢弃",
+      "disclosure": "由 {{agent}} 创建。它无法访问您的账户；您在此输入的内容可能会离开此面板。",
+      "sharedNotice": "已保存在此房间：{{agent}} 和此处的其他人可以读取您输入的内容。",
+      "sending": "正在发送给 {{agent}}…",
+      "sent": "已发送给 {{agent}}：{{label}}",
+      "sendFailed": "无法发送您的回复。请重试。",
+      "receiptData": "显示发送给代理的数据",
+      "unlabeled": "已提交",
+      "notSent": "未发送给 {{agent}}：{{label}}"
+    },
+    "canvases": {
+      "title": "交互式面板",
+      "note": "智能体为您创建、且此浏览器见过的交互式面板。已置顶的面板会显示在您的所有设备上。",
+      "empty": "还没有交互式面板。当智能体向您展示面板时，它会列在这里。",
+      "pinned": "已置顶",
+      "canvas": "面板",
+      "thread": "讨论串",
+      "agent": "智能体",
+      "room": "房间",
+      "updated": "更新时间",
+      "created": "创建时间",
+      "pin": "置顶 {{title}}",
+      "unpin": "取消置顶 {{title}}",
+      "shared": "已与智能体共享",
+      "saved": "包含您的输入"
+    },
+    "backgroundJobs": {
+      "running": "运行中：{{tool}}",
+      "awaitingApproval": "等待批准：{{tool}}",
+      "waiting": "等待批准",
+      "stoppingJob": "正在停止：{{tool}}",
+      "jobCount": "{{count}} 个后台任务",
+      "subagent": "{{tool}}（子代理）",
+      "stopAll": "全部停止",
+      "stopping": "正在停止…",
+      "stop": "停止",
+      "stopJob": "停止 {{tool}}",
+      "stopFailed": "无法停止 {{tool}}，请重试。",
+      "stopAllFailed": "无法停止后台任务，请重试。",
+      "inRoom": "后台任务运行中"
+    }
+  },
+  "roomSchedules": {
+    "title": "计划任务",
+    "openLabel": "计划任务（{{total}}）",
+    "empty": "此房间中没有计划任务。",
+    "emptyHint": "请让 MindRoom 智能体在此安排任务。",
+    "prompt": "提示词",
+    "promptUnavailable": "提示词不可用",
+    "once": "一次性",
+    "recurring": "重复",
+    "executionTime": "执行时间",
+    "unknownTime": "执行时间不可用",
+    "awaitingExecution": "等待执行",
+    "recurrence": "重复规则",
+    "silent": "静默",
+    "conditional": "条件式",
+    "newThread": "新讨论串",
+    "roomTimeline": "房间时间线",
+    "openThread": "打开讨论串",
+    "owner": "任务所有者",
+    "createdAt": "创建时间",
+    "updatedAt": "更新时间",
+    "model": "模型",
+    "inheritedModel": "来自智能体、房间或讨论串设置",
+    "taskId": "任务 ID",
+    "historyLimit": "历史记录上限",
+    "fullHistory": "完整历史记录",
+    "noHistory": "无历史记录",
+    "recentMessages": "最近消息：{{total}} 条",
+    "close": "关闭"
+  },
+  "archivedRooms": {
+    "title": "已归档房间",
+    "archive": "归档房间",
+    "restore": "恢复房间",
+    "restoreNamed": "恢复 {{room}}",
+    "failed": "无法保存更改。请重试。",
+    "close": "关闭已归档房间",
+    "description": "从侧边栏隐藏房间而不退出。可在此打开或恢复房间。",
+    "empty": "没有已归档的房间。"
+  }
+}

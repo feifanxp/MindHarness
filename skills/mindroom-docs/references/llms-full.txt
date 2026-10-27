@@ -2567,6 +2567,7 @@ teams:
 |-------|------|---------|-------------|
 | `display_name` | string | *required* | Name shown in Matrix |
 | `role` | string | *required* | Description of the team's purpose |
+| `instructions` | list of strings | `[]` | Guidance for this named team's coordinator, such as discussion pace or summary format; member instructions remain separate and ad hoc teams do not inherit this field |
 | `agents` | list | *required* | Names of agents under `agents:` that form the team; at least one, no duplicates |
 | `mode` | string | `coordinate` | `coordinate` or `collaborate` |
 | `rooms` | list | `[]` | Room keys, aliases, or Matrix room IDs the team joins and responds in |
@@ -6627,6 +6628,13 @@ Entries starting with `!` are existing Matrix room IDs, which are joined as they
 `invite_users` and `admins` accept only concrete Matrix user IDs, no wildcards, plus the pairing owner placeholder.
 A field set under `rooms.<key>` replaces the default, and a list replaces the whole default list instead of merging with it, so an empty list removes the inherited invitations or admins for that room.
 MindRoom logs `Administrators, room invitees, or room admins are on another homeserver; remove them unless you trust them` when any of these users is on a different homeserver.
+
+Set `rooms.<key>.peer_discussion: {}` to let authorized individual agents independently decide whether to join a discussion, including replying to one another without mentions.
+Agents speak under their own identities, take turns, and read the latest thread before deciding; the router does not pick a speaker and implicit teams do not form in these rooms.
+Explicitly mentioning a named team still invokes that team.
+`peer_discussion` defaults to `null` (disabled); its `max_agent_turns` integer defaults to `6` (range `1–12`) and its `max_turns_per_agent` integer defaults to `2` (range `1–4`), limiting consecutive agent replies until a human posts again.
+An agent may stay silent; these limits are ceilings, not required rounds or guarantees of participation.
+Newer human messages supersede waiting replies to older messages, and the participation decision respects requests to pause.
 
 MindRoom applies this policy to new and existing managed rooms on startup and on every config reload:
 
@@ -14608,6 +14616,11 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 
 ### Config and state kept out of workers
 
+Project-creation conversations, proposals, revision counters, and simulated confirmation results live under `tracking/project_wizard/`, outside worker mounts.
+Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
+Real provisioning refuses to run unless the complete orchestrator is ready and a concrete owner Matrix identity is available; a dashboard-only API cannot claim a room or Bot exists.
+Only the authenticated confirmation endpoint can freeze a proposal and run project provisioning; model output cannot create rooms, accounts, or tool grants. Project roles always receive an empty tool list and explicitly disabled learning/automations; room membership is deterministic and derived from the authenticated owner.
+
 Runners and dedicated workers never receive the primary's config file, its directory, its `.env`, a ConfigMap holding it, or the credential encryption key.
 The config sent to runners with each request, and the config file projected into each Docker worker, hold only the fields runners resolve; models, MCP servers, plugin settings, and every other section stay in the primary, and a worker-routed call carries only the called tool's own inline overrides.
 
@@ -14844,6 +14857,9 @@ Classify every finding before proposing a change.
 
 A fix that restricts a trusted setup, or that blocks workspace and attachment flows an agent legitimately needs, is not a security fix.
 When a maintainer rejects a finding as intended behavior, add it to the list above in the same change so the next reviewer does not rediscover it.
+
+The optional project-chat handoff uses the operator-configured project_chat_owner credential only for the frozen project owner, and only for that verified Matrix user or the standalone operator.
+It creates a normal Matrix device session and sends it only in the authenticated, no-store response to the same-origin web client, which stores it through the existing Matrix session store.
 
 # Egress Broker Design Decisions
 

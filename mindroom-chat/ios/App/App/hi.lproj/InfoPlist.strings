@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "MindRoom Chat को आपके स्थानीय Matrix होमसर्वर से कनेक्ट करने की ज़रूरत है।";
+"NSMicrophoneUsageDescription" = "वॉइस संदेश रिकॉर्ड करने और वॉइस कॉल में बात करने के लिए MindRoom Chat को माइक्रोफ़ोन का ऐक्सेस चाहिए।";
+"NSCameraUsageDescription" = "चैट में भेजने के लिए फ़ोटो और वीडियो लेने हेतु MindRoom Chat को कैमरे का ऐक्सेस चाहिए।";
+"NSPhotoLibraryUsageDescription" = "चैट में फ़ोटो और वीडियो साझा करने के लिए MindRoom Chat को आपकी फ़ोटो लाइब्रेरी का ऐक्सेस चाहिए।";
+"NSPhotoLibraryAddUsageDescription" = "चैट के चित्र और वीडियो आपकी फ़ोटो लाइब्रेरी में सहेजने के लिए MindRoom Chat को अनुमति चाहिए।";

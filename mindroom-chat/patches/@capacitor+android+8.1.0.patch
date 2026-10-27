@@ -1,0 +1,59 @@
+diff --git a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/MessageHandler.java b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/MessageHandler.java
+index dc91c9b..f7fe495 100644
+--- a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/MessageHandler.java
++++ b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/MessageHandler.java
+@@ -35,10 +35,10 @@ public class MessageHandler {
+             try {
+                 WebViewCompat.addWebMessageListener(webView, "androidBridge", bridge.getAllowedOriginRules(), capListener);
+             } catch (Exception ex) {
+-                webView.addJavascriptInterface(this, "androidBridge");
++                Logger.error("Native bridge disabled: frame-aware WebMessageListener is required");
+             }
+         } else {
+-            webView.addJavascriptInterface(this, "androidBridge");
++            Logger.error("Native bridge disabled: frame-aware WebMessageListener is required");
+         }
+     }
+ 
+diff --git a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java
+index 6ba4605..f398de4 100644
+--- a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java
++++ b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java
+@@ -20,7 +20,8 @@ public class CapacitorCookies extends Plugin {
+ 
+     @Override
+     public void load() {
+-        this.bridge.getWebView().addJavascriptInterface(this, "CapacitorCookiesAndroidInterface");
++
++        // Synchronous JavaScript interfaces cannot identify the calling frame.
+         this.cookieManager = new CapacitorCookieManager(null, java.net.CookiePolicy.ACCEPT_ALL, this.bridge);
+         this.cookieManager.removeSessionCookies();
+         CookieHandler.setDefault(this.cookieManager);
+diff --git a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorHttp.java b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorHttp.java
+index 46bc174..dfb0840 100644
+--- a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorHttp.java
++++ b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorHttp.java
+@@ -29,7 +29,8 @@ public class CapacitorHttp extends Plugin {
+ 
+     @Override
+     public void load() {
+-        this.bridge.getWebView().addJavascriptInterface(this, "CapacitorHttpAndroidInterface");
++
++        // Synchronous JavaScript interfaces cannot identify the calling frame.
+         super.load();
+     }
+ 
+diff --git a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/SystemBars.java b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/SystemBars.java
+index 3f04adf..ee86818 100644
+--- a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/SystemBars.java
++++ b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/SystemBars.java
+@@ -56,7 +56,8 @@ public class SystemBars extends Plugin {
+ 
+     @Override
+     public void load() {
+-        getBridge().getWebView().addJavascriptInterface(this, "CapacitorSystemBarsAndroidInterface");
++
++        // Synchronous JavaScript interfaces cannot identify the calling frame.
+         super.load();
+ 
+         initSystemBars();

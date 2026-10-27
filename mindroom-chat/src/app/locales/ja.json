@@ -1,0 +1,3111 @@
+{
+  "messageTable": {
+    "label": "スクロール可能なテーブル",
+    "scrollHint": "横スクロール"
+  },
+  "messageCodeBlock": {
+    "actions": "コードブロックの操作",
+    "code": "コード",
+    "language": "言語: {{language}}",
+    "copy": "コードをコピー",
+    "copied": "コピーされました",
+    "wrap": "行を折り返す",
+    "expand": "展開",
+    "collapse": "折りたたむ"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " ルーム名を変更しました"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "モダン",
+      "compact": "コンパクト",
+      "bubble": "バブル"
+    },
+    "messageSpacing": {
+      "none": "なし",
+      "ultraSmall": "極小",
+      "extraSmall": "特小",
+      "small": "小",
+      "normal": "標準",
+      "large": "大"
+    },
+    "dateFormat": {
+      "custom": "カスタム"
+    },
+    "themeName": {
+      "light": "ライト",
+      "silver": "シルバー",
+      "dark": "ダーク",
+      "midnight": "ミッドナイト",
+      "butter": "バター"
+    },
+    "prefetchScope": {
+      "myHomeserver": "私のホームサーバー",
+      "allRooms": "すべてのルーム",
+      "currentRoomOnly": "現在のルームのみ"
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "logout": "ログアウト",
+    "nav": {
+      "general": "一般",
+      "account": "アカウント",
+      "notifications": "通知",
+      "devices": "デバイス",
+      "emojisStickers": "絵文字とステッカー",
+      "developerTools": "開発者ツール",
+      "about": "について"
+    },
+    "general": {
+      "title": "一般",
+      "interface": {
+        "sectionTitle": "インターフェース",
+        "simpleMode": "シンプルモード",
+        "simpleModeDescription": "コマンド パレットやスレッド フィルターなどの高度な機能を非表示にします。デバイス間で同期されます。",
+        "showCanvasesInSidebar": "サイドバーにインタラクティブパネルを表示する",
+        "showCanvasesInSidebarDescription": "エージェントが作成したインタラクティブパネルが1つ以上あると、そのボタンを表示します。デバイス間で同期されます。",
+        "saveFailed": "変更を保存できませんでした。接続を確認して、もう一度試してください。"
+      },
+      "language": {
+        "sectionTitle": "言語",
+        "appLanguage": "アプリの言語",
+        "appLanguageDescription": "メニューとインターフェイスのテキストに適用されます。メッセージの内容は翻訳されません。"
+      },
+      "appearance": {
+        "sectionTitle": "外観",
+        "systemTheme": "システムテーマ",
+        "systemThemeDescription": "システム設定に基づいて、明るいテーマと暗いテーマのどちらかを選択します。",
+        "lightTheme": "ライトテーマ:",
+        "darkTheme": "ダークテーマ:",
+        "theme": "テーマ",
+        "themeDescription": "システムテーマが有効になっていない場合に使用するテーマ。",
+        "monochromeMode": "モノクロモード",
+        "twitterEmoji": "Twitter 絵文字",
+        "pageZoom": "ページズーム"
+      },
+      "dateTime": {
+        "sectionTitle": "日付と時刻",
+        "hour24Clock": "24 時間形式",
+        "dateFormat": "日付形式",
+        "save": "保存",
+        "formatHints": {
+          "title": "書式設定",
+          "year": "年",
+          "twoDigitYear": "2桁の年",
+          "fourDigitYear": "4桁の年",
+          "month": "月",
+          "theMonth": "月",
+          "twoDigitMonth": "2桁の月",
+          "shortMonthName": "短い月名",
+          "fullMonthName": "完全な月名",
+          "dayOfMonth": "毎月の日",
+          "theDayOfMonth": "月の日",
+          "twoDigitDayOfMonth": "2 桁の日",
+          "dayOfWeek": "曜日",
+          "theDayOfWeek": "曜日 (日曜日 = 0)",
+          "twoLetterDayName": "2文字の曜日名",
+          "shortDayName": "短い曜日の名前",
+          "fullDayName": "正式な曜日名"
+        }
+      },
+      "editor": {
+        "sectionTitle": "エディタ",
+        "enterForNewline": "改行の場合は ENTER",
+        "enterForNewlineDescription": "{{sendKey}} + ENTER を使用してメッセージを送信し、ENTER を使用して改行を入力します。",
+        "markdownFormatting": "マークダウン形式",
+        "hideActivity": "入力中表示と既読通知を非表示",
+        "hideActivityDescription": "入力中表示と既読通知を無効にして、アクティビティを非公開にします。"
+      },
+      "messages": {
+        "sectionTitle": "メッセージ",
+        "messageLayout": "メッセージのレイアウト",
+        "messageSpacing": "メッセージの間隔",
+        "prefetchScope": "プリフェッチ範囲",
+        "prefetchScopeDescription": "バックグラウンドで準備しておくルームを選択します。",
+        "historyDepth": "現在のルーム履歴の深さ",
+        "historyDepthDescription": "表示しているルームにプリロードされているイベントの目標数。最小値は {{min}}、最大値は {{max}} です。",
+        "legacyUsernameColor": "従来のユーザー名の色",
+        "hideMembershipChange": "メンバー変更を隠す",
+        "hideProfileChange": "プロフィールの変更を非表示",
+        "disableMediaAutoLoad": "メディアの自動ロードを無効にする",
+        "urlPreview": "URL プレビュー",
+        "urlPreviewEncrypted": "暗号化されたルームでの URL プレビュー",
+        "showHiddenEvents": "非表示のイベントを表示"
+      },
+      "computers": {
+        "sectionTitle": "コンピューター",
+        "apiUrl": "コンピューターサービスのURL",
+        "description": "信頼できるMindRoomバックエンドを選択してください。短期間有効なサインイントークンが送信されます。このデバイスに保存されます。空欄にするとコンピューターが無効になります。",
+        "save": "コンピューターサービスを保存",
+        "reset": "アプリの既定値を使用",
+        "invalidUrl": "認証情報、パス、クエリ、フラグメントを含まないオリジンを入力してください。HTTPS、または localhost やプライベート LAN IP アドレスで HTTP を使用してください。",
+        "httpNotice": "HTTP はサインイン情報やコンピューターの通信を暗号化しません。信頼できるローカルネットワークでのみ使用してください。",
+        "saveFailed": "このデバイスにコンピューターサービスを保存できませんでした。",
+        "saved": "コンピューターサービスを保存しました。"
+      },
+      "connections": {
+        "sectionTitle": "接続",
+        "title": "接続済みアカウント",
+        "description": "GoogleやGitHubなど、エージェントが使うアカウントをMindRoomサーバーで接続します。",
+        "open": "接続を開く",
+        "noBackend": "接続を使うには、「コンピューター」でMindRoomサーバーを設定してください。",
+        "blocked": "ブラウザーが接続ウィンドウをブロックしました。このサイトのポップアップを許可して、もう一度お試しください。"
+      }
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "directMessages": "ダイレクトメッセージ",
+    "threads": "スレッド",
+    "canvases": "インタラクティブパネル",
+    "inbox": "受信箱",
+    "exploreCommunity": "コミュニティを探索する",
+    "addSpace": "スペースを追加",
+    "createSpace": "スペースを作成",
+    "createSpaceDescription": "コミュニティのためのスペースを構築します。",
+    "joinWithAddress": "アドレスで参加する",
+    "joinWithAddressDescription": "既存のコミュニティの一員になりましょう。",
+    "createRoom": "ルームを作成",
+    "messageSearch": "メッセージ検索",
+    "rooms": "ルーム",
+    "chats": "チャット",
+    "createChat": "チャットの作成",
+    "directMessage": "ダイレクトメッセージ",
+    "noRooms": "ルームはありません",
+    "noRoomsDescription": "まだルームがありません。",
+    "noDirectMessages": "ダイレクトメッセージはありません",
+    "noDirectMessagesDescription": "まだダイレクトメッセージがありません。",
+    "exploreCommunityRooms": "コミュニティ ルームを探索する",
+    "unverifiedDevice": "未検証のデバイス",
+    "unverifiedDevices": "未検証のデバイス"
+  },
+  "accountsRail": {
+    "settingsTooltip": "設定: {{name}}",
+    "switchTooltip": "{{name}} ({{userId}}) に切り替えます",
+    "openSettingsAria": "{{name}} の設定を開く",
+    "switchAria": "アカウント {{name}} ({{userId}}) に切り替えます",
+    "manageAccounts": "アカウントの管理",
+    "addAccount": "アカウントの追加",
+    "addAccountAria": "アカウントを追加"
+  },
+  "commandPalette": {
+    "inputAria": "コマンドパレット",
+    "placeholder": "検索またはコマンドを実行…",
+    "closeAria": "コマンドパレットを閉じる",
+    "open": "コマンドパレットを開く",
+    "noResults": "結果はありません",
+    "resultCount_one": "{{count}} 件の結果",
+    "resultCount_other": "{{count}} 件の結果",
+    "sections": {
+      "actions": "アクション",
+      "threads": "スレッド",
+      "rooms": "ルーム",
+      "users": "ユーザー",
+      "messages": "メッセージ",
+      "spaces": "スペース"
+    },
+    "prefixes": {
+      "label": "接頭辞:",
+      "actions": "アクション",
+      "rooms": "ルーム",
+      "users": "ユーザー",
+      "threads": "スレッド",
+      "spaces": "スペース"
+    },
+    "shortcut": "ショートカット:",
+    "shortcutOpenSuffix": "を開きます。",
+    "actions": {
+      "openSettings": "設定を開く",
+      "openSettingsDescription": "共有設定モーダルを開きます",
+      "goHome": "ホームへ移動",
+      "goHomeDescription": "ホームへ移動",
+      "goDirect": "ダイレクトメッセージに移動",
+      "goDirectDescription": "ダイレクトメッセージへジャンプ",
+      "goInbox": "受信トレイに移動",
+      "goInboxDescription": "受信トレイ通知を開く",
+      "createRoom": "ルームを作成",
+      "createRoomDescription": "ルーム作成モーダルを開きます",
+      "createSpace": "スペースを作成",
+      "createSpaceDescription": "スペース作成モーダルを開く",
+      "toggleTheme": "テーマの切り替え",
+      "toggleThemeDescription": "明暗を切り替えます",
+      "logout": "ログアウト",
+      "logoutDescription": "MindRoom Chat からログアウト",
+      "markCurrentRoomRead": "現在のルームに既読のマークを付ける",
+      "markCurrentRoomReadDescription": "{{room}}を既読としてマーク",
+      "copyCurrentRoomLink": "現在のルームリンクをコピー",
+      "copyCurrentRoomLinkDescription": "{{room}} のアプリリンクをコピーします",
+      "openCurrentRoomSettings": "現在のルーム設定を開く",
+      "openCurrentRoomSettingsDescription": "{{room}}の設定を開く",
+      "unresolveCurrentThread": "現在のスレッドの解決を解除",
+      "unresolveCurrentThreadDescription": "アクティブなスレッドを未解決のキューに戻します",
+      "resolveCurrentThread": "現在のスレッドを解決する",
+      "resolveCurrentThreadDescription": "アクティブなスレッドを解決済みとしてマークする",
+      "currentRoomFallback": "現在のルーム"
+    },
+    "messages": {
+      "searchIn": "{{scope}} で {{query}} を検索",
+      "searchAll": "すべてのルームで {{query}} を検索",
+      "currentRoomFallback": "現在のルーム",
+      "currentRoomDescription": "現在のルーム",
+      "currentSpaceFallback": "現在のスペース",
+      "currentSpaceDescription": "現在のスペース",
+      "globalSearchDescription": "グローバルメッセージ検索"
+    },
+    "all": "すべて",
+    "filterLabel": "結果を絞り込む",
+    "resultsLabel": "検索結果",
+    "emptyDescription": "別のキーワードで検索するか、別のカテゴリを選んでください。",
+    "clearSearch": "検索をクリア",
+    "navigate": "移動",
+    "select": "開く"
+  },
+  "accountSwitcher": {
+    "title": "アカウント",
+    "description": "アカウントを切り替えたり、別のアカウントを追加したり、非アクティブなアカウントを削除したりします。",
+    "active": "アクティブ",
+    "openSettings": "設定を開く",
+    "switch": "切り替え",
+    "removing": "削除中...",
+    "removeFromDevice": "デバイスから削除する",
+    "addAccount": "アカウントの追加",
+    "close": "閉じる",
+    "actionError": "このアカウントを更新できませんでした。もう一度試してください。"
+  },
+  "recentThreads": {
+    "title": "最近開いた項目",
+    "empty": "最近開かれたスレッドはありません",
+    "resizeAria": "最近開いた項目の幅を変更",
+    "openedAt": "{{time}} に開きました"
+  },
+  "threadNav": {
+    "title": "スレッド",
+    "empty": "スレッドはまだありません",
+    "loading": "スレッドを読み込み中...",
+    "pin": "スレッドをピン留め",
+    "unpin": "スレッドのピン留めを解除",
+    "pinned": "ピン留め済み",
+    "room": "ルーム",
+    "agents": "AIエージェント",
+    "agentsUnknown": "エージェントは特定されていません",
+    "messages": "メッセージ",
+    "lastActivity": "最後のアクティビティ",
+    "unknownActivity": "不明"
+  },
+  "composer": {
+    "placeholder": "メッセージを送信…",
+    "sendMessage": "メッセージを送信",
+    "recordVoice": "音声メッセージを録音する",
+    "formatting": "書式",
+    "attach": "ファイルを添付",
+    "voicePausedInOtherRoom": "音声録音が一時停止されました — {{roomName}} での未送信の録音を終了するか破棄してください",
+    "dropFiles": "「{{roomName}}」にファイルをドロップ",
+    "dropFilesHint": "ここにファイルをドラッグ アンド ドロップするか、クリックして選択ダイアログを表示します",
+    "roomFallback": "ルーム",
+    "voiceRoomUnavailable": "このルームはもう利用できません。未送信の音声メッセージを破棄し、後でもう一度試してください。",
+    "voiceStillSending": "別の音声メッセージがまだ送信中です。再度録音する前にお待ちください。",
+    "voiceBundleBlocked": "別の添付ファイルの送信がまだ進行中であるか、注意が必要です。それを待つか、再試行するか失敗した添付ファイルを削除してから、このメッセージを再度送信してください。"
+  },
+  "threadActions": {
+    "more": "スレッドのオプション",
+    "open": "スレッドを開く",
+    "tags": "タグを編集",
+    "editSummary": "概要を編集",
+    "regenerate": "概要を再生成",
+    "reopen": "スレッドを再開",
+    "copy": "スレッドのリンクをコピー",
+    "summary": "概要",
+    "summaryHint": "手動で編集すると、概要の自動更新が停止します。概要はいつでも再編集または再生成できます。",
+    "length": "{{count}} / {{max}} 文字",
+    "agent": "エージェント",
+    "noAgents": "このルームに参加しているエージェントはいません",
+    "regenerateHint": "エージェントにこのスレッドの概要の更新を依頼します。エージェントにはスレッド概要ツールが必要です。",
+    "requested": "リクエストを送信しました。エージェントが完了すると概要が更新されます。応答はスレッドで確認してください。",
+    "failed": "この操作を完了できませんでした。もう一度お試しください。",
+    "save": "概要を保存",
+    "sendRequest": "リクエストを送信",
+    "saving": "送信中…",
+    "cancel": "キャンセル",
+    "done": "完了"
+  },
+  "thread": {
+    "pinFailed": "ピン留めを更新できませんでした。もう一度お試しください。",
+    "chip": "スレッド",
+    "view": "スレッド表示",
+    "resolve": "解決する",
+    "resolved": "解決済み",
+    "resolvedBy": "{{name}} によって解決されました",
+    "resolvedByShort": "{{name}} が解決",
+    "hideDetails": "スレッドの詳細を隠す",
+    "showDetails": "スレッドの詳細を表示",
+    "backToRoom": "ルームに戻る",
+    "replyCount_one": "{{count}} 件の返信",
+    "replyCount_other": "{{count}} 件の返信",
+    "aria": {
+      "openThread": "スレッドを開く: {{title}}",
+      "resolvedThread": "解決されたスレッド",
+      "unresolvedThread": "未解決のスレッド",
+      "unreadMessages": "未読メッセージ",
+      "agentStreaming": "エージェントが応答中",
+      "messageFailed": "メッセージの送信に失敗しました",
+      "messageSending": "メッセージを送信中",
+      "lastActivity": "最後のアクティビティ {{time}}",
+      "removeTagFilter": "{{tag}} フィルターを削除"
+    },
+    "status": {
+      "resolved": "解決済み",
+      "streaming": "ストリーミング",
+      "scheduled": "スケジュール済み",
+      "unread": "未読",
+      "idle": "アイドル状態",
+      "idleFilter": "アイドル状態 (解決済み、ストリーミングではない、タスクなし)"
+    },
+    "stats": {
+      "aria": "スレッド統計",
+      "showing": "{{shown}}中{{total}}を表示中",
+      "threadCount_one": "{{count}} スレッド",
+      "threadCount_other": "{{count}} スレッド",
+      "tags": "タグ"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: すべてを表示します。クリックしてのみ表示します。",
+      "include": "{{label}}: 表示のみ。クリックして非表示にします。",
+      "exclude": "{{label}}: 非表示。クリックしてフィルターをクリアします。",
+      "tagAny": "タグ「{{tag}}」",
+      "tagInclude": "タグ「{{tag}}」: 表示のみ。クリックして非表示にします。",
+      "tagExclude": "タグ「{{tag}}」: 非表示。クリックしてフィルターをクリアします。",
+      "stateAny": "すべてを表示",
+      "stateInclude": "のみ表示",
+      "stateExclude": "非表示"
+    },
+    "filters": {
+      "scope": "範囲",
+      "scopeInvolved": "参加中",
+      "scopeAllRooms": "すべてのルーム",
+      "status": "状態",
+      "statusAll": "全て",
+      "statusUnresolved": "未解決",
+      "statusResolved": "解決済み",
+      "activity": "活動",
+      "activityToday": "今日",
+      "activity7d": "7日",
+      "activity30d": "30日",
+      "activityAll": "全て",
+      "unread": "未読",
+      "attention": "注意",
+      "roomIdsPlaceholder": "ルーム ID",
+      "roomIdsAria": "ルーム ID フィルター",
+      "spaceIdsPlaceholder": "スペース ID",
+      "spaceIdsAria": "スペース ID フィルター",
+      "tagsPlaceholder": "タグ",
+      "tagsIncludeAria": "含めるタグフィルター",
+      "excludeTagsPlaceholder": "タグを除外する",
+      "tagsExcludeAria": "除外タグフィルター",
+      "clear": "クリア",
+      "open": "フィルター",
+      "search": "スレッドを検索する",
+      "sheetAria": "スレッドフィルター",
+      "closeAria": "スレッドフィルターを閉じる"
+    },
+    "simpleFilter": {
+      "unresolved": "未解決",
+      "showingUnresolved": "未解決のスレッドを表示しています。クリックするとすべて表示されます。",
+      "showingAll": "すべてのスレッドを表示しています。クリックすると未解決のみが表示されます。"
+    }
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "アカウントデータ",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "jsonContent": "JSONコンテンツ",
+      "edit": "編集",
+      "developerTools": "開発者ツール"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "認証フロー情報の読み込みに失敗しました。",
+      "retry": "再試行"
+    },
+    "backupRestore": {
+      "restoring0": "復元中: 0%",
+      "backupHasTrustedDecryptionKey": "バックアップには信頼できる復号キーが含まれています。",
+      "backupDoesNotHaveTrustedDecryptionKey": "バックアップには信頼できる復号キーがありません。",
+      "backupHasTrustedBySignature": "バックアップは署名によって信頼されています。",
+      "backupDoesNotHaveTrustedSignature": "バックアップには信頼できる署名がありません。",
+      "encryptionBackup": "暗号化バックアップ",
+      "backupDetails": "バックアップの詳細",
+      "restoreBackup": "バックアップを復元",
+      "noBackupPresentOnServer": "サーバー上にバックアップが存在しません!",
+      "connected": "接続済み",
+      "disconnected": "未接続",
+      "nil": "NIL",
+      "syncing": "同期中（{{count}}）",
+      "restoring": "復元中: {{progress}}%",
+      "version": "バージョン：{{version}}",
+      "keys": "キー：{{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "お知らせ",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "この機能はテスト中のため、時間の経過とともに変更される可能性があります。",
+      "beta": "ベータ"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "着信",
+      "yourHomeserverDoesNotSupportCalling": "ホームサーバーは通話をサポートしていません。",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "お使いのブラウザは、通話に必要な WebRTC をサポートしていません。",
+      "answer": "応答",
+      "reject": "拒否",
+      "ignore": "無視する"
+    },
+    "deviceVerification": {
+      "close": "閉じる",
+      "pleaseAcceptTheRequestFromOtherDevice": "他のデバイスからのリクエストを受け入れてください。",
+      "clickAcceptToStartTheVerificationProcess": "「同意する」をクリックして検証プロセスを開始します。",
+      "accept": "承諾",
+      "verificationRequestHasBeenAccepted": "検証リクエストは受け付けられました。",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "以下の絵文字が両方のデバイスに同じ順序で表示されていることを確認します。",
+      "theyMatch": "一致する",
+      "doNotMatch": "一致しない",
+      "yourDeviceIsVerified": "デバイスが検証されました。",
+      "okay": "OK",
+      "verificationHasBeenCanceled": "検証はキャンセルされました。",
+      "deviceVerification": "デバイスの検証",
+      "waitingForRequestToBeAccepted": "リクエストの承認を待っています...",
+      "waitingForTheResponseFromOtherDevice": "他の端末からの応答を待っています...",
+      "startingVerificationUsingEmojiComparison": "絵文字比較を使用した検証を開始しています...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "予期しないエラー!検証が開始されましたが、検証者が見つかりません。"
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "リカバリーキー",
+      "passphraseOptional": "パスフレーズ (オプション)",
+      "continue": "続行",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "このアクションを実行するための認証手順は、クライアントではサポートされていません。",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "リカバリーキーは安全な場所に保管してください。他のデバイスにアクセスできない場合の本人確認に必要です。",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "setupDeviceVerification": "デバイス検証のセットアップ",
+      "resetDeviceVerification": "デバイス検証のリセット",
+      "resettingDeviceVerificationIsPermanent": "デバイス検証のリセットは永続的です。",
+      "recoveryPassphrase": "リカバリーパスフレーズ",
+      "reset": "リセット",
+      "unexpectedError": "予期しないエラー!",
+      "hide": "非表示",
+      "show": "表示",
+      "recoveryDescription": "他のデバイスにアクセスできない場合の本人確認に使う<b>リカバリーキー</b>を生成します。覚えやすい代替手段としてリカバリーパスフレーズも設定できます。",
+      "resetWarning": "相互検証済みのすべてのユーザーにセキュリティ警告が表示され、暗号化バックアップも失われます。<b>リカバリーキー</b>、<b>リカバリーパスフレーズ</b>、検証に使えるすべてのデバイスを紛失した場合を除き、この操作は行わないでください。"
+    },
+    "hexColorPickerPopOut": {
+      "remove": "削除"
+    },
+    "logoutDialog": {
+      "logout": "ログアウト",
+      "unverifiedDevice": "未検証のデバイス",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "暗号化されたメッセージを保存するには、ログアウト前にデバイスを検証してください。",
+      "alert": "警告",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "メッセージにアクセスできなくなることを防ぐため、デバイス検証を有効にするか、設定から暗号化データをエクスポートしてください。",
+      "youReAboutToLogOutAreYouSure": "ログアウトします。よろしいですか？",
+      "cancel": "キャンセル",
+      "logoutFailed": "ログアウトに失敗しました。{{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "リカバリーパスフレーズ",
+      "recoveryKey": "リカバリーキー",
+      "verifyManually": "手動で検証",
+      "deviceVerified": "デバイスが検証されました。",
+      "selectAVerificationMethod": "検証方法を選択します。",
+      "provideRecoveryKey": "リカバリーキーを入力してください。"
+    },
+    "pdfViewer": {
+      "zoomOut": "ズームアウト",
+      "zoomIn": "ズームイン",
+      "failedToLoadPdf": "PDFの読み込みに失敗しました",
+      "retry": "再試行",
+      "previous": "前の",
+      "pageNumber": "ページ番号",
+      "jumpToPage": "ページへジャンプ",
+      "next": "次",
+      "saving": "保存中...",
+      "retryDownload": "ダウンロードを再試行する",
+      "download": "ダウンロード"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "リカバリーパスフレーズ",
+      "verify": "検証",
+      "recoveryKey": "リカバリーキー",
+      "invalidRecoveryPassphrase": "リカバリーパスフレーズが正しくありません。",
+      "invalidRecoveryKey": "リカバリーキーが正しくありません。"
+    },
+    "uIAFlowOverlay": {
+      "exit": "終了",
+      "stepValue1Value2": "ステップ {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "創設者",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "特別な特権ユーザーは作成時に割り当てることができます。これらのユーザーは高い制御権を持ち、アップグレード中にのみ変更できます。",
+      "enter": "入力",
+      "noSuggestions": "提案はありません",
+      "pleaseProvideTheUserIdAndHitEnter": "ユーザー ID を入力して Enter を押してください。"
+    },
+    "createRoomAccessSelector": {
+      "restricted": "制限付き",
+      "onlyMemberOfParentSpaceCanJoin": "親スペースのメンバーのみが参加できます。",
+      "private": "プライベート",
+      "onlyPeopleWithInviteCanJoin": "招待状を持っている人のみが参加できます。",
+      "public": "公開",
+      "anyoneWithTheAddressCanJoin": "住所がわかれば誰でも参加できます。"
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "住所 (オプション)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "検出可能にするには、一意のアドレスを選択してください。",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "このアドレスはすでに使用されています。別のものを選択してください。"
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "チャットルーム",
+      "messagesPhotosAndVideos": "- メッセージ、写真、ビデオ。",
+      "voiceRoom": "ボイスルーム",
+      "liveAudioAndVideoConversations": "- ライブ音声およびビデオ会話。"
+    },
+    "roomVersionSelector": {
+      "versions": "バージョン",
+      "version": "バージョン"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "絵文字"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "ルーム",
+      "unknownRoom": "未知のルーム"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "メンション"
+    },
+    "emojiBoard": {
+      "recent": "最近の",
+      "unknownPack": "不明なパック",
+      "searchResults": "検索結果",
+      "noResultsFound": "結果が見つかりませんでした",
+      "personalPack": "パーソナルパック",
+      "unknown": "不明"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "ステッカーパックはありません！",
+      "addStickersFromUserRoomOrSpaceSettings": "ユーザー、ルーム、またはスペースの設定からステッカーを追加します。"
+    },
+    "searchInput": {
+      "react": "リアクション",
+      "searchOrTextReaction": "検索またはテキストでの反応 ",
+      "search": "検索"
+    },
+    "tabs": {
+      "sticker": "ステッカー",
+      "emoji": "絵文字"
+    },
+    "eventReaders": {
+      "seenBy": "見た人"
+    },
+    "imageEditor": {
+      "imageEditor": "画像エディター",
+      "save": "保存"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "変更を適用できませんでした。もう一度試してください。",
+      "changesSavedApplyWhenReady": "変更が保存されました!準備ができたら適用してください。",
+      "reset": "リセット",
+      "applyChanges": "変更を適用する",
+      "pack": "パック",
+      "imagesUsage": "画像の用途",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "画像の使用方法を選択します: 絵文字として、ステッカーとして、またはその両方として。",
+      "images": "画像",
+      "uploadImages": "画像をアップロードする",
+      "selectImagesFromYourStorageToUploadThemInPack": "ストレージから画像を選択してパックにアップロードします。",
+      "select": "選択"
+    },
+    "imagePackView": {
+      "emojisStickers": "絵文字とステッカー"
+    },
+    "imageTile": {
+      "undo": "元に戻す",
+      "edit": "編集",
+      "shortcode": "ショートコード:",
+      "body": "本文:",
+      "save": "保存",
+      "cancel": "キャンセル"
+    },
+    "packMeta": {
+      "edit": "編集",
+      "packAvatar": "パックアバター",
+      "upload": "アップロード",
+      "reset": "リセット",
+      "remove": "削除",
+      "name": "名前",
+      "attribution": "帰属表示",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "unknown": "不明"
+    },
+    "imageViewer": {
+      "zoomOut": "ズームアウト",
+      "zoomIn": "ズームイン",
+      "saving": "保存中...",
+      "retryDownload": "ダウンロードを再試行する",
+      "download": "ダウンロード"
+    },
+    "inviteUserPrompt": {
+      "invite": "招待する",
+      "userId": "ユーザーID",
+      "reasonOptional": "理由 (オプション)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "アドレスで参加する",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "コミュニティに参加するにはパブリック アドレスを入力してください。アドレスは次のようになります。",
+      "address": "アドレス",
+      "invalidAddress": "無効なアドレス",
+      "open": "開く"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "ルームから退出",
+      "areYouSureYouWantToLeaveThisRoom": "このルームを出てもよろしいですか?",
+      "leaving": "退出中…",
+      "leave": "退出",
+      "leaveFailed": "退室に失敗しました！ {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "スペースから退出",
+      "areYouSureYouWantToLeaveThisSpace": "このスペースを離れてもよろしいですか?",
+      "leaving": "退出中…",
+      "leave": "退出",
+      "leaveFailed": "スペースを残すことができませんでした! {{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "位置を開く",
+      "voiceMessage": "音声メッセージ",
+      "audio": "オーディオ",
+      "unnamedFile": "名前のないファイル",
+      "file": "ファイル",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF ドキュメント",
+      "textFile": "テキストファイル"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "このメッセージは削除されました",
+      "unsupportedMessage": "サポートされていないメッセージ",
+      "failedToLoadMessage": "メッセージの読み込みに失敗しました",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "このメッセージを復号できませんでした — 暗号化キーを利用できません",
+      "thisMessageIsNotDecryptedYet": "このメッセージはまだ復号されていません",
+      "brokenMessage": "壊れたメッセージ",
+      "emptyMessage": "空のメッセージ",
+      "edited": " (編集済み)",
+      "deletedWithReason": "このメッセージは削除されました。 {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "PDFを開く",
+      "openFile": "ファイルを開く",
+      "loadFailed": "ファイルのロードに失敗しました!",
+      "retryDownload": "ダウンロードを再試行します ({{size}})",
+      "downloadSize": "ダウンロード ({{size}})",
+      "openValue1": "{{value1}} を開く"
+    },
+    "imageContent": {
+      "view": "表示",
+      "spoiler": "スポイラー",
+      "failedToLoadImage": "画像の読み込みに失敗しました!",
+      "retry": "再試行"
+    },
+    "videoContent": {
+      "watch": "再生",
+      "spoiler": "スポイラー",
+      "failedToLoadVideo": "ビデオの読み込みに失敗しました!",
+      "retry": "再試行"
+    },
+    "voiceAudioContent": {
+      "loadError": "音声を読み込めませんでした。再生を押して再試行してください。",
+      "playbackError": "この音声はここでは再生できません。ダウンロードをお試しください。",
+      "playbackPosition": "{{duration}} 中 {{current}}",
+      "moreAudioOptions": "さらなるオーディオオプション",
+      "download": "ダウンロード",
+      "name": "名前",
+      "type": "タイプ",
+      "size": "サイズ",
+      "duration": "再生時間",
+      "voiceMessage": "音声メッセージ",
+      "pauseValue1": "一時停止 {{value1}}",
+      "playValue1": "{{value1}} を再生",
+      "seekValue1": "{{value1}} の再生位置を変更"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "管理者がリクエストを確認します。",
+      "messageOptional": "メッセージ (オプション)",
+      "cancel": "キャンセル",
+      "failedToSendRequest": "リクエストの送信に失敗しました。",
+      "sendingRequest": "リクエストの送信",
+      "sendRequest": "リクエストの送信",
+      "requestToJoinValue1": "{{value1}} への参加リクエスト"
+    },
+    "roomCard": {
+      "cancel": "キャンセル",
+      "checkingAccess": "アクセスを確認する",
+      "space": "スペース",
+      "view": "表示",
+      "retry": "再試行",
+      "joinError": "参加エラー",
+      "viewError": "エラーを表示",
+      "retryRoomInfo": "ルーム情報の取得を再試行",
+      "accessUnavailable": "アクセス不可",
+      "failedToJoinUnknownError": "参加できませんでした。不明なエラー。",
+      "sendingRequest": "リクエストの送信",
+      "requestSent": "リクエストを送信しました",
+      "requestToJoin": "参加リクエスト",
+      "joining": "参加中",
+      "join": "参加",
+      "members_one": "{{count, number}} メンバー",
+      "members_other": "{{count, number}} メンバー"
+    },
+    "roomIntro": {
+      "inviteMember": "メンバーを招待する",
+      "openOldRoom": "古いルームを開く",
+      "joinOldRoom": "古いルームに参加する",
+      "thisIsTheBeginningOfConversation": "これが会話の始まりです。",
+      "createdBy": "作成者 ",
+      "onValue1Value2": " {{value1}} {{value2}} に"
+    },
+    "textViewer": {
+      "copyAll": "すべてコピー"
+    },
+    "datePicker": {
+      "day": "日",
+      "month": "月",
+      "year": "年"
+    },
+    "timePicker": {
+      "hour": "時間",
+      "minutes": "分",
+      "period": "期間",
+      "am": "午前",
+      "pm": "午後"
+    },
+    "dummyStage": {
+      "retry": "再試行",
+      "cancel": "キャンセル",
+      "failedToRegister": "登録に失敗しました。"
+    },
+    "emailStage": {
+      "email": "電子メール",
+      "sendVerificationEmail": "確認メールを送信する",
+      "cancel": "キャンセル",
+      "sendingVerificationEmail": "確認メールを送信中...",
+      "verificationRequestSent": "検証リクエストを送信しました",
+      "continue": "続行",
+      "provideEmail": "メールアドレスを入力",
+      "verifyEmail": "メールの確認",
+      "failedToSendVerificationEmailRequest": "確認メールリクエストの送信に失敗しました。",
+      "pleaseProvideEmailToSendVerificationRequest": "検証リクエストを送信するメールアドレスを入力してください。",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "続行する前に、メール「{{value1}}」をチェックして検証してください。"
+    },
+    "passwordStage": {
+      "accountPassword": "アカウントのパスワード",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "このアクションを実行するには、アカウントのパスワードを入力して自分自身を認証する必要があります。",
+      "password": "パスワード",
+      "continue": "続行",
+      "invalidPassword": "パスワードが無効です!"
+    },
+    "reCaptchaStage": {
+      "cancel": "キャンセル",
+      "invalidData": "無効なデータ",
+      "pleaseCheckTheBoxBelowToProceed": "続行するには、下のボックスにチェックを入れてください。",
+      "noValidDataFoundToProceedWithRecaptcha": "ReCAPTCHA を続行するための有効なデータが見つかりません。"
+    },
+    "registrationTokenStage": {
+      "registrationToken": "登録トークン",
+      "retry": "再試行",
+      "cancel": "キャンセル",
+      "invalidRegistrationTokenProvided": "無効な登録トークンが指定されました。",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "ホームサーバー管理者から提供された登録トークンを送信してください。"
+    },
+    "sSOStage": {
+      "ssoLogin": "SSOログイン",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "この操作を行うには、SSO ログインで本人確認を行う必要があります。",
+      "continue": "続行",
+      "continueWithSso": "SSO で続行"
+    },
+    "termsStage": {
+      "retry": "再試行",
+      "cancel": "キャンセル",
+      "failedToSubmitTermsAndConditionAcceptance": "利用規約への同意を送信できませんでした。"
+    },
+    "uploadBoard": {
+      "files": "ファイル",
+      "uploadFailed": "アップロードに失敗しました",
+      "remove": "削除",
+      "removeAll": "すべて削除"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "アップロードを再試行",
+      "retry": "再試行",
+      "cancelUpload": "アップロードをキャンセル"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "スポイラー",
+      "retryUpload": "アップロードを再試行",
+      "retry": "再試行",
+      "cancelUpload": "アップロードをキャンセル"
+    },
+    "creatorChip": {
+      "managePowers": "権限を管理"
+    },
+    "powerChip": {
+      "selfDemotion": "自分の権限を下げる",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "自分の権限を下げようとしています。下げた権限を自分で元に戻すことはできません。よろしいですか？",
+      "demote": "権限を下げる",
+      "sharedPower": "同等の権限",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "このユーザーを自分と同じ権限に昇格させようとしています。以後、そのユーザーの権限を変更できなくなります。よろしいですか？",
+      "promote": "権限を上げる",
+      "managePowers": "権限を管理",
+      "errorName": "エラー: {{name}}"
+    },
+    "userChips": {
+      "copyServer": "サーバーをコピー",
+      "exploreCommunity": "コミュニティを探索する",
+      "openInBrowser": "ブラウザで開く",
+      "copyUserId": "ユーザーIDをコピーする",
+      "copyUserLink": "ユーザーリンクをコピー",
+      "share": "共有",
+      "spaces": "スペース",
+      "rooms": "ルーム",
+      "directMessages": "ダイレクトメッセージ",
+      "blockedUser": "ブロックされたユーザー",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "このユーザーからはメッセージや招待を受け取りません。",
+      "mutualRooms": "共通のルーム",
+      "unblockUser": "ユーザーのブロックを解除する",
+      "blockUser": "ユーザーをブロックする",
+      "mutualRooms_one": "{{count, number}} 相互ルーム",
+      "mutualRooms_other": "{{count, number}} 相互ルーム"
+    },
+    "userModeration": {
+      "kickedUser": "キックされたユーザー",
+      "noReasonProvided": "理由は示されていません。",
+      "bannedUser": "禁止されたユーザー",
+      "unban": "禁止を解除する",
+      "invitedUser": "招待されたユーザー",
+      "cancelInvite": "招待をキャンセルする",
+      "moderation": "モデレーション",
+      "reason": "理由: <b>{{reason}}</b>",
+      "invite": "招待する",
+      "kick": "キック",
+      "ban": "禁止",
+      "kickedBy": "キック者: <b>{{name}}</b>",
+      "bannedBy": "禁止者: <b>{{name}}</b>",
+      "invitedBy": "招待者: <b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "メッセージ"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "音量",
+      "voiceVolumeCurrentlyValue1": "声の音量、現在 {{value1}}%"
+    },
+    "configConfig": {
+      "continueOffline": "オフラインで続行",
+      "yourWebSessionHasExpired": "Web セッションの有効期限が切れました。",
+      "failedToLoadClientConfigurationFile": "クライアント構成ファイルのロードに失敗しました。",
+      "signInAgainToReconnectOrContinueInOfflineMode": "再接続するにはもう一度サインインするか、オフラインモードを続行してください。",
+      "signInAgainToReconnect": "再接続するにはもう一度サインインしてください。",
+      "signInAgain": "もう一度ログイン",
+      "retry": "再試行"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "ブラウザ機能がありません",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "IndexedDB サポートが見つかりません。このアプリケーションでは、セッション データをローカルに保存するために IndexedDB が必要です。ブラウザが IndexedDB をサポートしていることを確認し、有効にしてください。",
+      "whatIsIndexeddb": "IndexedDB とは何ですか?"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "現在のアカウントに戻る",
+      "server": "サーバ",
+      "lookingForServer": "サーバーを探しています...",
+      "failedToFindServer": "サーバーが見つかりませんでした。",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "接続に失敗しました。サーバー構成のbase_urlが無効であるようです。",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "HTTPS サーバーのみが許可されます。 HTTP はローカル ネットワーク サーバーでのみサポートされます。",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "接続に失敗しました。現時点ではサーバーが利用できないか、存在しません。",
+      "loadingAuthenticationFlow": "認証フローを読み込んでいます...",
+      "failedToGetAuthenticationFlowInformation": "認証フロー情報の取得に失敗しました。",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "接続に失敗しました。 {{value1}} で見つかったサーバー構成は使用できないようです。",
+      "connectingToValue1": "{{value1}} に接続中"
+    },
+    "orDivider": {
+      "or": "または"
+    },
+    "sSOLogin": {
+      "continueWithSso": "SSO で続行"
+    },
+    "serverPicker": {
+      "server": "サーバ",
+      "serverList": "サーバーリスト"
+    },
+    "login": {
+      "login": "ログイン",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "このクライアントでは Apple でのサインインが必要です。ホームサーバーの SSO プロバイダー一覧に Apple を追加してください。",
+      "register": "登録",
+      "accountLink": "アカウントをお持ちではありませんか? <authLink>登録</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "「{{value1}}」ではパスワードログインが無効です。SSO でサインインしてください。",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "このクライアントは、「{{value1}}」サーバーでのログインをサポートしていません。パスワードおよび SSO ベースのログイン方法が見つかりません。"
+    },
+    "passwordLoginForm": {
+      "hint": "ヒント",
+      "username": "ユーザー名:",
+      "matrixId": "Matrix ID：",
+      "email": "電子メール:",
+      "username2": "ユーザー名",
+      "password": "パスワード",
+      "forgetPassword": "パスワードをお忘れですか?",
+      "login": "ログイン",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "クライアント インスタンスで許可されていないカスタム サーバーでのログイン。",
+      "failedToFindYourMatrixIdServer": "Matrix ID サーバーが見つかりませんでした。",
+      "invalidUsernameOrPassword": "ユーザー名またはパスワードが無効です。",
+      "thisAccountHasBeenDeactivated": "このアカウントは無効化されました。",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "ログインに失敗しました。リクエストデータの一部が無効です。",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "ログインに失敗しました。ログイン要求はサーバーによってレート制限されています。しばらくしてからお試しください。",
+      "failedToLoginUnknownReason": "ログインに失敗しました。理由は不明。",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "ログインは成功しましたが、このブラウザではアカウントを保存できませんでした。ストレージのアクセス許可を確認して、再試行してください。"
+    },
+    "tokenLogin": {
+      "tokenLogin": "トークンログイン",
+      "invalidLoginToken": "ログイントークンが無効です。",
+      "thisAccountHasBeenDeactivated": "このアカウントは無効化されました。",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "ログインに失敗しました。リクエストデータの一部が無効です。",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "ログインに失敗しました。ログイン要求はサーバーによってレート制限されています。しばらくしてからお試しください。",
+      "failedToLoginUnknownReason": "ログインに失敗しました。理由は不明。",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "ログインは成功しましたが、このブラウザではアカウントを保存できませんでした。ストレージのアクセス許可を確認して、再試行してください。"
+    },
+    "passwordRegisterForm": {
+      "username": "ユーザー名",
+      "password": "パスワード",
+      "confirmPassword": "パスワードを確認",
+      "termsAndConditions": "利用規約",
+      "register": "登録",
+      "thisUsernameIsAlreadyTaken": "このユーザー名はすでに使用されています。",
+      "thisUsernameContainsInvalidCharacters": "このユーザー名には無効な文字が含まれています。",
+      "thisUsernameIsReserved": "このユーザー名は予約されています。",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "弱いパスワード。サーバーによってパスワードが拒否されました。より強力なパスワードを選択してください。",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "短いパスワード。パスワードがサーバーによって拒否されました。より長いパスワードを選択してください。",
+      "registrationToken": "登録トークン",
+      "registrationTokenOptional": "登録トークン (オプション)",
+      "email": "電子メール",
+      "emailOptional": "電子メール (オプション)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "登録に失敗しました。登録リクエストはサーバーによってレート制限されています。しばらくしてから試してください。",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "登録に失敗しました。ホームサーバーは登録を許可しません。",
+      "failedToRegisterInvalidRequest": "登録に失敗しました。無効なリクエストです。",
+      "failedToRegisterUnknownReason": "登録に失敗しました。不明な理由。",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "登録は成功しましたが、このブラウザではアカウントを保存できませんでした。ストレージのアクセス許可を確認し、ログインしてみてください。",
+      "acceptTerms": "サーバーの<terms>利用規約</terms>に同意します。"
+    },
+    "register": {
+      "register": "登録",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "このクライアントでは Apple でのサインインが必要です。ホームサーバーの SSO プロバイダー一覧に Apple を追加してください。",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "このホームサーバーでは、Apple、Google、または GitHub でのサインアップのみが許可されます。",
+      "registrationHasBeenDisabledOnThisHomeserver": "このホームサーバーでは登録が無効になっています。",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "レート制限がかかっています!しばらくしてからお試しください。",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "無効なリクエストです!登録オプションを取得できませんでした。",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "このアプリケーションは、このホームサーバーへの登録をサポートしていません。",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "このホームサーバーでは SSO 登録が必要ですが、利用可能な SSO プロバイダーが提示されていません。",
+      "login": "ログイン",
+      "accountLink": "すでにアカウントをお持ちですか? <authLink>ログイン</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "パスワードが正常にリセットされました。新しいパスワードでログインしてください。",
+      "login": "ログイン",
+      "email": "電子メール",
+      "newPassword": "新しいパスワード",
+      "confirmPassword": "パスワードを確認",
+      "resetPassword": "パスワードのリセット",
+      "resetEmailDescription": "ホームサーバー <strong>{{server}}</strong> から、パスワードをリセットするためのメールが送信されます。",
+      "failedToResetPassword": "パスワードのリセットに失敗しました。"
+    },
+    "resetPassword": {
+      "resetPassword": "パスワードのリセット",
+      "login": "ログイン",
+      "accountLink": "パスワードを覚えていますか? <authLink>ログイン</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "同期中…",
+      "startupRecoveryOptions": "スタートアップ回復オプション",
+      "logout": "ログアウト",
+      "retry": "再試行",
+      "clearCacheAndReload": "キャッシュを消去して再読み込み",
+      "removeAccount": "アカウントの削除",
+      "clearing": "クリア中...",
+      "failedToStartAccountValue1Value2": "アカウント {{value1}} を開始できませんでした。 {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "キャンセルしてサインインに戻る",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "ホームサーバーに接続できません。ホームサーバーまたはインターネット接続がダウンしている可能性があります。",
+      "retry": "再試行",
+      "continue": "続行",
+      "connectingToServer": "サーバーに接続中",
+      "clearing": "クリア中...",
+      "clearCacheAndReload": "キャッシュを消去して再読み込み"
+    },
+    "syncStatus": {
+      "catchingUp": "同期中…",
+      "connectionLostReconnecting": "接続が失われました!再接続中...",
+      "connectionLost": "接続が失われました!"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "Local MindRoom をセットアップする",
+      "openLocalMindroomSettings": "ローカルの MindRoom 設定を開く",
+      "enterPairCode": "コードをお持ちですか？Local MindRoom で入力してください",
+      "poweredBy": "<links /> によって提供されます",
+      "title": "{{appName}} へようこそ",
+      "subtitle": "チャット ルームに常駐する AI エージェント。",
+      "docs": "ドキュメント",
+      "sourceCode": "ソースコード",
+      "setupStep1": "1. {{command}}を実行します",
+      "setupStep2": "2. {{envFile}} にモデル認証情報を追加するか、{{command}} を実行します",
+      "setupStep3": "3. {{command}} で起動し、表示されたリンクを開いて接続を承認します"
+    },
+    "create": {
+      "createSpace": "スペースを作成",
+      "buildASpaceForYourCommunity": "コミュニティのためのスペースを構築します。"
+    },
+    "directCreate": {
+      "createChat": "チャットの作成",
+      "startAPrivateEncryptedChatByEnteringAUserId": "ユーザー ID を入力して、プライベートの暗号化されたチャットを開始します。"
+    },
+    "explore": {
+      "addServer": "サーバーの追加",
+      "addServerNameToExplorePublicCommunities": "サーバー名を追加してパブリック コミュニティを探索します。",
+      "serverName": "サーバー名",
+      "failedToLoadPublicRoomsPleaseTryAgain": "パブリックルームの読み込みに失敗しました。もう一度試してください。",
+      "view": "表示",
+      "exploreCommunity": "コミュニティを探索する",
+      "featured": "注目の",
+      "servers": "サーバー"
+    },
+    "featured": {
+      "featuredByClient": "クライアントのおすすめ",
+      "featuredSpaces": "注目のスペース",
+      "featuredRooms": "注目のルーム",
+      "noRoomsOrSpacesFeaturedByClientProvider": "クライアントプロバイダーが紹介するルームやスペースはありません。",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "クライアントプロバイダーが提供するパブリックルームやスペースを見つけて探索します。"
+    },
+    "server": {
+      "search": "検索",
+      "searchForKeyword": "キーワードを検索する",
+      "clear": "クリア",
+      "enter": "入力",
+      "protocols": "プロトコル",
+      "presets": "プリセット",
+      "customLimit": "カスタム制限",
+      "perPageItemLimit": "ページごとのアイテム制限",
+      "changeLimit": "変更制限",
+      "popularCommunities": "人気のコミュニティ",
+      "previousPage": "前のページ",
+      "nextPage": "次のページ",
+      "noCommunitiesFound": "コミュニティが見つかりません!",
+      "pageLimitValue1": "ページ制限: {{value1}}",
+      "resultsForValue1": "「{{value1}}」の結果"
+    },
+    "createRoom": {
+      "createRoom": "ルームを作成",
+      "buildARoomForRealTimeConversations": "リアルタイムの会話のためのルームを構築します。"
+    },
+    "search": {
+      "messageSearch": "メッセージ検索"
+    },
+    "inbox": {
+      "invites": "招待",
+      "inbox": "受信箱",
+      "notifications": "通知"
+    },
+    "invites": {
+      "encrypted": "暗号化済み",
+      "directMessage": "ダイレクトメッセージ",
+      "space": "スペース",
+      "decline": "拒否",
+      "accept": "承諾",
+      "primary": "メイン",
+      "public": "公開",
+      "spam": "スパム",
+      "noInvites": "招待はありません",
+      "declineAll": "すべて拒否する",
+      "acceptAll": "すべて承諾する",
+      "reportAll": "すべて報告",
+      "blockAll": "すべてブロック",
+      "noSpamInvites": "スパム招待なし",
+      "invites": "招待",
+      "filter": "フィルター",
+      "hideAll": "すべて隠す",
+      "viewAll": "すべて見る",
+      "reason": "理由: {{reason}}",
+      "from": "送信者: <b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "同じルームにいるユーザーから招待が届くと、ここに表示されます。",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "参加中のルーム以外のユーザーから届いた招待はここに表示されます。",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "以下の招待には有害な内容が含まれているか、禁止されたユーザーから送信された可能性があります。",
+      "invitesDetectedAsSpamAppearHere": "スパムとして検出された招待がここに表示されます。",
+      "spamInvites_one": "{{count, number}} スパム招待",
+      "spamInvites_other": "{{count, number}} スパム招待"
+    },
+    "notifications": {
+      "open": "開く",
+      "notificationMessages": "通知メッセージ",
+      "filter": "フィルター",
+      "allNotifications": "すべての通知",
+      "highlighted": "ハイライト表示",
+      "scrollToTop": "一番上までスクロール",
+      "noNotifications": "通知なし",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "表示する新しい通知はまだありません。",
+      "event": " イベント",
+      "roomTombstone": "ルームの墓石。 {{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "固定を解除する",
+      "invite": "招待する",
+      "copyLink": "リンクをコピー",
+      "spaceSettings": "スペース設定",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "スペース {{value1}} を拾いました。順序を変更するには、矢印キーを使用します。ドロップするにはスペースを押します。"
+    },
+    "space": {
+      "invite": "招待する",
+      "copyLink": "リンクをコピー",
+      "spaceSettings": "スペース設定",
+      "eventTimeline": "イベントのタイムライン",
+      "leaveSpace": "スペースから退出",
+      "spaceUpgraded": "アップグレードされたスペース",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "このスペースは置き換えられ、現在は使用されていません。",
+      "openNewSpace": "新しいスペースを開く",
+      "joinNewSpace": "新しいスペースに参加する",
+      "lobby": "ロビー",
+      "messageSearch": "メッセージ検索",
+      "failedToJoinReplacementSpace": "代替スペースに参加できませんでした!",
+      "rooms": "ルーム",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "ルーム {{value1}} を受け取りました。順序を変更するには、矢印キーを使用します。ドロップするにはスペースを押します。"
+    },
+    "threads": {
+      "threads": "スレッド"
+    },
+    "threadsView": {
+      "loadingThreads": "スレッドをロードしています",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "あなたはまだどのスレッドにも参加していません",
+      "noThreadsMatchYourFilters": "フィルタに一致するスレッドはありません",
+      "clearFilters": "フィルターをクリアする",
+      "thread": "スレッド",
+      "threads": "スレッド"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "サポートされていません",
+      "option0": "招待のみ",
+      "option1": "ノックと招待",
+      "option2": "スペースのメンバーまたはノック",
+      "option3": "スペースメンバー",
+      "option4": "公開"
+    },
+    "toolbar": {
+      "heading1": "見出し 1",
+      "heading2": "見出し 2",
+      "heading3": "見出し 3",
+      "bold": "太字",
+      "italic": "斜体",
+      "underline": "下線",
+      "strikeThrough": "取り消し線",
+      "inlineCode": "インラインコード",
+      "spoiler": "スポイラー",
+      "blockQuote": "引用",
+      "blockCode": "ブロックコード",
+      "orderedList": "番号付きリスト",
+      "unorderedList": "箇条書きリスト",
+      "exitFormatting": "フォーマットの終了",
+      "disableMarkdown": "Markdown を無効化",
+      "enableMarkdown": "Markdown を有効化",
+      "exitValue1": "{{value1}} を終了します"
+    },
+    "reaction": {
+      "others_one": "他 {{count}} 件",
+      "reactionSummary": "<names>{{names}}</names> は次のように反応しました:<reaction>{{reaction}}</reaction>:",
+      "others_other": "他 {{count}} 人"
+    },
+    "audioContent": {
+      "pause": "一時停止",
+      "play": "遊ぶ"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "音声メッセージの再生位置を変更"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "デフォルト",
+      "option1": "すべてのメッセージ",
+      "option2": "言及とキーワード",
+      "option3": "ミュート"
+    },
+    "authFooter": {
+      "support": "サポート",
+      "privacy": "プライバシー",
+      "terms": "条項",
+      "poweredBy": "Powered by <app>{{appName}}</app>、<matrix>Matrix</matrix>、<cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "参加",
+      "notFound": "ページが見つかりません"
+    },
+    "ssoProviders": {
+      "signUpApple": "Apple で登録",
+      "signInApple": "Apple でサインイン",
+      "continueGoogle": "Google で続行",
+      "continueGithub": "GitHub で続行",
+      "continueProvider": "{{provider}} で続行"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> は <b>{{userName}}</b> の参加リクエストを受け入れました {{reason}}",
+      "invited": "<b>{{senderName}}</b> が <b>{{userName}}</b> を招待しました {{reason}}",
+      "requested": "<b>{{userName}}</b> によるルームへの参加リクエスト {{reason}}",
+      "joined": "<b>{{userName}}</b> がルームに参加しました",
+      "rejectedInvitation": "<b>{{userName}}</b> は招待を拒否しました {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> は <b>{{userName}}</b> の参加リクエストを拒否しました {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> が参加リクエストを取り消しました {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> が <b>{{userName}}</b> の招待を取り消しました {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> の禁止が解除されました <b>{{userName}}</b> {{reason}}",
+      "left": "<b>{{userName}}</b> がルームを退室しました {{reason}}",
+      "kicked": "<b>{{senderName}}</b> が <b>{{userName}}</b> をキックしました {{reason}}",
+      "banned": "<b>{{senderName}}</b> は <b>{{userName}}</b> を禁止しました {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> は表示名を <b>{{userName}}</b> に変更しました",
+      "removedName": "<b>{{prevUserName}}</b> さんが表示名を削除しました",
+      "changedAvatar": "<b>{{userName}}</b> はアバターを変更しました",
+      "removedAvatar": "<b>{{userName}}</b> さんがアバターを削除しました",
+      "broken": "不正なメンバーシップイベント",
+      "unchanged": "会員イベントは変更なし"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "招待するユーザーの候補",
+      "users": "ユーザー",
+      "searching": "ユーザーの検索",
+      "noMatches": "一致するユーザーがいません",
+      "matchingUsers_one": "{{count}} 件の一致するユーザー",
+      "matchingUsers_other": "{{count}} 人の一致ユーザー"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "MindRoom Chatを読み込んでいます"
+    },
+    "commands": {
+      "CommandMe": "アクションメッセージを送信する",
+      "CommandNotice": "通知メッセージを送信する",
+      "CommandShrug": "¯\\_(ツ)_/¯ をメッセージとして送信します",
+      "CommandTableFlip": "{{value1}} をメッセージとして送信",
+      "CommandUnFlip": "{{value1}} をメッセージとして送信",
+      "CommandStartDm": "ユーザーとのダイレクトメッセージを開始します。例：/startdm userId1",
+      "CommandJoin": "アドレスを指定してルームに参加します。例：/join address1 address2",
+      "CommandLeave": "現在のルームを出ます。",
+      "CommandInvite": "ユーザーをルームに招待します。例：/invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "ユーザーへのルーム招待を取り消します。例：/disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "ユーザーをルームから退出させます。例：/kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "ユーザーをルームから禁止します。例：/ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "ユーザーのルームでの禁止を解除します。例：/unban userId1 userId2",
+      "CommandIgnore": "ユーザーを無視します。例：/ignore userId1 userId2",
+      "CommandUnIgnore": "ユーザーの無視を解除します。例：/unignore userId1 userId2",
+      "CommandMyRoomNick": "現在のルームのニックネームを変更します。",
+      "CommandMyRoomAvatar": "現在のルームでプロフィール画像を変更します。例 /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "ルームをダイレクト メッセージに変換する",
+      "CommandConvertToRoom": "ダイレクト メッセージをルームに変換する",
+      "CommandDelete": "ユーザーのメッセージを削除します。例：/delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "サーバーのアクセス制御リストを管理します。例 /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} 絵文字"
+    },
+    "fileHeader": {
+      "downloadValue1": "{{value1}}をダウンロード"
+    },
+    "time": {
+      "yesterdayValue1": "昨日 {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "再生速度、現在 {{value1}}、クリックして循環"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "{{value1}} からの新しい受信トレイ通知"
+    },
+    "memberFilters": {
+      "joined": "参加しました",
+      "invited": "招待されました",
+      "left": "左",
+      "kicked": "蹴られた",
+      "banned": "禁止"
+    },
+    "memberSort": {
+      "atoZ": "AからZまで",
+      "ztoA": "ZからAへ",
+      "newest": "最新",
+      "oldest": "最古の"
+    },
+    "presence": {
+      "active": "アクティブ",
+      "busy": "忙しい",
+      "away": "離れて"
+    },
+    "emojiGroups": {
+      "smileysPeople": "スマイリーと人々",
+      "animalsNature": "動物と自然",
+      "foodDrinks": "食べ物と飲み物",
+      "activity": "活動",
+      "travelPlaces": "旅行と場所",
+      "objects": "オブジェクト",
+      "symbols": "記号",
+      "flags": "フラグ"
+    },
+    "roomTypes": {
+      "all": "全て",
+      "spaces": "スペース",
+      "rooms": "ルーム"
+    },
+    "imageUsage": {
+      "both": "両方",
+      "sticker": "ステッカー",
+      "emoji": "絵文字"
+    },
+    "powerLevels": {
+      "manager": "マネージャー",
+      "founder": "創設者",
+      "admin": "管理者",
+      "moderator": "モデレータ",
+      "member": "メンバー",
+      "muted": "ミュート",
+      "team": "チーム{{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "音声メッセージ",
+      "tools_one": "{{count, number}} ツール",
+      "tools_other": "{{count, number}} ツール"
+    },
+    "threadSummary": {
+      "manual": "手動で編集された概要",
+      "title": "スレッドの概要",
+      "provenance": "AI が生成したスレッドの概要",
+      "provenanceCount_one": "最後の {{count, number}} メッセージの AI 概要",
+      "provenanceCount_other": "最新の {{count, number}} メッセージの AI 概要"
+    },
+    "commandPalette": {
+      "shortcutHint": "ショートカット: <shortcut>{{shortcut}}</shortcut> を開きます。"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "ナビゲーションパネルを展開する",
+      "collapseNavigationPanel": "ナビゲーション パネルを折りたたむ"
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "既存の追加",
+      "search": "検索",
+      "failedToApplyChangesPleaseTryAgain": "変更を適用できませんでした。もう一度試してください。",
+      "reset": "リセット",
+      "applyChanges": "変更を適用する",
+      "applyWhenReadySelected_one": "準備ができたら適用してください。 ({{count}} 個が選択されました)",
+      "applyWhenReadySelected_other": "準備ができたら適用してください。 ({{count}} 個が選択されました)",
+      "noMatchForQuery": "「{{query}}」に一致するものが見つかりませんでした。",
+      "noMatchFound": "一致するものが見つかりませんでした",
+      "noRooms": "ルームはありません",
+      "noRoomsDescription": "表示するルームはまだありません。",
+      "noSpaces": "スペースはありません",
+      "noSpacesDescription": "表示するスペースはまだありません。"
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "終わり"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name> が話しています...",
+        "two": "<first>{{first}}</first> と <second>{{second}}</second> が話しています...",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> が話しています...",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>、<others>{{count}} other</others> が話しています...",
+        "many": "<first>{{first}}</first> さん、<second>{{second}}</second> さん、<third>{{third}}</third> さん、<others>{{count}} 人</others> さんが話しています..."
+      },
+      "liveCount": "{{count}} ライブ"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "リアクション",
+        "settings": "設定",
+        "end": "終わり",
+        "gridView": "グリッドビュー",
+        "spotlightView": "スポットライトビュー"
+      },
+      "callMemberCard": {
+        "collapse": "折りたたむ",
+        "additionalParticipants_one": "+{{count}} その他",
+        "additionalParticipants_other": "+{{count}} その他"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "ホームサーバーは通話をサポートしていません。",
+        "yourBrowserDoesNotSupportWebrtcWhich": "お使いのブラウザは、通話に必要な WebRTC をサポートしていません。",
+        "voiceChatSEmptyBeTheFirst": "ボイスチャットは空いています — 最初に参加してください!",
+        "youDonTHavePermissionToJoin": "参加する許可がありません!",
+        "alreadyInAnotherCallEndTheCurrent": "すでに別の通話中 — 現在の通話を終了して参加してください。",
+        "participant": "参加者",
+        "voiceCallError": "音声通話エラー",
+        "dismissVoiceCallError": "音声通話エラーを閉じる"
+      },
+      "prescreenControls": {
+        "join": "参加"
+      },
+      "controls": {
+        "closeChat": "チャットを閉じる",
+        "openChat": "チャットを開く",
+        "startCamera": "カメラを起動する",
+        "startScreenshare": "画面共有を開始する",
+        "stopCamera": "カメラを停止",
+        "stopScreenshare": "画面共有を停止する",
+        "turnOffMicrophone": "マイクをオフにする",
+        "turnOffSound": "音声をオフ",
+        "turnOnMicrophone": "マイクをオンにする",
+        "turnOnSound": "音声をオン"
+      },
+      "liveCount": "{{count}} ライブ"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "開発者ツール",
+          "options": "オプション",
+          "enableDeveloperTools": "開発者ツールを有効にする",
+          "roomId": "ルーム ID",
+          "copy": "コピー",
+          "data": "データ",
+          "newMessageEvent": "新規メッセージイベント",
+          "createAndSendANewMessageEvent": "ルーム内で新しいメッセージ イベントを作成して送信します。",
+          "compose": "作成",
+          "roomState": "ルームの状態",
+          "stateEventsOfTheRoom": "ルームの状態イベントです。",
+          "events": "イベント",
+          "addNew": "新規追加",
+          "accountData": "アカウントデータ",
+          "privatePersonalizationDataStoredWithinRoom": "ルーム内に保存される非公開の個人設定データです。",
+          "collapse": "折りたたむ",
+          "copyRoomIdDescription": "ルームIDをクリップボードにコピーします。 (\"{{roomId}}\")",
+          "expand": "展開",
+          "total": "合計: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "開発者ツール",
+          "send": "送信",
+          "stateKeyOptional": "状態キー (オプション)",
+          "jsonContent": "JSONコンテンツ",
+          "messageEventType": "メッセージイベントの種類",
+          "stateEventType": "状態イベントの種類"
+        },
+        "stateEventEditor": {
+          "stateEvent": "状態イベント",
+          "save": "保存",
+          "cancel": "キャンセル",
+          "jsonContent": "JSONコンテンツ",
+          "edit": "編集",
+          "developerTools": "開発者ツール"
+        },
+        "defaultStateKey": "デフォルト"
+      },
+      "emojisStickers": {
+        "emojisStickers": "絵文字とステッカー",
+        "roomPacks": {
+          "newPack": "新しいパック",
+          "addYourOwnEmojiAndStickerPack": "独自の絵文字とステッカー パックを追加してルームで使用します。",
+          "name": "名前",
+          "create": "作成する",
+          "view": "表示",
+          "packs": "パック",
+          "noPacks": "パックなし",
+          "thereAreNoEmojiOrStickerPacks": "現時点では表示できる絵文字やステッカー パックはありません。",
+          "failedToRemovePacksPleaseTryAgain": "パックの削除に失敗しました!もう一度試してください。",
+          "cancel": "キャンセル",
+          "delete": "削除",
+          "deleteSelectedPacks_one": "選択したパックを削除します。 ({{count}} 個が選択されました)",
+          "deleteSelectedPacks_other": "選択したパックを削除します。 ({{count}} 個が選択されました)",
+          "unknown": "不明"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "ルームの暗号化",
+          "enabled": "有効",
+          "enable": "有効にする",
+          "enableEncryption": "暗号化を有効化",
+          "areYouSureOnceEnabledEncryptionCannot": "よろしいですか？暗号化を有効にすると無効には戻せません。",
+          "enableE2eEncryption": "エンドツーエンド暗号化を有効化",
+          "disabledDescription": "暗号化を一度有効にすると無効にすることはできません。",
+          "enabledDescription": "このルーム内のメッセージはエンドツーエンド暗号化によって保護されています。"
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "メッセージ履歴の可視性",
+          "changesToHistoryVisibilityWillOnlyApply": "履歴の表示設定の変更は、今後のメッセージにのみ適用されます。既存の履歴を表示しても影響はありません。",
+          "afterInvite": "招待後",
+          "afterJoin": "参加後",
+          "allMessages": "すべてのメッセージ",
+          "allMessagesGuests": "すべてのメッセージ (ゲスト)"
+        },
+        "roomProfile": {
+          "avatar": "アバター",
+          "upload": "アップロード",
+          "reset": "リセット",
+          "remove": "削除",
+          "name": "名前",
+          "topic": "トピック",
+          "save": "保存",
+          "cancel": "キャンセル",
+          "profile": "プロフィール",
+          "edit": "編集",
+          "unknown": "不明"
+        },
+        "roomPublish": {
+          "publishToDirectory": "ディレクトリに公開",
+          "roomDescription": "パブリック ディレクトリにルームをリストして、他の人が見つけられるようにします。",
+          "spaceDescription": "パブリック ディレクトリ内のスペースを一覧表示して、他の人が発見できるようにします。"
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "この操作は元に戻せません。",
+          "options": "オプション",
+          "upgrade": "アップグレード",
+          "currentVersion": "現在のバージョン: {{version}}。",
+          "oldRoom": "古いルーム",
+          "oldSpace": "古いスペース",
+          "openNewRoom": "新しいルームを開く",
+          "openNewSpace": "新しいスペースを開く",
+          "roomReplaced": "このルームは入れ替わりました！",
+          "roomUpgrade": "ルームのアップグレード",
+          "spaceReplaced": "このスペースは入れ替わりました！",
+          "spaceUpgrade": "スペースのアップグレード",
+          "upgradeRoom": "ルームをアップグレード",
+          "upgradeSpace": "スペースをアップグレード"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "アドレスはすでに使用されています!",
+          "collapse": "折りたたむ",
+          "delete": "削除",
+          "expand": "展開",
+          "loading": "読み込み中...",
+          "localAddresses": "ローカルアドレス",
+          "localAddressesDescription": "ユーザーがホームサーバー経由で参加できるようにローカル アドレスを設定します。",
+          "main": "主要",
+          "noAddresses": "住所がありません",
+          "publish": "公開",
+          "publishRequiresLocalAddress": "アドレスを公開するには、まずローカル アドレスとして設定する必要があります",
+          "published": "公開済み",
+          "publishedAddresses": "公開されたアドレス",
+          "publishedAddressesDescription": "アクセスが <public>Public</public> の場合、誰でも参加するために公開アドレスが使用されます。",
+          "save": "保存",
+          "selectedCount_one": "{{count}} 個が選択されました",
+          "selectedCount_other": "{{count}} 個が選択されました",
+          "setMain": "メインを設定する",
+          "unpublish": "非公開にする",
+          "unsetMain": "メインの設定を解除"
+        },
+        "roomJoinRules": {
+          "roomAccess": "ルームへのアクセス",
+          "roomDescription": "人々がルームに参加する方法を変更します。",
+          "spaceAccess": "スペースへのアクセス",
+          "spaceDescription": "人々がスペースに参加する方法を変更します。"
+        }
+      },
+      "members": {
+        "search": "検索",
+        "scrollToTop": "一番上までスクロール",
+        "memberCount_one": "{{count}} 人のメンバー",
+        "memberCount_other": "{{count}} 人のメンバー",
+        "noMembersForFilter": "「{{filter}}」メンバーがいません",
+        "noResults": "結果はありません",
+        "resultCount_one": "{{count}} 結果",
+        "resultCount_other": "{{count}} 件の結果"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "ユーザー",
+          "defaultPower": "デフォルトの権限",
+          "defaultPowerLevelForAllUsers": "すべてのユーザーに適用されるデフォルトの権限レベルです。",
+          "above": "以上",
+          "failedToApplyChangesPleaseTryAgain": "変更を適用できませんでした。もう一度試してください。",
+          "changesSavedApplyWhenReady": "変更が保存されました!準備ができたら適用してください。",
+          "reset": "リセット",
+          "applyChanges": "変更を適用する"
+        },
+        "powers": {
+          "founders": "創設者",
+          "foundingMembersHasAllPermissionsAndCan": "創設メンバーにはすべての権限があり、アップグレード中にのみ変更できます。",
+          "powerLevels": "権限レベル",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "ユーザーの段階的な権限レベルを管理、設定します。",
+          "edit": "編集"
+        },
+        "powersEditor": {
+          "color": "色",
+          "pick": "選択",
+          "name": "名前",
+          "bot": "ボット",
+          "power": "権限",
+          "icon": "アイコン",
+          "remove": "削除",
+          "import": "インポート",
+          "save": "保存",
+          "cancel": "キャンセル",
+          "permissions": "権限",
+          "powerLevels": "権限レベル",
+          "newPowerLevel": "新しい権限レベル",
+          "createANewPowerLevel": "新しい権限レベルを作成します。",
+          "create": "作成する",
+          "undo": "元に戻す",
+          "usedPowerLevel": "使用中の権限レベル",
+          "youHaveToRemoveItsUseBefore": "削除する前に、その使用を削除する必要があります。",
+          "delete": "削除",
+          "edit": "編集",
+          "failedToApplyChangesPleaseTryAgain": "変更を適用できませんでした。もう一度試してください。",
+          "changesSavedApplyWhenReady": "変更が保存されました!準備ができたら適用してください。",
+          "reset": "リセット",
+          "applyChanges": "変更を適用する"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "ユーザーID",
+      "userSuggestions": "招待するユーザーの候補",
+      "pleaseEnterAValidUserId": "有効なユーザー ID を入力してください。",
+      "options": "オプション",
+      "endToEndEncryption": "エンドツーエンド暗号化",
+      "onceThisFeatureIsEnabledItCan": "この機能を有効にすると、ルームの作成後に無効にすることはできません。",
+      "create": "作成する",
+      "rateLimited_one": "サーバーはリクエストを {{count}} 分間レート制限しました。",
+      "rateLimited_other": "サーバーはリクエストを {{count}} 分間レート制限しました。"
+    },
+    "createRoom": {
+      "type": "タイプ",
+      "access": "アクセス",
+      "name": "名前",
+      "topicOptional": "トピック (オプション)",
+      "options": "オプション",
+      "advancedOptions": "詳細オプション",
+      "endToEndEncryption": "エンドツーエンド暗号化",
+      "onceThisFeatureIsEnabledItCan": "この機能を有効にすると、ルームの作成後に無効にすることはできません。",
+      "knockToJoin": "参加をリクエスト",
+      "anyoneCanSendRequestToJoinThis": "誰でもこのルームへの参加リクエストを送信できます。",
+      "allowFederation": "フェデレーションを許可",
+      "usersFromOtherServersCanJoin": "他のサーバーからのユーザーも参加できます。",
+      "create": "作成する",
+      "newChatRoom": "新しいチャット ルーム",
+      "newVoiceRoom": "新しいボイスルーム",
+      "rateLimited_one": "サーバーはリクエストを {{count}} 分間レート制限しました。",
+      "rateLimited_other": "サーバーはリクエストを {{count}} 分間レート制限しました。"
+    },
+    "createSpace": {
+      "access": "アクセス",
+      "name": "名前",
+      "topicOptional": "トピック (オプション)",
+      "options": "オプション",
+      "advancedOptions": "詳細オプション",
+      "knockToJoin": "参加をリクエスト",
+      "anyoneCanSendRequestToJoinThis": "誰でもこのスペースへの参加リクエストを送信できます。",
+      "allowFederation": "フェデレーションを許可",
+      "usersFromOtherServersCanJoin": "他のサーバーからのユーザーも参加できます。",
+      "create": "作成する",
+      "createSpaceModal": {
+        "newSpace": "新しいスペース"
+      },
+      "rateLimited_one": "サーバーはリクエストを {{count}} 分間レート制限しました。",
+      "rateLimited_other": "サーバーはリクエストを {{count}} 分間レート制限しました。"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "削除",
+        "invite": "招待する",
+        "settings": "設定",
+        "leave": "退出",
+        "pinToSidebar": "サイドバーにピン留め",
+        "setSuggested": "おすすめに設定",
+        "unpinFromSidebar": "サイドバーからピン留めを解除",
+        "unsetSuggested": "おすすめ設定を解除"
+      },
+      "scrollToTop": "一番上までスクロール",
+      "reordering": "並べ替え中",
+      "lobbyHeader": {
+        "invite": "招待する",
+        "spaceSettings": "スペース設定",
+        "leaveSpace": "スペースから退出",
+        "members": "メンバー",
+        "moreOptions": "その他のオプション"
+      },
+      "roomItem": {
+        "accessUnavailable": "アクセス不可",
+        "unknown": "不明",
+        "suggested": "おすすめ",
+        "inaccessible": "アクセス不可",
+        "openRoom": "ルームを開く",
+        "join": "参加",
+        "memberCount_one": "{{formattedCount}} メンバー",
+        "memberCount_other": "{{formattedCount}} メンバー",
+        "requestSent": "リクエストを送信しました",
+        "requestToJoin": "参加リクエスト",
+        "sendingRequest": "リクエストの送信"
+      },
+      "spaceHierarchy": {
+        "noRooms": "ルームはありません",
+        "thisSpaceDoesNotContainsRoomsYet": "このスペースにはまだルームがありません。"
+      },
+      "spaceItem": {
+        "unknown": "不明",
+        "inaccessible": "アクセス不可",
+        "suggested": "おすすめ",
+        "accessUnavailable": "アクセス不可",
+        "rooms": "ルーム",
+        "chatRoom": "チャットルーム",
+        "voiceRoom": "ボイスルーム",
+        "existingRoom": "既存のルーム",
+        "addRoom": "ルームを追加",
+        "newSpace": "新しいスペース",
+        "existingSpace": "既存のスペース",
+        "addSpace": "スペースを追加",
+        "requestSent": "リクエストを送信しました",
+        "requestToJoin": "参加リクエスト"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "通知",
+        "invite": "招待する",
+        "copyLink": "リンクをコピー",
+        "roomSettings": "ルーム設定",
+        "leaveRoom": "ルームから退出",
+        "toggleChat": "チャットの切り替え",
+        "moreOptions": "その他のオプション"
+      },
+      "liveCount": "{{count}} ライブ"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "タイムライン",
+        "general": "一般",
+        "options": "オプション",
+        "addresses": "アドレス",
+        "advancedOptions": "詳細オプション",
+        "compact": "コンパクト",
+        "threads": "スレッド",
+        "classic": "クラシック",
+        "offline": {
+          "title": "オフラインアクセス",
+          "checking": "保存済みコンテンツを確認しています…",
+          "unavailable": "この端末では保存済みコンテンツを利用できません。",
+          "notSaved": "このルームはまだオフライン用に保存されていません。",
+          "downloading": "このルームをオフライン用にダウンロードしています…",
+          "offlinePause": "端末がオフラインのため、保存を一時停止しています。",
+          "backgroundPause": "アプリがバックグラウンドにあるため、保存を一時停止しています。",
+          "spacePause": "保護されたコンテンツが保存容量の上限に達したため、保存を一時停止しています。",
+          "readOnlyPause": "ストレージでエラーが発生しました。保存を再開するにはアプリを開き直してください。",
+          "connectionPause": "この接続では自動保存を一時停止しています。",
+          "errorPause": "エラーのため保存を一時停止しました。もう一度お試しください。",
+          "partialHistory": "以前の履歴の一部は保存されていません。",
+          "inaccessibleHistory": "履歴の一部は現在アクセスできません。",
+          "waitingForKeys": "鍵を待機している暗号化イベント: {{count}}",
+          "unresolvedRelations": "未解決の編集または返信: {{count}}",
+          "missingEssential": "不足している重要なメッセージ本文: {{count}}",
+          "historyEntries": "保存済み履歴エントリ: {{count}}",
+          "attachments": "添付ファイル: 保存済み {{saved}}、未保存 {{missing}}。",
+          "storageUsed": "添付ファイルが使用している容量: {{size}}",
+          "pinFailed": "「オフラインで保持」を更新できませんでした。",
+          "includeAllMedia": "すべてのメディアを含める",
+          "keepOffline": "オフラインで保持",
+          "keepOfflineDescription": "自動クリーンアップ時に、このルームの保存済みメディアを保護します。",
+          "cancelDownload": "ダウンロードをキャンセル",
+          "downloadEntireRoom": "ルーム全体をダウンロード",
+          "clearDownloadedContent": "ダウンロード済みコンテンツを消去",
+          "clearTitle": "ダウンロード済みコンテンツを消去しますか？",
+          "cancel": "キャンセル",
+          "clearDescription": "このルームの保存済み履歴と添付ファイルをこの端末から削除します。",
+          "clearFailed": "ダウンロード済みコンテンツを消去できませんでした。",
+          "clearConfirm": "コンテンツを消去"
+        }
+      },
+      "permissions": {
+        "permissions": "権限",
+        "ban": "禁止",
+        "changeAllPermission": "すべての権限を変更",
+        "changeRoomAccess": "ルームのアクセス設定を変更",
+        "changeServerAcls": "サーバーACLの変更",
+        "deleteOthersMessages": "他のメッセージを削除する",
+        "deleteSelfMessages": "自分のメッセージを削除",
+        "editPowerLevels": "権限レベルを編集",
+        "enableEncryption": "暗号化を有効化",
+        "groups": {
+          "calls": "通話",
+          "messages": "メッセージ",
+          "moderation": "モデレーション",
+          "other": "他の",
+          "roomOverview": "ルームの概要",
+          "settings": "設定"
+        },
+        "historyVisibility": "履歴の公開範囲",
+        "invite": "招待する",
+        "kick": "キック",
+        "manageEmojisStickers": "絵文字とステッカーの管理",
+        "modifyWidgets": "ウィジェットの変更",
+        "otherMessageEvents": "その他のメッセージイベント",
+        "otherSettings": "その他の設定",
+        "pinMessages": "メッセージをピン留め",
+        "pingRoom": "@room で Ping",
+        "publishAddress": "アドレスを公開する",
+        "roomAvatar": "ルームのアバター",
+        "roomName": "ルーム名",
+        "roomTopic": "ルームのトピック",
+        "sendMessages": "メッセージを送信する",
+        "sendReactions": "リアクションを送信する",
+        "sendStickers": "ステッカーを送信する",
+        "startOrJoinCall": "通話を開始または参加する",
+        "upgradeRoom": "ルームをアップグレード"
+      },
+      "navigation": {
+        "developerTools": "開発者ツール",
+        "emojisStickers": "絵文字とステッカー",
+        "general": "一般",
+        "members": "メンバー",
+        "permissions": "権限"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "チャット",
+        "close": "閉じる"
+      },
+      "commandAutocomplete": {
+        "commands": "コマンド"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "メッセージは提供されていません。",
+        "decline": "拒否",
+        "approve": "承認する",
+        "approveFromUser": "{{userId}} からの参加リクエストを承認します",
+        "approvedWaitingForSync": "承認された。ルームの同期を待っています…",
+        "approving": "承認中…",
+        "declineFromUser": "{{userId}} からの参加リクエストを拒否します",
+        "declinedWaitingForSync": "拒否されました。ルームの同期を待っています…",
+        "declining": "拒否中…",
+        "updateFailed": "リクエストを更新できませんでした。"
+      },
+      "membersDrawer": {
+        "invite": "招待する",
+        "invitePeople": "人を招待する",
+        "close": "閉じる",
+        "typeName": "名前を入力…",
+        "scrollToTop": "一番上までスクロール",
+        "memberCount_one": "{{count}} 人のメンバー",
+        "memberCount_other": "{{count}} 人のメンバー",
+        "noMembersForFilter": "「{{filter}}」メンバーがいません",
+        "noPendingJoinRequests": "保留中の参加リクエストはありません",
+        "noResults": "結果はありません",
+        "requestCount_one": "リクエスト ({{count}})",
+        "requestCount_other": "リクエスト ({{count}})",
+        "invitedCount_one": "{{count}} 人招待中",
+        "invitedCount_other": "{{count}} 人招待中",
+        "resultCount_one": "{{count}} 結果",
+        "resultCount_other": "{{count}} 件の結果",
+        "formattedMemberCount_one": "{{formattedCount}} メンバー",
+        "formattedMemberCount_other": "{{formattedCount}} メンバー"
+      },
+      "roomTombstone": {
+        "openNewRoom": "新しいルームを開く",
+        "joinNewRoom": "新しいルームに参加する",
+        "joinReplacementFailed": "代替ルームへの参加に失敗しました!",
+        "replacedDescription": "このルームは置き換えられたため、現在は使用できません。"
+      },
+      "jumpToTime": {
+        "jumpToTime": "日時へ移動",
+        "time": "時刻",
+        "date": "日付",
+        "preset": "プリセット",
+        "today": "今日",
+        "yesterday": "昨日",
+        "beginning": "始まり",
+        "openTimeline": "タイムラインを開く"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "メッセージを編集…",
+          "save": "保存",
+          "cancel": "キャンセル"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> が入力中です…",
+        "two": "<first>{{first}}</first> と <second>{{second}}</second> が入力中です…",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> が入力中です…",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>、<others>ほか {{count}} 人</others>が入力中です…",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>、<others>ほか {{count}} 人</others>が入力中です…",
+        "dropTypingStatus": "入力中の表示を停止"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> が会話を見ています。",
+        "two": "<first>{{first}}</first> と <second>{{second}}</second> が会話をフォローしています。",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> が会話をフォローしています。",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>、<others>{{count}} other</others> が会話をフォローしています。",
+        "many": "<first>{{first}}</first> さん、<second>{{second}}</second> さん、<third>{{third}}</third> さん、<others>{{count}} 人</others> さんが会話をフォローしています。"
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}、{{count}} 個の参加リクエストが保留中です",
+        "accessibleLabel_other": "{{baseLabel}}、{{count}} 件の保留中の参加リクエスト"
+      },
+      "reactionViewer": {
+        "reactedWith": ":{{shortcode}} に反応しました:"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "アカウント",
+        "accountDeactivation": {
+          "accountManagement": "アカウント管理",
+          "deleteDeactivateAccount": "アカウントの削除/無効化",
+          "deleteDeactivate": "削除/無効化",
+          "openProviderPortal": "プロバイダーポータルを開く",
+          "thisWillRequestAccountDeactivationOnYour": "これにより、Matrix ホームサーバーのアカウントの無効化が要求されます。メッセージやセッションにアクセスできなくなる可能性があります。",
+          "eraseAccountDataIfSupported": "アカウント データの消去 (サポートされている場合)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "有効にすると、ホームサーバーは無効化に加えて、アカウント データを永久に消去する可能性があります。",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "アカウントの無効化を完了するには、追加の認証が必要です。",
+          "thisClientDoesNotSupportTheRequired": "このクライアントは、このホームサーバーに必要な認証手順をサポートしていません。",
+          "continueInProviderPortal": "プロバイダーポータルに進む",
+          "cancel": "キャンセル",
+          "deactivationFailed": "アカウントの無効化に失敗しました。 {{error}}",
+          "descriptionWithProvider": "このクライアントからアカウントの無効化を開始します。必要に応じて、プロバイダーのアカウント管理ページに進むことができます。",
+          "descriptionWithoutProvider": "このクライアントからアカウントの無効化を開始します。一部のホームサーバーでは追加の認証手順が必要な場合があります。"
+        },
+        "contactInfo": {
+          "contactInformation": "連絡先",
+          "emailAddress": "電子メールアドレス",
+          "emailAddressAttachedToYourAccount": "アカウントに関連付けられている電子メール アドレス。"
+        },
+        "ignoredUserList": {
+          "block": "ブロック",
+          "blockedUsers": "ブロックされたユーザー",
+          "selectUser": "ユーザーの選択",
+          "preventReceivingMessagesOrInvitesFromUser": "userId を追加して、ユーザーからのメッセージや招待を受信しないようにします。",
+          "users": "ユーザー"
+        },
+        "matrixId": {
+          "matrixId": "Matrix ID",
+          "copy": "コピー",
+          "copied": "コピーされました"
+        },
+        "profile": {
+          "avatar": "アバター",
+          "upload": "アップロード",
+          "remove": "削除",
+          "removeAvatar": "アバターを削除する",
+          "areYouSureYouWantToRemove": "プロフィール アバターを削除してもよろしいですか?",
+          "displayName": "表示名",
+          "save": "保存",
+          "profile": "プロフィール",
+          "unnamedFile": "無名"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "アカウントデータ",
+          "global": "グローバル",
+          "dataStoredInYourGlobalAccountData": "グローバルアカウントデータに保存されているデータ。",
+          "events": "イベント",
+          "addNew": "新規追加",
+          "collapse": "折りたたむ",
+          "expand": "展開",
+          "total": "合計: {{count}}"
+        },
+        "developTools": {
+          "developerTools": "開発者ツール",
+          "options": "オプション",
+          "enableDeveloperTools": "開発者ツールを有効にする",
+          "accessToken": "アクセストークン",
+          "copyAccessTokenToClipboard": "アクセストークンをクリップボードにコピーします。",
+          "copy": "コピー"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "最後のアクティビティ:",
+          "deviceName": "デバイス名",
+          "save": "保存",
+          "cancel": "キャンセル",
+          "deviceNamesAreVisibleToPublic": "デバイス名は一般公開されます。",
+          "logout": "ログアウト",
+          "undo": "元に戻す",
+          "edit": "編集",
+          "deviceIdValue": "デバイス ID: <value>{{id}}</value>",
+          "deviceKeyValue": "デバイスキー: <value>{{key}}</value>",
+          "ipAddressValue": "IP アドレス: <value>{{address}}</value>",
+          "loading": "読み込み中...",
+          "today": "今日",
+          "yesterday": "昨日"
+        },
+        "devices": "デバイス",
+        "security": "セキュリティ",
+        "deviceVerification": "デバイスの検証",
+        "toVerifyDeviceIdentityAndGrantAccess": "デバイスの ID を確認し、暗号化されたメッセージへのアクセスを許可します。",
+        "current": "現在",
+        "localBackup": {
+          "newPassword": "新しいパスワード",
+          "confirmPassword": "パスワードを確認",
+          "export": "エクスポート",
+          "exportMessagesData": "メッセージデータのエクスポート",
+          "savePasswordProtectedCopyOfEncryptionData": "後でメッセージを復号化できるように、パスワードで保護された暗号化データのコピーをデバイスに保存します。",
+          "password": "パスワード",
+          "decrypt": "復号",
+          "importMessagesData": "メッセージデータのインポート",
+          "loadPasswordProtectedCopyOfEncryptionData": "パスワードで保護された暗号化データのコピーをデバイスからロードして、メッセージを復号化します。",
+          "import": "インポート",
+          "localBackup": "ローカルバックアップ",
+          "collapse": "折りたたむ",
+          "cryptoModuleNotFound": "予期しないエラー!暗号化モジュールが見つかりません!",
+          "expand": "展開"
+        },
+        "otherDevices": {
+          "others": "その他",
+          "deviceDashboard": "デバイス管理画面",
+          "manageYourDevicesOnOidcDashboard": "OIDC ダッシュボードでデバイスを管理します。",
+          "open": "開く",
+          "authenticationStepsToPerformThisActionAre": "このアクションを実行するための認証手順は、クライアントではサポートされていません。",
+          "cancel": "キャンセル",
+          "logout": "ログアウト",
+          "logoutFailed": "デバイスのログアウトに失敗しました!もう一度試してください。 {{error}}",
+          "logoutSelectedDevices_one": "選択したデバイスからログアウトします。 ({{count}} 個が選択されました)",
+          "logoutSelectedDevices_other": "選択したデバイスからログアウトします。 ({{count}} 個が選択されました)"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "他のデバイスから検証を開始するか、手動で検証します。 <toggle><strong>表示範囲を縮小</strong></toggle>",
+          "currentDeviceHelpMore": "他のデバイスから検証を開始するか、手動で検証します。 <toggle><strong>詳細</strong></toggle>",
+          "enable": "有効にする",
+          "findDevice": "このデバイスは <section>デバイス/セッション</section> セクションで見つけます。",
+          "initiateVerification": "検証を開始します。",
+          "manualVerificationHint": "検証済みのデバイスがない場合は、<action>「手動で検証」</action> ボタンを押してください。",
+          "openSettings": "<settings>設定</settings>を開きます。",
+          "openVerifiedDevice": "他の認証済みデバイスを開きます。",
+          "reset": "リセット",
+          "stepsFromOtherDevice": "他のデバイスから確認する手順。",
+          "unverified": "未検証",
+          "unverifiedCount_one": "{{count}} 未確認",
+          "unverifiedCount_other": "{{count}} 未確認",
+          "verified": "検証済み",
+          "verify": "検証",
+          "verifyDeviceDescription": "デバイスの ID を確認し、暗号化されたメッセージへのアクセスを許可します。",
+          "verifyManually": "手動で検証"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "絵文字とステッカー",
+        "globalPacks": {
+          "roomPacks": "ルームパック",
+          "noPacks": "パックなし",
+          "packFromRoomsWillAppearHereYou": "ルームからのパックがここに表示されます。まだパックを置くスペースがありません。",
+          "view": "表示",
+          "favoritePacks": "お気に入りのパック",
+          "selectPack": "パックを選択",
+          "pickEmojisAndStickersPackFromRooms": "ルームから絵文字とステッカー パックを選択して、すべてのルームで使用します。",
+          "select": "選択",
+          "failedToApplyChangesPleaseTryAgain": "変更を適用できませんでした。もう一度試してください。",
+          "changesSavedApplyWhenReady": "変更が保存されました!準備ができたら適用してください。",
+          "reset": "リセット",
+          "applyChanges": "変更を適用する",
+          "selectAll": "すべて選択",
+          "unknown": "不明",
+          "unselectAll": "すべての選択を解除",
+          "save": "保存",
+          "close": "閉じる"
+        },
+        "userPack": {
+          "defaultPack": "デフォルトパック",
+          "view": "表示",
+          "unknown": "不明"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "すべてのメッセージ",
+          "badge": "バッジ：",
+          "1To1Chats": "1対1のチャット",
+          "1To1ChatsEncrypted": "1対1チャット（暗号化）",
+          "rooms": "ルーム",
+          "roomsEncrypted": "ルーム（暗号化）"
+        },
+        "keywordMessages": {
+          "save": "保存",
+          "keywordMessages": "キーワードメッセージ",
+          "badge": "バッジ：",
+          "selectKeyword": "キーワードを選択してください",
+          "setANotificationPreferenceForMessageContaining": "指定されたキーワードを含むメッセージの通知設定を設定します。"
+        },
+        "notifications": "通知",
+        "blockMessages": "メッセージをブロックする",
+        "thisOptionHasBeenMovedToAccount": "このオプションは「アカウント > ユーザーのブロック」セクションに移動されました。",
+        "specialMessages": {
+          "specialMessages": "特別なメッセージ",
+          "badge": "バッジ：",
+          "mentionRoom": "@room にメンション",
+          "containsRoom": "@room を含む",
+          "containsDisplayName": "表示名 (\"{{displayName}}\") が含まれています",
+          "containsDisplayNameGeneric": "表示名を含む",
+          "containsUsername": "ユーザー名 (「{{username}}」) が含まれています",
+          "mentionUserId": "ユーザーID (\"{{userId}}\") を記載します"
+        },
+        "systemNotification": {
+          "emailNotification": "電子メール通知",
+          "yourAccountDoesNotHaveAnyEmail": "あなたのアカウントには電子メールが添付されていません。",
+          "unexpectedError": "予期しないエラー!",
+          "system": "システム",
+          "desktopNotifications": "デスクトップ通知",
+          "showDesktopNotificationsWhenMessageArrive": "メッセージが到着したときにデスクトップ通知を表示します。",
+          "enable": "有効にする",
+          "notificationSound": "通知音",
+          "playSoundWhenNewMessageArrive": "新しいメッセージが到着すると音を鳴らします。",
+          "notSupported": "通知はシステムではサポートされていません。",
+          "permissionBlocked": "通知がブロックされています。ブラウザのアドレスバーから通知を許可してください。",
+          "sendToEmail": "通知をメールに送信します。",
+          "sendToEmailAddress": "通知をメールに送信します。 (\"{{email}}\")"
+        },
+        "mode": {
+          "disable": "無効化",
+          "notifyLoud": "通知音あり",
+          "notifySilent": "通知音なし"
+        }
+      },
+      "about": {
+        "clearCache": "キャッシュを消去",
+        "clearCacheAndReload": "キャッシュを消去して再読み込み",
+        "clearCacheDescription": "キャッシュデータを消去して再読み込みします。ログイン状態は維持されます。",
+        "clearTrace": "トレースを消去",
+        "clearing": "クリア中...",
+        "credits": "クレジット",
+        "deepDiagnosticTracing": "詳細な診断トレース",
+        "deepTraceMemoryOnly": "トレースストレージが使用できないため、メモリに記録しています。アプリを再起動すると最近のイベントが失われるため、再起動する前にエクスポートしてください。",
+        "deepTraceEnabledStorageUnavailable": "有効になっていますが、トレース ストレージは現在使用できません。",
+        "deepTraceOff": "オフ。フリーズを再現する前に有効にして、パフォーマンス、Matrix、ネットワーク、ライフサイクル、およびインタラクションのタイミングを記録します。",
+        "deepTracePreferenceSaveFailed": "{{description}} このセッションではオフですが、設定を保存できなかったため、再起動後に再び有効になる可能性があります。",
+        "deepTraceRecording": "このデバイス上で、制限されたプライバシーに配慮したパフォーマンスとインタラクション トレースを記録します。",
+        "deepTraceStarting": "このデバイス上で、プライバシーに配慮した制限されたパフォーマンスとインタラクションのトレースを開始します。",
+        "diagnosticsExportFailed": "{{description}} エクスポートに失敗しました。もう一度やり直してください。",
+        "diagnosticsNone": "予期しないセッションは保持されませんでした。",
+        "diagnosticsUnavailable": "診断ストレージが使用できません。",
+        "diagnosticsUnexpected": "前のセッションが予期せず終了しました。原因は不明です。",
+        "emojiArtCredit": "<art>Twemoji</art> の絵文字アートは © <owner>Twitter, Inc およびその他のコントリビューター</owner>の著作物であり、<license>CC-BY 4.0</license> の条件に基づいて使用されています。",
+        "emojiFontCredit": "<font>twemoji-colr</font> フォントは © <owner>Mozilla Foundation</owner> の著作物であり、<license>Apache 2.0</license> の条件に基づいて使用されています。",
+        "exportDiagnostics": "診断のエクスポート",
+        "exporting": "エクスポート中...",
+        "matrixSdkCredit": "<sdk>matrix-js-sdk</sdk> は © <owner>The Matrix.org Foundation C.I.C</owner> の著作物であり、<license>Apache 2.0</license> の条件に基づいて使用されています。",
+        "onDeviceDiagnostics": "オンデバイス診断",
+        "options": "オプション",
+        "soundResourcesCredit": "<resources>Material サウンドリソース</resources>は © <owner>Google</owner> の著作物であり、<license>CC-BY 4.0</license> の条件に基づいて使用されています。",
+        "sourceCode": "ソースコード",
+        "support": "サポート",
+        "title": "について",
+        "traceStorageUnavailable": "トレース ストレージが使用できません。"
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "一般",
+        "options": "オプション",
+        "addresses": "アドレス",
+        "advancedOptions": "詳細オプション"
+      },
+      "permissions": {
+        "permissions": "権限",
+        "ban": "禁止",
+        "changeAllPermission": "すべての権限を変更",
+        "changeServerAcls": "サーバーACLの変更",
+        "changeSpaceAccess": "スペースアクセスの変更",
+        "editPowerLevels": "権限レベルを編集",
+        "groups": {
+          "manage": "管理",
+          "moderation": "モデレーション",
+          "other": "他の",
+          "settings": "設定",
+          "spaceOverview": "スペースの概要"
+        },
+        "invite": "招待する",
+        "kick": "キック",
+        "manageEmojisStickers": "絵文字とステッカーの管理",
+        "manageSpaceRooms": "スペースルームの管理",
+        "messageEvents": "メッセージイベント",
+        "otherSettings": "その他の設定",
+        "publishAddress": "アドレスを公開する",
+        "spaceAvatar": "スペースのアバター",
+        "spaceName": "スペース名",
+        "spaceTopic": "スペースのトピック",
+        "upgradeSpace": "スペースをアップグレード"
+      },
+      "navigation": {
+        "developerTools": "開発者ツール",
+        "emojisStickers": "絵文字とステッカー",
+        "general": "一般",
+        "members": "メンバー",
+        "permissions": "権限"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "「{{query}}」に一致するものが見つかりませんでした。",
+      "noMatchFound": "一致するものが見つかりませんでした",
+      "noRooms": "ルームはありません",
+      "noRoomsDescription": "表示するルームはまだありません。",
+      "placeholder": "検索",
+      "syntaxHint": "ルームの場合は「<rooms>#</rooms>」、DM の場合は「<directs>@</directs>」、スペースの場合は「<spaces>*</spaces>」と入力します。ホットキー: <hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "音声録音を破棄する",
+      "pauseRecording": "音声録音を一時停止する",
+      "resumeRecording": "音声録音を再開する",
+      "statusActive": "音声録音が有効です",
+      "statusPaused": "音声録音が一時停止されました",
+      "statusProcessing": "音声録音の処理",
+      "statusReadyToRetry": "音声録音を再試行する準備ができています",
+      "statusSending": "音声録音を送信する",
+      "statusStarting": "音声録音を開始する",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "音声送信に失敗しました",
+        "yourRecordingIsStillSaved": "録音はまだ保存されています。",
+        "discard": "破棄",
+        "retry": "再試行",
+        "discardVoiceRecording": "音声録音を破棄しますか?",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "この録音は送信されていません。永久に破棄しますか?",
+        "cancel": "キャンセル",
+        "voiceRecordingError": "音声録音エラー",
+        "ok": "わかりました"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "マイクへのアクセスがブロックされています。 Android アプリの設定で MindRoom Chat のマイク アクセスを許可し、再試行してください。",
+        "microphoneBlockedIos": "マイクへのアクセスがブロックされています。 iPhone の設定で MindRoom Chatのマイク アクセスを許可して、もう一度試してください。",
+        "microphoneBlockedBrowser": "マイクへのアクセスがブロックされています。ブラウザまたはシステム設定でこのサイト/アプリへのマイクアクセスを許可して、もう一度お試しください。",
+        "noMicrophone": "このデバイスにはマイクが見つかりませんでした。",
+        "microphoneUnavailable": "マイクは現在使用できません (別のアプリによって使用されている可能性があります)。",
+        "microphoneFailed": "マイクにアクセスできませんでした。",
+        "microphoneUnsupported": "このデバイスではマイク アクセスはサポートされていません。",
+        "recordingStopped": "音声録音が予期せず停止しました。もう一度録音してください。",
+        "noAudio": "音声データはキャプチャされませんでした。",
+        "recordingUnsupported": "このブラウザでは音声録音はサポートされていません。",
+        "httpsRequired": "音声録音には HTTPS (またはローカルホスト) が必要です。 HTTPS 経由で MindRoom を開きます。",
+        "sendBusy": "別の音声メッセージがまだ送信中です。お待ちください。",
+        "sendFailed": "音声メッセージの送信に失敗しました。"
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "通話",
+        "homeserverUnsupported": "ホームサーバーは通話をサポートしていません。",
+        "browserUnsupported": "お使いのブラウザは WebRTC をサポートしていません。",
+        "endCurrentCall": "まず現在の通話を終了してください。",
+        "failedToStart": "通話の開始に失敗しました。"
+      },
+      "agentCallHeaderButton": {
+        "call": "エージェントと通話",
+        "callAgent": "{{name}} と通話",
+        "chooseAgent": "通話するエージェントを選択",
+        "close": "閉じる"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "MindRoom コマンド"
+      },
+      "descriptions": {
+        "help": "利用可能な機能や特定のトピックについてヘルプを表示します。",
+        "reload-plugins": "設定されたプラグインをリロードします (管理者のみ)。",
+        "schedule": "後で実行するようにタスクをスケジュールします。",
+        "list_schedules": "スケジュールされたタスクをすべてリストします。",
+        "cancel_schedule": "ID ごとに 1 つのスケジュールをキャンセルするか、すべてのスケジュールをキャンセルします。",
+        "edit_schedule": "既存のスケジュールタスクを更新します。",
+        "config": "MindRoom 構成を管理します (管理者のみ)。",
+        "desktop": "デスクトップターゲットを管理します。",
+        "model": "現在のスレッドで使用されているモデルを表示または切り替えます。",
+        "room_model": "ルームモデルのデフォルトを表示するか、切り替えます（設定/リセットにはルーム管理者が必要です）。",
+        "thread_mode": "現在のルームで使用されているスレッド モードを表示または切り替えます (ルーム管理者のみ)。",
+        "encrypt": "現在のルームのエンドツーエンド暗号化を確認または有効にします。",
+        "e2ee": "現在のルームの暗号化診断を表示します。",
+        "hi": "ウェルカム情報を表示します。"
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "貼り付けられたテキスト",
+        "characterCount_one": "{{formattedCount}} 文字",
+        "characterCount_other": "{{formattedCount}} 文字"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Local MindRoom",
+        "connectLocalMindroom": "Local MindRoom に接続する",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "このチャット アカウントをローカルの MindRoom プロセスとペアリングします",
+        "enterCodeDescription": "マシンで {{command}} を実行し、表示されたリンクを開くか、ここにコードを入力してください。",
+        "pairCode": "ペアコード",
+        "mindroomDocs": "MindRoom ドキュメント",
+        "linkedInstallations": "リンクされたインストール",
+        "linkedInstallationsUnavailable": "リンク済みのインストールは {{server}} のアカウントでのみ利用できます。",
+        "loadingLinkedInstallations": "リンクされたインストールをロードしています...",
+        "tryAgain": "もう一度やり直してください",
+        "noLinkedLocalMindroomInstallationsYet": "リンクされたローカル MindRoom インストールはまだありません。",
+        "revoke": "取り消す",
+        "confirmRevoke": "取り消しの確認",
+        "cancel": "キャンセル",
+        "requestFailed": "リクエストは失敗しました。もう一度試してください。",
+        "unknown": "不明",
+        "createdAt": "作成日: {{timestamp}}",
+        "lastSeenAt": "最後に確認された時間: {{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "ターミナルに表示されたコードを入力してください。",
+        "continue": "続行",
+        "invalidCode": "8 文字のコードを入力してください（例: ABCD-EFGH）。",
+        "code": "コード: {{code}}",
+        "chooseAccount": "この接続を承認するアカウントを選択してください",
+        "checkingCode": "コードを確認しています...",
+        "deviceQuestion": "{{clientName}} を接続しますか？",
+        "deviceStarted": "{{age}}に開始",
+        "requestedFrom": "リクエスト元: {{ip}}",
+        "requestedFromUnknown": "リクエスト元: 不明なアドレス",
+        "warning": "自分のマシンでたった今これを開始し、ターミナルに同じコードが表示されている場合にのみ承認してください。",
+        "approveAs": "{{userId}} として承認",
+        "approved": "接続しました。ターミナルに戻ってください。",
+        "noAccount": "この接続を承認するには、MindRoom アカウントでサインインしてください。",
+        "signIn": "サインインして承認",
+        "accountSignedOut": "このアカウントで承認するには、もう一度サインインする必要があります。",
+        "codeNotFound": "このコードは見つかりませんでした。ターミナルに表示されたコードを確認してください。",
+        "codeExpired": "このコードは期限切れです。ターミナルに表示された新しいリンクまたはコードを使用してください。",
+        "codeAlreadyApproved": "このコードはすでに承認されています。",
+        "backToChat": "チャットに戻る",
+        "enterNewCode": "新しいコードを入力してください：",
+        "noAccountAppGuidance": "MindRoom アプリで既にサインインしていますか？アプリの設定 → Local MindRoom で {{code}} を入力してください。",
+        "frameWarning": "セキュリティ上の理由により、フレーム内でデバイスの承認を完了できません。",
+        "openInNewTab": "新しいタブで開く"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "検証済みAIエージェント · クロス署名済みデバイス",
+        "verifiedAgent": "認証済みエージェント"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "一番上までスクロール",
+        "searchMessages": "メッセージの検索",
+        "searchDescription": "関連するキーワードで検索して、コミュニティ内の役立つメッセージを見つけてください。",
+        "noResultsFor": "「{{term}}」の結果は見つかりませんでした",
+        "resultsFor": "「{{term}}」の結果"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (編集済み)"
+      },
+      "searchFilters": {
+        "sortBy": "並べ替え",
+        "recent": "最近の",
+        "relevance": "関連性",
+        "search": "検索",
+        "rooms": "ルーム",
+        "noMatchFound": "一致するものが見つかりませんでした!",
+        "save": "保存",
+        "deselectAll": "すべての選択を解除",
+        "selectRooms": "ルームを選択してください",
+        "filter": "フィルター",
+        "global": "グローバル",
+        "saveCount": "保存 ({{count}})",
+        "roomsFor": "「{{query}}」のルーム"
+      },
+      "searchInput": {
+        "search": "検索",
+        "searchForKeyword": "キーワードを検索する",
+        "clear": "クリア",
+        "enter": "入力"
+      },
+      "searchResultGroup": {
+        "open": "開く",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "検索結果に返信コンテキストが非表示になります。メッセージを開いてスレッドの完全なコンテキストを確認します。"
+      },
+      "searchResultPreview": {
+        "redacted": "メッセージは削除されました。",
+        "message": "メッセージ",
+        "image": "画像",
+        "video": "ビデオ",
+        "audio": "オーディオ",
+        "file": "ファイル",
+        "location": "位置",
+        "reaction": "リアクション",
+        "unsupportedEvent": "サポートされていないイベント"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "引数",
+        "loadingCompleteArguments": "完全な引数をロード中…",
+        "onlyATruncatedPreviewIsAvailable": "切り詰められたプレビューのみが利用可能です。",
+        "retry": "再試行",
+        "sensitiveValuesMayBeRedacted": "機密性の高い値は編集される場合があります。",
+        "loadFailed": "完全な引数をロードできませんでした。",
+        "hideArguments": "引数を隠す",
+        "showAllArguments": "すべての引数を表示"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "このリクエストはここでは承認できません。",
+        "submittedWaitingForRoomUpdate": "提出されました。ルームの更新を待っています。",
+        "approveOnce": "一度承認する",
+        "approve": "承認する",
+        "deny": "拒否",
+        "autoApprovalDuration": "自動承認期間",
+        "denyReasonOptional": "拒否理由 (オプション)",
+        "denialReasonOptional": "拒否理由 (オプション)",
+        "confirmDeny": "拒否の確認",
+        "confirmDeny2": "拒否の確認",
+        "cancel": "キャンセル",
+        "autoApproveMinutes_one": "{{count}} 分間自動承認します",
+        "autoApproveMinutes_other": "{{count}} 分間自動承認します",
+        "denyCallReasonOptional": "呼び出し {{number}} を拒否する理由（任意）",
+        "approveExactCall": "この呼び出しをそのまま承認",
+        "approveAnyArguments": "任意の引数を承認",
+        "anyArgumentsWarning": "任意の引数を承認すると、エージェントは予定時刻の前後 {{minutes}} 分以内に、自分で決めた内容で {{tool}} を 1 回呼び出せます。"
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "自動承認が有効です",
+        "autoApprovalStopped": "自動承認が停止されました",
+        "autoApprovalExpired": "自動承認の有効期限が切れました",
+        "argumentsMayDifferBetweenCalls": "引数は呼び出しごとに異なる場合があります。",
+        "stopAutoApproval": "自動承認を停止する",
+        "submittedWaitingForRoomUpdate": "提出されました。ルームの更新を待っています。",
+        "fixedExpiry": "固定有効期限: {{timestamp}}",
+        "expiresInMinutes_one": "あと {{count}} 分で期限切れになります",
+        "expiresInMinutes_other": "あと {{count}} 分で期限切れになります"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "解決済みのツール承認リクエスト",
+        "unknown": "不明",
+        "approvedOnce": "1 回のみ承認済み",
+        "decisionRecordedForThisCall": "この呼び出しへの判断を記録しました",
+        "statusExpired": "承認期限切れ",
+        "statusApproved": "承認済み",
+        "statusDenied": "拒否済み",
+        "requestedBy": "{{agent}} · {{requester}} によってリクエストされました",
+        "resolvedByAt": "{{resolver}}：{{status}} · {{timestamp}}",
+        "resolvedBy": "{{resolver}}：{{status}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "時間制限付き権限",
+        "timedPermissionMinutes_one": "時間制限付き許可 · {{count}} 分",
+        "timedPermissionMinutes_other": "時間制限付き許可 · {{count}} 分",
+        "grantedByAt": "{{grantor}} · {{timestamp}} によって付与されました",
+        "grantedBy": "{{grantor}} によって付与されました",
+        "originalFixedExpiry": "元の固定有効期限: {{timestamp}}",
+        "toolAndServer": "ツール: {{tool}} · サーバー: {{server}}",
+        "tool": "ツール: {{tool}}",
+        "reason": "理由: {{reason}}",
+        "approvedWhenScheduledByAt": "予定作成時に {{approver}} が承認 · {{timestamp}}",
+        "approvedWhenScheduledBy": "予定作成時に {{approver}} が承認"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "{{timestamp}} に予定",
+        "approvedExactArguments": "この引数どおりで承認済み",
+        "approvedAnyArguments": "このツールの任意の引数で承認済み"
+      },
+      "approvalReviewCall": {
+        "pending": "保留中",
+        "callStatus": "呼び出し {{number}} · {{status}}",
+        "status": {
+          "pending": "保留中",
+          "sending": "送信中",
+          "submitted": "提出済み",
+          "error": "エラー",
+          "approved": "承認済み",
+          "denied": "拒否済み",
+          "expired": "期限切れ"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "テキストをコピー (読み込み中…)",
+        "copyText": "テキストをコピーする",
+        "copyTextWithToolCalls": "ツール呼び出しを含めてテキストをコピーする",
+        "copyLink": "リンクをコピー"
+      },
+      "bugReport": {
+        "report": "バグを報告",
+        "download": "バグレポートをダウンロード",
+        "sending": "レポートを送信中…",
+        "failed": "レポートを送信できませんでした。もう一度お試しください。"
+      },
+      "messageInspectionActions": {
+        "readReceipts": "既読通知",
+        "viewSource": "ソースを見る"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "メッセージのピン留めを解除",
+        "pinMessage": "メッセージをピン留め",
+        "deleteMessage": "メッセージを削除",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "この操作は元に戻せません。このメッセージを削除してもよろしいですか?",
+        "optional": "(オプション)",
+        "failedToDeleteMessagePleaseTryAgain": "メッセージの削除に失敗しました!もう一度試してください。",
+        "deleting": "削除中...",
+        "delete": "削除",
+        "reportMessage": "メッセージを報告",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "このメッセージをサーバーに報告すると、適切な担当者にアクションを起こすように通知される可能性があります。",
+        "reason": "理由",
+        "failedToReportMessagePleaseTryAgain": "メッセージの報告に失敗しました!もう一度試してください。",
+        "messageHasBeenReportedToServer": "メッセージがサーバーに報告されました。",
+        "reporting": "報告中…",
+        "report": "報告"
+      },
+      "messageReactionActions": {
+        "viewReactions": "反応を見る"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "読み込み中…",
+        "toolDetailsUnavailable": "ツールの詳細を取得できません。",
+        "pastedText": "貼り付けられたテキスト",
+        "characterCount_one": "{{formattedCount}} 文字",
+        "characterCount_other": "{{formattedCount}} 文字",
+        "blocks": {
+          "think": "AIの思考プロセス",
+          "debug": "デバッグ情報",
+          "system": "システム処理",
+          "plan": "計画と戦略",
+          "analysis": "分析と評価",
+          "research": "研究と情報源"
+        },
+        "toolNumber": "ツール #{{index}}: {{command}}",
+        "toolCallCount_one": "{{count}} ツール呼び出し",
+        "toolCallCount_other": "{{count}} 個のツール呼び出し",
+        "usedToolCount_other": "{{count}} 個のツールを使用",
+        "toolCallsRunning_other": "{{count}} 件のツール呼び出しを実行中",
+        "toolCallsWaiting_other": "{{count}} 件のツール呼び出しが承認待ち",
+        "toolCallsRan_other": "{{count}} 件のツール呼び出しを実行済み",
+        "toolCallsDenied_other": "{{count}} 件のツール呼び出しを拒否",
+        "toolCallsExpired_other": "{{count}} 件のツール呼び出しが期限切れ"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "完全な応答を読み込んでいます..."
+      },
+      "mindroomMessage": {
+        "addReaction": "リアクションを追加",
+        "reply": "返信",
+        "replyInThread": "スレッド内で返信",
+        "editMessage": "メッセージを編集",
+        "moreOptions": "その他のオプション"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "リクエストコンテキストウィンドウ",
+        "aiRunMetadata": "AI 実行メタデータ",
+        "close": "閉じる",
+        "status": "状態",
+        "model": "モデル",
+        "tokens": "トークン",
+        "runCache": "キャッシュの実行",
+        "requestContext": "リクエストコンテキスト",
+        "requestCache": "キャッシュのリクエスト",
+        "tools": "ツール",
+        "ttft": "TTFT",
+        "run": "実行",
+        "session": "セッション",
+        "openAiRunMetadata": "AI 実行メタデータを開く",
+        "tokenUsage": "トークン使用量",
+        "downloadingOriginal": "オリジナルをダウンロード中...",
+        "retryDownloadOriginal": "オリジナルのダウンロードを再試行",
+        "downloadOriginal": "オリジナルをダウンロード",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} トークン",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} トークン"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "メッセージの詳細"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "貼り付けられたテキスト",
+        "open": "開く",
+        "retry": "再試行",
+        "download": "ダウンロード",
+        "characterCount_one": "{{formattedCount}} 文字",
+        "characterCount_other": "{{formattedCount}} 文字"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "開く",
+        "failedToLoadMessage": "メッセージを読み込めませんでした!",
+        "event": " イベント",
+        "pinnedMessages": "ピン留めされたメッセージ",
+        "noPinnedMessages": "ピン留めされたメッセージはありません",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "十分な権限レベルを持つユーザーは、メッセージのコンテキストメニューからピン留めできます。"
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "AI が応答中です",
+        "thinking": "考えています…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "AI によるスレッド要約"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "AI がスレッドにタイトルを付けました",
+        "updated": "AI がタイトルを更新しました",
+        "edited": "タイトルが編集されました",
+        "previous": "変更前: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "ツール承認リクエスト",
+        "submitted": "提出済み",
+        "pendingApproval": "承認待ち",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "自動承認は、このスレッド、リクエスタ、エージェント、およびツールに適用されます。",
+        "argumentsMayDifferBetweenCalls": "引数は呼び出しごとに異なる場合があります。",
+        "requestedBy": "{{requester}} によってリクエストされました"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "ルーターエージェントが転写中です"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "AI が応答中です"
+      },
+      "stopButton": {
+        "label": "停止",
+        "tooltip": "この応答を停止"
+      },
+      "threadApprovalControls": {
+        "close": "閉じる",
+        "call": "呼び出し",
+        "calls": "呼び出し",
+        "unknown": "不明",
+        "reasonForDenyingAllOptional": "全て拒否する理由（任意）",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "このスレッド、リクエスタ、およびエージェントに対してこの操作を許可します。引数は呼び出しごとに異なる場合があります。",
+        "submittedWaitingForRoomUpdate": "提出されました。ルームの更新を待っています。",
+        "threadApprovals": "スレッドの承認",
+        "checkingHistory": " ・履歴を確認中…",
+        "historyIncomplete": " · 履歴が不完全です",
+        "retryHistory": "履歴の取得を再試行",
+        "reviewToolCalls": "ツール呼び出しを確認する",
+        "reviewAgentWants_other": "{{agent}} が {{count}} 件の操作を求めています",
+        "reviewAgentsWant_other": "{{agents}} つのエージェントが {{count}} 件の操作を求めています",
+        "reviewRequestedBy": "リクエスト元: {{requester}}",
+        "someRequestsAreNoLongerAvailable": "一部のリクエストは利用できなくなりました。",
+        "permission": "権限",
+        "permissions": "権限",
+        "activePermissions": "有効な権限",
+        "noActiveTimedPermissions": "有効な時間制限付き権限はありません。",
+        "approval": "承認",
+        "approvals": "承認",
+        "operationCallCount_one": "{{operation}} · {{count}} 回の呼び出し",
+        "operationCallCount_other": "{{operation}} · {{count}} 回の呼び出し",
+        "requestedBy": "{{agent}} · {{requester}} によってリクエストされました",
+        "approveAllOnce": "{{count}} 件すべてを一度だけ承認",
+        "denyAll": "すべての {{count}} を拒否",
+        "allowForMinutes_one": "{{count}} 分ほどお待ちください",
+        "allowForMinutes_other": "{{count}} 分ほどお待ちください",
+        "awaitingConfirmation_one": "{{count}} 件の呼び出しが確認待ちです",
+        "awaitingConfirmation_other": "{{count}} 件の呼び出しが確認待ちです",
+        "pausedForApproval_one": "{{count}} 件の呼び出しが承認待ちで一時停止しています",
+        "pausedForApproval_other": "{{count}} 件の呼び出しが承認待ちで一時停止しています",
+        "statusCheckingHistory": "{{status}} · 履歴を確認中…",
+        "statusHistoryIncomplete": "{{status}} · 履歴が不完全",
+        "reviewCount": "{{count}} 件を確認",
+        "activePermissionCount_one": "有効な権限 {{count}} 件",
+        "activePermissionCount_other": "有効な権限 {{count}} 件",
+        "permissionScope": "{{agent}} · {{requester}} · このスレッド",
+        "toolApprovalCount_one": "ツール承認 {{count}} 件",
+        "toolApprovalCount_other": "ツール承認 {{count}} 件",
+        "approvedCount_one": "{{count}} 件承認済み",
+        "approvedCount_other": "{{count}} 件承認済み",
+        "agentWaitingForYou": "{{agent}} があなたを待っています",
+        "agentsWaitingForYou_other": "{{count}} つのエージェントがあなたを待っています",
+        "autoApproveFor": "自動承認の期間",
+        "callCount_other": "{{count}} 件の呼び出し",
+        "chipSending": "送信中…",
+        "chipSubmitted": "送信済み",
+        "chipResolved": "対応済み",
+        "confirmDenyAll": "{{count}} 件すべての拒否を確定",
+        "expires": "期限: {{time}}",
+        "hideCalls": "呼び出しを隠す",
+        "historyApproved": "{{operation}} を承認済み",
+        "historyDenied": "{{operation}} を拒否済み",
+        "historyExpired": "{{operation}} の期限切れ",
+        "historyUserApproved": "{{user}} が {{operation}} を承認しました",
+        "historyUserDenied": "{{user}} が {{operation}} を拒否しました",
+        "historyUserExpired": "{{operation}} の期限切れ",
+        "historyYouApproved": "{{operation}} を承認しました",
+        "historyYouDenied": "{{operation}} を拒否しました",
+        "historyYouExpired": "{{operation}} の期限切れ",
+        "minutesShort_other": "{{count}} 分",
+        "sectionMeta": "{{agent}} · リクエスト元: {{requester}}",
+        "showCalls_other": "{{count}} 件の呼び出しを表示",
+        "waitingForApproval": "承認待ち",
+        "waitingForYou": "あなたの対応待ち",
+        "you": "あなた"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "メッセージを送信中",
+        "waitingForServer": "サーバーを待っています",
+        "messageFailedToSend": "メッセージの送信に失敗しました",
+        "notSent": "送信されませんでした"
+      },
+      "failedSendActions": {
+        "retry": "再試行",
+        "delete": "削除"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "入力 {{formattedCount}}",
+        "outputTokens": "出力 {{formattedCount}}",
+        "totalTokens": "合計 {{formattedCount}}",
+        "readTokens": "読み取り {{formattedCount}}",
+        "writeTokens": "書き込み {{formattedCount}}",
+        "notReadTokens": "未読み取り {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}}%)",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} トークン（コンテキストウィンドウの {{percentage}}%）",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} トークン（コンテキストウィンドウの {{percentage}}%）",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} トークン（コンテキストウィンドウの {{percentage}}%）; {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} トークン（コンテキストウィンドウの {{percentage}}%）; {{suffix}}",
+        "reportedCacheRead_one": "報告されたキャッシュ読み取り: {{formattedCount}} トークン",
+        "reportedCacheRead_other": "報告されたキャッシュ読み取り: {{formattedCount}} トークン",
+        "cacheWrite_one": "キャッシュ書き込み: {{formattedCount}} トークン",
+        "cacheWrite_other": "キャッシュ書き込み: {{formattedCount}} トークン",
+        "cacheRead": "キャッシュ読み取り",
+        "newInput": "新しい入力",
+        "reserve": "予約分"
+      },
+      "mindroomModelBadge": {
+        "model": "モデル: {{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "ネイティブ iOS プッシュは展開によって構成されません。 「config.json」に「push.ios」の設定を追加します。",
+        "failedToUpdateNativePushSettings": "ネイティブ プッシュ設定の更新に失敗しました。",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "バックグラウンド メッセージ アラートのネイティブ iOS プッシュ通知を許可します。",
+        "deviceRegisteredForNativeIosPushNotifications": "デバイスはネイティブ iOS プッシュ通知用に登録されています。",
+        "nativeIosPushIsDisabledForThisDevice": "このデバイスではネイティブ iOS プッシュが無効になっています。",
+        "unavailable": "利用不可",
+        "enable": "有効にする",
+        "iosPushNotifications": "iOS プッシュ通知",
+        "permissionDenied": "通知が許可されていません。iOS の「設定」で {{appName}} の通知を有効にしてください。"
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "既読としてマーク"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "既読としてマーク"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "既読としてマーク"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "暗号化された履歴をバックアップする",
+        "dismissBackupReminder": "バックアップリマインダーを閉じる",
+        "setUpSecureBackupSoYouCanStillReadYour": "安全なバックアップを設定すると、新しいデバイスでサインインした後でも、暗号化されたエージェント チャットを読むことができます。",
+        "setUpSecureKeyBackup": "安全なキーのバックアップを設定する",
+        "setUpBackup": "バックアップを設定"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Local MindRoom"
+      },
+      "resizeNavigationPanel": "ナビゲーションパネルのサイズを変更",
+      "resizeMemberPanel": "メンバーパネルのサイズを変更"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "スレッドはありません"
+      },
+      "compactThreadCard": {
+        "streaming": "ストリーミング"
+      },
+      "mindroomCallChatView": {
+        "chat": "チャット",
+        "close": "閉じる"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "新しいメッセージ",
+        "jumpToUnread": "未読にジャンプ",
+        "markAsRead": "既読としてマーク",
+        "failedToLoadThisThread": "このスレッドの読み込みに失敗しました。",
+        "loading": "読み込み中...",
+        "loadOlderMessages": "古いメッセージをロードする",
+        "loadNewerMessages": "新しいメッセージを読み込む",
+        "jumpToLatest": "最新にジャンプ",
+        "today": "今日",
+        "yesterday": "昨日"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "このメッセージが確認された後、返信が可能になります。",
+        "youDoNotHavePermissionToPostInThisRoom": "このルームに投稿する権限がありません"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "コンピューターを表示",
+        "hideComputer": "コンピューターを非表示",
+        "showCanvas": "パネルを表示",
+        "hideCanvas": "パネルを非表示",
+        "canvases": "インタラクティブパネル",
+        "notifications": "通知",
+        "compact": "コンパクト",
+        "threads": "スレッド",
+        "classic": "クラシック",
+        "invite": "招待する",
+        "copyLink": "リンクをコピー",
+        "roomSettings": "ルーム設定",
+        "jumpToTime": "日時へ移動",
+        "leaveRoom": "ルームから退出",
+        "pinnedMessages": "ピン留めされたメッセージ",
+        "members": "メンバー",
+        "hideMembers": "メンバーを非表示にする",
+        "showMembers": "メンバーを表示",
+        "moreOptions": "その他のオプション",
+        "back": "戻る"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "タグフィルターを追加する",
+        "tag": "+タグ",
+        "availableTags": "利用可能なタグ",
+        "filterPresets": "フィルタープリセット",
+        "preset": "プリセット",
+        "searchThreads": "スレッドを検索する",
+        "searchThreads2": "スレッドを検索...",
+        "roomViewMode": "ルームビューモード",
+        "natural": "自然順",
+        "lastReply": "最後の返信",
+        "noThreadsMatchCurrentFilters": "現在のフィルターに一致するスレッドはありません。",
+        "resetAllThreadFilters": "すべてのスレッドフィルターをリセットします",
+        "reset": "リセット",
+        "threadFilters": "スレッドフィルター",
+        "statusFilters": "ステータスフィルター",
+        "tagFilters": "タグフィルター",
+        "showingFilteredThreads_one": "全 {{total}} 件中 {{count}} 件のスレッドを表示",
+        "showingFilteredThreads_other": "全 {{total}} 件中 {{count}} 件のスレッドを表示",
+        "showingAllThreads_one": "{{count}} 個のスレッドを表示しています",
+        "showingAllThreads_other": "{{count}} 個のスレッドを表示しています",
+        "sortLockedSummary": "{{summary}} · 並べ替えがロックされました",
+        "unlockSortOrder": "並べ替え順序のロックを解除します (現在は {{sort}})",
+        "lockSortOrder": "ソート順序をロックする (現在は {{sort}})",
+        "threadCount_one": "{{count}} スレッド",
+        "threadCount_other": "{{count}} スレッド",
+        "presets": {
+          "needs-attention": {
+            "label": "注意が必要です",
+            "description": "未解決、非ストリーミング、非スケジュールのスレッド"
+          },
+          "working": {
+            "label": "処理中",
+            "description": "ストリーミング中または予定済み — 現在取り組んでいる内容"
+          },
+          "review-queue": {
+            "label": "レビューキュー",
+            "description": "未読の返信がある未解決のスレッド"
+          },
+          "archived": {
+            "label": "アーカイブ済み",
+            "description": "解決されたスレッドのみ"
+          },
+          "all": {
+            "label": "全て",
+            "description": "すべてのフィルターをリセット"
+          }
+        }
+      },
+      "threadTagPicker": {
+        "addTag": "タグを追加",
+        "tag": "+タグ",
+        "filterNew": "フィルター / 新規…",
+        "filterOrCreateTag": "タグを絞り込みまたは作成",
+        "noMatches": "一致する項目はありません",
+        "typeToCreateATag": "タグを作成するには入力してください",
+        "createTag": "「{{tag}}」を作成します"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "メッセージへジャンプ",
+        "message": "メッセージ"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> がルーム名を変更しました",
+        "changedRoomTopic": "<sender>{{sender}}</sender> がルームのトピックを変更しました",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> がルームのアバターを変更しました",
+        "joinedCall": "<sender>{{sender}}</sender> が通話に参加しました",
+        "endedCall": "<sender>{{sender}}</sender> が通話を終了しました",
+        "sentStateEvent": "<sender>{{sender}}</sender> は <eventType>{{eventType}}</eventType> 状態イベントを送信しました",
+        "sentEvent": "<sender>{{sender}}</sender> が <eventType>{{eventType}}</eventType> イベントを送信しました"
+      },
+      "threadTagPill": {
+        "removeTag": "{{tag}} タグを削除します"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "{{count}} 秒後",
+        "inMinutesSeconds": "{{minutes}}分 {{seconds}}秒後",
+        "inMinutes": "{{count}} 分後",
+        "inHours": "{{count}} 時間後",
+        "inHoursMinutes": "{{hours}}時 {{minutes}}分後",
+        "atTime": "{{time}}に",
+        "scheduledTasks_one": "{{count}} 個のスケジュールされたタスク",
+        "scheduledTasks_other": "{{count}} 個のスケジュールされたタスク",
+        "pendingScheduledTasks_one": "{{count}} 個の保留中のスケジュールされたタスク",
+        "pendingScheduledTasks_other": "{{count}} 個の保留中のスケジュールされたタスク",
+        "scheduledTasksWithDetail": "{{tasks}}、{{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 件の返信",
+        "messageCount_one": "{{formattedCount}} メッセージ",
+        "messageCount_other": "{{formattedCount}} メッセージ",
+        "needsAttention": "注意が必要です",
+        "waitingOnResponse": "応答待ち",
+        "agentStreaming": "エージェントが応答中",
+        "resolved": "解決済み",
+        "idle": "アイドル状態",
+        "threadStarted": "スレッドが開始されました",
+        "noRepliesYet": "まだ返信はありません"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "次のタスク: {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} 個の保留中のスケジュールされたタスク",
+        "pendingScheduledTasks_other": "{{count}} 個の保留中のスケジュールされたタスク"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "暗号化されたスレッド",
+        "threadInRoom": "{{roomName}} のスレッド",
+        "thread": "スレッド"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "コンピューターを表示",
+      "openMembers": "メンバーを開く",
+      "openCanvas": "パネルを開く",
+      "canvasDisabled": "このアプリではインタラクティブパネルがオフになっています。",
+      "canvasDuringCall": "インタラクティブパネルを開くには通話を終了してください。",
+      "computerUnavailable": "このエージェントのコンピューターは利用できません。",
+      "releaseControl": "別の画面を開く前にコンピューターの操作権を手放してください。",
+      "openConversation": "ルームの会話からこのリクエストを開いてください。",
+      "settingsUnavailable": "この設定項目を開くには、シンプルモードをオフにしてください。"
+    },
+    "canvas": {
+      "panelLabel": "インタラクティブパネル",
+      "fromAgent": "{{agent}} からのインタラクティブパネル",
+      "expand": "パネルを拡大",
+      "close": "パネルを閉じる",
+      "resize": "パネルのサイズを変更",
+      "updated": "{{agent}} がこのパネルを更新しました。",
+      "loadUpdate": "更新を読み込む",
+      "version": "バージョン {{current}} / {{total}}",
+      "previousVersion": "前のバージョン",
+      "nextVersion": "次のバージョン",
+      "earlierVersion": "これは以前のバージョンです。",
+      "showLatest": "最新を表示",
+      "loading": "パネルを読み込み中…",
+      "loadFailed": "このパネルを読み込めませんでした。",
+      "retry": "再試行",
+      "escaped": "このパネルがサンドボックスの外に出ようとしたため、停止しました。",
+      "reload": "パネルを再読み込み",
+      "pageError": "このページがエラーを報告しました。",
+      "tellAgent": "{{agent}} に伝える",
+      "errorsSent": "エラーを {{agent}} に送信しました。",
+      "errorsNotSent": "エラーを {{agent}} に送信できませんでした。",
+      "sendTo": "{{agent}} に送信:",
+      "changeAnswer": "回答を変更するには、まずこの回答を破棄してください。",
+      "data": "データ",
+      "send": "送信",
+      "discard": "破棄",
+      "disclosure": "{{agent}} が作成しました。アカウントにはアクセスできませんが、ここに入力した内容はパネルの外に送信される可能性があります。",
+      "sharedNotice": "このルームに保存されます: {{agent}} とこのルームの他のメンバーが入力内容を読めます。",
+      "sending": "{{agent}} に送信中…",
+      "sent": "{{agent}} に送信しました: {{label}}",
+      "sendFailed": "応答を送信できませんでした。もう一度お試しください。",
+      "receiptData": "エージェントに送信したデータを表示",
+      "unlabeled": "送信済み",
+      "notSent": "{{agent}} に送信されていません: {{label}}"
+    },
+    "canvases": {
+      "title": "インタラクティブパネル",
+      "note": "エージェントがあなたのために作成し、このブラウザーで表示されたインタラクティブパネルです。ピン留めしたパネルはすべてのデバイスに表示されます。",
+      "empty": "インタラクティブパネルはまだありません。エージェントがパネルを表示すると、ここに一覧表示されます。",
+      "pinned": "ピン留め済み",
+      "canvas": "パネル",
+      "thread": "スレッド",
+      "agent": "エージェント",
+      "room": "ルーム",
+      "updated": "更新日時",
+      "created": "作成日時",
+      "pin": "{{title}} をピン留め",
+      "unpin": "{{title}} のピン留めを解除",
+      "shared": "エージェントと共有",
+      "saved": "入力値を保存済み"
+    },
+    "backgroundJobs": {
+      "running": "実行中: {{tool}}",
+      "awaitingApproval": "承認待ち: {{tool}}",
+      "waiting": "承認待ち",
+      "stoppingJob": "停止中: {{tool}}",
+      "jobCount": "バックグラウンドジョブ {{count}} 件",
+      "subagent": "{{tool}}（サブエージェント）",
+      "stopAll": "すべて停止",
+      "stopping": "停止中…",
+      "stop": "停止",
+      "stopJob": "{{tool}} を停止",
+      "stopFailed": "{{tool}} を停止できませんでした。もう一度お試しください。",
+      "stopAllFailed": "バックグラウンドジョブを停止できませんでした。もう一度お試しください。",
+      "inRoom": "バックグラウンドジョブを実行中"
+    }
+  },
+  "roomSchedules": {
+    "title": "スケジュールされたタスク",
+    "openLabel": "スケジュールされたタスク（{{total}}）",
+    "empty": "このルームにはスケジュールされたタスクがありません。",
+    "emptyHint": "MindRoom AIエージェントに、このルームでタスクをスケジュールするよう依頼してください。",
+    "prompt": "プロンプト",
+    "promptUnavailable": "プロンプトを利用できません",
+    "once": "一回限り",
+    "recurring": "繰り返し",
+    "executionTime": "実行時刻",
+    "unknownTime": "実行時刻を利用できません",
+    "awaitingExecution": "実行待ち",
+    "recurrence": "繰り返し",
+    "silent": "サイレント",
+    "conditional": "条件付き",
+    "newThread": "新しいスレッド",
+    "roomTimeline": "ルームのタイムライン",
+    "openThread": "スレッドを開く",
+    "owner": "タスク所有者",
+    "createdAt": "作成日時",
+    "updatedAt": "更新日時",
+    "model": "モデル",
+    "inheritedModel": "エージェント、ルーム、またはスレッドの設定から",
+    "taskId": "タスク ID",
+    "historyLimit": "履歴の上限",
+    "fullHistory": "すべての履歴",
+    "noHistory": "履歴なし",
+    "recentMessages": "最近のメッセージ：{{total}}",
+    "close": "閉じる"
+  },
+  "archivedRooms": {
+    "title": "アーカイブ済みのルーム",
+    "archive": "ルームをアーカイブ",
+    "restore": "ルームを復元",
+    "restoreNamed": "{{room}} を復元",
+    "failed": "変更を保存できませんでした。もう一度お試しください。",
+    "close": "アーカイブ済みのルームを閉じる",
+    "description": "退出せずにサイドバーからルームを非表示にします。ここで開くか復元できます。",
+    "empty": "アーカイブ済みのルームはありません。"
+  }
+}

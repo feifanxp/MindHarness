@@ -1,0 +1,3111 @@
+{
+  "messageTable": {
+    "label": "可捲動表格",
+    "scrollHint": "水平捲動"
+  },
+  "messageCodeBlock": {
+    "actions": "程式碼區塊操作",
+    "code": "程式碼",
+    "language": "語言：{{language}}",
+    "copy": "複製程式碼",
+    "copied": "已複製",
+    "wrap": "自動換行",
+    "expand": "展開",
+    "collapse": "收合"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " 變更了房間名稱"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "現代",
+      "compact": "緊湊",
+      "bubble": "氣泡"
+    },
+    "messageSpacing": {
+      "none": "無",
+      "ultraSmall": "超小型",
+      "extraSmall": "特小號",
+      "small": "小",
+      "normal": "一般",
+      "large": "大"
+    },
+    "dateFormat": {
+      "custom": "自訂"
+    },
+    "themeName": {
+      "light": "淺色",
+      "silver": "銀",
+      "dark": "深色",
+      "midnight": "午夜",
+      "butter": "奶油色"
+    },
+    "prefetchScope": {
+      "myHomeserver": "我的主伺服器",
+      "allRooms": "所有房間",
+      "currentRoomOnly": "僅限目前房間"
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "logout": "登出",
+    "nav": {
+      "general": "一般",
+      "account": "帳戶",
+      "notifications": "通知",
+      "devices": "裝置",
+      "emojisStickers": "表情符號和貼紙",
+      "developerTools": "開發者工具",
+      "about": "關於"
+    },
+    "general": {
+      "title": "一般",
+      "interface": {
+        "sectionTitle": "介面",
+        "simpleMode": "簡單模式",
+        "simpleModeDescription": "隱藏命令選項板和討論串篩選條件等高階功能。在您的裝置之間同步。",
+        "showCanvasesInSidebar": "在側邊欄顯示互動式面板",
+        "showCanvasesInSidebarDescription": "有互動式面板後，顯示一個按鈕來查看代理程式為您建立的面板。此設定會在您的裝置之間同步。",
+        "saveFailed": "無法儲存變更。檢查您的連線並重試。"
+      },
+      "language": {
+        "sectionTitle": "語言",
+        "appLanguage": "應用程式語言",
+        "appLanguageDescription": "適用於選單和介面文字。訊息內容永遠不會被翻譯。"
+      },
+      "appearance": {
+        "sectionTitle": "外觀",
+        "systemTheme": "系統主題",
+        "systemThemeDescription": "根據系統偏好選擇淺色和深色主題。",
+        "lightTheme": "淺色主題：",
+        "darkTheme": "深色主題：",
+        "theme": "主題",
+        "themeDescription": "未啟用系統主題時使用的主題。",
+        "monochromeMode": "單色模式",
+        "twitterEmoji": "Twitter 表情符號",
+        "pageZoom": "頁面縮放"
+      },
+      "dateTime": {
+        "sectionTitle": "日期和時間",
+        "hour24Clock": "24 小時時間格式",
+        "dateFormat": "日期格式",
+        "save": "儲存",
+        "formatHints": {
+          "title": "格式化",
+          "year": "年",
+          "twoDigitYear": "兩位數年份",
+          "fourDigitYear": "四位數年份",
+          "month": "月",
+          "theMonth": "月",
+          "twoDigitMonth": "兩位數月份",
+          "shortMonthName": "簡短的月份名稱",
+          "fullMonthName": "完整的月份名稱",
+          "dayOfMonth": "每月的某一天",
+          "theDayOfMonth": "該月的哪一天",
+          "twoDigitDayOfMonth": "兩位數的月份日期",
+          "dayOfWeek": "一週中的某一天",
+          "theDayOfWeek": "星期幾（星期日 = 0）",
+          "twoLetterDayName": "兩個字母的日期名稱",
+          "shortDayName": "短日名稱",
+          "fullDayName": "全日名稱"
+        }
+      },
+      "editor": {
+        "sectionTitle": "編輯",
+        "enterForNewline": "ENTER 換行",
+        "enterForNewlineDescription": "使用 {{sendKey}} + ENTER 傳送訊息，使用 ENTER 換行。",
+        "markdownFormatting": "Markdown 格式",
+        "hideActivity": "隱藏打字和已讀回執",
+        "hideActivityDescription": "關閉輸入狀態與已讀回條，讓您的活動保持私密。"
+      },
+      "messages": {
+        "sectionTitle": "訊息",
+        "messageLayout": "訊息版面設定",
+        "messageSpacing": "訊息間距",
+        "prefetchScope": "預取範圍",
+        "prefetchScopeDescription": "哪些房間在背景準備就緒",
+        "historyDepth": "目前房間歷史深度",
+        "historyDepthDescription": "為您正在檢視的房間預先載入的目標事件數。最小值 {{min}}，最大值 {{max}}。",
+        "legacyUsernameColor": "舊使用者名稱顏色",
+        "hideMembershipChange": "隱藏會員變更",
+        "hideProfileChange": "隱藏個人資料變更",
+        "disableMediaAutoLoad": "停用媒體自動載入",
+        "urlPreview": "網址預覽",
+        "urlPreviewEncrypted": "加密房間網址預覽",
+        "showHiddenEvents": "顯示隱藏的事件"
+      },
+      "computers": {
+        "sectionTitle": "電腦",
+        "apiUrl": "電腦服務 URL",
+        "description": "請選擇可信任的 MindRoom 後端；它會收到短期有效的登入權杖。儲存在此裝置上。留空可關閉電腦。",
+        "save": "儲存電腦服務",
+        "reset": "使用應用程式預設值",
+        "invalidUrl": "請輸入不含憑證、路徑、查詢或片段的來源。請使用 HTTPS，或對 localhost 或私人區域網路 IP 位址使用 HTTP。",
+        "httpNotice": "HTTP 不會加密您的登入資訊或電腦流量。請僅在可信任的區域網路上使用。",
+        "saveFailed": "無法在此裝置上儲存電腦服務。",
+        "saved": "電腦服務已儲存。"
+      },
+      "connections": {
+        "sectionTitle": "連線",
+        "title": "已連線的帳戶",
+        "description": "在您的 MindRoom 伺服器上連線代理程式使用的帳戶，例如 Google 或 GitHub。",
+        "open": "開啟連線",
+        "noBackend": "請在「電腦」中設定您的 MindRoom 伺服器，以使用連線。",
+        "blocked": "瀏覽器封鎖了連線視窗。請允許此網站的彈出式視窗，然後再試一次。"
+      }
+    }
+  },
+  "nav": {
+    "home": "首頁",
+    "directMessages": "私訊",
+    "threads": "討論串",
+    "canvases": "互動式面板",
+    "inbox": "收件匣",
+    "exploreCommunity": "探索社群",
+    "addSpace": "新增空間",
+    "createSpace": "建立空間",
+    "createSpaceDescription": "為您的社群打造一個空間。",
+    "joinWithAddress": "使用地址加入",
+    "joinWithAddressDescription": "成為現有社群的一部分。",
+    "createRoom": "建立房間",
+    "messageSearch": "訊息搜尋",
+    "rooms": "房間",
+    "chats": "聊天",
+    "createChat": "建立聊天",
+    "directMessage": "私訊",
+    "noRooms": "沒有房間",
+    "noRoomsDescription": "您還沒有任何房間。",
+    "noDirectMessages": "沒有私訊",
+    "noDirectMessagesDescription": "您還沒有任何直接訊息。",
+    "exploreCommunityRooms": "探索社群房間",
+    "unverifiedDevice": "未驗證裝置",
+    "unverifiedDevices": "未驗證裝置"
+  },
+  "accountsRail": {
+    "settingsTooltip": "設定：{{name}}",
+    "switchTooltip": "切換到 {{name}} ({{userId}})",
+    "openSettingsAria": "開啟 {{name}} 的設定",
+    "switchAria": "切換到帳號 {{name}} ({{userId}})",
+    "manageAccounts": "管理帳戶",
+    "addAccount": "新增帳戶",
+    "addAccountAria": "新增帳戶"
+  },
+  "commandPalette": {
+    "inputAria": "命令面板",
+    "placeholder": "搜尋或執行指令…",
+    "closeAria": "關閉命令面板",
+    "open": "開啟命令面板",
+    "noResults": "沒有結果",
+    "resultCount_one": "{{count}} 個結果",
+    "resultCount_other": "{{count}} 個結果",
+    "sections": {
+      "actions": "操作",
+      "threads": "討論串",
+      "rooms": "房間",
+      "users": "使用者",
+      "messages": "訊息",
+      "spaces": "空間"
+    },
+    "prefixes": {
+      "label": "字首：",
+      "actions": "操作",
+      "rooms": "房間",
+      "users": "使用者",
+      "threads": "討論串",
+      "spaces": "空間"
+    },
+    "shortcut": "快速鍵：",
+    "shortcutOpenSuffix": "開啟。",
+    "actions": {
+      "openSettings": "開啟設定",
+      "openSettingsDescription": "開啟共用設定對話方塊",
+      "goHome": "前往首頁",
+      "goHomeDescription": "跳到首頁",
+      "goDirect": "前往私訊",
+      "goDirectDescription": "跳轉至直接訊息",
+      "goInbox": "前往收件匣",
+      "goInboxDescription": "開啟收件匣通知",
+      "createRoom": "建立房間",
+      "createRoomDescription": "開啟房間建立對話方塊",
+      "createSpace": "建立空間",
+      "createSpaceDescription": "開啟空間建立對話方塊",
+      "toggleTheme": "切換主題",
+      "toggleThemeDescription": "明暗切換",
+      "logout": "登出",
+      "logoutDescription": "登出 MindRoom Chat",
+      "markCurrentRoomRead": "標記目前房間已讀",
+      "markCurrentRoomReadDescription": "將 {{room}} 標記為已讀",
+      "copyCurrentRoomLink": "複製目前房間連結",
+      "copyCurrentRoomLinkDescription": "複製 {{room}} 的應用程式連結",
+      "openCurrentRoomSettings": "開啟目前房間設定",
+      "openCurrentRoomSettingsDescription": "開啟 {{room}} 的設定",
+      "unresolveCurrentThread": "取消解決目前討論串",
+      "unresolveCurrentThreadDescription": "將活動討論串移回未解析佇列",
+      "resolveCurrentThread": "解決目前討論串",
+      "resolveCurrentThreadDescription": "將活動討論串標記為已解決",
+      "currentRoomFallback": "目前房間"
+    },
+    "messages": {
+      "searchIn": "在 {{query}} 中搜尋 {{scope}}",
+      "searchAll": "在所有房間中搜尋 {{query}}",
+      "currentRoomFallback": "目前房間",
+      "currentRoomDescription": "目前房間",
+      "currentSpaceFallback": "目前空間",
+      "currentSpaceDescription": "目前空間",
+      "globalSearchDescription": "全球訊息搜尋"
+    },
+    "all": "全部",
+    "filterLabel": "篩選結果",
+    "resultsLabel": "搜尋結果",
+    "emptyDescription": "請嘗試其他搜尋字詞或選擇其他類別。",
+    "clearSearch": "清除搜尋",
+    "navigate": "導覽",
+    "select": "開啟"
+  },
+  "accountSwitcher": {
+    "title": "帳戶",
+    "description": "切換帳戶、新增另一個帳戶或刪除不活動的帳戶。",
+    "active": "使用中",
+    "openSettings": "開啟設定",
+    "switch": "切換",
+    "removing": "正在刪除...",
+    "removeFromDevice": "從裝置中刪除",
+    "addAccount": "新增帳戶",
+    "close": "關閉",
+    "actionError": "無法更新此帳戶。請再試一次。"
+  },
+  "recentThreads": {
+    "title": "最近開啟",
+    "empty": "沒有最近開的討論串",
+    "resizeAria": "調整最近開啟的大小",
+    "openedAt": "開啟於 {{time}}"
+  },
+  "threadNav": {
+    "title": "討論串",
+    "empty": "還沒有討論串",
+    "loading": "正在載入討論串...",
+    "pin": "釘選討論串",
+    "unpin": "取消釘選討論串",
+    "pinned": "已釘選",
+    "room": "房間",
+    "agents": "AI 代理",
+    "agentsUnknown": "未識別 AI 代理",
+    "messages": "訊息",
+    "lastActivity": "上次活動",
+    "unknownActivity": "未知"
+  },
+  "composer": {
+    "placeholder": "傳送訊息…",
+    "sendMessage": "傳送訊息",
+    "recordVoice": "錄製語音訊息",
+    "formatting": "格式",
+    "attach": "附加檔案",
+    "voicePausedInOtherRoom": "錄音已暫停 — 完成或放棄在 {{roomName}} 中未傳送的錄音",
+    "dropFiles": "將檔案拖曳到「{{roomName}}」中",
+    "dropFilesHint": "將檔案拖放到此處或按一下以開啟選擇對話方塊",
+    "roomFallback": "房間",
+    "voiceRoomUnavailable": "該房間已不再可用。放棄未傳送的語音訊息，稍後重試。",
+    "voiceStillSending": "另一條語音訊息仍在傳送中。請等待後再重新錄製。",
+    "voiceBundleBlocked": "另一個附件傳送仍在進行中或需要注意。等待，或重試或刪除失敗的附件，然後再次傳送此訊息。"
+  },
+  "threadActions": {
+    "more": "討論串選項",
+    "open": "開啟討論串",
+    "tags": "編輯標籤",
+    "editSummary": "編輯摘要",
+    "regenerate": "重新產生摘要",
+    "reopen": "重新開啟討論串",
+    "copy": "複製討論串連結",
+    "summary": "摘要",
+    "summaryHint": "手動編輯會停止自動更新摘要。你可以隨時再次編輯或重新產生摘要。",
+    "length": "{{count}} / {{max}} 個字元",
+    "agent": "代理程式",
+    "noAgents": "此聊天室中沒有已加入的代理程式",
+    "regenerateHint": "請代理程式更新此討論串的摘要。代理程式需要討論串摘要工具。",
+    "requested": "要求已傳送。代理程式完成後，摘要將會更新。請在討論串中查看其回覆。",
+    "failed": "無法完成此操作。請再試一次。",
+    "save": "儲存摘要",
+    "sendRequest": "傳送要求",
+    "saving": "正在傳送…",
+    "cancel": "取消",
+    "done": "完成"
+  },
+  "thread": {
+    "pinFailed": "無法更新釘選狀態。請再試一次。",
+    "chip": "討論串",
+    "view": "討論串檢視",
+    "resolve": "解決",
+    "resolved": "已解決",
+    "resolvedBy": "由 {{name}} 解決",
+    "resolvedByShort": "由 {{name}}",
+    "hideDetails": "隱藏討論串詳細資料",
+    "showDetails": "顯示討論串詳細資料",
+    "backToRoom": "返回房間",
+    "replyCount_one": "{{count}} 筆回應",
+    "replyCount_other": "{{count}} 筆回應",
+    "aria": {
+      "openThread": "開啟討論串：{{title}}",
+      "resolvedThread": "已解決的討論串",
+      "unresolvedThread": "未解決的討論串",
+      "unreadMessages": "未讀訊息",
+      "agentStreaming": "AI 代理正在串流回應",
+      "messageFailed": "訊息傳送失敗",
+      "messageSending": "訊息傳送",
+      "lastActivity": "上次活動 {{time}}",
+      "removeTagFilter": "刪除 {{tag}} 篩選條件"
+    },
+    "status": {
+      "resolved": "已解決",
+      "streaming": "串流回應",
+      "scheduled": "已排程",
+      "unread": "未讀",
+      "idle": "閒置",
+      "idleFilter": "空閒（已解決，不流式傳輸，無任務）"
+    },
+    "stats": {
+      "aria": "討論串統計",
+      "showing": "顯示 {{shown}}，共 {{total}}",
+      "threadCount_one": "{{count}} 個討論串",
+      "threadCount_other": "{{count}} 個討論串",
+      "tags": "標籤"
+    },
+    "filterTooltip": {
+      "any": "{{label}}：顯示全部。單擊僅顯示。",
+      "include": "{{label}}：僅顯示。點選即可隱藏。",
+      "exclude": "{{label}}：隱藏。點選以清除篩選條件。",
+      "tagAny": "標籤「{{tag}}」",
+      "tagInclude": "標籤「{{tag}}」：僅顯示。點選即可隱藏。",
+      "tagExclude": "標籤「{{tag}}」：隱藏。點選以清除篩選條件。",
+      "stateAny": "顯示全部",
+      "stateInclude": "僅顯示",
+      "stateExclude": "隱藏"
+    },
+    "filters": {
+      "scope": "範圍",
+      "scopeInvolved": "涉及",
+      "scopeAllRooms": "所有房間",
+      "status": "狀態",
+      "statusAll": "全部",
+      "statusUnresolved": "未解決",
+      "statusResolved": "已解決",
+      "activity": "活動",
+      "activityToday": "今天",
+      "activity7d": "7 天",
+      "activity30d": "30 天",
+      "activityAll": "全部",
+      "unread": "未讀",
+      "attention": "需注意",
+      "roomIdsPlaceholder": "房間 ID",
+      "roomIdsAria": "房間 ID 篩選條件",
+      "spaceIdsPlaceholder": "空間 ID",
+      "spaceIdsAria": "空間 ID 濾鏡",
+      "tagsPlaceholder": "標籤",
+      "tagsIncludeAria": "包含標籤篩選條件",
+      "excludeTagsPlaceholder": "排除標籤",
+      "tagsExcludeAria": "排除的標籤篩選條件",
+      "clear": "清除",
+      "open": "篩選條件",
+      "search": "搜尋討論串",
+      "sheetAria": "討論串篩選器",
+      "closeAria": "關閉討論串篩選條件"
+    },
+    "simpleFilter": {
+      "unresolved": "未解決",
+      "showingUnresolved": "顯示未解決的討論串。按一下以顯示全部。",
+      "showingAll": "顯示所有討論串。按一下僅顯示未解決的問題。"
+    }
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "帳戶資料",
+      "save": "儲存",
+      "cancel": "取消",
+      "jsonContent": "JSON 內容",
+      "edit": "編輯",
+      "developerTools": "開發者工具"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "載入認證流程資訊失敗。",
+      "retry": "重試"
+    },
+    "backupRestore": {
+      "restoring0": "恢復：0%",
+      "backupHasTrustedDecryptionKey": "備份具有受信任的解密金鑰。",
+      "backupDoesNotHaveTrustedDecryptionKey": "備份沒有可信任解密金鑰！",
+      "backupHasTrustedBySignature": "備份已透過簽章信任。",
+      "backupDoesNotHaveTrustedSignature": "備份沒有可信任簽名！",
+      "encryptionBackup": "加密備份",
+      "backupDetails": "備份詳細資料",
+      "restoreBackup": "還原備份",
+      "noBackupPresentOnServer": "伺服器上沒有備份！",
+      "connected": "已連線",
+      "disconnected": "已中斷連線",
+      "nil": "NIL",
+      "syncing": "正在同步（{{count}}）",
+      "restoring": "正在恢復：{{progress}}%",
+      "version": "版本：{{version}}",
+      "keys": "金鑰：{{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "提示",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "此功能正在測試中，可能會隨著時間的推移而改變。",
+      "beta": "測試版"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "來電",
+      "yourHomeserverDoesNotSupportCalling": "您的主伺服器不支援通話。",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "您的瀏覽器不支援通話所需的WebRTC。",
+      "answer": "回答",
+      "reject": "拒絕",
+      "ignore": "忽略"
+    },
+    "deviceVerification": {
+      "close": "關閉",
+      "pleaseAcceptTheRequestFromOtherDevice": "請接受其他裝置的請求。",
+      "clickAcceptToStartTheVerificationProcess": "按一下接受開始驗證過程。",
+      "accept": "接受",
+      "verificationRequestHasBeenAccepted": "驗證請求已被接受。",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "確認以下表情符號以相同的順序顯示在兩個裝置上：",
+      "theyMatch": "相符",
+      "doNotMatch": "不相符",
+      "yourDeviceIsVerified": "您的裝置已透過驗證。",
+      "okay": "確定",
+      "verificationHasBeenCanceled": "驗證已取消。",
+      "deviceVerification": "裝置驗證",
+      "waitingForRequestToBeAccepted": "正在等待請求被接受...",
+      "waitingForTheResponseFromOtherDevice": "正在等待其他裝置的回應...",
+      "startingVerificationUsingEmojiComparison": "開始使用表情符號比較進行驗證...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "意外錯誤！驗證已開始，但缺少驗證者。"
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "復原金鑰",
+      "passphraseOptional": "密碼（可選）",
+      "continue": "繼續",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "用戶端不支援執行此操作的身分驗證步驟。",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "請妥善保管復原金鑰。無法存取其他裝置時，您需要使用它來驗證身分。",
+      "copy": "複製",
+      "download": "下載",
+      "setupDeviceVerification": "設定裝置驗證",
+      "resetDeviceVerification": "重設裝置驗證",
+      "resettingDeviceVerificationIsPermanent": "重置裝置驗證是永久性的。",
+      "recoveryPassphrase": "復原通關密語",
+      "reset": "重設",
+      "unexpectedError": "意外錯誤！",
+      "hide": "隱藏",
+      "show": "顯示",
+      "recoveryDescription": "產生<b>復原金鑰</b>，以便無法存取其他裝置時驗證身分。您也可以設定容易記住的復原通關密語。",
+      "resetWarning": "所有與您互相驗證過的使用者都會看到安全警示，且您的加密備份將會遺失。除非您已遺失<b>復原金鑰</b>、<b>復原通關密語</b>以及所有可用於驗證的裝置，否則請勿執行此操作。"
+    },
+    "hexColorPickerPopOut": {
+      "remove": "移除"
+    },
+    "logoutDialog": {
+      "logout": "登出",
+      "unverifiedDevice": "未驗證裝置",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "登出前請先驗證裝置，以儲存加密訊息。",
+      "alert": "警告",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "請啟用裝置驗證，或從設定匯出加密資料，以免失去訊息存取權。",
+      "youReAboutToLogOutAreYouSure": "即將登出。確定嗎？",
+      "cancel": "取消",
+      "logoutFailed": "登出失敗！{{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "復原通關密語",
+      "recoveryKey": "復原金鑰",
+      "verifyManually": "手動驗證",
+      "deviceVerified": "裝置已驗證！",
+      "selectAVerificationMethod": "選擇驗證方法。",
+      "provideRecoveryKey": "提供復原金鑰。"
+    },
+    "pdfViewer": {
+      "zoomOut": "縮小",
+      "zoomIn": "放大",
+      "failedToLoadPdf": "無法載入 PDF",
+      "retry": "重試",
+      "previous": "上一頁",
+      "pageNumber": "頁碼",
+      "jumpToPage": "跳到頁面",
+      "next": "下一頁",
+      "saving": "儲存...",
+      "retryDownload": "重試下載",
+      "download": "下載"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "復原通關密語",
+      "verify": "驗證",
+      "recoveryKey": "復原金鑰",
+      "invalidRecoveryPassphrase": "復原通關密語無效。",
+      "invalidRecoveryKey": "復原金鑰無效。"
+    },
+    "uIAFlowOverlay": {
+      "exit": "退出",
+      "stepValue1Value2": "步驟 {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "創辦人",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "可以在建立過程中分配特殊權限的使用者。這些使用者擁有更高的控制權，並且只能在升級期間進行修改。",
+      "enter": "輸入",
+      "noSuggestions": "沒有建議",
+      "pleaseProvideTheUserIdAndHitEnter": "請提供使用者 ID 並按 Enter 鍵。"
+    },
+    "createRoomAccessSelector": {
+      "restricted": "受限制的",
+      "onlyMemberOfParentSpaceCanJoin": "只有父空間的成員才能加入。",
+      "private": "私人的",
+      "onlyPeopleWithInviteCanJoin": "只有獲得邀請的人才能加入。",
+      "public": "公開",
+      "anyoneWithTheAddressCanJoin": "任何知道地址的人都可以加入。"
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "地址（可選）",
+      "pickAnUniqueAddressToMakeItDiscoverable": "選擇一個唯一的地址以使其易於被發現。",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "該地址已被佔用。請選擇一個不同的。"
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "聊天室",
+      "messagesPhotosAndVideos": "- 訊息、照片和影片。",
+      "voiceRoom": "語音室",
+      "liveAudioAndVideoConversations": "- 即時音訊和視訊對話。"
+    },
+    "roomVersionSelector": {
+      "versions": "版本",
+      "version": "版本"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "表情符號"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "房間",
+      "unknownRoom": "未知房間"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "提及"
+    },
+    "emojiBoard": {
+      "recent": "最近的",
+      "unknownPack": "未知包",
+      "searchResults": "搜尋結果",
+      "noResultsFound": "沒有找到結果",
+      "personalPack": "個人包",
+      "unknown": "未知"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "沒有貼紙包！",
+      "addStickersFromUserRoomOrSpaceSettings": "從使用者、房間或空間設定新增貼紙。"
+    },
+    "searchInput": {
+      "react": "反應",
+      "searchOrTextReaction": "搜尋或文字反應 ",
+      "search": "搜尋"
+    },
+    "tabs": {
+      "sticker": "貼紙",
+      "emoji": "表情符號"
+    },
+    "eventReaders": {
+      "seenBy": "看過的人"
+    },
+    "imageEditor": {
+      "imageEditor": "影像編輯器",
+      "save": "儲存"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "無法套用變更！請再試一次。",
+      "changesSavedApplyWhenReady": "變更已儲存！準備好後即可套用。",
+      "reset": "重設",
+      "applyChanges": "套用變更",
+      "pack": "套件",
+      "imagesUsage": "圖片使用",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "選擇影象的使用方式：作為表情符號、作為貼紙或兩者兼而有之。",
+      "images": "圖片",
+      "uploadImages": "上傳圖片",
+      "selectImagesFromYourStorageToUploadThemInPack": "從您的儲存中選擇影象以打包上傳。",
+      "select": "選擇"
+    },
+    "imagePackView": {
+      "emojisStickers": "表情符號和貼紙"
+    },
+    "imageTile": {
+      "undo": "撤銷",
+      "edit": "編輯",
+      "shortcode": "簡碼：",
+      "body": "內容：",
+      "save": "儲存",
+      "cancel": "取消"
+    },
+    "packMeta": {
+      "edit": "編輯",
+      "packAvatar": "包頭像",
+      "upload": "上傳",
+      "reset": "重設",
+      "remove": "移除",
+      "name": "名稱",
+      "attribution": "歸因",
+      "save": "儲存",
+      "cancel": "取消",
+      "unknown": "未知"
+    },
+    "imageViewer": {
+      "zoomOut": "縮小",
+      "zoomIn": "放大",
+      "saving": "儲存...",
+      "retryDownload": "重試下載",
+      "download": "下載"
+    },
+    "inviteUserPrompt": {
+      "invite": "邀請",
+      "userId": "使用者 ID",
+      "reasonOptional": "原因（可選）"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "使用地址加入",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "輸入公共地址以加入社群。地址看起來像：",
+      "address": "地址",
+      "invalidAddress": "地址無效",
+      "open": "開啟"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "離開房間",
+      "areYouSureYouWantToLeaveThisRoom": "您確定要離開這個房間嗎？",
+      "leaving": "離開...",
+      "leave": "離開",
+      "leaveFailed": "未能離開房間！ {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "離開空間",
+      "areYouSureYouWantToLeaveThisSpace": "您確定要離開此空間嗎？",
+      "leaving": "離開...",
+      "leave": "離開",
+      "leaveFailed": "無法離開空間！{{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "開啟位置",
+      "voiceMessage": "語音訊息",
+      "audio": "音訊",
+      "unnamedFile": "未命名檔案",
+      "file": "檔案",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF 文件",
+      "textFile": "文字檔案"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "此訊息已被刪除",
+      "unsupportedMessage": "不支援的訊息",
+      "failedToLoadMessage": "無法載入訊息",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "無法解密此訊息——加密金鑰無法使用",
+      "thisMessageIsNotDecryptedYet": "此訊息尚未解密",
+      "brokenMessage": "訊息損壞",
+      "emptyMessage": "空訊息",
+      "edited": " （已編輯）",
+      "deletedWithReason": "此訊息已刪除。 {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "開啟 PDF",
+      "openFile": "開啟檔案",
+      "loadFailed": "載入檔案失敗！",
+      "retryDownload": "重試下載 ({{size}})",
+      "downloadSize": "下載（{{size}}）",
+      "openValue1": "開啟 {{value1}}"
+    },
+    "imageContent": {
+      "view": "檢視",
+      "spoiler": "劇透",
+      "failedToLoadImage": "載入圖片失敗！",
+      "retry": "重試"
+    },
+    "videoContent": {
+      "watch": "觀看",
+      "spoiler": "劇透",
+      "failedToLoadVideo": "影片載入失敗！",
+      "retry": "重試"
+    },
+    "voiceAudioContent": {
+      "loadError": "無法載入音訊。點擊播放以重試。",
+      "playbackError": "無法在此播放此音訊。請嘗試下載。",
+      "playbackPosition": "{{current}}，共 {{duration}}",
+      "moreAudioOptions": "更多音訊選項",
+      "download": "下載",
+      "name": "名稱",
+      "type": "型別",
+      "size": "尺寸",
+      "duration": "時長",
+      "voiceMessage": "語音訊息",
+      "pauseValue1": "暫停 {{value1}}",
+      "playValue1": "播放 {{value1}}",
+      "seekValue1": "跳至 {{value1}}"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "管理員將審核您的請求。",
+      "messageOptional": "訊息（選填）",
+      "cancel": "取消",
+      "failedToSendRequest": "傳送請求失敗。",
+      "sendingRequest": "傳送請求",
+      "sendRequest": "傳送請求",
+      "requestToJoinValue1": "請求加入 {{value1}}"
+    },
+    "roomCard": {
+      "cancel": "取消",
+      "checkingAccess": "檢查存取權限",
+      "space": "空間",
+      "view": "檢視",
+      "retry": "重試",
+      "joinError": "加入錯誤",
+      "viewError": "檢視錯誤",
+      "retryRoomInfo": "重試房間資訊",
+      "accessUnavailable": "無法訪問",
+      "failedToJoinUnknownError": "加入失敗。未知錯誤。",
+      "sendingRequest": "傳送請求",
+      "requestSent": "請求已傳送",
+      "requestToJoin": "請求加入",
+      "joining": "正在加入",
+      "join": "加入",
+      "members_one": "{{count, number}} 名成員",
+      "members_other": "{{count, number}} 名成員"
+    },
+    "roomIntro": {
+      "inviteMember": "邀請成員",
+      "openOldRoom": "開啟舊房間",
+      "joinOldRoom": "加入舊房間",
+      "thisIsTheBeginningOfConversation": "這是談話的開始。",
+      "createdBy": "建立者： ",
+      "onValue1Value2": " 在 {{value1}} {{value2}} 上"
+    },
+    "textViewer": {
+      "copyAll": "全部複製"
+    },
+    "datePicker": {
+      "day": "天",
+      "month": "月",
+      "year": "年"
+    },
+    "timePicker": {
+      "hour": "小時",
+      "minutes": "分鐘",
+      "period": "時段",
+      "am": "上午",
+      "pm": "下午"
+    },
+    "dummyStage": {
+      "retry": "重試",
+      "cancel": "取消",
+      "failedToRegister": "註冊失敗。"
+    },
+    "emailStage": {
+      "email": "電子郵件",
+      "sendVerificationEmail": "傳送驗證郵件",
+      "cancel": "取消",
+      "sendingVerificationEmail": "正在傳送驗證電子郵件...",
+      "verificationRequestSent": "已傳送驗證請求",
+      "continue": "繼續",
+      "provideEmail": "提供電子郵件",
+      "verifyEmail": "驗證信箱",
+      "failedToSendVerificationEmailRequest": "無法傳送驗證電子郵件請求。",
+      "pleaseProvideEmailToSendVerificationRequest": "請輸入用於接收驗證要求的電子郵件地址。",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "請檢查您的電子郵件「{{value1}}」並進行驗證，然後再繼續。"
+    },
+    "passwordStage": {
+      "accountPassword": "帳號密碼",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "要執行此操作，您需要輸入帳戶密碼來驗證自己的身分。",
+      "password": "密碼",
+      "continue": "繼續",
+      "invalidPassword": "密碼無效！"
+    },
+    "reCaptchaStage": {
+      "cancel": "取消",
+      "invalidData": "無效資料",
+      "pleaseCheckTheBoxBelowToProceed": "請選中下面的方塊以繼續。",
+      "noValidDataFoundToProceedWithRecaptcha": "找不到繼續進行 ReCAPTCHA 的有效資料。"
+    },
+    "registrationTokenStage": {
+      "registrationToken": "註冊令牌",
+      "retry": "重試",
+      "cancel": "取消",
+      "invalidRegistrationTokenProvided": "提供的註冊令牌無效。",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "請提交您的主伺服器管理員提供的註冊令牌。"
+    },
+    "sSOStage": {
+      "ssoLogin": "SSO 登入",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "要執行此操作，您需要透過 SSO 登入來驗證自己的身分。",
+      "continue": "繼續",
+      "continueWithSso": "繼續使用SSO 登入"
+    },
+    "termsStage": {
+      "retry": "重試",
+      "cancel": "取消",
+      "failedToSubmitTermsAndConditionAcceptance": "無法提交條款和條件接受。"
+    },
+    "uploadBoard": {
+      "files": "檔案",
+      "uploadFailed": "上傳失敗",
+      "remove": "移除",
+      "removeAll": "全部刪除"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "重試上傳",
+      "retry": "重試",
+      "cancelUpload": "取消上傳"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "劇透",
+      "retryUpload": "重試上傳",
+      "retry": "重試",
+      "cancelUpload": "取消上傳"
+    },
+    "creatorChip": {
+      "managePowers": "管理權限"
+    },
+    "powerChip": {
+      "selfDemotion": "自我降級",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "你這是要自我貶低啊！你自己將無法重新獲得這種力量。你確定嗎？",
+      "demote": "降級",
+      "sharedPower": "同等權限",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "你是在提升使用者擁有和你一樣的權力！之後你將無法改變他們的力量。你確定嗎？",
+      "promote": "提升權限",
+      "managePowers": "管理權限",
+      "errorName": "錯誤：{{name}}"
+    },
+    "userChips": {
+      "copyServer": "複製伺服器",
+      "exploreCommunity": "探索社群",
+      "openInBrowser": "在瀏覽器中開啟",
+      "copyUserId": "複製使用者 ID",
+      "copyUserLink": "複製使用者連結",
+      "share": "分享",
+      "spaces": "空間",
+      "rooms": "房間",
+      "directMessages": "私訊",
+      "blockedUser": "被封鎖的使用者",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "您不會收到此使用者的任何訊息或邀請。",
+      "mutualRooms": "共同房間",
+      "unblockUser": "解除封鎖使用者",
+      "blockUser": "封鎖使用者",
+      "mutualRooms_one": "{{count, number}} 共同房間",
+      "mutualRooms_other": "{{count, number}} 個共同房間"
+    },
+    "userModeration": {
+      "kickedUser": "被踢出的使用者",
+      "noReasonProvided": "沒有提供理由。",
+      "bannedUser": "被禁止的使用者",
+      "unban": "解禁",
+      "invitedUser": "受邀使用者",
+      "cancelInvite": "取消邀請",
+      "moderation": "管理",
+      "reason": "原因：<b>{{reason}}</b>",
+      "invite": "邀請",
+      "kick": "踢",
+      "ban": "禁止",
+      "kickedBy": "被踢：<b>{{name}}</b>",
+      "bannedBy": "禁止者：<b>{{name}}</b>",
+      "invitedBy": "邀請者：<b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "訊息"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "語音音量",
+      "voiceVolumeCurrentlyValue1": "語音音量，目前為 {{value1}}%"
+    },
+    "configConfig": {
+      "continueOffline": "繼續離線",
+      "yourWebSessionHasExpired": "您的網路工作階段已過期。",
+      "failedToLoadClientConfigurationFile": "無法載入用戶端設定檔。",
+      "signInAgainToReconnectOrContinueInOfflineMode": "重新登入以恢復連線，或繼續使用離線模式。",
+      "signInAgainToReconnect": "重新登入以恢復連線。",
+      "signInAgain": "重新登入",
+      "retry": "重試"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "缺少瀏覽器功能",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "找不到 IndexedDB 支援。該應用程式需要 IndexedDB 在本機儲存工作階段資料。請確保您的瀏覽器支援 IndexedDB 並啟用它。",
+      "whatIsIndexeddb": "什麼是 IndexedDB？"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "返回目前帳戶",
+      "server": "伺服器",
+      "lookingForServer": "正在尋找伺服器...",
+      "failedToFindServer": "找不到伺服器。",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "連線失敗。伺服器設定 base_url 似乎無效。",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "僅允許 HTTPS 伺服器。僅本機網路伺服器支援 HTTP。",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "連線失敗。伺服器此時不可用或不存在。",
+      "loadingAuthenticationFlow": "正在載入身分驗證流程...",
+      "failedToGetAuthenticationFlowInformation": "取得認證流程資訊失敗。",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "連線失敗。使用 {{value1}} 找到的伺服器設定似乎不可用。",
+      "connectingToValue1": "連線到 {{value1}}"
+    },
+    "orDivider": {
+      "or": "或"
+    },
+    "sSOLogin": {
+      "continueWithSso": "繼續使用SSO 登入"
+    },
+    "serverPicker": {
+      "server": "伺服器",
+      "serverList": "伺服器列表"
+    },
+    "login": {
+      "login": "登入",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "此用戶端要求使用 Apple 登入。請在主伺服器的 SSO 提供者清單中加入 Apple。",
+      "register": "註冊",
+      "accountLink": "沒有帳戶？ <authLink>註冊</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "「{{value1}}」已停用密碼登入。請使用 SSO 登入。",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "該用戶端不支援登入「{{value1}}」伺服器。找不到基於密碼和 SSO 的登入方法。"
+    },
+    "passwordLoginForm": {
+      "hint": "提示",
+      "username": "使用者名稱:",
+      "matrixId": "Matrix ID：",
+      "email": "電子郵件：",
+      "username2": "使用者名稱",
+      "password": "密碼",
+      "forgetPassword": "忘記密碼？",
+      "login": "登入",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "您的用戶端執行個體不允許使用自訂伺服器登入。",
+      "failedToFindYourMatrixIdServer": "找不到您的 Matrix ID 伺服器。",
+      "invalidUsernameOrPassword": "使用者名稱或密碼無效。",
+      "thisAccountHasBeenDeactivated": "該帳號已停用。",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "登入失敗。您的請求資料的一部分無效。",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "登入失敗。您的登入請求已被伺服器限速，請稍後再試。",
+      "failedToLoginUnknownReason": "登入失敗。原因不明。",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "登入成功，但該瀏覽器無法儲存帳戶。檢查儲存權限並重試。"
+    },
+    "tokenLogin": {
+      "tokenLogin": "權杖登入",
+      "invalidLoginToken": "登入令牌無效。",
+      "thisAccountHasBeenDeactivated": "該帳號已停用。",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "登入失敗。您的請求資料的一部分無效。",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "登入失敗。您的登入請求已被伺服器限速，請稍後再試。",
+      "failedToLoginUnknownReason": "登入失敗。原因不明。",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "登入成功，但該瀏覽器無法儲存帳戶。檢查儲存權限並重試。"
+    },
+    "passwordRegisterForm": {
+      "username": "使用者名稱",
+      "password": "密碼",
+      "confirmPassword": "確認密碼",
+      "termsAndConditions": "條款與條件",
+      "register": "註冊",
+      "thisUsernameIsAlreadyTaken": "該使用者名稱已被佔用。",
+      "thisUsernameContainsInvalidCharacters": "該使用者名稱包含無效字元。",
+      "thisUsernameIsReserved": "該使用者名稱已保留。",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "弱密碼。密碼被伺服器拒絕，請選擇更強的密碼。",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "短密碼。密碼被伺服器拒絕，請選擇更長的密碼。",
+      "registrationToken": "註冊令牌",
+      "registrationTokenOptional": "註冊令牌（可選）",
+      "email": "電子郵件",
+      "emailOptional": "電子郵件（可選）",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "註冊失敗。您的註冊請求已被伺服器限速，請稍後再試。",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "註冊失敗。主伺服器不允許註冊。",
+      "failedToRegisterInvalidRequest": "註冊失敗。無效請求。",
+      "failedToRegisterUnknownReason": "註冊失敗。原因不明。",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "註冊成功，但該瀏覽器無法儲存帳戶。檢查儲存權限並嘗試登入。",
+      "acceptTerms": "我接受伺服器<terms>條款和條件</terms>。"
+    },
+    "register": {
+      "register": "註冊",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "此用戶端要求使用 Apple 登入。請在主伺服器的 SSO 提供者清單中加入 Apple。",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "此主伺服器僅允許透過 Apple、Google 或 GitHub 註冊。",
+      "registrationHasBeenDisabledOnThisHomeserver": "該主伺服器上的註冊已停用。",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "您已受到速率限制！請過一段時間再嘗試。",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "無效請求！無法取得任何註冊選項。",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "此應用程式不支援在此主伺服器上註冊。",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "該主伺服器需要 SSO 註冊，但沒有公佈 SSO 提供者。",
+      "login": "登入",
+      "accountLink": "已經有帳戶？ <authLink>登入</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "密碼已成功重設。請使用您的新密碼登入。",
+      "login": "登入",
+      "email": "電子郵件",
+      "newPassword": "新密碼",
+      "confirmPassword": "確認密碼",
+      "resetPassword": "重設密碼",
+      "resetEmailDescription": "Homeserver <strong>{{server}}</strong> 將向您傳送一封電子郵件，讓您重設密碼。",
+      "failedToResetPassword": "密碼重設失敗。"
+    },
+    "resetPassword": {
+      "resetPassword": "重設密碼",
+      "login": "登入",
+      "accountLink": "還記得您的密碼嗎？ <authLink>登入</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "正在同步…",
+      "startupRecoveryOptions": "啟動恢復選項",
+      "logout": "登出",
+      "retry": "重試",
+      "clearCacheAndReload": "清除快取並重新載入",
+      "removeAccount": "刪除帳戶",
+      "clearing": "正在清除…",
+      "failedToStartAccountValue1Value2": "無法啟動帳戶 {{value1}}。 {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "取消並返回登入",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "無法連線到主伺服器。主伺服器或您的網路連線可能已關閉。",
+      "retry": "重試",
+      "continue": "繼續",
+      "connectingToServer": "連線到伺服器",
+      "clearing": "正在清除…",
+      "clearCacheAndReload": "清除快取並重新載入"
+    },
+    "syncStatus": {
+      "catchingUp": "正在同步…",
+      "connectionLostReconnecting": "連線遺失！正在重新連線...",
+      "connectionLost": "連線遺失！"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "設定Local MindRoom",
+      "openLocalMindroomSettings": "開啟Local MindRoom 設定",
+      "enterPairCode": "已有代碼？在 Local MindRoom 中輸入",
+      "poweredBy": "由 <links /> 提供支援",
+      "title": "歡迎來到{{appName}}",
+      "subtitle": "活躍於聊天房間中的 AI 代理。",
+      "docs": "檔案",
+      "sourceCode": "原始碼",
+      "setupStep1": "1. 執行 {{command}}",
+      "setupStep2": "2. 在 {{envFile}} 中加入模型憑證，或執行 {{command}}",
+      "setupStep3": "3. 使用 {{command}} 啟動，然後開啟它輸出的連結以核准連線"
+    },
+    "create": {
+      "createSpace": "建立空間",
+      "buildASpaceForYourCommunity": "為您的社群打造一個空間。"
+    },
+    "directCreate": {
+      "createChat": "建立聊天",
+      "startAPrivateEncryptedChatByEnteringAUserId": "輸入使用者 ID 即可開始私人加密聊天。"
+    },
+    "explore": {
+      "addServer": "新增伺服器",
+      "addServerNameToExplorePublicCommunities": "新增伺服器名稱以探索公共社群。",
+      "serverName": "伺服器名稱",
+      "failedToLoadPublicRoomsPleaseTryAgain": "公共房間載入失敗。請再試一次。",
+      "view": "檢視",
+      "exploreCommunity": "探索社群",
+      "featured": "精選",
+      "servers": "伺服器"
+    },
+    "featured": {
+      "featuredByClient": "用戶端推薦",
+      "featuredSpaces": "特色空間",
+      "featuredRooms": "精選房間",
+      "noRoomsOrSpacesFeaturedByClientProvider": "用戶端提供者沒有推薦任何房間或空間。",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "尋找並探索用戶端提供者推薦的公開房間與空間。"
+    },
+    "server": {
+      "search": "搜尋",
+      "searchForKeyword": "搜尋關鍵字",
+      "clear": "清除",
+      "enter": "輸入",
+      "protocols": "協定",
+      "presets": "預設",
+      "customLimit": "自訂限額",
+      "perPageItemLimit": "每頁專案限制",
+      "changeLimit": "變更限額",
+      "popularCommunities": "熱門社群",
+      "previousPage": "上一頁",
+      "nextPage": "下一頁",
+      "noCommunitiesFound": "沒有找到社群！",
+      "pageLimitValue1": "頁數限制：{{value1}}",
+      "resultsForValue1": "「{{value1}}」的結果"
+    },
+    "createRoom": {
+      "createRoom": "建立房間",
+      "buildARoomForRealTimeConversations": "建立一個即時對話的房間。"
+    },
+    "search": {
+      "messageSearch": "訊息搜尋"
+    },
+    "inbox": {
+      "invites": "邀請",
+      "inbox": "收件匣",
+      "notifications": "通知"
+    },
+    "invites": {
+      "encrypted": "已加密",
+      "directMessage": "私訊",
+      "space": "空間",
+      "decline": "拒絕",
+      "accept": "接受",
+      "primary": "主要",
+      "public": "公開",
+      "spam": "垃圾邀請",
+      "noInvites": "沒有邀請",
+      "declineAll": "全部拒絕",
+      "acceptAll": "全部接受",
+      "reportAll": "全部檢舉",
+      "blockAll": "全部封鎖",
+      "noSpamInvites": "沒有垃圾邀請",
+      "invites": "邀請",
+      "filter": "篩選",
+      "hideAll": "全部隱藏",
+      "viewAll": "看全部",
+      "reason": "原因：{{reason}}",
+      "from": "寄件者：<b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "與您共享房間的使用者傳送邀請時，邀請會顯示在這裡。",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "來自您所在房間以外使用者的邀請會顯示在這裡。",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "下列部分邀請可能包含有害內容，或由已封鎖的使用者傳送。",
+      "invitesDetectedAsSpamAppearHere": "偵測為垃圾郵件的邀請會顯示在此。",
+      "spamInvites_one": "{{count, number}} 垃圾郵件邀請",
+      "spamInvites_other": "{{count, number}} 垃圾郵件邀請"
+    },
+    "notifications": {
+      "open": "開啟",
+      "notificationMessages": "通知訊息",
+      "filter": "篩選",
+      "allNotifications": "所有通知",
+      "highlighted": "突出顯示",
+      "scrollToTop": "捲動到頂部",
+      "noNotifications": "無通知",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "您還沒有任何可顯示的新通知。",
+      "event": " 事件",
+      "roomTombstone": "房間替換事件：{{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "取消固定",
+      "invite": "邀請",
+      "copyLink": "複製連結",
+      "spaceSettings": "空間設定",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "已拾取空間 {{value1}}。使用方向鍵重新排序，按空白鍵放下。"
+    },
+    "space": {
+      "invite": "邀請",
+      "copyLink": "複製連結",
+      "spaceSettings": "空間設定",
+      "eventTimeline": "事件時間表",
+      "leaveSpace": "離開空間",
+      "spaceUpgraded": "空間升級",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "該空間已被替換並且不再活躍。",
+      "openNewSpace": "開啟新空間",
+      "joinNewSpace": "加入新空間",
+      "lobby": "大堂",
+      "messageSearch": "訊息搜尋",
+      "failedToJoinReplacementSpace": "加入替換空間失敗！",
+      "rooms": "房間",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "已拾取房間 {{value1}}。使用方向鍵重新排序，按空白鍵放下。"
+    },
+    "threads": {
+      "threads": "討論串"
+    },
+    "threadsView": {
+      "loadingThreads": "載入討論串",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "您尚未參與任何討論串",
+      "noThreadsMatchYourFilters": "沒有符合篩選條件的討論串",
+      "clearFilters": "清除篩選條件",
+      "thread": "討論串",
+      "threads": "討論串"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "不支援",
+      "option0": "限受邀者",
+      "option1": "敲門並邀請",
+      "option2": "空間成員或要求加入",
+      "option3": "空間成員",
+      "option4": "公開"
+    },
+    "toolbar": {
+      "heading1": "標題 1",
+      "heading2": "標題 2",
+      "heading3": "標題 3",
+      "bold": "粗體",
+      "italic": "斜體",
+      "underline": "底線",
+      "strikeThrough": "刪除線",
+      "inlineCode": "行內程式碼",
+      "spoiler": "劇透",
+      "blockQuote": "區塊引文",
+      "blockCode": "區塊程式碼",
+      "orderedList": "有序列表",
+      "unorderedList": "無序列表",
+      "exitFormatting": "退出格式化",
+      "disableMarkdown": "停用 Markdown",
+      "enableMarkdown": "啟用 Markdown",
+      "exitValue1": "退出{{value1}}"
+    },
+    "reaction": {
+      "others_one": "其他 {{count}} 個",
+      "reactionSummary": "<names>{{names}}</names> 做出反應：<reaction>{{reaction}}</reaction>：",
+      "others_other": "其他 {{count}} 個"
+    },
+    "audioContent": {
+      "pause": "暫停",
+      "play": "播放"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "調整語音訊息進度"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "預設",
+      "option1": "所有訊息",
+      "option2": "提及和關鍵字",
+      "option3": "靜音"
+    },
+    "authFooter": {
+      "support": "支援",
+      "privacy": "隱私",
+      "terms": "條款",
+      "poweredBy": "由 <app>{{appName}}</app>、<matrix>Matrix</matrix>、<cinny>Cinny</cinny> 提供支援"
+    },
+    "router": {
+      "join": "加入",
+      "notFound": "找不到頁面"
+    },
+    "ssoProviders": {
+      "signUpApple": "使用 Apple 註冊",
+      "signInApple": "使用 Apple 登入",
+      "continueGoogle": "繼續使用Google",
+      "continueGithub": "繼續使用 GitHub",
+      "continueProvider": "繼續使用 {{provider}}"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> 已接受 <b>{{userName}}</b> 的加入請求 {{reason}}",
+      "invited": "<b>{{senderName}}</b> 已邀請 <b>{{userName}}</b> {{reason}}",
+      "requested": "<b>{{userName}}</b> 請求加入房間 {{reason}}",
+      "joined": "<b>{{userName}}</b> 加入了房間",
+      "rejectedInvitation": "<b>{{userName}}</b>拒絕了邀約{{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> 拒絕了 <b>{{userName}}</b> 的加入請求 {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> 已撤銷加入請求 {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> 已撤銷 <b>{{userName}}</b> 的邀請函 {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> 已取消禁止 <b>{{userName}}</b> {{reason}}",
+      "left": "<b>{{userName}}</b> 離開房間{{reason}}",
+      "kicked": "<b>{{senderName}}</b> 踢了 <b>{{userName}}</b> {{reason}}",
+      "banned": "<b>{{senderName}}</b> 封鎖了 <b>{{userName}}</b> {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> 將顯示名稱變更為 <b>{{userName}}</b>",
+      "removedName": "<b>{{prevUserName}}</b> 刪除了他們的顯示名稱",
+      "changedAvatar": "<b>{{userName}}</b>改變了他們的頭像",
+      "removedAvatar": "<b>{{userName}}</b> 刪除了他們的頭像",
+      "broken": "損壞的成員事件",
+      "unchanged": "沒有變更的成員事件"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "邀請使用者提出建議",
+      "users": "使用者",
+      "searching": "搜尋使用者",
+      "noMatches": "沒有符合的使用者",
+      "matchingUsers_one": "{{count}} 個符合的使用者",
+      "matchingUsers_other": "{{count}} 個符合使用者"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "正在載入 MindRoom Chat"
+    },
+    "commands": {
+      "CommandMe": "傳送操作訊息",
+      "CommandNotice": "傳送通知訊息",
+      "CommandShrug": "將 ¯\\_(ツ)_/¯ 作為訊息傳送",
+      "CommandTableFlip": "將 {{value1}} 作為訊息傳送",
+      "CommandUnFlip": "將 {{value1}} 作為訊息傳送",
+      "CommandStartDm": "與使用者開始私訊。範例：/startdm userId1",
+      "CommandJoin": "使用地址加入房間。範例：/join address1 address2",
+      "CommandLeave": "離開目前房間。",
+      "CommandInvite": "邀請使用者加入房間。範例：/invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "撤銷使用者的房間邀請。範例：/disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "將使用者移出房間。範例：/kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "在房間中封鎖使用者。範例：/ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "解除使用者的房間封鎖。範例：/unban userId1 userId2",
+      "CommandIgnore": "忽略使用者。範例：/ignore userId1 userId2",
+      "CommandUnIgnore": "取消忽略使用者。範例：/unignore userId1 userId2",
+      "CommandMyRoomNick": "變更目前房間的暱稱。",
+      "CommandMyRoomAvatar": "變更目前房間中的大頭貼。範例 /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "將房間轉換為直接訊息",
+      "CommandConvertToRoom": "將私訊轉換為房間",
+      "CommandDelete": "刪除使用者的訊息。範例：/delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "管理伺服器存取控制清單。範例 /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} 表情符號"
+    },
+    "fileHeader": {
+      "downloadValue1": "下載{{value1}}"
+    },
+    "time": {
+      "yesterdayValue1": "昨天 {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "播放速度，目前為{{value1}}，點選迴圈"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "來自 {{value1}} 的新收件匣通知"
+    },
+    "memberFilters": {
+      "joined": "已加入",
+      "invited": "受邀",
+      "left": "已離開",
+      "kicked": "已被移出",
+      "banned": "已封鎖"
+    },
+    "memberSort": {
+      "atoZ": "A 到 Z",
+      "ztoA": "Z 到 A",
+      "newest": "最新",
+      "oldest": "最早"
+    },
+    "presence": {
+      "active": "使用中",
+      "busy": "忙碌的",
+      "away": "離開"
+    },
+    "emojiGroups": {
+      "smileysPeople": "表情符號與人物",
+      "animalsNature": "動物與自然",
+      "foodDrinks": "食品和飲料",
+      "activity": "活動",
+      "travelPlaces": "旅行與地點",
+      "objects": "物件",
+      "symbols": "符號",
+      "flags": "旗幟"
+    },
+    "roomTypes": {
+      "all": "全部",
+      "spaces": "空間",
+      "rooms": "房間"
+    },
+    "imageUsage": {
+      "both": "兩個都",
+      "sticker": "貼紙",
+      "emoji": "表情符號"
+    },
+    "powerLevels": {
+      "manager": "主管",
+      "founder": "創辦人",
+      "admin": "管理員",
+      "moderator": "版主",
+      "member": "成員",
+      "muted": "靜音",
+      "team": "團隊 {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "語音訊息",
+      "tools_one": "{{count, number}} 工具",
+      "tools_other": "{{count, number}} 工具"
+    },
+    "threadSummary": {
+      "manual": "手動編輯的摘要",
+      "title": "討論串摘要",
+      "provenance": "AI 產生的討論串摘要",
+      "provenanceCount_one": "最後 {{count, number}} 筆訊息的 AI 摘要",
+      "provenanceCount_other": "最後 {{count, number}} 筆訊息的 AI 摘要"
+    },
+    "commandPalette": {
+      "shortcutHint": "捷徑： <shortcut>{{shortcut}}</shortcut> 開啟。"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "展開導覽面板",
+      "collapseNavigationPanel": "收合導覽面板"
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "新增現有專案",
+      "search": "搜尋",
+      "failedToApplyChangesPleaseTryAgain": "無法套用變更！請再試一次。",
+      "reset": "重設",
+      "applyChanges": "套用變更",
+      "applyWhenReadySelected_one": "準備好後即可套用。（已選取 {{count}} 個）",
+      "applyWhenReadySelected_other": "準備好後即可套用。（已選取 {{count}} 個）",
+      "noMatchForQuery": "找不到「{{query}}」的符合項。",
+      "noMatchFound": "找不到符合項",
+      "noRooms": "沒有房間",
+      "noRoomsDescription": "您還沒有任何可顯示的房間。",
+      "noSpaces": "沒有空間",
+      "noSpacesDescription": "您還沒有任何可顯示的空間。"
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "結束"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name>正在說話...",
+        "two": "<first>{{first}}</first> 和 <second>{{second}}</second> 正在講話...",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>和<third>{{third}}</third>正在說話...",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在發言...",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在發言..."
+      },
+      "liveCount": "{{count}} 人線上"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "反應",
+        "settings": "設定",
+        "end": "結束",
+        "gridView": "網格檢視",
+        "spotlightView": "聚光燈檢視"
+      },
+      "callMemberCard": {
+        "collapse": "收合",
+        "additionalParticipants_one": "+{{count}} 其他",
+        "additionalParticipants_other": "+{{count}} 其他"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "您的主伺服器不支援通話。",
+        "yourBrowserDoesNotSupportWebrtcWhich": "您的瀏覽器不支援通話所需的WebRTC。",
+        "voiceChatSEmptyBeTheFirst": "語音聊天是空的－成為第一個加入的人！",
+        "youDonTHavePermissionToJoin": "您沒有加入權限！",
+        "alreadyInAnotherCallEndTheCurrent": "您已在另一通話中——請先結束目前通話再加入！",
+        "participant": "參加者",
+        "voiceCallError": "語音通話錯誤",
+        "dismissVoiceCallError": "關閉語音通話錯誤"
+      },
+      "prescreenControls": {
+        "join": "加入"
+      },
+      "controls": {
+        "closeChat": "關閉聊天",
+        "openChat": "開啟聊天",
+        "startCamera": "啟動相機",
+        "startScreenshare": "開始螢幕分享",
+        "stopCamera": "停止攝影機",
+        "stopScreenshare": "停止螢幕分享",
+        "turnOffMicrophone": "關閉麥克風",
+        "turnOffSound": "關閉聲音",
+        "turnOnMicrophone": "開啟麥克風",
+        "turnOnSound": "開啟聲音"
+      },
+      "liveCount": "{{count}} 人線上"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "開發者工具",
+          "options": "選項",
+          "enableDeveloperTools": "啟用開發者工具",
+          "roomId": "房間 ID",
+          "copy": "複製",
+          "data": "資料",
+          "newMessageEvent": "新訊息事件",
+          "createAndSendANewMessageEvent": "在房間內建立並傳送新訊息事件。",
+          "compose": "撰寫",
+          "roomState": "房間狀態",
+          "stateEventsOfTheRoom": "房間的狀態事件。",
+          "events": "事件",
+          "addNew": "新增",
+          "accountData": "帳戶資料",
+          "privatePersonalizationDataStoredWithinRoom": "儲存在房間內的私人個人化資料。",
+          "collapse": "收合",
+          "copyRoomIdDescription": "將房間 ID 複製到剪貼簿。 (「{{roomId}}」)",
+          "expand": "展開",
+          "total": "總計：{{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "開發者工具",
+          "send": "傳送",
+          "stateKeyOptional": "狀態金鑰（可選）",
+          "jsonContent": "JSON 內容",
+          "messageEventType": "訊息事件型別",
+          "stateEventType": "狀態事件型別"
+        },
+        "stateEventEditor": {
+          "stateEvent": "狀態事件",
+          "save": "儲存",
+          "cancel": "取消",
+          "jsonContent": "JSON 內容",
+          "edit": "編輯",
+          "developerTools": "開發者工具"
+        },
+        "defaultStateKey": "預設"
+      },
+      "emojisStickers": {
+        "emojisStickers": "表情符號和貼紙",
+        "roomPacks": {
+          "newPack": "新包",
+          "addYourOwnEmojiAndStickerPack": "新增您自己的表情符號和貼紙包以在房間中使用。",
+          "name": "名稱",
+          "create": "建立",
+          "view": "檢視",
+          "packs": "套件",
+          "noPacks": "沒有套件",
+          "thereAreNoEmojiOrStickerPacks": "目前沒有可顯示的表情符號或貼紙包。",
+          "failedToRemovePacksPleaseTryAgain": "刪除包失敗！請再試一次。",
+          "cancel": "取消",
+          "delete": "刪除",
+          "deleteSelectedPacks_one": "刪除選定的包。 （已選擇 {{count}} 個）",
+          "deleteSelectedPacks_other": "刪除選定的包。 （已選擇 {{count}} 個）",
+          "unknown": "未知"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "房間加密",
+          "enabled": "已啟用",
+          "enable": "啟用",
+          "enableEncryption": "啟用加密",
+          "areYouSureOnceEnabledEncryptionCannot": "確定嗎？加密一旦啟用便無法停用！",
+          "enableE2eEncryption": "啟用端對端加密",
+          "disabledDescription": "一旦啟用，加密就無法停用！",
+          "enabledDescription": "該房間中的訊息受到端對端加密的保護。"
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "訊息歷史記錄可見性",
+          "changesToHistoryVisibilityWillOnlyApply": "歷史可見性的變更僅適用於未來的訊息。現有歷史的可見性不會產生任何影響。",
+          "afterInvite": "邀請後",
+          "afterJoin": "加入後",
+          "allMessages": "所有訊息",
+          "allMessagesGuests": "所有訊息（訪客）"
+        },
+        "roomProfile": {
+          "avatar": "大頭貼",
+          "upload": "上傳",
+          "reset": "重設",
+          "remove": "移除",
+          "name": "名稱",
+          "topic": "主題",
+          "save": "儲存",
+          "cancel": "取消",
+          "profile": "個人資料",
+          "edit": "編輯",
+          "unknown": "未知"
+        },
+        "roomPublish": {
+          "publishToDirectory": "釋出到目錄",
+          "roomDescription": "在公共目錄中列出房間，以便其他人可以發現它。",
+          "spaceDescription": "列出公共目錄中的空間以使其可以被其他人發現。"
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "此操作不可逆轉！",
+          "options": "選項",
+          "upgrade": "升級",
+          "currentVersion": "目前版本：{{version}}。",
+          "oldRoom": "舊房間",
+          "oldSpace": "舊空間",
+          "openNewRoom": "開啟新房間",
+          "openNewSpace": "開啟新空間",
+          "roomReplaced": "這個房間已經換了！",
+          "roomUpgrade": "房間升級",
+          "spaceReplaced": "該空間已被替換！",
+          "spaceUpgrade": "空間升級",
+          "upgradeRoom": "升級房間",
+          "upgradeSpace": "升級空間"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "地址已使用！",
+          "collapse": "收合",
+          "delete": "刪除",
+          "expand": "展開",
+          "loading": "載入中...",
+          "localAddresses": "本機地址",
+          "localAddressesDescription": "設定本機地址，以便使用者可以透過您的主伺服器加入。",
+          "main": "主要位址",
+          "noAddresses": "沒有地址",
+          "publish": "發布",
+          "publishRequiresLocalAddress": "要發布地址，需要先將其設定為本機地址",
+          "published": "已釋出",
+          "publishedAddresses": "發布地址",
+          "publishedAddressesDescription": "如果存取權限為<public>公開</public>，則任何人都將使用已釋出的地址加入。",
+          "save": "儲存",
+          "selectedCount_one": "已選擇 {{count}} 個",
+          "selectedCount_other": "已選擇 {{count}} 個",
+          "setMain": "設為主要位址",
+          "unpublish": "取消發布",
+          "unsetMain": "取消主要位址"
+        },
+        "roomJoinRules": {
+          "roomAccess": "房間存取權限",
+          "roomDescription": "變更人們加入房間的方式。",
+          "spaceAccess": "空間存取權限",
+          "spaceDescription": "改變人們加入空間的方式。"
+        }
+      },
+      "members": {
+        "search": "搜尋",
+        "scrollToTop": "捲動到頂部",
+        "memberCount_one": "{{count}} 名成員",
+        "memberCount_other": "{{count}} 名成員",
+        "noMembersForFilter": "沒有「{{filter}}」成員",
+        "noResults": "沒有結果",
+        "resultCount_one": "{{count}} 結果",
+        "resultCount_other": "{{count}} 個結果"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "使用者",
+          "defaultPower": "預設權限",
+          "defaultPowerLevelForAllUsers": "所有使用者的預設權限等級。",
+          "above": "＆ 多於",
+          "failedToApplyChangesPleaseTryAgain": "無法套用變更！請再試一次。",
+          "changesSavedApplyWhenReady": "變更已儲存！準備好後即可套用。",
+          "reset": "重設",
+          "applyChanges": "套用變更"
+        },
+        "powers": {
+          "founders": "創辦人",
+          "foundingMembersHasAllPermissionsAndCan": "創始成員擁有所有權限，只能在升級過程中變更。",
+          "powerLevels": "權限等級",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "管理並自訂使用者的分級權限。",
+          "edit": "編輯"
+        },
+        "powersEditor": {
+          "color": "顏色",
+          "pick": "挑選",
+          "name": "名稱",
+          "bot": "機器人",
+          "power": "權限",
+          "icon": "圖示",
+          "remove": "移除",
+          "import": "匯入",
+          "save": "儲存",
+          "cancel": "取消",
+          "permissions": "權限",
+          "powerLevels": "權限等級",
+          "newPowerLevel": "新權限等級",
+          "createANewPowerLevel": "建立新的權限等級。",
+          "create": "建立",
+          "undo": "撤銷",
+          "usedPowerLevel": "使用中的權限等級",
+          "youHaveToRemoveItsUseBefore": "您必須先取消其使用，然後才能將其刪除。",
+          "delete": "刪除",
+          "edit": "編輯",
+          "failedToApplyChangesPleaseTryAgain": "無法套用變更！請再試一次。",
+          "changesSavedApplyWhenReady": "變更已儲存！準備好後即可套用。",
+          "reset": "重設",
+          "applyChanges": "套用變更"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "使用者 ID",
+      "userSuggestions": "使用者建議",
+      "pleaseEnterAValidUserId": "請輸入有效的使用者 ID。",
+      "options": "選項",
+      "endToEndEncryption": "端對端加密",
+      "onceThisFeatureIsEnabledItCan": "該功能一旦啟用，房間建立後將無法停用。",
+      "create": "建立",
+      "rateLimited_one": "伺服器限制了您的請求，請在 {{count}} 分鐘後重試！",
+      "rateLimited_other": "伺服器限制了您的請求，請在 {{count}} 分鐘後重試！"
+    },
+    "createRoom": {
+      "type": "型別",
+      "access": "存取權限",
+      "name": "名稱",
+      "topicOptional": "主題（可選）",
+      "options": "選項",
+      "advancedOptions": "進階選項",
+      "endToEndEncryption": "端對端加密",
+      "onceThisFeatureIsEnabledItCan": "該功能一旦啟用，房間建立後將無法停用。",
+      "knockToJoin": "敲門加入",
+      "anyoneCanSendRequestToJoinThis": "任何人都可以傳送加入此房間的請求。",
+      "allowFederation": "允許聯合",
+      "usersFromOtherServersCanJoin": "其他伺服器的使用者也可以加入。",
+      "create": "建立",
+      "newChatRoom": "新聊天室",
+      "newVoiceRoom": "新語音室",
+      "rateLimited_one": "伺服器限制了您的請求，請在 {{count}} 分鐘後重試！",
+      "rateLimited_other": "伺服器限制了您的請求，請在 {{count}} 分鐘後重試！"
+    },
+    "createSpace": {
+      "access": "存取權限",
+      "name": "名稱",
+      "topicOptional": "主題（可選）",
+      "options": "選項",
+      "advancedOptions": "進階選項",
+      "knockToJoin": "敲門加入",
+      "anyoneCanSendRequestToJoinThis": "任何人都可以傳送加入此空間的請求。",
+      "allowFederation": "允許聯合",
+      "usersFromOtherServersCanJoin": "其他伺服器的使用者也可以加入。",
+      "create": "建立",
+      "createSpaceModal": {
+        "newSpace": "新空間"
+      },
+      "rateLimited_one": "伺服器限制了您的請求，請在 {{count}} 分鐘後重試！",
+      "rateLimited_other": "伺服器限制了您的請求，請在 {{count}} 分鐘後重試！"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "移除",
+        "invite": "邀請",
+        "settings": "設定",
+        "leave": "離開",
+        "pinToSidebar": "固定到側邊欄",
+        "setSuggested": "設定建議",
+        "unpinFromSidebar": "從側邊欄取消固定",
+        "unsetSuggested": "取消設定建議"
+      },
+      "scrollToTop": "捲動到頂部",
+      "reordering": "重新排序",
+      "lobbyHeader": {
+        "invite": "邀請",
+        "spaceSettings": "空間設定",
+        "leaveSpace": "離開空間",
+        "members": "成員",
+        "moreOptions": "更多選項"
+      },
+      "roomItem": {
+        "accessUnavailable": "無法訪問",
+        "unknown": "未知",
+        "suggested": "建議",
+        "inaccessible": "無法進入",
+        "openRoom": "開啟房間",
+        "join": "加入",
+        "memberCount_one": "{{formattedCount}} 名成員",
+        "memberCount_other": "{{formattedCount}} 名成員",
+        "requestSent": "請求已傳送",
+        "requestToJoin": "請求加入",
+        "sendingRequest": "傳送請求"
+      },
+      "spaceHierarchy": {
+        "noRooms": "沒有房間",
+        "thisSpaceDoesNotContainsRoomsYet": "該空間尚不包含房間。"
+      },
+      "spaceItem": {
+        "unknown": "未知",
+        "inaccessible": "無法進入",
+        "suggested": "建議",
+        "accessUnavailable": "無法訪問",
+        "rooms": "房間",
+        "chatRoom": "聊天室",
+        "voiceRoom": "語音室",
+        "existingRoom": "現有房間",
+        "addRoom": "新增房間",
+        "newSpace": "新空間",
+        "existingSpace": "現有空間",
+        "addSpace": "新增空間",
+        "requestSent": "請求已傳送",
+        "requestToJoin": "請求加入"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "通知",
+        "invite": "邀請",
+        "copyLink": "複製連結",
+        "roomSettings": "房間設定",
+        "leaveRoom": "離開房間",
+        "toggleChat": "切換聊天",
+        "moreOptions": "更多選項"
+      },
+      "liveCount": "{{count}} 人線上"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "時間軸",
+        "general": "一般",
+        "options": "選項",
+        "addresses": "地址",
+        "advancedOptions": "進階選項",
+        "compact": "緊湊",
+        "threads": "討論串",
+        "classic": "經典",
+        "offline": {
+          "title": "離線存取",
+          "checking": "正在檢查已儲存的內容…",
+          "unavailable": "此裝置無法使用已儲存的內容。",
+          "notSaved": "此聊天室尚未儲存以供離線使用。",
+          "downloading": "正在下載此聊天室以供離線使用…",
+          "offlinePause": "裝置離線時會暫停儲存。",
+          "backgroundPause": "應用程式在背景執行時會暫停儲存。",
+          "spacePause": "受保護的內容已用完儲存空間配額，因此暫停儲存。",
+          "readOnlyPause": "儲存失敗。請重新開啟應用程式以繼續儲存。",
+          "connectionPause": "此連線下的自動儲存已暫停。",
+          "errorPause": "發生錯誤後已暫停儲存。請再試一次。",
+          "partialHistory": "部分較早的歷史記錄尚未儲存。",
+          "inaccessibleHistory": "部分歷史記錄目前無法存取。",
+          "waitingForKeys": "正在等待金鑰的加密事件：{{count}}",
+          "unresolvedRelations": "尚未解析的編輯或回覆：{{count}}",
+          "missingEssential": "缺少的必要訊息內容：{{count}}",
+          "historyEntries": "已儲存的歷史記錄項目：{{count}}",
+          "attachments": "附件：已儲存 {{saved}} 個，缺少 {{missing}} 個。",
+          "storageUsed": "附件使用的儲存空間：{{size}}",
+          "pinFailed": "無法更新「保持離線」。",
+          "includeAllMedia": "包含所有媒體",
+          "keepOffline": "保持離線",
+          "keepOfflineDescription": "自動清理時保護此聊天室已儲存的媒體。",
+          "cancelDownload": "取消下載",
+          "downloadEntireRoom": "下載整個聊天室",
+          "clearDownloadedContent": "清除已下載的內容",
+          "clearTitle": "要清除已下載的內容嗎？",
+          "cancel": "取消",
+          "clearDescription": "此聊天室已儲存的歷史記錄和附件將從此裝置移除。",
+          "clearFailed": "無法清除已下載的內容。",
+          "clearConfirm": "清除內容"
+        }
+      },
+      "permissions": {
+        "permissions": "權限",
+        "ban": "禁止",
+        "changeAllPermission": "變更所有權限",
+        "changeRoomAccess": "變更房間存取權限",
+        "changeServerAcls": "變更伺服器 ACL",
+        "deleteOthersMessages": "刪除其他訊息",
+        "deleteSelfMessages": "刪除自己的訊息",
+        "editPowerLevels": "編輯權限等級",
+        "enableEncryption": "啟用加密",
+        "groups": {
+          "calls": "通話",
+          "messages": "訊息",
+          "moderation": "管理",
+          "other": "其他",
+          "roomOverview": "房間概覽",
+          "settings": "設定"
+        },
+        "historyVisibility": "歷史可見性",
+        "invite": "邀請",
+        "kick": "踢",
+        "manageEmojisStickers": "管理表情符號和貼紙",
+        "modifyWidgets": "修改小工具",
+        "otherMessageEvents": "其他訊息事件",
+        "otherSettings": "其他設定",
+        "pinMessages": "釘選訊息",
+        "pingRoom": "提醒 @room",
+        "publishAddress": "發布地址",
+        "roomAvatar": "房間頭像",
+        "roomName": "房間名稱",
+        "roomTopic": "房間主題",
+        "sendMessages": "傳送訊息",
+        "sendReactions": "傳送反應",
+        "sendStickers": "傳送貼紙",
+        "startOrJoinCall": "開始或加入通話",
+        "upgradeRoom": "升級房間"
+      },
+      "navigation": {
+        "developerTools": "開發者工具",
+        "emojisStickers": "表情符號和貼紙",
+        "general": "一般",
+        "members": "成員",
+        "permissions": "權限"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "聊天",
+        "close": "關閉"
+      },
+      "commandAutocomplete": {
+        "commands": "命令"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "沒有提供訊息。",
+        "decline": "拒絕",
+        "approve": "核准",
+        "approveFromUser": "批准來自 {{userId}} 的加入請求",
+        "approvedWaitingForSync": "已核准。正在等待房間同步…",
+        "approving": "正在批准…",
+        "declineFromUser": "拒絕來自 {{userId}} 的加入請求",
+        "declinedWaitingForSync": "已拒絕。正在等待房間同步…",
+        "declining": "正在拒絕…",
+        "updateFailed": "無法更新請求。"
+      },
+      "membersDrawer": {
+        "invite": "邀請",
+        "invitePeople": "邀請人",
+        "close": "關閉",
+        "typeName": "輸入名稱...",
+        "scrollToTop": "捲動到頂部",
+        "memberCount_one": "{{count}} 名成員",
+        "memberCount_other": "{{count}} 名成員",
+        "noMembersForFilter": "沒有「{{filter}}」成員",
+        "noPendingJoinRequests": "沒有待處理的加入請求",
+        "noResults": "沒有結果",
+        "requestCount_one": "請求 ({{count}})",
+        "requestCount_other": "請求 ({{count}})",
+        "invitedCount_one": "{{count}} 人受邀",
+        "invitedCount_other": "{{count}} 人受邀",
+        "resultCount_one": "{{count}} 結果",
+        "resultCount_other": "{{count}} 個結果",
+        "formattedMemberCount_one": "{{formattedCount}} 名成員",
+        "formattedMemberCount_other": "{{formattedCount}} 名成員"
+      },
+      "roomTombstone": {
+        "openNewRoom": "開啟新房間",
+        "joinNewRoom": "加入新房間",
+        "joinReplacementFailed": "加入替換房間失敗！",
+        "replacedDescription": "該房間已被更換，不再有效。"
+      },
+      "jumpToTime": {
+        "jumpToTime": "跳到時間",
+        "time": "時間",
+        "date": "日期",
+        "preset": "預設",
+        "today": "今天",
+        "yesterday": "昨天",
+        "beginning": "開始",
+        "openTimeline": "開啟時間軸"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "編輯訊息…",
+          "save": "儲存",
+          "cancel": "取消"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> 正在輸入...",
+        "two": "<first>{{first}}</first> 和 <second>{{second}}</second> 正在輸入...",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second>和<third>{{third}}</third>正在輸入...",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在輸入...",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third>和<others>{{count}}其他</others>正在輸入...",
+        "dropTypingStatus": "刪除打字狀態"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> 正在關注對話。",
+        "two": "<first>{{first}}</first> 和 <second>{{second}}</second> 正在關注對話。",
+        "three": "<first>{{first}}</first>、<second>{{second}}</second> 和 <third>{{third}}</third> 正在關注對話。",
+        "four": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> 和 <others>{{count}} other</others> 正在關注對話。",
+        "many": "<first>{{first}}</first>、<second>{{second}}</second>、<third>{{third}}</third> 和 <others>{{count}} other</others> 正在關注對話。"
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}，{{count}} 待處理的加入請求",
+        "accessibleLabel_other": "{{baseLabel}}，{{count}} 個待處理的加入請求"
+      },
+      "reactionViewer": {
+        "reactedWith": "反應：{{shortcode}}："
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "帳戶",
+        "accountDeactivation": {
+          "accountManagement": "帳戶管理",
+          "deleteDeactivateAccount": "刪除/停用帳戶",
+          "deleteDeactivate": "刪除/停用",
+          "openProviderPortal": "開啟提供者入口網站",
+          "thisWillRequestAccountDeactivationOnYour": "這將請求在您的 Matrix 主伺服器上停用帳戶。您可能無法存取您的訊息和工作階段。",
+          "eraseAccountDataIfSupported": "刪除帳戶資料（如果支援）",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "如果啟用，主伺服器除了停用之外還可能永久刪除您的帳戶資料。",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "需要額外的身分驗證才能完成帳戶停用。",
+          "thisClientDoesNotSupportTheRequired": "該用戶端不支援該主伺服器所需的身分驗證步驟。",
+          "continueInProviderPortal": "在提供者入口網站中繼續",
+          "cancel": "取消",
+          "deactivationFailed": "無法停用帳號。 {{error}}",
+          "descriptionWithProvider": "從此用戶端開始帳戶停用。如果需要，您可以在提供者帳戶管理頁面中繼續。",
+          "descriptionWithoutProvider": "從此用戶端開始帳戶停用。某些主伺服器可能需要額外的身分驗證步驟。"
+        },
+        "contactInfo": {
+          "contactInformation": "聯絡資訊",
+          "emailAddress": "電子郵件",
+          "emailAddressAttachedToYourAccount": "電子郵件地址已連結至您的帳戶。"
+        },
+        "ignoredUserList": {
+          "block": "封鎖",
+          "blockedUsers": "被封鎖的使用者",
+          "selectUser": "選擇使用者",
+          "preventReceivingMessagesOrInvitesFromUser": "透過新增使用者 ID 來防止接收來自使用者的訊息或邀請。",
+          "users": "使用者"
+        },
+        "matrixId": {
+          "matrixId": "Matrix ID",
+          "copy": "複製",
+          "copied": "已複製"
+        },
+        "profile": {
+          "avatar": "大頭貼",
+          "upload": "上傳",
+          "remove": "移除",
+          "removeAvatar": "刪除頭像",
+          "areYouSureYouWantToRemove": "您確定要刪除個人資料頭像嗎？",
+          "displayName": "顯示名稱",
+          "save": "儲存",
+          "profile": "個人資料",
+          "unnamedFile": "未命名"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "帳戶資料",
+          "global": "全域",
+          "dataStoredInYourGlobalAccountData": "儲存在您的全球帳戶資料中的資料。",
+          "events": "事件",
+          "addNew": "新增",
+          "collapse": "收合",
+          "expand": "展開",
+          "total": "總計：{{count}}"
+        },
+        "developTools": {
+          "developerTools": "開發者工具",
+          "options": "選項",
+          "enableDeveloperTools": "啟用開發者工具",
+          "accessToken": "訪問令牌",
+          "copyAccessTokenToClipboard": "將存取令牌複製到剪貼簿。",
+          "copy": "複製"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "上次活動：",
+          "deviceName": "裝置名稱",
+          "save": "儲存",
+          "cancel": "取消",
+          "deviceNamesAreVisibleToPublic": "裝置名稱對公眾可見。",
+          "logout": "登出",
+          "undo": "撤銷",
+          "edit": "編輯",
+          "deviceIdValue": "裝置 ID：<value>{{id}}</value>",
+          "deviceKeyValue": "裝置金鑰：<value>{{key}}</value>",
+          "ipAddressValue": "IP 位址：<value>{{address}}</value>",
+          "loading": "載入中...",
+          "today": "今天",
+          "yesterday": "昨天"
+        },
+        "devices": "裝置",
+        "security": "安全性",
+        "deviceVerification": "裝置驗證",
+        "toVerifyDeviceIdentityAndGrantAccess": "驗證裝置身分並授予加密訊息的存取權限。",
+        "current": "目前",
+        "localBackup": {
+          "newPassword": "新密碼",
+          "confirmPassword": "確認密碼",
+          "export": "匯出",
+          "exportMessagesData": "匯出訊息資料",
+          "savePasswordProtectedCopyOfEncryptionData": "在您的裝置上儲存受密碼保護的加密資料副本，以便稍後解密訊息。",
+          "password": "密碼",
+          "decrypt": "解密",
+          "importMessagesData": "匯入訊息資料",
+          "loadPasswordProtectedCopyOfEncryptionData": "從裝置載入受密碼保護的加密資料副本以解密您的訊息。",
+          "import": "匯入",
+          "localBackup": "本機備份",
+          "collapse": "收合",
+          "cryptoModuleNotFound": "意外錯誤！找不到加密模組！",
+          "expand": "展開"
+        },
+        "otherDevices": {
+          "others": "其他",
+          "deviceDashboard": "裝置管理介面",
+          "manageYourDevicesOnOidcDashboard": "在 OIDC 儀錶板上管理您的裝置。",
+          "open": "開啟",
+          "authenticationStepsToPerformThisActionAre": "用戶端不支援執行此操作的身分驗證步驟。",
+          "cancel": "取消",
+          "logout": "登出",
+          "logoutFailed": "裝置登出失敗！請重試。{{error}}",
+          "logoutSelectedDevices_one": "從所選裝置登出。（已選取 {{count}} 個）",
+          "logoutSelectedDevices_other": "從所選裝置登出。（已選取 {{count}} 個）"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "從其他裝置開始驗證或手動驗證。<toggle><strong>收合</strong></toggle>",
+          "currentDeviceHelpMore": "從其他裝置開始驗證或手動驗證。 <toggle><strong>瞭解更多</strong></toggle>",
+          "enable": "啟用",
+          "findDevice": "在<section>裝置/工作階段</section>部分中找到此裝置。",
+          "initiateVerification": "啟動驗證。",
+          "manualVerificationHint": "如果您沒有任何經過驗證的裝置，請按下<action>「手動驗證」</action>按鈕。",
+          "openSettings": "開啟<settings>設定</settings>。",
+          "openVerifiedDevice": "開啟您的其他經過驗證的裝置。",
+          "reset": "重設",
+          "stepsFromOtherDevice": "從其他裝置驗證的步驟。",
+          "unverified": "未驗證",
+          "unverifiedCount_one": "{{count}} 未驗證",
+          "unverifiedCount_other": "{{count}} 未驗證",
+          "verified": "已驗證",
+          "verify": "驗證",
+          "verifyDeviceDescription": "驗證裝置身分並授予加密訊息的存取權限。",
+          "verifyManually": "手動驗證"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "表情符號和貼紙",
+        "globalPacks": {
+          "roomPacks": "房間表情套件",
+          "noPacks": "沒有套件",
+          "packFromRoomsWillAppearHereYou": "房間中的表情套件會顯示在這裡。您還沒有包含表情套件的房間。",
+          "view": "檢視",
+          "favoritePacks": "最愛的表情套件",
+          "selectPack": "選取表情套件",
+          "pickEmojisAndStickersPackFromRooms": "從房間中挑選表情符號和貼紙包以在所有房間中使用。",
+          "select": "選擇",
+          "failedToApplyChangesPleaseTryAgain": "無法套用變更！請再試一次。",
+          "changesSavedApplyWhenReady": "變更已儲存！準備好後即可套用。",
+          "reset": "重設",
+          "applyChanges": "套用變更",
+          "selectAll": "選擇全部",
+          "unknown": "未知",
+          "unselectAll": "取消全選",
+          "save": "儲存",
+          "close": "關閉"
+        },
+        "userPack": {
+          "defaultPack": "預設表情套件",
+          "view": "檢視",
+          "unknown": "未知"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "所有訊息",
+          "badge": "徽章：",
+          "1To1Chats": "一對一聊天",
+          "1To1ChatsEncrypted": "一對一聊天（加密）",
+          "rooms": "房間",
+          "roomsEncrypted": "房間（加密）"
+        },
+        "keywordMessages": {
+          "save": "儲存",
+          "keywordMessages": "關鍵字訊息",
+          "badge": "徽章：",
+          "selectKeyword": "選擇關鍵字",
+          "setANotificationPreferenceForMessageContaining": "為包含給定關鍵字的訊息設定通知首選項。"
+        },
+        "notifications": "通知",
+        "blockMessages": "封鎖訊息",
+        "thisOptionHasBeenMovedToAccount": "此選項已移至「帳戶 > 封鎖使用者」部分。",
+        "specialMessages": {
+          "specialMessages": "特別訊息",
+          "badge": "徽章：",
+          "mentionRoom": "提及@room",
+          "containsRoom": "包含@room",
+          "containsDisplayName": "包含顯示名稱（「{{displayName}}」）",
+          "containsDisplayNameGeneric": "包含顯示名稱",
+          "containsUsername": "包含使用者名稱（「{{username}}」）",
+          "mentionUserId": "提及使用者 ID（「{{userId}}」）"
+        },
+        "systemNotification": {
+          "emailNotification": "電子郵件通知",
+          "yourAccountDoesNotHaveAnyEmail": "您的帳戶沒有附加任何電子郵件。",
+          "unexpectedError": "意外錯誤！",
+          "system": "系統",
+          "desktopNotifications": "桌面通知",
+          "showDesktopNotificationsWhenMessageArrive": "訊息到達時顯示桌面通知。",
+          "enable": "啟用",
+          "notificationSound": "通知聲音",
+          "playSoundWhenNewMessageArrive": "新訊息到達時播放聲音。",
+          "notSupported": "系統不支援通知。",
+          "permissionBlocked": "通知權限被阻止。請允許瀏覽器網址列的通知權限。",
+          "sendToEmail": "將通知傳送到您的電子郵件。",
+          "sendToEmailAddress": "將通知傳送到您的電子郵件。 （「{{email}}」）"
+        },
+        "mode": {
+          "disable": "停用",
+          "notifyLoud": "響鈴通知",
+          "notifySilent": "靜默通知"
+        }
+      },
+      "about": {
+        "clearCache": "清除快取",
+        "clearCacheAndReload": "清除快取並重新載入",
+        "clearCacheDescription": "清除快取資料並重新載入。您將保持登入狀態。",
+        "clearTrace": "清除追蹤記錄",
+        "clearing": "正在清除…",
+        "credits": "致謝",
+        "deepDiagnosticTracing": "深度診斷追蹤",
+        "deepTraceMemoryOnly": "追蹤儲存空間無法使用，正在記憶體中記錄。請在重新啟動應用程式前匯出；重新啟動後這些近期事件將遺失。",
+        "deepTraceEnabledStorageUnavailable": "已啟用，但追蹤儲存空間目前不可用。",
+        "deepTraceOff": "已關閉。在重現凍結前啟用，以記錄效能、Matrix、網路、生命週期和互動計時。",
+        "deepTracePreferenceSaveFailed": "{{description}} 此工作階段已關閉，但無法儲存首選項，並且可能會在重新啟動後重新啟用。",
+        "deepTraceRecording": "正在此裝置上記錄範圍有限且保護隱私的效能與互動追蹤。",
+        "deepTraceStarting": "正在此裝置上啟動範圍有限且保護隱私的效能與互動追蹤。",
+        "diagnosticsExportFailed": "{{description}} 匯出失敗。再試一次。",
+        "diagnosticsNone": "沒有保留意外的工作階段。",
+        "diagnosticsUnavailable": "診斷儲存不可用。",
+        "diagnosticsUnexpected": "上次工作階段意外結束；原因不明。",
+        "emojiArtCredit": "<art>Twemoji</art> 表情圖稿版權所有 © <owner>Twitter, Inc 與其他貢獻者</owner>，依據 <license>CC-BY 4.0</license> 條款使用。",
+        "emojiFontCredit": "<font>twemoji-colr</font> 字型版權所有 © <owner>Mozilla Foundation</owner>，依據 <license>Apache 2.0</license> 條款使用。",
+        "exportDiagnostics": "匯出診斷",
+        "exporting": "正在匯出…",
+        "matrixSdkCredit": "<sdk>matrix-js-sdk</sdk> 版權所有 © <owner>The Matrix.org Foundation C.I.C</owner>，依據 <license>Apache 2.0</license> 條款使用。",
+        "onDeviceDiagnostics": "裝置上的診斷",
+        "options": "選項",
+        "soundResourcesCredit": "<resources>Material 音效資源</resources>版權所有 © <owner>Google</owner>，依據 <license>CC-BY 4.0</license> 條款使用。",
+        "sourceCode": "原始碼",
+        "support": "支援",
+        "title": "關於",
+        "traceStorageUnavailable": "追蹤儲存不可用。"
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "一般",
+        "options": "選項",
+        "addresses": "地址",
+        "advancedOptions": "進階選項"
+      },
+      "permissions": {
+        "permissions": "權限",
+        "ban": "禁止",
+        "changeAllPermission": "變更所有權限",
+        "changeServerAcls": "變更伺服器 ACL",
+        "changeSpaceAccess": "變更空間存取權限",
+        "editPowerLevels": "編輯權限等級",
+        "groups": {
+          "manage": "管理",
+          "moderation": "管理",
+          "other": "其他",
+          "settings": "設定",
+          "spaceOverview": "空間概覽"
+        },
+        "invite": "邀請",
+        "kick": "踢",
+        "manageEmojisStickers": "管理表情符號和貼紙",
+        "manageSpaceRooms": "管理空間房間",
+        "messageEvents": "訊息事件",
+        "otherSettings": "其他設定",
+        "publishAddress": "發布地址",
+        "spaceAvatar": "空間頭像",
+        "spaceName": "空間名稱",
+        "spaceTopic": "空間主題",
+        "upgradeSpace": "升級空間"
+      },
+      "navigation": {
+        "developerTools": "開發者工具",
+        "emojisStickers": "表情符號和貼紙",
+        "general": "一般",
+        "members": "成員",
+        "permissions": "權限"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "找不到「{{query}}」的符合項。",
+      "noMatchFound": "找不到符合項",
+      "noRooms": "沒有房間",
+      "noRoomsDescription": "您還沒有任何可顯示的房間。",
+      "placeholder": "搜尋",
+      "syntaxHint": "輸入 <rooms>#</rooms> 表示房間，輸入 <directs>@</directs> 表示 DM，輸入 <spaces>*</spaces> 表示空間。熱鍵：<hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "放棄錄音",
+      "pauseRecording": "暫停錄音",
+      "resumeRecording": "繼續錄音",
+      "statusActive": "正在錄音",
+      "statusPaused": "錄音已暫停",
+      "statusProcessing": "處理錄音",
+      "statusReadyToRetry": "錄音準備重試",
+      "statusSending": "傳送錄音",
+      "statusStarting": "開始錄音",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "語音傳送失敗",
+        "yourRecordingIsStillSaved": "您的錄音仍已儲存。",
+        "discard": "丟棄",
+        "retry": "重試",
+        "discardVoiceRecording": "放棄錄音？",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "該錄音尚未傳送。永久丟棄嗎？",
+        "cancel": "取消",
+        "voiceRecordingError": "錄音錯誤",
+        "ok": "確定"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "麥克風存取被阻止。在 Android 應用程式設定中允許 MindRoom Chat 的麥克風存取權限，然後再試一次。",
+        "microphoneBlockedIos": "麥克風存取被阻止。在 iPhone 設定中允許 MindRoom Chat 存取麥克風，然後再試一次。",
+        "microphoneBlockedBrowser": "麥克風存取被阻止。在您的瀏覽器或系統設定中允許存取此網站/應用程式的麥克風，然後重試。",
+        "noMicrophone": "在此裝置上找不到麥克風。",
+        "microphoneUnavailable": "麥克風目前不可用（可能正被其他應用程式使用）。",
+        "microphoneFailed": "無法存取麥克風。",
+        "microphoneUnsupported": "此裝置不支援麥克風存取。",
+        "recordingStopped": "錄音意外停止。請再次錄製。",
+        "noAudio": "未擷取任何音訊資料。",
+        "recordingUnsupported": "此瀏覽器不支援錄音。",
+        "httpsRequired": "錄音需要 HTTPS（或本機）。透過 HTTPS 開啟 MindRoom。",
+        "sendBusy": "另一條語音訊息仍在傳送中。請稍等。",
+        "sendFailed": "傳送語音訊息失敗。"
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "通話",
+        "homeserverUnsupported": "您的主伺服器不支援通話。",
+        "browserUnsupported": "您的瀏覽器不支援 WebRTC。",
+        "endCurrentCall": "請先結束目前的通話。",
+        "failedToStart": "無法開始通話。"
+      },
+      "agentCallHeaderButton": {
+        "call": "與 AI 代理通話",
+        "callAgent": "與 {{name}} 通話",
+        "chooseAgent": "選擇要通話的 AI 代理",
+        "close": "關閉"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "MindRoom 指令"
+      },
+      "descriptions": {
+        "help": "取得可用功能或特定主題的說明。",
+        "reload-plugins": "重新載入設定的外掛（僅限管理員）。",
+        "schedule": "安排任務以供稍後執行。",
+        "list_schedules": "列出所有計劃任務。",
+        "cancel_schedule": "按 ID 取消一個計劃或所有計劃。",
+        "edit_schedule": "更新現有計劃任務。",
+        "config": "管理 MindRoom 設定（僅限管理員）。",
+        "desktop": "管理您的桌面目標。",
+        "model": "顯示或切換目前討論串中使用的模型。",
+        "room_model": "顯示房間模型預設值或切換它（設定/重置需要房間管理員）。",
+        "thread_mode": "顯示或切換目前房間使用的討論串模式（僅限房間管理員）。",
+        "encrypt": "檢視或啟用目前房間的端對端加密。",
+        "e2ee": "顯示目前房間的加密診斷。",
+        "hi": "顯示歡迎訊息。"
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "貼上的文字",
+        "characterCount_one": "{{formattedCount}} 字元",
+        "characterCount_other": "{{formattedCount}} 個字元"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Local MindRoom",
+        "connectLocalMindroom": "連線Local MindRoom",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "將此聊天帳戶與您本機的 MindRoom 流程配對",
+        "enterCodeDescription": "在您的裝置上執行 {{command}}，然後開啟它輸出的連結，或在此輸入其代碼。",
+        "pairCode": "配對碼",
+        "mindroomDocs": "MindRoom 檔案",
+        "linkedInstallations": "已連結的安裝專案",
+        "linkedInstallationsUnavailable": "已連結的安裝僅適用於 {{server}} 上的帳戶。",
+        "loadingLinkedInstallations": "正在載入連結的安裝...",
+        "tryAgain": "再試一次",
+        "noLinkedLocalMindroomInstallationsYet": "尚未連結本機 MindRoom 安裝。",
+        "revoke": "撤銷",
+        "confirmRevoke": "確認撤銷",
+        "cancel": "取消",
+        "requestFailed": "請求失敗。請再試一次。",
+        "unknown": "未知",
+        "createdAt": "建立時間：{{timestamp}}",
+        "lastSeenAt": "最後檢視時間：{{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "輸入終端機中顯示的代碼。",
+        "continue": "繼續",
+        "invalidCode": "請輸入 8 位代碼，例如 ABCD-EFGH。",
+        "code": "代碼：{{code}}",
+        "chooseAccount": "選擇核准此連線的帳戶",
+        "checkingCode": "正在檢查代碼...",
+        "deviceQuestion": "連線 {{clientName}}？",
+        "deviceStarted": "{{age}}啟動",
+        "requestedFrom": "請求來源：{{ip}}",
+        "requestedFromUnknown": "請求來源：未知位址",
+        "warning": "僅在您剛剛於自己的裝置上啟動此操作，且終端機顯示相同的代碼時才核准。",
+        "approveAs": "以 {{userId}} 身分核准",
+        "approved": "已連線。您可以返回終端機了。",
+        "noAccount": "請使用您的 MindRoom 帳戶登入以核准此連線。",
+        "signIn": "登入以核准",
+        "accountSignedOut": "此帳戶需要重新登入才能核准。",
+        "codeNotFound": "找不到此代碼。請檢查終端機中顯示的代碼。",
+        "codeExpired": "此代碼已過期。請使用終端機中顯示的新連結或代碼。",
+        "codeAlreadyApproved": "此代碼已被核准。",
+        "backToChat": "返回聊天",
+        "enterNewCode": "輸入新代碼：",
+        "noAccountAppGuidance": "已在 MindRoom 應用程式中登入？在應用程式的設定 → Local MindRoom 中輸入 {{code}}。",
+        "frameWarning": "基於安全考量，無法在框架內完成裝置核准。",
+        "openInNewTab": "在新分頁中開啟"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "已驗證 AI 代理 · 已交叉簽署裝置",
+        "verifiedAgent": "已驗證 AI 代理"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "捲動到頂部",
+        "searchMessages": "搜尋訊息",
+        "searchDescription": "透過搜尋相關關鍵字在您的社群中尋找有用的訊息。",
+        "noResultsFor": "找不到「{{term}}」的結果",
+        "resultsFor": "「{{term}}」的結果"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " （已編輯）"
+      },
+      "searchFilters": {
+        "sortBy": "排序方式",
+        "recent": "最近的",
+        "relevance": "相關性",
+        "search": "搜尋",
+        "rooms": "房間",
+        "noMatchFound": "找不到符合項！",
+        "save": "儲存",
+        "deselectAll": "取消全選",
+        "selectRooms": "選取房間",
+        "filter": "篩選",
+        "global": "全域",
+        "saveCount": "儲存 ({{count}})",
+        "roomsFor": "「{{query}}」的房間"
+      },
+      "searchInput": {
+        "search": "搜尋",
+        "searchForKeyword": "搜尋關鍵字",
+        "clear": "清除",
+        "enter": "輸入"
+      },
+      "searchResultGroup": {
+        "open": "開啟",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "回覆上下文隱藏在搜尋結果中。開啟訊息以獲得完整的討論串上下文。"
+      },
+      "searchResultPreview": {
+        "redacted": "訊息已撤回。",
+        "message": "訊息",
+        "image": "影像",
+        "video": "影片",
+        "audio": "音訊",
+        "file": "檔案",
+        "location": "位置",
+        "reaction": "反應",
+        "unsupportedEvent": "不支援的事件"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "引數",
+        "loadingCompleteArguments": "正在載入完整的引數...",
+        "onlyATruncatedPreviewIsAvailable": "僅提供截斷的預覽。",
+        "retry": "重試",
+        "sensitiveValuesMayBeRedacted": "敏感值可能會被隱藏。",
+        "loadFailed": "無法載入完整引數。",
+        "hideArguments": "隱藏參數",
+        "showAllArguments": "顯示所有參數"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "此請求無法在此獲得批准。",
+        "submittedWaitingForRoomUpdate": "已提交。等待房間更新。",
+        "approveOnce": "批准一次",
+        "approve": "核准",
+        "deny": "拒絕",
+        "autoApprovalDuration": "自動審核時長",
+        "denyReasonOptional": "拒絕原因（可選）",
+        "denialReasonOptional": "拒絕原因（可選）",
+        "confirmDeny": "確認 拒絕",
+        "confirmDeny2": "確認拒絕",
+        "cancel": "取消",
+        "autoApproveMinutes_one": "自動批准 {{count}} 分鐘",
+        "autoApproveMinutes_other": "自動批准 {{count}} 分鐘",
+        "denyCallReasonOptional": "拒絕呼叫 {{number}} 的原因（選填）",
+        "approveExactCall": "核准這次確切呼叫",
+        "approveAnyArguments": "核准任意引數",
+        "anyArgumentsWarning": "選擇任意引數後，代理可在預定時間前後 {{minutes}} 分鐘內，依自己決定的內容呼叫一次 {{tool}}。"
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "自動批准已啟用",
+        "autoApprovalStopped": "自動批准已停止",
+        "autoApprovalExpired": "自動批准已過期",
+        "argumentsMayDifferBetweenCalls": "每次呼叫的引數可能不同。",
+        "stopAutoApproval": "停止自動批准",
+        "submittedWaitingForRoomUpdate": "已提交。等待房間更新。",
+        "fixedExpiry": "固定到期時間：{{timestamp}}",
+        "expiresInMinutes_one": "{{count}} 分鐘後到期",
+        "expiresInMinutes_other": "{{count}} 分鐘後過期"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "已解決的工具批准請求",
+        "unknown": "未知",
+        "approvedOnce": "批准一次",
+        "decisionRecordedForThisCall": "已記錄此次呼叫的決定",
+        "statusExpired": "批准已過期",
+        "statusApproved": "已核准",
+        "statusDenied": "被拒絕",
+        "requestedBy": "{{agent}} · 由 {{requester}} 請求",
+        "resolvedByAt": "{{resolver}}：{{status}} · {{timestamp}}",
+        "resolvedBy": "{{resolver}}：{{status}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "限時許可",
+        "timedPermissionMinutes_one": "限時許可 · {{count}} 分鐘",
+        "timedPermissionMinutes_other": "限時許可 · {{count}} 分鐘",
+        "grantedByAt": "由 {{grantor}} 授予 · {{timestamp}}",
+        "grantedBy": "由{{grantor}}授予",
+        "originalFixedExpiry": "原始固定到期日：{{timestamp}}",
+        "toolAndServer": "工具：{{tool}} · 伺服器：{{server}}",
+        "tool": "工具：{{tool}}",
+        "reason": "原因：{{reason}}",
+        "approvedWhenScheduledByAt": "排程時由 {{approver}} 核准 · {{timestamp}}",
+        "approvedWhenScheduledBy": "排程時由 {{approver}} 核准"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "預定於 {{timestamp}}",
+        "approvedExactArguments": "已依這些確切引數核准",
+        "approvedAnyArguments": "已核准此工具的任意引數"
+      },
+      "approvalReviewCall": {
+        "pending": "待處理",
+        "callStatus": "呼叫 {{number}} · {{status}}",
+        "status": {
+          "pending": "待處理",
+          "sending": "傳送",
+          "submitted": "已提交",
+          "error": "錯誤",
+          "approved": "已核准",
+          "denied": "被拒絕",
+          "expired": "已到期"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "複製文字（正在載入...）",
+        "copyText": "複製文字",
+        "copyTextWithToolCalls": "複製文字（含工具呼叫）",
+        "copyLink": "複製連結"
+      },
+      "bugReport": {
+        "report": "回報問題",
+        "download": "下載問題報告",
+        "sending": "正在傳送報告…",
+        "failed": "無法傳送報告，請再試一次。"
+      },
+      "messageInspectionActions": {
+        "readReceipts": "已讀回條",
+        "viewSource": "檢視原始碼"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "取消釘選訊息",
+        "pinMessage": "釘選訊息",
+        "deleteMessage": "刪除訊息",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "此操作不可逆轉！您確定要刪除此訊息嗎？",
+        "optional": "（選填）",
+        "failedToDeleteMessagePleaseTryAgain": "刪除訊息失敗！請再試一次。",
+        "deleting": "正在刪除...",
+        "delete": "刪除",
+        "reportMessage": "檢舉訊息",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "將此訊息報告給伺服器，然後伺服器可能會通知適當的人員採取行動。",
+        "reason": "原因",
+        "failedToReportMessagePleaseTryAgain": "檢舉訊息失敗！請再試一次。",
+        "messageHasBeenReportedToServer": "訊息已報告給伺服器。",
+        "reporting": "正在檢舉…",
+        "report": "檢舉"
+      },
+      "messageReactionActions": {
+        "viewReactions": "檢視反應"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "仍在載入…",
+        "toolDetailsUnavailable": "工具詳細資訊無法使用。",
+        "pastedText": "貼上的文字",
+        "characterCount_one": "{{formattedCount}} 個字元",
+        "characterCount_other": "{{formattedCount}} 個字元",
+        "blocks": {
+          "think": "AI 思考過程",
+          "debug": "偵錯資訊",
+          "system": "系統處理",
+          "plan": "規劃與策略",
+          "analysis": "分析與評估",
+          "research": "研究與來源"
+        },
+        "toolNumber": "工具#{{index}}：{{command}}",
+        "toolCallCount_one": "{{count}} 工具呼叫",
+        "toolCallCount_other": "{{count}} 工具呼叫",
+        "usedToolCount_other": "使用了 {{count}} 個工具",
+        "toolCallsRunning_other": "正在執行 {{count}} 次工具呼叫",
+        "toolCallsWaiting_other": "{{count}} 次工具呼叫等待核准",
+        "toolCallsRan_other": "已執行 {{count}} 次工具呼叫",
+        "toolCallsDenied_other": "已拒絕 {{count}} 次工具呼叫",
+        "toolCallsExpired_other": "{{count}} 次工具呼叫已過期"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "正在載入完整回覆..."
+      },
+      "mindroomMessage": {
+        "addReaction": "新增反應",
+        "reply": "回覆",
+        "replyInThread": "在討論串中回覆",
+        "editMessage": "編輯訊息",
+        "moreOptions": "更多選項"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "請求上下文視窗",
+        "aiRunMetadata": "AI執行後設資料",
+        "close": "關閉",
+        "status": "狀態",
+        "model": "模型",
+        "tokens": "詞元",
+        "runCache": "執行快取",
+        "requestContext": "請求上下文",
+        "requestCache": "請求快取",
+        "tools": "工具",
+        "ttft": "TTFT",
+        "run": "執行",
+        "session": "工作階段",
+        "openAiRunMetadata": "檢視 AI 執行中繼資料",
+        "tokenUsage": "詞元用量",
+        "downloadingOriginal": "正在下載原版...",
+        "retryDownloadOriginal": "重試下載原件",
+        "downloadOriginal": "下載原版",
+        "segmentTokenCount_one": "{{label}}：{{formattedCount}} 個詞元",
+        "segmentTokenCount_other": "{{label}}：{{formattedCount}} 個詞元"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "訊息附加資訊"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "貼上的文字",
+        "open": "開啟",
+        "retry": "重試",
+        "download": "下載",
+        "characterCount_one": "{{formattedCount}} 個字元",
+        "characterCount_other": "{{formattedCount}} 個字元"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "開啟",
+        "failedToLoadMessage": "無法載入訊息！",
+        "event": " 事件",
+        "pinnedMessages": "已釘選訊息",
+        "noPinnedMessages": "沒有釘選訊息",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "擁有足夠權限等級的使用者可以從訊息的內容選單中將其釘選。"
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "AI正在響應",
+        "thinking": "正在思考…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "AI 討論串摘要"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "AI 為此討論串命名",
+        "updated": "AI 已更新標題",
+        "edited": "標題已編輯",
+        "previous": "原為：<old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "工具批准請求",
+        "submitted": "已提交",
+        "pendingApproval": "待批准",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "自動核准適用於此討論串、請求者、AI 代理與工具。",
+        "argumentsMayDifferBetweenCalls": "每次呼叫的引數可能不同。",
+        "requestedBy": "由{{requester}}請求"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "路由 AI 代理正在轉錄"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "AI正在響應"
+      },
+      "stopButton": {
+        "label": "停止",
+        "tooltip": "停止此回覆"
+      },
+      "threadApprovalControls": {
+        "close": "關閉",
+        "call": "呼叫",
+        "calls": "呼叫",
+        "unknown": "未知",
+        "reasonForDenyingAllOptional": "全部拒絕的原因（可選）",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "允許此討論串、請求者與 AI 代理執行此操作。每次呼叫的引數可能不同。",
+        "submittedWaitingForRoomUpdate": "已提交。等待房間更新。",
+        "threadApprovals": "討論串批准",
+        "checkingHistory": " · 檢查紀錄...",
+        "historyIncomplete": " · 歷史不完整",
+        "retryHistory": "重試歷史記錄",
+        "reviewToolCalls": "審核工具呼叫",
+        "reviewAgentWants_other": "{{agent}} 想執行 {{count}} 項操作",
+        "reviewAgentsWant_other": "{{agents}} 個代理想執行 {{count}} 項操作",
+        "reviewRequestedBy": "請求者：{{requester}}",
+        "someRequestsAreNoLongerAvailable": "有些請求不再可用。",
+        "permission": "權限",
+        "permissions": "權限",
+        "activePermissions": "有效權限",
+        "noActiveTimedPermissions": "沒有有效的限時權限。",
+        "approval": "核准",
+        "approvals": "核准",
+        "operationCallCount_one": "{{operation}} · {{count}} 次呼叫",
+        "operationCallCount_other": "{{operation}} · {{count}} 次呼叫",
+        "requestedBy": "{{agent}} · 由 {{requester}} 請求",
+        "approveAllOnce": "一次核准全部 {{count}} 項",
+        "denyAll": "拒絕全部 {{count}} 項",
+        "allowForMinutes_one": "允許 {{count}} 分鐘",
+        "allowForMinutes_other": "允許 {{count}} 分鐘",
+        "awaitingConfirmation_one": "{{count}} 個呼叫等待確認",
+        "awaitingConfirmation_other": "{{count}} 個呼叫等待確認",
+        "pausedForApproval_one": "{{count}} 個呼叫已暫停，等待核準",
+        "pausedForApproval_other": "{{count}} 個呼叫已暫停，等待核準",
+        "statusCheckingHistory": "{{status}} · 檢查歷史記錄...",
+        "statusHistoryIncomplete": "{{status}} · 歷史記錄不完整",
+        "reviewCount": "審核 {{count}} 項",
+        "activePermissionCount_one": "{{count}} 項有效權限",
+        "activePermissionCount_other": "{{count}} 項有效權限",
+        "permissionScope": "{{agent}} · {{requester}} · 此討論串",
+        "toolApprovalCount_one": "{{count}} 工具核准",
+        "toolApprovalCount_other": "{{count}} 個工具批准",
+        "approvedCount_one": "{{count}} 已核准",
+        "approvedCount_other": "{{count}} 已核准",
+        "agentWaitingForYou": "{{agent}} 正在等您",
+        "agentsWaitingForYou_other": "{{count}} 個代理正在等您",
+        "autoApproveFor": "自動核准時長",
+        "callCount_other": "{{count}} 次呼叫",
+        "chipSending": "傳送中…",
+        "chipSubmitted": "已提交",
+        "chipResolved": "已處理",
+        "confirmDenyAll": "確認全部拒絕 {{count}} 項",
+        "expires": "{{time}}到期",
+        "hideCalls": "隱藏呼叫",
+        "historyApproved": "{{operation}} 已核准",
+        "historyDenied": "{{operation}} 已拒絕",
+        "historyExpired": "{{operation}} 已過期",
+        "historyUserApproved": "{{user}} 核准了 {{operation}}",
+        "historyUserDenied": "{{user}} 拒絕了 {{operation}}",
+        "historyUserExpired": "{{operation}} 已過期",
+        "historyYouApproved": "您核准了 {{operation}}",
+        "historyYouDenied": "您拒絕了 {{operation}}",
+        "historyYouExpired": "{{operation}} 已過期",
+        "minutesShort_other": "{{count}} 分鐘",
+        "sectionMeta": "{{agent}} · 請求者：{{requester}}",
+        "showCalls_other": "顯示 {{count}} 次呼叫",
+        "waitingForApproval": "等待核准",
+        "waitingForYou": "等您處理",
+        "you": "您"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "訊息傳送",
+        "waitingForServer": "等待伺服器",
+        "messageFailedToSend": "訊息傳送失敗",
+        "notSent": "未傳送"
+      },
+      "failedSendActions": {
+        "retry": "重試",
+        "delete": "刪除"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "輸入 {{formattedCount}}",
+        "outputTokens": "輸出 {{formattedCount}}",
+        "totalTokens": "總計 {{formattedCount}}",
+        "readTokens": "讀取 {{formattedCount}}",
+        "writeTokens": "寫入 {{formattedCount}}",
+        "notReadTokens": "未讀取 {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}}%)",
+        "contextBarTitle_one": "{{label}}：{{formattedCount}} 個詞元（佔上下文視窗的 {{percentage}}%）",
+        "contextBarTitle_other": "{{label}}：{{formattedCount}} 個詞元（佔上下文視窗的 {{percentage}}%）",
+        "contextBarTitleWithSuffix_one": "{{label}}：{{formattedCount}} 個詞元（佔上下文視窗的 {{percentage}}%）；{{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}：{{formattedCount}} 個詞元（佔上下文視窗的 {{percentage}}%）；{{suffix}}",
+        "reportedCacheRead_one": "回報的快取讀取：{{formattedCount}} 個詞元",
+        "reportedCacheRead_other": "回報的快取讀取：{{formattedCount}} 個詞元",
+        "cacheWrite_one": "快取寫入：{{formattedCount}} 個詞元",
+        "cacheWrite_other": "快取寫入：{{formattedCount}} 個詞元",
+        "cacheRead": "快取讀取",
+        "newInput": "新輸入",
+        "reserve": "保留"
+      },
+      "mindroomModelBadge": {
+        "model": "模型：{{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "部署未設定原生 iOS 推播。請在 `config.json` 中加入 `push.ios` 設定。",
+        "failedToUpdateNativePushSettings": "無法更新本機推送設定。",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "允許本機 iOS 推播通知作為背景訊息警報。",
+        "deviceRegisteredForNativeIosPushNotifications": "裝置已註冊原生 iOS 推播通知。",
+        "nativeIosPushIsDisabledForThisDevice": "此裝置禁用本機 iOS 推送。",
+        "unavailable": "不可用",
+        "enable": "啟用",
+        "iosPushNotifications": "iOS 推播通知",
+        "permissionDenied": "通知權限已被拒絕。請在 iOS「設定」中為 {{appName}} 啟用通知。"
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "標記為已讀"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "標記為已讀"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "標記為已讀"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "備份您的加密歷史記錄",
+        "dismissBackupReminder": "關閉備份提醒",
+        "setUpSecureBackupSoYouCanStillReadYour": "設定安全備份，以便在新裝置上登入後仍能閱讀加密的 AI 代理聊天記錄。",
+        "setUpSecureKeyBackup": "設定安全金鑰備份",
+        "setUpBackup": "設定備份"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Local MindRoom"
+      },
+      "resizeNavigationPanel": "調整導覽面板大小",
+      "resizeMemberPanel": "調整成員面板大小"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "沒有討論串"
+      },
+      "compactThreadCard": {
+        "streaming": "串流回應"
+      },
+      "mindroomCallChatView": {
+        "chat": "聊天",
+        "close": "關閉"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "新訊息",
+        "jumpToUnread": "跳轉至未讀",
+        "markAsRead": "標記為已讀",
+        "failedToLoadThisThread": "無法載入該討論串。",
+        "loading": "載入中...",
+        "loadOlderMessages": "載入較舊的訊息",
+        "loadNewerMessages": "載入較新的訊息",
+        "jumpToLatest": "跳到最新內容",
+        "today": "今天",
+        "yesterday": "昨天"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "此訊息確認後即可回覆。",
+        "youDoNotHavePermissionToPostInThisRoom": "您沒有在此房間傳送訊息的權限"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "顯示電腦",
+        "hideComputer": "隱藏電腦",
+        "showCanvas": "顯示面板",
+        "hideCanvas": "隱藏面板",
+        "canvases": "互動式面板",
+        "notifications": "通知",
+        "compact": "緊湊",
+        "threads": "討論串",
+        "classic": "經典",
+        "invite": "邀請",
+        "copyLink": "複製連結",
+        "roomSettings": "房間設定",
+        "jumpToTime": "跳到時間",
+        "leaveRoom": "離開房間",
+        "pinnedMessages": "已釘選訊息",
+        "members": "成員",
+        "hideMembers": "隱藏成員",
+        "showMembers": "顯示成員",
+        "moreOptions": "更多選項",
+        "back": "返回"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "新增標籤篩選條件",
+        "tag": "+ 標籤",
+        "availableTags": "可用標籤",
+        "filterPresets": "篩選條件預設",
+        "preset": "預設",
+        "searchThreads": "搜尋討論串",
+        "searchThreads2": "搜尋討論串…",
+        "roomViewMode": "房間檢視模式",
+        "natural": "自然",
+        "lastReply": "最後回覆",
+        "noThreadsMatchCurrentFilters": "沒有符合目前篩選條件的討論串。",
+        "resetAllThreadFilters": "重置所有討論串篩選條件",
+        "reset": "重設",
+        "threadFilters": "討論串篩選器",
+        "statusFilters": "狀態篩選條件",
+        "tagFilters": "標籤篩選條件",
+        "showingFilteredThreads_one": "顯示 {{count}} 個討論串，共 {{total}} 個討論串",
+        "showingFilteredThreads_other": "顯示 {{count}} 個討論串，共 {{total}} 個討論串",
+        "showingAllThreads_one": "顯示 {{count}} 個討論串",
+        "showingAllThreads_other": "顯示 {{count}} 個討論串",
+        "sortLockedSummary": "{{summary}} · 排序已鎖定",
+        "unlockSortOrder": "解鎖排序順序（目前為{{sort}}）",
+        "lockSortOrder": "鎖定排序順序（目前為{{sort}}）",
+        "threadCount_one": "{{count}} 個討論串",
+        "threadCount_other": "{{count}} 個討論串",
+        "presets": {
+          "needs-attention": {
+            "label": "需要注意",
+            "description": "未解決、未串流回應且未排程的討論串"
+          },
+          "working": {
+            "label": "處理中",
+            "description": "正在串流回應或已排程——您目前處理的內容"
+          },
+          "review-queue": {
+            "label": "審核佇列",
+            "description": "有未讀回覆的未解決討論串"
+          },
+          "archived": {
+            "label": "已存檔",
+            "description": "僅已解決的討論串"
+          },
+          "all": {
+            "label": "全部",
+            "description": "重置所有篩選條件"
+          }
+        }
+      },
+      "threadTagPicker": {
+        "addTag": "新增標籤",
+        "tag": "+ 標籤",
+        "filterNew": "篩選/新增…",
+        "filterOrCreateTag": "篩選或建立標籤",
+        "noMatches": "沒有符合項",
+        "typeToCreateATag": "輸入以建立標籤",
+        "createTag": "建立「{{tag}}」"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "跳轉至訊息",
+        "message": "訊息"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> 變更了房間名稱",
+        "changedRoomTopic": "<sender>{{sender}}</sender> 變更了房間主題",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> 變更了房間頭像",
+        "joinedCall": "<sender>{{sender}}</sender> 加入通話",
+        "endedCall": "<sender>{{sender}}</sender> 結束通話",
+        "sentStateEvent": "<sender>{{sender}}</sender> 傳送 <eventType>{{eventType}}</eventType> 狀態事件",
+        "sentEvent": "<sender>{{sender}}</sender> 傳送了 <eventType>{{eventType}}</eventType> 事件"
+      },
+      "threadTagPill": {
+        "removeTag": "刪除 {{tag}} 標籤"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "{{count}} 秒後",
+        "inMinutesSeconds": "{{minutes}} 分 {{seconds}} 秒後",
+        "inMinutes": "{{count}} 分鐘後",
+        "inHours": "{{count}} 小時後",
+        "inHoursMinutes": "{{hours}} 小時 {{minutes}} 分鐘後",
+        "atTime": "於 {{time}}",
+        "scheduledTasks_one": "{{count}} 個排程任務",
+        "scheduledTasks_other": "{{count}} 個排程任務",
+        "pendingScheduledTasks_one": "{{count}} 待處理的排程任務",
+        "pendingScheduledTasks_other": "{{count}} 待處理的排程任務",
+        "scheduledTasksWithDetail": "{{tasks}}，{{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 則回覆",
+        "messageCount_one": "{{formattedCount}} 則訊息",
+        "messageCount_other": "{{formattedCount}} 則訊息",
+        "needsAttention": "需要注意",
+        "waitingOnResponse": "等待回覆",
+        "agentStreaming": "AI 代理正在串流回應",
+        "resolved": "已解決",
+        "idle": "閒置",
+        "threadStarted": "討論串已開始",
+        "noRepliesYet": "還沒回覆"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "下一個任務：{{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} 待處理的排程任務",
+        "pendingScheduledTasks_other": "{{count}} 待處理的排程任務"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "加密討論串",
+        "threadInRoom": "{{roomName}} 中的討論串",
+        "thread": "討論串"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "檢視電腦",
+      "openMembers": "開啟成員清單",
+      "openCanvas": "開啟面板",
+      "canvasDisabled": "此應用程式已關閉互動式面板。",
+      "canvasDuringCall": "結束通話後才能開啟互動式面板。",
+      "computerUnavailable": "此代理的電腦無法使用。",
+      "releaseControl": "開啟其他檢視前，請先釋放電腦控制權。",
+      "openConversation": "請從聊天室對話中開啟此請求。",
+      "settingsUnavailable": "關閉簡易模式以開啟此設定區段。"
+    },
+    "canvas": {
+      "panelLabel": "互動式面板",
+      "fromAgent": "來自 {{agent}} 的互動式面板",
+      "expand": "展開面板",
+      "close": "關閉面板",
+      "resize": "調整面板大小",
+      "updated": "{{agent}} 更新了此面板。",
+      "loadUpdate": "載入更新",
+      "version": "第 {{current}} 版，共 {{total}} 版",
+      "previousVersion": "上一版",
+      "nextVersion": "下一版",
+      "earlierVersion": "這是較早的版本。",
+      "showLatest": "顯示最新版",
+      "loading": "正在載入面板…",
+      "loadFailed": "無法載入此面板。",
+      "retry": "重試",
+      "escaped": "此面板試圖離開沙箱，已被阻擋。",
+      "reload": "重新載入面板",
+      "pageError": "此頁面回報了一個錯誤。",
+      "tellAgent": "告訴 {{agent}}",
+      "errorsSent": "已將錯誤傳送給 {{agent}}。",
+      "errorsNotSent": "無法將錯誤傳送給 {{agent}}。",
+      "sendTo": "傳送給 {{agent}}：",
+      "changeAnswer": "如需變更回答，請先丟棄目前的回答。",
+      "data": "資料",
+      "send": "傳送",
+      "discard": "丟棄",
+      "disclosure": "由 {{agent}} 建立。它無法存取您的帳戶；您在此輸入的內容可能會離開此面板。",
+      "sharedNotice": "已儲存在此聊天室：{{agent}} 和此處的其他人可以讀取您輸入的內容。",
+      "sending": "正在傳送給 {{agent}}…",
+      "sent": "已傳送給 {{agent}}：{{label}}",
+      "sendFailed": "無法傳送您的回覆。請重試。",
+      "receiptData": "顯示傳送給代理的資料",
+      "unlabeled": "已提交",
+      "notSent": "未傳送給 {{agent}}：{{label}}"
+    },
+    "canvases": {
+      "title": "互動式面板",
+      "note": "代理程式為您建立、且此瀏覽器看過的互動式面板。已釘選的面板會顯示在您的所有裝置上。",
+      "empty": "還沒有互動式面板。當代理程式向您顯示面板時，它會列在這裡。",
+      "pinned": "已釘選",
+      "canvas": "面板",
+      "thread": "討論串",
+      "agent": "代理程式",
+      "room": "房間",
+      "updated": "更新時間",
+      "created": "建立時間",
+      "pin": "釘選 {{title}}",
+      "unpin": "取消釘選 {{title}}",
+      "shared": "已與代理程式分享",
+      "saved": "包含您的輸入"
+    },
+    "backgroundJobs": {
+      "running": "執行中：{{tool}}",
+      "awaitingApproval": "等待核准：{{tool}}",
+      "waiting": "等待核准",
+      "stoppingJob": "正在停止：{{tool}}",
+      "jobCount": "{{count}} 個背景工作",
+      "subagent": "{{tool}}（子代理）",
+      "stopAll": "全部停止",
+      "stopping": "正在停止…",
+      "stop": "停止",
+      "stopJob": "停止 {{tool}}",
+      "stopFailed": "無法停止 {{tool}}，請再試一次。",
+      "stopAllFailed": "無法停止背景工作，請再試一次。",
+      "inRoom": "背景工作執行中"
+    }
+  },
+  "roomSchedules": {
+    "title": "排程任務",
+    "openLabel": "排程任務（{{total}}）",
+    "empty": "此房間中沒有排程任務。",
+    "emptyHint": "請讓 MindRoom AI 代理在此排程任務。",
+    "prompt": "提示詞",
+    "promptUnavailable": "提示詞無法使用",
+    "once": "單次",
+    "recurring": "重複",
+    "executionTime": "執行時間",
+    "unknownTime": "執行時間無法使用",
+    "awaitingExecution": "等待執行",
+    "recurrence": "重複規則",
+    "silent": "靜默",
+    "conditional": "條件式",
+    "newThread": "新討論串",
+    "roomTimeline": "房間時間軸",
+    "openThread": "開啟討論串",
+    "owner": "任務擁有者",
+    "createdAt": "建立時間",
+    "updatedAt": "更新時間",
+    "model": "模型",
+    "inheritedModel": "來自 AI 代理、房間或討論串設定",
+    "taskId": "任務 ID",
+    "historyLimit": "歷程記錄上限",
+    "fullHistory": "完整歷程記錄",
+    "noHistory": "無歷程記錄",
+    "recentMessages": "最近訊息：{{total}} 則",
+    "close": "關閉"
+  },
+  "archivedRooms": {
+    "title": "已封存聊天室",
+    "archive": "封存聊天室",
+    "restore": "還原聊天室",
+    "restoreNamed": "還原 {{room}}",
+    "failed": "無法儲存變更。請重試。",
+    "close": "關閉已封存聊天室",
+    "description": "在側邊欄隱藏聊天室而不退出。可在此開啟或還原聊天室。",
+    "empty": "沒有已封存的聊天室。"
+  }
+}

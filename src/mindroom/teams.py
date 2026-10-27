@@ -2331,6 +2331,11 @@ def _create_team_instance(
         tools=None if job_controls is None else [job_controls],
         id=team_id,
         name=team_display_name,
+        instructions=(
+            config.teams[configured_team_name].instructions
+            if configured_team_name is not None and configured_team_name in config.teams
+            else None
+        ),
         model=model,
         db=scope_context.storage if scope_context is not None else None,
         delegate_to_all_members=mode == TeamMode.COLLABORATE,

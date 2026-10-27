@@ -1,0 +1,12 @@
+"MSG_FROM_USER_WITH_CONTENT" = "%1$@：%2$@";
+"MSG_FROM_USER_IN_ROOM_WITH_CONTENT" = "%1$@ 在 %2$@：%3$@";
+"MSG_FROM_USER" = "來自 %1$@ 的訊息";
+"MSG_FROM_USER_IN_ROOM" = "%1$@ 在 %2$@";
+"ACTION_FROM_USER" = "%1$@ %2$@";
+"ACTION_FROM_USER_IN_ROOM" = "%2$@ 在 %1$@ %3$@";
+"IMAGE_FROM_USER" = "%1$@ 傳送了一張圖片：%2$@";
+"IMAGE_FROM_USER_IN_ROOM" = "%1$@ 在 %3$@ 傳送了一張圖片：%2$@";
+"VOICE_CALL_FROM_USER" = "來自 %1$@ 的語音通話";
+"VIDEO_CALL_FROM_USER" = "來自 %1$@ 的視訊通話";
+"USER_INVITE_TO_NAMED_ROOM" = "%1$@ 邀請你加入 %2$@";
+"USER_INVITE_TO_CHAT" = "%1$@ 邀請你聊天";

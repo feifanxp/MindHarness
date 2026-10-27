@@ -1,0 +1,139 @@
+{
+  "defaultHomeserver": 0,
+  "homeserverList": ["mindroom.chat"],
+  "allowCustomHomeservers": true,
+
+  "push": {
+    "ios": {
+      "enabled": true,
+      "appId": "chat.mindroom.app",
+      "gatewayUrl": "https://push.mindroom.chat/_matrix/push/v1/notify",
+      "appDisplayName": "MindRoom Chat iOS",
+      "deviceDisplayName": "MindRoom Chat iOS",
+      "append": true,
+      "format": "full"
+    }
+  },
+
+  "featuredCommunities": {
+    "openAsDefault": false,
+    "spaces": [],
+    "rooms": [],
+    "servers": ["https://mindroom.chat"]
+  },
+
+  "hashRouter": {
+    "enabled": true,
+    "basename": "/"
+  },
+
+  "splash": {
+    "loadingMessages": [
+      "Loading MindRoom Chat",
+      "Booting the agents",
+      "Warming the agents",
+      "Assembling context",
+      "Opening the room"
+    ]
+  },
+
+  "mindroom": {
+    "uiActions": {
+      "autoOpenFromHomeservers": ["mindroom.chat"]
+    },
+    "computers": {
+      "apiUrl": ""
+    },
+    "canvas": {
+      "enabled": false,
+      "libraries": false
+    },
+    "thinkingPlaceholderMessages": [
+      "Thinking",
+      "Making progress",
+      "Almost there",
+      "Boosting the GPUs",
+      "Checking the thread",
+      "Composing the reply",
+      "Herding photons",
+      "Negotiating with tensors",
+      "Summoning context",
+      "Asking the Matrix nicely",
+      "Reticulating tokens",
+      "Sharpening the embeddings",
+      "Consulting the gradients",
+      "Warming the context window",
+      "Polishing the logits",
+      "Rehydrating memories",
+      "Aligning the vibes",
+      "Convincing the GPU",
+      "Reading between tokens",
+      "Untangling the prompt",
+      "Brewing an answer",
+      "Distilling context",
+      "Spinning up neurons",
+      "Syncing the room state",
+      "Resolving event DAGs",
+      "Backfilling context",
+      "Joining the right room",
+      "Checking the homeserver",
+      "Sending typing events",
+      "Waiting for federation",
+      "Power-leveling the prompt",
+      "Redacting bad ideas",
+      "Finding the thread root",
+      "Paging the event timeline",
+      "Assembling Matrix events",
+      "Inviting agents to the room"
+    ]
+  },
+
+  "messageRendering": {
+    "additionalAllowedUriSchemes": ["obsidian"]
+  },
+
+  "sidebar": {
+    "showThreads": true,
+    "showExploreCommunity": false,
+    "showAddSpace": false,
+    "showMindRoom": true,
+    "mindRoomUrl": "https://docs.mindroom.chat/",
+    "mindRoomProvisioningUrl": "https://mindroom.chat"
+  },
+
+  "auth": {
+    "hideServerPickerWhenSingle": false,
+    "allowRegistration": true,
+    "requireAppleProvider": true,
+    "supportUrl": "https://docs.mindroom.chat/support",
+    "privacyPolicyUrl": "https://docs.mindroom.chat/privacy",
+    "termsUrl": "https://docs.mindroom.chat/terms"
+  },
+
+  "welcome": {
+    "title": "Welcome to MindRoom Chat",
+    "subtitle": "AI agents that live in your chat rooms.",
+    "sourceLabel": "Source Code",
+    "sourceUrl": "https://github.com/mindroom-ai/mindroom-chat",
+    "docsLabel": "Docs",
+    "docsUrl": "https://docs.mindroom.chat/",
+    "poweredBy": [
+      {
+        "label": "MindRoom",
+        "url": "https://github.com/mindroom-ai/mindroom"
+      },
+      {
+        "label": "Matrix",
+        "url": "https://matrix.org"
+      },
+      {
+        "label": "Cinny",
+        "url": "https://cinny.in"
+      },
+      {
+        "label": "MindRoom Chat",
+        "url": "https://github.com/mindroom-ai/mindroom-chat"
+      }
+    ]
+  }
+}

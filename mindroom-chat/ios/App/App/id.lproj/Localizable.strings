@@ -1,0 +1,12 @@
+"MSG_FROM_USER_WITH_CONTENT" = "%1$@: %2$@";
+"MSG_FROM_USER_IN_ROOM_WITH_CONTENT" = "%1$@ di %2$@: %3$@";
+"MSG_FROM_USER" = "Pesan dari %1$@";
+"MSG_FROM_USER_IN_ROOM" = "%1$@ di %2$@";
+"ACTION_FROM_USER" = "%1$@ %2$@";
+"ACTION_FROM_USER_IN_ROOM" = "%2$@ %3$@ di %1$@";
+"IMAGE_FROM_USER" = "%1$@ mengirim gambar: %2$@";
+"IMAGE_FROM_USER_IN_ROOM" = "%1$@ mengirim gambar di %3$@: %2$@";
+"VOICE_CALL_FROM_USER" = "Panggilan suara dari %1$@";
+"VIDEO_CALL_FROM_USER" = "Panggilan video dari %1$@";
+"USER_INVITE_TO_NAMED_ROOM" = "%1$@ mengundang Anda ke %2$@";
+"USER_INVITE_TO_CHAT" = "%1$@ mengundang Anda ke obrolan";

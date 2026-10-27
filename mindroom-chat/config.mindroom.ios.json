@@ -1,0 +1,15 @@
+{
+  "hashRouter": {
+    "enabled": false,
+    "basename": "/"
+  },
+  "mindroom": {
+    "canvas": {
+      "enabled": true,
+      "libraries": true
+    },
+    "computers": {
+      "apiUrl": ""
+    }
+  }
+}

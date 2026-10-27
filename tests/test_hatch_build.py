@@ -44,13 +44,13 @@ def test_get_output_dir_for_standard_build_stays_out_of_dist(
     assert output_dir.parent != build_dir
 
 
-def test_editable_build_skips_frontend_build_even_when_bun_is_available(
+def test_editable_build_skips_frontend_build_even_when_npm_is_available(
     hatch_build_module: types.ModuleType,
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
-    """Editable installs should not build bundled dashboard assets."""
-    frontend_dir = tmp_path / "frontend"
+    """Editable installs should not build bundled project chat assets."""
+    frontend_dir = tmp_path / "mindroom-chat"
     frontend_dir.mkdir()
     hook = hatch_build_module.FrontendBuildHook()
     hook.target_name = "wheel"
@@ -58,13 +58,13 @@ def test_editable_build_skips_frontend_build_even_when_bun_is_available(
     hook.directory = str(tmp_path / "dist")
     build_calls: list[tuple[Path, Path, str]] = []
 
-    def fake_build_frontend(frontend: Path, output: Path, bun: str) -> None:
-        build_calls.append((frontend, output, bun))
+    def fake_build_frontend(frontend: Path, output: Path, npm: str) -> None:
+        build_calls.append((frontend, output, npm))
 
     monkeypatch.setattr(
         hatch_build_module.shutil,
         "which",
-        lambda name: "/usr/local/bin/bun" if name == "bun" else None,
+        lambda name: "/usr/local/bin/npm" if name == "npm" else None,
     )
     monkeypatch.setattr(hatch_build_module, "_build_frontend", fake_build_frontend)
 
@@ -78,40 +78,42 @@ def test_editable_build_env_opt_in_builds_repo_frontend_dist(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
-    """Editable installs should build frontend/dist when explicitly requested."""
-    frontend_dir = tmp_path / "frontend"
+    """Editable installs should build mindroom-chat/dist when explicitly requested."""
+    frontend_dir = tmp_path / "mindroom-chat"
     frontend_dir.mkdir()
     hook = hatch_build_module.FrontendBuildHook()
     hook.target_name = "wheel"
     hook.root = str(tmp_path)
     hook.directory = str(tmp_path / "dist")
-    build_calls: list[tuple[Path, Path, str]] = []
+    build_calls: list[tuple[Path, Path, str, str]] = []
     build_data: dict[str, object] = {}
 
-    def fake_build_frontend(frontend: Path, output: Path, bun: str) -> None:
-        build_calls.append((frontend, output, bun))
+    def fake_build_frontend(frontend: Path, output: Path, npm: str, bun: str) -> None:
+        build_calls.append((frontend, output, npm, bun))
 
     monkeypatch.setenv(hatch_build_module._BUILD_FRONTEND_ENV, "1")
     monkeypatch.setattr(
         hatch_build_module.shutil,
         "which",
-        lambda name: "/usr/local/bin/bun" if name == "bun" else None,
+        lambda name: f"/usr/local/bin/{name}" if name in {"npm", "bun"} else None,
     )
     monkeypatch.setattr(hatch_build_module, "_build_frontend", fake_build_frontend)
 
     hook.initialize("editable", build_data)
 
-    assert build_calls == [(frontend_dir, frontend_dir / "dist", "/usr/local/bin/bun")]
+    assert build_calls == [
+        (frontend_dir, frontend_dir / "dist", "/usr/local/bin/npm", "/usr/local/bin/bun"),
+    ]
     assert build_data == {}
 
 
-def test_editable_build_env_opt_in_requires_bun(
+def test_editable_build_env_opt_in_requires_npm(
     hatch_build_module: types.ModuleType,
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
-    """An explicit editable frontend build should fail rather than skip missing Bun."""
-    (tmp_path / "frontend").mkdir()
+    """An explicit editable frontend build should fail rather than skip missing npm."""
+    (tmp_path / "mindroom-chat").mkdir()
     hook = hatch_build_module.FrontendBuildHook()
     hook.target_name = "wheel"
     hook.root = str(tmp_path)
@@ -144,7 +146,7 @@ def test_run_command_retries_once_before_succeeding(
     monkeypatch.setattr(hatch_build_module.time, "sleep", lambda seconds: sleeps.append(seconds))
 
     hatch_build_module._run_command(
-        ["bun", "install", "--frozen-lockfile"],
+        ["npm", "ci"],
         cwd=tmp_path,
         retries=2,
         retry_delay_seconds=0.25,
@@ -154,13 +156,13 @@ def test_run_command_retries_once_before_succeeding(
     assert sleeps == [0.25]
 
 
-def test_build_frontend_retries_bun_install_only(
+def test_build_frontend_retries_npm_install_only(
     hatch_build_module: types.ModuleType,
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
-    """Only the network-dependent bun install step should use retries."""
-    frontend_dir = tmp_path / "frontend"
+    """Only dependency installation steps should use retries."""
+    frontend_dir = tmp_path / "mindroom-chat"
     output_dir = tmp_path / "frontend-dist"
     frontend_dir.mkdir()
 
@@ -174,24 +176,37 @@ def test_build_frontend_retries_bun_install_only(
         retry_delay_seconds: float = 0.0,
     ) -> None:
         calls.append((cmd, cwd, retries, retry_delay_seconds))
+        if cmd == ["/usr/local/bin/npm", "run", "build"]:
+            (frontend_dir / "dist").mkdir()
+        if cmd[-2:] == ["--frozen-lockfile"]:
+            return
+        if cmd[:4] == ["/usr/local/bin/bun", "run", "vite", "build"]:
+            (tmp_path / "frontend-dist" / "connections").mkdir(parents=True, exist_ok=True)
 
     monkeypatch.setattr(hatch_build_module, "_run_command", fake_run_command)
 
-    hatch_build_module._build_frontend(frontend_dir, output_dir, "/usr/local/bin/bun")
+    hatch_build_module._build_frontend(
+        frontend_dir,
+        output_dir,
+        "/usr/local/bin/npm",
+        "/usr/local/bin/bun",
+    )
 
+    repo_frontend_dir = Path(hatch_build_module.__file__).resolve().parent / "frontend"
     assert calls == [
         (
-            ["/usr/local/bin/bun", "install", "--frozen-lockfile"],
+            ["/usr/local/bin/npm", "ci"],
             frontend_dir,
-            hatch_build_module._BUN_INSTALL_MAX_ATTEMPTS,
-            hatch_build_module._BUN_INSTALL_RETRY_DELAY_SECONDS,
+            hatch_build_module._INSTALL_MAX_ATTEMPTS,
+            hatch_build_module._INSTALL_RETRY_DELAY_SECONDS,
         ),
-        (["/usr/local/bin/bun", "run", "tsc"], frontend_dir, 1, 0.0),
+        (["/usr/local/bin/npm", "run", "typecheck"], frontend_dir, 1, 0.0),
+        (["/usr/local/bin/npm", "run", "build"], frontend_dir, 1, 0.0),
         (
-            ["/usr/local/bin/bun", "run", "vite", "build", "--outDir", str(output_dir)],
-            frontend_dir,
-            1,
-            0.0,
+            ["/usr/local/bin/bun", "install", "--frozen-lockfile"],
+            repo_frontend_dir,
+            hatch_build_module._INSTALL_MAX_ATTEMPTS,
+            hatch_build_module._INSTALL_RETRY_DELAY_SECONDS,
         ),
         (
             [
@@ -204,7 +219,7 @@ def test_build_frontend_retries_bun_install_only(
                 "--outDir",
                 str(output_dir / "connections"),
             ],
-            frontend_dir,
+            repo_frontend_dir,
             1,
             0.0,
         ),
@@ -217,7 +232,7 @@ def test_build_frontend_rejects_git_lfs_pointer_assets(
     tmp_path: Path,
 ) -> None:
     """Wheel builds must fail instead of bundling unresolved Git LFS pointers."""
-    frontend_dir = tmp_path / "frontend"
+    frontend_dir = tmp_path / "mindroom-chat"
     output_dir = tmp_path / "frontend-dist"
     frontend_dir.mkdir()
 
@@ -225,18 +240,26 @@ def test_build_frontend_rejects_git_lfs_pointer_assets(
         cmd: list[str],
         **_run_kwargs: object,
     ) -> None:
-        if cmd[-2:] == ["--outDir", str(output_dir)]:
-            output_dir.mkdir(exist_ok=True)
-            (output_dir / "logo.png").write_text(
+        if cmd == ["/usr/local/bin/npm", "run", "build"]:
+            built_dist = frontend_dir / "dist"
+            built_dist.mkdir(exist_ok=True)
+            (built_dist / "logo.png").write_text(
                 "version https://git-lfs.github.com/spec/v1\n"
                 "oid sha256:4aab59a2761edf3b65c4f82cd0a0f13cb0ab782a4c1ef345034d1f9724cec4f1\n"
                 "size 685151\n",
             )
+        if cmd[:4] == ["/usr/local/bin/bun", "run", "vite", "build"]:
+            output_dir.joinpath("connections").mkdir(parents=True, exist_ok=True)
 
     monkeypatch.setattr(hatch_build_module, "_run_command", fake_run_command)
 
     with pytest.raises(RuntimeError, match="Run git lfs pull before building"):
-        hatch_build_module._build_frontend(frontend_dir, output_dir, "/usr/local/bin/bun")
+        hatch_build_module._build_frontend(
+            frontend_dir,
+            output_dir,
+            "/usr/local/bin/npm",
+            "/usr/local/bin/bun",
+        )
 
 
 def test_dashboard_shell_uses_canonical_logo_exports() -> None:

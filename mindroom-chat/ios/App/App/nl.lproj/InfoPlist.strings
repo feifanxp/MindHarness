@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "MindRoom Chat moet verbinding maken met je lokale Matrix-homeserver.";
+"NSMicrophoneUsageDescription" = "MindRoom Chat heeft toegang tot je microfoon nodig om spraakberichten op te nemen en spraakoproepen te voeren.";
+"NSCameraUsageDescription" = "MindRoom Chat heeft toegang tot je camera nodig om foto's en video's te maken en in chats te versturen.";
+"NSPhotoLibraryUsageDescription" = "MindRoom Chat heeft toegang tot je fotobibliotheek nodig om foto's en video's in chats te delen.";
+"NSPhotoLibraryAddUsageDescription" = "MindRoom Chat heeft toestemming nodig om afbeeldingen en video's uit chats in je fotobibliotheek op te slaan.";

@@ -1,0 +1,78 @@
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[redirects]]
+  from = "/.well-known/apple-app-site-association"
+  to = "/.well-known/apple-app-site-association"
+  status = 200
+
+[[headers]]
+  for = "/authentication-recovery.js"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/runtime-config.js"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/connect"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'none'"
+    X-Frame-Options = "DENY"
+
+[[headers]]
+  for = "/connect/"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'none'"
+    X-Frame-Options = "DENY"
+
+[[redirects]]
+  from = "/authentication-recovery.js"
+  to = "/authentication-recovery.js"
+  status = 200
+
+[[redirects]]
+  from = "/runtime-config.js"
+  to = "/runtime-config.js"
+  status = 200
+
+[[redirects]]
+  from = "/config.json"
+  to = "/config.json"
+  status = 200
+
+[[redirects]]
+  from = "/manifest.json"
+  to = "/manifest.json"
+  status = 200
+
+[[redirects]]
+  from = "/sw.js"
+  to = "/sw.js"
+  status = 200
+
+  
+[[redirects]]
+  from = "/pdf.worker.min.js"
+  to = "/pdf.worker.min.js"
+  status = 200
+
+[[redirects]]
+  from = "/public/*"
+  to = "/public/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true

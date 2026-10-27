@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "MindRoom Chat'in yerel Matrix ana sunucunuza bağlanması gerekiyor.";
+"NSMicrophoneUsageDescription" = "MindRoom Chat, sesli mesaj kaydetmek ve sesli aramalarda konuşmak için mikrofon erişimine ihtiyaç duyar.";
+"NSCameraUsageDescription" = "MindRoom Chat, sohbetlerde gönderilecek fotoğraf ve videoları çekmek için kamera erişimine ihtiyaç duyar.";
+"NSPhotoLibraryUsageDescription" = "MindRoom Chat, sohbetlerde fotoğraf ve video paylaşabilmeniz için fotoğraf arşivinize erişime ihtiyaç duyar.";
+"NSPhotoLibraryAddUsageDescription" = "MindRoom Chat, sohbetlerdeki resim ve videoları fotoğraf arşivinize kaydetmek için izninize ihtiyaç duyar.";

@@ -1,0 +1,3387 @@
+{
+  "messageTable": {
+    "label": "جدول قابل للتمرير",
+    "scrollHint": "التمرير أفقيًا"
+  },
+  "messageCodeBlock": {
+    "actions": "إجراءات كتلة التعليمات البرمجية",
+    "code": "التعليمات البرمجية",
+    "language": "اللغة: ⁨{{language}}⁩",
+    "copy": "نسخ التعليمات البرمجية",
+    "copied": "تم النسخ",
+    "wrap": "التفاف الأسطر",
+    "expand": "توسيع",
+    "collapse": "طي"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " غيّر اسم الغرفة"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "حديث",
+      "compact": "مدمج",
+      "bubble": "فقاعات"
+    },
+    "messageSpacing": {
+      "none": "بلا",
+      "ultraSmall": "صغير جدًا جدًا",
+      "extraSmall": "صغير جدًا",
+      "small": "صغير",
+      "normal": "عادي",
+      "large": "كبير"
+    },
+    "dateFormat": {
+      "custom": "مخصص"
+    },
+    "themeName": {
+      "light": "فاتح",
+      "silver": "فضي",
+      "dark": "داكن",
+      "midnight": "منتصف الليل",
+      "butter": "زبدة"
+    },
+    "prefetchScope": {
+      "myHomeserver": "خادمي المنزلي",
+      "allRooms": "كل الغرف",
+      "currentRoomOnly": "الغرفة الحالية فقط"
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "nav": {
+      "general": "عام",
+      "account": "الحساب",
+      "notifications": "الإشعارات",
+      "devices": "الأجهزة",
+      "emojisStickers": "الرموز التعبيرية والملصقات",
+      "developerTools": "أدوات المطورين",
+      "about": "حول التطبيق"
+    },
+    "general": {
+      "title": "عام",
+      "interface": {
+        "sectionTitle": "الواجهة",
+        "simpleMode": "الوضع المبسط",
+        "simpleModeDescription": "إخفاء الميزات المتقدمة مثل لوحة الأوامر وعوامل تصفية سلاسل المحادثات. تتم مزامنة هذا الإعداد بين أجهزتك.",
+        "showCanvasesInSidebar": "إظهار اللوحات التفاعلية في الشريط الجانبي",
+        "showCanvasesInSidebarDescription": "إظهار زر للوحات التفاعلية التي أنشأها وكلاؤك، بمجرد وجود واحدة. تتم مزامنة هذا الإعداد بين أجهزتك.",
+        "saveFailed": "تعذر حفظ التغيير. تحقق من اتصالك وحاول مرة أخرى."
+      },
+      "language": {
+        "sectionTitle": "اللغة",
+        "appLanguage": "لغة التطبيق",
+        "appLanguageDescription": "تُستخدم للقوائم ونصوص الواجهة. لا تتم ترجمة محتوى الرسائل مطلقًا."
+      },
+      "appearance": {
+        "sectionTitle": "المظهر",
+        "systemTheme": "سمة النظام",
+        "systemThemeDescription": "اختيار السمة الفاتحة أو الداكنة وفقًا لتفضيلات النظام.",
+        "lightTheme": "السمة الفاتحة:",
+        "darkTheme": "السمة الداكنة:",
+        "theme": "السمة",
+        "themeDescription": "السمة المستخدمة عند تعطيل سمة النظام.",
+        "monochromeMode": "الوضع أحادي اللون",
+        "twitterEmoji": "رموز Twitter التعبيرية",
+        "pageZoom": "تكبير الصفحة"
+      },
+      "dateTime": {
+        "sectionTitle": "التاريخ والوقت",
+        "hour24Clock": "تنسيق 24 ساعة",
+        "dateFormat": "تنسيق التاريخ",
+        "save": "حفظ",
+        "formatHints": {
+          "title": "التنسيق",
+          "year": "السنة",
+          "twoDigitYear": "سنة من رقمين",
+          "fourDigitYear": "سنة من أربعة أرقام",
+          "month": "الشهر",
+          "theMonth": "الشهر",
+          "twoDigitMonth": "شهر من رقمين",
+          "shortMonthName": "اسم الشهر المختصر",
+          "fullMonthName": "اسم الشهر الكامل",
+          "dayOfMonth": "يوم الشهر",
+          "theDayOfMonth": "يوم الشهر",
+          "twoDigitDayOfMonth": "يوم الشهر من رقمين",
+          "dayOfWeek": "يوم الأسبوع",
+          "theDayOfWeek": "يوم الأسبوع (الأحد = 0)",
+          "twoLetterDayName": "اسم اليوم من حرفين",
+          "shortDayName": "اسم اليوم المختصر",
+          "fullDayName": "اسم اليوم الكامل"
+        }
+      },
+      "editor": {
+        "sectionTitle": "المحرر",
+        "enterForNewline": "ENTER لسطر جديد",
+        "enterForNewlineDescription": "استخدم ⁨{{sendKey}}⁩ + ENTER لإرسال الرسالة وENTER لسطر جديد.",
+        "markdownFormatting": "تنسيق Markdown",
+        "hideActivity": "إخفاء مؤشرات الكتابة وإيصالات القراءة",
+        "hideActivityDescription": "عطّل حالة الكتابة وإيصالات القراءة للحفاظ على خصوصية نشاطك."
+      },
+      "messages": {
+        "sectionTitle": "الرسائل",
+        "messageLayout": "تخطيط الرسائل",
+        "messageSpacing": "المسافة بين الرسائل",
+        "prefetchScope": "نطاق الجلب المسبق",
+        "prefetchScopeDescription": "الغرف التي تظل جاهزة في الخلفية",
+        "historyDepth": "عمق سجل الغرفة الحالية",
+        "historyDepthDescription": "العدد المستهدف للأحداث المحمّلة مسبقًا للغرفة التي تعرضها. الحد الأدنى ⁨{{min}}⁩ والحد الأقصى ⁨{{max}}⁩.",
+        "legacyUsernameColor": "لون اسم المستخدم القديم",
+        "hideMembershipChange": "إخفاء تغييرات العضوية",
+        "hideProfileChange": "إخفاء تغييرات الملف الشخصي",
+        "disableMediaAutoLoad": "تعطيل التحميل التلقائي للوسائط",
+        "urlPreview": "معاينة عنوان URL",
+        "urlPreviewEncrypted": "معاينة عنوان URL في الغرف المشفرة",
+        "showHiddenEvents": "إظهار الأحداث المخفية"
+      },
+      "computers": {
+        "sectionTitle": "أجهزة الكمبيوتر",
+        "apiUrl": "عنوان خدمة الكمبيوتر",
+        "description": "اختر خادم MindRoom موثوقًا؛ يتلقى رمز تسجيل دخول قصير المدة. يُحفظ على هذا الجهاز. اتركه فارغًا لتعطيل أجهزة الكمبيوتر.",
+        "save": "حفظ خدمة الكمبيوتر",
+        "reset": "استخدام إعداد التطبيق الافتراضي",
+        "invalidUrl": "أدخل أصل عنوان دون بيانات اعتماد أو مسار أو استعلام أو جزء. استخدم HTTPS، أو HTTP مع localhost أو عنوان IP خاص للشبكة المحلية.",
+        "httpNotice": "لا يقوم HTTP بتشفير بيانات تسجيل الدخول أو حركة بيانات الكمبيوتر. استخدمه فقط على شبكة محلية موثوقة.",
+        "saveFailed": "تعذر حفظ خدمة الكمبيوتر على هذا الجهاز.",
+        "saved": "تم حفظ خدمة الكمبيوتر."
+      },
+      "connections": {
+        "sectionTitle": "الاتصالات",
+        "title": "الحسابات المتصلة",
+        "description": "اربط الحسابات التي يستخدمها وكلاؤك، مثل Google أو GitHub، على خادم MindRoom الخاص بك.",
+        "open": "فتح الاتصالات",
+        "noBackend": "عيّن خادم MindRoom ضمن «أجهزة الكمبيوتر» لاستخدام الاتصالات.",
+        "blocked": "حظر المتصفح نافذة الاتصالات. اسمح بالنوافذ المنبثقة لهذا الموقع ثم حاول مرة أخرى."
+      }
+    }
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "directMessages": "الرسائل المباشرة",
+    "threads": "سلاسل المحادثات",
+    "canvases": "اللوحات التفاعلية",
+    "inbox": "صندوق الوارد",
+    "exploreCommunity": "استكشاف المجتمع",
+    "addSpace": "إضافة مساحة",
+    "createSpace": "إنشاء مساحة",
+    "createSpaceDescription": "أنشئ مساحة لمجتمعك.",
+    "joinWithAddress": "الانضمام باستخدام عنوان",
+    "joinWithAddressDescription": "انضم إلى مجتمع موجود.",
+    "createRoom": "إنشاء غرفة",
+    "messageSearch": "البحث في الرسائل",
+    "rooms": "الغرف",
+    "chats": "الدردشات",
+    "createChat": "إنشاء دردشة",
+    "directMessage": "رسالة مباشرة",
+    "noRooms": "لا توجد غرف",
+    "noRoomsDescription": "ليست لديك أي غرف بعد.",
+    "noDirectMessages": "لا توجد رسائل مباشرة",
+    "noDirectMessagesDescription": "ليست لديك أي رسائل مباشرة بعد.",
+    "exploreCommunityRooms": "استكشاف غرف المجتمع",
+    "unverifiedDevice": "جهاز لم يتم التحقق منه",
+    "unverifiedDevices": "أجهزة لم يتم التحقق منها"
+  },
+  "accountsRail": {
+    "settingsTooltip": "الإعدادات: ⁨{{name}}⁩",
+    "switchTooltip": "التبديل إلى ⁨{{name}}⁩ (⁨{{userId}}⁩)",
+    "openSettingsAria": "فتح إعدادات ⁨{{name}}⁩",
+    "switchAria": "التبديل إلى الحساب ⁨{{name}}⁩ (⁨{{userId}}⁩)",
+    "manageAccounts": "إدارة الحسابات",
+    "addAccount": "إضافة حساب",
+    "addAccountAria": "إضافة حساب"
+  },
+  "commandPalette": {
+    "inputAria": "لوحة الأوامر",
+    "placeholder": "ابحث أو نفّذ أمرًا…",
+    "closeAria": "إغلاق لوحة الأوامر",
+    "open": "فتح لوحة الأوامر",
+    "noResults": "لا توجد نتائج",
+    "resultCount_one": "⁨{{count}}⁩ نتيجة",
+    "resultCount_other": "⁨{{count}}⁩ من النتائج",
+    "sections": {
+      "actions": "الإجراءات",
+      "threads": "سلاسل المحادثات",
+      "rooms": "الغرف",
+      "users": "المستخدمون",
+      "messages": "الرسائل",
+      "spaces": "المساحات"
+    },
+    "prefixes": {
+      "label": "البادئات:",
+      "actions": "الإجراءات",
+      "rooms": "الغرف",
+      "users": "المستخدمون",
+      "threads": "سلاسل المحادثات",
+      "spaces": "المساحات"
+    },
+    "shortcut": "الاختصار:",
+    "shortcutOpenSuffix": "للفتح.",
+    "actions": {
+      "openSettings": "فتح الإعدادات",
+      "openSettingsDescription": "فتح نافذة الإعدادات المشتركة",
+      "goHome": "الانتقال إلى الرئيسية",
+      "goHomeDescription": "الانتقال إلى الرئيسية",
+      "goDirect": "الانتقال إلى الرسائل المباشرة",
+      "goDirectDescription": "الانتقال إلى الرسائل المباشرة",
+      "goInbox": "الانتقال إلى صندوق الوارد",
+      "goInboxDescription": "فتح إشعارات صندوق الوارد",
+      "createRoom": "إنشاء غرفة",
+      "createRoomDescription": "فتح نافذة إنشاء غرفة",
+      "createSpace": "إنشاء مساحة",
+      "createSpaceDescription": "فتح نافذة إنشاء مساحة",
+      "toggleTheme": "تبديل السمة",
+      "toggleThemeDescription": "التبديل بين السمتين الفاتحة والداكنة",
+      "logout": "تسجيل الخروج",
+      "logoutDescription": "تسجيل الخروج من MindRoom Chat",
+      "markCurrentRoomRead": "تعليم الغرفة الحالية كمقروءة",
+      "markCurrentRoomReadDescription": "تعليم ⁨{{room}}⁩ كمقروءة",
+      "copyCurrentRoomLink": "نسخ رابط الغرفة الحالية",
+      "copyCurrentRoomLinkDescription": "نسخ رابط تطبيق للغرفة ⁨{{room}}⁩",
+      "openCurrentRoomSettings": "فتح إعدادات الغرفة الحالية",
+      "openCurrentRoomSettingsDescription": "فتح إعدادات ⁨{{room}}⁩",
+      "unresolveCurrentThread": "إلغاء حل سلسلة المحادثة الحالية",
+      "unresolveCurrentThreadDescription": "إعادة سلسلة المحادثة النشطة إلى قائمة الانتظار غير المحلولة",
+      "resolveCurrentThread": "حل سلسلة المحادثة الحالية",
+      "resolveCurrentThreadDescription": "تعليم سلسلة المحادثة النشطة كمحلولة",
+      "currentRoomFallback": "الغرفة الحالية"
+    },
+    "messages": {
+      "searchIn": "البحث عن ⁨{{query}}⁩ في ⁨{{scope}}⁩",
+      "searchAll": "البحث عن ⁨{{query}}⁩ في كل الغرف",
+      "currentRoomFallback": "الغرفة الحالية",
+      "currentRoomDescription": "الغرفة الحالية",
+      "currentSpaceFallback": "المساحة الحالية",
+      "currentSpaceDescription": "المساحة الحالية",
+      "globalSearchDescription": "البحث العام في الرسائل"
+    },
+    "resultCount_few": "⁨{{count}}⁩ نتيجة",
+    "resultCount_many": "⁨{{count}}⁩ نتيجة",
+    "resultCount_two": "⁨{{count}}⁩ نتيجة",
+    "resultCount_zero": "⁨{{count}}⁩ نتيجة",
+    "all": "الكل",
+    "filterLabel": "تصفية النتائج",
+    "resultsLabel": "نتائج البحث",
+    "emptyDescription": "جرّب بحثًا مختلفًا أو اختر فئة أخرى.",
+    "clearSearch": "مسح البحث",
+    "navigate": "التنقل",
+    "select": "فتح"
+  },
+  "accountSwitcher": {
+    "title": "الحسابات",
+    "description": "بدّل بين الحسابات أو أضف حسابًا آخر أو أزل حسابًا غير نشط.",
+    "active": "نشط",
+    "openSettings": "فتح الإعدادات",
+    "switch": "تبديل",
+    "removing": "جارٍ الإزالة...",
+    "removeFromDevice": "إزالة من الجهاز",
+    "addAccount": "إضافة حساب",
+    "close": "إغلاق",
+    "actionError": "تعذر تحديث هذا الحساب. حاول مرة أخرى."
+  },
+  "recentThreads": {
+    "title": "المفتوحة مؤخرًا",
+    "empty": "لا توجد سلاسل محادثات مفتوحة مؤخرًا",
+    "resizeAria": "تغيير حجم قسم المفتوحة مؤخرًا",
+    "openedAt": "فُتحت ⁨{{time}}⁩"
+  },
+  "threadNav": {
+    "title": "سلاسل المحادثات",
+    "empty": "لا توجد سلاسل محادثات بعد",
+    "loading": "جارٍ تحميل سلاسل المحادثات...",
+    "pin": "تثبيت سلسلة المحادثة",
+    "unpin": "إلغاء تثبيت سلسلة المحادثة",
+    "pinned": "مثبّتة",
+    "room": "الغرفة",
+    "agents": "الوكلاء",
+    "agentsUnknown": "لم يتم تحديد أي وكيل",
+    "messages": "الرسائل",
+    "lastActivity": "آخر نشاط",
+    "unknownActivity": "غير معروف"
+  },
+  "composer": {
+    "placeholder": "إرسال رسالة...",
+    "sendMessage": "إرسال الرسالة",
+    "recordVoice": "تسجيل رسالة صوتية",
+    "formatting": "التنسيق",
+    "attach": "إرفاق ملفات",
+    "voicePausedInOtherRoom": "التسجيل الصوتي متوقف مؤقتًا — أنهِ التسجيل غير المرسل أو تجاهله في ⁨{{roomName}}⁩",
+    "dropFiles": "إفلات الملفات في «⁨{{roomName}}⁩»",
+    "dropFilesHint": "اسحب الملفات وأفلتها هنا أو انقر لفتح نافذة الاختيار",
+    "roomFallback": "الغرفة",
+    "voiceRoomUnavailable": "لم تعد هذه الغرفة متاحة. تجاهل الرسالة الصوتية غير المرسلة وحاول لاحقًا.",
+    "voiceStillSending": "لا تزال رسالة صوتية أخرى قيد الإرسال. انتظر قبل بدء تسجيل جديد.",
+    "voiceBundleBlocked": "لا يزال مرفق آخر قيد الإرسال أو يحتاج إلى إجراء. انتظر اكتماله، أو أعد محاولة إرسال المرفقات الفاشلة أو أزلها، ثم أرسل هذه الرسالة مجددًا."
+  },
+  "threadActions": {
+    "more": "خيارات سلسلة المحادثة",
+    "open": "فتح سلسلة المحادثة",
+    "tags": "تعديل الوسوم",
+    "editSummary": "تعديل الملخص",
+    "regenerate": "إعادة إنشاء الملخص",
+    "reopen": "إعادة فتح سلسلة المحادثة",
+    "copy": "نسخ رابط سلسلة المحادثة",
+    "summary": "الملخص",
+    "summaryHint": "تُوقِف التعديلات اليدوية التحديثات التلقائية للملخص. يمكنك تعديل الملخص أو إعادة إنشائه في أي وقت.",
+    "length": "⁨{{count}}⁩ / ⁨{{max}}⁩ حرفًا",
+    "agent": "الوكيل",
+    "noAgents": "لا يوجد وكلاء منضمون إلى هذه الغرفة",
+    "regenerateHint": "اطلب من وكيل تحديث ملخص سلسلة المحادثة هذه. يحتاج الوكيل إلى أداة ملخص سلسلة المحادثة.",
+    "requested": "تم إرسال الطلب. سيُحدَّث الملخص عندما يُكمل الوكيل المهمة. راجع سلسلة المحادثة للاطلاع على رده.",
+    "failed": "تعذر إكمال هذا الإجراء. يُرجى المحاولة مرة أخرى.",
+    "save": "حفظ الملخص",
+    "sendRequest": "إرسال الطلب",
+    "saving": "جارٍ الإرسال…",
+    "cancel": "إلغاء",
+    "done": "تم"
+  },
+  "thread": {
+    "pinFailed": "تعذّر تحديث التثبيت. يُرجى المحاولة مرة أخرى.",
+    "chip": "سلسلة المحادثة",
+    "view": "عرض سلسلة المحادثة",
+    "resolve": "حل",
+    "resolved": "محلولة",
+    "resolvedBy": "حلّها ⁨{{name}}⁩",
+    "resolvedByShort": "بواسطة ⁨{{name}}⁩",
+    "hideDetails": "إخفاء تفاصيل سلسلة المحادثة",
+    "showDetails": "إظهار تفاصيل سلسلة المحادثة",
+    "backToRoom": "العودة إلى الغرفة",
+    "replyCount_one": "⁨{{count}}⁩ رد",
+    "replyCount_other": "⁨{{count}}⁩ من الردود",
+    "aria": {
+      "openThread": "فتح سلسلة المحادثة: ⁨{{title}}⁩",
+      "resolvedThread": "سلسلة محادثة محلولة",
+      "unresolvedThread": "سلسلة محادثة غير محلولة",
+      "unreadMessages": "رسائل غير مقروءة",
+      "agentStreaming": "الوكيل يرسل ردًا",
+      "messageFailed": "فشل إرسال الرسالة",
+      "messageSending": "جارٍ إرسال الرسالة",
+      "lastActivity": "آخر نشاط ⁨{{time}}⁩",
+      "removeTagFilter": "إزالة عامل التصفية ⁨{{tag}}⁩"
+    },
+    "status": {
+      "resolved": "محلولة",
+      "streaming": "قيد البث",
+      "scheduled": "مجدولة",
+      "unread": "غير مقروءة",
+      "idle": "خاملة",
+      "idleFilter": "خاملة (محلولة، لا بث ولا مهام)"
+    },
+    "stats": {
+      "aria": "إحصاءات سلاسل المحادثات",
+      "showing": "عرض ⁨{{shown}}⁩ من ⁨{{total}}⁩",
+      "threadCount_one": "⁨{{count}}⁩ سلسلة محادثة",
+      "threadCount_other": "⁨{{count}}⁩ من سلاسل المحادثات",
+      "tags": "الوسوم",
+      "threadCount_few": "⁨{{count}}⁩ سلسلة محادثة",
+      "threadCount_many": "⁨{{count}}⁩ سلسلة محادثة",
+      "threadCount_two": "⁨{{count}}⁩ سلسلة محادثة",
+      "threadCount_zero": "⁨{{count}}⁩ سلسلة محادثة"
+    },
+    "filterTooltip": {
+      "any": "⁨{{label}}⁩: عرض الكل. انقر لعرض هذا فقط.",
+      "include": "⁨{{label}}⁩: عرض هذا فقط. انقر لإخفائه.",
+      "exclude": "⁨{{label}}⁩: مخفي. انقر لمسح عامل التصفية.",
+      "tagAny": "الوسم «⁨{{tag}}⁩»",
+      "tagInclude": "الوسم «⁨{{tag}}⁩»: عرضه فقط. انقر لإخفائه.",
+      "tagExclude": "الوسم «⁨{{tag}}⁩»: مخفي. انقر لمسح عامل التصفية.",
+      "stateAny": "عرض الكل",
+      "stateInclude": "عرض هذا فقط",
+      "stateExclude": "مخفي"
+    },
+    "filters": {
+      "scope": "النطاق",
+      "scopeInvolved": "المشترَك فيها",
+      "scopeAllRooms": "كل الغرف",
+      "status": "الحالة",
+      "statusAll": "الكل",
+      "statusUnresolved": "غير محلولة",
+      "statusResolved": "محلولة",
+      "activity": "النشاط",
+      "activityToday": "اليوم",
+      "activity7d": "7 أيام",
+      "activity30d": "30 يومًا",
+      "activityAll": "الكل",
+      "unread": "غير مقروءة",
+      "attention": "تحتاج إلى انتباه",
+      "roomIdsPlaceholder": "معرّفات الغرف",
+      "roomIdsAria": "عوامل تصفية معرّفات الغرف",
+      "spaceIdsPlaceholder": "معرّفات المساحات",
+      "spaceIdsAria": "عوامل تصفية معرّفات المساحات",
+      "tagsPlaceholder": "الوسوم",
+      "tagsIncludeAria": "عوامل تصفية الوسوم المضمّنة",
+      "excludeTagsPlaceholder": "استبعاد وسوم",
+      "tagsExcludeAria": "عوامل تصفية الوسوم المستبعدة",
+      "clear": "مسح",
+      "open": "عوامل التصفية",
+      "search": "البحث في سلاسل المحادثات",
+      "sheetAria": "عوامل تصفية سلاسل المحادثات",
+      "closeAria": "إغلاق عوامل تصفية سلاسل المحادثات"
+    },
+    "simpleFilter": {
+      "unresolved": "غير محلولة",
+      "showingUnresolved": "تُعرض سلاسل المحادثات غير المحلولة. انقر لعرض الكل.",
+      "showingAll": "تُعرض كل سلاسل المحادثات. انقر لعرض غير المحلولة فقط."
+    },
+    "replyCount_few": "⁨{{count}}⁩ ردود",
+    "replyCount_many": "⁨{{count}}⁩ رد",
+    "replyCount_two": "⁨{{count}}⁩ ردود",
+    "replyCount_zero": "⁨{{count}}⁩ ردود"
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "بيانات الحساب",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "jsonContent": "محتوى JSON",
+      "edit": "تحرير",
+      "developerTools": "أدوات المطورين"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "تعذر تحميل معلومات مسار المصادقة.",
+      "retry": "إعادة المحاولة"
+    },
+    "backupRestore": {
+      "restoring0": "جارٍ الاستعادة: 0%",
+      "backupHasTrustedDecryptionKey": "تحتوي النسخة الاحتياطية على مفتاح فك تشفير موثوق.",
+      "backupDoesNotHaveTrustedDecryptionKey": "لا تحتوي النسخة الاحتياطية على مفتاح فك تشفير موثوق!",
+      "backupHasTrustedBySignature": "النسخة الاحتياطية موثوقة بتوقيع.",
+      "backupDoesNotHaveTrustedSignature": "لا تحتوي النسخة الاحتياطية على توقيع موثوق!",
+      "encryptionBackup": "نسخة التشفير الاحتياطية",
+      "backupDetails": "تفاصيل النسخة الاحتياطية",
+      "restoreBackup": "استعادة النسخة الاحتياطية",
+      "noBackupPresentOnServer": "لا توجد نسخة احتياطية على الخادم!",
+      "connected": "متصل",
+      "disconnected": "غير متصل",
+      "nil": "NIL",
+      "syncing": "جارٍ المزامنة (⁨{{count}}⁩)",
+      "restoring": "جارٍ الاستعادة: ⁨{{progress}}⁩%",
+      "version": "الإصدار: ⁨{{version}}⁩",
+      "keys": "المفاتيح: ⁨{{keyCount}}⁩"
+    },
+    "betaNoticeBadge": {
+      "notice": "تنبيه",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "هذه الميزة قيد الاختبار وقد تتغير مع الوقت.",
+      "beta": "تجريبية"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "مكالمة واردة",
+      "yourHomeserverDoesNotSupportCalling": "لا يدعم خادمك المنزلي المكالمات.",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "لا يدعم متصفحك WebRTC المطلوب لإجراء المكالمات.",
+      "answer": "رد",
+      "reject": "رفض",
+      "ignore": "تجاهل"
+    },
+    "deviceVerification": {
+      "close": "إغلاق",
+      "pleaseAcceptTheRequestFromOtherDevice": "اقبل الطلب من الجهاز الآخر.",
+      "clickAcceptToStartTheVerificationProcess": "انقر على «قبول» لبدء عملية التحقق.",
+      "accept": "قبول",
+      "verificationRequestHasBeenAccepted": "تم قبول طلب التحقق.",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "تأكد من ظهور الرموز التعبيرية أدناه على الجهازين بالترتيب نفسه:",
+      "theyMatch": "متطابقة",
+      "doNotMatch": "غير متطابقة",
+      "yourDeviceIsVerified": "تم التحقق من جهازك.",
+      "okay": "حسنًا",
+      "verificationHasBeenCanceled": "تم إلغاء التحقق.",
+      "deviceVerification": "التحقق من الجهاز",
+      "waitingForRequestToBeAccepted": "في انتظار قبول الطلب...",
+      "waitingForTheResponseFromOtherDevice": "في انتظار رد الجهاز الآخر...",
+      "startingVerificationUsingEmojiComparison": "جارٍ بدء التحقق بمقارنة الرموز التعبيرية...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "خطأ غير متوقع! بدأ التحقق، لكن أداة التحقق مفقودة."
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "مفتاح الاسترداد",
+      "passphraseOptional": "عبارة المرور (اختيارية)",
+      "continue": "متابعة",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "لا يدعم العميل خطوات المصادقة المطلوبة لتنفيذ هذا الإجراء.",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "احفظ مفتاح الاسترداد في مكان آمن لاستخدامه مستقبلًا، إذ ستحتاج إليه للتحقق من هويتك إذا لم تتمكن من الوصول إلى أجهزتك الأخرى.",
+      "copy": "نسخ",
+      "download": "تنزيل",
+      "setupDeviceVerification": "إعداد التحقق من الجهاز",
+      "resetDeviceVerification": "إعادة ضبط التحقق من الجهاز",
+      "resettingDeviceVerificationIsPermanent": "لا يمكن التراجع عن إعادة ضبط التحقق من الجهاز.",
+      "recoveryPassphrase": "عبارة مرور الاسترداد",
+      "reset": "إعادة ضبط",
+      "unexpectedError": "خطأ غير متوقع!",
+      "hide": "إخفاء",
+      "show": "إظهار",
+      "recoveryDescription": "أنشئ <b>مفتاح استرداد</b> للتحقق من هويتك إذا تعذر الوصول إلى أجهزتك الأخرى. ويمكنك أيضًا إعداد عبارة مرور سهلة التذكر كخيار بديل.",
+      "resetWarning": "سيرى كل من تحققت معه تنبيهات أمان، وستفقد نسخة التشفير الاحتياطية. يكاد يكون مؤكدًا أنك لا تريد فعل ذلك إلا إذا فقدت <b>مفتاح الاسترداد</b> أو <b>عبارة مرور الاسترداد</b> وكل جهاز يمكنك التحقق منه."
+    },
+    "hexColorPickerPopOut": {
+      "remove": "إزالة"
+    },
+    "logoutDialog": {
+      "logout": "تسجيل الخروج",
+      "unverifiedDevice": "جهاز لم يتم التحقق منه",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "تحقق من جهازك قبل تسجيل الخروج للحفاظ على رسائلك المشفرة.",
+      "alert": "تنبيه",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "فعّل التحقق من الجهاز أو صدّر بياناتك المشفرة من الإعدادات حتى لا تفقد الوصول إلى رسائلك.",
+      "youReAboutToLogOutAreYouSure": "أنت على وشك تسجيل الخروج. هل أنت متأكد؟",
+      "cancel": "إلغاء",
+      "logoutFailed": "فشل تسجيل الخروج! ⁨{{error}}⁩"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "عبارة مرور الاسترداد",
+      "recoveryKey": "مفتاح الاسترداد",
+      "verifyManually": "التحقق يدويًا",
+      "deviceVerified": "تم التحقق من الجهاز!",
+      "selectAVerificationMethod": "اختر طريقة للتحقق.",
+      "provideRecoveryKey": "أدخل مفتاح الاسترداد."
+    },
+    "pdfViewer": {
+      "zoomOut": "تصغير",
+      "zoomIn": "تكبير",
+      "failedToLoadPdf": "تعذر تحميل ملف PDF",
+      "retry": "إعادة المحاولة",
+      "previous": "السابق",
+      "pageNumber": "رقم الصفحة",
+      "jumpToPage": "الانتقال إلى صفحة",
+      "next": "التالي",
+      "saving": "جارٍ الحفظ...",
+      "retryDownload": "إعادة محاولة التنزيل",
+      "download": "تنزيل"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "عبارة مرور الاسترداد",
+      "verify": "تحقق",
+      "recoveryKey": "مفتاح الاسترداد",
+      "invalidRecoveryPassphrase": "عبارة مرور الاسترداد غير صالحة.",
+      "invalidRecoveryKey": "مفتاح الاسترداد غير صالح."
+    },
+    "uIAFlowOverlay": {
+      "exit": "خروج",
+      "stepValue1Value2": "الخطوة ⁨{{value1}}⁩/⁨{{value2}}⁩"
+    },
+    "additionalCreatorInput": {
+      "founders": "المؤسسون",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "يمكن تعيين مستخدمين ذوي صلاحيات خاصة أثناء الإنشاء. يتمتع هؤلاء المستخدمون بتحكم موسع، ولا يمكن تعديلهم إلا أثناء الترقية.",
+      "enter": "إدخال",
+      "noSuggestions": "لا توجد اقتراحات",
+      "pleaseProvideTheUserIdAndHitEnter": "أدخل معرّف المستخدم ثم اضغط على Enter."
+    },
+    "createRoomAccessSelector": {
+      "restricted": "مقيّدة",
+      "onlyMemberOfParentSpaceCanJoin": "يمكن فقط لأعضاء المساحة الأصل الانضمام.",
+      "private": "خاصة",
+      "onlyPeopleWithInviteCanJoin": "يمكن فقط للأشخاص الذين تلقوا دعوة الانضمام.",
+      "public": "عامة",
+      "anyoneWithTheAddressCanJoin": "يمكن لأي شخص لديه العنوان الانضمام."
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "العنوان (اختياري)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "اختر عنوانًا فريدًا لتسهيل العثور عليها.",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "هذا العنوان مستخدم بالفعل. اختر عنوانًا آخر."
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "غرفة دردشة",
+      "messagesPhotosAndVideos": "- رسائل وصور ومقاطع فيديو.",
+      "voiceRoom": "غرفة صوتية",
+      "liveAudioAndVideoConversations": "- محادثات صوتية ومرئية مباشرة."
+    },
+    "roomVersionSelector": {
+      "version": "الإصدار",
+      "versions": "الإصدارات"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "الرموز التعبيرية"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "الغرف",
+      "unknownRoom": "غرفة غير معروفة"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "الإشارات"
+    },
+    "emojiBoard": {
+      "recent": "المستخدمة مؤخرًا",
+      "unknownPack": "حزمة غير معروفة",
+      "searchResults": "نتائج البحث",
+      "noResultsFound": "لم يتم العثور على نتائج",
+      "personalPack": "الحزمة الشخصية",
+      "unknown": "غير معروف"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "لا توجد حزم ملصقات!",
+      "addStickersFromUserRoomOrSpaceSettings": "أضف ملصقات من إعدادات المستخدم أو الغرفة أو المساحة."
+    },
+    "searchInput": {
+      "react": "إضافة تفاعل",
+      "searchOrTextReaction": "البحث أو كتابة تفاعل ",
+      "search": "بحث"
+    },
+    "tabs": {
+      "sticker": "ملصق",
+      "emoji": "رمز تعبيري"
+    },
+    "eventReaders": {
+      "seenBy": "شاهده"
+    },
+    "imageEditor": {
+      "imageEditor": "محرر الصور",
+      "save": "حفظ"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "تعذر تطبيق التغييرات! حاول مرة أخرى.",
+      "changesSavedApplyWhenReady": "تم حفظ التغييرات! طبّقها عندما تصبح جاهزًا.",
+      "reset": "إعادة ضبط",
+      "applyChanges": "تطبيق التغييرات",
+      "pack": "الحزمة",
+      "imagesUsage": "استخدام الصور",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "اختر طريقة استخدام الصور: رموزًا تعبيرية أو ملصقات أو كليهما.",
+      "images": "الصور",
+      "uploadImages": "رفع صور",
+      "selectImagesFromYourStorageToUploadThemInPack": "اختر صورًا من جهازك لرفعها إلى الحزمة.",
+      "select": "اختيار"
+    },
+    "imagePackView": {
+      "emojisStickers": "الرموز التعبيرية والملصقات"
+    },
+    "imageTile": {
+      "undo": "تراجع",
+      "edit": "تحرير",
+      "shortcode": "الاسم المختصر:",
+      "body": "المحتوى:",
+      "save": "حفظ",
+      "cancel": "إلغاء"
+    },
+    "packMeta": {
+      "edit": "تحرير",
+      "packAvatar": "صورة الحزمة",
+      "upload": "رفع",
+      "reset": "إعادة ضبط",
+      "remove": "إزالة",
+      "name": "الاسم",
+      "attribution": "الإسناد",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "unknown": "غير معروف"
+    },
+    "imageViewer": {
+      "zoomOut": "تصغير",
+      "zoomIn": "تكبير",
+      "saving": "جارٍ الحفظ...",
+      "retryDownload": "إعادة محاولة التنزيل",
+      "download": "تنزيل"
+    },
+    "inviteUserPrompt": {
+      "invite": "دعوة",
+      "userId": "معرّف المستخدم",
+      "reasonOptional": "السبب (اختياري)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "الانضمام باستخدام عنوان",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "أدخل العنوان العام للانضمام إلى المجتمع. تبدو العناوين كما يلي:",
+      "address": "العنوان",
+      "invalidAddress": "عنوان غير صالح",
+      "open": "فتح"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "مغادرة الغرفة",
+      "areYouSureYouWantToLeaveThisRoom": "هل أنت متأكد من مغادرة هذه الغرفة؟",
+      "leaving": "جارٍ المغادرة...",
+      "leave": "مغادرة",
+      "leaveFailed": "تعذرت مغادرة الغرفة! ⁨{{error}}⁩"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "مغادرة المساحة",
+      "areYouSureYouWantToLeaveThisSpace": "هل أنت متأكد من مغادرة هذه المساحة؟",
+      "leaving": "جارٍ المغادرة...",
+      "leave": "مغادرة",
+      "leaveFailed": "تعذرت مغادرة المساحة! ⁨{{error}}⁩"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "فتح الموقع",
+      "voiceMessage": "رسالة صوتية",
+      "audio": "صوت",
+      "unnamedFile": "ملف بلا اسم",
+      "file": "ملف",
+      "fileMeta": "⁨{{type}}⁩ · ⁨{{size}}⁩",
+      "pdfDocument": "مستند PDF",
+      "textFile": "ملف نصي"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "حُذفت هذه الرسالة",
+      "unsupportedMessage": "رسالة غير مدعومة",
+      "failedToLoadMessage": "تعذر تحميل الرسالة",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "تعذر فك تشفير هذه الرسالة — مفتاح التشفير غير متاح",
+      "thisMessageIsNotDecryptedYet": "لم يتم فك تشفير هذه الرسالة بعد",
+      "brokenMessage": "رسالة تالفة",
+      "emptyMessage": "رسالة فارغة",
+      "edited": " (معدّلة)",
+      "deletedWithReason": "حُذفت هذه الرسالة. ⁨{{reason}}⁩"
+    },
+    "fileContent": {
+      "openPdf": "فتح ملف PDF",
+      "openFile": "فتح الملف",
+      "loadFailed": "تعذر تحميل الملف!",
+      "retryDownload": "إعادة محاولة التنزيل (⁨{{size}}⁩)",
+      "downloadSize": "تنزيل (⁨{{size}}⁩)",
+      "openValue1": "فتح ⁨{{value1}}⁩"
+    },
+    "imageContent": {
+      "view": "عرض",
+      "spoiler": "محتوى مخفي",
+      "failedToLoadImage": "تعذر تحميل الصورة!",
+      "retry": "إعادة المحاولة"
+    },
+    "videoContent": {
+      "watch": "مشاهدة",
+      "spoiler": "محتوى مخفي",
+      "failedToLoadVideo": "تعذر تحميل الفيديو!",
+      "retry": "إعادة المحاولة"
+    },
+    "voiceAudioContent": {
+      "loadError": "تعذر تحميل الصوت. اضغط على التشغيل لإعادة المحاولة.",
+      "playbackError": "لا يمكن تشغيل هذا الصوت هنا. جرّب تنزيله.",
+      "playbackPosition": "⁨{{current}}⁩ من ⁨{{duration}}⁩",
+      "moreAudioOptions": "المزيد من خيارات الصوت",
+      "download": "تنزيل",
+      "name": "الاسم",
+      "type": "النوع",
+      "size": "الحجم",
+      "duration": "المدة",
+      "voiceMessage": "رسالة صوتية",
+      "pauseValue1": "إيقاف ⁨{{value1}}⁩ مؤقتًا",
+      "playValue1": "تشغيل ⁨{{value1}}⁩",
+      "seekValue1": "الانتقال في ⁨{{value1}}⁩"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "سيراجع أحد المشرفين طلبك.",
+      "messageOptional": "رسالة (اختيارية)",
+      "cancel": "إلغاء",
+      "failedToSendRequest": "تعذر إرسال الطلب.",
+      "sendingRequest": "جارٍ إرسال الطلب",
+      "sendRequest": "إرسال الطلب",
+      "requestToJoinValue1": "طلب الانضمام إلى ⁨{{value1}}⁩"
+    },
+    "roomCard": {
+      "cancel": "إلغاء",
+      "checkingAccess": "جارٍ التحقق من إمكانية الوصول",
+      "space": "المساحة",
+      "view": "عرض",
+      "retry": "إعادة المحاولة",
+      "joinError": "خطأ في الانضمام",
+      "viewError": "خطأ في العرض",
+      "retryRoomInfo": "إعادة تحميل معلومات الغرفة",
+      "accessUnavailable": "الوصول غير متاح",
+      "failedToJoinUnknownError": "تعذر الانضمام. خطأ غير معروف.",
+      "sendingRequest": "جارٍ إرسال الطلب",
+      "requestSent": "تم إرسال الطلب",
+      "requestToJoin": "طلب الانضمام",
+      "joining": "جارٍ الانضمام",
+      "join": "انضمام",
+      "members_one": "⁨{{count, number}}⁩ عضو",
+      "members_other": "⁨{{count, number}}⁩ من الأعضاء",
+      "members_few": "⁨{{count, number}}⁩ أعضاء",
+      "members_many": "⁨{{count, number}}⁩ عضوًا",
+      "members_two": "⁨{{count, number}}⁩ أعضاء",
+      "members_zero": "⁨{{count, number}}⁩ أعضاء"
+    },
+    "roomIntro": {
+      "inviteMember": "دعوة عضو",
+      "openOldRoom": "فتح الغرفة القديمة",
+      "joinOldRoom": "الانضمام إلى الغرفة القديمة",
+      "thisIsTheBeginningOfConversation": "هذه بداية المحادثة.",
+      "createdBy": "أنشأها ",
+      "onValue1Value2": " في ⁨{{value1}}⁩ ⁨{{value2}}⁩"
+    },
+    "textViewer": {
+      "copyAll": "نسخ الكل"
+    },
+    "datePicker": {
+      "day": "اليوم",
+      "month": "الشهر",
+      "year": "السنة"
+    },
+    "timePicker": {
+      "hour": "الساعة",
+      "minutes": "الدقائق",
+      "period": "الفترة",
+      "am": "ص",
+      "pm": "م"
+    },
+    "dummyStage": {
+      "retry": "إعادة المحاولة",
+      "cancel": "إلغاء",
+      "failedToRegister": "تعذر التسجيل."
+    },
+    "emailStage": {
+      "email": "البريد الإلكتروني",
+      "sendVerificationEmail": "إرسال رسالة التحقق",
+      "cancel": "إلغاء",
+      "sendingVerificationEmail": "جارٍ إرسال رسالة التحقق...",
+      "verificationRequestSent": "تم إرسال طلب التحقق",
+      "continue": "متابعة",
+      "provideEmail": "إدخال البريد الإلكتروني",
+      "verifyEmail": "التحقق من البريد الإلكتروني",
+      "failedToSendVerificationEmailRequest": "تعذر إرسال طلب التحقق عبر البريد الإلكتروني.",
+      "pleaseProvideEmailToSendVerificationRequest": "أدخل بريدك الإلكتروني لإرسال طلب التحقق.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "تحقق من بريدك الإلكتروني «⁨{{value1}}⁩» وأكّد العنوان قبل المتابعة."
+    },
+    "passwordStage": {
+      "accountPassword": "كلمة مرور الحساب",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "لتنفيذ هذا الإجراء، يجب أن تثبت هويتك بإدخال كلمة مرور حسابك.",
+      "password": "كلمة المرور",
+      "continue": "متابعة",
+      "invalidPassword": "كلمة المرور غير صحيحة!"
+    },
+    "reCaptchaStage": {
+      "cancel": "إلغاء",
+      "invalidData": "بيانات غير صالحة",
+      "pleaseCheckTheBoxBelowToProceed": "حدد المربع أدناه للمتابعة.",
+      "noValidDataFoundToProceedWithRecaptcha": "لم يتم العثور على بيانات صالحة لمتابعة ReCAPTCHA."
+    },
+    "registrationTokenStage": {
+      "registrationToken": "رمز التسجيل",
+      "retry": "إعادة المحاولة",
+      "cancel": "إلغاء",
+      "invalidRegistrationTokenProvided": "رمز التسجيل المُدخل غير صالح.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "أدخل رمز التسجيل الذي زوّدك به مشرف الخادم المنزلي."
+    },
+    "sSOStage": {
+      "ssoLogin": "تسجيل الدخول الموحّد (SSO)",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "لتنفيذ هذا الإجراء، يجب أن تثبت هويتك بتسجيل الدخول الموحّد (SSO).",
+      "continue": "متابعة",
+      "continueWithSso": "المتابعة باستخدام SSO"
+    },
+    "termsStage": {
+      "retry": "إعادة المحاولة",
+      "cancel": "إلغاء",
+      "failedToSubmitTermsAndConditionAcceptance": "تعذر قبول الشروط والأحكام."
+    },
+    "uploadBoard": {
+      "files": "الملفات",
+      "uploadFailed": "فشل الرفع",
+      "remove": "إزالة",
+      "removeAll": "إزالة الكل"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "إعادة محاولة الرفع",
+      "retry": "إعادة المحاولة",
+      "cancelUpload": "إلغاء الرفع"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "محتوى مخفي",
+      "retryUpload": "إعادة محاولة الرفع",
+      "retry": "إعادة المحاولة",
+      "cancelUpload": "إلغاء الرفع"
+    },
+    "creatorChip": {
+      "managePowers": "إدارة الصلاحيات"
+    },
+    "powerChip": {
+      "selfDemotion": "خفض صلاحياتك",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "أنت على وشك خفض صلاحياتك! لن تتمكن من استعادتها بنفسك. هل أنت متأكد؟",
+      "demote": "خفض الصلاحيات",
+      "sharedPower": "صلاحيات مساوية",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "أنت على وشك منح المستخدم صلاحيات مساوية لصلاحياتك! لن تتمكن من تغيير صلاحياته بعد ذلك. هل أنت متأكد؟",
+      "promote": "رفع الصلاحيات",
+      "managePowers": "إدارة الصلاحيات",
+      "errorName": "خطأ: ⁨{{name}}⁩"
+    },
+    "userChips": {
+      "copyServer": "نسخ الخادم",
+      "exploreCommunity": "استكشاف المجتمع",
+      "openInBrowser": "فتح في المتصفح",
+      "copyUserId": "نسخ معرّف المستخدم",
+      "copyUserLink": "نسخ رابط المستخدم",
+      "share": "مشاركة",
+      "spaces": "المساحات",
+      "rooms": "الغرف",
+      "directMessages": "الرسائل المباشرة",
+      "blockedUser": "مستخدم محظور",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "لن تتلقى أي رسائل أو دعوات من هذا المستخدم.",
+      "mutualRooms": "الغرف المشتركة",
+      "unblockUser": "إلغاء حظر المستخدم",
+      "blockUser": "حظر المستخدم",
+      "mutualRooms_one": "⁨{{count, number}}⁩ غرفة مشتركة",
+      "mutualRooms_other": "⁨{{count, number}}⁩ من الغرف المشتركة",
+      "mutualRooms_few": "⁨{{count, number}}⁩ غرف مشتركة",
+      "mutualRooms_many": "⁨{{count, number}}⁩ غرفة مشتركة",
+      "mutualRooms_two": "⁨{{count, number}}⁩ غرف مشتركة",
+      "mutualRooms_zero": "⁨{{count, number}}⁩ غرف مشتركة"
+    },
+    "userModeration": {
+      "kickedUser": "مستخدم مطرود",
+      "noReasonProvided": "لم يُذكر سبب.",
+      "bannedUser": "مستخدم محظور من الغرفة",
+      "unban": "إلغاء الحظر من الغرفة",
+      "invitedUser": "مستخدم مدعو",
+      "cancelInvite": "إلغاء الدعوة",
+      "moderation": "الإشراف",
+      "reason": "السبب: <b>⁨{{reason}}⁩</b>",
+      "invite": "دعوة",
+      "kick": "طرد",
+      "ban": "حظر من الغرفة",
+      "kickedBy": "طرده: <b>⁨{{name}}⁩</b>",
+      "bannedBy": "حظره: <b>⁨{{name}}⁩</b>",
+      "invitedBy": "دعاه: <b>⁨{{name}}⁩</b>"
+    },
+    "userRoomProfile": {
+      "message": "رسالة"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "مستوى الصوت",
+      "voiceVolumeCurrentlyValue1": "مستوى الصوت حاليًا ⁨{{value1}}⁩%"
+    },
+    "configConfig": {
+      "continueOffline": "المتابعة دون اتصال",
+      "yourWebSessionHasExpired": "انتهت صلاحية جلستك على الويب.",
+      "failedToLoadClientConfigurationFile": "تعذر تحميل ملف إعداد العميل.",
+      "signInAgainToReconnectOrContinueInOfflineMode": "سجّل الدخول مجددًا لإعادة الاتصال، أو تابع دون اتصال.",
+      "signInAgainToReconnect": "سجّل الدخول مجددًا لإعادة الاتصال.",
+      "signInAgain": "تسجيل الدخول مجددًا",
+      "retry": "إعادة المحاولة"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "ميزة متصفح مفقودة",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "لم يتم العثور على دعم IndexedDB. يحتاج هذا التطبيق إلى IndexedDB لتخزين بيانات الجلسة محليًا. تأكد من أن متصفحك يدعم IndexedDB وأنه مفعّل.",
+      "whatIsIndexeddb": "ما IndexedDB؟"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "العودة إلى الحساب الحالي",
+      "server": "الخادم",
+      "lookingForServer": "جارٍ البحث عن الخادم...",
+      "failedToFindServer": "تعذر العثور على الخادم.",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "تعذر الاتصال. يبدو أن base_url في إعداد الخادم غير صالح.",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "يُسمح بخوادم HTTPS فقط. يُدعم HTTP لخوادم الشبكة المحلية فحسب.",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "تعذر الاتصال. قد يكون الخادم غير متاح حاليًا أو غير موجود.",
+      "loadingAuthenticationFlow": "جارٍ تحميل مسار المصادقة...",
+      "failedToGetAuthenticationFlowInformation": "تعذر الحصول على معلومات مسار المصادقة.",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "تعذر الاتصال. يبدو أن إعداد الخادم الموجود في ⁨{{value1}}⁩ غير قابل للاستخدام.",
+      "connectingToValue1": "جارٍ الاتصال بـ ⁨{{value1}}⁩"
+    },
+    "orDivider": {
+      "or": "أو"
+    },
+    "sSOLogin": {
+      "continueWithSso": "المتابعة باستخدام SSO"
+    },
+    "serverPicker": {
+      "server": "الخادم",
+      "serverList": "قائمة الخوادم"
+    },
+    "login": {
+      "login": "تسجيل الدخول",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "يتطلب هذا العميل «تسجيل الدخول باستخدام Apple». أضف Apple إلى قائمة موفري SSO في الخادم المنزلي.",
+      "register": "تسجيل حساب",
+      "accountLink": "ليس لديك حساب؟ <authLink>سجّل حسابًا</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "تسجيل الدخول بكلمة المرور معطّل على «⁨{{value1}}⁩». استخدم SSO.",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "لا يدعم هذا العميل تسجيل الدخول إلى الخادم «⁨{{value1}}⁩». لم يتم العثور على تسجيل دخول بكلمة مرور أو SSO."
+    },
+    "passwordLoginForm": {
+      "hint": "تلميح",
+      "username": "اسم المستخدم:",
+      "matrixId": "معرّف Matrix:",
+      "email": "البريد الإلكتروني:",
+      "username2": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "forgetPassword": "هل نسيت كلمة المرور؟",
+      "login": "تسجيل الدخول",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "لا يسمح هذا العميل بتسجيل الدخول باستخدام خادم مخصص.",
+      "failedToFindYourMatrixIdServer": "تعذر العثور على خادم معرّف Matrix.",
+      "invalidUsernameOrPassword": "اسم المستخدم أو كلمة المرور غير صحيحة.",
+      "thisAccountHasBeenDeactivated": "تم تعطيل هذا الحساب.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "تعذر تسجيل الدخول. بعض بيانات الطلب غير صالحة.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "تعذر تسجيل الدخول. قيّد الخادم معدل الطلبات. حاول لاحقًا.",
+      "failedToLoginUnknownReason": "تعذر تسجيل الدخول لسبب غير معروف.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "تم تسجيل الدخول، لكن المتصفح تعذر عليه حفظ الحساب. تحقق من أذونات التخزين وحاول مرة أخرى."
+    },
+    "tokenLogin": {
+      "tokenLogin": "تسجيل الدخول بالرمز",
+      "invalidLoginToken": "رمز تسجيل الدخول غير صالح.",
+      "thisAccountHasBeenDeactivated": "تم تعطيل هذا الحساب.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "تعذر تسجيل الدخول. بعض بيانات الطلب غير صالحة.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "تعذر تسجيل الدخول. قيّد الخادم معدل الطلبات. حاول لاحقًا.",
+      "failedToLoginUnknownReason": "تعذر تسجيل الدخول لسبب غير معروف.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "تم تسجيل الدخول، لكن المتصفح تعذر عليه حفظ الحساب. تحقق من أذونات التخزين وحاول مرة أخرى."
+    },
+    "passwordRegisterForm": {
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "termsAndConditions": "الشروط والأحكام",
+      "register": "تسجيل حساب",
+      "thisUsernameIsAlreadyTaken": "اسم المستخدم هذا مستخدم بالفعل.",
+      "thisUsernameContainsInvalidCharacters": "يحتوي اسم المستخدم على أحرف غير صالحة.",
+      "thisUsernameIsReserved": "اسم المستخدم هذا محجوز.",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "كلمة المرور ضعيفة ورفضها الخادم. اختر كلمة مرور أقوى.",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "كلمة المرور قصيرة ورفضها الخادم. اختر كلمة مرور أطول.",
+      "registrationToken": "رمز التسجيل",
+      "registrationTokenOptional": "رمز التسجيل (اختياري)",
+      "email": "البريد الإلكتروني",
+      "emailOptional": "البريد الإلكتروني (اختياري)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "تعذر التسجيل. قيّد الخادم معدل الطلبات. حاول لاحقًا.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "تعذر التسجيل. لا يسمح الخادم المنزلي بالتسجيل.",
+      "failedToRegisterInvalidRequest": "تعذر التسجيل. الطلب غير صالح.",
+      "failedToRegisterUnknownReason": "تعذر التسجيل لسبب غير معروف.",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "تم التسجيل، لكن المتصفح تعذر عليه حفظ الحساب. تحقق من أذونات التخزين وحاول تسجيل الدخول.",
+      "acceptTerms": "أوافق على <terms>شروط وأحكام الخادم</terms>."
+    },
+    "register": {
+      "register": "تسجيل حساب",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "يتطلب هذا العميل «تسجيل الدخول باستخدام Apple». أضف Apple إلى قائمة موفري SSO في الخادم المنزلي.",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "يسمح هذا الخادم المنزلي بالتسجيل عبر Apple أو Google أو GitHub فقط.",
+      "registrationHasBeenDisabledOnThisHomeserver": "التسجيل معطّل على هذا الخادم المنزلي.",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "تم تقييد معدل طلباتك! حاول لاحقًا.",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "طلب غير صالح! تعذر الحصول على خيارات التسجيل.",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "لا يدعم هذا التطبيق التسجيل على هذا الخادم المنزلي.",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "يتطلب هذا الخادم المنزلي التسجيل عبر SSO، لكنه لم يعلن عن أي موفري SSO.",
+      "login": "تسجيل الدخول",
+      "accountLink": "لديك حساب بالفعل؟ <authLink>سجّل الدخول</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "تمت إعادة ضبط كلمة المرور. سجّل الدخول باستخدام كلمة المرور الجديدة.",
+      "login": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "resetPassword": "إعادة ضبط كلمة المرور",
+      "resetEmailDescription": "سيرسل الخادم المنزلي <strong>⁨{{server}}⁩</strong> إليك رسالة بريد إلكتروني لإعادة ضبط كلمة المرور.",
+      "failedToResetPassword": "تعذر إعادة ضبط كلمة المرور."
+    },
+    "resetPassword": {
+      "resetPassword": "إعادة ضبط كلمة المرور",
+      "login": "تسجيل الدخول",
+      "accountLink": "تذكرت كلمة المرور؟ <authLink>سجّل الدخول</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "جارٍ استدراك المزامنة...",
+      "startupRecoveryOptions": "خيارات استرداد بدء التشغيل",
+      "logout": "تسجيل الخروج",
+      "retry": "إعادة المحاولة",
+      "clearCacheAndReload": "مسح ذاكرة التخزين المؤقت وإعادة التحميل",
+      "removeAccount": "إزالة الحساب",
+      "clearing": "جارٍ المسح...",
+      "failedToStartAccountValue1Value2": "تعذر بدء الحساب ⁨{{value1}}⁩. ⁨{{value2}}⁩"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "إلغاء والعودة إلى تسجيل الدخول",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "تعذر الاتصال بالخادم المنزلي. قد يكون الخادم أو اتصالك بالإنترنت معطلًا.",
+      "retry": "إعادة المحاولة",
+      "continue": "متابعة",
+      "connectingToServer": "جارٍ الاتصال بالخادم",
+      "clearing": "جارٍ المسح...",
+      "clearCacheAndReload": "مسح ذاكرة التخزين المؤقت وإعادة التحميل"
+    },
+    "syncStatus": {
+      "catchingUp": "جارٍ استدراك المزامنة...",
+      "connectionLostReconnecting": "انقطع الاتصال! جارٍ إعادة الاتصال...",
+      "connectionLost": "انقطع الاتصال!"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "إعداد Local MindRoom",
+      "openLocalMindroomSettings": "فتح إعدادات Local MindRoom",
+      "enterPairCode": "لديك رمز؟ أدخله في Local MindRoom",
+      "poweredBy": "مشغّل بواسطة <links />",
+      "title": "مرحبًا بك في ⁨{{appName}}⁩",
+      "subtitle": "وكلاء ذكاء اصطناعي يعيشون في غرف الدردشة.",
+      "docs": "الوثائق",
+      "sourceCode": "الشيفرة المصدرية",
+      "setupStep1": "1. شغّل ⁨{{command}}⁩",
+      "setupStep2": "2. أضف بيانات اعتماد النموذج إلى ⁨{{envFile}}⁩، أو شغّل ⁨{{command}}⁩",
+      "setupStep3": "3. ابدأه باستخدام ⁨{{command}}⁩، ثم افتح الرابط الذي يعرضه للموافقة على الاتصال"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "توسيع لوحة التنقل",
+      "collapseNavigationPanel": "طي لوحة التنقل"
+    },
+    "create": {
+      "createSpace": "إنشاء مساحة",
+      "buildASpaceForYourCommunity": "أنشئ مساحة لمجتمعك."
+    },
+    "directCreate": {
+      "createChat": "إنشاء دردشة",
+      "startAPrivateEncryptedChatByEnteringAUserId": "ابدأ دردشة خاصة مشفرة بإدخال معرّف مستخدم."
+    },
+    "explore": {
+      "addServer": "إضافة خادم",
+      "addServerNameToExplorePublicCommunities": "أضف اسم خادم لاستكشاف المجتمعات العامة.",
+      "serverName": "اسم الخادم",
+      "failedToLoadPublicRoomsPleaseTryAgain": "تعذر تحميل الغرف العامة. حاول مرة أخرى.",
+      "view": "عرض",
+      "exploreCommunity": "استكشاف المجتمع",
+      "featured": "المميّزة",
+      "servers": "الخوادم"
+    },
+    "featured": {
+      "featuredByClient": "اختيارات العميل",
+      "featuredSpaces": "المساحات المميّزة",
+      "featuredRooms": "الغرف المميّزة",
+      "noRoomsOrSpacesFeaturedByClientProvider": "لم يحدّد موفر العميل أي غرف أو مساحات مميّزة.",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "ابحث عن الغرف والمساحات العامة التي يوصي بها موفر العميل واستكشفها."
+    },
+    "server": {
+      "search": "بحث",
+      "searchForKeyword": "البحث عن كلمة مفتاحية",
+      "clear": "مسح",
+      "enter": "إدخال",
+      "protocols": "البروتوكولات",
+      "presets": "الإعدادات المسبقة",
+      "customLimit": "حد مخصص",
+      "perPageItemLimit": "عدد العناصر في الصفحة",
+      "changeLimit": "تغيير الحد",
+      "popularCommunities": "المجتمعات الرائجة",
+      "previousPage": "الصفحة السابقة",
+      "nextPage": "الصفحة التالية",
+      "noCommunitiesFound": "لم يتم العثور على مجتمعات!",
+      "pageLimitValue1": "حد الصفحة: ⁨{{value1}}⁩",
+      "resultsForValue1": "نتائج «⁨{{value1}}⁩»"
+    },
+    "createRoom": {
+      "createRoom": "إنشاء غرفة",
+      "buildARoomForRealTimeConversations": "أنشئ غرفة للمحادثات في الوقت الفعلي."
+    },
+    "search": {
+      "messageSearch": "البحث في الرسائل"
+    },
+    "inbox": {
+      "invites": "الدعوات",
+      "inbox": "صندوق الوارد",
+      "notifications": "الإشعارات"
+    },
+    "invites": {
+      "encrypted": "مشفرة",
+      "directMessage": "رسالة مباشرة",
+      "space": "المساحة",
+      "decline": "رفض",
+      "accept": "قبول",
+      "primary": "الرئيسية",
+      "public": "عامة",
+      "spam": "مزعجة",
+      "noInvites": "لا توجد دعوات",
+      "declineAll": "رفض الكل",
+      "acceptAll": "قبول الكل",
+      "reportAll": "الإبلاغ عن الكل",
+      "blockAll": "حظر الكل",
+      "noSpamInvites": "لا توجد دعوات مزعجة",
+      "invites": "الدعوات",
+      "filter": "تصفية",
+      "hideAll": "إخفاء الكل",
+      "viewAll": "عرض الكل",
+      "reason": "السبب: ⁨{{reason}}⁩",
+      "from": "من: <b>⁨{{sender}}⁩</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "ستظهر هنا الدعوات التي يرسلها أشخاص يشاركونك إحدى الغرف.",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "ستظهر هنا دعوات الأشخاص من خارج غرفك.",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "قد تتضمن بعض الدعوات التالية محتوى ضارًا أو تكون مرسلة من مستخدمين محظورين.",
+      "invitesDetectedAsSpamAppearHere": "تظهر هنا الدعوات المصنفة كمزعجة.",
+      "spamInvites_one": "⁨{{count, number}}⁩ دعوة مزعجة",
+      "spamInvites_other": "⁨{{count, number}}⁩ من الدعوات المزعجة",
+      "spamInvites_few": "⁨{{count, number}}⁩ دعوات مزعجة",
+      "spamInvites_many": "⁨{{count, number}}⁩ دعوات مزعجة",
+      "spamInvites_two": "⁨{{count, number}}⁩ دعوات مزعجة",
+      "spamInvites_zero": "⁨{{count, number}}⁩ دعوات مزعجة"
+    },
+    "notifications": {
+      "open": "فتح",
+      "notificationMessages": "رسائل الإشعارات",
+      "filter": "تصفية",
+      "allNotifications": "كل الإشعارات",
+      "highlighted": "المميّزة",
+      "scrollToTop": "التمرير إلى الأعلى",
+      "noNotifications": "لا توجد إشعارات",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "ليست لديك إشعارات جديدة لعرضها بعد.",
+      "event": " حدث",
+      "roomTombstone": "حدث استبدال الغرفة. ⁨{{body}}⁩"
+    },
+    "spaceTabs": {
+      "unpin": "إلغاء التثبيت",
+      "invite": "دعوة",
+      "copyLink": "نسخ الرابط",
+      "spaceSettings": "إعدادات المساحة",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "تم التقاط المساحة ⁨{{value1}}⁩. استخدم مفاتيح الأسهم لتغيير الترتيب. اضغط على مفتاح المسافة لإفلاتها."
+    },
+    "space": {
+      "invite": "دعوة",
+      "copyLink": "نسخ الرابط",
+      "spaceSettings": "إعدادات المساحة",
+      "eventTimeline": "الخط الزمني للأحداث",
+      "leaveSpace": "مغادرة المساحة",
+      "spaceUpgraded": "تمت ترقية المساحة",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "تم استبدال هذه المساحة ولم تعد نشطة.",
+      "openNewSpace": "فتح المساحة الجديدة",
+      "joinNewSpace": "الانضمام إلى المساحة الجديدة",
+      "lobby": "الردهة",
+      "messageSearch": "البحث في الرسائل",
+      "failedToJoinReplacementSpace": "تعذر الانضمام إلى المساحة البديلة!",
+      "rooms": "الغرف",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "تم التقاط الغرفة ⁨{{value1}}⁩. استخدم مفاتيح الأسهم لتغيير الترتيب. اضغط على مفتاح المسافة لإفلاتها."
+    },
+    "threads": {
+      "threads": "سلاسل المحادثات"
+    },
+    "threadsView": {
+      "loadingThreads": "جارٍ تحميل سلاسل المحادثات",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "لم تشارك في أي سلسلة محادثة بعد",
+      "noThreadsMatchYourFilters": "لا تطابق عوامل التصفية أي سلسلة محادثة",
+      "clearFilters": "مسح عوامل التصفية",
+      "thread": "سلسلة محادثة",
+      "threads": "سلاسل المحادثات"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "غير مدعوم",
+      "option0": "بالدعوة فقط",
+      "option1": "طلب الانضمام أو دعوة",
+      "option2": "أعضاء المساحة أو طلب الانضمام",
+      "option3": "أعضاء المساحة",
+      "option4": "عامة"
+    },
+    "toolbar": {
+      "heading1": "عنوان 1",
+      "heading2": "عنوان 2",
+      "heading3": "عنوان 3",
+      "bold": "عريض",
+      "italic": "مائل",
+      "underline": "تحته خط",
+      "strikeThrough": "يتوسطه خط",
+      "inlineCode": "شيفرة ضمن السطر",
+      "spoiler": "محتوى مخفي",
+      "blockQuote": "اقتباس كتلة",
+      "blockCode": "كتلة شيفرة",
+      "orderedList": "قائمة مرقمة",
+      "unorderedList": "قائمة نقطية",
+      "exitFormatting": "إنهاء التنسيق",
+      "disableMarkdown": "تعطيل Markdown",
+      "enableMarkdown": "تفعيل Markdown",
+      "exitValue1": "إنهاء ⁨{{value1}}⁩"
+    },
+    "reaction": {
+      "others_one": "⁨{{count}}⁩ شخص آخر",
+      "reactionSummary": "تفاعل <names>⁨{{names}}⁩</names> بالرمز :<reaction>⁨{{reaction}}⁩</reaction>:",
+      "others_other": "⁨{{count}}⁩ آخرون",
+      "others_few": "⁨{{count}}⁩ آخرون",
+      "others_many": "⁨{{count}}⁩ آخرون",
+      "others_two": "⁨{{count}}⁩ آخرين",
+      "others_zero": "⁨{{count}}⁩ آخرون"
+    },
+    "audioContent": {
+      "pause": "إيقاف مؤقت",
+      "play": "تشغيل"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "الانتقال في الرسالة الصوتية"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "الافتراضي",
+      "option1": "كل الرسائل",
+      "option2": "الإشارات والكلمات المفتاحية",
+      "option3": "كتم"
+    },
+    "authFooter": {
+      "support": "الدعم",
+      "privacy": "الخصوصية",
+      "terms": "الشروط",
+      "poweredBy": "مشغّل بواسطة <app>⁨{{appName}}⁩</app> و<matrix>Matrix</matrix> و<cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "انضمام",
+      "notFound": "الصفحة غير موجودة"
+    },
+    "ssoProviders": {
+      "signUpApple": "التسجيل باستخدام Apple",
+      "signInApple": "تسجيل الدخول باستخدام Apple",
+      "continueGoogle": "المتابعة باستخدام Google",
+      "continueGithub": "المتابعة باستخدام GitHub",
+      "continueProvider": "المتابعة باستخدام ⁨{{provider}}⁩"
+    },
+    "memberEvents": {
+      "acceptedRequest": "قبل <b>⁨{{senderName}}⁩</b> طلب <b>⁨{{userName}}⁩</b> للانضمام ⁨{{reason}}⁩",
+      "invited": "دعا <b>⁨{{senderName}}⁩</b> <b>⁨{{userName}}⁩</b> ⁨{{reason}}⁩",
+      "requested": "طلب <b>⁨{{userName}}⁩</b> الانضمام إلى الغرفة ⁨{{reason}}⁩",
+      "joined": "انضم <b>⁨{{userName}}⁩</b> إلى الغرفة",
+      "rejectedInvitation": "رفض <b>⁨{{userName}}⁩</b> الدعوة ⁨{{reason}}⁩",
+      "rejectedRequest": "رفض <b>⁨{{senderName}}⁩</b> طلب <b>⁨{{userName}}⁩</b> للانضمام ⁨{{reason}}⁩",
+      "withdrewRequest": "ألغى <b>⁨{{userName}}⁩</b> طلب الانضمام ⁨{{reason}}⁩",
+      "revokedInvitation": "ألغى <b>⁨{{senderName}}⁩</b> دعوة <b>⁨{{userName}}⁩</b> ⁨{{reason}}⁩",
+      "unbanned": "ألغى <b>⁨{{senderName}}⁩</b> حظر <b>⁨{{userName}}⁩</b> من الغرفة ⁨{{reason}}⁩",
+      "left": "غادر <b>⁨{{userName}}⁩</b> الغرفة ⁨{{reason}}⁩",
+      "kicked": "طرد <b>⁨{{senderName}}⁩</b> <b>⁨{{userName}}⁩</b> ⁨{{reason}}⁩",
+      "banned": "حظر <b>⁨{{senderName}}⁩</b> <b>⁨{{userName}}⁩</b> من الغرفة ⁨{{reason}}⁩",
+      "changedName": "غيّر <b>⁨{{prevUserName}}⁩</b> اسم العرض إلى <b>⁨{{userName}}⁩</b>",
+      "removedName": "أزال <b>⁨{{prevUserName}}⁩</b> اسم العرض",
+      "changedAvatar": "غيّر <b>⁨{{userName}}⁩</b> صورته الرمزية",
+      "removedAvatar": "أزال <b>⁨{{userName}}⁩</b> صورته الرمزية",
+      "broken": "حدث عضوية تالف",
+      "unchanged": "حدث عضوية بلا تغييرات"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "اقتراحات دعوة المستخدمين",
+      "users": "المستخدمون",
+      "searching": "جارٍ البحث عن مستخدمين",
+      "noMatches": "لا يوجد مستخدمون مطابقون",
+      "matchingUsers_one": "⁨{{count}}⁩ مستخدم مطابق",
+      "matchingUsers_other": "⁨{{count}}⁩ من المستخدمين المطابقين",
+      "matchingUsers_few": "⁨{{count}}⁩ من المستخدمين المطابقين",
+      "matchingUsers_many": "⁨{{count}}⁩ من المستخدمين المطابقين",
+      "matchingUsers_two": "⁨{{count}}⁩ مستخدمان مطابقان",
+      "matchingUsers_zero": "⁨{{count}}⁩ من المستخدمين المطابقين"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "جارٍ تحميل MindRoom Chat"
+    },
+    "commands": {
+      "CommandMe": "إرسال رسالة إجراء",
+      "CommandNotice": "إرسال رسالة تنبيه",
+      "CommandShrug": "إرسال ¯\\_(ツ)_/¯ كرسالة",
+      "CommandTableFlip": "إرسال ⁨{{value1}}⁩ كرسالة",
+      "CommandUnFlip": "إرسال ⁨{{value1}}⁩ كرسالة",
+      "CommandStartDm": "بدء رسالة مباشرة مع مستخدم. مثال: ⁨/startdm userId1⁩",
+      "CommandJoin": "الانضمام إلى غرفة باستخدام عنوان. مثال: ⁨/join address1 address2⁩",
+      "CommandLeave": "مغادرة الغرفة الحالية.",
+      "CommandInvite": "دعوة مستخدم إلى الغرفة. مثال: ⁨/invite userId1 userId2 [-r reason]⁩",
+      "CommandDisInvite": "إلغاء دعوة مستخدم إلى الغرفة. مثال: ⁨/disinvite userId1 userId2 [-r reason]⁩",
+      "CommandKick": "طرد مستخدم من الغرفة. مثال: ⁨/kick userId1 userId2 servername [-r reason]⁩",
+      "CommandBan": "حظر مستخدم من الغرفة. مثال: ⁨/ban userId1 userId2 servername [-r reason]⁩",
+      "CommandUnBan": "إلغاء حظر مستخدم من الغرفة. مثال: ⁨/unban userId1 userId2⁩",
+      "CommandIgnore": "تجاهل مستخدم. مثال: ⁨/ignore userId1 userId2⁩",
+      "CommandUnIgnore": "إلغاء تجاهل مستخدم. مثال: ⁨/unignore userId1 userId2⁩",
+      "CommandMyRoomNick": "تغيير الاسم المستعار في الغرفة الحالية.",
+      "CommandMyRoomAvatar": "تغيير صورة الملف الشخصي في الغرفة الحالية. مثال ⁨/myroomavatar mxc://xyzabc⁩",
+      "CommandConvertToDm": "تحويل الغرفة إلى رسالة مباشرة",
+      "CommandConvertToRoom": "تحويل الرسالة المباشرة إلى غرفة",
+      "CommandDelete": "حذف رسائل مستخدمين. مثال: ⁨/delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]⁩",
+      "CommandAcl": "إدارة قائمة التحكم بوصول الخادم. مثال ⁨/acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]⁩"
+    },
+    "item": {
+      "value1Emoji": "رمز ⁨{{value1}}⁩ التعبيري"
+    },
+    "fileHeader": {
+      "downloadValue1": "تنزيل ⁨{{value1}}⁩"
+    },
+    "time": {
+      "yesterdayValue1": "أمس ⁨{{value1}}⁩"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "سرعة التشغيل الحالية ⁨{{value1}}⁩، انقر للتبديل"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "إشعار جديد في صندوق الوارد من ⁨{{value1}}⁩"
+    },
+    "memberFilters": {
+      "joined": "منضم",
+      "invited": "مدعو",
+      "left": "غادر",
+      "kicked": "مطرود",
+      "banned": "محظور من الغرفة"
+    },
+    "memberSort": {
+      "atoZ": "من أ إلى ي",
+      "ztoA": "من ي إلى أ",
+      "newest": "الأحدث",
+      "oldest": "الأقدم"
+    },
+    "presence": {
+      "active": "نشط",
+      "busy": "مشغول",
+      "away": "بعيد"
+    },
+    "emojiGroups": {
+      "smileysPeople": "الوجوه والأشخاص",
+      "animalsNature": "الحيوانات والطبيعة",
+      "foodDrinks": "الطعام والشراب",
+      "activity": "النشاط",
+      "travelPlaces": "السفر والأماكن",
+      "objects": "الأشياء",
+      "symbols": "الرموز",
+      "flags": "الأعلام"
+    },
+    "roomTypes": {
+      "all": "الكل",
+      "spaces": "المساحات",
+      "rooms": "الغرف"
+    },
+    "imageUsage": {
+      "both": "كلاهما",
+      "sticker": "ملصق",
+      "emoji": "رمز تعبيري"
+    },
+    "powerLevels": {
+      "manager": "مدير",
+      "founder": "مؤسس",
+      "admin": "مشرف",
+      "moderator": "مراقب",
+      "member": "عضو",
+      "muted": "مكتوم",
+      "team": "الفريق ⁨{{power}}⁩"
+    },
+    "threadPreviews": {
+      "voiceMessage": "رسالة صوتية",
+      "tools_one": "⁨{{count, number}}⁩ أداة",
+      "tools_other": "⁨{{count, number}}⁩ من الأدوات",
+      "tools_few": "⁨{{count, number}}⁩ أداة",
+      "tools_many": "⁨{{count, number}}⁩ أداة",
+      "tools_two": "⁨{{count, number}}⁩ أداة",
+      "tools_zero": "⁨{{count, number}}⁩ أداة"
+    },
+    "threadSummary": {
+      "manual": "ملخص عُدِّل يدويًا",
+      "title": "ملخص سلسلة المحادثة",
+      "provenance": "ملخص سلسلة محادثة أنشأه الذكاء الاصطناعي",
+      "provenanceCount_one": "ملخص بالذكاء الاصطناعي لآخر ⁨{{count, number}}⁩ رسالة",
+      "provenanceCount_other": "ملخص بالذكاء الاصطناعي لآخر ⁨{{count, number}}⁩ من الرسائل",
+      "provenanceCount_few": "ملخص بالذكاء الاصطناعي لآخر ⁨{{count, number}}⁩ من الرسائل",
+      "provenanceCount_many": "ملخص بالذكاء الاصطناعي لآخر ⁨{{count, number}}⁩ من الرسائل",
+      "provenanceCount_two": "ملخص بالذكاء الاصطناعي لآخر ⁨{{count, number}}⁩ من الرسائل",
+      "provenanceCount_zero": "ملخص بالذكاء الاصطناعي لآخر ⁨{{count, number}}⁩ من الرسائل"
+    },
+    "commandPalette": {
+      "shortcutHint": "الاختصار: <shortcut>⁨{{shortcut}}⁩</shortcut> للفتح."
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "إضافة محتوى موجود",
+      "search": "بحث",
+      "failedToApplyChangesPleaseTryAgain": "تعذر تطبيق التغييرات! حاول مرة أخرى.",
+      "reset": "إعادة ضبط",
+      "applyChanges": "تطبيق التغييرات",
+      "applyWhenReadySelected_one": "طبّق عندما تصبح جاهزًا. (تم اختيار ⁨{{count}}⁩)",
+      "applyWhenReadySelected_other": "طبّق عندما تصبح جاهزًا. (تم اختيار ⁨{{count}}⁩)",
+      "noMatchForQuery": "لا توجد نتيجة مطابقة لـ «⁨{{query}}⁩».",
+      "noMatchFound": "لا توجد نتيجة مطابقة",
+      "noRooms": "لا توجد غرف",
+      "noRoomsDescription": "ليست لديك غرف لعرضها بعد.",
+      "noSpaces": "لا توجد مساحات",
+      "noSpacesDescription": "ليست لديك مساحات لعرضها بعد.",
+      "applyWhenReadySelected_few": "طبّق عندما تصبح جاهزًا. (تم اختيار ⁨{{count}}⁩)",
+      "applyWhenReadySelected_many": "طبّق عندما تصبح جاهزًا. (تم اختيار ⁨{{count}}⁩)",
+      "applyWhenReadySelected_two": "طبّق عندما تصبح جاهزًا. (تم اختيار ⁨{{count}}⁩)",
+      "applyWhenReadySelected_zero": "طبّق عندما تصبح جاهزًا. (تم اختيار ⁨{{count}}⁩)"
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "إنهاء"
+      },
+      "memberSpeaking": {
+        "one": "يتحدث <name>⁨{{name}}⁩</name>...",
+        "two": "يتحدث <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second>...",
+        "three": "يتحدث <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third>...",
+        "four": "يتحدث <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> و<others>⁨{{count}}⁩ شخص آخر</others>...",
+        "many": "يتحدث <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> و<others>⁨{{count}}⁩ آخرون</others>..."
+      },
+      "liveCount": "⁨{{count}}⁩ مباشر"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "التفاعلات",
+        "settings": "الإعدادات",
+        "end": "إنهاء",
+        "gridView": "عرض شبكي",
+        "spotlightView": "عرض المتحدث"
+      },
+      "callMemberCard": {
+        "collapse": "طي",
+        "additionalParticipants_one": "+⁨{{count}}⁩ شخص آخر",
+        "additionalParticipants_other": "+⁨{{count}}⁩ آخرون",
+        "additionalParticipants_few": "+⁨{{count}}⁩ آخرون",
+        "additionalParticipants_many": "+⁨{{count}}⁩ آخرون",
+        "additionalParticipants_two": "+⁨{{count}}⁩ آخرون",
+        "additionalParticipants_zero": "+⁨{{count}}⁩ آخرون"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "لا يدعم خادمك المنزلي المكالمات.",
+        "yourBrowserDoesNotSupportWebrtcWhich": "لا يدعم متصفحك WebRTC المطلوب لإجراء المكالمات.",
+        "voiceChatSEmptyBeTheFirst": "الدردشة الصوتية فارغة — كن أول من ينضم!",
+        "youDonTHavePermissionToJoin": "ليست لديك صلاحية الانضمام!",
+        "alreadyInAnotherCallEndTheCurrent": "أنت في مكالمة أخرى — أنهِ المكالمة الحالية للانضمام!",
+        "participant": "مشارك",
+        "voiceCallError": "خطأ في المكالمة الصوتية",
+        "dismissVoiceCallError": "إغلاق خطأ المكالمة الصوتية"
+      },
+      "prescreenControls": {
+        "join": "انضمام"
+      },
+      "controls": {
+        "closeChat": "إغلاق الدردشة",
+        "openChat": "فتح الدردشة",
+        "startCamera": "تشغيل الكاميرا",
+        "startScreenshare": "بدء مشاركة الشاشة",
+        "stopCamera": "إيقاف الكاميرا",
+        "stopScreenshare": "إيقاف مشاركة الشاشة",
+        "turnOffMicrophone": "كتم الميكروفون",
+        "turnOffSound": "كتم الصوت",
+        "turnOnMicrophone": "تشغيل الميكروفون",
+        "turnOnSound": "تشغيل الصوت"
+      },
+      "liveCount": "⁨{{count}}⁩ مباشر"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "أدوات المطورين",
+          "options": "الخيارات",
+          "enableDeveloperTools": "تفعيل أدوات المطورين",
+          "roomId": "معرّف الغرفة",
+          "copy": "نسخ",
+          "data": "البيانات",
+          "newMessageEvent": "حدث رسالة جديد",
+          "createAndSendANewMessageEvent": "إنشاء حدث رسالة جديد وإرساله داخل الغرفة.",
+          "compose": "إنشاء",
+          "roomState": "حالة الغرفة",
+          "stateEventsOfTheRoom": "أحداث حالة الغرفة.",
+          "events": "الأحداث",
+          "addNew": "إضافة جديد",
+          "accountData": "بيانات الحساب",
+          "privatePersonalizationDataStoredWithinRoom": "بيانات تخصيص خاصة مخزنة داخل الغرفة.",
+          "collapse": "طي",
+          "copyRoomIdDescription": "نسخ معرّف الغرفة إلى الحافظة. («⁨{{roomId}}⁩»)",
+          "expand": "توسيع",
+          "total": "الإجمالي: ⁨{{count}}⁩"
+        },
+        "sendRoomEvent": {
+          "developerTools": "أدوات المطورين",
+          "send": "إرسال",
+          "stateKeyOptional": "مفتاح الحالة (اختياري)",
+          "jsonContent": "محتوى JSON",
+          "messageEventType": "نوع حدث الرسالة",
+          "stateEventType": "نوع حدث الحالة"
+        },
+        "stateEventEditor": {
+          "stateEvent": "حدث الحالة",
+          "save": "حفظ",
+          "cancel": "إلغاء",
+          "jsonContent": "محتوى JSON",
+          "edit": "تحرير",
+          "developerTools": "أدوات المطورين"
+        },
+        "defaultStateKey": "الافتراضي"
+      },
+      "emojisStickers": {
+        "emojisStickers": "الرموز التعبيرية والملصقات",
+        "roomPacks": {
+          "newPack": "حزمة جديدة",
+          "addYourOwnEmojiAndStickerPack": "أضف حزمة رموز تعبيرية وملصقات خاصة بك لاستخدامها في الغرفة.",
+          "name": "الاسم",
+          "create": "إنشاء",
+          "view": "عرض",
+          "packs": "الحزم",
+          "noPacks": "لا توجد حزم",
+          "thereAreNoEmojiOrStickerPacks": "لا توجد حاليًا حزم رموز تعبيرية أو ملصقات لعرضها.",
+          "failedToRemovePacksPleaseTryAgain": "تعذرت إزالة الحزم! حاول مرة أخرى.",
+          "cancel": "إلغاء",
+          "delete": "حذف",
+          "deleteSelectedPacks_one": "حذف الحزم المحددة. (تم اختيار ⁨{{count}}⁩)",
+          "deleteSelectedPacks_other": "حذف الحزم المحددة. (تم اختيار ⁨{{count}}⁩)",
+          "unknown": "غير معروف",
+          "deleteSelectedPacks_few": "حذف الحزم المحددة. (تم تحديد ⁨{{count}}⁩)",
+          "deleteSelectedPacks_many": "حذف الحزم المحددة. (تم تحديد ⁨{{count}}⁩)",
+          "deleteSelectedPacks_two": "حذف الحزم المحددة. (تم تحديد ⁨{{count}}⁩)",
+          "deleteSelectedPacks_zero": "حذف الحزم المحددة. (تم تحديد ⁨{{count}}⁩)"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "تشفير الغرفة",
+          "enabled": "مفعّل",
+          "enable": "تفعيل",
+          "enableEncryption": "تفعيل التشفير",
+          "areYouSureOnceEnabledEncryptionCannot": "هل أنت متأكد؟ بعد تفعيل التشفير، لا يمكن تعطيله!",
+          "enableE2eEncryption": "تفعيل التشفير التام بين الطرفين",
+          "disabledDescription": "بعد تفعيل التشفير، لا يمكن تعطيله!",
+          "enabledDescription": "الرسائل في هذه الغرفة محمية بالتشفير التام بين الطرفين."
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "إمكانية عرض سجل الرسائل",
+          "changesToHistoryVisibilityWillOnlyApply": "لن تسري تغييرات إمكانية عرض السجل إلا على الرسائل المستقبلية، ولن تؤثر في السجل الحالي.",
+          "afterInvite": "بعد الدعوة",
+          "afterJoin": "بعد الانضمام",
+          "allMessages": "كل الرسائل",
+          "allMessagesGuests": "كل الرسائل (الضيوف)"
+        },
+        "roomProfile": {
+          "avatar": "الصورة الرمزية",
+          "upload": "رفع",
+          "reset": "إعادة ضبط",
+          "remove": "إزالة",
+          "name": "الاسم",
+          "topic": "الموضوع",
+          "save": "حفظ",
+          "cancel": "إلغاء",
+          "profile": "الملف الشخصي",
+          "edit": "تحرير",
+          "unknown": "غير معروف"
+        },
+        "roomPublish": {
+          "publishToDirectory": "النشر في الدليل",
+          "roomDescription": "أدرج الغرفة في الدليل العام ليتمكن الآخرون من العثور عليها.",
+          "spaceDescription": "أدرج المساحة في الدليل العام ليتمكن الآخرون من العثور عليها."
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "لا يمكن التراجع عن هذا الإجراء!",
+          "options": "الخيارات",
+          "upgrade": "ترقية",
+          "currentVersion": "الإصدار الحالي: ⁨{{version}}⁩.",
+          "oldRoom": "الغرفة القديمة",
+          "oldSpace": "المساحة القديمة",
+          "openNewRoom": "فتح الغرفة الجديدة",
+          "openNewSpace": "فتح المساحة الجديدة",
+          "roomReplaced": "تم استبدال هذه الغرفة!",
+          "roomUpgrade": "ترقية الغرفة",
+          "spaceReplaced": "تم استبدال هذه المساحة!",
+          "spaceUpgrade": "ترقية المساحة",
+          "upgradeRoom": "ترقية الغرفة",
+          "upgradeSpace": "ترقية المساحة"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "العنوان مستخدم بالفعل!",
+          "collapse": "طي",
+          "delete": "حذف",
+          "expand": "توسيع",
+          "loading": "جارٍ التحميل...",
+          "localAddresses": "العناوين المحلية",
+          "localAddressesDescription": "عيّن عنوانًا محليًا ليتمكن المستخدمون من الانضمام عبر خادمك المنزلي.",
+          "main": "رئيسي",
+          "noAddresses": "لا توجد عناوين",
+          "publish": "نشر",
+          "publishRequiresLocalAddress": "لنشر عنوان، يجب تعيينه أولًا كعنوان محلي",
+          "published": "منشور",
+          "publishedAddresses": "العناوين المنشورة",
+          "publishedAddressesDescription": "إذا كان الوصول <public>عامًا</public>، فسيتمكن أي شخص من استخدام العناوين المنشورة للانضمام.",
+          "save": "حفظ",
+          "selectedCount_one": "تم اختيار ⁨{{count}}⁩",
+          "selectedCount_other": "تم اختيار ⁨{{count}}⁩",
+          "setMain": "تعيين كرئيسي",
+          "unpublish": "إلغاء النشر",
+          "unsetMain": "إلغاء التعيين كرئيسي",
+          "selectedCount_few": "⁨{{count}}⁩ تم التحديد",
+          "selectedCount_many": "⁨{{count}}⁩ تم التحديد",
+          "selectedCount_two": "⁨{{count}}⁩ تم التحديد",
+          "selectedCount_zero": "⁨{{count}}⁩ تم التحديد"
+        },
+        "roomJoinRules": {
+          "roomAccess": "الوصول إلى الغرفة",
+          "roomDescription": "غيّر طريقة انضمام الأشخاص إلى الغرفة.",
+          "spaceAccess": "الوصول إلى المساحة",
+          "spaceDescription": "غيّر طريقة انضمام الأشخاص إلى المساحة."
+        }
+      },
+      "members": {
+        "search": "بحث",
+        "scrollToTop": "التمرير إلى الأعلى",
+        "memberCount_one": "⁨{{count}}⁩ عضو",
+        "memberCount_other": "⁨{{count}}⁩ من الأعضاء",
+        "noMembersForFilter": "لا يوجد أعضاء يطابقون «⁨{{filter}}⁩»",
+        "noResults": "لا توجد نتائج",
+        "resultCount_one": "⁨{{count}}⁩ نتيجة",
+        "resultCount_other": "⁨{{count}}⁩ من النتائج",
+        "memberCount_few": "⁨{{count}}⁩ أعضاء",
+        "memberCount_many": "⁨{{count}}⁩ عضوًا",
+        "memberCount_two": "⁨{{count}}⁩ أعضاء",
+        "memberCount_zero": "⁨{{count}}⁩ أعضاء",
+        "resultCount_few": "⁨{{count}}⁩ نتيجة",
+        "resultCount_many": "⁨{{count}}⁩ نتيجة",
+        "resultCount_two": "⁨{{count}}⁩ نتيجة",
+        "resultCount_zero": "⁨{{count}}⁩ نتيجة"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "المستخدمون",
+          "defaultPower": "الصلاحية الافتراضية",
+          "defaultPowerLevelForAllUsers": "مستوى الصلاحية الافتراضي لكل المستخدمين.",
+          "above": "وما فوق",
+          "failedToApplyChangesPleaseTryAgain": "تعذر تطبيق التغييرات! حاول مرة أخرى.",
+          "changesSavedApplyWhenReady": "تم حفظ التغييرات! طبّقها عندما تصبح جاهزًا.",
+          "reset": "إعادة ضبط",
+          "applyChanges": "تطبيق التغييرات"
+        },
+        "powers": {
+          "founders": "المؤسسون",
+          "foundingMembersHasAllPermissionsAndCan": "يملك الأعضاء المؤسسون كل الصلاحيات، ولا يمكن تغييرهم إلا أثناء الترقية.",
+          "powerLevels": "مستويات الصلاحيات",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "إدارة مستويات الصلاحيات المتدرجة للمستخدمين وتخصيصها.",
+          "edit": "تحرير"
+        },
+        "powersEditor": {
+          "color": "اللون",
+          "pick": "اختيار",
+          "name": "الاسم",
+          "bot": "بوت",
+          "power": "الصلاحية",
+          "icon": "الأيقونة",
+          "remove": "إزالة",
+          "import": "استيراد",
+          "save": "حفظ",
+          "cancel": "إلغاء",
+          "permissions": "الأذونات",
+          "powerLevels": "مستويات الصلاحيات",
+          "newPowerLevel": "مستوى صلاحية جديد",
+          "createANewPowerLevel": "إنشاء مستوى صلاحية جديد.",
+          "create": "إنشاء",
+          "undo": "تراجع",
+          "usedPowerLevel": "مستوى صلاحية قيد الاستخدام",
+          "youHaveToRemoveItsUseBefore": "يجب إلغاء استخدامه قبل حذفه.",
+          "delete": "حذف",
+          "edit": "تحرير",
+          "failedToApplyChangesPleaseTryAgain": "تعذر تطبيق التغييرات! حاول مرة أخرى.",
+          "changesSavedApplyWhenReady": "تم حفظ التغييرات! طبّقها عندما تصبح جاهزًا.",
+          "reset": "إعادة ضبط",
+          "applyChanges": "تطبيق التغييرات"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "معرّف المستخدم",
+      "userSuggestions": "اقتراحات المستخدمين",
+      "pleaseEnterAValidUserId": "أدخل معرّف مستخدم صالحًا.",
+      "options": "الخيارات",
+      "endToEndEncryption": "التشفير التام بين الطرفين",
+      "onceThisFeatureIsEnabledItCan": "بعد تفعيل هذه الميزة، لا يمكن تعطيلها عقب إنشاء الغرفة.",
+      "create": "إنشاء",
+      "rateLimited_one": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!",
+      "rateLimited_other": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقائق!",
+      "rateLimited_few": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقائق!",
+      "rateLimited_many": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!",
+      "rateLimited_two": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقتين!",
+      "rateLimited_zero": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!"
+    },
+    "createRoom": {
+      "type": "النوع",
+      "access": "الوصول",
+      "name": "الاسم",
+      "topicOptional": "الموضوع (اختياري)",
+      "options": "الخيارات",
+      "advancedOptions": "خيارات متقدمة",
+      "endToEndEncryption": "التشفير التام بين الطرفين",
+      "onceThisFeatureIsEnabledItCan": "بعد تفعيل هذه الميزة، لا يمكن تعطيلها عقب إنشاء الغرفة.",
+      "knockToJoin": "طلب الانضمام",
+      "anyoneCanSendRequestToJoinThis": "يمكن لأي شخص إرسال طلب للانضمام إلى هذه الغرفة.",
+      "allowFederation": "السماح بالاتحاد",
+      "usersFromOtherServersCanJoin": "يمكن للمستخدمين من خوادم أخرى الانضمام.",
+      "create": "إنشاء",
+      "newChatRoom": "غرفة دردشة جديدة",
+      "newVoiceRoom": "غرفة صوتية جديدة",
+      "rateLimited_one": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!",
+      "rateLimited_other": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقائق!",
+      "rateLimited_few": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقائق!",
+      "rateLimited_many": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!",
+      "rateLimited_two": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقتين!",
+      "rateLimited_zero": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!"
+    },
+    "createSpace": {
+      "access": "الوصول",
+      "name": "الاسم",
+      "topicOptional": "الموضوع (اختياري)",
+      "options": "الخيارات",
+      "advancedOptions": "خيارات متقدمة",
+      "knockToJoin": "طلب الانضمام",
+      "anyoneCanSendRequestToJoinThis": "يمكن لأي شخص إرسال طلب للانضمام إلى هذه المساحة.",
+      "allowFederation": "السماح بالاتحاد",
+      "usersFromOtherServersCanJoin": "يمكن للمستخدمين من خوادم أخرى الانضمام.",
+      "create": "إنشاء",
+      "createSpaceModal": {
+        "newSpace": "مساحة جديدة"
+      },
+      "rateLimited_one": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!",
+      "rateLimited_other": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقائق!",
+      "rateLimited_few": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقائق!",
+      "rateLimited_many": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!",
+      "rateLimited_two": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقتين!",
+      "rateLimited_zero": "قيّد الخادم طلباتك لمدة ⁨{{count}}⁩ دقيقة!"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "إزالة",
+        "invite": "دعوة",
+        "settings": "الإعدادات",
+        "leave": "مغادرة",
+        "pinToSidebar": "تثبيت في الشريط الجانبي",
+        "setSuggested": "تعيين كمقترحة",
+        "unpinFromSidebar": "إلغاء التثبيت من الشريط الجانبي",
+        "unsetSuggested": "إلغاء التعيين كمقترحة"
+      },
+      "scrollToTop": "التمرير إلى الأعلى",
+      "reordering": "إعادة الترتيب",
+      "lobbyHeader": {
+        "invite": "دعوة",
+        "spaceSettings": "إعدادات المساحة",
+        "leaveSpace": "مغادرة المساحة",
+        "members": "الأعضاء",
+        "moreOptions": "المزيد من الخيارات"
+      },
+      "roomItem": {
+        "accessUnavailable": "الوصول غير متاح",
+        "unknown": "غير معروف",
+        "suggested": "مقترحة",
+        "inaccessible": "يتعذر الوصول إليها",
+        "openRoom": "فتح الغرفة",
+        "join": "انضمام",
+        "memberCount_one": "⁨{{formattedCount}}⁩ عضو",
+        "memberCount_other": "⁨{{formattedCount}}⁩ من الأعضاء",
+        "requestSent": "تم إرسال الطلب",
+        "requestToJoin": "طلب الانضمام",
+        "sendingRequest": "جارٍ إرسال الطلب",
+        "memberCount_few": "⁨{{formattedCount}}⁩ أعضاء",
+        "memberCount_many": "⁨{{formattedCount}}⁩ عضوًا",
+        "memberCount_two": "⁨{{formattedCount}}⁩ أعضاء",
+        "memberCount_zero": "⁨{{formattedCount}}⁩ أعضاء"
+      },
+      "spaceHierarchy": {
+        "noRooms": "لا توجد غرف",
+        "thisSpaceDoesNotContainsRoomsYet": "لا تحتوي هذه المساحة على غرف بعد."
+      },
+      "spaceItem": {
+        "unknown": "غير معروف",
+        "inaccessible": "يتعذر الوصول إليها",
+        "suggested": "مقترحة",
+        "accessUnavailable": "الوصول غير متاح",
+        "rooms": "الغرف",
+        "chatRoom": "غرفة دردشة",
+        "voiceRoom": "غرفة صوتية",
+        "existingRoom": "غرفة موجودة",
+        "addRoom": "إضافة غرفة",
+        "newSpace": "مساحة جديدة",
+        "existingSpace": "مساحة موجودة",
+        "addSpace": "إضافة مساحة",
+        "requestSent": "تم إرسال الطلب",
+        "requestToJoin": "طلب الانضمام"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "الإشعارات",
+        "invite": "دعوة",
+        "copyLink": "نسخ الرابط",
+        "roomSettings": "إعدادات الغرفة",
+        "leaveRoom": "مغادرة الغرفة",
+        "toggleChat": "إظهار الدردشة أو إخفاؤها",
+        "moreOptions": "المزيد من الخيارات"
+      },
+      "liveCount": "⁨{{count}}⁩ مباشر"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "الخط الزمني",
+        "general": "عام",
+        "options": "الخيارات",
+        "addresses": "العناوين",
+        "advancedOptions": "خيارات متقدمة",
+        "compact": "مدمج",
+        "threads": "سلاسل المحادثات",
+        "classic": "تقليدي",
+        "offline": {
+          "title": "الوصول دون اتصال",
+          "checking": "جارٍ التحقق من المحتوى المحفوظ…",
+          "unavailable": "المحتوى المحفوظ غير متاح على هذا الجهاز.",
+          "notSaved": "لم تُحفظ هذه الغرفة بعد للاستخدام دون اتصال.",
+          "downloading": "جارٍ تنزيل هذه الغرفة للاستخدام دون اتصال…",
+          "offlinePause": "تم إيقاف الحفظ مؤقتًا لأن الجهاز غير متصل.",
+          "backgroundPause": "تم إيقاف الحفظ مؤقتًا لأن التطبيق يعمل في الخلفية.",
+          "spacePause": "تم إيقاف الحفظ مؤقتًا لأن المحتوى المحمي استنفد مساحة التخزين المخصصة.",
+          "readOnlyPause": "فشل التخزين. أعد فتح التطبيق لاستئناف الحفظ.",
+          "connectionPause": "تم إيقاف الحفظ التلقائي مؤقتًا على هذا الاتصال.",
+          "errorPause": "توقف الحفظ مؤقتًا بعد حدوث خطأ. حاول مرة أخرى.",
+          "partialHistory": "لم يُحفظ جزء من السجل السابق.",
+          "inaccessibleHistory": "يتعذر حاليًا الوصول إلى جزء من السجل.",
+          "waitingForKeys": "الأحداث المشفرة التي تنتظر المفاتيح: ⁨{{count}}⁩",
+          "unresolvedRelations": "التعديلات أو الردود غير المحلولة: ⁨{{count}}⁩",
+          "missingEssential": "نصوص الرسائل الأساسية المفقودة: ⁨{{count}}⁩",
+          "historyEntries": "إدخالات السجل المحفوظة: ⁨{{count}}⁩",
+          "attachments": "المرفقات: تم حفظ ⁨{{saved}}⁩، والمفقود ⁨{{missing}}⁩.",
+          "storageUsed": "مساحة التخزين التي تستخدمها المرفقات: ⁨{{size}}⁩",
+          "pinFailed": "تعذر تحديث «الاحتفاظ دون اتصال».",
+          "includeAllMedia": "تضمين جميع الوسائط",
+          "keepOffline": "الاحتفاظ دون اتصال",
+          "keepOfflineDescription": "حماية الوسائط المحفوظة لهذه الغرفة أثناء التنظيف التلقائي.",
+          "cancelDownload": "إلغاء التنزيل",
+          "downloadEntireRoom": "تنزيل الغرفة بالكامل",
+          "clearDownloadedContent": "مسح المحتوى المنزّل",
+          "clearTitle": "هل تريد مسح المحتوى المنزّل؟",
+          "cancel": "إلغاء",
+          "clearDescription": "ستتم إزالة السجل والمرفقات المحفوظة لهذه الغرفة من هذا الجهاز.",
+          "clearFailed": "تعذر مسح المحتوى المنزّل.",
+          "clearConfirm": "مسح المحتوى"
+        }
+      },
+      "permissions": {
+        "permissions": "الأذونات",
+        "ban": "حظر من الغرفة",
+        "changeAllPermission": "تغيير كل الأذونات",
+        "changeRoomAccess": "تغيير الوصول إلى الغرفة",
+        "changeServerAcls": "تغيير قوائم التحكم بوصول الخادم",
+        "deleteOthersMessages": "حذف رسائل الآخرين",
+        "deleteSelfMessages": "حذف الرسائل الخاصة",
+        "editPowerLevels": "تعديل مستويات الصلاحيات",
+        "enableEncryption": "تفعيل التشفير",
+        "groups": {
+          "calls": "المكالمات",
+          "messages": "الرسائل",
+          "moderation": "الإشراف",
+          "other": "أخرى",
+          "roomOverview": "نظرة عامة على الغرفة",
+          "settings": "الإعدادات"
+        },
+        "historyVisibility": "إمكانية عرض السجل",
+        "invite": "دعوة",
+        "kick": "طرد",
+        "manageEmojisStickers": "إدارة الرموز التعبيرية والملصقات",
+        "modifyWidgets": "تعديل الأدوات المصغّرة",
+        "otherMessageEvents": "أحداث رسائل أخرى",
+        "otherSettings": "إعدادات أخرى",
+        "pinMessages": "تثبيت الرسائل",
+        "pingRoom": "تنبيه @room",
+        "publishAddress": "نشر العنوان",
+        "roomAvatar": "صورة الغرفة",
+        "roomName": "اسم الغرفة",
+        "roomTopic": "موضوع الغرفة",
+        "sendMessages": "إرسال الرسائل",
+        "sendReactions": "إرسال التفاعلات",
+        "sendStickers": "إرسال الملصقات",
+        "startOrJoinCall": "بدء مكالمة أو الانضمام إليها",
+        "upgradeRoom": "ترقية الغرفة"
+      },
+      "navigation": {
+        "developerTools": "أدوات المطورين",
+        "emojisStickers": "الرموز التعبيرية والملصقات",
+        "general": "عام",
+        "members": "الأعضاء",
+        "permissions": "الأذونات"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "الدردشة",
+        "close": "إغلاق"
+      },
+      "commandAutocomplete": {
+        "commands": "الأوامر"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "لم يتم إدخال رسالة.",
+        "decline": "رفض",
+        "approve": "موافقة",
+        "approveFromUser": "الموافقة على طلب انضمام ⁨{{userId}}⁩",
+        "approvedWaitingForSync": "تمت الموافقة. في انتظار مزامنة الغرفة…",
+        "approving": "جارٍ الموافقة…",
+        "declineFromUser": "رفض طلب انضمام ⁨{{userId}}⁩",
+        "declinedWaitingForSync": "تم الرفض. في انتظار مزامنة الغرفة…",
+        "declining": "جارٍ الرفض…",
+        "updateFailed": "تعذر تحديث الطلب."
+      },
+      "membersDrawer": {
+        "invite": "دعوة",
+        "invitePeople": "دعوة أشخاص",
+        "close": "إغلاق",
+        "typeName": "اكتب اسمًا...",
+        "scrollToTop": "التمرير إلى الأعلى",
+        "memberCount_one": "⁨{{count}}⁩ عضو",
+        "memberCount_other": "⁨{{count}}⁩ من الأعضاء",
+        "noMembersForFilter": "لا يوجد أعضاء يطابقون «⁨{{filter}}⁩»",
+        "noPendingJoinRequests": "لا توجد طلبات انضمام معلقة",
+        "noResults": "لا توجد نتائج",
+        "requestCount_one": "الطلبات (⁨{{count}}⁩)",
+        "requestCount_other": "الطلبات (⁨{{count}}⁩)",
+        "invitedCount_one": "⁨{{count}}⁩ مدعو",
+        "invitedCount_other": "⁨{{count}}⁩ مدعو",
+        "invitedCount_zero": "⁨{{count}}⁩ مدعوين",
+        "invitedCount_two": "⁨{{count}}⁩ مدعوان",
+        "invitedCount_few": "⁨{{count}}⁩ مدعوين",
+        "invitedCount_many": "⁨{{count}}⁩ مدعوًا",
+        "resultCount_one": "⁨{{count}}⁩ نتيجة",
+        "resultCount_other": "⁨{{count}}⁩ من النتائج",
+        "formattedMemberCount_one": "⁨{{formattedCount}}⁩ عضو",
+        "formattedMemberCount_other": "⁨{{formattedCount}}⁩ من الأعضاء",
+        "formattedMemberCount_few": "⁨{{formattedCount}}⁩ أعضاء",
+        "formattedMemberCount_many": "⁨{{formattedCount}}⁩ عضوًا",
+        "formattedMemberCount_two": "⁨{{formattedCount}}⁩ أعضاء",
+        "formattedMemberCount_zero": "⁨{{formattedCount}}⁩ أعضاء",
+        "memberCount_few": "⁨{{count}}⁩ أعضاء",
+        "memberCount_many": "⁨{{count}}⁩ عضوًا",
+        "memberCount_two": "⁨{{count}}⁩ أعضاء",
+        "memberCount_zero": "⁨{{count}}⁩ أعضاء",
+        "requestCount_few": "الطلبات (⁨{{count}}⁩)",
+        "requestCount_many": "الطلبات (⁨{{count}}⁩)",
+        "requestCount_two": "الطلبات (⁨{{count}}⁩)",
+        "requestCount_zero": "الطلبات (⁨{{count}}⁩)",
+        "resultCount_few": "⁨{{count}}⁩ نتيجة",
+        "resultCount_many": "⁨{{count}}⁩ نتيجة",
+        "resultCount_two": "⁨{{count}}⁩ نتيجة",
+        "resultCount_zero": "⁨{{count}}⁩ نتيجة"
+      },
+      "roomTombstone": {
+        "openNewRoom": "فتح الغرفة الجديدة",
+        "joinNewRoom": "الانضمام إلى الغرفة الجديدة",
+        "joinReplacementFailed": "تعذر الانضمام إلى الغرفة البديلة!",
+        "replacedDescription": "تم استبدال هذه الغرفة ولم تعد نشطة."
+      },
+      "jumpToTime": {
+        "jumpToTime": "الانتقال إلى وقت",
+        "time": "الوقت",
+        "date": "التاريخ",
+        "preset": "إعداد مسبق",
+        "today": "اليوم",
+        "yesterday": "أمس",
+        "beginning": "البداية",
+        "openTimeline": "فتح الخط الزمني"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "تحرير الرسالة...",
+          "save": "حفظ",
+          "cancel": "إلغاء"
+        }
+      },
+      "typing": {
+        "one": "يكتب <name>⁨{{name}}⁩</name>...",
+        "two": "يكتب <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second>...",
+        "three": "يكتب <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third>...",
+        "four": "يكتب <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> و<others>⁨{{count}}⁩ شخص آخر</others>...",
+        "many": "يكتب <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> و<others>⁨{{count}}⁩ آخرون</others>...",
+        "dropTypingStatus": "إخفاء حالة الكتابة"
+      },
+      "following": {
+        "one": "يتابع <name>⁨{{name}}⁩</name> المحادثة.",
+        "two": "يتابع <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> المحادثة.",
+        "three": "يتابع <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> المحادثة.",
+        "four": "يتابع <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> و<others>⁨{{count}}⁩ شخص آخر</others> المحادثة.",
+        "many": "يتابع <first>⁨{{first}}⁩</first> و<second>⁨{{second}}⁩</second> و<third>⁨{{third}}⁩</third> و<others>⁨{{count}}⁩ آخرون</others> المحادثة."
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "⁨{{baseLabel}}⁩، ⁨{{count}}⁩ طلب انضمام معلق",
+        "accessibleLabel_other": "⁨{{baseLabel}}⁩، ⁨{{count}}⁩ من طلبات الانضمام المعلقة",
+        "accessibleLabel_few": "⁨{{baseLabel}}⁩، ⁨{{count}}⁩ طلبات الانضمام المعلقة",
+        "accessibleLabel_many": "⁨{{baseLabel}}⁩، ⁨{{count}}⁩ طلبات الانضمام المعلقة",
+        "accessibleLabel_two": "⁨{{baseLabel}}⁩، ⁨{{count}}⁩ طلبات الانضمام المعلقة",
+        "accessibleLabel_zero": "⁨{{baseLabel}}⁩، ⁨{{count}}⁩ طلبات الانضمام المعلقة"
+      },
+      "reactionViewer": {
+        "reactedWith": "تفاعل بالرمز :⁨{{shortcode}}⁩:"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "الحساب",
+        "accountDeactivation": {
+          "accountManagement": "إدارة الحساب",
+          "deleteDeactivateAccount": "حذف الحساب أو تعطيله",
+          "deleteDeactivate": "حذف أو تعطيل",
+          "openProviderPortal": "فتح بوابة الموفر",
+          "thisWillRequestAccountDeactivationOnYour": "سيطلب هذا تعطيل الحساب على خادم Matrix المنزلي. قد تفقد الوصول إلى رسائلك وجلساتك.",
+          "eraseAccountDataIfSupported": "محو بيانات الحساب (إذا كان مدعومًا)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "عند تفعيله، قد يمحو الخادم المنزلي بيانات حسابك نهائيًا بالإضافة إلى تعطيله.",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "يلزم إجراء مصادقة إضافية لإكمال تعطيل الحساب.",
+          "thisClientDoesNotSupportTheRequired": "لا يدعم هذا العميل خطوات المصادقة التي يتطلبها هذا الخادم المنزلي.",
+          "continueInProviderPortal": "المتابعة في بوابة الموفر",
+          "cancel": "إلغاء",
+          "deactivationFailed": "تعذر تعطيل الحساب. ⁨{{error}}⁩",
+          "descriptionWithProvider": "ابدأ تعطيل الحساب من هذا العميل. ويمكنك المتابعة في صفحة إدارة حساب الموفر إذا لزم الأمر.",
+          "descriptionWithoutProvider": "ابدأ تعطيل الحساب من هذا العميل. قد تتطلب بعض الخوادم المنزلية خطوات مصادقة إضافية."
+        },
+        "contactInfo": {
+          "contactInformation": "معلومات الاتصال",
+          "emailAddress": "عنوان البريد الإلكتروني",
+          "emailAddressAttachedToYourAccount": "عنوان البريد الإلكتروني المرتبط بحسابك."
+        },
+        "ignoredUserList": {
+          "block": "حظر",
+          "blockedUsers": "المستخدمون المحظورون",
+          "selectUser": "اختيار مستخدم",
+          "preventReceivingMessagesOrInvitesFromUser": "امنع تلقي رسائل أو دعوات من مستخدم بإضافة معرّفه.",
+          "users": "المستخدمون"
+        },
+        "matrixId": {
+          "matrixId": "معرّف Matrix",
+          "copy": "نسخ",
+          "copied": "تم النسخ"
+        },
+        "profile": {
+          "avatar": "الصورة الرمزية",
+          "upload": "رفع",
+          "remove": "إزالة",
+          "removeAvatar": "إزالة الصورة الرمزية",
+          "areYouSureYouWantToRemove": "هل أنت متأكد من إزالة صورة الملف الشخصي؟",
+          "displayName": "اسم العرض",
+          "save": "حفظ",
+          "profile": "الملف الشخصي",
+          "unnamedFile": "بلا اسم"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "بيانات الحساب",
+          "global": "عام",
+          "dataStoredInYourGlobalAccountData": "البيانات المخزنة ضمن بيانات حسابك العامة.",
+          "events": "الأحداث",
+          "addNew": "إضافة جديد",
+          "collapse": "طي",
+          "expand": "توسيع",
+          "total": "الإجمالي: ⁨{{count}}⁩"
+        },
+        "developTools": {
+          "developerTools": "أدوات المطورين",
+          "options": "الخيارات",
+          "enableDeveloperTools": "تفعيل أدوات المطورين",
+          "accessToken": "رمز الوصول",
+          "copyAccessTokenToClipboard": "نسخ رمز الوصول إلى الحافظة.",
+          "copy": "نسخ"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "آخر نشاط:",
+          "deviceName": "اسم الجهاز",
+          "save": "حفظ",
+          "cancel": "إلغاء",
+          "deviceNamesAreVisibleToPublic": "أسماء الأجهزة ظاهرة للجميع.",
+          "logout": "تسجيل الخروج",
+          "undo": "تراجع",
+          "edit": "تحرير",
+          "deviceIdValue": "معرّف الجهاز: <value>⁨{{id}}⁩</value>",
+          "deviceKeyValue": "مفتاح الجهاز: <value>⁨{{key}}⁩</value>",
+          "ipAddressValue": "عنوان IP: <value>⁨{{address}}⁩</value>",
+          "loading": "جارٍ التحميل...",
+          "today": "اليوم",
+          "yesterday": "أمس"
+        },
+        "devices": "الأجهزة",
+        "security": "الأمان",
+        "deviceVerification": "التحقق من الجهاز",
+        "toVerifyDeviceIdentityAndGrantAccess": "للتحقق من هوية الجهاز ومنحه حق الوصول إلى الرسائل المشفرة.",
+        "current": "الحالي",
+        "localBackup": {
+          "newPassword": "كلمة المرور الجديدة",
+          "confirmPassword": "تأكيد كلمة المرور",
+          "export": "تصدير",
+          "exportMessagesData": "تصدير بيانات الرسائل",
+          "savePasswordProtectedCopyOfEncryptionData": "احفظ على جهازك نسخة محمية بكلمة مرور من بيانات التشفير لفك تشفير الرسائل لاحقًا.",
+          "password": "كلمة المرور",
+          "decrypt": "فك التشفير",
+          "importMessagesData": "استيراد بيانات الرسائل",
+          "loadPasswordProtectedCopyOfEncryptionData": "حمّل نسخة محمية بكلمة مرور من بيانات التشفير من الجهاز لفك تشفير رسائلك.",
+          "import": "استيراد",
+          "localBackup": "نسخة احتياطية محلية",
+          "collapse": "طي",
+          "cryptoModuleNotFound": "خطأ غير متوقع! لم يتم العثور على وحدة التشفير!",
+          "expand": "توسيع"
+        },
+        "otherDevices": {
+          "others": "أخرى",
+          "deviceDashboard": "لوحة الأجهزة",
+          "manageYourDevicesOnOidcDashboard": "أدر أجهزتك من لوحة OIDC.",
+          "open": "فتح",
+          "authenticationStepsToPerformThisActionAre": "لا يدعم العميل خطوات المصادقة المطلوبة لتنفيذ هذا الإجراء.",
+          "cancel": "إلغاء",
+          "logout": "تسجيل الخروج",
+          "logoutFailed": "تعذر تسجيل خروج الأجهزة! حاول مرة أخرى. ⁨{{error}}⁩",
+          "logoutSelectedDevices_one": "تسجيل الخروج من الأجهزة المحددة. (تم اختيار ⁨{{count}}⁩)",
+          "logoutSelectedDevices_other": "تسجيل الخروج من الأجهزة المحددة. (تم اختيار ⁨{{count}}⁩)",
+          "logoutSelectedDevices_few": "تسجيل الخروج من الأجهزة المحددة. (تم تحديد ⁨{{count}}⁩)",
+          "logoutSelectedDevices_many": "تسجيل الخروج من الأجهزة المحددة. (تم تحديد ⁨{{count}}⁩)",
+          "logoutSelectedDevices_two": "تسجيل الخروج من الأجهزة المحددة. (تم تحديد ⁨{{count}}⁩)",
+          "logoutSelectedDevices_zero": "تسجيل الخروج من الأجهزة المحددة. (تم تحديد ⁨{{count}}⁩)"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "ابدأ التحقق من جهاز آخر أو تحقّق يدويًا. <toggle><strong>عرض أقل</strong></toggle>",
+          "currentDeviceHelpMore": "ابدأ التحقق من جهاز آخر أو تحقّق يدويًا. <toggle><strong>معرفة المزيد</strong></toggle>",
+          "enable": "تفعيل",
+          "findDevice": "ابحث عن هذا الجهاز ضمن قسم <section>الأجهزة/الجلسات</section>.",
+          "initiateVerification": "ابدأ التحقق.",
+          "manualVerificationHint": "إذا لم يكن لديك جهاز تم التحقق منه، فاضغط على زر <action>«التحقق يدويًا»</action>.",
+          "openSettings": "افتح <settings>الإعدادات</settings>.",
+          "openVerifiedDevice": "افتح جهازك الآخر الذي تم التحقق منه.",
+          "reset": "إعادة ضبط",
+          "stepsFromOtherDevice": "خطوات التحقق من جهاز آخر.",
+          "unverified": "لم يتم التحقق منه",
+          "unverifiedCount_one": "⁨{{count}}⁩ لم يتم التحقق منها",
+          "unverifiedCount_other": "⁨{{count}}⁩ لم يتم التحقق منها",
+          "verified": "تم التحقق منه",
+          "verify": "تحقق",
+          "verifyDeviceDescription": "تحقق من هوية الجهاز وامنحه حق الوصول إلى الرسائل المشفرة.",
+          "verifyManually": "التحقق يدويًا",
+          "unverifiedCount_few": "⁨{{count}}⁩ لم يتم التحقق منه",
+          "unverifiedCount_many": "⁨{{count}}⁩ لم يتم التحقق منه",
+          "unverifiedCount_two": "⁨{{count}}⁩ لم يتم التحقق منه",
+          "unverifiedCount_zero": "⁨{{count}}⁩ لم يتم التحقق منه"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "الرموز التعبيرية والملصقات",
+        "globalPacks": {
+          "roomPacks": "حزم الغرف",
+          "noPacks": "لا توجد حزم",
+          "packFromRoomsWillAppearHereYou": "ستظهر هنا حزم الغرف. ليست لديك بعد غرف تحتوي على حزم.",
+          "view": "عرض",
+          "favoritePacks": "الحزم المفضلة",
+          "selectPack": "اختيار حزمة",
+          "pickEmojisAndStickersPackFromRooms": "اختر حزم رموز تعبيرية وملصقات من الغرف لاستخدامها في كل الغرف.",
+          "select": "اختيار",
+          "failedToApplyChangesPleaseTryAgain": "تعذر تطبيق التغييرات! حاول مرة أخرى.",
+          "changesSavedApplyWhenReady": "تم حفظ التغييرات! طبّقها عندما تصبح جاهزًا.",
+          "reset": "إعادة ضبط",
+          "applyChanges": "تطبيق التغييرات",
+          "selectAll": "تحديد الكل",
+          "unknown": "غير معروف",
+          "unselectAll": "إلغاء تحديد الكل",
+          "save": "حفظ",
+          "close": "إغلاق"
+        },
+        "userPack": {
+          "defaultPack": "الحزمة الافتراضية",
+          "view": "عرض",
+          "unknown": "غير معروف"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "كل الرسائل",
+          "badge": "الشارة:",
+          "1To1Chats": "دردشات فردية",
+          "1To1ChatsEncrypted": "دردشات فردية (مشفرة)",
+          "rooms": "الغرف",
+          "roomsEncrypted": "الغرف (مشفرة)"
+        },
+        "keywordMessages": {
+          "save": "حفظ",
+          "keywordMessages": "رسائل الكلمات المفتاحية",
+          "badge": "الشارة:",
+          "selectKeyword": "اختيار كلمة مفتاحية",
+          "setANotificationPreferenceForMessageContaining": "عيّن تفضيل الإشعارات للرسائل التي تحتوي على كلمة مفتاحية معينة."
+        },
+        "notifications": "الإشعارات",
+        "blockMessages": "حظر الرسائل",
+        "thisOptionHasBeenMovedToAccount": "نُقل هذا الخيار إلى قسم «الحساب > المستخدمون المحظورون».",
+        "specialMessages": {
+          "specialMessages": "رسائل خاصة",
+          "badge": "الشارة:",
+          "mentionRoom": "الإشارة إلى @room",
+          "containsRoom": "تحتوي على @room",
+          "containsDisplayName": "تحتوي على اسم العرض («⁨{{displayName}}⁩»)",
+          "containsDisplayNameGeneric": "تحتوي على اسم العرض",
+          "containsUsername": "تحتوي على اسم المستخدم («⁨{{username}}⁩»)",
+          "mentionUserId": "الإشارة إلى معرّف المستخدم («⁨{{userId}}⁩»)"
+        },
+        "systemNotification": {
+          "emailNotification": "إشعار بالبريد الإلكتروني",
+          "yourAccountDoesNotHaveAnyEmail": "لا يوجد بريد إلكتروني مرتبط بحسابك.",
+          "unexpectedError": "خطأ غير متوقع!",
+          "system": "النظام",
+          "desktopNotifications": "إشعارات سطح المكتب",
+          "showDesktopNotificationsWhenMessageArrive": "إظهار إشعارات سطح المكتب عند وصول رسالة.",
+          "enable": "تفعيل",
+          "notificationSound": "صوت الإشعارات",
+          "playSoundWhenNewMessageArrive": "تشغيل صوت عند وصول رسالة جديدة.",
+          "notSupported": "لا يدعم النظام الإشعارات.",
+          "permissionBlocked": "تم حظر إذن الإشعارات. اسمح به من شريط عنوان المتصفح.",
+          "sendToEmail": "إرسال إشعار إلى بريدك الإلكتروني.",
+          "sendToEmailAddress": "إرسال إشعار إلى بريدك الإلكتروني. («⁨{{email}}⁩»)"
+        },
+        "mode": {
+          "disable": "تعطيل",
+          "notifyLoud": "إشعار بصوت",
+          "notifySilent": "إشعار صامت"
+        }
+      },
+      "about": {
+        "clearCache": "مسح ذاكرة التخزين المؤقت",
+        "clearCacheAndReload": "مسح ذاكرة التخزين المؤقت وإعادة التحميل",
+        "clearCacheDescription": "يمسح البيانات المخزنة مؤقتًا ويعيد التحميل. سيظل حسابك مسجلًا.",
+        "clearTrace": "مسح التتبع",
+        "clearing": "جارٍ المسح...",
+        "credits": "حقوق النشر",
+        "deepDiagnosticTracing": "تتبع تشخيصي مفصل",
+        "deepTraceMemoryOnly": "يجري التسجيل في الذاكرة لأن تخزين التتبع غير متاح. صدّر السجل قبل إعادة تشغيل التطبيق؛ إذ تُفقد هذه الأحداث الأخيرة عند إعادة التشغيل.",
+        "deepTraceEnabledStorageUnavailable": "مفعّل، لكن مساحة تخزين التتبع غير متاحة حاليًا.",
+        "deepTraceOff": "متوقف. فعّله قبل إعادة حدوث التجمّد لتسجيل توقيتات الأداء وMatrix والشبكة ودورة الحياة والتفاعل.",
+        "deepTracePreferenceSaveFailed": "⁨{{description}}⁩ متوقف لهذه الجلسة، لكن تعذر حفظ التفضيل وقد يُفعّل مجددًا بعد إعادة التشغيل.",
+        "deepTraceRecording": "يتم تسجيل تتبع محدود وآمن للخصوصية للأداء والتفاعل على هذا الجهاز.",
+        "deepTraceStarting": "جارٍ بدء تسجيل تتبع محدود وآمن للخصوصية للأداء والتفاعل على هذا الجهاز.",
+        "diagnosticsExportFailed": "⁨{{description}}⁩ تعذر التصدير. حاول مرة أخرى.",
+        "diagnosticsNone": "لا توجد جلسة غير متوقعة محفوظة.",
+        "diagnosticsUnavailable": "مساحة تخزين التشخيصات غير متاحة.",
+        "diagnosticsUnexpected": "انتهت الجلسة السابقة بشكل غير متوقع، والسبب غير معروف.",
+        "emojiArtCredit": "رسومات <art>Twemoji</art> التعبيرية © <owner>Twitter, Inc ومساهمون آخرون</owner>، وتُستخدم بموجب <license>CC-BY 4.0</license>.",
+        "emojiFontCredit": "خط <font>twemoji-colr</font> © <owner>Mozilla Foundation</owner>، ويُستخدم بموجب <license>Apache 2.0</license>.",
+        "exportDiagnostics": "تصدير التشخيصات",
+        "exporting": "جارٍ التصدير...",
+        "matrixSdkCredit": "حزمة <sdk>matrix-js-sdk</sdk> © <owner>The Matrix.org Foundation C.I.C</owner>، وتُستخدم بموجب <license>Apache 2.0</license>.",
+        "onDeviceDiagnostics": "تشخيصات على الجهاز",
+        "options": "الخيارات",
+        "soundResourcesCredit": "<resources>موارد أصوات Material</resources> © <owner>Google</owner>، وتُستخدم بموجب <license>CC-BY 4.0</license>.",
+        "sourceCode": "الشيفرة المصدرية",
+        "support": "الدعم",
+        "title": "حول التطبيق",
+        "traceStorageUnavailable": "مساحة تخزين التتبع غير متاحة."
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "عام",
+        "options": "الخيارات",
+        "addresses": "العناوين",
+        "advancedOptions": "خيارات متقدمة"
+      },
+      "permissions": {
+        "permissions": "الأذونات",
+        "ban": "حظر",
+        "changeAllPermission": "تغيير كل الأذونات",
+        "changeServerAcls": "تغيير قوائم التحكم بوصول الخادم",
+        "changeSpaceAccess": "تغيير الوصول إلى المساحة",
+        "editPowerLevels": "تعديل مستويات الصلاحيات",
+        "groups": {
+          "manage": "إدارة",
+          "moderation": "الإشراف",
+          "other": "أخرى",
+          "settings": "الإعدادات",
+          "spaceOverview": "نظرة عامة على المساحة"
+        },
+        "invite": "دعوة",
+        "kick": "طرد",
+        "manageEmojisStickers": "إدارة الرموز التعبيرية والملصقات",
+        "manageSpaceRooms": "إدارة غرف المساحة",
+        "messageEvents": "أحداث الرسائل",
+        "otherSettings": "إعدادات أخرى",
+        "publishAddress": "نشر العنوان",
+        "spaceAvatar": "صورة المساحة",
+        "spaceName": "اسم المساحة",
+        "spaceTopic": "موضوع المساحة",
+        "upgradeSpace": "ترقية المساحة"
+      },
+      "navigation": {
+        "developerTools": "أدوات المطورين",
+        "emojisStickers": "الرموز التعبيرية والملصقات",
+        "general": "عام",
+        "members": "الأعضاء",
+        "permissions": "الأذونات"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "لا توجد نتيجة مطابقة لـ «⁨{{query}}⁩».",
+      "noMatchFound": "لا توجد نتيجة مطابقة",
+      "noRooms": "لا توجد غرف",
+      "noRoomsDescription": "ليست لديك غرف لعرضها بعد.",
+      "placeholder": "بحث",
+      "syntaxHint": "اكتب <rooms>#</rooms> للغرف و<directs>@</directs> للرسائل المباشرة و<spaces>*</spaces> للمساحات. الاختصار: <hotkey>⁨{{modifier}}⁩ + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "⁨{{userId}}⁩ on ⁨{{deviceId}}⁩",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: ⁨{{models}}⁩",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "تجاهل التسجيل الصوتي",
+      "pauseRecording": "إيقاف التسجيل الصوتي مؤقتًا",
+      "resumeRecording": "استئناف التسجيل الصوتي",
+      "statusActive": "التسجيل الصوتي نشط",
+      "statusPaused": "التسجيل الصوتي متوقف مؤقتًا",
+      "statusProcessing": "جارٍ معالجة التسجيل الصوتي",
+      "statusReadyToRetry": "التسجيل الصوتي جاهز لإعادة المحاولة",
+      "statusSending": "جارٍ إرسال التسجيل الصوتي",
+      "statusStarting": "جارٍ بدء التسجيل الصوتي",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "فشل إرسال الرسالة الصوتية",
+        "yourRecordingIsStillSaved": "لا يزال تسجيلك محفوظًا.",
+        "discard": "تجاهل",
+        "retry": "إعادة المحاولة",
+        "discardVoiceRecording": "تجاهل التسجيل الصوتي؟",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "لم يُرسل هذا التسجيل. هل تريد حذفه نهائيًا؟",
+        "cancel": "إلغاء",
+        "voiceRecordingError": "خطأ في التسجيل الصوتي",
+        "ok": "موافق"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "تم حظر الوصول إلى الميكروفون. اسمح لـ MindRoom Chat باستخدامه في إعدادات تطبيق Android وحاول مجددًا.",
+        "microphoneBlockedIos": "تم حظر الوصول إلى الميكروفون. اسمح لـ MindRoom Chat باستخدامه في إعدادات iPhone وحاول مجددًا.",
+        "microphoneBlockedBrowser": "تم حظر الوصول إلى الميكروفون. اسمح لهذا الموقع أو التطبيق باستخدامه في إعدادات المتصفح أو النظام وحاول مجددًا.",
+        "noMicrophone": "لم يتم العثور على ميكروفون في هذا الجهاز.",
+        "microphoneUnavailable": "الميكروفون غير متاح الآن (قد يستخدمه تطبيق آخر).",
+        "microphoneFailed": "تعذر الوصول إلى الميكروفون.",
+        "microphoneUnsupported": "هذا الجهاز لا يدعم الوصول إلى الميكروفون.",
+        "recordingStopped": "توقف التسجيل الصوتي بشكل غير متوقع. سجّل مرة أخرى.",
+        "noAudio": "لم يتم تسجيل أي بيانات صوتية.",
+        "recordingUnsupported": "هذا المتصفح لا يدعم التسجيل الصوتي.",
+        "httpsRequired": "يتطلب التسجيل الصوتي HTTPS (أو localhost). افتح MindRoom عبر HTTPS.",
+        "sendBusy": "لا تزال رسالة صوتية أخرى قيد الإرسال. انتظر.",
+        "sendFailed": "تعذر إرسال الرسالة الصوتية."
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "اتصال",
+        "homeserverUnsupported": "لا يدعم خادمك المنزلي المكالمات.",
+        "browserUnsupported": "لا يدعم متصفحك WebRTC.",
+        "endCurrentCall": "أنهِ مكالمتك الحالية أولًا.",
+        "failedToStart": "تعذر بدء المكالمة."
+      },
+      "agentCallHeaderButton": {
+        "call": "الاتصال بوكيل",
+        "callAgent": "الاتصال بـ ⁨{{name}}⁩",
+        "chooseAgent": "اختر وكيلًا للاتصال به",
+        "close": "إغلاق"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "أوامر MindRoom"
+      },
+      "descriptions": {
+        "help": "عرض مساعدة عن الإمكانات المتاحة أو موضوع محدد.",
+        "reload-plugins": "إعادة تحميل المكونات الإضافية المعدّة (للمشرف فقط).",
+        "schedule": "جدولة مهمة لتنفيذها لاحقًا.",
+        "list_schedules": "عرض كل المهام المجدولة.",
+        "cancel_schedule": "إلغاء مهمة مجدولة حسب المعرّف أو إلغاء الكل.",
+        "edit_schedule": "تحديث مهمة مجدولة موجودة.",
+        "config": "إدارة إعداد MindRoom (للمشرف فقط).",
+        "desktop": "إدارة هدف سطح المكتب.",
+        "model": "عرض النموذج المستخدم في سلسلة المحادثة الحالية أو تغييره.",
+        "room_model": "عرض نموذج الغرفة الافتراضي أو تغييره (يتطلب التعيين وإعادة الضبط مشرف غرفة).",
+        "thread_mode": "عرض وضع سلسلة المحادثة في الغرفة الحالية أو تغييره (لمشرف الغرفة فقط).",
+        "encrypt": "مراجعة التشفير التام بين الطرفين للغرفة الحالية أو تفعيله.",
+        "e2ee": "عرض تشخيصات التشفير للغرفة الحالية.",
+        "hi": "عرض معلومات الترحيب."
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "نص ملصق",
+        "characterCount_one": "⁨{{formattedCount}}⁩ حرف",
+        "characterCount_other": "⁨{{formattedCount}}⁩ من الأحرف",
+        "characterCount_few": "⁨{{formattedCount}}⁩ حرفًا",
+        "characterCount_many": "⁨{{formattedCount}}⁩ حرفًا",
+        "characterCount_two": "⁨{{formattedCount}}⁩ حرف",
+        "characterCount_zero": "⁨{{formattedCount}}⁩ حرف"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "Local MindRoom",
+        "connectLocalMindroom": "ربط Local MindRoom",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "إقران حساب الدردشة هذا بعملية MindRoom المحلية",
+        "enterCodeDescription": "شغّل ⁨{{command}}⁩ على جهازك، ثم افتح الرابط الذي يعرضه أو أدخل رمزه هنا.",
+        "pairCode": "رمز الإقران",
+        "mindroomDocs": "وثائق MindRoom",
+        "linkedInstallations": "عمليات التثبيت المرتبطة",
+        "linkedInstallationsUnavailable": "التثبيتات المرتبطة متاحة فقط للحسابات على ⁨{{server}}⁩.",
+        "loadingLinkedInstallations": "جارٍ تحميل عمليات التثبيت المرتبطة...",
+        "tryAgain": "حاول مرة أخرى",
+        "noLinkedLocalMindroomInstallationsYet": "لا توجد عمليات تثبيت محلية مرتبطة لـ MindRoom بعد.",
+        "revoke": "إلغاء الوصول",
+        "confirmRevoke": "تأكيد الإلغاء",
+        "cancel": "إلغاء",
+        "requestFailed": "فشل الطلب. حاول مرة أخرى.",
+        "unknown": "غير معروف",
+        "createdAt": "أُنشئ: ⁨{{timestamp}}⁩",
+        "lastSeenAt": "آخر ظهور: ⁨{{timestamp}}⁩"
+      },
+      "connect": {
+        "enterCode": "أدخل الرمز الظاهر في الطرفية.",
+        "continue": "متابعة",
+        "invalidCode": "أدخل الرمز المكوّن من 8 أحرف، مثل ABCD-EFGH.",
+        "code": "الرمز: ⁨{{code}}⁩",
+        "chooseAccount": "اختر الحساب الذي يوافق على هذا الاتصال",
+        "checkingCode": "جارٍ التحقق من الرمز...",
+        "deviceQuestion": "هل تريد ربط ⁨{{clientName}}⁩؟",
+        "deviceStarted": "بدأ ⁨{{age}}⁩",
+        "requestedFrom": "طُلب من ⁨{{ip}}⁩",
+        "requestedFromUnknown": "طُلب من عنوان غير معروف",
+        "warning": "لا توافق إلا إذا كنت قد بدأت هذا للتو بنفسك على جهازك وكانت الطرفية تعرض الرمز نفسه.",
+        "approveAs": "الموافقة باسم ⁨{{userId}}⁩",
+        "approved": "تم الاتصال. يمكنك العودة إلى الطرفية.",
+        "noAccount": "سجّل الدخول بحساب MindRoom للموافقة على هذا الاتصال.",
+        "signIn": "سجّل الدخول للموافقة",
+        "accountSignedOut": "يجب أن يسجّل هذا الحساب الدخول مرة أخرى قبل أن يتمكن من الموافقة.",
+        "codeNotFound": "لم يُعثر على هذا الرمز. تحقق من الرمز الظاهر في الطرفية.",
+        "codeExpired": "انتهت صلاحية هذا الرمز. استخدم الرابط أو الرمز الجديد الظاهر في الطرفية.",
+        "codeAlreadyApproved": "تمت الموافقة على هذا الرمز بالفعل.",
+        "backToChat": "العودة إلى الدردشة",
+        "enterNewCode": "أدخل الرمز الجديد:",
+        "noAccountAppGuidance": "مسجّل دخول بالفعل في تطبيق MindRoom؟ افتح الإعدادات → Local MindRoom هناك وأدخل ⁨{{code}}⁩.",
+        "frameWarning": "لأسباب أمنية، لا يمكن إتمام الموافقة على الجهاز داخل إطار.",
+        "openInNewTab": "فتح في علامة تبويب جديدة"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "وكيل موثّق · جهاز موقّع تبادليًا",
+        "verifiedAgent": "وكيل موثّق"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "التمرير إلى الأعلى",
+        "searchMessages": "البحث في الرسائل",
+        "searchDescription": "ابحث بكلمات مفتاحية ذات صلة عن رسائل مفيدة في مجتمعك.",
+        "noResultsFor": "لا توجد نتائج لـ «⁨{{term}}⁩»",
+        "resultsFor": "نتائج «⁨{{term}}⁩»"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (معدّلة)"
+      },
+      "searchFilters": {
+        "sortBy": "الترتيب حسب",
+        "recent": "المستخدمة مؤخرًا",
+        "relevance": "مدى الصلة",
+        "search": "بحث",
+        "rooms": "الغرف",
+        "noMatchFound": "لم يتم العثور على نتيجة مطابقة!",
+        "save": "حفظ",
+        "deselectAll": "إلغاء تحديد الكل",
+        "selectRooms": "اختيار الغرف",
+        "filter": "تصفية",
+        "global": "عام",
+        "saveCount": "حفظ (⁨{{count}}⁩)",
+        "roomsFor": "غرف «⁨{{query}}⁩»"
+      },
+      "searchInput": {
+        "search": "بحث",
+        "searchForKeyword": "البحث عن كلمة مفتاحية",
+        "clear": "مسح",
+        "enter": "إدخال"
+      },
+      "searchResultGroup": {
+        "open": "فتح",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "سياق الرد مخفي في نتائج البحث. افتح الرسالة لعرض سياق سلسلة المحادثة كاملًا."
+      },
+      "searchResultPreview": {
+        "redacted": "تم حجب الرسالة.",
+        "message": "رسالة",
+        "image": "صورة",
+        "video": "فيديو",
+        "audio": "صوت",
+        "file": "ملف",
+        "location": "موقع",
+        "reaction": "تفاعل",
+        "unsupportedEvent": "حدث غير مدعوم"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "الوسيطات",
+        "loadingCompleteArguments": "جارٍ تحميل الوسيطات كاملة…",
+        "onlyATruncatedPreviewIsAvailable": "لا تتوفر إلا معاينة مختصرة.",
+        "retry": "إعادة المحاولة",
+        "sensitiveValuesMayBeRedacted": "قد تُحجب القيم الحساسة.",
+        "loadFailed": "تعذر تحميل الوسيطات كاملةً.",
+        "hideArguments": "إخفاء الوسائط",
+        "showAllArguments": "عرض كل الوسائط"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "لا يمكن الموافقة على هذا الطلب هنا.",
+        "submittedWaitingForRoomUpdate": "تم الإرسال. في انتظار تحديث الغرفة.",
+        "approveOnce": "الموافقة مرة واحدة",
+        "approve": "موافقة",
+        "deny": "رفض",
+        "autoApprovalDuration": "مدة الموافقة التلقائية",
+        "denyReasonOptional": "سبب الرفض (اختياري)",
+        "denialReasonOptional": "سبب الرفض (اختياري)",
+        "confirmDeny": "تأكيد الرفض",
+        "confirmDeny2": "تأكيد الرفض",
+        "cancel": "إلغاء",
+        "autoApproveMinutes_one": "موافقة تلقائية لمدة ⁨{{count}}⁩ دقيقة",
+        "autoApproveMinutes_other": "موافقة تلقائية لمدة ⁨{{count}}⁩ دقائق",
+        "denyCallReasonOptional": "سبب رفض الاستدعاء ⁨{{number}}⁩ (اختياري)",
+        "approveExactCall": "الموافقة على هذا الاستدعاء بعينه",
+        "approveAnyArguments": "الموافقة على أي وسائط",
+        "anyArgumentsWarning": "مع أي وسائط، يمكن للوكيل إجراء استدعاء واحد لـ ⁨{{tool}}⁩ بما يقرره، خلال ⁨{{minutes}}⁩ دقيقة من الوقت المحدد.",
+        "autoApproveMinutes_few": "موافقة تلقائية لمدة ⁨{{count}}⁩ دقيقة",
+        "autoApproveMinutes_many": "موافقة تلقائية لمدة ⁨{{count}}⁩ دقيقة",
+        "autoApproveMinutes_two": "موافقة تلقائية لمدة ⁨{{count}}⁩ دقيقتين",
+        "autoApproveMinutes_zero": "موافقة تلقائية لمدة ⁨{{count}}⁩ دقيقة"
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "الموافقة التلقائية نشطة",
+        "autoApprovalStopped": "توقفت الموافقة التلقائية",
+        "autoApprovalExpired": "انتهت صلاحية الموافقة التلقائية",
+        "argumentsMayDifferBetweenCalls": "قد تختلف الوسيطات بين الاستدعاءات.",
+        "stopAutoApproval": "إيقاف الموافقة التلقائية",
+        "submittedWaitingForRoomUpdate": "تم الإرسال. في انتظار تحديث الغرفة.",
+        "fixedExpiry": "انتهاء ثابت: ⁨{{timestamp}}⁩",
+        "expiresInMinutes_one": "تنتهي خلال ⁨{{count}}⁩ دقيقة",
+        "expiresInMinutes_other": "تنتهي خلال ⁨{{count}}⁩ دقائق",
+        "expiresInMinutes_few": "تنتهي خلال ⁨{{count}}⁩ دقائق",
+        "expiresInMinutes_many": "تنتهي خلال ⁨{{count}}⁩ دقائق",
+        "expiresInMinutes_two": "تنتهي خلال ⁨{{count}}⁩ دقيقتين",
+        "expiresInMinutes_zero": "تنتهي خلال ⁨{{count}}⁩ دقيقة"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "طلب موافقة أداة محلول",
+        "unknown": "غير معروف",
+        "approvedOnce": "تمت الموافقة مرة واحدة",
+        "decisionRecordedForThisCall": "تم تسجيل القرار لهذا الاستدعاء",
+        "statusExpired": "انتهت صلاحية الموافقة",
+        "statusApproved": "تمت الموافقة",
+        "statusDenied": "تم الرفض",
+        "requestedBy": "⁨{{agent}}⁩ · طلبه ⁨{{requester}}⁩",
+        "resolvedByAt": "⁨{{status}}⁩ بواسطة ⁨{{resolver}}⁩ · ⁨{{timestamp}}⁩",
+        "resolvedBy": "⁨{{status}}⁩ بواسطة ⁨{{resolver}}⁩",
+        "resolvedAt": "⁨{{status}}⁩ · ⁨{{timestamp}}⁩",
+        "timedPermission": "إذن مؤقت",
+        "timedPermissionMinutes_one": "إذن مؤقت · ⁨{{count}}⁩ دقيقة",
+        "timedPermissionMinutes_other": "إذن مؤقت · ⁨{{count}}⁩ دقائق",
+        "grantedByAt": "منحه ⁨{{grantor}}⁩ · ⁨{{timestamp}}⁩",
+        "grantedBy": "منحه ⁨{{grantor}}⁩",
+        "originalFixedExpiry": "وقت الانتهاء الثابت الأصلي: ⁨{{timestamp}}⁩",
+        "toolAndServer": "الأداة: ⁨{{tool}}⁩ · الخادم: ⁨{{server}}⁩",
+        "tool": "الأداة: ⁨{{tool}}⁩",
+        "reason": "السبب: ⁨{{reason}}⁩",
+        "approvedWhenScheduledByAt": "وافق عليه ⁨{{approver}}⁩ عند الجدولة · ⁨{{timestamp}}⁩",
+        "approvedWhenScheduledBy": "وافق عليه ⁨{{approver}}⁩ عند الجدولة",
+        "timedPermissionMinutes_few": "إذن مؤقت · ⁨{{count}}⁩ دقيقة",
+        "timedPermissionMinutes_many": "إذن مؤقت · ⁨{{count}}⁩ دقيقة",
+        "timedPermissionMinutes_two": "إذن مؤقت · ⁨{{count}}⁩ دقيقة",
+        "timedPermissionMinutes_zero": "إذن مؤقت · ⁨{{count}}⁩ دقيقة"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "مجدول في ⁨{{timestamp}}⁩",
+        "approvedExactArguments": "تمت الموافقة على هذه الوسائط بعينها",
+        "approvedAnyArguments": "تمت الموافقة على أي وسائط لهذه الأداة"
+      },
+      "approvalReviewCall": {
+        "pending": "معلق",
+        "callStatus": "الاستدعاء ⁨{{number}}⁩ · ⁨{{status}}⁩",
+        "status": {
+          "pending": "معلق",
+          "sending": "جارٍ الإرسال",
+          "submitted": "تم الإرسال",
+          "error": "خطأ",
+          "approved": "تمت الموافقة",
+          "denied": "تم الرفض",
+          "expired": "منتهي الصلاحية"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "نسخ النص (جارٍ التحميل…)",
+        "copyText": "نسخ النص",
+        "copyTextWithToolCalls": "نسخ النص مع استدعاءات الأدوات",
+        "copyLink": "نسخ الرابط"
+      },
+      "bugReport": {
+        "report": "الإبلاغ عن خطأ",
+        "download": "تنزيل تقرير الخطأ",
+        "sending": "جارٍ إرسال التقرير…",
+        "failed": "تعذّر إرسال التقرير. حاول مرة أخرى."
+      },
+      "messageInspectionActions": {
+        "readReceipts": "إيصالات القراءة",
+        "viewSource": "عرض المصدر"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "إلغاء تثبيت الرسالة",
+        "pinMessage": "تثبيت الرسالة",
+        "deleteMessage": "حذف الرسالة",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "لا يمكن التراجع عن هذا الإجراء! هل تريد بالتأكيد حذف هذه الرسالة؟",
+        "optional": "(اختياري)",
+        "failedToDeleteMessagePleaseTryAgain": "تعذر حذف الرسالة! حاول مرة أخرى.",
+        "deleting": "جارٍ الحذف...",
+        "delete": "حذف",
+        "reportMessage": "الإبلاغ عن الرسالة",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "أبلغ الخادم بهذه الرسالة، وقد يخطر الأشخاص المعنيين لاتخاذ إجراء.",
+        "reason": "السبب",
+        "failedToReportMessagePleaseTryAgain": "تعذر الإبلاغ عن الرسالة! حاول مرة أخرى.",
+        "messageHasBeenReportedToServer": "تم الإبلاغ عن الرسالة إلى الخادم.",
+        "reporting": "جارٍ الإبلاغ...",
+        "report": "إبلاغ"
+      },
+      "messageReactionActions": {
+        "viewReactions": "عرض التفاعلات"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "لا يزال التحميل جاريًا…",
+        "toolDetailsUnavailable": "تفاصيل الأداة غير متاحة.",
+        "pastedText": "نص ملصق",
+        "characterCount_one": "⁨{{formattedCount}}⁩ حرف",
+        "characterCount_other": "⁨{{formattedCount}}⁩ من الأحرف",
+        "blocks": {
+          "think": "عملية تفكير الذكاء الاصطناعي",
+          "debug": "معلومات تصحيح الأخطاء",
+          "system": "معالجة النظام",
+          "plan": "التخطيط والاستراتيجية",
+          "analysis": "التحليل والتقييم",
+          "research": "البحث والمصادر"
+        },
+        "toolNumber": "الأداة رقم ⁨{{index}}⁩: ⁨{{command}}⁩",
+        "toolCallCount_one": "⁨{{count}}⁩ استدعاء أداة",
+        "toolCallCount_other": "⁨{{count}}⁩ من استدعاءات الأدوات",
+        "characterCount_few": "⁨{{formattedCount}}⁩ حرفًا",
+        "characterCount_many": "⁨{{formattedCount}}⁩ حرفًا",
+        "characterCount_two": "⁨{{formattedCount}}⁩ حرف",
+        "characterCount_zero": "⁨{{formattedCount}}⁩ حرفًا",
+        "toolCallCount_few": "⁨{{count}}⁩ استدعاءات أداة",
+        "toolCallCount_many": "⁨{{count}}⁩ استدعاءً أداة",
+        "toolCallCount_two": "⁨{{count}}⁩ استدعاءان أداة",
+        "toolCallCount_zero": "⁨{{count}}⁩ استدعاءات أداة",
+        "usedToolCount_zero": "تم استخدام ⁨{{count}}⁩ أداة",
+        "usedToolCount_one": "تم استخدام ⁨{{count}}⁩ أداة",
+        "usedToolCount_two": "تم استخدام ⁨{{count}}⁩ أداتين",
+        "usedToolCount_few": "تم استخدام ⁨{{count}}⁩ أدوات",
+        "usedToolCount_many": "تم استخدام ⁨{{count}}⁩ أداة",
+        "usedToolCount_other": "تم استخدام ⁨{{count}}⁩ أداة",
+        "toolCallsRunning_zero": "جارٍ تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRunning_one": "جارٍ تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRunning_two": "جارٍ تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRunning_few": "جارٍ تنفيذ ⁨{{count}}⁩ استدعاءات أداة",
+        "toolCallsRunning_many": "جارٍ تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRunning_other": "جارٍ تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsWaiting_zero": "⁨{{count}}⁩ استدعاء أداة في انتظار الموافقة",
+        "toolCallsWaiting_one": "⁨{{count}}⁩ استدعاء أداة في انتظار الموافقة",
+        "toolCallsWaiting_two": "⁨{{count}}⁩ استدعاء أداة في انتظار الموافقة",
+        "toolCallsWaiting_few": "⁨{{count}}⁩ استدعاءات أداة في انتظار الموافقة",
+        "toolCallsWaiting_many": "⁨{{count}}⁩ استدعاء أداة في انتظار الموافقة",
+        "toolCallsWaiting_other": "⁨{{count}}⁩ استدعاء أداة في انتظار الموافقة",
+        "toolCallsRan_zero": "تم تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRan_one": "تم تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRan_two": "تم تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRan_few": "تم تنفيذ ⁨{{count}}⁩ استدعاءات أداة",
+        "toolCallsRan_many": "تم تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsRan_other": "تم تنفيذ ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsDenied_zero": "تم رفض ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsDenied_one": "تم رفض ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsDenied_two": "تم رفض ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsDenied_few": "تم رفض ⁨{{count}}⁩ استدعاءات أداة",
+        "toolCallsDenied_many": "تم رفض ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsDenied_other": "تم رفض ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsExpired_zero": "انتهت صلاحية ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsExpired_one": "انتهت صلاحية ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsExpired_two": "انتهت صلاحية ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsExpired_few": "انتهت صلاحية ⁨{{count}}⁩ استدعاءات أداة",
+        "toolCallsExpired_many": "انتهت صلاحية ⁨{{count}}⁩ استدعاء أداة",
+        "toolCallsExpired_other": "انتهت صلاحية ⁨{{count}}⁩ استدعاء أداة"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "جارٍ تحميل الرد الكامل..."
+      },
+      "mindroomMessage": {
+        "addReaction": "إضافة تفاعل",
+        "reply": "رد",
+        "replyInThread": "الرد في سلسلة المحادثة",
+        "editMessage": "تحرير الرسالة",
+        "moreOptions": "المزيد من الخيارات"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "نافذة سياق الطلب",
+        "aiRunMetadata": "بيانات تشغيل الذكاء الاصطناعي",
+        "close": "إغلاق",
+        "status": "الحالة",
+        "model": "النموذج",
+        "tokens": "الرموز المميزة",
+        "runCache": "ذاكرة التشغيل المؤقتة",
+        "requestContext": "سياق الطلب",
+        "requestCache": "ذاكرة الطلب المؤقتة",
+        "tools": "الأدوات",
+        "ttft": "TTFT",
+        "run": "التشغيل",
+        "session": "الجلسة",
+        "openAiRunMetadata": "فتح بيانات تشغيل الذكاء الاصطناعي",
+        "tokenUsage": "استخدام الرموز المميزة",
+        "downloadingOriginal": "جارٍ تنزيل الملف الأصلي...",
+        "retryDownloadOriginal": "إعادة محاولة تنزيل الملف الأصلي",
+        "downloadOriginal": "تنزيل الملف الأصلي",
+        "segmentTokenCount_one": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمز مميز",
+        "segmentTokenCount_other": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ من الرموز المميزة",
+        "segmentTokenCount_few": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ الرموز المميزة",
+        "segmentTokenCount_many": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمزًا",
+        "segmentTokenCount_two": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمز مميز",
+        "segmentTokenCount_zero": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ الرموز"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "ملحقات الرسالة"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "نص ملصق",
+        "open": "فتح",
+        "retry": "إعادة المحاولة",
+        "download": "تنزيل",
+        "characterCount_one": "⁨{{formattedCount}}⁩ حرف",
+        "characterCount_other": "⁨{{formattedCount}}⁩ من الأحرف",
+        "characterCount_few": "⁨{{formattedCount}}⁩ حرفًا",
+        "characterCount_many": "⁨{{formattedCount}}⁩ حرفًا",
+        "characterCount_two": "⁨{{formattedCount}}⁩ حرف",
+        "characterCount_zero": "⁨{{formattedCount}}⁩ حرفًا"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "فتح",
+        "failedToLoadMessage": "تعذر تحميل الرسالة!",
+        "event": " حدث",
+        "pinnedMessages": "الرسائل المثبّتة",
+        "noPinnedMessages": "لا توجد رسائل مثبّتة",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "يمكن للمستخدمين ذوي مستوى الصلاحية الكافي تثبيت رسالة من قائمة سياقها."
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "الذكاء الاصطناعي يرد",
+        "thinking": "جارٍ التفكير…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "ملخص سلسلة المحادثة بالذكاء الاصطناعي"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "وضع الذكاء الاصطناعي عنوانًا لسلسلة المحادثة",
+        "updated": "حدّث الذكاء الاصطناعي العنوان",
+        "edited": "تم تعديل العنوان",
+        "previous": "السابق: <old>⁨{{summary}}⁩</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "طلب موافقة على أداة",
+        "submitted": "تم الإرسال",
+        "pendingApproval": "في انتظار الموافقة",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "تنطبق الموافقة التلقائية على سلسلة المحادثة هذه ومقدم الطلب والوكيل والأداة.",
+        "argumentsMayDifferBetweenCalls": "قد تختلف الوسيطات بين الاستدعاءات.",
+        "requestedBy": "طلبه ⁨{{requester}}⁩"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "وكيل التوجيه ينسخ الصوت"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "الذكاء الاصطناعي يرد"
+      },
+      "stopButton": {
+        "label": "إيقاف",
+        "tooltip": "إيقاف هذا الرد"
+      },
+      "threadApprovalControls": {
+        "close": "إغلاق",
+        "call": "استدعاء",
+        "calls": "استدعاءات",
+        "unknown": "غير معروف",
+        "reasonForDenyingAllOptional": "سبب رفض الكل (اختياري)",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "اسمح بهذه العملية لسلسلة المحادثة هذه ومقدم الطلب والوكيل. قد تختلف الوسيطات بين الاستدعاءات.",
+        "submittedWaitingForRoomUpdate": "تم الإرسال. في انتظار تحديث الغرفة.",
+        "threadApprovals": "موافقات سلسلة المحادثة",
+        "checkingHistory": " · جارٍ فحص السجل…",
+        "historyIncomplete": " · السجل غير مكتمل",
+        "retryHistory": "إعادة محاولة تحميل السجل",
+        "reviewToolCalls": "مراجعة استدعاءات الأدوات",
+        "reviewAgentWants_zero": "يريد ⁨{{agent}}⁩ تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentWants_one": "يريد ⁨{{agent}}⁩ تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentWants_two": "يريد ⁨{{agent}}⁩ تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentWants_few": "يريد ⁨{{agent}}⁩ تنفيذ ⁨{{count}}⁩ إجراءات",
+        "reviewAgentWants_many": "يريد ⁨{{agent}}⁩ تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentWants_other": "يريد ⁨{{agent}}⁩ تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentsWant_zero": "يريد ⁨{{agents}}⁩ وكلاء تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentsWant_one": "يريد ⁨{{agents}}⁩ وكلاء تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentsWant_two": "يريد ⁨{{agents}}⁩ وكلاء تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentsWant_few": "يريد ⁨{{agents}}⁩ وكلاء تنفيذ ⁨{{count}}⁩ إجراءات",
+        "reviewAgentsWant_many": "يريد ⁨{{agents}}⁩ وكلاء تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewAgentsWant_other": "يريد ⁨{{agents}}⁩ وكلاء تنفيذ ⁨{{count}}⁩ إجراء",
+        "reviewRequestedBy": "مقدّم الطلب: ⁨{{requester}}⁩",
+        "someRequestsAreNoLongerAvailable": "بعض الطلبات لم تعد متاحة.",
+        "permission": "إذن",
+        "permissions": "أذونات",
+        "activePermissions": "الأذونات النشطة",
+        "noActiveTimedPermissions": "لا توجد أذونات مؤقتة نشطة.",
+        "approval": "موافقة",
+        "approvals": "موافقات",
+        "operationCallCount_one": "⁨{{operation}}⁩ · ⁨{{count}}⁩ استدعاء",
+        "operationCallCount_other": "⁨{{operation}}⁩ · ⁨{{count}}⁩ من الاستدعاءات",
+        "requestedBy": "⁨{{agent}}⁩ · طلبه ⁨{{requester}}⁩",
+        "approveAllOnce": "الموافقة مرة واحدة على الكل (⁨{{count}}⁩)",
+        "denyAll": "رفض الكل (⁨{{count}}⁩)",
+        "allowForMinutes_one": "السماح لمدة ⁨{{count}}⁩ دقيقة",
+        "allowForMinutes_other": "السماح لمدة ⁨{{count}}⁩ دقائق",
+        "awaitingConfirmation_one": "⁨{{count}}⁩ استدعاء في انتظار التأكيد",
+        "awaitingConfirmation_other": "⁨{{count}}⁩ من الاستدعاءات في انتظار التأكيد",
+        "pausedForApproval_one": "⁨{{count}}⁩ استدعاء متوقف للموافقة",
+        "pausedForApproval_other": "⁨{{count}}⁩ من الاستدعاءات متوقفة للموافقة",
+        "statusCheckingHistory": "⁨{{status}}⁩ · جارٍ فحص السجل…",
+        "statusHistoryIncomplete": "⁨{{status}}⁩ · السجل غير مكتمل",
+        "reviewCount": "مراجعة ⁨{{count}}⁩",
+        "activePermissionCount_one": "⁨{{count}}⁩ إذن نشط",
+        "activePermissionCount_other": "⁨{{count}}⁩ من الأذونات النشطة",
+        "permissionScope": "⁨{{agent}}⁩ · ⁨{{requester}}⁩ · سلسلة المحادثة هذه",
+        "toolApprovalCount_one": "⁨{{count}}⁩ موافقة أداة",
+        "toolApprovalCount_other": "⁨{{count}}⁩ من موافقات الأدوات",
+        "approvedCount_one": "تمت الموافقة على ⁨{{count}}⁩",
+        "approvedCount_other": "تمت الموافقة على ⁨{{count}}⁩",
+        "activePermissionCount_few": "⁨{{count}}⁩ أذونات نشطة",
+        "activePermissionCount_many": "⁨{{count}}⁩ أذونات نشطة",
+        "activePermissionCount_two": "⁨{{count}}⁩ أذونات نشطة",
+        "activePermissionCount_zero": "⁨{{count}}⁩ أذونات نشطة",
+        "allowForMinutes_few": "السماح لمدة ⁨{{count}}⁩ دقائق",
+        "allowForMinutes_many": "السماح لمدة ⁨{{count}}⁩ دقائق",
+        "allowForMinutes_two": "السماح لمدة ⁨{{count}}⁩ دقيقتين",
+        "allowForMinutes_zero": "السماح لمدة ⁨{{count}}⁩ دقيقة",
+        "approvedCount_few": "تمت الموافقة على ⁨{{count}}⁩",
+        "approvedCount_many": "تمت الموافقة على ⁨{{count}}⁩",
+        "approvedCount_two": "تمت الموافقة على ⁨{{count}}⁩",
+        "approvedCount_zero": "تمت الموافقة على ⁨{{count}}⁩",
+        "awaitingConfirmation_few": "⁨{{count}}⁩ استدعاءات في انتظار التأكيد",
+        "awaitingConfirmation_many": "⁨{{count}}⁩ استدعاءً في انتظار التأكيد",
+        "awaitingConfirmation_two": "⁨{{count}}⁩ استدعاءان في انتظار التأكيد",
+        "awaitingConfirmation_zero": "⁨{{count}}⁩ استدعاءات في انتظار التأكيد",
+        "operationCallCount_few": "⁨{{operation}}⁩ · ⁨{{count}}⁩ استدعاءات",
+        "operationCallCount_many": "⁨{{operation}}⁩ · ⁨{{count}}⁩ استدعاءً",
+        "operationCallCount_two": "⁨{{operation}}⁩ · ⁨{{count}}⁩ استدعاءان",
+        "operationCallCount_zero": "⁨{{operation}}⁩ · ⁨{{count}}⁩ استدعاءات",
+        "pausedForApproval_few": "تم إيقاف ⁨{{count}}⁩ استدعاءات مؤقتًا للموافقة",
+        "pausedForApproval_many": "تم إيقاف ⁨{{count}}⁩ استدعاءً مؤقتًا للموافقة",
+        "pausedForApproval_two": "تم إيقاف ⁨{{count}}⁩ استدعاءان مؤقتًا للموافقة",
+        "pausedForApproval_zero": "تم إيقاف ⁨{{count}}⁩ استدعاءات مؤقتًا للموافقة",
+        "toolApprovalCount_few": "⁨{{count}}⁩ موافقات الأداة",
+        "toolApprovalCount_many": "⁨{{count}}⁩ موافقات الأداة",
+        "toolApprovalCount_two": "⁨{{count}}⁩ من موافقات الأدوات",
+        "toolApprovalCount_zero": "⁨{{count}}⁩ موافقات الأداة",
+        "agentWaitingForYou": "⁨{{agent}}⁩ في انتظارك",
+        "agentsWaitingForYou_zero": "⁨{{count}}⁩ وكيل في انتظارك",
+        "agentsWaitingForYou_one": "⁨{{count}}⁩ وكيل في انتظارك",
+        "agentsWaitingForYou_two": "⁨{{count}}⁩ وكيلان في انتظارك",
+        "agentsWaitingForYou_few": "⁨{{count}}⁩ وكلاء في انتظارك",
+        "agentsWaitingForYou_many": "⁨{{count}}⁩ وكيلًا في انتظارك",
+        "agentsWaitingForYou_other": "⁨{{count}}⁩ وكيل في انتظارك",
+        "autoApproveFor": "الموافقة التلقائية لمدة",
+        "callCount_zero": "⁨{{count}}⁩ استدعاء",
+        "callCount_one": "⁨{{count}}⁩ استدعاء",
+        "callCount_two": "⁨{{count}}⁩ استدعاءان",
+        "callCount_few": "⁨{{count}}⁩ استدعاءات",
+        "callCount_many": "⁨{{count}}⁩ استدعاءً",
+        "callCount_other": "⁨{{count}}⁩ استدعاء",
+        "chipSending": "جارٍ الإرسال…",
+        "chipSubmitted": "تم الإرسال",
+        "chipResolved": "تمت المعالجة",
+        "confirmDenyAll": "تأكيد رفض الكل (⁨{{count}}⁩)",
+        "expires": "تنتهي ⁨{{time}}⁩",
+        "hideCalls": "إخفاء الاستدعاءات",
+        "historyApproved": "تمت الموافقة على ⁨{{operation}}⁩",
+        "historyDenied": "تم رفض ⁨{{operation}}⁩",
+        "historyExpired": "انتهت صلاحية ⁨{{operation}}⁩",
+        "historyUserApproved": "وافق ⁨{{user}}⁩ على ⁨{{operation}}⁩",
+        "historyUserDenied": "رفض ⁨{{user}}⁩ ⁨{{operation}}⁩",
+        "historyUserExpired": "انتهت صلاحية ⁨{{operation}}⁩",
+        "historyYouApproved": "وافقت على ⁨{{operation}}⁩",
+        "historyYouDenied": "رفضت ⁨{{operation}}⁩",
+        "historyYouExpired": "انتهت صلاحية ⁨{{operation}}⁩",
+        "minutesShort_zero": "⁨{{count}}⁩ دقيقة",
+        "minutesShort_one": "⁨{{count}}⁩ دقيقة",
+        "minutesShort_two": "⁨{{count}}⁩ دقيقة",
+        "minutesShort_few": "⁨{{count}}⁩ دقائق",
+        "minutesShort_many": "⁨{{count}}⁩ دقيقة",
+        "minutesShort_other": "⁨{{count}}⁩ دقيقة",
+        "sectionMeta": "⁨{{agent}}⁩ · مقدّم الطلب: ⁨{{requester}}⁩",
+        "showCalls_zero": "عرض ⁨{{count}}⁩ استدعاء",
+        "showCalls_one": "عرض ⁨{{count}}⁩ استدعاء",
+        "showCalls_two": "عرض ⁨{{count}}⁩ استدعاءين",
+        "showCalls_few": "عرض ⁨{{count}}⁩ استدعاءات",
+        "showCalls_many": "عرض ⁨{{count}}⁩ استدعاءً",
+        "showCalls_other": "عرض ⁨{{count}}⁩ استدعاء",
+        "waitingForApproval": "في انتظار الموافقة",
+        "waitingForYou": "في انتظارك",
+        "you": "أنت"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "جارٍ إرسال الرسالة",
+        "waitingForServer": "في انتظار الخادم",
+        "messageFailedToSend": "فشل إرسال الرسالة",
+        "notSent": "لم يُرسل"
+      },
+      "failedSendActions": {
+        "retry": "إعادة المحاولة",
+        "delete": "حذف"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "مدخلات ⁨{{formattedCount}}⁩",
+        "outputTokens": "مخرجات ⁨{{formattedCount}}⁩",
+        "totalTokens": "الإجمالي ⁨{{formattedCount}}⁩",
+        "readTokens": "قراءة ⁨{{formattedCount}}⁩",
+        "writeTokens": "كتابة ⁨{{formattedCount}}⁩",
+        "notReadTokens": "غير مقروء ⁨{{formattedCount}}⁩",
+        "contextUsage": "⁨{{input}}⁩ / ⁨{{window}}⁩ (⁨{{percentage}}⁩%)",
+        "contextBarTitle_one": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمز مميز (⁨{{percentage}}⁩% من النافذة)",
+        "contextBarTitle_other": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ من الرموز المميزة (⁨{{percentage}}⁩% من النافذة)",
+        "contextBarTitleWithSuffix_one": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمز مميز (⁨{{percentage}}⁩% من النافذة)؛ ⁨{{suffix}}⁩",
+        "contextBarTitleWithSuffix_other": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ من الرموز المميزة (⁨{{percentage}}⁩% من النافذة)؛ ⁨{{suffix}}⁩",
+        "reportedCacheRead_one": "قراءة ذاكرة مؤقتة مُبلغ عنها: ⁨{{formattedCount}}⁩ رمز مميز",
+        "reportedCacheRead_other": "قراءة ذاكرة مؤقتة مُبلغ عنها: ⁨{{formattedCount}}⁩ من الرموز المميزة",
+        "cacheWrite_one": "كتابة في الذاكرة المؤقتة: ⁨{{formattedCount}}⁩ رمز مميز",
+        "cacheWrite_other": "كتابة في الذاكرة المؤقتة: ⁨{{formattedCount}}⁩ من الرموز المميزة",
+        "cacheRead": "قراءة الذاكرة المؤقتة",
+        "newInput": "مدخلات جديدة",
+        "reserve": "احتياطي",
+        "cacheWrite_few": "كتابة في الذاكرة المؤقتة: ⁨{{formattedCount}}⁩ الرموز",
+        "cacheWrite_many": "كتابة في الذاكرة المؤقتة: ⁨{{formattedCount}}⁩ رمزًا",
+        "cacheWrite_two": "كتابة في الذاكرة المؤقتة: ⁨{{formattedCount}}⁩ الرموز المميزة",
+        "cacheWrite_zero": "كتابة في الذاكرة المؤقتة: ⁨{{formattedCount}}⁩ الرموز",
+        "contextBarTitle_few": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ الرموز المميزة (⁨{{percentage}}⁩% من النافذة)",
+        "contextBarTitle_many": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمزًا (⁨{{percentage}}⁩% من النافذة)",
+        "contextBarTitle_two": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ من الرموز المميزة (⁨{{percentage}}⁩% من النافذة)",
+        "contextBarTitle_zero": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ الرموز المميزة (⁨{{percentage}}⁩% من النافذة)",
+        "contextBarTitleWithSuffix_few": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ الرموز المميزة (⁨{{percentage}}⁩% من النافذة)؛ ⁨{{suffix}}⁩",
+        "contextBarTitleWithSuffix_many": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمزًا (⁨{{percentage}}⁩% من النافذة)؛ ⁨{{suffix}}⁩",
+        "contextBarTitleWithSuffix_two": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ رمز مميز (⁨{{percentage}}⁩% من النافذة)؛ ⁨{{suffix}}⁩",
+        "contextBarTitleWithSuffix_zero": "⁨{{label}}⁩: ⁨{{formattedCount}}⁩ الرموز المميزة (⁨{{percentage}}⁩% من النافذة)؛ ⁨{{suffix}}⁩",
+        "reportedCacheRead_few": "قراءة ذاكرة مؤقتة مُبلغ عنها: ⁨{{formattedCount}}⁩ الرموز المميزة",
+        "reportedCacheRead_many": "قراءة ذاكرة مؤقتة مُبلغ عنها: ⁨{{formattedCount}}⁩ رمزًا",
+        "reportedCacheRead_two": "قراءة ذاكرة مؤقتة مُبلغ عنها: الرموز المميزة ⁨{{formattedCount}}⁩",
+        "reportedCacheRead_zero": "قراءة ذاكرة مؤقتة مُبلغ عنها: ⁨{{formattedCount}}⁩ الرموز المميزة"
+      },
+      "mindroomModelBadge": {
+        "model": "النموذج: ⁨{{model}}⁩"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "إشعارات iOS الأصلية غير معدّة في هذا النشر. أضف إعدادات `push.ios` في `config.json`.",
+        "failedToUpdateNativePushSettings": "تعذر تحديث إعدادات الإشعارات الأصلية.",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "السماح بإشعارات iOS الأصلية لتنبيهات الرسائل في الخلفية.",
+        "deviceRegisteredForNativeIosPushNotifications": "تم تسجيل الجهاز لإشعارات iOS الأصلية.",
+        "nativeIosPushIsDisabledForThisDevice": "إشعارات iOS الأصلية معطّلة لهذا الجهاز.",
+        "unavailable": "غير متاح",
+        "enable": "تفعيل",
+        "iosPushNotifications": "إشعارات iOS",
+        "permissionDenied": "تم رفض إذن الإشعارات. فعّل إشعارات ⁨{{appName}}⁩ في إعدادات iOS."
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "تعليم كمقروء"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "تعليم كمقروء"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "تعليم كمقروء"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "أنشئ نسخة احتياطية من سجلك المشفر",
+        "dismissBackupReminder": "إخفاء تذكير النسخ الاحتياطي",
+        "setUpSecureBackupSoYouCanStillReadYour": "أعدّ نسخة احتياطية آمنة لتتمكن من قراءة دردشات الوكلاء المشفرة بعد تسجيل الدخول على جهاز جديد.",
+        "setUpSecureKeyBackup": "إعداد نسخة مفاتيح احتياطية آمنة",
+        "setUpBackup": "إعداد النسخ الاحتياطي"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "Local MindRoom"
+      },
+      "resizeNavigationPanel": "تغيير حجم لوحة التنقل",
+      "resizeMemberPanel": "تغيير حجم لوحة الأعضاء"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "لا توجد سلاسل محادثات"
+      },
+      "compactThreadCard": {
+        "streaming": "قيد البث"
+      },
+      "mindroomCallChatView": {
+        "chat": "الدردشة",
+        "close": "إغلاق"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "رسائل جديدة",
+        "jumpToUnread": "الانتقال إلى غير المقروء",
+        "markAsRead": "تعليم كمقروء",
+        "failedToLoadThisThread": "تعذر تحميل سلسلة المحادثة.",
+        "loading": "جارٍ التحميل...",
+        "loadOlderMessages": "تحميل رسائل أقدم",
+        "loadNewerMessages": "تحميل رسائل أحدث",
+        "jumpToLatest": "الانتقال إلى الأحدث",
+        "today": "اليوم",
+        "yesterday": "أمس"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "ستتوفر الردود بعد تأكيد هذه الرسالة.",
+        "youDoNotHavePermissionToPostInThisRoom": "ليست لديك صلاحية النشر في هذه الغرفة"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "إظهار الكمبيوتر",
+        "hideComputer": "إخفاء الكمبيوتر",
+        "showCanvas": "إظهار اللوحة",
+        "hideCanvas": "إخفاء اللوحة",
+        "canvases": "اللوحات التفاعلية",
+        "notifications": "الإشعارات",
+        "compact": "مدمج",
+        "threads": "سلاسل المحادثات",
+        "classic": "تقليدي",
+        "invite": "دعوة",
+        "copyLink": "نسخ الرابط",
+        "roomSettings": "إعدادات الغرفة",
+        "jumpToTime": "الانتقال إلى وقت",
+        "leaveRoom": "مغادرة الغرفة",
+        "pinnedMessages": "الرسائل المثبّتة",
+        "members": "الأعضاء",
+        "hideMembers": "إخفاء الأعضاء",
+        "showMembers": "إظهار الأعضاء",
+        "moreOptions": "المزيد من الخيارات",
+        "back": "رجوع"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "إضافة عامل تصفية حسب الوسم",
+        "tag": "+ وسم",
+        "availableTags": "الوسوم المتاحة",
+        "filterPresets": "إعدادات التصفية المسبقة",
+        "preset": "إعداد مسبق",
+        "searchThreads": "البحث في سلاسل المحادثات",
+        "searchThreads2": "البحث في سلاسل المحادثات...",
+        "roomViewMode": "وضع عرض الغرفة",
+        "natural": "طبيعي",
+        "lastReply": "آخر رد",
+        "noThreadsMatchCurrentFilters": "لا تطابق عوامل التصفية الحالية أي سلسلة محادثة.",
+        "resetAllThreadFilters": "إعادة ضبط كل عوامل تصفية سلاسل المحادثات",
+        "reset": "إعادة ضبط",
+        "threadFilters": "عوامل تصفية سلاسل المحادثات",
+        "statusFilters": "عوامل تصفية الحالة",
+        "tagFilters": "عوامل تصفية الوسوم",
+        "showingFilteredThreads_one": "عرض ⁨{{count}}⁩ من ⁨{{total}}⁩ من سلاسل المحادثات",
+        "showingFilteredThreads_other": "عرض ⁨{{count}}⁩ من ⁨{{total}}⁩ من سلاسل المحادثات",
+        "showingAllThreads_one": "عرض ⁨{{count}}⁩ سلسلة محادثة",
+        "showingAllThreads_other": "عرض ⁨{{count}}⁩ من سلاسل المحادثات",
+        "sortLockedSummary": "⁨{{summary}}⁩ · الترتيب مقفل",
+        "unlockSortOrder": "فتح ترتيب الفرز (حاليًا ⁨{{sort}}⁩)",
+        "lockSortOrder": "قفل ترتيب الفرز (حاليًا ⁨{{sort}}⁩)",
+        "threadCount_one": "⁨{{count}}⁩ سلسلة محادثة",
+        "threadCount_other": "⁨{{count}}⁩ من سلاسل المحادثات",
+        "presets": {
+          "needs-attention": {
+            "label": "تحتاج إلى انتباه",
+            "description": "سلاسل محادثات غير محلولة، ولا يجري بثها أو جدولتها"
+          },
+          "working": {
+            "label": "قيد العمل",
+            "description": "قيد البث أو مجدولة — ما تعمل عليه الآن"
+          },
+          "review-queue": {
+            "label": "قائمة المراجعة",
+            "description": "سلاسل محادثات غير محلولة بها ردود غير مقروءة"
+          },
+          "archived": {
+            "label": "مؤرشفة",
+            "description": "سلاسل المحادثات المحلولة فقط"
+          },
+          "all": {
+            "label": "الكل",
+            "description": "إعادة ضبط كل عوامل التصفية"
+          }
+        },
+        "showingAllThreads_few": "عرض ⁨{{count}}⁩ سلسلة محادثة",
+        "showingAllThreads_many": "عرض ⁨{{count}}⁩ سلسلة محادثة",
+        "showingAllThreads_two": "يتم عرض ⁨{{count}}⁩ سلسلة محادثة",
+        "showingAllThreads_zero": "يتم إظهار ⁨{{count}}⁩ سلسلة محادثة",
+        "showingFilteredThreads_few": "عرض ⁨{{count}}⁩ من ⁨{{total}}⁩ من سلاسل المحادثات",
+        "showingFilteredThreads_many": "عرض ⁨{{count}}⁩ من ⁨{{total}}⁩ من سلاسل المحادثات",
+        "showingFilteredThreads_two": "عرض ⁨{{count}}⁩ من ⁨{{total}}⁩ من سلاسل المحادثات",
+        "showingFilteredThreads_zero": "عرض ⁨{{count}}⁩ من ⁨{{total}}⁩ من سلاسل المحادثات",
+        "threadCount_few": "⁨{{count}}⁩ سلسلة محادثة",
+        "threadCount_many": "⁨{{count}}⁩ سلسلة محادثة",
+        "threadCount_two": "⁨{{count}}⁩ سلسلة محادثة",
+        "threadCount_zero": "⁨{{count}}⁩ سلسلة محادثة"
+      },
+      "threadTagPicker": {
+        "addTag": "إضافة وسم",
+        "tag": "+ وسم",
+        "filterNew": "تصفية / جديد...",
+        "filterOrCreateTag": "تصفية حسب وسم أو إنشاء وسم",
+        "noMatches": "لا توجد نتائج مطابقة",
+        "typeToCreateATag": "اكتب لإنشاء وسم",
+        "createTag": "إنشاء «⁨{{tag}}⁩»"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "الانتقال إلى الرسالة",
+        "message": "رسالة"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "غيّر <sender>⁨{{sender}}⁩</sender> اسم الغرفة",
+        "changedRoomTopic": "غيّر <sender>⁨{{sender}}⁩</sender> موضوع الغرفة",
+        "changedRoomAvatar": "غيّر <sender>⁨{{sender}}⁩</sender> صورة الغرفة",
+        "joinedCall": "انضم <sender>⁨{{sender}}⁩</sender> إلى المكالمة",
+        "endedCall": "أنهى <sender>⁨{{sender}}⁩</sender> المكالمة",
+        "sentStateEvent": "أرسل <sender>⁨{{sender}}⁩</sender> حدث حالة <eventType>⁨{{eventType}}⁩</eventType>",
+        "sentEvent": "أرسل <sender>⁨{{sender}}⁩</sender> حدث <eventType>⁨{{eventType}}⁩</eventType>"
+      },
+      "threadTagPill": {
+        "removeTag": "إزالة الوسم ⁨{{tag}}⁩"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "خلال ⁨{{count}}⁩ ث",
+        "inMinutesSeconds": "خلال ⁨{{minutes}}⁩ د ⁨{{seconds}}⁩ ث",
+        "inMinutes": "خلال ⁨{{count}}⁩ د",
+        "inHours": "خلال ⁨{{count}}⁩ س",
+        "inHoursMinutes": "خلال ⁨{{hours}}⁩ س ⁨{{minutes}}⁩ د",
+        "atTime": "في ⁨{{time}}⁩",
+        "scheduledTasks_one": "⁨{{count}}⁩ مهمة مجدولة",
+        "scheduledTasks_other": "⁨{{count}}⁩ من المهام المجدولة",
+        "pendingScheduledTasks_one": "⁨{{count}}⁩ مهمة مجدولة معلقة",
+        "pendingScheduledTasks_other": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "scheduledTasksWithDetail": "⁨{{tasks}}⁩، ⁨{{detail}}⁩",
+        "pendingScheduledTasks_few": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_many": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_two": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_zero": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "scheduledTasks_few": "⁨{{count}}⁩ من المهام المجدولة",
+        "scheduledTasks_many": "⁨{{count}}⁩ مهمة مجدولة",
+        "scheduledTasks_two": "⁨{{count}}⁩ مهام مجدولة",
+        "scheduledTasks_zero": "⁨{{count}}⁩ من المهام المجدولة"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "لا توجد ردود",
+        "messageCount_one": "⁨{{formattedCount}}⁩ رسالة",
+        "messageCount_other": "⁨{{formattedCount}}⁩ من الرسائل",
+        "needsAttention": "تحتاج إلى انتباه",
+        "waitingOnResponse": "في انتظار رد",
+        "agentStreaming": "الوكيل يرسل ردًا",
+        "resolved": "محلولة",
+        "idle": "خاملة",
+        "threadStarted": "بدأت سلسلة المحادثة",
+        "noRepliesYet": "لا توجد ردود بعد",
+        "messageCount_few": "⁨{{formattedCount}}⁩ رسالة",
+        "messageCount_many": "⁨{{formattedCount}}⁩ رسالة",
+        "messageCount_two": "⁨{{formattedCount}}⁩ رسالة",
+        "messageCount_zero": "⁨{{formattedCount}}⁩ رسالة"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "المهمة التالية ⁨{{schedule}}⁩"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "⁨{{count}}⁩ مهمة مجدولة معلقة",
+        "pendingScheduledTasks_other": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_few": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_many": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_two": "⁨{{count}}⁩ من المهام المجدولة المعلقة",
+        "pendingScheduledTasks_zero": "⁨{{count}}⁩ من المهام المجدولة المعلقة"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "سلسلة محادثة مشفرة",
+        "threadInRoom": "سلسلة محادثة في ⁨{{roomName}}⁩",
+        "thread": "سلسلة المحادثة"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "عرض الكمبيوتر",
+      "openMembers": "فتح الأعضاء",
+      "openCanvas": "فتح اللوحة",
+      "canvasDisabled": "اللوحات التفاعلية معطّلة في هذا التطبيق.",
+      "canvasDuringCall": "أنهِ المكالمة لفتح اللوحات التفاعلية.",
+      "computerUnavailable": "كمبيوتر هذا الوكيل غير متاح.",
+      "releaseControl": "اترك التحكم في الكمبيوتر قبل فتح عرض آخر.",
+      "openConversation": "افتح هذا الطلب من محادثة الغرفة.",
+      "settingsUnavailable": "أوقف الوضع البسيط لفتح هذا القسم من الإعدادات."
+    },
+    "canvas": {
+      "panelLabel": "لوحة تفاعلية",
+      "fromAgent": "لوحة تفاعلية من ⁨{{agent}}⁩",
+      "expand": "توسيع اللوحة",
+      "close": "إغلاق اللوحة",
+      "resize": "تغيير حجم اللوحة",
+      "updated": "حدّث ⁨{{agent}}⁩ هذه اللوحة.",
+      "loadUpdate": "تحميل التحديث",
+      "version": "الإصدار ⁨{{current}}⁩ من ⁨{{total}}⁩",
+      "previousVersion": "الإصدار السابق",
+      "nextVersion": "الإصدار التالي",
+      "earlierVersion": "هذا إصدار سابق.",
+      "showLatest": "عرض الأحدث",
+      "loading": "جارٍ تحميل اللوحة…",
+      "loadFailed": "تعذّر تحميل هذه اللوحة.",
+      "retry": "إعادة المحاولة",
+      "escaped": "حاولت هذه اللوحة الخروج من بيئتها المعزولة وتم إيقافها.",
+      "reload": "إعادة تحميل اللوحة",
+      "pageError": "أبلغت هذه الصفحة عن خطأ.",
+      "tellAgent": "أخبر ⁨{{agent}}⁩",
+      "errorsSent": "أُرسلت الأخطاء إلى ⁨{{agent}}⁩.",
+      "errorsNotSent": "تعذّر إرسال الأخطاء إلى ⁨{{agent}}⁩.",
+      "sendTo": "إرسال إلى ⁨{{agent}}⁩:",
+      "changeAnswer": "لتغيير إجابتك، تجاهل هذه الإجابة أولًا.",
+      "data": "البيانات",
+      "send": "إرسال",
+      "discard": "تجاهل",
+      "disclosure": "أنشأها ⁨{{agent}}⁩. لا يمكنها الوصول إلى حسابك، وقد يخرج ما تُدخله هنا من هذه اللوحة.",
+      "sharedNotice": "محفوظ في هذه الغرفة: يمكن لـ ⁨{{agent}}⁩ وللآخرين هنا قراءة ما تُدخله.",
+      "sending": "جارٍ الإرسال إلى ⁨{{agent}}⁩…",
+      "sent": "تم الإرسال إلى ⁨{{agent}}⁩: ⁨{{label}}⁩",
+      "sendFailed": "تعذّر إرسال ردك. حاول مرة أخرى.",
+      "receiptData": "عرض البيانات المُرسلة إلى الوكيل",
+      "unlabeled": "تم الإرسال",
+      "notSent": "لم يُرسل إلى ⁨{{agent}}⁩: ⁨{{label}}⁩"
+    },
+    "canvases": {
+      "title": "اللوحات التفاعلية",
+      "note": "اللوحات التفاعلية التي أنشأها وكلاؤك لك وشاهدها هذا المتصفح. تظهر اللوحات المثبّتة على جميع أجهزتك.",
+      "empty": "لا توجد لوحات تفاعلية بعد. عندما يعرض عليك وكيل لوحة، تظهر هنا.",
+      "pinned": "مثبّتة",
+      "canvas": "اللوحة",
+      "thread": "سلسلة المحادثة",
+      "agent": "الوكيل",
+      "room": "الغرفة",
+      "updated": "تم التحديث",
+      "created": "تاريخ الإنشاء",
+      "pin": "تثبيت ⁨{{title}}⁩",
+      "unpin": "إلغاء تثبيت ⁨{{title}}⁩",
+      "shared": "تتم مشاركتها مع الوكيل",
+      "saved": "تحتوي على قيمك"
+    },
+    "backgroundJobs": {
+      "running": "قيد التشغيل: ⁨{{tool}}⁩",
+      "awaitingApproval": "بانتظار الموافقة: ⁨{{tool}}⁩",
+      "waiting": "بانتظار الموافقة",
+      "stoppingJob": "جارٍ الإيقاف: ⁨{{tool}}⁩",
+      "jobCount": "مهام في الخلفية: ⁨{{count}}⁩",
+      "subagent": "⁨{{tool}}⁩ (وكيل فرعي)",
+      "stopAll": "إيقاف الكل",
+      "stopping": "جارٍ الإيقاف…",
+      "stop": "إيقاف",
+      "stopJob": "إيقاف ⁨{{tool}}⁩",
+      "stopFailed": "تعذّر إيقاف ⁨{{tool}}⁩. حاول مرة أخرى.",
+      "stopAllFailed": "تعذّر إيقاف المهام في الخلفية. حاول مرة أخرى.",
+      "inRoom": "مهام في الخلفية قيد التشغيل"
+    }
+  },
+  "roomSchedules": {
+    "title": "المهام المجدولة",
+    "openLabel": "المهام المجدولة (⁨{{total}}⁩)",
+    "empty": "لا توجد مهام مجدولة في هذه الغرفة.",
+    "emptyHint": "اطلب من وكيل MindRoom جدولة مهمة هنا.",
+    "prompt": "الموجّه",
+    "promptUnavailable": "الموجّه غير متاح",
+    "once": "لمرة واحدة",
+    "recurring": "متكررة",
+    "executionTime": "وقت التنفيذ",
+    "unknownTime": "وقت التنفيذ غير متاح",
+    "awaitingExecution": "في انتظار التنفيذ",
+    "recurrence": "التكرار",
+    "silent": "صامتة",
+    "conditional": "مشروطة",
+    "newThread": "سلسلة محادثة جديدة",
+    "roomTimeline": "الخط الزمني للغرفة",
+    "openThread": "فتح سلسلة المحادثة",
+    "owner": "مالك المهمة",
+    "createdAt": "تاريخ الإنشاء",
+    "updatedAt": "تم التحديث",
+    "model": "النموذج",
+    "inheritedModel": "من إعدادات الوكيل أو الغرفة أو سلسلة المحادثة",
+    "taskId": "معرّف المهمة",
+    "historyLimit": "حد السجل",
+    "fullHistory": "السجل الكامل",
+    "noHistory": "بدون سجل",
+    "recentMessages": "الرسائل الأخيرة: ⁨{{total}}⁩",
+    "close": "إغلاق"
+  },
+  "archivedRooms": {
+    "title": "الغرف المؤرشفة",
+    "archive": "أرشفة الغرفة",
+    "restore": "استعادة الغرفة",
+    "restoreNamed": "استعادة ⁨{{room}}⁩",
+    "failed": "تعذّر حفظ التغييرات. حاول مرة أخرى.",
+    "close": "إغلاق الغرف المؤرشفة",
+    "description": "أخفِ الغرف من الشريط الجانبي دون مغادرتها. افتحها أو استعدها من هنا.",
+    "empty": "لا توجد غرف مؤرشفة."
+  }
+}

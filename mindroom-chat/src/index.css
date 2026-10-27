@@ -1,0 +1,263 @@
+@font-face {
+  font-family: Twemoji;
+  src: url('../public/font/Twemoji.Mozilla.v15.1.0.woff2'),
+    url('../public/font/Twemoji.Mozilla.v15.1.0.ttf');
+  font-display: swap;
+}
+
+:root {
+  /* Matches Primary.Main in src/colors.css.ts so links share the brand hue. */
+  --tc-link: #694ccd;
+  --app-bg-color: #1a1a1a;
+
+  /* User mxid colors, picked by hashing the user ID in util/colorMXID.js.
+     Each one is used two ways: as the sender name's text color, and as an
+     avatar fallback background with Surface.Container as its letter. Both
+     directions are the same pair, so one contrast check covers both.
+
+     These are eight evenly spaced OKLCH hues, 45 degrees apart, rotated 32
+     degrees off zero so none of them lands on the 288 degree brand hue.
+     Preserving the old hues was tried first and rejected: 208 and 242 collapse
+     into two near-identical blues once they share a lightness, and the whole
+     job of these colors is telling people apart.
+
+     Light group: L 0.52, chroma capped at 0.125, worst contrast 4.56 against
+     silver's Surface.Container, which is the darkest surface they sit on. */
+  --mx-uc-1: #a44938;
+  --mx-uc-2: #8b5f05;
+  --mx-uc-3: #5d7303;
+  --mx-uc-4: #067c5c;
+  --mx-uc-5: #087687;
+  --mx-uc-6: #3569af;
+  --mx-uc-7: #7755a4;
+  --mx-uc-8: #9b4777;
+
+  --font-emoji: 'Twemoji_DISABLED';
+  --font-secondary: 'InterVariable', var(--font-emoji), sans-serif;
+
+  /* Bare `monospace` resolves to Courier New on Windows and Linux, which is
+     the one thing agent output should not look like. The stack keeps the
+     0.6em advance of the macOS default so code block wrapping is unchanged
+     there, and the generic keyword stays last as the final fallback. */
+  --font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    'Roboto Mono', monospace;
+}
+
+html.light-theme {
+  --app-bg-color: #f2f2f2;
+  color-scheme: light;
+}
+
+html.silver-theme {
+  --app-bg-color: #dedede;
+  /* Silver's darker background needs the darker silver Primary.Main to hold 4.5:1. */
+  --tc-link: #5f43bf;
+  color-scheme: light;
+}
+
+html.dark-theme {
+  --app-bg-color: #1a1a1a;
+  color-scheme: dark;
+}
+
+html.midnight-theme {
+  --app-bg-color: #17161d;
+  color-scheme: dark;
+}
+
+html.butter-theme {
+  --app-bg-color: #1a1916;
+  color-scheme: dark;
+}
+
+.dark-theme,
+.midnight-theme,
+.butter-theme {
+  --tc-link: #b3a9ff;
+  --mr-scrollbar-thumb-color: #ececef8c;
+
+  /* Same eight hues, lifted for dark surfaces: L 0.82, chroma capped at 0.115,
+     worst contrast 7.69 against butter's Surface.Container, the lightest of
+     the three dark containers. */
+  --mx-uc-1: #ffac9b;
+  --mx-uc-2: #eeba6a;
+  --mx-uc-3: #b7d07a;
+  --mx-uc-4: #72dcb4;
+  --mx-uc-5: #59d8ef;
+  --mx-uc-6: #9fc7fe;
+  --mx-uc-7: #d1b4fe;
+  --mx-uc-8: #fba5d3;
+
+  --font-secondary: 'InterVariable', var(--font-emoji), sans-serif;
+
+  color-scheme: dark;
+}
+.dark-theme {
+  --app-bg-color: #1a1a1a;
+  background-color: #1a1a1a;
+}
+.midnight-theme {
+  --app-bg-color: #17161d;
+  background-color: #17161d;
+}
+.butter-theme {
+  --app-bg-color: #1a1916;
+  background-color: #1a1916;
+}
+.silver-theme {
+  --app-bg-color: #dedede;
+  background-color: #dedede;
+}
+
+html {
+  height: 100%;
+  height: 100dvh; /* dynamic viewport height - accounts for keyboard on iOS 15.4+ */
+  overflow: hidden;
+  background-color: var(--app-bg-color); /* kept in sync with the active app theme */
+}
+
+html[dir='rtl'] [data-directional] {
+  transform: scaleX(-1);
+}
+
+input[type='email'],
+input[type='url'],
+input[name='serverInput'],
+input[name='usernameInput'],
+pre,
+code,
+kbd {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--app-bg-color);
+  color-scheme: light;
+
+  /*Why font-variant-ligatures => https://github.com/rsms/inter/issues/222 */
+  font-variant-ligatures: no-contextual;
+}
+/* CINNY-132: when a focused editor opens a software keyboard without shrinking
+   the layout viewport, `useMobileKeyboardViewportFix` publishes the visible
+   viewport height and top offset.
+
+   Keep the shell in normal flow. `margin-top` moves it into the visible window
+   without creating the fixed-position containing block or stacking-context
+   changes caused by `position: fixed` or `transform`. Body overflow establishes
+   a formatting context, so this first-child margin does not collapse through
+   the body. Browsers that resize the layout viewport publish nothing and use
+   the original 100% geometry. */
+#root {
+  width: 100%;
+  height: var(--app-height, 100%);
+  margin-top: var(--app-viewport-offset-top, 0px);
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  background-color: var(--app-bg-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: var(--tc-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+[data-mx-spoiler][aria-pressed='true'] a {
+  color: transparent;
+  pointer-events: none;
+}
+
+b {
+  font-weight: 500;
+}
+label {
+  margin: 0;
+  padding: 0;
+}
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  border: none;
+}
+button {
+  max-width: 100%;
+  text-transform: none;
+  text-align: inherit;
+  overflow: visible;
+  -webkit-appearance: button;
+}
+textarea,
+input,
+input[type],
+input[type='text'],
+input[type='username'],
+input[type='password'],
+input[type='email'],
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  color: inherit;
+  word-spacing: inherit;
+}
+
+audio:not([controls]) {
+  display: none !important;
+}
+
+/* Fix Firefox rendering lists that have empty items with those items collapsed in on eachother */
+li p::before {
+  content: '';
+  display: inline-block;
+}
+
+/* One global answer to prefers-reduced-motion for transitions, so no individual
+   component has to remember. Collapsing a transition is always safe: the end
+   state is reached immediately and nothing is lost but the travel between.
+   The duration collapses rather than going to zero so that transitionend still
+   fires and any state machine waiting on it completes.
+
+   Keyframe animations are deliberately NOT clamped here. Several of them are
+   the only signal that something is in progress - the folds spinner, the typing
+   dots, the streaming indicator - and freezing those on one frame removes
+   information rather than motion. Animations that really are motion opt out
+   individually; see Animations.css.ts. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

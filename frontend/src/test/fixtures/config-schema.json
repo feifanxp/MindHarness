@@ -3707,6 +3707,30 @@
       "title": "ParticipationConfig",
       "type": "object"
     },
+    "PeerDiscussionConfig": {
+      "additionalProperties": false,
+      "description": "Opt-in equal participation for individual agents in a managed room.",
+      "properties": {
+        "max_agent_turns": {
+          "default": 6,
+          "description": "Maximum agent messages between human messages",
+          "maximum": 12,
+          "minimum": 1,
+          "title": "Max Agent Turns",
+          "type": "integer"
+        },
+        "max_turns_per_agent": {
+          "default": 2,
+          "description": "Maximum turns by one agent between human messages",
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Max Turns Per Agent",
+          "type": "integer"
+        }
+      },
+      "title": "PeerDiscussionConfig",
+      "type": "object"
+    },
     "PersonalRoomsConfig": {
       "additionalProperties": false,
       "description": "One private room per eligible human, managed by a selected agent.",
@@ -4130,6 +4154,18 @@
       "additionalProperties": false,
       "description": "Configuration for a managed Matrix room.",
       "properties": {
+        "peer_discussion": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PeerDiscussionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Let individual room agents independently decide when to join a shared discussion"
+        },
         "display_name": {
           "anyOf": [
             {
@@ -4511,6 +4547,15 @@
           "description": "Human-readable name for the team",
           "title": "Display Name",
           "type": "string"
+        },
+        "instructions": {
+          "default": [],
+          "description": "Instructions for the team coordinator",
+          "items": {
+            "type": "string"
+          },
+          "title": "Instructions",
+          "type": "array"
         },
         "role": {
           "description": "Description of the team's purpose",

@@ -1,0 +1,3111 @@
+{
+  "messageTable": {
+    "label": "Tabel yang dapat digulir",
+    "scrollHint": "Gulir secara horizontal"
+  },
+  "messageCodeBlock": {
+    "actions": "Tindakan blok kode",
+    "code": "Kode",
+    "language": "Bahasa: {{language}}",
+    "copy": "Salin kode",
+    "copied": "Disalin",
+    "wrap": "Bungkus baris",
+    "expand": "Perluas",
+    "collapse": "Ciutkan"
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " mengubah nama ruang"
+    }
+  },
+  "options": {
+    "messageLayout": {
+      "modern": "Modern",
+      "compact": "Ringkas",
+      "bubble": "Gelembung"
+    },
+    "messageSpacing": {
+      "none": "Tidak ada",
+      "ultraSmall": "Sangat kecil",
+      "extraSmall": "Ekstra kecil",
+      "small": "Kecil",
+      "normal": "Normal",
+      "large": "Besar"
+    },
+    "dateFormat": {
+      "custom": "Kustom"
+    },
+    "themeName": {
+      "light": "Terang",
+      "silver": "Perak",
+      "dark": "Gelap",
+      "midnight": "Tengah malam",
+      "butter": "Mentega"
+    },
+    "prefetchScope": {
+      "myHomeserver": "Homeserver saya",
+      "allRooms": "Semua ruang",
+      "currentRoomOnly": "Hanya ruang saat ini"
+    }
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "logout": "Keluar",
+    "nav": {
+      "general": "Umum",
+      "account": "Akun",
+      "notifications": "Notifikasi",
+      "devices": "Perangkat",
+      "emojisStickers": "Emoji & Stiker",
+      "developerTools": "Alat pengembang",
+      "about": "Tentang"
+    },
+    "general": {
+      "title": "Umum",
+      "interface": {
+        "sectionTitle": "Antarmuka",
+        "simpleMode": "Mode sederhana",
+        "simpleModeDescription": "Sembunyikan fitur lanjutan seperti palet perintah dan filter utas. Disinkronkan di semua perangkat Anda.",
+        "showCanvasesInSidebar": "Tampilkan panel interaktif di bilah sisi",
+        "showCanvasesInSidebarDescription": "Tampilkan tombol untuk panel interaktif buatan agen Anda setelah ada satu. Disinkronkan di semua perangkat Anda.",
+        "saveFailed": "Perubahan tidak dapat disimpan. Periksa koneksi Anda dan coba lagi."
+      },
+      "language": {
+        "sectionTitle": "Bahasa",
+        "appLanguage": "Bahasa aplikasi",
+        "appLanguageDescription": "Berlaku untuk menu dan teks antarmuka. Isi pesan tidak pernah diterjemahkan."
+      },
+      "appearance": {
+        "sectionTitle": "Tampilan",
+        "systemTheme": "Tema sistem",
+        "systemThemeDescription": "Pilih tema terang atau gelap berdasarkan preferensi sistem.",
+        "lightTheme": "Tema terang:",
+        "darkTheme": "Tema gelap:",
+        "theme": "Tema",
+        "themeDescription": "Tema yang digunakan saat tema sistem tidak diaktifkan.",
+        "monochromeMode": "Mode monokrom",
+        "twitterEmoji": "Emoji Twitter",
+        "pageZoom": "Zoom halaman"
+      },
+      "dateTime": {
+        "sectionTitle": "Tanggal & waktu",
+        "hour24Clock": "Format waktu 24 jam",
+        "dateFormat": "Format tanggal",
+        "save": "Simpan",
+        "formatHints": {
+          "title": "Pemformatan",
+          "year": "Tahun",
+          "twoDigitYear": "Tahun dua digit",
+          "fourDigitYear": "Tahun empat digit",
+          "month": "Bulan",
+          "theMonth": "Nomor bulan",
+          "twoDigitMonth": "Bulan dua digit",
+          "shortMonthName": "Nama bulan singkat",
+          "fullMonthName": "Nama bulan lengkap",
+          "dayOfMonth": "Hari dalam bulan",
+          "theDayOfMonth": "Hari dalam bulan",
+          "twoDigitDayOfMonth": "Hari dalam bulan dua digit",
+          "dayOfWeek": "Hari dalam minggu",
+          "theDayOfWeek": "Hari dalam minggu (Minggu = 0)",
+          "twoLetterDayName": "Nama hari dua huruf",
+          "shortDayName": "Nama hari singkat",
+          "fullDayName": "Nama hari lengkap"
+        }
+      },
+      "editor": {
+        "sectionTitle": "Editor",
+        "enterForNewline": "ENTER untuk baris baru",
+        "enterForNewlineDescription": "Gunakan {{sendKey}} + ENTER untuk mengirim pesan dan ENTER untuk baris baru.",
+        "markdownFormatting": "Pemformatan Markdown",
+        "hideActivity": "Sembunyikan status mengetik & tanda dibaca",
+        "hideActivityDescription": "Nonaktifkan status mengetik dan tanda dibaca untuk menjaga privasi aktivitas Anda."
+      },
+      "messages": {
+        "sectionTitle": "Pesan",
+        "messageLayout": "Tata letak pesan",
+        "messageSpacing": "Jarak pesan",
+        "prefetchScope": "Cakupan pramuat",
+        "prefetchScopeDescription": "Ruang yang disiapkan di latar belakang",
+        "historyDepth": "Kedalaman riwayat ruang saat ini",
+        "historyDepthDescription": "Target jumlah peristiwa yang dimuat sebelumnya untuk ruang yang Anda lihat. Minimum {{min}}, maksimum {{max}}.",
+        "legacyUsernameColor": "Warna nama pengguna lama",
+        "hideMembershipChange": "Sembunyikan perubahan keanggotaan",
+        "hideProfileChange": "Sembunyikan perubahan profil",
+        "disableMediaAutoLoad": "Nonaktifkan pemuatan media otomatis",
+        "urlPreview": "Pratinjau URL",
+        "urlPreviewEncrypted": "Pratinjau URL di ruang terenkripsi",
+        "showHiddenEvents": "Tampilkan peristiwa tersembunyi"
+      },
+      "computers": {
+        "sectionTitle": "Komputer",
+        "apiUrl": "URL layanan komputer",
+        "description": "Pilih backend MindRoom tepercaya; backend menerima token masuk berumur pendek. Disimpan di perangkat ini. Kosongkan untuk menonaktifkan komputer.",
+        "save": "Simpan layanan komputer",
+        "reset": "Gunakan bawaan aplikasi",
+        "invalidUrl": "Masukkan origin tanpa kredensial, jalur, kueri, atau fragmen. Gunakan HTTPS, atau HTTP dengan localhost atau alamat IP LAN privat.",
+        "httpNotice": "HTTP tidak mengenkripsi proses masuk atau lalu lintas komputer Anda. Gunakan hanya pada jaringan lokal tepercaya.",
+        "saveFailed": "Layanan komputer tidak dapat disimpan di perangkat ini.",
+        "saved": "Layanan komputer disimpan."
+      },
+      "connections": {
+        "sectionTitle": "Koneksi",
+        "title": "Akun terhubung",
+        "description": "Hubungkan akun yang digunakan agen Anda, seperti Google atau GitHub, di server MindRoom Anda.",
+        "open": "Buka Koneksi",
+        "noBackend": "Atur server MindRoom Anda di bagian Komputer untuk menggunakan Koneksi.",
+        "blocked": "Browser Anda memblokir jendela Koneksi. Izinkan pop-up untuk situs ini lalu coba lagi."
+      }
+    }
+  },
+  "nav": {
+    "home": "Beranda",
+    "directMessages": "Pesan langsung",
+    "threads": "Utas",
+    "canvases": "Panel interaktif",
+    "inbox": "Kotak masuk",
+    "exploreCommunity": "Jelajahi komunitas",
+    "addSpace": "Tambahkan space",
+    "createSpace": "Buat space",
+    "createSpaceDescription": "Buat space untuk komunitas Anda.",
+    "joinWithAddress": "Bergabung dengan alamat",
+    "joinWithAddressDescription": "Bergabunglah dengan komunitas yang sudah ada.",
+    "createRoom": "Buat ruang",
+    "messageSearch": "Pencarian pesan",
+    "rooms": "Ruang",
+    "chats": "Obrolan",
+    "createChat": "Buat obrolan",
+    "directMessage": "Pesan langsung",
+    "noRooms": "Tidak ada ruang",
+    "noRoomsDescription": "Anda belum memiliki ruang.",
+    "noDirectMessages": "Tidak ada pesan langsung",
+    "noDirectMessagesDescription": "Anda belum memiliki pesan langsung.",
+    "exploreCommunityRooms": "Jelajahi ruang komunitas",
+    "unverifiedDevice": "Perangkat belum terverifikasi",
+    "unverifiedDevices": "Perangkat belum terverifikasi"
+  },
+  "accountsRail": {
+    "settingsTooltip": "Pengaturan: {{name}}",
+    "switchTooltip": "Beralih ke {{name}} ({{userId}})",
+    "openSettingsAria": "Buka pengaturan untuk {{name}}",
+    "switchAria": "Beralih ke akun {{name}} ({{userId}})",
+    "manageAccounts": "Kelola akun",
+    "addAccount": "Tambahkan akun",
+    "addAccountAria": "Tambahkan akun"
+  },
+  "commandPalette": {
+    "inputAria": "Palet perintah",
+    "placeholder": "Cari atau jalankan perintah…",
+    "closeAria": "Tutup palet perintah",
+    "open": "Buka palet perintah",
+    "noResults": "Tidak ada hasil",
+    "resultCount_one": "{{count}} hasil",
+    "resultCount_other": "{{count}} hasil",
+    "sections": {
+      "actions": "Tindakan",
+      "threads": "Utas",
+      "rooms": "Ruang",
+      "users": "Pengguna",
+      "messages": "Pesan",
+      "spaces": "Space"
+    },
+    "prefixes": {
+      "label": "Awalan:",
+      "actions": "tindakan",
+      "rooms": "ruang",
+      "users": "pengguna",
+      "threads": "utas",
+      "spaces": "space"
+    },
+    "shortcut": "Pintasan:",
+    "shortcutOpenSuffix": "untuk membuka.",
+    "actions": {
+      "openSettings": "Buka pengaturan",
+      "openSettingsDescription": "Buka dialog pengaturan bersama",
+      "goHome": "Ke beranda",
+      "goHomeDescription": "Buka beranda",
+      "goDirect": "Ke pesan langsung",
+      "goDirectDescription": "Buka pesan langsung",
+      "goInbox": "Ke kotak masuk",
+      "goInboxDescription": "Buka notifikasi kotak masuk",
+      "createRoom": "Buat ruang",
+      "createRoomDescription": "Buka dialog pembuatan ruang",
+      "createSpace": "Buat space",
+      "createSpaceDescription": "Buka dialog pembuatan space",
+      "toggleTheme": "Ganti tema",
+      "toggleThemeDescription": "Beralih antara tema terang dan gelap",
+      "logout": "Keluar",
+      "logoutDescription": "Keluar dari MindRoom Chat",
+      "markCurrentRoomRead": "Tandai ruang saat ini sudah dibaca",
+      "markCurrentRoomReadDescription": "Tandai {{room}} sudah dibaca",
+      "copyCurrentRoomLink": "Salin tautan ruang saat ini",
+      "copyCurrentRoomLinkDescription": "Salin tautan aplikasi untuk {{room}}",
+      "openCurrentRoomSettings": "Buka pengaturan ruang saat ini",
+      "openCurrentRoomSettingsDescription": "Buka pengaturan untuk {{room}}",
+      "unresolveCurrentThread": "Buka kembali utas saat ini",
+      "unresolveCurrentThreadDescription": "Kembalikan utas aktif ke antrean yang belum selesai",
+      "resolveCurrentThread": "Selesaikan utas saat ini",
+      "resolveCurrentThreadDescription": "Tandai utas aktif sudah selesai",
+      "currentRoomFallback": "ruang saat ini"
+    },
+    "messages": {
+      "searchIn": "Cari {{query}} di {{scope}}",
+      "searchAll": "Cari {{query}} di semua ruang",
+      "currentRoomFallback": "ruang saat ini",
+      "currentRoomDescription": "Ruang saat ini",
+      "currentSpaceFallback": "space saat ini",
+      "currentSpaceDescription": "Space saat ini",
+      "globalSearchDescription": "Pencarian pesan global"
+    },
+    "all": "Semua",
+    "filterLabel": "Filter hasil",
+    "resultsLabel": "Hasil pencarian",
+    "emptyDescription": "Coba pencarian lain atau pilih kategori lain.",
+    "clearSearch": "Hapus pencarian",
+    "navigate": "Navigasi",
+    "select": "Buka"
+  },
+  "accountSwitcher": {
+    "title": "Akun",
+    "description": "Beralih akun, tambahkan akun lain, atau hapus akun yang tidak aktif.",
+    "active": "Aktif",
+    "openSettings": "Buka pengaturan",
+    "switch": "Beralih",
+    "removing": "Menghapus...",
+    "removeFromDevice": "Hapus dari perangkat",
+    "addAccount": "Tambahkan akun",
+    "close": "Tutup",
+    "actionError": "Akun ini tidak dapat diperbarui. Silakan coba lagi."
+  },
+  "recentThreads": {
+    "title": "Baru dibuka",
+    "empty": "Tidak ada utas yang baru dibuka",
+    "resizeAria": "Ubah ukuran bagian Baru dibuka",
+    "openedAt": "Dibuka {{time}}"
+  },
+  "threadNav": {
+    "title": "Utas",
+    "empty": "Belum ada utas",
+    "loading": "Memuat utas...",
+    "pin": "Sematkan utas",
+    "unpin": "Lepas sematan utas",
+    "pinned": "Disematkan",
+    "room": "Ruang",
+    "agents": "Agen",
+    "agentsUnknown": "Tidak ada agen yang teridentifikasi",
+    "messages": "Pesan",
+    "lastActivity": "Aktivitas terakhir",
+    "unknownActivity": "Tidak diketahui"
+  },
+  "composer": {
+    "placeholder": "Ketik pesan...",
+    "sendMessage": "Kirim pesan",
+    "recordVoice": "Rekam pesan suara",
+    "formatting": "Pemformatan",
+    "attach": "Lampirkan file",
+    "voicePausedInOtherRoom": "Rekaman suara dijeda — selesaikan atau buang rekaman yang belum terkirim di {{roomName}}",
+    "dropFiles": "Letakkan file di \"{{roomName}}\"",
+    "dropFilesHint": "Seret dan letakkan file di sini atau klik untuk membuka dialog pemilihan",
+    "roomFallback": "Ruang",
+    "voiceRoomUnavailable": "Ruang ini tidak lagi tersedia. Buang pesan suara yang belum terkirim dan coba lagi nanti.",
+    "voiceStillSending": "Pesan suara lain masih dikirim. Tunggu sebelum merekam lagi.",
+    "voiceBundleBlocked": "Pengiriman lampiran lain masih berlangsung atau perlu ditangani. Tunggu hingga selesai, atau coba lagi maupun hapus lampiran yang gagal, lalu kirim ulang pesan ini."
+  },
+  "threadActions": {
+    "more": "Opsi utas",
+    "open": "Buka utas",
+    "tags": "Edit tag",
+    "editSummary": "Edit ringkasan",
+    "regenerate": "Buat ulang ringkasan",
+    "reopen": "Buka kembali utas",
+    "copy": "Salin tautan utas",
+    "summary": "Ringkasan",
+    "summaryHint": "Pengeditan manual menghentikan pembaruan ringkasan otomatis. Anda dapat mengedit atau membuat ulang ringkasan kapan saja.",
+    "length": "{{count}} / {{max}} karakter",
+    "agent": "Agen",
+    "noAgents": "Tidak ada agen yang bergabung di ruang ini",
+    "regenerateHint": "Minta agen memperbarui ringkasan utas ini. Agen memerlukan alat ringkasan utas.",
+    "requested": "Permintaan dikirim. Ringkasan akan diperbarui setelah agen menyelesaikannya. Periksa utas untuk melihat responsnya.",
+    "failed": "Tindakan ini tidak dapat diselesaikan. Coba lagi.",
+    "save": "Simpan ringkasan",
+    "sendRequest": "Kirim permintaan",
+    "saving": "Mengirim…",
+    "cancel": "Batal",
+    "done": "Selesai"
+  },
+  "thread": {
+    "pinFailed": "Tidak dapat memperbarui sematan. Coba lagi.",
+    "chip": "Utas",
+    "view": "Tampilan utas",
+    "resolve": "Selesaikan",
+    "resolved": "Selesai",
+    "resolvedBy": "Diselesaikan oleh {{name}}",
+    "resolvedByShort": "oleh {{name}}",
+    "hideDetails": "Sembunyikan detail utas",
+    "showDetails": "Tampilkan detail utas",
+    "backToRoom": "Kembali ke ruang",
+    "replyCount_one": "{{count}} balasan",
+    "replyCount_other": "{{count}} balasan",
+    "aria": {
+      "openThread": "Buka utas: {{title}}",
+      "resolvedThread": "Utas selesai",
+      "unresolvedThread": "Utas belum selesai",
+      "unreadMessages": "Pesan belum dibaca",
+      "agentStreaming": "Agen sedang mengalirkan respons",
+      "messageFailed": "Pesan gagal dikirim",
+      "messageSending": "Pesan sedang dikirim",
+      "lastActivity": "Aktivitas terakhir {{time}}",
+      "removeTagFilter": "Hapus filter {{tag}}"
+    },
+    "status": {
+      "resolved": "Selesai",
+      "streaming": "Mengalirkan respons",
+      "scheduled": "Terjadwal",
+      "unread": "Belum dibaca",
+      "idle": "Tidak aktif",
+      "idleFilter": "Tidak aktif (selesai, tidak mengalirkan respons, tanpa tugas)"
+    },
+    "stats": {
+      "aria": "Statistik utas",
+      "showing": "Menampilkan {{shown}} dari {{total}}",
+      "threadCount_one": "{{count}} utas",
+      "threadCount_other": "{{count}} utas",
+      "tags": "Tag"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: menampilkan semua. Klik untuk menampilkan ini saja.",
+      "include": "{{label}}: hanya menampilkan ini. Klik untuk menyembunyikan.",
+      "exclude": "{{label}}: disembunyikan. Klik untuk menghapus filter.",
+      "tagAny": "Tag \"{{tag}}\"",
+      "tagInclude": "Tag \"{{tag}}\": hanya menampilkan ini. Klik untuk menyembunyikan.",
+      "tagExclude": "Tag \"{{tag}}\": disembunyikan. Klik untuk menghapus filter.",
+      "stateAny": "menampilkan semua",
+      "stateInclude": "hanya menampilkan ini",
+      "stateExclude": "disembunyikan"
+    },
+    "filters": {
+      "scope": "Cakupan",
+      "scopeInvolved": "Keterlibatan",
+      "scopeAllRooms": "Semua ruang",
+      "status": "Status",
+      "statusAll": "Semua",
+      "statusUnresolved": "Belum selesai",
+      "statusResolved": "Selesai",
+      "activity": "Aktivitas",
+      "activityToday": "Hari ini",
+      "activity7d": "7 hari",
+      "activity30d": "30 hari",
+      "activityAll": "Semua",
+      "unread": "Belum dibaca",
+      "attention": "Perlu perhatian",
+      "roomIdsPlaceholder": "ID ruang",
+      "roomIdsAria": "Filter ID ruang",
+      "spaceIdsPlaceholder": "ID space",
+      "spaceIdsAria": "Filter ID space",
+      "tagsPlaceholder": "Tag",
+      "tagsIncludeAria": "Filter tag yang disertakan",
+      "excludeTagsPlaceholder": "Kecualikan tag",
+      "tagsExcludeAria": "Filter tag yang dikecualikan",
+      "clear": "Bersihkan",
+      "open": "Filter",
+      "search": "Cari utas",
+      "sheetAria": "Filter utas",
+      "closeAria": "Tutup filter utas"
+    },
+    "simpleFilter": {
+      "unresolved": "Belum selesai",
+      "showingUnresolved": "Menampilkan utas yang belum selesai. Klik untuk menampilkan semua.",
+      "showingAll": "Menampilkan semua utas. Klik untuk menampilkan yang belum selesai saja."
+    }
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "Data akun",
+      "save": "Simpan",
+      "cancel": "Batal",
+      "jsonContent": "Konten JSON",
+      "edit": "Edit",
+      "developerTools": "Alat pengembang"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "Informasi alur autentikasi gagal dimuat.",
+      "retry": "Coba lagi"
+    },
+    "backupRestore": {
+      "restoring0": "Memulihkan: 0%",
+      "backupHasTrustedDecryptionKey": "Cadangan memiliki kunci dekripsi tepercaya.",
+      "backupDoesNotHaveTrustedDecryptionKey": "Cadangan tidak memiliki kunci dekripsi tepercaya!",
+      "backupHasTrustedBySignature": "Cadangan dipercaya berdasarkan tanda tangannya.",
+      "backupDoesNotHaveTrustedSignature": "Cadangan tidak memiliki tanda tangan tepercaya!",
+      "encryptionBackup": "Cadangan enkripsi",
+      "backupDetails": "Detail cadangan",
+      "restoreBackup": "Pulihkan cadangan",
+      "noBackupPresentOnServer": "Tidak ada cadangan di server!",
+      "connected": "Terhubung",
+      "disconnected": "Terputus",
+      "nil": "NIL",
+      "syncing": "Menyinkronkan ({{count}})",
+      "restoring": "Memulihkan: {{progress}}%",
+      "version": "Versi: {{version}}",
+      "keys": "Kunci: {{keyCount}}"
+    },
+    "betaNoticeBadge": {
+      "notice": "Pemberitahuan",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "Fitur ini sedang diuji dan dapat berubah seiring waktu.",
+      "beta": "Beta"
+    },
+    "callEmbedProvider": {
+      "incomingCall": "Panggilan masuk",
+      "yourHomeserverDoesNotSupportCalling": "Homeserver Anda tidak mendukung panggilan.",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "Browser Anda tidak mendukung WebRTC yang diperlukan untuk panggilan.",
+      "answer": "Jawab",
+      "reject": "Tolak",
+      "ignore": "Abaikan"
+    },
+    "deviceVerification": {
+      "close": "Tutup",
+      "pleaseAcceptTheRequestFromOtherDevice": "Terima permintaan di perangkat lain.",
+      "clickAcceptToStartTheVerificationProcess": "Klik Terima untuk memulai proses verifikasi.",
+      "accept": "Terima",
+      "verificationRequestHasBeenAccepted": "Permintaan verifikasi telah diterima.",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "Pastikan emoji berikut ditampilkan di kedua perangkat dalam urutan yang sama:",
+      "theyMatch": "Cocok",
+      "doNotMatch": "Tidak cocok",
+      "yourDeviceIsVerified": "Perangkat Anda sudah terverifikasi.",
+      "okay": "Oke",
+      "verificationHasBeenCanceled": "Verifikasi dibatalkan.",
+      "deviceVerification": "Verifikasi perangkat",
+      "waitingForRequestToBeAccepted": "Menunggu permintaan diterima...",
+      "waitingForTheResponseFromOtherDevice": "Menunggu respons dari perangkat lain...",
+      "startingVerificationUsingEmojiComparison": "Memulai verifikasi dengan perbandingan emoji...",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "Kesalahan tak terduga! Verifikasi dimulai tetapi pemverifikasi tidak ditemukan."
+    },
+    "deviceVerificationSetup": {
+      "recoveryKey": "Kunci pemulihan",
+      "passphraseOptional": "Frasa sandi (opsional)",
+      "continue": "Lanjutkan",
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "Langkah autentikasi untuk tindakan ini tidak didukung oleh klien.",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "Simpan Kunci Pemulihan di tempat aman untuk digunakan nanti. Kunci ini diperlukan untuk memverifikasi identitas Anda saat perangkat lain tidak dapat diakses.",
+      "copy": "Salin",
+      "download": "Unduh",
+      "setupDeviceVerification": "Siapkan verifikasi perangkat",
+      "resetDeviceVerification": "Reset verifikasi perangkat",
+      "resettingDeviceVerificationIsPermanent": "Reset verifikasi perangkat bersifat permanen.",
+      "recoveryPassphrase": "Frasa sandi pemulihan",
+      "reset": "Reset",
+      "unexpectedError": "Kesalahan tak terduga!",
+      "hide": "Sembunyikan",
+      "show": "Tampilkan",
+      "recoveryDescription": "Buat <b>Kunci Pemulihan</b> untuk memverifikasi identitas saat perangkat lain tidak dapat diakses. Anda juga dapat menyiapkan frasa sandi sebagai alternatif yang mudah diingat.",
+      "resetWarning": "Semua orang yang pernah Anda verifikasi akan melihat peringatan keamanan dan cadangan enkripsi Anda akan hilang. Sebaiknya jangan lakukan ini, kecuali Anda kehilangan <b>Kunci Pemulihan</b> atau <b>Frasa Sandi Pemulihan</b> serta semua perangkat yang dapat digunakan untuk verifikasi."
+    },
+    "hexColorPickerPopOut": {
+      "remove": "Hapus"
+    },
+    "logoutDialog": {
+      "logout": "Keluar",
+      "unverifiedDevice": "Perangkat belum terverifikasi",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "Verifikasi perangkat sebelum keluar untuk menyimpan pesan terenkripsi Anda.",
+      "alert": "Peringatan",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "Aktifkan verifikasi perangkat atau ekspor data terenkripsi melalui pengaturan agar Anda tidak kehilangan akses ke pesan.",
+      "youReAboutToLogOutAreYouSure": "Anda akan keluar. Yakin ingin melanjutkan?",
+      "cancel": "Batal",
+      "logoutFailed": "Gagal keluar! {{error}}"
+    },
+    "manualVerification": {
+      "recoveryPassphrase": "Frasa sandi pemulihan",
+      "recoveryKey": "Kunci pemulihan",
+      "verifyManually": "Verifikasi secara manual",
+      "deviceVerified": "Perangkat terverifikasi!",
+      "selectAVerificationMethod": "Pilih metode verifikasi.",
+      "provideRecoveryKey": "Masukkan kunci pemulihan."
+    },
+    "pdfViewer": {
+      "zoomOut": "Perkecil",
+      "zoomIn": "Perbesar",
+      "failedToLoadPdf": "Gagal memuat PDF",
+      "retry": "Coba lagi",
+      "previous": "Sebelumnya",
+      "pageNumber": "Nomor halaman",
+      "jumpToPage": "Ke halaman",
+      "next": "Berikutnya",
+      "saving": "Menyimpan...",
+      "retryDownload": "Coba unduh lagi",
+      "download": "Unduh"
+    },
+    "secretStorage": {
+      "recoveryPassphrase": "Frasa sandi pemulihan",
+      "verify": "Verifikasi",
+      "recoveryKey": "Kunci pemulihan",
+      "invalidRecoveryPassphrase": "Frasa sandi pemulihan tidak valid.",
+      "invalidRecoveryKey": "Kunci pemulihan tidak valid."
+    },
+    "uIAFlowOverlay": {
+      "exit": "Keluar",
+      "stepValue1Value2": "Langkah {{value1}}/{{value2}}"
+    },
+    "additionalCreatorInput": {
+      "founders": "Pendiri",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "Pengguna dengan hak istimewa khusus dapat ditetapkan saat pembuatan. Mereka memiliki kontrol lebih tinggi dan hanya dapat diubah saat peningkatan versi.",
+      "enter": "Enter",
+      "noSuggestions": "Tidak ada saran",
+      "pleaseProvideTheUserIdAndHitEnter": "Masukkan ID pengguna lalu tekan Enter."
+    },
+    "createRoomAccessSelector": {
+      "restricted": "Terbatas",
+      "onlyMemberOfParentSpaceCanJoin": "Hanya anggota space induk yang dapat bergabung.",
+      "private": "Pribadi",
+      "onlyPeopleWithInviteCanJoin": "Hanya orang yang diundang yang dapat bergabung.",
+      "public": "Publik",
+      "anyoneWithTheAddressCanJoin": "Siapa pun yang memiliki alamat dapat bergabung."
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "Alamat (opsional)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "Pilih alamat unik agar mudah ditemukan.",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "Alamat ini sudah digunakan. Pilih alamat lain."
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "Ruang obrolan",
+      "messagesPhotosAndVideos": "- Pesan, foto, dan video.",
+      "voiceRoom": "Ruang suara",
+      "liveAudioAndVideoConversations": "- Percakapan suara dan video langsung."
+    },
+    "roomVersionSelector": {
+      "versions": "Versi",
+      "version": "Versi"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "Emoji"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "Ruang",
+      "unknownRoom": "Ruang tidak dikenal"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "Sebutan"
+    },
+    "emojiBoard": {
+      "recent": "Terbaru",
+      "unknownPack": "Paket tidak dikenal",
+      "searchResults": "Hasil pencarian",
+      "noResultsFound": "Tidak ada hasil ditemukan",
+      "personalPack": "Paket pribadi",
+      "unknown": "Tidak diketahui"
+    },
+    "noStickerPacks": {
+      "noStickerPacks": "Tidak ada paket stiker!",
+      "addStickersFromUserRoomOrSpaceSettings": "Tambahkan stiker dari pengaturan pengguna, ruang, atau space."
+    },
+    "searchInput": {
+      "react": "Beri reaksi",
+      "searchOrTextReaction": "Cari atau tulis reaksi teks ",
+      "search": "Cari"
+    },
+    "tabs": {
+      "sticker": "Stiker",
+      "emoji": "Emoji"
+    },
+    "eventReaders": {
+      "seenBy": "Dilihat oleh"
+    },
+    "imageEditor": {
+      "imageEditor": "Editor gambar",
+      "save": "Simpan"
+    },
+    "imagePackContent": {
+      "failedToApplyChangesPleaseTryAgain": "Gagal menerapkan perubahan! Silakan coba lagi.",
+      "changesSavedApplyWhenReady": "Perubahan disimpan! Terapkan saat siap.",
+      "reset": "Reset",
+      "applyChanges": "Terapkan perubahan",
+      "pack": "Paket",
+      "imagesUsage": "Penggunaan gambar",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "Pilih penggunaan gambar: sebagai emoji, stiker, atau keduanya.",
+      "images": "Gambar",
+      "uploadImages": "Unggah gambar",
+      "selectImagesFromYourStorageToUploadThemInPack": "Pilih gambar dari penyimpanan Anda untuk diunggah ke paket.",
+      "select": "Pilih"
+    },
+    "imagePackView": {
+      "emojisStickers": "Emoji & Stiker"
+    },
+    "imageTile": {
+      "undo": "Urungkan",
+      "edit": "Edit",
+      "shortcode": "Kode singkat:",
+      "body": "Isi:",
+      "save": "Simpan",
+      "cancel": "Batal"
+    },
+    "packMeta": {
+      "edit": "Edit",
+      "packAvatar": "Avatar paket",
+      "upload": "Unggah",
+      "reset": "Reset",
+      "remove": "Hapus",
+      "name": "Nama",
+      "attribution": "Atribusi",
+      "save": "Simpan",
+      "cancel": "Batal",
+      "unknown": "Tidak diketahui"
+    },
+    "imageViewer": {
+      "zoomOut": "Perkecil",
+      "zoomIn": "Perbesar",
+      "saving": "Menyimpan...",
+      "retryDownload": "Coba unduh lagi",
+      "download": "Unduh"
+    },
+    "inviteUserPrompt": {
+      "invite": "Undang",
+      "userId": "ID pengguna",
+      "reasonOptional": "Alasan (opsional)"
+    },
+    "joinAddressPrompt": {
+      "joinWithAddress": "Bergabung dengan alamat",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "Masukkan alamat publik untuk bergabung dengan komunitas. Contoh alamat:",
+      "address": "Alamat",
+      "invalidAddress": "Alamat tidak valid",
+      "open": "Buka"
+    },
+    "leaveRoomPrompt": {
+      "leaveRoom": "Tinggalkan ruang",
+      "areYouSureYouWantToLeaveThisRoom": "Yakin ingin meninggalkan ruang ini?",
+      "leaving": "Meninggalkan...",
+      "leave": "Tinggalkan",
+      "leaveFailed": "Gagal meninggalkan ruang! {{error}}"
+    },
+    "leaveSpacePrompt": {
+      "leaveSpace": "Tinggalkan space",
+      "areYouSureYouWantToLeaveThisSpace": "Yakin ingin meninggalkan space ini?",
+      "leaving": "Meninggalkan...",
+      "leave": "Tinggalkan",
+      "leaveFailed": "Gagal meninggalkan space! {{error}}"
+    },
+    "msgTypeRenderers": {
+      "openLocation": "Buka lokasi",
+      "voiceMessage": "pesan suara",
+      "audio": "audio",
+      "unnamedFile": "File tanpa nama",
+      "file": "File",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "Dokumen PDF",
+      "textFile": "File teks"
+    },
+    "fallbackContent": {
+      "thisMessageHasBeenDeleted": "Pesan ini telah dihapus",
+      "unsupportedMessage": "Pesan tidak didukung",
+      "failedToLoadMessage": "Gagal memuat pesan",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "Pesan ini tidak dapat didekripsi — kunci enkripsi tidak tersedia",
+      "thisMessageIsNotDecryptedYet": "Pesan ini belum didekripsi",
+      "brokenMessage": "Pesan rusak",
+      "emptyMessage": "Pesan kosong",
+      "edited": " (diedit)",
+      "deletedWithReason": "Pesan ini telah dihapus. {{reason}}"
+    },
+    "fileContent": {
+      "openPdf": "Buka PDF",
+      "openFile": "Buka file",
+      "loadFailed": "Gagal memuat file!",
+      "retryDownload": "Coba unduh lagi ({{size}})",
+      "downloadSize": "Unduh ({{size}})",
+      "openValue1": "Buka {{value1}}"
+    },
+    "imageContent": {
+      "view": "Lihat",
+      "spoiler": "Spoiler",
+      "failedToLoadImage": "Gagal memuat gambar!",
+      "retry": "Coba lagi"
+    },
+    "videoContent": {
+      "watch": "Tonton",
+      "spoiler": "Spoiler",
+      "failedToLoadVideo": "Gagal memuat video!",
+      "retry": "Coba lagi"
+    },
+    "voiceAudioContent": {
+      "loadError": "Audio tidak dapat dimuat. Tekan putar untuk mencoba lagi.",
+      "playbackError": "Audio ini tidak dapat diputar di sini. Coba unduh audio tersebut.",
+      "playbackPosition": "{{current}} dari {{duration}}",
+      "moreAudioOptions": "Opsi audio lainnya",
+      "download": "Unduh",
+      "name": "Nama",
+      "type": "Jenis",
+      "size": "Ukuran",
+      "duration": "Durasi",
+      "voiceMessage": "pesan suara",
+      "pauseValue1": "Jeda {{value1}}",
+      "playValue1": "Putar {{value1}}",
+      "seekValue1": "Geser posisi {{value1}}"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "Admin akan meninjau permintaan Anda.",
+      "messageOptional": "Pesan (opsional)",
+      "cancel": "Batal",
+      "failedToSendRequest": "Gagal mengirim permintaan.",
+      "sendingRequest": "Mengirim permintaan",
+      "sendRequest": "Kirim permintaan",
+      "requestToJoinValue1": "Permintaan bergabung ke {{value1}}"
+    },
+    "roomCard": {
+      "cancel": "Batal",
+      "checkingAccess": "Memeriksa akses",
+      "space": "Space",
+      "view": "Lihat",
+      "retry": "Coba lagi",
+      "joinError": "Kesalahan saat bergabung",
+      "viewError": "Kesalahan tampilan",
+      "retryRoomInfo": "Coba muat info ruang lagi",
+      "accessUnavailable": "Akses tidak tersedia",
+      "failedToJoinUnknownError": "Gagal bergabung. Kesalahan tidak diketahui.",
+      "sendingRequest": "Mengirim permintaan",
+      "requestSent": "Permintaan terkirim",
+      "requestToJoin": "Permintaan bergabung",
+      "joining": "Bergabung",
+      "join": "Bergabung",
+      "members_one": "{{count, number}} anggota",
+      "members_other": "{{count, number}} anggota"
+    },
+    "roomIntro": {
+      "inviteMember": "Undang anggota",
+      "openOldRoom": "Buka ruang lama",
+      "joinOldRoom": "Bergabung ke ruang lama",
+      "thisIsTheBeginningOfConversation": "Ini awal percakapan.",
+      "createdBy": "Dibuat oleh ",
+      "onValue1Value2": " pada {{value1}} {{value2}}"
+    },
+    "textViewer": {
+      "copyAll": "Salin semua"
+    },
+    "datePicker": {
+      "day": "Hari",
+      "month": "Bulan",
+      "year": "Tahun"
+    },
+    "timePicker": {
+      "hour": "Jam",
+      "minutes": "Menit",
+      "period": "Periode",
+      "am": "AM",
+      "pm": "PM"
+    },
+    "dummyStage": {
+      "retry": "Coba lagi",
+      "cancel": "Batal",
+      "failedToRegister": "Gagal mendaftar."
+    },
+    "emailStage": {
+      "email": "Email",
+      "sendVerificationEmail": "Kirim email verifikasi",
+      "cancel": "Batal",
+      "sendingVerificationEmail": "Mengirim email verifikasi...",
+      "verificationRequestSent": "Permintaan verifikasi terkirim",
+      "continue": "Lanjutkan",
+      "provideEmail": "Masukkan email",
+      "verifyEmail": "Verifikasi email",
+      "failedToSendVerificationEmailRequest": "Gagal mengirim permintaan verifikasi email.",
+      "pleaseProvideEmailToSendVerificationRequest": "Masukkan email untuk mengirim permintaan verifikasi.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "Periksa email \"{{value1}}\" dan verifikasi sebelum melanjutkan."
+    },
+    "passwordStage": {
+      "accountPassword": "Kata sandi akun",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "Untuk melakukan tindakan ini, verifikasi identitas Anda dengan memasukkan kata sandi akun.",
+      "password": "Kata sandi",
+      "continue": "Lanjutkan",
+      "invalidPassword": "Kata sandi tidak valid!"
+    },
+    "reCaptchaStage": {
+      "cancel": "Batal",
+      "invalidData": "Data tidak valid",
+      "pleaseCheckTheBoxBelowToProceed": "Centang kotak di bawah untuk melanjutkan.",
+      "noValidDataFoundToProceedWithRecaptcha": "Tidak ditemukan data valid untuk melanjutkan dengan ReCAPTCHA."
+    },
+    "registrationTokenStage": {
+      "registrationToken": "Token pendaftaran",
+      "retry": "Coba lagi",
+      "cancel": "Batal",
+      "invalidRegistrationTokenProvided": "Token pendaftaran yang diberikan tidak valid.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "Masukkan token pendaftaran dari admin homeserver Anda."
+    },
+    "sSOStage": {
+      "ssoLogin": "Login SSO",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "Untuk melakukan tindakan ini, autentikasikan diri Anda melalui login SSO.",
+      "continue": "Lanjutkan",
+      "continueWithSso": "Lanjutkan dengan SSO"
+    },
+    "termsStage": {
+      "retry": "Coba lagi",
+      "cancel": "Batal",
+      "failedToSubmitTermsAndConditionAcceptance": "Gagal mengirim persetujuan Syarat dan Ketentuan."
+    },
+    "uploadBoard": {
+      "files": "File",
+      "uploadFailed": "Unggahan gagal",
+      "remove": "Hapus",
+      "removeAll": "Hapus semua"
+    },
+    "compactUploadCardRenderer": {
+      "retryUpload": "Coba unggah lagi",
+      "retry": "Coba lagi",
+      "cancelUpload": "Batalkan unggahan"
+    },
+    "uploadCardRenderer": {
+      "spoiler": "Spoiler",
+      "retryUpload": "Coba unggah lagi",
+      "retry": "Coba lagi",
+      "cancelUpload": "Batalkan unggahan"
+    },
+    "creatorChip": {
+      "managePowers": "Kelola wewenang"
+    },
+    "powerChip": {
+      "selfDemotion": "Penurunan wewenang sendiri",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "Anda akan menurunkan wewenang sendiri! Anda tidak dapat memperoleh kembali wewenang ini sendiri. Yakin ingin melanjutkan?",
+      "demote": "Turunkan wewenang",
+      "sharedPower": "Wewenang setara",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "Anda akan memberi pengguna wewenang yang sama dengan Anda! Setelah itu, Anda tidak dapat mengubah wewenangnya. Yakin ingin melanjutkan?",
+      "promote": "Naikkan wewenang",
+      "managePowers": "Kelola wewenang",
+      "errorName": "Kesalahan: {{name}}"
+    },
+    "userChips": {
+      "copyServer": "Salin server",
+      "exploreCommunity": "Jelajahi komunitas",
+      "openInBrowser": "Buka di browser",
+      "copyUserId": "Salin ID pengguna",
+      "copyUserLink": "Salin tautan pengguna",
+      "share": "Bagikan",
+      "spaces": "Space",
+      "rooms": "Ruang",
+      "directMessages": "Pesan langsung",
+      "blockedUser": "Pengguna diblokir",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "Anda tidak menerima pesan atau undangan dari pengguna ini.",
+      "mutualRooms": "Ruang bersama",
+      "unblockUser": "Buka blokir pengguna",
+      "blockUser": "Blokir pengguna",
+      "mutualRooms_one": "{{count, number}} ruang bersama",
+      "mutualRooms_other": "{{count, number}} ruang bersama"
+    },
+    "userModeration": {
+      "kickedUser": "Pengguna dikeluarkan",
+      "noReasonProvided": "Tidak ada alasan yang diberikan.",
+      "bannedUser": "Pengguna dilarang",
+      "unban": "Cabut larangan",
+      "invitedUser": "Pengguna diundang",
+      "cancelInvite": "Batalkan undangan",
+      "moderation": "Moderasi",
+      "reason": "Alasan: <b>{{reason}}</b>",
+      "invite": "Undang",
+      "kick": "Keluarkan",
+      "ban": "Larang",
+      "kickedBy": "Dikeluarkan oleh: <b>{{name}}</b>",
+      "bannedBy": "Dilarang oleh: <b>{{name}}</b>",
+      "invitedBy": "Diundang oleh: <b>{{name}}</b>"
+    },
+    "userRoomProfile": {
+      "message": "Pesan"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "Volume suara",
+      "voiceVolumeCurrentlyValue1": "Volume suara, saat ini {{value1}}%"
+    },
+    "configConfig": {
+      "continueOffline": "Lanjutkan secara offline",
+      "yourWebSessionHasExpired": "Sesi web Anda telah berakhir.",
+      "failedToLoadClientConfigurationFile": "Gagal memuat file konfigurasi klien.",
+      "signInAgainToReconnectOrContinueInOfflineMode": "Login lagi untuk terhubung kembali, atau lanjutkan dalam mode offline.",
+      "signInAgainToReconnect": "Login lagi untuk terhubung kembali.",
+      "signInAgain": "Login lagi",
+      "retry": "Coba lagi"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "Fitur browser tidak tersedia",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "Dukungan IndexedDB tidak ditemukan. Aplikasi ini memerlukan IndexedDB untuk menyimpan data sesi secara lokal. Pastikan browser Anda mendukung IndexedDB dan fitur tersebut diaktifkan.",
+      "whatIsIndexeddb": "Apa itu IndexedDB?"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "Kembali ke akun saat ini",
+      "server": "Server",
+      "lookingForServer": "Mencari server...",
+      "failedToFindServer": "Server tidak ditemukan.",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "Gagal terhubung. base_url dalam konfigurasi server tampaknya tidak valid.",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "Hanya server HTTPS yang diizinkan. HTTP hanya didukung untuk server jaringan lokal.",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "Gagal terhubung. Server sedang tidak tersedia atau tidak ada.",
+      "loadingAuthenticationFlow": "Memuat alur autentikasi...",
+      "failedToGetAuthenticationFlowInformation": "Gagal mendapatkan informasi alur autentikasi.",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "Gagal terhubung. Konfigurasi server yang ditemukan melalui {{value1}} tampaknya tidak dapat digunakan.",
+      "connectingToValue1": "Menghubungkan ke {{value1}}"
+    },
+    "orDivider": {
+      "or": "ATAU"
+    },
+    "sSOLogin": {
+      "continueWithSso": "Lanjutkan dengan SSO"
+    },
+    "serverPicker": {
+      "server": "Server",
+      "serverList": "Daftar server"
+    },
+    "login": {
+      "login": "Login",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Klien ini memerlukan Masuk dengan Apple. Konfigurasikan daftar penyedia SSO homeserver agar mencakup Apple.",
+      "register": "Daftar",
+      "accountLink": "Belum punya akun? <authLink>Daftar</authLink>",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "Login dengan kata sandi dinonaktifkan di \"{{value1}}\". Gunakan SSO untuk masuk.",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "Klien ini tidak mendukung login di server \"{{value1}}\". Metode login dengan kata sandi maupun SSO tidak ditemukan."
+    },
+    "passwordLoginForm": {
+      "hint": "Petunjuk",
+      "username": "Nama pengguna:",
+      "matrixId": "ID Matrix:",
+      "email": "Email:",
+      "username2": "Nama pengguna",
+      "password": "Kata sandi",
+      "forgetPassword": "Lupa kata sandi?",
+      "login": "Login",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "Instans klien Anda tidak mengizinkan login ke server kustom.",
+      "failedToFindYourMatrixIdServer": "Server ID Matrix Anda tidak ditemukan.",
+      "invalidUsernameOrPassword": "Nama pengguna atau kata sandi tidak valid.",
+      "thisAccountHasBeenDeactivated": "Akun ini telah dinonaktifkan.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Gagal login. Sebagian data permintaan Anda tidak valid.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Gagal login. Permintaan login Anda dibatasi server. Coba lagi beberapa saat nanti.",
+      "failedToLoginUnknownReason": "Gagal login. Alasannya tidak diketahui.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Login berhasil, tetapi browser ini tidak dapat menyimpan akun. Periksa izin penyimpanan dan coba lagi."
+    },
+    "tokenLogin": {
+      "tokenLogin": "Login dengan token",
+      "invalidLoginToken": "Token login tidak valid.",
+      "thisAccountHasBeenDeactivated": "Akun ini telah dinonaktifkan.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "Gagal login. Sebagian data permintaan Anda tidak valid.",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "Gagal login. Permintaan login Anda dibatasi server. Coba lagi beberapa saat nanti.",
+      "failedToLoginUnknownReason": "Gagal login. Alasannya tidak diketahui.",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Login berhasil, tetapi browser ini tidak dapat menyimpan akun. Periksa izin penyimpanan dan coba lagi."
+    },
+    "passwordRegisterForm": {
+      "username": "Nama pengguna",
+      "password": "Kata sandi",
+      "confirmPassword": "Konfirmasi kata sandi",
+      "termsAndConditions": "Syarat dan Ketentuan",
+      "register": "Daftar",
+      "thisUsernameIsAlreadyTaken": "Nama pengguna ini sudah digunakan.",
+      "thisUsernameContainsInvalidCharacters": "Nama pengguna ini mengandung karakter yang tidak valid.",
+      "thisUsernameIsReserved": "Nama pengguna ini dicadangkan.",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "Kata sandi lemah. Server menolak kata sandi ini, pilih yang lebih kuat.",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "Kata sandi terlalu pendek. Server menolak kata sandi ini, pilih yang lebih panjang.",
+      "registrationToken": "Token pendaftaran",
+      "registrationTokenOptional": "Token pendaftaran (opsional)",
+      "email": "Email",
+      "emailOptional": "Email (opsional)",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "Gagal mendaftar. Permintaan pendaftaran Anda dibatasi server. Coba lagi beberapa saat nanti.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "Gagal mendaftar. Homeserver tidak mengizinkan pendaftaran.",
+      "failedToRegisterInvalidRequest": "Gagal mendaftar. Permintaan tidak valid.",
+      "failedToRegisterUnknownReason": "Gagal mendaftar. Alasannya tidak diketahui.",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "Pendaftaran berhasil, tetapi browser ini tidak dapat menyimpan akun. Periksa izin penyimpanan dan coba login.",
+      "acceptTerms": "Saya menyetujui <terms>Syarat dan Ketentuan</terms> server."
+    },
+    "register": {
+      "register": "Daftar",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "Klien ini memerlukan Masuk dengan Apple. Konfigurasikan daftar penyedia SSO homeserver agar mencakup Apple.",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "Homeserver ini hanya mengizinkan pendaftaran melalui Apple, Google, atau GitHub.",
+      "registrationHasBeenDisabledOnThisHomeserver": "Pendaftaran dinonaktifkan di homeserver ini.",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "Permintaan Anda dibatasi! Coba lagi beberapa saat nanti.",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "Permintaan tidak valid! Tidak dapat memperoleh opsi pendaftaran.",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "Aplikasi ini tidak mendukung pendaftaran di homeserver ini.",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "Pendaftaran melalui SSO diwajibkan di homeserver ini, tetapi tidak ada penyedia SSO yang diumumkan.",
+      "login": "Login",
+      "accountLink": "Sudah punya akun? <authLink>Login</authLink>"
+    },
+    "passwordResetForm": {
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "Kata sandi berhasil direset. Login dengan kata sandi baru Anda.",
+      "login": "Login",
+      "email": "Email",
+      "newPassword": "Kata sandi baru",
+      "confirmPassword": "Konfirmasi kata sandi",
+      "resetPassword": "Reset kata sandi",
+      "resetEmailDescription": "Homeserver <strong>{{server}}</strong> akan mengirimkan email agar Anda dapat mereset kata sandi.",
+      "failedToResetPassword": "Gagal mengatur ulang kata sandi."
+    },
+    "resetPassword": {
+      "resetPassword": "Reset kata sandi",
+      "login": "Login",
+      "accountLink": "Ingat kata sandi Anda? <authLink>Login</authLink>"
+    },
+    "clientRoot": {
+      "catchingUp": "Memperbarui...",
+      "startupRecoveryOptions": "Opsi pemulihan saat mulai",
+      "logout": "Keluar",
+      "retry": "Coba lagi",
+      "clearCacheAndReload": "Bersihkan cache dan muat ulang",
+      "removeAccount": "Hapus akun",
+      "clearing": "Membersihkan...",
+      "failedToStartAccountValue1Value2": "Gagal memulai akun {{value1}}. {{value2}}"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "Batal dan kembali ke login",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "Tidak dapat terhubung ke homeserver. Homeserver atau koneksi internet Anda mungkin sedang bermasalah.",
+      "retry": "Coba lagi",
+      "continue": "Lanjutkan",
+      "connectingToServer": "Menghubungkan ke server",
+      "clearing": "Membersihkan...",
+      "clearCacheAndReload": "Bersihkan cache dan muat ulang"
+    },
+    "syncStatus": {
+      "catchingUp": "Memperbarui...",
+      "connectionLostReconnecting": "Koneksi terputus! Menghubungkan kembali...",
+      "connectionLost": "Koneksi terputus!"
+    },
+    "welcomePage": {
+      "setUpLocalMindroom": "Siapkan MindRoom lokal",
+      "openLocalMindroomSettings": "Buka pengaturan MindRoom lokal",
+      "enterPairCode": "Punya kode? Masukkan di MindRoom lokal",
+      "poweredBy": "Didukung oleh <links />",
+      "title": "Selamat datang di {{appName}}",
+      "subtitle": "Agen AI yang hadir di ruang obrolan Anda.",
+      "docs": "Dokumentasi",
+      "sourceCode": "Kode sumber",
+      "setupStep1": "1. Jalankan {{command}}",
+      "setupStep2": "2. Tambahkan kredensial model di {{envFile}}, atau jalankan {{command}}",
+      "setupStep3": "3. Mulai dengan {{command}}, lalu buka tautan yang ditampilkannya untuk menyetujui koneksi"
+    },
+    "create": {
+      "createSpace": "Buat space",
+      "buildASpaceForYourCommunity": "Buat space untuk komunitas Anda."
+    },
+    "directCreate": {
+      "createChat": "Buat obrolan",
+      "startAPrivateEncryptedChatByEnteringAUserId": "Mulai obrolan pribadi terenkripsi dengan memasukkan ID pengguna."
+    },
+    "explore": {
+      "addServer": "Tambahkan server",
+      "addServerNameToExplorePublicCommunities": "Tambahkan nama server untuk menjelajahi komunitas publik.",
+      "serverName": "Nama server",
+      "failedToLoadPublicRoomsPleaseTryAgain": "Gagal memuat ruang publik. Silakan coba lagi.",
+      "view": "Lihat",
+      "exploreCommunity": "Jelajahi komunitas",
+      "featured": "Unggulan",
+      "servers": "Server"
+    },
+    "featured": {
+      "featuredByClient": "Unggulan klien",
+      "featuredSpaces": "Space unggulan",
+      "featuredRooms": "Ruang unggulan",
+      "noRoomsOrSpacesFeaturedByClientProvider": "Tidak ada ruang atau space unggulan dari penyedia klien.",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "Temukan dan jelajahi ruang serta space publik unggulan dari penyedia klien."
+    },
+    "server": {
+      "search": "Cari",
+      "searchForKeyword": "Cari kata kunci",
+      "clear": "Bersihkan",
+      "enter": "Enter",
+      "protocols": "Protokol",
+      "presets": "Preset",
+      "customLimit": "Batas kustom",
+      "perPageItemLimit": "Batas item per halaman",
+      "changeLimit": "Ubah batas",
+      "popularCommunities": "Komunitas populer",
+      "previousPage": "Halaman sebelumnya",
+      "nextPage": "Halaman berikutnya",
+      "noCommunitiesFound": "Tidak ada komunitas ditemukan!",
+      "pageLimitValue1": "Batas halaman: {{value1}}",
+      "resultsForValue1": "Hasil untuk \"{{value1}}\""
+    },
+    "createRoom": {
+      "createRoom": "Buat ruang",
+      "buildARoomForRealTimeConversations": "Buat ruang untuk percakapan langsung."
+    },
+    "search": {
+      "messageSearch": "Pencarian pesan"
+    },
+    "inbox": {
+      "invites": "Undangan",
+      "inbox": "Kotak masuk",
+      "notifications": "Notifikasi"
+    },
+    "invites": {
+      "encrypted": "Terenkripsi",
+      "directMessage": "Pesan langsung",
+      "space": "Space",
+      "decline": "Tolak",
+      "accept": "Terima",
+      "primary": "Utama",
+      "public": "Publik",
+      "spam": "Spam",
+      "noInvites": "Tidak ada undangan",
+      "declineAll": "Tolak semua",
+      "acceptAll": "Terima semua",
+      "reportAll": "Laporkan semua",
+      "blockAll": "Blokir semua",
+      "noSpamInvites": "Tidak ada undangan spam",
+      "invites": "Undangan",
+      "filter": "Filter",
+      "hideAll": "Sembunyikan semua",
+      "viewAll": "Lihat semua",
+      "reason": "Alasan: {{reason}}",
+      "from": "Dari: <b>{{sender}}</b>",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "Undangan dari orang yang berbagi ruang dengan Anda akan muncul di sini.",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "Undangan dari orang di luar ruang Anda akan muncul di sini.",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "Sebagian undangan berikut mungkin mengandung konten berbahaya atau dikirim oleh pengguna yang dilarang.",
+      "invitesDetectedAsSpamAppearHere": "Undangan yang terdeteksi sebagai spam muncul di sini.",
+      "spamInvites_one": "{{count, number}} undangan spam",
+      "spamInvites_other": "{{count, number}} undangan spam"
+    },
+    "notifications": {
+      "open": "Buka",
+      "notificationMessages": "Pesan notifikasi",
+      "filter": "Filter",
+      "allNotifications": "Semua notifikasi",
+      "highlighted": "Disorot",
+      "scrollToTop": "Gulir ke atas",
+      "noNotifications": "Tidak ada notifikasi",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "Belum ada notifikasi baru untuk ditampilkan.",
+      "event": " peristiwa",
+      "roomTombstone": "Ruang diganti. {{body}}"
+    },
+    "spaceTabs": {
+      "unpin": "Lepas sematan",
+      "invite": "Undang",
+      "copyLink": "Salin tautan",
+      "spaceSettings": "Pengaturan space",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "Space {{value1}} diangkat. Gunakan tombol panah untuk mengubah urutan. Tekan spasi untuk meletakkan."
+    },
+    "space": {
+      "invite": "Undang",
+      "copyLink": "Salin tautan",
+      "spaceSettings": "Pengaturan space",
+      "eventTimeline": "Linimasa peristiwa",
+      "leaveSpace": "Tinggalkan space",
+      "spaceUpgraded": "Space ditingkatkan",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "Space ini telah diganti dan tidak lagi aktif.",
+      "openNewSpace": "Buka space baru",
+      "joinNewSpace": "Bergabung ke space baru",
+      "lobby": "Lobi",
+      "messageSearch": "Pencarian pesan",
+      "failedToJoinReplacementSpace": "Gagal bergabung ke space pengganti!",
+      "rooms": "Ruang",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "Ruang {{value1}} diangkat. Gunakan tombol panah untuk mengubah urutan. Tekan spasi untuk meletakkan."
+    },
+    "threads": {
+      "threads": "Utas"
+    },
+    "threadsView": {
+      "loadingThreads": "Memuat utas",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "Anda belum terlibat dalam utas apa pun",
+      "noThreadsMatchYourFilters": "Tidak ada utas yang cocok dengan filter Anda",
+      "clearFilters": "Hapus filter",
+      "thread": "utas",
+      "threads": "utas"
+    },
+    "joinRulesSwitcher": {
+      "unsupported": "Tidak didukung",
+      "option0": "Hanya undangan",
+      "option1": "Permintaan bergabung & undangan",
+      "option2": "Anggota space atau permintaan bergabung",
+      "option3": "Anggota space",
+      "option4": "Publik"
+    },
+    "toolbar": {
+      "heading1": "Judul 1",
+      "heading2": "Judul 2",
+      "heading3": "Judul 3",
+      "bold": "Tebal",
+      "italic": "Miring",
+      "underline": "Garis bawah",
+      "strikeThrough": "Coret",
+      "inlineCode": "Kode sebaris",
+      "spoiler": "Spoiler",
+      "blockQuote": "Blok kutipan",
+      "blockCode": "Blok kode",
+      "orderedList": "Daftar bernomor",
+      "unorderedList": "Daftar berpoin",
+      "exitFormatting": "Keluar dari pemformatan",
+      "disableMarkdown": "Nonaktifkan Markdown",
+      "enableMarkdown": "Aktifkan Markdown",
+      "exitValue1": "Keluar dari {{value1}}"
+    },
+    "reaction": {
+      "others_one": "{{count}} lainnya",
+      "reactionSummary": "<names>{{names}}</names> bereaksi dengan :<reaction>{{reaction}}</reaction>:",
+      "others_other": "{{count}} lainnya"
+    },
+    "audioContent": {
+      "pause": "Jeda",
+      "play": "Putar"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "Geser posisi pesan suara"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "Default",
+      "option1": "Semua pesan",
+      "option2": "Sebutan & kata kunci",
+      "option3": "Bisukan"
+    },
+    "authFooter": {
+      "support": "Dukungan",
+      "privacy": "Privasi",
+      "terms": "Ketentuan",
+      "poweredBy": "Didukung oleh <app>{{appName}}</app>, <matrix>Matrix</matrix>, <cinny>Cinny</cinny>"
+    },
+    "router": {
+      "join": "Bergabung",
+      "notFound": "Halaman tidak ditemukan"
+    },
+    "ssoProviders": {
+      "signUpApple": "Daftar dengan Apple",
+      "signInApple": "Masuk dengan Apple",
+      "continueGoogle": "Lanjutkan dengan Google",
+      "continueGithub": "Lanjutkan dengan GitHub",
+      "continueProvider": "Lanjutkan dengan {{provider}}"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> menerima permintaan bergabung <b>{{userName}}</b> {{reason}}",
+      "invited": "<b>{{senderName}}</b> mengundang <b>{{userName}}</b> {{reason}}",
+      "requested": "<b>{{userName}}</b> meminta bergabung ke ruang {{reason}}",
+      "joined": "<b>{{userName}}</b> bergabung ke ruang",
+      "rejectedInvitation": "<b>{{userName}}</b> menolak undangan {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> menolak permintaan bergabung <b>{{userName}}</b> {{reason}}",
+      "withdrewRequest": "<b>{{userName}}</b> membatalkan permintaan bergabung {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> membatalkan undangan <b>{{userName}}</b> {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> mencabut larangan <b>{{userName}}</b> {{reason}}",
+      "left": "<b>{{userName}}</b> meninggalkan ruang {{reason}}",
+      "kicked": "<b>{{senderName}}</b> mengeluarkan <b>{{userName}}</b> {{reason}}",
+      "banned": "<b>{{senderName}}</b> melarang <b>{{userName}}</b> {{reason}}",
+      "changedName": "<b>{{prevUserName}}</b> mengubah nama tampilan menjadi <b>{{userName}}</b>",
+      "removedName": "<b>{{prevUserName}}</b> menghapus nama tampilannya",
+      "changedAvatar": "<b>{{userName}}</b> mengubah avatarnya",
+      "removedAvatar": "<b>{{userName}}</b> menghapus avatarnya",
+      "broken": "Peristiwa keanggotaan rusak",
+      "unchanged": "Peristiwa keanggotaan tanpa perubahan"
+    },
+    "inviteUserAutocomplete": {
+      "suggestions": "Saran pengguna untuk diundang",
+      "users": "Pengguna",
+      "searching": "Mencari pengguna",
+      "noMatches": "Tidak ada pengguna yang cocok",
+      "matchingUsers_one": "{{count}} pengguna cocok",
+      "matchingUsers_other": "{{count}} pengguna cocok"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "Memuat MindRoom Chat"
+    },
+    "commands": {
+      "CommandMe": "Kirim pesan tindakan",
+      "CommandNotice": "Kirim pesan pemberitahuan",
+      "CommandShrug": "Kirim ¯\\_(ツ)_/¯ sebagai pesan",
+      "CommandTableFlip": "Kirim {{value1}} sebagai pesan",
+      "CommandUnFlip": "Kirim {{value1}} sebagai pesan",
+      "CommandStartDm": "Mulai pesan langsung dengan pengguna. Contoh: /startdm userId1",
+      "CommandJoin": "Bergabung ke ruang dengan alamat. Contoh: /join address1 address2",
+      "CommandLeave": "Tinggalkan ruang saat ini.",
+      "CommandInvite": "Undang pengguna ke ruang. Contoh: /invite userId1 userId2 [-r reason]",
+      "CommandDisInvite": "Batalkan undangan pengguna ke ruang. Contoh: /disinvite userId1 userId2 [-r reason]",
+      "CommandKick": "Keluarkan pengguna dari ruang. Contoh: /kick userId1 userId2 servername [-r reason]",
+      "CommandBan": "Larang pengguna dari ruang. Contoh: /ban userId1 userId2 servername [-r reason]",
+      "CommandUnBan": "Cabut larangan pengguna di ruang. Contoh: /unban userId1 userId2",
+      "CommandIgnore": "Abaikan pengguna. Contoh: /ignore userId1 userId2",
+      "CommandUnIgnore": "Berhenti mengabaikan pengguna. Contoh: /unignore userId1 userId2",
+      "CommandMyRoomNick": "Ubah nama panggilan di ruang saat ini.",
+      "CommandMyRoomAvatar": "Ubah foto profil di ruang saat ini. Contoh /myroomavatar mxc://xyzabc",
+      "CommandConvertToDm": "Ubah ruang menjadi pesan langsung",
+      "CommandConvertToRoom": "Ubah pesan langsung menjadi ruang",
+      "CommandDelete": "Hapus pesan pengguna. Contoh: /delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandAcl": "Kelola daftar kontrol akses server. Contoh /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]"
+    },
+    "item": {
+      "value1Emoji": "Emoji {{value1}}"
+    },
+    "fileHeader": {
+      "downloadValue1": "Unduh {{value1}}"
+    },
+    "time": {
+      "yesterdayValue1": "Kemarin {{value1}}"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "Kecepatan pemutaran saat ini {{value1}}, klik untuk mengganti"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "Notifikasi kotak masuk baru dari {{value1}}"
+    },
+    "memberFilters": {
+      "joined": "Bergabung",
+      "invited": "Diundang",
+      "left": "Keluar",
+      "kicked": "Dikeluarkan",
+      "banned": "Dilarang"
+    },
+    "memberSort": {
+      "atoZ": "A ke Z",
+      "ztoA": "Z ke A",
+      "newest": "Terbaru",
+      "oldest": "Terlama"
+    },
+    "presence": {
+      "active": "Aktif",
+      "busy": "Sibuk",
+      "away": "Tidak di tempat"
+    },
+    "emojiGroups": {
+      "smileysPeople": "Wajah & orang",
+      "animalsNature": "Hewan & alam",
+      "foodDrinks": "Makanan & minuman",
+      "activity": "Aktivitas",
+      "travelPlaces": "Perjalanan & tempat",
+      "objects": "Benda",
+      "symbols": "Simbol",
+      "flags": "Bendera"
+    },
+    "roomTypes": {
+      "all": "Semua",
+      "spaces": "Space",
+      "rooms": "Ruang"
+    },
+    "imageUsage": {
+      "both": "Keduanya",
+      "sticker": "Stiker",
+      "emoji": "Emoji"
+    },
+    "powerLevels": {
+      "manager": "Pengelola",
+      "founder": "Pendiri",
+      "admin": "Admin",
+      "moderator": "Moderator",
+      "member": "Anggota",
+      "muted": "Dibisukan",
+      "team": "Tim {{power}}"
+    },
+    "threadPreviews": {
+      "voiceMessage": "Pesan suara",
+      "tools_one": "{{count, number}} alat",
+      "tools_other": "{{count, number}} alat"
+    },
+    "threadSummary": {
+      "manual": "Ringkasan yang diedit secara manual",
+      "title": "Ringkasan utas",
+      "provenance": "Ringkasan utas yang dibuat AI",
+      "provenanceCount_one": "Ringkasan AI dari {{count, number}} pesan terakhir",
+      "provenanceCount_other": "Ringkasan AI dari {{count, number}} pesan terakhir"
+    },
+    "commandPalette": {
+      "shortcutHint": "Pintasan untuk membuka: <shortcut>{{shortcut}}</shortcut>."
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "Perluas panel navigasi",
+      "collapseNavigationPanel": "Ciutkan panel navigasi"
+    }
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "Tambahkan yang sudah ada",
+      "search": "Cari",
+      "failedToApplyChangesPleaseTryAgain": "Gagal menerapkan perubahan! Silakan coba lagi.",
+      "reset": "Reset",
+      "applyChanges": "Terapkan perubahan",
+      "applyWhenReadySelected_one": "Terapkan saat siap. ({{count}} dipilih)",
+      "applyWhenReadySelected_other": "Terapkan saat siap. ({{count}} dipilih)",
+      "noMatchForQuery": "Tidak ada kecocokan untuk \"{{query}}\".",
+      "noMatchFound": "Tidak ada kecocokan",
+      "noRooms": "Tidak ada ruang",
+      "noRoomsDescription": "Belum ada ruang untuk ditampilkan.",
+      "noSpaces": "Tidak ada space",
+      "noSpacesDescription": "Belum ada space untuk ditampilkan."
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "Akhiri"
+      },
+      "memberSpeaking": {
+        "one": "<name>{{name}}</name> sedang berbicara...",
+        "two": "<first>{{first}}</first> dan <second>{{second}}</second> sedang berbicara...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second>, dan <third>{{third}}</third> sedang berbicara...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third>, dan <others>{{count}} orang lainnya</others> sedang berbicara...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third>, dan <others>{{count}} orang lainnya</others> sedang berbicara..."
+      },
+      "liveCount": "{{count}} aktif"
+    },
+    "call": {
+      "callControls": {
+        "reactions": "Reaksi",
+        "settings": "Pengaturan",
+        "end": "Akhiri",
+        "gridView": "Tampilan kisi",
+        "spotlightView": "Tampilan sorotan"
+      },
+      "callMemberCard": {
+        "collapse": "Ciutkan",
+        "additionalParticipants_one": "+{{count}} lainnya",
+        "additionalParticipants_other": "+{{count}} lainnya"
+      },
+      "callView": {
+        "yourHomeserverDoesNotSupportCalling": "Homeserver Anda tidak mendukung panggilan.",
+        "yourBrowserDoesNotSupportWebrtcWhich": "Browser Anda tidak mendukung WebRTC yang diperlukan untuk panggilan.",
+        "voiceChatSEmptyBeTheFirst": "Obrolan suara masih kosong — Jadilah yang pertama bergabung!",
+        "youDonTHavePermissionToJoin": "Anda tidak memiliki izin untuk bergabung!",
+        "alreadyInAnotherCallEndTheCurrent": "Anda sedang dalam panggilan lain — Akhiri panggilan saat ini untuk bergabung!",
+        "participant": "Peserta",
+        "voiceCallError": "Kesalahan panggilan suara",
+        "dismissVoiceCallError": "Tutup kesalahan panggilan suara"
+      },
+      "prescreenControls": {
+        "join": "Bergabung"
+      },
+      "controls": {
+        "closeChat": "Tutup obrolan",
+        "openChat": "Buka obrolan",
+        "startCamera": "Nyalakan kamera",
+        "startScreenshare": "Mulai berbagi layar",
+        "stopCamera": "Matikan kamera",
+        "stopScreenshare": "Hentikan berbagi layar",
+        "turnOffMicrophone": "Matikan mikrofon",
+        "turnOffSound": "Matikan suara",
+        "turnOnMicrophone": "Nyalakan mikrofon",
+        "turnOnSound": "Nyalakan suara"
+      },
+      "liveCount": "{{count}} aktif"
+    },
+    "commonSettings": {
+      "developerTools": {
+        "developTools": {
+          "developerTools": "Alat pengembang",
+          "options": "Opsi",
+          "enableDeveloperTools": "Aktifkan alat pengembang",
+          "roomId": "ID ruang",
+          "copy": "Salin",
+          "data": "Data",
+          "newMessageEvent": "Peristiwa pesan baru",
+          "createAndSendANewMessageEvent": "Buat dan kirim peristiwa pesan baru di dalam ruang.",
+          "compose": "Tulis",
+          "roomState": "Status ruang",
+          "stateEventsOfTheRoom": "Peristiwa status ruang.",
+          "events": "Peristiwa",
+          "addNew": "Tambahkan baru",
+          "accountData": "Data akun",
+          "privatePersonalizationDataStoredWithinRoom": "Data personalisasi pribadi yang disimpan di dalam ruang.",
+          "collapse": "Ciutkan",
+          "copyRoomIdDescription": "Salin ID ruang ke papan klip. (\"{{roomId}}\")",
+          "expand": "Perluas",
+          "total": "Total: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "Alat pengembang",
+          "send": "Kirim",
+          "stateKeyOptional": "Kunci status (opsional)",
+          "jsonContent": "Konten JSON",
+          "messageEventType": "Jenis peristiwa pesan",
+          "stateEventType": "Jenis peristiwa status"
+        },
+        "stateEventEditor": {
+          "stateEvent": "Peristiwa status",
+          "save": "Simpan",
+          "cancel": "Batal",
+          "jsonContent": "Konten JSON",
+          "edit": "Edit",
+          "developerTools": "Alat pengembang"
+        },
+        "defaultStateKey": "Default"
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emoji & Stiker",
+        "roomPacks": {
+          "newPack": "Paket baru",
+          "addYourOwnEmojiAndStickerPack": "Tambahkan paket emoji dan stiker Anda sendiri untuk digunakan di ruang.",
+          "name": "Nama",
+          "create": "Buat",
+          "view": "Lihat",
+          "packs": "Paket",
+          "noPacks": "Tidak ada paket",
+          "thereAreNoEmojiOrStickerPacks": "Saat ini tidak ada paket emoji atau stiker untuk ditampilkan.",
+          "failedToRemovePacksPleaseTryAgain": "Gagal menghapus paket! Silakan coba lagi.",
+          "cancel": "Batal",
+          "delete": "Hapus",
+          "deleteSelectedPacks_one": "Hapus paket yang dipilih. ({{count}} dipilih)",
+          "deleteSelectedPacks_other": "Hapus paket yang dipilih. ({{count}} dipilih)",
+          "unknown": "Tidak diketahui"
+        }
+      },
+      "general": {
+        "roomEncryption": {
+          "roomEncryption": "Enkripsi ruang",
+          "enabled": "Diaktifkan",
+          "enable": "Aktifkan",
+          "enableEncryption": "Aktifkan enkripsi",
+          "areYouSureOnceEnabledEncryptionCannot": "Yakin ingin melanjutkan? Enkripsi tidak dapat dinonaktifkan setelah diaktifkan!",
+          "enableE2eEncryption": "Aktifkan enkripsi ujung ke ujung",
+          "disabledDescription": "Enkripsi tidak dapat dinonaktifkan setelah diaktifkan!",
+          "enabledDescription": "Pesan di ruang ini dilindungi enkripsi ujung ke ujung."
+        },
+        "roomHistoryVisibility": {
+          "messageHistoryVisibility": "Visibilitas riwayat pesan",
+          "changesToHistoryVisibilityWillOnlyApply": "Perubahan visibilitas riwayat hanya berlaku untuk pesan mendatang. Visibilitas riwayat yang sudah ada tidak berubah.",
+          "afterInvite": "Setelah diundang",
+          "afterJoin": "Setelah bergabung",
+          "allMessages": "Semua pesan",
+          "allMessagesGuests": "Semua pesan (tamu)"
+        },
+        "roomProfile": {
+          "avatar": "Avatar",
+          "upload": "Unggah",
+          "reset": "Reset",
+          "remove": "Hapus",
+          "name": "Nama",
+          "topic": "Topik",
+          "save": "Simpan",
+          "cancel": "Batal",
+          "profile": "Profil",
+          "edit": "Edit",
+          "unknown": "Tidak diketahui"
+        },
+        "roomPublish": {
+          "publishToDirectory": "Publikasikan ke direktori",
+          "roomDescription": "Cantumkan ruang di direktori publik agar dapat ditemukan orang lain.",
+          "spaceDescription": "Cantumkan space di direktori publik agar dapat ditemukan orang lain."
+        },
+        "roomUpgrade": {
+          "thisActionIsIrreversible": "Tindakan ini tidak dapat dibatalkan!",
+          "options": "Opsi",
+          "upgrade": "Tingkatkan",
+          "currentVersion": "Versi saat ini: {{version}}.",
+          "oldRoom": "Ruang lama",
+          "oldSpace": "Space lama",
+          "openNewRoom": "Buka ruang baru",
+          "openNewSpace": "Buka space baru",
+          "roomReplaced": "Ruang ini telah diganti!",
+          "roomUpgrade": "Peningkatan ruang",
+          "spaceReplaced": "Space ini telah diganti!",
+          "spaceUpgrade": "Peningkatan space",
+          "upgradeRoom": "Tingkatkan ruang",
+          "upgradeSpace": "Tingkatkan space"
+        },
+        "roomAddress": {
+          "addressAlreadyInUse": "Alamat sudah digunakan!",
+          "collapse": "Ciutkan",
+          "delete": "Hapus",
+          "expand": "Perluas",
+          "loading": "Memuat...",
+          "localAddresses": "Alamat lokal",
+          "localAddressesDescription": "Tetapkan alamat lokal agar pengguna dapat bergabung melalui homeserver Anda.",
+          "main": "Utama",
+          "noAddresses": "Tidak ada alamat",
+          "publish": "Publikasikan",
+          "publishRequiresLocalAddress": "Untuk memublikasikan alamat, tetapkan dahulu sebagai alamat lokal",
+          "published": "Dipublikasikan",
+          "publishedAddresses": "Alamat yang dipublikasikan",
+          "publishedAddressesDescription": "Jika akses bersifat <public>Publik</public>, siapa pun dapat menggunakan alamat yang dipublikasikan untuk bergabung.",
+          "save": "Simpan",
+          "selectedCount_one": "{{count}} dipilih",
+          "selectedCount_other": "{{count}} dipilih",
+          "setMain": "Jadikan utama",
+          "unpublish": "Batalkan publikasi",
+          "unsetMain": "Hapus status utama"
+        },
+        "roomJoinRules": {
+          "roomAccess": "Akses ruang",
+          "roomDescription": "Ubah cara orang dapat bergabung ke ruang.",
+          "spaceAccess": "Akses space",
+          "spaceDescription": "Ubah cara orang dapat bergabung ke space."
+        }
+      },
+      "members": {
+        "search": "Cari",
+        "scrollToTop": "Gulir ke atas",
+        "memberCount_one": "{{count}} anggota",
+        "memberCount_other": "{{count}} anggota",
+        "noMembersForFilter": "Tidak ada anggota \"{{filter}}\"",
+        "noResults": "Tidak ada hasil",
+        "resultCount_one": "{{count}} hasil",
+        "resultCount_other": "{{count}} hasil"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "users": "Pengguna",
+          "defaultPower": "Wewenang default",
+          "defaultPowerLevelForAllUsers": "Tingkat wewenang default untuk semua pengguna.",
+          "above": "& di atasnya",
+          "failedToApplyChangesPleaseTryAgain": "Gagal menerapkan perubahan! Silakan coba lagi.",
+          "changesSavedApplyWhenReady": "Perubahan disimpan! Terapkan saat siap.",
+          "reset": "Reset",
+          "applyChanges": "Terapkan perubahan"
+        },
+        "powers": {
+          "founders": "Pendiri",
+          "foundingMembersHasAllPermissionsAndCan": "Anggota pendiri memiliki semua izin dan hanya dapat diubah saat peningkatan versi.",
+          "powerLevels": "Tingkat wewenang",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "Kelola dan sesuaikan tingkat wewenang bertingkat untuk pengguna.",
+          "edit": "Edit"
+        },
+        "powersEditor": {
+          "color": "Warna",
+          "pick": "Pilih",
+          "name": "Nama",
+          "bot": "Bot",
+          "power": "Wewenang",
+          "icon": "Ikon",
+          "remove": "Hapus",
+          "import": "Impor",
+          "save": "Simpan",
+          "cancel": "Batal",
+          "permissions": "Izin",
+          "powerLevels": "Tingkat wewenang",
+          "newPowerLevel": "Tingkat wewenang baru",
+          "createANewPowerLevel": "Buat tingkat wewenang baru.",
+          "create": "Buat",
+          "undo": "Urungkan",
+          "usedPowerLevel": "Tingkat wewenang sedang digunakan",
+          "youHaveToRemoveItsUseBefore": "Hentikan penggunaannya sebelum Anda dapat menghapusnya.",
+          "delete": "Hapus",
+          "edit": "Edit",
+          "failedToApplyChangesPleaseTryAgain": "Gagal menerapkan perubahan! Silakan coba lagi.",
+          "changesSavedApplyWhenReady": "Perubahan disimpan! Terapkan saat siap.",
+          "reset": "Reset",
+          "applyChanges": "Terapkan perubahan"
+        }
+      }
+    },
+    "createChat": {
+      "userId": "ID pengguna",
+      "userSuggestions": "Saran pengguna",
+      "pleaseEnterAValidUserId": "Masukkan ID pengguna yang valid.",
+      "options": "Opsi",
+      "endToEndEncryption": "Enkripsi ujung ke ujung",
+      "onceThisFeatureIsEnabledItCan": "Setelah fitur ini diaktifkan, fitur tidak dapat dinonaktifkan setelah ruang dibuat.",
+      "create": "Buat",
+      "rateLimited_one": "Server membatasi permintaan Anda selama {{count}} menit!",
+      "rateLimited_other": "Server membatasi permintaan Anda selama {{count}} menit!"
+    },
+    "createRoom": {
+      "type": "Jenis",
+      "access": "Akses",
+      "name": "Nama",
+      "topicOptional": "Topik (opsional)",
+      "options": "Opsi",
+      "advancedOptions": "Opsi lanjutan",
+      "endToEndEncryption": "Enkripsi ujung ke ujung",
+      "onceThisFeatureIsEnabledItCan": "Setelah fitur ini diaktifkan, fitur tidak dapat dinonaktifkan setelah ruang dibuat.",
+      "knockToJoin": "Minta untuk bergabung",
+      "anyoneCanSendRequestToJoinThis": "Siapa pun dapat mengirim permintaan untuk bergabung ke ruang ini.",
+      "allowFederation": "Izinkan federasi",
+      "usersFromOtherServersCanJoin": "Pengguna dari server lain dapat bergabung.",
+      "create": "Buat",
+      "newChatRoom": "Ruang obrolan baru",
+      "newVoiceRoom": "Ruang suara baru",
+      "rateLimited_one": "Server membatasi permintaan Anda selama {{count}} menit!",
+      "rateLimited_other": "Server membatasi permintaan Anda selama {{count}} menit!"
+    },
+    "createSpace": {
+      "access": "Akses",
+      "name": "Nama",
+      "topicOptional": "Topik (opsional)",
+      "options": "Opsi",
+      "advancedOptions": "Opsi lanjutan",
+      "knockToJoin": "Minta untuk bergabung",
+      "anyoneCanSendRequestToJoinThis": "Siapa pun dapat mengirim permintaan untuk bergabung ke space ini.",
+      "allowFederation": "Izinkan federasi",
+      "usersFromOtherServersCanJoin": "Pengguna dari server lain dapat bergabung.",
+      "create": "Buat",
+      "createSpaceModal": {
+        "newSpace": "Space baru"
+      },
+      "rateLimited_one": "Server membatasi permintaan Anda selama {{count}} menit!",
+      "rateLimited_other": "Server membatasi permintaan Anda selama {{count}} menit!"
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "remove": "Hapus",
+        "invite": "Undang",
+        "settings": "Pengaturan",
+        "leave": "Tinggalkan",
+        "pinToSidebar": "Sematkan ke bilah sisi",
+        "setSuggested": "Jadikan disarankan",
+        "unpinFromSidebar": "Lepas sematan dari bilah sisi",
+        "unsetSuggested": "Hapus dari saran"
+      },
+      "scrollToTop": "Gulir ke atas",
+      "reordering": "Mengubah urutan",
+      "lobbyHeader": {
+        "invite": "Undang",
+        "spaceSettings": "Pengaturan space",
+        "leaveSpace": "Tinggalkan space",
+        "members": "Anggota",
+        "moreOptions": "Opsi lainnya"
+      },
+      "roomItem": {
+        "accessUnavailable": "Akses tidak tersedia",
+        "unknown": "Tidak diketahui",
+        "suggested": "Disarankan",
+        "inaccessible": "Tidak dapat diakses",
+        "openRoom": "Buka ruang",
+        "join": "Bergabung",
+        "memberCount_one": "{{formattedCount}} anggota",
+        "memberCount_other": "{{formattedCount}} anggota",
+        "requestSent": "Permintaan terkirim",
+        "requestToJoin": "Permintaan bergabung",
+        "sendingRequest": "Mengirim permintaan"
+      },
+      "spaceHierarchy": {
+        "noRooms": "Tidak ada ruang",
+        "thisSpaceDoesNotContainsRoomsYet": "Space ini belum berisi ruang."
+      },
+      "spaceItem": {
+        "unknown": "Tidak diketahui",
+        "inaccessible": "Tidak dapat diakses",
+        "suggested": "Disarankan",
+        "accessUnavailable": "Akses tidak tersedia",
+        "rooms": "Ruang",
+        "chatRoom": "Ruang obrolan",
+        "voiceRoom": "Ruang suara",
+        "existingRoom": "Ruang yang sudah ada",
+        "addRoom": "Tambahkan ruang",
+        "newSpace": "Space baru",
+        "existingSpace": "Space yang sudah ada",
+        "addSpace": "Tambahkan space",
+        "requestSent": "Permintaan terkirim",
+        "requestToJoin": "Permintaan bergabung"
+      }
+    },
+    "roomNav": {
+      "roomNavItem": {
+        "notifications": "Notifikasi",
+        "invite": "Undang",
+        "copyLink": "Salin tautan",
+        "roomSettings": "Pengaturan ruang",
+        "leaveRoom": "Tinggalkan ruang",
+        "toggleChat": "Tampilkan/sembunyikan obrolan",
+        "moreOptions": "Opsi lainnya"
+      },
+      "liveCount": "{{count}} aktif"
+    },
+    "roomSettings": {
+      "general": {
+        "timeline": "Linimasa",
+        "general": "Umum",
+        "options": "Opsi",
+        "addresses": "Alamat",
+        "advancedOptions": "Opsi lanjutan",
+        "compact": "Ringkas",
+        "threads": "Utas",
+        "classic": "Klasik",
+        "offline": {
+          "title": "Akses offline",
+          "checking": "Memeriksa konten tersimpan…",
+          "unavailable": "Konten tersimpan tidak tersedia di perangkat ini.",
+          "notSaved": "Ruang ini belum disimpan untuk penggunaan offline.",
+          "downloading": "Mengunduh ruang ini untuk penggunaan offline…",
+          "offlinePause": "Penyimpanan dijeda saat perangkat offline.",
+          "backgroundPause": "Penyimpanan dijeda saat aplikasi berjalan di latar belakang.",
+          "spacePause": "Penyimpanan dijeda karena konten yang dilindungi memenuhi batas penyimpanan.",
+          "readOnlyPause": "Penyimpanan gagal. Buka kembali aplikasi untuk melanjutkan penyimpanan.",
+          "connectionPause": "Penyimpanan otomatis dijeda pada koneksi ini.",
+          "errorPause": "Penyimpanan dijeda setelah terjadi kesalahan. Coba lagi.",
+          "partialHistory": "Sebagian riwayat lama belum disimpan.",
+          "inaccessibleHistory": "Sebagian riwayat saat ini tidak dapat diakses.",
+          "waitingForKeys": "Peristiwa terenkripsi yang menunggu kunci: {{count}}",
+          "unresolvedRelations": "Edit atau balasan yang belum terselesaikan: {{count}}",
+          "missingEssential": "Isi pesan penting yang tidak ada: {{count}}",
+          "historyEntries": "Entri riwayat tersimpan: {{count}}",
+          "attachments": "Lampiran: {{saved}} tersimpan, {{missing}} belum tersimpan.",
+          "storageUsed": "Penyimpanan yang digunakan lampiran: {{size}}",
+          "pinFailed": "Pengaturan “Tetap offline” tidak dapat diperbarui.",
+          "includeAllMedia": "Sertakan semua media",
+          "keepOffline": "Tetap offline",
+          "keepOfflineDescription": "Lindungi media tersimpan untuk ruang ini selama pembersihan otomatis.",
+          "cancelDownload": "Batalkan unduhan",
+          "downloadEntireRoom": "Unduh seluruh ruang",
+          "clearDownloadedContent": "Hapus konten yang diunduh",
+          "clearTitle": "Hapus konten yang diunduh?",
+          "cancel": "Batal",
+          "clearDescription": "Riwayat dan lampiran tersimpan untuk ruang ini akan dihapus dari perangkat ini.",
+          "clearFailed": "Konten yang diunduh tidak dapat dihapus.",
+          "clearConfirm": "Hapus konten"
+        }
+      },
+      "permissions": {
+        "permissions": "Izin",
+        "ban": "Larang",
+        "changeAllPermission": "Ubah semua izin",
+        "changeRoomAccess": "Ubah akses ruang",
+        "changeServerAcls": "Ubah ACL server",
+        "deleteOthersMessages": "Hapus pesan orang lain",
+        "deleteSelfMessages": "Hapus pesan sendiri",
+        "editPowerLevels": "Edit tingkat wewenang",
+        "enableEncryption": "Aktifkan enkripsi",
+        "groups": {
+          "calls": "Panggilan",
+          "messages": "Pesan",
+          "moderation": "Moderasi",
+          "other": "Lainnya",
+          "roomOverview": "Ringkasan ruang",
+          "settings": "Pengaturan"
+        },
+        "historyVisibility": "Visibilitas riwayat",
+        "invite": "Undang",
+        "kick": "Keluarkan",
+        "manageEmojisStickers": "Kelola emoji & stiker",
+        "modifyWidgets": "Ubah widget",
+        "otherMessageEvents": "Peristiwa pesan lainnya",
+        "otherSettings": "Pengaturan lainnya",
+        "pinMessages": "Sematkan pesan",
+        "pingRoom": "Sebut @room",
+        "publishAddress": "Publikasikan alamat",
+        "roomAvatar": "Avatar ruang",
+        "roomName": "Nama ruang",
+        "roomTopic": "Topik ruang",
+        "sendMessages": "Kirim pesan",
+        "sendReactions": "Kirim reaksi",
+        "sendStickers": "Kirim stiker",
+        "startOrJoinCall": "Mulai atau bergabung ke panggilan",
+        "upgradeRoom": "Tingkatkan ruang"
+      },
+      "navigation": {
+        "developerTools": "Alat pengembang",
+        "emojisStickers": "Emoji & Stiker",
+        "general": "Umum",
+        "members": "Anggota",
+        "permissions": "Izin"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "Obrolan",
+        "close": "Tutup"
+      },
+      "commandAutocomplete": {
+        "commands": "Perintah"
+      },
+      "joinRequestItem": {
+        "noMessageProvided": "Tidak ada pesan yang diberikan.",
+        "decline": "Tolak",
+        "approve": "Setujui",
+        "approveFromUser": "Setujui permintaan bergabung dari {{userId}}",
+        "approvedWaitingForSync": "Disetujui. Menunggu sinkronisasi ruang…",
+        "approving": "Menyetujui…",
+        "declineFromUser": "Tolak permintaan bergabung dari {{userId}}",
+        "declinedWaitingForSync": "Ditolak. Menunggu sinkronisasi ruang…",
+        "declining": "Menolak…",
+        "updateFailed": "Permintaan tidak dapat diperbarui."
+      },
+      "membersDrawer": {
+        "invite": "Undang",
+        "invitePeople": "Undang orang",
+        "close": "Tutup",
+        "typeName": "Ketik nama...",
+        "scrollToTop": "Gulir ke atas",
+        "memberCount_one": "{{count}} anggota",
+        "memberCount_other": "{{count}} anggota",
+        "noMembersForFilter": "Tidak ada anggota \"{{filter}}\"",
+        "noPendingJoinRequests": "Tidak ada permintaan bergabung yang tertunda",
+        "noResults": "Tidak ada hasil",
+        "requestCount_one": "Permintaan ({{count}})",
+        "requestCount_other": "Permintaan ({{count}})",
+        "invitedCount_one": "{{count}} diundang",
+        "invitedCount_other": "{{count}} diundang",
+        "resultCount_one": "{{count}} hasil",
+        "resultCount_other": "{{count}} hasil",
+        "formattedMemberCount_one": "{{formattedCount}} anggota",
+        "formattedMemberCount_other": "{{formattedCount}} anggota"
+      },
+      "roomTombstone": {
+        "openNewRoom": "Buka ruang baru",
+        "joinNewRoom": "Bergabung ke ruang baru",
+        "joinReplacementFailed": "Gagal bergabung ke ruang pengganti!",
+        "replacedDescription": "Ruang ini telah diganti dan tidak lagi aktif."
+      },
+      "jumpToTime": {
+        "jumpToTime": "Lompat ke waktu",
+        "time": "Waktu",
+        "date": "Tanggal",
+        "preset": "Preset",
+        "today": "Hari ini",
+        "yesterday": "Kemarin",
+        "beginning": "Awal",
+        "openTimeline": "Buka linimasa"
+      },
+      "message": {
+        "messageEditor": {
+          "editMessage": "Edit pesan...",
+          "save": "Simpan",
+          "cancel": "Batal"
+        }
+      },
+      "typing": {
+        "one": "<name>{{name}}</name> sedang mengetik...",
+        "two": "<first>{{first}}</first> dan <second>{{second}}</second> sedang mengetik...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second>, dan <third>{{third}}</third> sedang mengetik...",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third>, dan <others>{{count}} orang lainnya</others> sedang mengetik...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third>, dan <others>{{count}} orang lainnya</others> sedang mengetik...",
+        "dropTypingStatus": "Hapus status mengetik"
+      },
+      "following": {
+        "one": "<name>{{name}}</name> sedang mengikuti percakapan.",
+        "two": "<first>{{first}}</first> dan <second>{{second}}</second> sedang mengikuti percakapan.",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second>, dan <third>{{third}}</third> sedang mengikuti percakapan.",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third>, dan <others>{{count}} orang lainnya</others> sedang mengikuti percakapan.",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third>, dan <others>{{count}} orang lainnya</others> sedang mengikuti percakapan."
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}, {{count}} permintaan bergabung tertunda",
+        "accessibleLabel_other": "{{baseLabel}}, {{count}} permintaan bergabung tertunda"
+      },
+      "reactionViewer": {
+        "reactedWith": "Bereaksi dengan :{{shortcode}}:"
+      }
+    },
+    "settings": {
+      "account": {
+        "account": "Akun",
+        "accountDeactivation": {
+          "accountManagement": "Pengelolaan akun",
+          "deleteDeactivateAccount": "Hapus / nonaktifkan akun",
+          "deleteDeactivate": "Hapus / nonaktifkan",
+          "openProviderPortal": "Buka portal penyedia",
+          "thisWillRequestAccountDeactivationOnYour": "Tindakan ini akan meminta penonaktifan akun di homeserver Matrix Anda. Anda mungkin kehilangan akses ke pesan dan sesi.",
+          "eraseAccountDataIfSupported": "Hapus data akun (jika didukung)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "Jika diaktifkan, homeserver dapat menghapus data akun secara permanen selain menonaktifkannya.",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "Autentikasi tambahan diperlukan untuk menyelesaikan penonaktifan akun.",
+          "thisClientDoesNotSupportTheRequired": "Klien ini tidak mendukung langkah autentikasi yang diwajibkan homeserver ini.",
+          "continueInProviderPortal": "Lanjutkan di portal penyedia",
+          "cancel": "Batal",
+          "deactivationFailed": "Gagal menonaktifkan akun. {{error}}",
+          "descriptionWithProvider": "Mulai penonaktifan akun dari klien ini. Jika diperlukan, lanjutkan di halaman pengelolaan akun penyedia.",
+          "descriptionWithoutProvider": "Mulai penonaktifan akun dari klien ini. Beberapa homeserver mungkin memerlukan langkah autentikasi tambahan."
+        },
+        "contactInfo": {
+          "contactInformation": "Informasi kontak",
+          "emailAddress": "Alamat email",
+          "emailAddressAttachedToYourAccount": "Alamat email yang terhubung ke akun Anda."
+        },
+        "ignoredUserList": {
+          "block": "Blokir",
+          "blockedUsers": "Pengguna yang diblokir",
+          "selectUser": "Pilih pengguna",
+          "preventReceivingMessagesOrInvitesFromUser": "Cegah pesan atau undangan dari pengguna dengan menambahkan ID penggunanya.",
+          "users": "Pengguna"
+        },
+        "matrixId": {
+          "matrixId": "ID Matrix",
+          "copy": "Salin",
+          "copied": "Disalin"
+        },
+        "profile": {
+          "avatar": "Avatar",
+          "upload": "Unggah",
+          "remove": "Hapus",
+          "removeAvatar": "Hapus avatar",
+          "areYouSureYouWantToRemove": "Yakin ingin menghapus avatar profil?",
+          "displayName": "Nama tampilan",
+          "save": "Simpan",
+          "profile": "Profil",
+          "unnamedFile": "Tanpa nama"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "Data akun",
+          "global": "Global",
+          "dataStoredInYourGlobalAccountData": "Data yang disimpan dalam data akun global Anda.",
+          "events": "Peristiwa",
+          "addNew": "Tambahkan baru",
+          "collapse": "Ciutkan",
+          "expand": "Perluas",
+          "total": "Total: {{count}}"
+        },
+        "developTools": {
+          "developerTools": "Alat pengembang",
+          "options": "Opsi",
+          "enableDeveloperTools": "Aktifkan alat pengembang",
+          "accessToken": "Token akses",
+          "copyAccessTokenToClipboard": "Salin token akses ke papan klip.",
+          "copy": "Salin"
+        }
+      },
+      "devices": {
+        "deviceTile": {
+          "lastActivity": "Aktivitas terakhir:",
+          "deviceName": "Nama perangkat",
+          "save": "Simpan",
+          "cancel": "Batal",
+          "deviceNamesAreVisibleToPublic": "Nama perangkat dapat dilihat publik.",
+          "logout": "Keluar",
+          "undo": "Urungkan",
+          "edit": "Edit",
+          "deviceIdValue": "ID perangkat: <value>{{id}}</value>",
+          "deviceKeyValue": "Kunci perangkat: <value>{{key}}</value>",
+          "ipAddressValue": "Alamat IP: <value>{{address}}</value>",
+          "loading": "memuat...",
+          "today": "Hari ini",
+          "yesterday": "Kemarin"
+        },
+        "devices": "Perangkat",
+        "security": "Keamanan",
+        "deviceVerification": "Verifikasi perangkat",
+        "toVerifyDeviceIdentityAndGrantAccess": "Untuk memverifikasi identitas perangkat dan memberikan akses ke pesan terenkripsi.",
+        "current": "Saat ini",
+        "localBackup": {
+          "newPassword": "Kata sandi baru",
+          "confirmPassword": "Konfirmasi kata sandi",
+          "export": "Ekspor",
+          "exportMessagesData": "Ekspor data pesan",
+          "savePasswordProtectedCopyOfEncryptionData": "Simpan salinan data enkripsi yang dilindungi kata sandi di perangkat untuk mendekripsi pesan nanti.",
+          "password": "Kata sandi",
+          "decrypt": "Dekripsi",
+          "importMessagesData": "Impor data pesan",
+          "loadPasswordProtectedCopyOfEncryptionData": "Muat salinan data enkripsi yang dilindungi kata sandi dari perangkat untuk mendekripsi pesan Anda.",
+          "import": "Impor",
+          "localBackup": "Cadangan lokal",
+          "collapse": "Ciutkan",
+          "cryptoModuleNotFound": "Kesalahan tak terduga! Modul kriptografi tidak ditemukan!",
+          "expand": "Perluas"
+        },
+        "otherDevices": {
+          "others": "Lainnya",
+          "deviceDashboard": "Dasbor perangkat",
+          "manageYourDevicesOnOidcDashboard": "Kelola perangkat Anda di dasbor OIDC.",
+          "open": "Buka",
+          "authenticationStepsToPerformThisActionAre": "Langkah autentikasi untuk tindakan ini tidak didukung oleh klien.",
+          "cancel": "Batal",
+          "logout": "Keluar",
+          "logoutFailed": "Gagal keluar dari perangkat! Coba lagi. {{error}}",
+          "logoutSelectedDevices_one": "Keluar dari perangkat terpilih. ({{count}} dipilih)",
+          "logoutSelectedDevices_other": "Keluar dari perangkat terpilih. ({{count}} dipilih)"
+        },
+        "verification": {
+          "currentDeviceHelpLess": "Mulai verifikasi dari perangkat lain atau verifikasi secara manual. <toggle><strong>Tampilkan lebih sedikit</strong></toggle>",
+          "currentDeviceHelpMore": "Mulai verifikasi dari perangkat lain atau verifikasi secara manual. <toggle><strong>Pelajari lebih lanjut</strong></toggle>",
+          "enable": "Aktifkan",
+          "findDevice": "Temukan perangkat ini di bagian <section>Perangkat/Sesi</section>.",
+          "initiateVerification": "Mulai verifikasi.",
+          "manualVerificationHint": "Jika tidak memiliki perangkat terverifikasi, tekan tombol <action>\"Verifikasi secara manual\"</action>.",
+          "openSettings": "Buka <settings>Pengaturan</settings>.",
+          "openVerifiedDevice": "Buka perangkat terverifikasi Anda yang lain.",
+          "reset": "Reset",
+          "stepsFromOtherDevice": "Langkah verifikasi dari perangkat lain.",
+          "unverified": "Belum diverifikasi",
+          "unverifiedCount_one": "{{count}} belum diverifikasi",
+          "unverifiedCount_other": "{{count}} belum diverifikasi",
+          "verified": "Terverifikasi",
+          "verify": "Verifikasi",
+          "verifyDeviceDescription": "Verifikasi identitas perangkat dan berikan akses ke pesan terenkripsi.",
+          "verifyManually": "Verifikasi secara manual"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "Emoji & Stiker",
+        "globalPacks": {
+          "roomPacks": "Paket ruang",
+          "noPacks": "Tidak ada paket",
+          "packFromRoomsWillAppearHereYou": "Paket dari ruang akan muncul di sini. Anda belum memiliki ruang dengan paket.",
+          "view": "Lihat",
+          "favoritePacks": "Paket favorit",
+          "selectPack": "Pilih paket",
+          "pickEmojisAndStickersPackFromRooms": "Pilih paket emoji dan stiker dari ruang untuk digunakan di semua ruang.",
+          "select": "Pilih",
+          "failedToApplyChangesPleaseTryAgain": "Gagal menerapkan perubahan! Silakan coba lagi.",
+          "changesSavedApplyWhenReady": "Perubahan disimpan! Terapkan saat siap.",
+          "reset": "Reset",
+          "applyChanges": "Terapkan perubahan",
+          "selectAll": "Pilih semua",
+          "unknown": "Tidak diketahui",
+          "unselectAll": "Batalkan semua pilihan",
+          "save": "Simpan",
+          "close": "Tutup"
+        },
+        "userPack": {
+          "defaultPack": "Paket bawaan",
+          "view": "Lihat",
+          "unknown": "Tidak diketahui"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "allMessages": "Semua pesan",
+          "badge": "Lencana:",
+          "1To1Chats": "Percakapan pribadi",
+          "1To1ChatsEncrypted": "Percakapan pribadi (terenkripsi)",
+          "rooms": "Ruang",
+          "roomsEncrypted": "Ruang (terenkripsi)"
+        },
+        "keywordMessages": {
+          "save": "Simpan",
+          "keywordMessages": "Pesan kata kunci",
+          "badge": "Lencana:",
+          "selectKeyword": "Pilih kata kunci",
+          "setANotificationPreferenceForMessageContaining": "Atur preferensi notifikasi untuk pesan yang mengandung kata kunci tertentu."
+        },
+        "notifications": "Notifikasi",
+        "blockMessages": "Blokir pesan",
+        "thisOptionHasBeenMovedToAccount": "Opsi ini telah dipindahkan ke bagian \"Akun > Blokir pengguna\".",
+        "specialMessages": {
+          "specialMessages": "Pesan khusus",
+          "badge": "Lencana:",
+          "mentionRoom": "Sebutan @room",
+          "containsRoom": "Mengandung @room",
+          "containsDisplayName": "Mengandung nama tampilan (\"{{displayName}}\")",
+          "containsDisplayNameGeneric": "Mengandung nama tampilan",
+          "containsUsername": "Mengandung nama pengguna (\"{{username}}\")",
+          "mentionUserId": "Sebutan ID pengguna (\"{{userId}}\")"
+        },
+        "systemNotification": {
+          "emailNotification": "Notifikasi email",
+          "yourAccountDoesNotHaveAnyEmail": "Akun Anda belum memiliki alamat email terkait.",
+          "unexpectedError": "Kesalahan tak terduga!",
+          "system": "Sistem",
+          "desktopNotifications": "Notifikasi desktop",
+          "showDesktopNotificationsWhenMessageArrive": "Tampilkan notifikasi desktop saat pesan tiba.",
+          "enable": "Aktifkan",
+          "notificationSound": "Suara notifikasi",
+          "playSoundWhenNewMessageArrive": "Putar suara saat pesan baru tiba.",
+          "notSupported": "Sistem tidak mendukung notifikasi.",
+          "permissionBlocked": "Izin notifikasi diblokir. Izinkan notifikasi melalui bilah alamat browser.",
+          "sendToEmail": "Kirim notifikasi ke email Anda.",
+          "sendToEmailAddress": "Kirim notifikasi ke email Anda. (\"{{email}}\")"
+        },
+        "mode": {
+          "disable": "Nonaktifkan",
+          "notifyLoud": "Beri notifikasi bersuara",
+          "notifySilent": "Beri notifikasi senyap"
+        }
+      },
+      "about": {
+        "clearCache": "Hapus cache",
+        "clearCacheAndReload": "Hapus cache dan muat ulang",
+        "clearCacheDescription": "Menghapus data cache dan memuat ulang. Anda akan tetap masuk.",
+        "clearTrace": "Hapus jejak",
+        "clearing": "Membersihkan...",
+        "credits": "Kredit",
+        "deepDiagnosticTracing": "Pelacakan diagnostik mendalam",
+        "deepTraceMemoryOnly": "Merekam di memori karena penyimpanan jejak tidak tersedia. Ekspor sebelum memulai ulang aplikasi; peristiwa terbaru ini akan hilang saat aplikasi dimulai ulang.",
+        "deepTraceEnabledStorageUnavailable": "Aktif, tetapi penyimpanan jejak saat ini tidak tersedia.",
+        "deepTraceOff": "Nonaktif. Aktifkan sebelum mengulangi masalah macet untuk merekam waktu kinerja, Matrix, jaringan, siklus hidup, dan interaksi.",
+        "deepTracePreferenceSaveFailed": "{{description}} Nonaktif untuk sesi ini, tetapi preferensi tidak dapat disimpan dan mungkin aktif kembali setelah dimulai ulang.",
+        "deepTraceRecording": "Merekam jejak kinerja dan interaksi dengan ukuran terbatas yang menjaga privasi di perangkat ini.",
+        "deepTraceStarting": "Memulai jejak kinerja dan interaksi dengan ukuran terbatas yang menjaga privasi di perangkat ini.",
+        "diagnosticsExportFailed": "{{description}} Ekspor gagal. Coba lagi.",
+        "diagnosticsNone": "Tidak ada sesi yang berakhir tak terduga yang disimpan.",
+        "diagnosticsUnavailable": "Penyimpanan diagnostik tidak tersedia.",
+        "diagnosticsUnexpected": "Sesi sebelumnya berakhir secara tak terduga; penyebabnya tidak diketahui.",
+        "emojiArtCredit": "Karya emoji <art>Twemoji</art> adalah © <owner>Twitter, Inc dan kontributor lainnya</owner>, digunakan berdasarkan ketentuan <license>CC-BY 4.0</license>.",
+        "emojiFontCredit": "Font <font>twemoji-colr</font> adalah © <owner>Mozilla Foundation</owner>, digunakan berdasarkan ketentuan <license>Apache 2.0</license>.",
+        "exportDiagnostics": "Ekspor diagnostik",
+        "exporting": "Mengekspor...",
+        "matrixSdkCredit": "<sdk>matrix-js-sdk</sdk> adalah © <owner>The Matrix.org Foundation C.I.C</owner>, digunakan berdasarkan ketentuan <license>Apache 2.0</license>.",
+        "onDeviceDiagnostics": "Diagnostik di perangkat",
+        "options": "Opsi",
+        "soundResourcesCredit": "<resources>Sumber daya suara Material</resources> adalah © <owner>Google</owner>, digunakan berdasarkan ketentuan <license>CC-BY 4.0</license>.",
+        "sourceCode": "Kode sumber",
+        "support": "Dukungan",
+        "title": "Tentang",
+        "traceStorageUnavailable": "Penyimpanan jejak tidak tersedia."
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "general": "Umum",
+        "options": "Opsi",
+        "addresses": "Alamat",
+        "advancedOptions": "Opsi lanjutan"
+      },
+      "permissions": {
+        "permissions": "Izin",
+        "ban": "Larang",
+        "changeAllPermission": "Ubah semua izin",
+        "changeServerAcls": "Ubah ACL server",
+        "changeSpaceAccess": "Ubah akses Space",
+        "editPowerLevels": "Edit tingkat wewenang",
+        "groups": {
+          "manage": "Kelola",
+          "moderation": "Moderasi",
+          "other": "Lainnya",
+          "settings": "Pengaturan",
+          "spaceOverview": "Ringkasan Space"
+        },
+        "invite": "Undang",
+        "kick": "Keluarkan",
+        "manageEmojisStickers": "Kelola emoji & stiker",
+        "manageSpaceRooms": "Kelola ruang Space",
+        "messageEvents": "Peristiwa pesan",
+        "otherSettings": "Pengaturan lainnya",
+        "publishAddress": "Publikasikan alamat",
+        "spaceAvatar": "Avatar Space",
+        "spaceName": "Nama Space",
+        "spaceTopic": "Topik Space",
+        "upgradeSpace": "Tingkatkan space"
+      },
+      "navigation": {
+        "developerTools": "Alat pengembang",
+        "emojisStickers": "Emoji & Stiker",
+        "general": "Umum",
+        "members": "Anggota",
+        "permissions": "Izin"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "Tidak ada kecocokan untuk \"{{query}}\".",
+      "noMatchFound": "Tidak ada kecocokan",
+      "noRooms": "Tidak ada ruang",
+      "noRoomsDescription": "Belum ada ruang untuk ditampilkan.",
+      "placeholder": "Cari",
+      "syntaxHint": "Ketik <rooms>#</rooms> untuk ruang, <directs>@</directs> untuk pesan langsung, dan <spaces>*</spaces> untuk Space. Pintasan: <hotkey>{{modifier}} + k</hotkey>"
+    }
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "voice": {
+      "discardRecording": "Buang rekaman suara",
+      "pauseRecording": "Jeda rekaman suara",
+      "resumeRecording": "Lanjutkan rekaman suara",
+      "statusActive": "Perekaman suara aktif",
+      "statusPaused": "Perekaman suara dijeda",
+      "statusProcessing": "Memproses rekaman suara",
+      "statusReadyToRetry": "Rekaman suara siap dicoba ulang",
+      "statusSending": "Mengirim rekaman suara",
+      "statusStarting": "Memulai rekaman suara",
+      "voiceRecorderDialog": {
+        "voiceSendFailed": "Pengiriman suara gagal",
+        "yourRecordingIsStillSaved": "Rekaman Anda masih tersimpan.",
+        "discard": "Buang",
+        "retry": "Coba lagi",
+        "discardVoiceRecording": "Buang rekaman suara?",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "Rekaman ini belum dikirim. Buang secara permanen?",
+        "cancel": "Batal",
+        "voiceRecordingError": "Kesalahan perekaman suara",
+        "ok": "Oke"
+      },
+      "errors": {
+        "microphoneBlockedAndroid": "Akses mikrofon diblokir. Izinkan akses mikrofon untuk MindRoom Chat di pengaturan aplikasi Android, lalu coba lagi.",
+        "microphoneBlockedIos": "Akses mikrofon diblokir. Izinkan akses mikrofon untuk MindRoom Chat di pengaturan iPhone, lalu coba lagi.",
+        "microphoneBlockedBrowser": "Akses mikrofon diblokir. Izinkan akses mikrofon untuk situs/aplikasi ini di pengaturan browser atau sistem, lalu coba lagi.",
+        "noMicrophone": "Tidak ditemukan mikrofon di perangkat ini.",
+        "microphoneUnavailable": "Mikrofon saat ini tidak tersedia (mungkin sedang digunakan aplikasi lain).",
+        "microphoneFailed": "Gagal mengakses mikrofon.",
+        "microphoneUnsupported": "Akses mikrofon tidak didukung di perangkat ini.",
+        "recordingStopped": "Perekaman suara berhenti secara tak terduga. Rekam ulang.",
+        "noAudio": "Tidak ada data audio yang direkam.",
+        "recordingUnsupported": "Perekaman suara tidak didukung di browser ini.",
+        "httpsRequired": "Perekaman suara memerlukan HTTPS (atau localhost). Buka MindRoom melalui HTTPS.",
+        "sendBusy": "Pesan suara lain masih dikirim. Harap tunggu.",
+        "sendFailed": "Gagal mengirim pesan suara."
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "call": "Panggil",
+        "homeserverUnsupported": "Homeserver Anda tidak mendukung panggilan.",
+        "browserUnsupported": "Browser Anda tidak mendukung WebRTC.",
+        "endCurrentCall": "Akhiri panggilan Anda saat ini terlebih dahulu.",
+        "failedToStart": "Gagal memulai panggilan."
+      },
+      "agentCallHeaderButton": {
+        "call": "Panggil agen",
+        "callAgent": "Panggil {{name}}",
+        "chooseAgent": "Pilih agen untuk dipanggil",
+        "close": "Tutup"
+      }
+    },
+    "commands": {
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "Perintah MindRoom"
+      },
+      "descriptions": {
+        "help": "Dapatkan bantuan tentang kemampuan yang tersedia atau topik tertentu.",
+        "reload-plugins": "Muat ulang plugin yang dikonfigurasi (khusus admin).",
+        "schedule": "Jadwalkan tugas untuk dijalankan nanti.",
+        "list_schedules": "Tampilkan semua tugas terjadwal.",
+        "cancel_schedule": "Batalkan satu jadwal berdasarkan ID atau semua jadwal.",
+        "edit_schedule": "Perbarui tugas terjadwal yang ada.",
+        "config": "Kelola konfigurasi MindRoom (khusus admin).",
+        "desktop": "Kelola target Desktop Anda.",
+        "model": "Tampilkan atau ganti model yang digunakan dalam utas saat ini.",
+        "room_model": "Tampilkan atau ganti model bawaan ruang (menetapkan/mengatur ulang memerlukan admin ruang).",
+        "thread_mode": "Tampilkan atau ganti mode utas yang digunakan di ruang saat ini (khusus admin ruang).",
+        "encrypt": "Tinjau atau aktifkan enkripsi ujung ke ujung untuk ruang saat ini.",
+        "e2ee": "Tampilkan diagnostik enkripsi untuk ruang saat ini.",
+        "hi": "Tampilkan informasi sambutan."
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "pastedText": "Teks yang ditempel",
+        "characterCount_one": "{{formattedCount}} karakter",
+        "characterCount_other": "{{formattedCount}} karakter"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "localMindroom": "MindRoom lokal",
+        "connectLocalMindroom": "Hubungkan MindRoom lokal",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "Pasangkan akun percakapan ini dengan proses MindRoom lokal Anda",
+        "enterCodeDescription": "Jalankan {{command}} di komputer Anda, lalu buka tautan yang ditampilkannya atau masukkan kodenya di sini.",
+        "pairCode": "Kode pemasangan",
+        "mindroomDocs": "Dokumentasi MindRoom",
+        "linkedInstallations": "Instalasi terhubung",
+        "linkedInstallationsUnavailable": "Instalasi tertaut hanya tersedia untuk akun di {{server}}.",
+        "loadingLinkedInstallations": "Memuat instalasi terhubung...",
+        "tryAgain": "Coba lagi",
+        "noLinkedLocalMindroomInstallationsYet": "Belum ada instalasi MindRoom lokal yang terhubung.",
+        "revoke": "Cabut",
+        "confirmRevoke": "Konfirmasi pencabutan",
+        "cancel": "Batal",
+        "requestFailed": "Permintaan gagal. Coba lagi.",
+        "unknown": "Tidak diketahui",
+        "createdAt": "Dibuat: {{timestamp}}",
+        "lastSeenAt": "Terakhir terlihat: {{timestamp}}"
+      },
+      "connect": {
+        "enterCode": "Masukkan kode yang ditampilkan di terminal Anda.",
+        "continue": "Lanjutkan",
+        "invalidCode": "Masukkan kode 8 karakter, misalnya ABCD-EFGH.",
+        "code": "Kode: {{code}}",
+        "chooseAccount": "Pilih akun yang menyetujui koneksi ini",
+        "checkingCode": "Memeriksa kode...",
+        "deviceQuestion": "Hubungkan {{clientName}}?",
+        "deviceStarted": "Dimulai {{age}}",
+        "requestedFrom": "Diminta dari {{ip}}",
+        "requestedFromUnknown": "Diminta dari alamat yang tidak dikenal",
+        "warning": "Setujui hanya jika Anda baru saja memulai ini sendiri di komputer Anda dan terminal Anda menampilkan kode yang sama.",
+        "approveAs": "Setujui sebagai {{userId}}",
+        "approved": "Terhubung. Anda dapat kembali ke terminal.",
+        "noAccount": "Masuk dengan akun MindRoom Anda untuk menyetujui koneksi ini.",
+        "signIn": "Masuk untuk menyetujui",
+        "accountSignedOut": "Akun ini harus masuk lagi sebelum dapat menyetujui.",
+        "codeNotFound": "Kode ini tidak ditemukan. Periksa kode yang ditampilkan di terminal Anda.",
+        "codeExpired": "Kode ini sudah kedaluwarsa. Gunakan tautan atau kode baru yang ditampilkan di terminal Anda.",
+        "codeAlreadyApproved": "Kode ini sudah disetujui.",
+        "backToChat": "Kembali ke percakapan",
+        "enterNewCode": "Masukkan kode baru:",
+        "noAccountAppGuidance": "Sudah masuk di aplikasi MindRoom? Buka Pengaturan → MindRoom lokal di sana dan masukkan {{code}}.",
+        "frameWarning": "Untuk keamanan, persetujuan perangkat tidak dapat diselesaikan di dalam bingkai.",
+        "openInNewTab": "Buka di tab baru"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgentCrossSignedDevice": "Agen terverifikasi · perangkat bertanda tangan silang",
+        "verifiedAgent": "Agen terverifikasi"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "scrollToTop": "Gulir ke atas",
+        "searchMessages": "Cari pesan",
+        "searchDescription": "Temukan pesan yang berguna di komunitas Anda dengan mencari kata kunci terkait.",
+        "noResultsFor": "Tidak ada hasil untuk “{{term}}”",
+        "resultsFor": "Hasil untuk “{{term}}”"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (diedit)"
+      },
+      "searchFilters": {
+        "sortBy": "Urutkan menurut",
+        "recent": "Terbaru",
+        "relevance": "Relevansi",
+        "search": "Cari",
+        "rooms": "Ruang",
+        "noMatchFound": "Tidak ditemukan kecocokan!",
+        "save": "Simpan",
+        "deselectAll": "Batalkan semua pilihan",
+        "selectRooms": "Pilih ruang",
+        "filter": "Filter",
+        "global": "Global",
+        "saveCount": "Simpan ({{count}})",
+        "roomsFor": "Ruang untuk “{{query}}”"
+      },
+      "searchInput": {
+        "search": "Cari",
+        "searchForKeyword": "Cari kata kunci",
+        "clear": "Bersihkan",
+        "enter": "Enter"
+      },
+      "searchResultGroup": {
+        "open": "Buka",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "Konteks balasan disembunyikan dalam hasil pencarian. Buka pesan untuk melihat konteks utas lengkap."
+      },
+      "searchResultPreview": {
+        "redacted": "Pesan telah dihapus.",
+        "message": "Pesan",
+        "image": "Gambar",
+        "video": "Video",
+        "audio": "Audio",
+        "file": "Berkas",
+        "location": "Lokasi",
+        "reaction": "Reaksi",
+        "unsupportedEvent": "Peristiwa tidak didukung"
+      }
+    },
+    "messages": {
+      "approvalArguments": {
+        "arguments": "Argumen",
+        "loadingCompleteArguments": "Memuat argumen lengkap…",
+        "onlyATruncatedPreviewIsAvailable": "Hanya pratinjau terpotong yang tersedia.",
+        "retry": "Coba lagi",
+        "sensitiveValuesMayBeRedacted": "Nilai sensitif mungkin disamarkan.",
+        "loadFailed": "Gagal memuat argumen lengkap.",
+        "hideArguments": "Sembunyikan argumen",
+        "showAllArguments": "Tampilkan semua argumen"
+      },
+      "approvalDecisionControls": {
+        "thisRequestCannotBeApprovedHere": "Permintaan ini tidak dapat disetujui di sini.",
+        "submittedWaitingForRoomUpdate": "Dikirim. Menunggu pembaruan ruang.",
+        "approveOnce": "Setujui sekali",
+        "approve": "Setujui",
+        "deny": "Tolak",
+        "autoApprovalDuration": "Durasi persetujuan otomatis",
+        "denyReasonOptional": "Alasan penolakan (opsional)",
+        "denialReasonOptional": "Alasan penolakan (opsional)",
+        "confirmDeny": "Konfirmasi penolakan",
+        "confirmDeny2": "Konfirmasi penolakan",
+        "cancel": "Batal",
+        "autoApproveMinutes_one": "Setujui otomatis selama {{count}} menit",
+        "autoApproveMinutes_other": "Setujui otomatis selama {{count}} menit",
+        "denyCallReasonOptional": "Alasan menolak panggilan {{number}} (opsional)",
+        "approveExactCall": "Setujui panggilan persis ini",
+        "approveAnyArguments": "Setujui argumen apa pun",
+        "anyArgumentsWarning": "Dengan argumen apa pun, agen dapat melakukan satu panggilan {{tool}} dengan isi pilihannya, dalam {{minutes}} menit dari waktu terjadwal."
+      },
+      "approvalGrantStatus": {
+        "autoApprovalActive": "Persetujuan otomatis aktif",
+        "autoApprovalStopped": "Persetujuan otomatis dihentikan",
+        "autoApprovalExpired": "Persetujuan otomatis kedaluwarsa",
+        "argumentsMayDifferBetweenCalls": "Argumen dapat berbeda antar panggilan.",
+        "stopAutoApproval": "Hentikan persetujuan otomatis",
+        "submittedWaitingForRoomUpdate": "Dikirim. Menunggu pembaruan ruang.",
+        "fixedExpiry": "Waktu kedaluwarsa tetap: {{timestamp}}",
+        "expiresInMinutes_one": "Kedaluwarsa dalam {{count}} menit",
+        "expiresInMinutes_other": "Kedaluwarsa dalam {{count}} menit"
+      },
+      "approvalReceipt": {
+        "resolvedToolApprovalRequest": "Permintaan persetujuan alat yang telah diselesaikan",
+        "unknown": "tidak diketahui",
+        "approvedOnce": "Disetujui sekali",
+        "decisionRecordedForThisCall": "Keputusan untuk panggilan ini telah dicatat",
+        "statusExpired": "Persetujuan kedaluwarsa",
+        "statusApproved": "Disetujui",
+        "statusDenied": "Ditolak",
+        "requestedBy": "{{agent}} · Diminta oleh {{requester}}",
+        "resolvedByAt": "{{status}} oleh {{resolver}} · {{timestamp}}",
+        "resolvedBy": "{{status}} oleh {{resolver}}",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "timedPermission": "Izin berbatas waktu",
+        "timedPermissionMinutes_one": "Izin berbatas waktu · {{count}} menit",
+        "timedPermissionMinutes_other": "Izin berbatas waktu · {{count}} menit",
+        "grantedByAt": "Diberikan oleh {{grantor}} · {{timestamp}}",
+        "grantedBy": "Diberikan oleh {{grantor}}",
+        "originalFixedExpiry": "Waktu kedaluwarsa tetap awal: {{timestamp}}",
+        "toolAndServer": "Alat: {{tool}} · Server: {{server}}",
+        "tool": "Alat: {{tool}}",
+        "reason": "Alasan: {{reason}}",
+        "approvedWhenScheduledByAt": "Disetujui saat dijadwalkan oleh {{approver}} · {{timestamp}}",
+        "approvedWhenScheduledBy": "Disetujui saat dijadwalkan oleh {{approver}}"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "Dijadwalkan untuk {{timestamp}}",
+        "approvedExactArguments": "Disetujui untuk argumen persis ini",
+        "approvedAnyArguments": "Disetujui untuk argumen apa pun pada alat ini"
+      },
+      "approvalReviewCall": {
+        "pending": "menunggu",
+        "callStatus": "Panggilan {{number}} · {{status}}",
+        "status": {
+          "pending": "Menunggu",
+          "sending": "Mengirim",
+          "submitted": "Dikirim",
+          "error": "Kesalahan",
+          "approved": "Disetujui",
+          "denied": "Ditolak",
+          "expired": "Kedaluwarsa"
+        }
+      },
+      "messageCopyActions": {
+        "copyTextLoading": "Salin teks (memuat…)",
+        "copyText": "Salin teks",
+        "copyTextWithToolCalls": "Salin teks dengan panggilan alat",
+        "copyLink": "Salin tautan"
+      },
+      "bugReport": {
+        "report": "Laporkan bug",
+        "download": "Unduh laporan bug",
+        "sending": "Mengirim laporan…",
+        "failed": "Tidak dapat mengirim laporan. Coba lagi."
+      },
+      "messageInspectionActions": {
+        "readReceipts": "Tanda dibaca",
+        "viewSource": "Lihat sumber"
+      },
+      "messageModerationActions": {
+        "unpinMessage": "Lepas sematan pesan",
+        "pinMessage": "Sematkan pesan",
+        "deleteMessage": "Hapus pesan",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "Tindakan ini tidak dapat dibatalkan! Yakin ingin menghapus pesan ini?",
+        "optional": "(opsional)",
+        "failedToDeleteMessagePleaseTryAgain": "Gagal menghapus pesan! Coba lagi.",
+        "deleting": "Menghapus...",
+        "delete": "Hapus",
+        "reportMessage": "Laporkan pesan",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "Laporkan pesan ini ke server, yang kemudian dapat memberi tahu pihak terkait untuk menindaklanjuti.",
+        "reason": "Alasan",
+        "failedToReportMessagePleaseTryAgain": "Gagal melaporkan pesan! Coba lagi.",
+        "messageHasBeenReportedToServer": "Pesan telah dilaporkan ke server.",
+        "reporting": "Melaporkan...",
+        "report": "Laporkan"
+      },
+      "messageReactionActions": {
+        "viewReactions": "Lihat reaksi"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "Masih memuat…",
+        "toolDetailsUnavailable": "Detail alat tidak tersedia.",
+        "pastedText": "Teks yang ditempel",
+        "characterCount_one": "{{formattedCount}} karakter",
+        "characterCount_other": "{{formattedCount}} karakter",
+        "blocks": {
+          "think": "Proses berpikir AI",
+          "debug": "Informasi debug",
+          "system": "Pemrosesan sistem",
+          "plan": "Perencanaan dan strategi",
+          "analysis": "Analisis dan evaluasi",
+          "research": "Riset dan sumber"
+        },
+        "toolNumber": "Alat #{{index}}: {{command}}",
+        "toolCallCount_one": "{{count}} panggilan alat",
+        "toolCallCount_other": "{{count}} panggilan alat",
+        "usedToolCount_other": "Menggunakan {{count}} alat",
+        "toolCallsRunning_other": "Menjalankan {{count}} panggilan alat",
+        "toolCallsWaiting_other": "{{count}} panggilan alat menunggu persetujuan",
+        "toolCallsRan_other": "{{count}} panggilan alat selesai dijalankan",
+        "toolCallsDenied_other": "{{count}} panggilan alat ditolak",
+        "toolCallsExpired_other": "{{count}} panggilan alat kedaluwarsa"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "Memuat respons lengkap..."
+      },
+      "mindroomMessage": {
+        "addReaction": "Tambahkan reaksi",
+        "reply": "Balas",
+        "replyInThread": "Balas di utas",
+        "editMessage": "Edit pesan",
+        "moreOptions": "Opsi lainnya"
+      },
+      "mindroomMessageControls": {
+        "requestContextWindow": "Jendela konteks permintaan",
+        "aiRunMetadata": "Metadata eksekusi AI",
+        "close": "Tutup",
+        "status": "Status",
+        "model": "Model",
+        "tokens": "Token",
+        "runCache": "Cache eksekusi",
+        "requestContext": "Konteks permintaan",
+        "requestCache": "Cache permintaan",
+        "tools": "Alat",
+        "ttft": "Waktu ke token pertama",
+        "run": "Eksekusi",
+        "session": "Sesi",
+        "openAiRunMetadata": "Buka metadata eksekusi AI",
+        "tokenUsage": "Penggunaan token",
+        "downloadingOriginal": "Mengunduh berkas asli...",
+        "retryDownloadOriginal": "Coba lagi mengunduh berkas asli",
+        "downloadOriginal": "Unduh berkas asli",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} token",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} token"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "Tambahan pesan"
+      },
+      "mindroomPasteAttachmentContent": {
+        "pastedText": "Teks yang ditempel",
+        "open": "Buka",
+        "retry": "Coba lagi",
+        "download": "Unduh",
+        "characterCount_one": "{{formattedCount}} karakter",
+        "characterCount_other": "{{formattedCount}} karakter"
+      },
+      "mindroomRoomPinMenu": {
+        "open": "Buka",
+        "failedToLoadMessage": "Gagal memuat pesan!",
+        "event": " peristiwa",
+        "pinnedMessages": "Pesan yang disematkan",
+        "noPinnedMessages": "Tidak ada pesan yang disematkan",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "Pengguna dengan tingkat wewenang yang cukup dapat menyematkan pesan melalui menu konteksnya."
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "AI sedang merespons",
+        "thinking": "Berpikir…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "Ringkasan utas AI"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "AI memberi judul utas ini",
+        "updated": "Judul AI diperbarui",
+        "edited": "Judul diedit",
+        "previous": "Sebelumnya: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "toolApprovalRequest": "Permintaan persetujuan alat",
+        "submitted": "Dikirim",
+        "pendingApproval": "Menunggu persetujuan",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "Persetujuan otomatis berlaku untuk utas, pemohon, agen, dan alat ini.",
+        "argumentsMayDifferBetweenCalls": "Argumen dapat berbeda antar panggilan.",
+        "requestedBy": "Diminta oleh {{requester}}"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "Agen perute sedang mentranskripsikan"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "AI sedang merespons"
+      },
+      "stopButton": {
+        "label": "Hentikan",
+        "tooltip": "Hentikan respons ini"
+      },
+      "threadApprovalControls": {
+        "close": "Tutup",
+        "call": "panggilan",
+        "calls": "panggilan",
+        "unknown": "tidak diketahui",
+        "reasonForDenyingAllOptional": "Alasan menolak semua (opsional)",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "Izinkan operasi ini untuk utas, pemohon, dan agen ini. Argumen dapat berbeda antar panggilan.",
+        "submittedWaitingForRoomUpdate": "Dikirim. Menunggu pembaruan ruang.",
+        "threadApprovals": "Persetujuan utas",
+        "checkingHistory": " · Memeriksa riwayat…",
+        "historyIncomplete": " · Riwayat tidak lengkap",
+        "retryHistory": "Coba muat riwayat lagi",
+        "reviewToolCalls": "Tinjau panggilan alat",
+        "reviewAgentWants_other": "{{agent}} ingin melakukan {{count}} hal",
+        "reviewAgentsWant_other": "{{agents}} agen ingin melakukan {{count}} hal",
+        "reviewRequestedBy": "Diminta oleh {{requester}}",
+        "someRequestsAreNoLongerAvailable": "Beberapa permintaan tidak lagi tersedia.",
+        "permission": "izin",
+        "permissions": "izin",
+        "activePermissions": "Izin aktif",
+        "noActiveTimedPermissions": "Tidak ada izin berbatas waktu yang aktif.",
+        "approval": "persetujuan",
+        "approvals": "persetujuan",
+        "operationCallCount_one": "{{operation}} · {{count}} panggilan",
+        "operationCallCount_other": "{{operation}} · {{count}} panggilan",
+        "requestedBy": "{{agent}} · Diminta oleh {{requester}}",
+        "approveAllOnce": "Setujui semua {{count}} sekali",
+        "denyAll": "Tolak semua {{count}}",
+        "allowForMinutes_one": "Izinkan selama {{count}} menit",
+        "allowForMinutes_other": "Izinkan selama {{count}} menit",
+        "awaitingConfirmation_one": "{{count}} panggilan menunggu konfirmasi",
+        "awaitingConfirmation_other": "{{count}} panggilan menunggu konfirmasi",
+        "pausedForApproval_one": "{{count}} panggilan dijeda untuk persetujuan",
+        "pausedForApproval_other": "{{count}} panggilan dijeda untuk persetujuan",
+        "statusCheckingHistory": "{{status}} · Memeriksa riwayat…",
+        "statusHistoryIncomplete": "{{status}} · Riwayat tidak lengkap",
+        "reviewCount": "Tinjau {{count}}",
+        "activePermissionCount_one": "{{count}} izin aktif",
+        "activePermissionCount_other": "{{count}} izin aktif",
+        "permissionScope": "{{agent}} · {{requester}} · Utas ini",
+        "toolApprovalCount_one": "{{count}} persetujuan alat",
+        "toolApprovalCount_other": "{{count}} persetujuan alat",
+        "approvedCount_one": "{{count}} disetujui",
+        "approvedCount_other": "{{count}} disetujui",
+        "agentWaitingForYou": "{{agent}} sedang menunggu Anda",
+        "agentsWaitingForYou_other": "{{count}} agen sedang menunggu Anda",
+        "autoApproveFor": "Setujui otomatis selama",
+        "callCount_other": "{{count}} panggilan",
+        "chipSending": "Mengirim…",
+        "chipSubmitted": "Terkirim",
+        "chipResolved": "Selesai",
+        "confirmDenyAll": "Konfirmasi tolak semua {{count}}",
+        "expires": "kedaluwarsa {{time}}",
+        "hideCalls": "Sembunyikan panggilan",
+        "historyApproved": "{{operation}} disetujui",
+        "historyDenied": "{{operation}} ditolak",
+        "historyExpired": "{{operation}} kedaluwarsa",
+        "historyUserApproved": "{{user}} menyetujui {{operation}}",
+        "historyUserDenied": "{{user}} menolak {{operation}}",
+        "historyUserExpired": "{{operation}} kedaluwarsa",
+        "historyYouApproved": "Anda menyetujui {{operation}}",
+        "historyYouDenied": "Anda menolak {{operation}}",
+        "historyYouExpired": "{{operation}} kedaluwarsa",
+        "minutesShort_other": "{{count}} mnt",
+        "sectionMeta": "{{agent}} · diminta oleh {{requester}}",
+        "showCalls_other": "Tampilkan {{count}} panggilan",
+        "waitingForApproval": "Menunggu persetujuan",
+        "waitingForYou": "Menunggu Anda",
+        "you": "Anda"
+      },
+      "pendingSendIndicator": {
+        "messageSending": "Pesan sedang dikirim",
+        "waitingForServer": "Menunggu server",
+        "messageFailedToSend": "Pesan gagal dikirim",
+        "notSent": "Belum dikirim"
+      },
+      "failedSendActions": {
+        "retry": "Coba lagi",
+        "delete": "Hapus"
+      },
+      "aiRunDisplay": {
+        "inputTokens": "masuk {{formattedCount}}",
+        "outputTokens": "keluar {{formattedCount}}",
+        "totalTokens": "total {{formattedCount}}",
+        "readTokens": "baca {{formattedCount}}",
+        "writeTokens": "tulis {{formattedCount}}",
+        "notReadTokens": "tidak dibaca {{formattedCount}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}}%)",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} token ({{percentage}}% jendela)",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} token ({{percentage}}% jendela)",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} token ({{percentage}}% jendela); {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} token ({{percentage}}% jendela); {{suffix}}",
+        "reportedCacheRead_one": "pembacaan cache yang dilaporkan: {{formattedCount}} token",
+        "reportedCacheRead_other": "pembacaan cache yang dilaporkan: {{formattedCount}} token",
+        "cacheWrite_one": "penulisan cache: {{formattedCount}} token",
+        "cacheWrite_other": "penulisan cache: {{formattedCount}} token",
+        "cacheRead": "Pembacaan cache",
+        "newInput": "Input baru",
+        "reserve": "Cadangan"
+      },
+      "mindroomModelBadge": {
+        "model": "Model: {{model}}"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "Notifikasi push iOS native belum dikonfigurasi oleh penerapan ini. Tambahkan pengaturan `push.ios` di `config.json`.",
+        "failedToUpdateNativePushSettings": "Gagal memperbarui pengaturan push native.",
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "Izinkan notifikasi push iOS native untuk peringatan pesan di latar belakang.",
+        "deviceRegisteredForNativeIosPushNotifications": "Perangkat telah didaftarkan untuk notifikasi push iOS native.",
+        "nativeIosPushIsDisabledForThisDevice": "Push iOS native dinonaktifkan untuk perangkat ini.",
+        "unavailable": "Tidak tersedia",
+        "enable": "Aktifkan",
+        "iosPushNotifications": "Notifikasi push iOS",
+        "permissionDenied": "Izin notifikasi ditolak. Aktifkan notifikasi untuk {{appName}} di Pengaturan iOS."
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "Tandai dibaca"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "Tandai dibaca"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "Tandai dibaca"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "Cadangkan riwayat terenkripsi Anda",
+        "dismissBackupReminder": "Tutup pengingat pencadangan",
+        "setUpSecureBackupSoYouCanStillReadYour": "Siapkan cadangan aman agar Anda tetap dapat membaca percakapan agen terenkripsi setelah masuk di perangkat baru.",
+        "setUpSecureKeyBackup": "Siapkan cadangan kunci aman",
+        "setUpBackup": "Siapkan pencadangan"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "MindRoom lokal"
+      },
+      "resizeNavigationPanel": "Ubah ukuran panel navigasi",
+      "resizeMemberPanel": "Ubah ukuran panel anggota"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "Tidak ada utas"
+      },
+      "compactThreadCard": {
+        "streaming": "mengalir"
+      },
+      "mindroomCallChatView": {
+        "chat": "Obrolan",
+        "close": "Tutup"
+      },
+      "mindroomRoomTimeline": {
+        "newMessages": "Pesan baru",
+        "jumpToUnread": "Lompat ke yang belum dibaca",
+        "markAsRead": "Tandai dibaca",
+        "failedToLoadThisThread": "Gagal memuat utas ini.",
+        "loading": "Memuat...",
+        "loadOlderMessages": "Muat pesan lama",
+        "loadNewerMessages": "Muat pesan baru",
+        "jumpToLatest": "Lompat ke terbaru",
+        "today": "Hari ini",
+        "yesterday": "Kemarin"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "Balasan tersedia setelah pesan ini dikonfirmasi.",
+        "youDoNotHavePermissionToPostInThisRoom": "Anda tidak memiliki izin untuk mengirim pesan di ruang ini"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "Tampilkan komputer",
+        "hideComputer": "Sembunyikan komputer",
+        "showCanvas": "Tampilkan panel",
+        "hideCanvas": "Sembunyikan panel",
+        "canvases": "Panel interaktif",
+        "notifications": "Notifikasi",
+        "compact": "Ringkas",
+        "threads": "Utas",
+        "classic": "Klasik",
+        "invite": "Undang",
+        "copyLink": "Salin tautan",
+        "roomSettings": "Pengaturan ruang",
+        "jumpToTime": "Lompat ke waktu",
+        "leaveRoom": "Tinggalkan ruang",
+        "pinnedMessages": "Pesan yang disematkan",
+        "members": "Anggota",
+        "hideMembers": "Sembunyikan anggota",
+        "showMembers": "Tampilkan anggota",
+        "moreOptions": "Opsi lainnya",
+        "back": "Kembali"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "Tambahkan filter tag",
+        "tag": "+ tag",
+        "availableTags": "Tag tersedia",
+        "filterPresets": "Preset filter",
+        "preset": "Preset",
+        "searchThreads": "Cari utas",
+        "searchThreads2": "Cari utas...",
+        "roomViewMode": "Mode tampilan ruang",
+        "natural": "Alami",
+        "lastReply": "Balasan terakhir",
+        "noThreadsMatchCurrentFilters": "Tidak ada utas yang cocok dengan filter saat ini.",
+        "resetAllThreadFilters": "Atur ulang semua filter utas",
+        "reset": "Reset",
+        "threadFilters": "Filter utas",
+        "statusFilters": "Filter status",
+        "tagFilters": "Filter tag",
+        "showingFilteredThreads_one": "Menampilkan {{count}} dari {{total}} utas",
+        "showingFilteredThreads_other": "Menampilkan {{count}} dari {{total}} utas",
+        "showingAllThreads_one": "Menampilkan {{count}} utas",
+        "showingAllThreads_other": "Menampilkan {{count}} utas",
+        "sortLockedSummary": "{{summary}} · Urutan dikunci",
+        "unlockSortOrder": "Buka kunci urutan (saat ini {{sort}})",
+        "lockSortOrder": "Kunci urutan (saat ini {{sort}})",
+        "threadCount_one": "{{count}} utas",
+        "threadCount_other": "{{count}} utas",
+        "presets": {
+          "needs-attention": {
+            "label": "Perlu perhatian",
+            "description": "Utas yang belum diselesaikan, tidak sedang mengalir, dan tidak terjadwal"
+          },
+          "working": {
+            "label": "Sedang dikerjakan",
+            "description": "Sedang mengalir atau terjadwal — yang sedang Anda kerjakan sekarang"
+          },
+          "review-queue": {
+            "label": "Antrean peninjauan",
+            "description": "Utas yang belum diselesaikan dengan balasan belum dibaca"
+          },
+          "archived": {
+            "label": "Diarsipkan",
+            "description": "Hanya utas yang telah diselesaikan"
+          },
+          "all": {
+            "label": "Semua",
+            "description": "Atur ulang semua filter"
+          }
+        }
+      },
+      "threadTagPicker": {
+        "addTag": "Tambahkan tag",
+        "tag": "+ tag",
+        "filterNew": "Filter / baru...",
+        "filterOrCreateTag": "Filter atau buat tag",
+        "noMatches": "Tidak ada kecocokan",
+        "typeToCreateATag": "Ketik untuk membuat tag",
+        "createTag": "Buat “{{tag}}”"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "Lompat ke pesan",
+        "message": "Pesan"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-all]",
+          "all2": "[+all]"
+        }
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomName": "<sender>{{sender}}</sender> mengubah nama ruang",
+        "changedRoomTopic": "<sender>{{sender}}</sender> mengubah topik ruang",
+        "changedRoomAvatar": "<sender>{{sender}}</sender> mengubah avatar ruang",
+        "joinedCall": "<sender>{{sender}}</sender> bergabung dalam panggilan",
+        "endedCall": "<sender>{{sender}}</sender> mengakhiri panggilan",
+        "sentStateEvent": "<sender>{{sender}}</sender> mengirim peristiwa status <eventType>{{eventType}}</eventType>",
+        "sentEvent": "<sender>{{sender}}</sender> mengirim peristiwa <eventType>{{eventType}}</eventType>"
+      },
+      "threadTagPill": {
+        "removeTag": "Hapus tag {{tag}}"
+      },
+      "compactThreadCardUtils": {
+        "inSeconds": "dalam {{count}} dtk",
+        "inMinutesSeconds": "dalam {{minutes}} mnt {{seconds}} dtk",
+        "inMinutes": "dalam {{count}} mnt",
+        "inHours": "dalam {{count}} jam",
+        "inHoursMinutes": "dalam {{hours}} jam {{minutes}} mnt",
+        "atTime": "pada {{time}}",
+        "scheduledTasks_one": "{{count}} tugas terjadwal",
+        "scheduledTasks_other": "{{count}} tugas terjadwal",
+        "pendingScheduledTasks_one": "{{count}} tugas terjadwal menunggu",
+        "pendingScheduledTasks_other": "{{count}} tugas terjadwal menunggu",
+        "scheduledTasksWithDetail": "{{tasks}}, {{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "noReplies": "0 balasan",
+        "messageCount_one": "{{formattedCount}} pesan",
+        "messageCount_other": "{{formattedCount}} pesan",
+        "needsAttention": "Perlu perhatian",
+        "waitingOnResponse": "Menunggu respons",
+        "agentStreaming": "Agen sedang mengalirkan respons",
+        "resolved": "Selesai",
+        "idle": "Tidak aktif",
+        "threadStarted": "Utas dimulai",
+        "noRepliesYet": "Belum ada balasan"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "Tugas berikutnya {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} tugas terjadwal menunggu",
+        "pendingScheduledTasks_other": "{{count}} tugas terjadwal menunggu"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "Utas terenkripsi",
+        "threadInRoom": "Utas di {{roomName}}",
+        "thread": "Utas"
+      }
+    },
+    "uiActions": {
+      "viewComputer": "Lihat komputer",
+      "openMembers": "Buka anggota",
+      "openCanvas": "Buka panel",
+      "canvasDisabled": "Panel interaktif dinonaktifkan di aplikasi ini.",
+      "canvasDuringCall": "Akhiri panggilan untuk membuka panel interaktif.",
+      "computerUnavailable": "Komputer agen ini tidak tersedia.",
+      "releaseControl": "Lepaskan kendali komputer sebelum membuka tampilan lain.",
+      "openConversation": "Buka permintaan ini dari percakapan ruangan.",
+      "settingsUnavailable": "Nonaktifkan Mode Sederhana untuk membuka bagian Pengaturan ini."
+    },
+    "canvas": {
+      "panelLabel": "Panel interaktif",
+      "fromAgent": "Panel interaktif dari {{agent}}",
+      "expand": "Perluas panel",
+      "close": "Tutup panel",
+      "resize": "Ubah ukuran panel",
+      "updated": "{{agent}} memperbarui panel ini.",
+      "loadUpdate": "Muat pembaruan",
+      "version": "Versi {{current}} dari {{total}}",
+      "previousVersion": "Versi sebelumnya",
+      "nextVersion": "Versi berikutnya",
+      "earlierVersion": "Ini versi sebelumnya.",
+      "showLatest": "Tampilkan terbaru",
+      "loading": "Memuat panel…",
+      "loadFailed": "Panel ini tidak dapat dimuat.",
+      "retry": "Coba lagi",
+      "escaped": "Panel ini mencoba keluar dari sandbox-nya dan telah dihentikan.",
+      "reload": "Muat ulang panel",
+      "pageError": "Halaman ini melaporkan kesalahan.",
+      "tellAgent": "Beri tahu {{agent}}",
+      "errorsSent": "Kesalahan dikirim ke {{agent}}.",
+      "errorsNotSent": "Kesalahan tidak dapat dikirim ke {{agent}}.",
+      "sendTo": "Kirim ke {{agent}}:",
+      "changeAnswer": "Untuk mengubah jawaban, buang jawaban ini terlebih dahulu.",
+      "data": "Data",
+      "send": "Kirim",
+      "discard": "Buang",
+      "disclosure": "Dibuat oleh {{agent}}. Panel ini tidak dapat mengakses akun Anda; apa yang Anda masukkan di sini dapat keluar dari panel ini.",
+      "sharedNotice": "Disimpan di ruangan ini: {{agent}} dan orang lain di sini dapat membaca apa yang Anda masukkan.",
+      "sending": "Mengirim ke {{agent}}…",
+      "sent": "Terkirim ke {{agent}}: {{label}}",
+      "sendFailed": "Tidak dapat mengirim respons Anda. Coba lagi.",
+      "receiptData": "Tampilkan data yang dikirim ke agen",
+      "unlabeled": "Terkirim",
+      "notSent": "Tidak terkirim ke {{agent}}: {{label}}"
+    },
+    "canvases": {
+      "title": "Panel interaktif",
+      "note": "Panel interaktif yang dibuat agen Anda untuk Anda dan sudah dilihat browser ini. Panel yang disematkan muncul di semua perangkat Anda.",
+      "empty": "Belum ada panel interaktif. Saat agen menampilkan panel untuk Anda, panel itu muncul di sini.",
+      "pinned": "Disematkan",
+      "canvas": "Panel",
+      "thread": "Utas",
+      "agent": "Agen",
+      "room": "Ruang",
+      "updated": "Diperbarui",
+      "created": "Dibuat",
+      "pin": "Sematkan {{title}}",
+      "unpin": "Lepas sematan {{title}}",
+      "shared": "Dibagikan dengan agen",
+      "saved": "Berisi nilai Anda"
+    },
+    "backgroundJobs": {
+      "running": "Berjalan: {{tool}}",
+      "awaitingApproval": "Menunggu persetujuan: {{tool}}",
+      "waiting": "Menunggu persetujuan",
+      "stoppingJob": "Menghentikan: {{tool}}",
+      "jobCount": "{{count}} tugas latar belakang",
+      "subagent": "{{tool}} (subagen)",
+      "stopAll": "Hentikan semua",
+      "stopping": "Menghentikan…",
+      "stop": "Hentikan",
+      "stopJob": "Hentikan {{tool}}",
+      "stopFailed": "Tidak dapat menghentikan {{tool}}. Coba lagi.",
+      "stopAllFailed": "Tidak dapat menghentikan tugas latar belakang. Coba lagi.",
+      "inRoom": "Tugas latar belakang sedang berjalan"
+    }
+  },
+  "roomSchedules": {
+    "title": "Tugas terjadwal",
+    "openLabel": "Tugas terjadwal ({{total}})",
+    "empty": "Tidak ada tugas terjadwal di ruang ini.",
+    "emptyHint": "Minta agen MindRoom untuk menjadwalkan tugas di sini.",
+    "prompt": "Prompt",
+    "promptUnavailable": "Prompt tidak tersedia",
+    "once": "Sekali",
+    "recurring": "Berulang",
+    "executionTime": "Waktu eksekusi",
+    "unknownTime": "Waktu eksekusi tidak tersedia",
+    "awaitingExecution": "Menunggu eksekusi",
+    "recurrence": "Perulangan",
+    "silent": "Senyap",
+    "conditional": "Bersyarat",
+    "newThread": "Utas baru",
+    "roomTimeline": "Linimasa ruang",
+    "openThread": "Buka utas",
+    "owner": "Pemilik tugas",
+    "createdAt": "Dibuat",
+    "updatedAt": "Diperbarui",
+    "model": "Model",
+    "inheritedModel": "Dari pengaturan agen, ruang, atau utas",
+    "taskId": "ID tugas",
+    "historyLimit": "Batas riwayat",
+    "fullHistory": "Riwayat lengkap",
+    "noHistory": "Tanpa riwayat",
+    "recentMessages": "Pesan terbaru: {{total}}",
+    "close": "Tutup"
+  },
+  "archivedRooms": {
+    "title": "Ruang yang diarsipkan",
+    "archive": "Arsipkan ruang",
+    "restore": "Pulihkan ruang",
+    "restoreNamed": "Pulihkan {{room}}",
+    "failed": "Tidak dapat menyimpan perubahan. Coba lagi.",
+    "close": "Tutup ruang yang diarsipkan",
+    "description": "Sembunyikan ruang dari bilah samping tanpa meninggalkannya. Buka atau pulihkan di sini.",
+    "empty": "Tidak ada ruang yang diarsipkan."
+  }
+}

@@ -1,0 +1,12 @@
+"MSG_FROM_USER_WITH_CONTENT" = "⁨%1$@⁩: ⁨%2$@⁩";
+"MSG_FROM_USER_IN_ROOM_WITH_CONTENT" = "⁨%1$@⁩ في ⁨%2$@⁩: ⁨%3$@⁩";
+"MSG_FROM_USER" = "رسالة من ⁨%1$@⁩";
+"MSG_FROM_USER_IN_ROOM" = "⁨%1$@⁩ في ⁨%2$@⁩";
+"ACTION_FROM_USER" = "⁨%1$@⁩ ⁨%2$@⁩";
+"ACTION_FROM_USER_IN_ROOM" = "⁨%2$@⁩ ⁨%3$@⁩ في ⁨%1$@⁩";
+"IMAGE_FROM_USER" = "أرسل ⁨%1$@⁩ صورة: ⁨%2$@⁩";
+"IMAGE_FROM_USER_IN_ROOM" = "أرسل ⁨%1$@⁩ صورة في ⁨%3$@⁩: ⁨%2$@⁩";
+"VOICE_CALL_FROM_USER" = "مكالمة صوتية من ⁨%1$@⁩";
+"VIDEO_CALL_FROM_USER" = "مكالمة فيديو من ⁨%1$@⁩";
+"USER_INVITE_TO_NAMED_ROOM" = "دعاك ⁨%1$@⁩ إلى ⁨%2$@⁩";
+"USER_INVITE_TO_CHAT" = "دعاك ⁨%1$@⁩ إلى محادثة";

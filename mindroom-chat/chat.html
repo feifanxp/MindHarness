@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Browser page translation moves React-owned text nodes into <font>
+         wrappers, and the next render crashes with NotFoundError on removeChild.
+         See the notranslate entry in FORK_CHANGES.md before removing. -->
+    <meta name="google" content="notranslate" />
+    <base href="/" />
+    <meta name="theme-color" content="#1A1A1A" />
+    <meta name="color-scheme" content="dark light" />
+    <!-- CINNY-087 theme bootstrap (style) -->
+    <style>
+      html,
+      body {
+        background-color: #1a1a1a;
+      }
+      html.light-theme,
+      html.light-theme body {
+        background-color: #f2f2f2;
+      }
+      html.silver-theme,
+      html.silver-theme body {
+        background-color: #dedede;
+      }
+      html.midnight-theme,
+      html.midnight-theme body {
+        background-color: #17161d;
+      }
+      html.butter-theme,
+      html.butter-theme body {
+        background-color: #1a1916;
+      }
+    </style>
+    <!-- CINNY-087 theme bootstrap (script) -->
+    <script>
+      (function () {
+        var DARK_BG = '#1A1A1A';
+        var themeMap = {
+          'light-theme': { bg: '#F2F2F2', scheme: 'light' },
+          'silver-theme': { bg: '#DEDEDE', scheme: 'light' },
+          'dark-theme': { bg: '#1A1A1A', scheme: 'dark' },
+          'midnight-theme': { bg: '#17161D', scheme: 'dark' },
+          'butter-theme': { bg: '#1A1916', scheme: 'dark' },
+        };
+        var hasOwn = Object.prototype.hasOwnProperty;
+        var unauthRoutePattern = /(?:^|\/)(login|register|reset-password)(?:\/[^/]+)?\/?$/;
+        var isValidThemeId = function (themeId) {
+          return typeof themeId === 'string' && hasOwn.call(themeMap, themeId);
+        };
+        // CINNY-087: keep in sync with src/app/theme/themeBootstrap.ts.
+        var stripSearchAndHash = function (raw) {
+          if (typeof raw !== 'string') return '';
+
+          var normalized = raw.charAt(0) === '#' ? raw.slice(1) : raw;
+          var queryIndex = normalized.indexOf('?');
+          if (queryIndex >= 0) normalized = normalized.slice(0, queryIndex);
+
+          return normalized;
+        };
+        var pathLooksLikeUnauthRoute = function (path) {
+          return typeof path === 'string' && unauthRoutePattern.test(path);
+        };
+        // CINNY-087: keep in sync with hasActiveStoredSession() in src/app/theme/themeBootstrap.ts.
+        var sessionStoreKey = 'mindroom_multi_account_store';
+        var hasActiveSession = false;
+        try {
+          var sraw = localStorage.getItem(sessionStoreKey);
+          if (sraw) {
+            var sparsed = JSON.parse(sraw);
+            if (sparsed && typeof sparsed === 'object') {
+              var sessions =
+                Object.prototype.toString.call(sparsed.sessions) === '[object Array]'
+                  ? sparsed.sessions
+                  : [];
+              var activeId =
+                typeof sparsed.activeSessionId === 'string' ? sparsed.activeSessionId : '';
+              if (sessions.length > 0 && activeId) {
+                for (var i = 0; i < sessions.length; i += 1) {
+                  if (sessions[i] && sessions[i].sessionId === activeId) {
+                    hasActiveSession = true;
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        } catch (_) {}
+        var settings = null;
+
+        try {
+          var raw = localStorage.getItem('settings');
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && typeof parsed === 'object') {
+              settings = parsed;
+            }
+          }
+        } catch (_) {
+          settings = null;
+        }
+        if (settings === null) {
+          settings = {};
+        }
+        // CINNY-087: mirror defaultSettings.useSystemTheme from src/app/state/settings.ts — keep in sync if that default changes.
+        if (settings.useSystemTheme === undefined) {
+          settings.useSystemTheme = true;
+        }
+
+        var prefersDark = !!(
+          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        );
+        var isUnauthRoute =
+          pathLooksLikeUnauthRoute(stripSearchAndHash(window.location.pathname || '')) ||
+          pathLooksLikeUnauthRoute(stripSearchAndHash(window.location.hash || ''));
+        var themeId;
+
+        if (isUnauthRoute || !hasActiveSession) {
+          themeId = prefersDark ? 'dark-theme' : 'light-theme';
+        } else if (!settings.useSystemTheme) {
+          themeId = isValidThemeId(settings.themeId) ? settings.themeId : 'light-theme';
+        } else if (prefersDark) {
+          themeId = isValidThemeId(settings.darkThemeId) ? settings.darkThemeId : 'dark-theme';
+        } else {
+          themeId = isValidThemeId(settings.lightThemeId) ? settings.lightThemeId : 'light-theme';
+        }
+
+        var pick = themeMap[themeId];
+        document.documentElement.classList.add(themeId);
+        if (pick.bg !== DARK_BG) {
+          var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeColorMeta) themeColorMeta.setAttribute('content', pick.bg);
+        }
+        if (pick.scheme === 'light') {
+          var colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+          if (colorSchemeMeta) colorSchemeMeta.setAttribute('content', 'light dark');
+        }
+        window.__INITIAL_THEME__ = themeId;
+      })();
+    </script>
+    <!-- /CINNY-087 -->
+    <script src="/runtime-config.js"></script>
+    <script src="/authentication-recovery.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Agent canvases run in sandboxed srcdoc frames; this stops them navigating to other origins.
+         reCAPTCHA registration frames are the only other frames Chat embeds. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <title>MindRoom Chat</title>
+    <meta name="name" content="MindRoom Chat" />
+    <meta name="author" content="MindRoom" />
+    <meta name="description" content="MindRoom Chat — AI agent orchestration via Matrix" />
+    <meta
+      name="keywords"
+      content="mindroom, matrix, matrix client, ai agent, matrix.org, element"
+    />
+
+    <meta property="og:title" content="MindRoom Chat" />
+    <meta property="og:url" content="https://mindroom.ai" />
+    <meta property="og:image" content="./public/res/android/android-chrome-48x48.png" />
+    <meta property="og:description" content="MindRoom Chat — AI agent orchestration via Matrix" />
+
+    <link id="favicon" rel="shortcut icon" href="./public/favicon.ico" />
+
+    <link rel="manifest" href="%BASE_URL%manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="MindRoom Chat" />
+    <meta name="apple-mobile-web-app-title" content="MindRoom Chat" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./public/res/apple/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./public/res/apple/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./public/res/apple/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./public/res/apple/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./public/res/apple/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./public/res/apple/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./public/res/apple/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./public/res/apple/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="./public/res/apple/apple-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/res/apple/apple-touch-icon-180x180.png"
+    />
+  </head>
+  <body id="appBody">
+    <script>
+      window.global ||= window;
+    </script>
+    <div id="root"></div>
+    <div id="portalContainer"></div>
+    <script type="module" src="./src/index.tsx"></script>
+  </body>
+</html>

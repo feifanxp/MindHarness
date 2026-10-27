@@ -35,7 +35,7 @@ from mindroom.config.models import (
     ToolConfigEntry,
     validate_unique_tool_entries,
 )
-from mindroom.config.participation import ParticipationConfig  # noqa: TC001
+from mindroom.config.participation import ParticipationConfig, PeerDiscussionConfig  # noqa: TC001
 from mindroom.config.schema_hints import dashboard_hint
 from mindroom.config.skill_learning import SkillLearningConfig
 from mindroom.config.validation import duplicate_items, validate_history_limit_choice
@@ -502,6 +502,7 @@ class TeamConfig(BaseModel):
     """Configuration for a team of agents."""
 
     display_name: str = Field(description="Human-readable name for the team")
+    instructions: list[str] = Field(default_factory=list, description="Instructions for the team coordinator")
     role: str = Field(
         description="Description of the team's purpose",
         json_schema_extra=dashboard_hint(multiline=True),
@@ -582,6 +583,11 @@ class RoomConfig(BaseModel):
     """Configuration for a managed Matrix room."""
 
     model_config = ConfigDict(extra="forbid")
+
+    peer_discussion: PeerDiscussionConfig | None = Field(
+        default=None,
+        description="Let individual room agents independently decide when to join a shared discussion",
+    )
 
     display_name: str | None = Field(default=None, description="Human-readable Matrix room name")
     description: str = Field(

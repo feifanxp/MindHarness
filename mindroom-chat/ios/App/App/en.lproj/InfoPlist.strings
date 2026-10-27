@@ -1,0 +1,5 @@
+"NSLocalNetworkUsageDescription" = "MindRoom Chat needs to connect to your local Matrix homeserver.";
+"NSMicrophoneUsageDescription" = "MindRoom Chat needs microphone access to record voice messages and talk in voice calls.";
+"NSCameraUsageDescription" = "MindRoom Chat needs camera access to capture photos and videos to send in chats.";
+"NSPhotoLibraryUsageDescription" = "MindRoom Chat needs photo library access so you can share photos and videos in chats.";
+"NSPhotoLibraryAddUsageDescription" = "MindRoom Chat needs permission to save images and videos from chats to your photo library.";

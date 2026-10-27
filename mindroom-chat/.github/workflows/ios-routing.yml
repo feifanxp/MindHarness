@@ -1,0 +1,81 @@
+name: iOS routing
+
+on:
+  pull_request:
+    paths:
+      - 'ios/**'
+      - 'index.html'
+      - 'capacitor.config.ts'
+      - 'config.mindroom*.json'
+      - 'vite.config.js'
+      - 'patches/@capacitor+ios+*.patch'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/*ios-routing*'
+      - 'scripts/ios-canvas-test-fixtures.mjs'
+      - 'scripts/ios-client-config.mjs'
+      - 'src/app/mindroom/canvas/**'
+      - 'src/app/mindroom/computer/**'
+      - 'src/app/mindroom/settings/**'
+      - 'src/app/mindroom/threads/MindroomRoom.tsx'
+      - 'src/app/pages/paths.ts'
+      - 'src/app/pages/Router.tsx'
+      - '.github/workflows/ios-routing.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  routing:
+    name: Native room reload and WebContent recovery
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: '.node-version'
+          package-manager-cache: false
+      - name: Install dependencies
+        run: npm ci
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_26.2.app
+      - name: Install test project generator
+        run: gem install --user-install --no-document xcodeproj -v 1.27.0
+      - name: Build bundled iOS simulator app
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
+        run: |
+          set -euo pipefail
+          npm run build:ios
+          npx cap sync ios
+          mkdir -p .claude/evidence/ios-app
+          xcodebuild build \
+            -workspace ios/App/App.xcworkspace -scheme App -configuration Debug \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath .claude/evidence/ios-app/DerivedData \
+            ARCHS=arm64 CODE_SIGNING_ALLOWED=NO \
+            2>&1 | tee .claude/evidence/ios-app/xcodebuild.log
+          tar -czf .claude/evidence/ios-app/App.app.tar.gz \
+            -C .claude/evidence/ios-app/DerivedData/Build/Products/Debug-iphonesimulator MindRoom.chat.app
+      - name: Upload simulator app
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ios-simulator-app
+          path: .claude/evidence/ios-app/App.app.tar.gz
+          include-hidden-files: true
+          retention-days: 14
+      - name: Run native routing tests
+        run: bash scripts/test-ios-routing.sh
+      - name: Upload native results and screenshots
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ios-routing-results
+          path: |
+            .claude/evidence/ios-routing/*.xcresult
+            .claude/evidence/ios-routing/xcodebuild.log
+            .claude/evidence/ios-app/App.app.tar.gz
+            .claude/evidence/ios-app/xcodebuild.log
+          include-hidden-files: true
+          retention-days: 14

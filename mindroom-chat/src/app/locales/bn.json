@@ -1,0 +1,3123 @@
+{
+  "accountsRail": {
+    "addAccount": "অ্যাকাউন্ট যোগ করুন",
+    "addAccountAria": "অ্যাকাউন্ট যোগ করুন",
+    "manageAccounts": "অ্যাকাউন্ট পরিচালনা করুন",
+    "openSettingsAria": "{{name}} এর জন্য সেটিংস খুলুন",
+    "settingsTooltip": "সেটিংস: {{name}}",
+    "switchAria": "{{name}} ({{userId}}) অ্যাকাউন্টে স্যুইচ করুন",
+    "switchTooltip": "{{name}} ({{userId}}) এ স্যুইচ করুন"
+  },
+  "accountSwitcher": {
+    "actionError": "এই অ্যাকাউন্ট আপডেট করা যায়নি. আবার চেষ্টা করুন.",
+    "active": "সক্রিয়",
+    "addAccount": "অ্যাকাউন্ট যোগ করুন",
+    "close": "বন্ধ করুন",
+    "description": "অ্যাকাউন্ট পাল্টান, অন্য অ্যাকাউন্ট যোগ করুন বা একটি নিষ্ক্রিয় অ্যাকাউন্ট সরান।",
+    "openSettings": "সেটিংস খুলুন",
+    "removeFromDevice": "ডিভাইস থেকে সরান",
+    "removing": "সরানো হচ্ছে...",
+    "switch": "বদলান",
+    "title": "অ্যাকাউন্ট"
+  },
+  "commandPalette": {
+    "actions": {
+      "copyCurrentRoomLink": "বর্তমান রুমের লিঙ্ক কপি করুন",
+      "copyCurrentRoomLinkDescription": "{{room}} এর জন্য একটি অ্যাপ লিঙ্ক কপি করুন",
+      "createRoom": "রুম তৈরি করুন",
+      "createRoomDescription": "রুম তৈরির ডায়ালগ খুলুন",
+      "createSpace": "স্পেস তৈরি করুন",
+      "createSpaceDescription": "স্পেস তৈরির ডায়ালগ খুলুন",
+      "currentRoomFallback": "বর্তমান রুম",
+      "goDirect": "সরাসরি বার্তায় যান",
+      "goDirectDescription": "সরাসরি বার্তায় যান",
+      "goHome": "হোমে যান",
+      "goHomeDescription": "হোমে যান",
+      "goInbox": "ইনবক্সে যান",
+      "goInboxDescription": "ইনবক্স বিজ্ঞপ্তি খুলুন",
+      "logout": "লগআউট",
+      "logoutDescription": "MindRoom Chat থেকে সাইন আউট করুন",
+      "markCurrentRoomRead": "বর্তমান রুম পঠিত হিসেবে চিহ্নিত করুন",
+      "markCurrentRoomReadDescription": "{{room}} পঠিত হিসেবে চিহ্নিত করুন",
+      "openCurrentRoomSettings": "বর্তমান রুম সেটিংস খুলুন",
+      "openCurrentRoomSettingsDescription": "{{room}} এর জন্য সেটিংস খুলুন",
+      "openSettings": "সেটিংস খুলুন",
+      "openSettingsDescription": "সাধারণ সেটিংসের ডায়ালগ খুলুন",
+      "resolveCurrentThread": "বর্তমান থ্রেড সমাধান হয়েছে বলে চিহ্নিত করুন",
+      "resolveCurrentThreadDescription": "সক্রিয় থ্রেড সমাধান হয়েছে বলে চিহ্নিত করুন",
+      "toggleTheme": "থিম টগল করুন",
+      "toggleThemeDescription": "হালকা ও গাঢ় থিমের মধ্যে বদলান",
+      "unresolveCurrentThread": "বর্তমান থ্রেড আবার অমীমাংসিত হিসেবে চিহ্নিত করুন",
+      "unresolveCurrentThreadDescription": "সক্রিয় থ্রেডটিকে আবার অমীমাংসিত সারিতে নিয়ে যান"
+    },
+    "closeAria": "কমান্ড প্যালেট বন্ধ করুন",
+    "inputAria": "কমান্ড প্যালেট",
+    "messages": {
+      "currentRoomDescription": "বর্তমান রুম",
+      "currentRoomFallback": "বর্তমান রুম",
+      "currentSpaceDescription": "বর্তমান স্পেস",
+      "currentSpaceFallback": "বর্তমান স্পেস",
+      "globalSearchDescription": "সব বার্তায় অনুসন্ধান",
+      "searchAll": "সমস্ত রুম জুড়ে {{query}} অনুসন্ধান করুন",
+      "searchIn": "{{scope}}-এ {{query}} খুঁজুন"
+    },
+    "noResults": "কোনো ফলাফল নেই",
+    "open": "কমান্ড প্যালেট খুলুন",
+    "placeholder": "অনুসন্ধান করুন বা কমান্ড চালান…",
+    "prefixes": {
+      "actions": "কাজ",
+      "label": "উপসর্গ:",
+      "rooms": "রুম",
+      "spaces": "স্পেস",
+      "threads": "থ্রেড",
+      "users": "ব্যবহারকারী"
+    },
+    "resultCount_one": "{{count}} ফলাফল",
+    "resultCount_other": "{{count}} ফলাফল",
+    "sections": {
+      "actions": "কাজ",
+      "messages": "বার্তা",
+      "rooms": "রুম",
+      "spaces": "স্পেস",
+      "threads": "থ্রেড",
+      "users": "ব্যবহারকারী"
+    },
+    "shortcut": "শর্টকাট:",
+    "shortcutOpenSuffix": "খুলুন।",
+    "all": "সব",
+    "filterLabel": "ফলাফল ফিল্টার করুন",
+    "resultsLabel": "অনুসন্ধানের ফলাফল",
+    "emptyDescription": "অন্যভাবে অনুসন্ধান করুন বা অন্য বিভাগ বেছে নিন।",
+    "clearSearch": "অনুসন্ধান মুছুন",
+    "navigate": "নেভিগেট করুন",
+    "select": "খুলুন"
+  },
+  "composer": {
+    "dropFiles": "ফাইলগুলি \"{{roomName}}\" এ ড্রপ করুন",
+    "dropFilesHint": "এখানে ফাইল টেনে আনুন বা নির্বাচন ডায়ালগের জন্য ক্লিক করুন",
+    "placeholder": "বার্তা পাঠান...",
+    "recordVoice": "ভয়েস বার্তা রেকর্ড করুন",
+    "formatting": "ফরম্যাটিং",
+    "attach": "ফাইল সংযুক্ত করুন",
+    "roomFallback": "রুম",
+    "sendMessage": "বার্তা পাঠান",
+    "voiceBundleBlocked": "আরেকটি সংযুক্তি পাঠানো এখনও প্রক্রিয়াধীন বা মনোযোগ প্রয়োজন. এটির জন্য অপেক্ষা করুন, অথবা পুনরায় চেষ্টা করুন বা ব্যর্থ সংযুক্তিগুলি সরান, তারপর আবার এই বার্তাটি পাঠান৷",
+    "voicePausedInOtherRoom": "ভয়েস রেকর্ডিং থামানো হয়েছে — {{roomName}}-এ আপনার অপ্রেরিত রেকর্ডিং শেষ করুন বা বাতিল করুন",
+    "voiceRoomUnavailable": "এই রুম আর উপলব্ধ নেই. অপ্রেরিত ভয়েস বার্তা বাতিল করুন এবং পরে আবার চেষ্টা করুন।",
+    "voiceStillSending": "আরেকটি ভয়েস বার্তা এখনও পাঠানো হচ্ছে। আবার রেকর্ড করার আগে অপেক্ষা করুন।"
+  },
+  "featureUi": {
+    "addExisting": {
+      "addExisting": "বিদ্যমান যোগ করুন",
+      "applyChanges": "পরিবর্তনগুলি প্রয়োগ করুন",
+      "applyWhenReadySelected_one": "প্রস্তুত হলে প্রয়োগ করুন। ({{count}} নির্বাচিত)",
+      "applyWhenReadySelected_other": "প্রস্তুত হলে প্রয়োগ করুন। ({{count}} নির্বাচিত)",
+      "failedToApplyChangesPleaseTryAgain": "পরিবর্তনগুলি প্রয়োগ করতে ব্যর্থ! আবার চেষ্টা করুন.",
+      "noMatchForQuery": "\"{{query}}\" এর জন্য কোন মিল পাওয়া যায়নি।",
+      "noMatchFound": "কোন মিল পাওয়া যায়নি",
+      "noRooms": "কোন রুম নেই",
+      "noRoomsDescription": "প্রদর্শনের জন্য আপনার কাছে এখনও কোনো রুম নেই।",
+      "noSpaces": "কোনো স্পেস নেই",
+      "noSpacesDescription": "প্রদর্শনের জন্য আপনার কাছে এখনও কোনো স্পেস নেই৷",
+      "reset": "রিসেট করুন",
+      "search": "খুঁজুন"
+    },
+    "call": {
+      "callControls": {
+        "end": "শেষ করুন",
+        "gridView": "গ্রিড ভিউ",
+        "reactions": "প্রতিক্রিয়া",
+        "settings": "সেটিংস",
+        "spotlightView": "স্পটলাইট ভিউ"
+      },
+      "callMemberCard": {
+        "additionalParticipants_one": "+{{count}} অন্যান্য",
+        "additionalParticipants_other": "+{{count}} অন্যান্য",
+        "collapse": "গুটিয়ে নিন"
+      },
+      "callView": {
+        "alreadyInAnotherCallEndTheCurrent": "ইতিমধ্যেই অন্য কলে আছে — যোগদানের জন্য বর্তমান কলটি শেষ করুন!",
+        "dismissVoiceCallError": "ভয়েস কল ত্রুটি খারিজ করুন",
+        "participant": "অংশগ্রহণকারী",
+        "voiceCallError": "ভয়েস কল ত্রুটি",
+        "voiceChatSEmptyBeTheFirst": "ভয়েস চ্যাট খালি — সবার আগে যোগ দিন!",
+        "youDonTHavePermissionToJoin": "আপনার যোগদানের অনুমতি নেই!",
+        "yourBrowserDoesNotSupportWebrtcWhich": "আপনার ব্রাউজার WebRTC সমর্থন করে না, যা কল করার জন্য প্রয়োজন।",
+        "yourHomeserverDoesNotSupportCalling": "আপনার হোমসার্ভার কলিং সমর্থন করে না।"
+      },
+      "controls": {
+        "closeChat": "চ্যাট বন্ধ করুন",
+        "openChat": "চ্যাট খুলুন",
+        "startCamera": "ক্যামেরা শুরু করুন",
+        "startScreenshare": "স্ক্রিন শেয়ার শুরু করুন",
+        "stopCamera": "ক্যামেরা বন্ধ করুন",
+        "stopScreenshare": "স্ক্রীন শেয়ার বন্ধ করুন",
+        "turnOffMicrophone": "মাইক্রোফোন বন্ধ করুন",
+        "turnOffSound": "শব্দ বন্ধ করুন",
+        "turnOnMicrophone": "মাইক্রোফোন চালু করুন",
+        "turnOnSound": "সাউন্ড চালু করুন"
+      },
+      "liveCount": "{{count}} লাইভ",
+      "prescreenControls": {
+        "join": "যোগ দিন"
+      }
+    },
+    "callStatus": {
+      "callControl": {
+        "end": "শেষ করুন"
+      },
+      "liveCount": "{{count}} লাইভ",
+      "memberSpeaking": {
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> এবং <others>আরও {{count}} জন</others> কথা বলছেন...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> এবং <others>আরও {{count}} জন</others> কথা বলছেন...",
+        "one": "<name>{{name}}</name> কথা বলছেন...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> এবং <third>{{third}}</third> কথা বলছেন...",
+        "two": "<first>{{first}}</first> এবং <second>{{second}}</second> কথা বলছেন..."
+      }
+    },
+    "commonSettings": {
+      "developerTools": {
+        "defaultStateKey": "ডিফল্ট",
+        "developTools": {
+          "accountData": "অ্যাকাউন্ট ডেটা",
+          "addNew": "নতুন যোগ করুন",
+          "collapse": "গুটিয়ে নিন",
+          "compose": "রচনা করুন",
+          "copy": "কপি করুন",
+          "copyRoomIdDescription": "ক্লিপবোর্ডে রুম আইডি কপি করুন। (\"{{roomId}}\")",
+          "createAndSendANewMessageEvent": "রুমের মধ্যে একটি নতুন বার্তা ইভেন্ট তৈরি করুন এবং পাঠান।",
+          "data": "ডেটা",
+          "developerTools": "বিকাশকারী সরঞ্জাম",
+          "enableDeveloperTools": "বিকাশকারী সরঞ্জামগুলি সক্ষম করুন৷",
+          "events": "ঘটনা",
+          "expand": "বিস্তৃত করুন",
+          "newMessageEvent": "নতুন বার্তা ইভেন্ট",
+          "options": "অপশন",
+          "privatePersonalizationDataStoredWithinRoom": "রুমের মধ্যে ব্যক্তিগত ব্যক্তিগতকরণ ডেটা সংরক্ষিত।",
+          "roomId": "রুম আইডি",
+          "roomState": "রুম স্টেট",
+          "stateEventsOfTheRoom": "রুমের স্টেট ইভেন্ট।",
+          "total": "মোট: {{count}}"
+        },
+        "sendRoomEvent": {
+          "developerTools": "বিকাশকারী সরঞ্জাম",
+          "jsonContent": "JSON বিষয়বস্তু",
+          "messageEventType": "বার্তা ইভেন্টের ধরন",
+          "send": "পাঠান",
+          "stateEventType": "স্টেট ইভেন্টের ধরন",
+          "stateKeyOptional": "স্টেট কী (ঐচ্ছিক)"
+        },
+        "stateEventEditor": {
+          "cancel": "বাতিল করুন",
+          "developerTools": "বিকাশকারী সরঞ্জাম",
+          "edit": "সম্পাদনা করুন",
+          "jsonContent": "JSON বিষয়বস্তু",
+          "save": "সংরক্ষণ করুন",
+          "stateEvent": "স্টেট ইভেন্ট"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "ইমোজি এবং স্টিকার",
+        "roomPacks": {
+          "addYourOwnEmojiAndStickerPack": "রুমে ব্যবহার করার জন্য আপনার নিজের ইমোজি এবং স্টিকার প্যাক যোগ করুন।",
+          "cancel": "বাতিল করুন",
+          "create": "তৈরি করুন",
+          "delete": "মুছুন",
+          "deleteSelectedPacks_one": "নির্বাচিত প্যাকগুলি মুছুন। ({{count}} নির্বাচিত)",
+          "deleteSelectedPacks_other": "নির্বাচিত প্যাকগুলি মুছুন। ({{count}} নির্বাচিত)",
+          "failedToRemovePacksPleaseTryAgain": "প্যাকগুলি সরাতে ব্যর্থ! আবার চেষ্টা করুন.",
+          "name": "নাম",
+          "newPack": "নতুন প্যাক",
+          "noPacks": "কোনো প্যাক নেই",
+          "packs": "প্যাক",
+          "thereAreNoEmojiOrStickerPacks": "এই মুহূর্তে প্রদর্শনের জন্য কোনো ইমোজি বা স্টিকার প্যাক নেই।",
+          "unknown": "অজানা",
+          "view": "দেখুন"
+        }
+      },
+      "general": {
+        "roomAddress": {
+          "addressAlreadyInUse": "ঠিকানা ইতিমধ্যে ব্যবহার করা হয়!",
+          "collapse": "গুটিয়ে নিন",
+          "delete": "মুছুন",
+          "expand": "বিস্তৃত করুন",
+          "loading": "লোড হচ্ছে...",
+          "localAddresses": "স্থানীয় ঠিকানা",
+          "localAddressesDescription": "স্থানীয় ঠিকানা সেট করুন যাতে ব্যবহারকারীরা আপনার হোমসার্ভারের মাধ্যমে যোগদান করতে পারে।",
+          "main": "প্রধান",
+          "noAddresses": "কোন ঠিকানা নেই",
+          "publish": "প্রকাশ করুন",
+          "published": "প্রকাশিত হয়েছে",
+          "publishedAddresses": "প্রকাশিত ঠিকানা",
+          "publishedAddressesDescription": "যদি অ্যাক্সেস <public>সর্বজনীন</public> হয়, প্রকাশিত ঠিকানাগুলি যে কেউ যোগ দিতে ব্যবহার করবে৷",
+          "publishRequiresLocalAddress": "একটি ঠিকানা প্রকাশ করতে, এটি প্রথমে একটি স্থানীয় ঠিকানা হিসাবে সেট করা প্রয়োজন৷",
+          "save": "সংরক্ষণ করুন",
+          "selectedCount_one": "{{count}} নির্বাচিত",
+          "selectedCount_other": "{{count}} নির্বাচিত",
+          "setMain": "প্রধান সেট করুন",
+          "unpublish": "অপ্রকাশিত করুন",
+          "unsetMain": "প্রধান আনসেট করুন"
+        },
+        "roomEncryption": {
+          "areYouSureOnceEnabledEncryptionCannot": "আপনি কি নিশ্চিত? একবার সক্রিয় হলে, এনক্রিপশন নিষ্ক্রিয় করা যাবে না!",
+          "disabledDescription": "একবার সক্রিয় হলে, এনক্রিপশন নিষ্ক্রিয় করা যাবে না!",
+          "enable": "সক্রিয় করুন",
+          "enabled": "সক্রিয়",
+          "enabledDescription": "এই রুমের বার্তাগুলি এন্ড-টু-এন্ড এনক্রিপশন দ্বারা সুরক্ষিত।",
+          "enableE2eEncryption": "E2E এনক্রিপশন সক্ষম করুন",
+          "enableEncryption": "এনক্রিপশন সক্ষম করুন",
+          "roomEncryption": "রুম এনক্রিপশন"
+        },
+        "roomHistoryVisibility": {
+          "afterInvite": "আমন্ত্রণের পর",
+          "afterJoin": "জয়েন করার পর",
+          "allMessages": "সমস্ত বার্তা",
+          "allMessagesGuests": "সমস্ত বার্তা (অতিথি)",
+          "changesToHistoryVisibilityWillOnlyApply": "ইতিহাসের দৃশ্যমানতার পরিবর্তন কেবল পরের বার্তাগুলিতে প্রযোজ্য হবে। পুরনো ইতিহাসের দৃশ্যমানতা বদলাবে না।",
+          "messageHistoryVisibility": "বার্তা ইতিহাস দৃশ্যমানতা"
+        },
+        "roomJoinRules": {
+          "roomAccess": "রুম অ্যাক্সেস",
+          "roomDescription": "লোকেরা কীভাবে রুমে যোগ দিতে পারে তা পরিবর্তন করুন।",
+          "spaceAccess": "স্পেস অ্যাক্সেস",
+          "spaceDescription": "লোকেরা কীভাবে স্পেসে যোগ দিতে পারে তা পরিবর্তন করুন।"
+        },
+        "roomProfile": {
+          "avatar": "অবতার",
+          "cancel": "বাতিল করুন",
+          "edit": "সম্পাদনা করুন",
+          "name": "নাম",
+          "profile": "প্রোফাইল",
+          "remove": "সরান",
+          "reset": "রিসেট করুন",
+          "save": "সংরক্ষণ করুন",
+          "topic": "বিষয়",
+          "unknown": "অজানা",
+          "upload": "আপলোড করুন"
+        },
+        "roomPublish": {
+          "publishToDirectory": "ডিরেক্টরিতে প্রকাশ করুন",
+          "roomDescription": "অন্যদের দ্বারা এটি আবিষ্কারযোগ্য করতে সর্বজনীন ডিরেক্টরিতে রুমটি তালিকাভুক্ত করুন৷",
+          "spaceDescription": "অন্যদের দ্বারা এটি আবিষ্কারযোগ্য করতে সর্বজনীন ডিরেক্টরিতে স্পেস তালিকাভুক্ত করুন।"
+        },
+        "roomUpgrade": {
+          "currentVersion": "বর্তমান সংস্করণ: {{version}}।",
+          "oldRoom": "পুরনো রুম",
+          "oldSpace": "পুরাতন স্পেস",
+          "openNewRoom": "নতুন রুম খুলুন",
+          "openNewSpace": "নতুন স্পেস খুলুন",
+          "options": "অপশন",
+          "roomReplaced": "এই রুম প্রতিস্থাপন করা হয়েছে!",
+          "roomUpgrade": "রুম আপগ্রেড",
+          "spaceReplaced": "এই স্পেস প্রতিস্থাপন করা হয়েছে!",
+          "spaceUpgrade": "স্পেস আপগ্রেড",
+          "thisActionIsIrreversible": "এই কর্ম অপরিবর্তনীয়!",
+          "upgrade": "আপগ্রেড করুন",
+          "upgradeRoom": "রুম আপগ্রেড করুন",
+          "upgradeSpace": "স্পেস আপগ্রেড করুন"
+        }
+      },
+      "members": {
+        "memberCount_one": "{{count}} সদস্য",
+        "memberCount_other": "{{count}} সদস্য",
+        "noMembersForFilter": "কোন \"{{filter}}\" সদস্য নেই",
+        "noResults": "কোন ফলাফল নেই",
+        "resultCount_one": "{{count}} ফলাফল",
+        "resultCount_other": "{{count}} ফলাফল",
+        "scrollToTop": "উপরে স্ক্রোল করুন",
+        "search": "খুঁজুন"
+      },
+      "permissions": {
+        "permissionGroups": {
+          "above": "& উপরে",
+          "applyChanges": "পরিবর্তনগুলি প্রয়োগ করুন",
+          "changesSavedApplyWhenReady": "পরিবর্তন সংরক্ষিত হয়েছে! প্রস্তুত হলে প্রয়োগ করুন।",
+          "defaultPower": "ডিফল্ট অনুমতির মাত্রা",
+          "defaultPowerLevelForAllUsers": "সব ব্যবহারকারীর ডিফল্ট অনুমতির মাত্রা।",
+          "failedToApplyChangesPleaseTryAgain": "পরিবর্তনগুলি প্রয়োগ করতে ব্যর্থ! আবার চেষ্টা করুন.",
+          "reset": "রিসেট করুন",
+          "users": "ব্যবহারকারী"
+        },
+        "powers": {
+          "edit": "সম্পাদনা করুন",
+          "founders": "প্রতিষ্ঠাতা",
+          "foundingMembersHasAllPermissionsAndCan": "প্রতিষ্ঠাতা সদস্যদের সমস্ত অনুমতি আছে এবং শুধুমাত্র আপগ্রেডের সময় পরিবর্তন করা যেতে পারে।",
+          "manageAndCustomizeIncrementalPowerLevelsFor": "ব্যবহারকারীদের বিভিন্ন অনুমতির মাত্রা পরিচালনা ও পরিবর্তন করুন।",
+          "powerLevels": "অনুমতির মাত্রা"
+        },
+        "powersEditor": {
+          "applyChanges": "পরিবর্তনগুলি প্রয়োগ করুন",
+          "bot": "বট",
+          "cancel": "বাতিল করুন",
+          "changesSavedApplyWhenReady": "পরিবর্তন সংরক্ষিত হয়েছে! প্রস্তুত হলে প্রয়োগ করুন।",
+          "color": "রঙ",
+          "create": "তৈরি করুন",
+          "createANewPowerLevel": "নতুন অনুমতির মাত্রা তৈরি করুন।",
+          "delete": "মুছুন",
+          "edit": "সম্পাদনা করুন",
+          "failedToApplyChangesPleaseTryAgain": "পরিবর্তনগুলি প্রয়োগ করতে ব্যর্থ! আবার চেষ্টা করুন.",
+          "icon": "আইকন",
+          "import": "ইমপোর্ট করুন",
+          "name": "নাম",
+          "newPowerLevel": "নতুন অনুমতির মাত্রা",
+          "permissions": "অনুমতি",
+          "pick": "বেছে নিন",
+          "power": "অনুমতির মাত্রা",
+          "powerLevels": "অনুমতির মাত্রা",
+          "remove": "সরান",
+          "reset": "রিসেট করুন",
+          "save": "সংরক্ষণ করুন",
+          "undo": "পূর্বাবস্থায় ফেরান",
+          "usedPowerLevel": "ব্যবহৃত অনুমতির মাত্রা",
+          "youHaveToRemoveItsUseBefore": "এটি মুছতে হলে আগে এর ব্যবহার বন্ধ করতে হবে।"
+        }
+      }
+    },
+    "createChat": {
+      "create": "তৈরি করুন",
+      "endToEndEncryption": "এন্ড-টু-এন্ড এনক্রিপশন",
+      "onceThisFeatureIsEnabledItCan": "একবার এই বৈশিষ্ট্যটি সক্ষম হয়ে গেলে, রুম তৈরি হওয়ার পরে এটি অক্ষম করা যাবে না৷",
+      "options": "অপশন",
+      "pleaseEnterAValidUserId": "একটি বৈধ ব্যবহারকারী আইডি লিখুন.",
+      "rateLimited_one": "সার্ভার {{count}} মিনিটের জন্য আপনার অনুরোধ সীমিত করেছে!",
+      "rateLimited_other": "সার্ভার {{count}} মিনিটের জন্য আপনার অনুরোধ সীমিত করেছে!",
+      "userId": "ব্যবহারকারীর ID",
+      "userSuggestions": "প্রস্তাবিত ব্যবহারকারী"
+    },
+    "createRoom": {
+      "access": "অ্যাক্সেস",
+      "advancedOptions": "উন্নত বিকল্প",
+      "allowFederation": "ফেডারেশনকে অনুমতি দিন",
+      "anyoneCanSendRequestToJoinThis": "যে কেউ এই রুমে যোগদানের অনুরোধ পাঠাতে পারেন।",
+      "create": "তৈরি করুন",
+      "endToEndEncryption": "এন্ড-টু-এন্ড এনক্রিপশন",
+      "knockToJoin": "প্রবেশের অনুরোধ করুন",
+      "name": "নাম",
+      "newChatRoom": "নতুন চ্যাট রুম",
+      "newVoiceRoom": "নতুন ভয়েস রুম",
+      "onceThisFeatureIsEnabledItCan": "একবার এই বৈশিষ্ট্যটি সক্ষম হয়ে গেলে, রুম তৈরি হওয়ার পরে এটি অক্ষম করা যাবে না৷",
+      "options": "অপশন",
+      "rateLimited_one": "সার্ভার {{count}} মিনিটের জন্য আপনার অনুরোধ সীমিত করেছে!",
+      "rateLimited_other": "সার্ভার {{count}} মিনিটের জন্য আপনার অনুরোধ সীমিত করেছে!",
+      "topicOptional": "বিষয় (ঐচ্ছিক)",
+      "type": "টাইপ",
+      "usersFromOtherServersCanJoin": "অন্যান্য সার্ভার থেকে ব্যবহারকারীরা যোগ দিতে পারেন."
+    },
+    "createSpace": {
+      "access": "অ্যাক্সেস",
+      "advancedOptions": "উন্নত বিকল্প",
+      "allowFederation": "ফেডারেশনকে অনুমতি দিন",
+      "anyoneCanSendRequestToJoinThis": "যে কেউ এই স্পেসে যোগদানের জন্য অনুরোধ পাঠাতে পারেন।",
+      "create": "তৈরি করুন",
+      "createSpaceModal": {
+        "newSpace": "নতুন স্পেস"
+      },
+      "knockToJoin": "প্রবেশের অনুরোধ করুন",
+      "name": "নাম",
+      "options": "অপশন",
+      "rateLimited_one": "সার্ভার {{count}} মিনিটের জন্য আপনার অনুরোধ সীমিত করেছে!",
+      "rateLimited_other": "সার্ভার {{count}} মিনিটের জন্য আপনার অনুরোধ সীমিত করেছে!",
+      "topicOptional": "বিষয় (ঐচ্ছিক)",
+      "usersFromOtherServersCanJoin": "অন্যান্য সার্ভার থেকে ব্যবহারকারীরা যোগ দিতে পারেন."
+    },
+    "lobby": {
+      "hierarchyItemMenu": {
+        "invite": "আমন্ত্রণ জানান",
+        "leave": "ছেড়ে দিন",
+        "pinToSidebar": "সাইডবারে পিন করুন",
+        "remove": "সরান",
+        "setSuggested": "প্রস্তাবিত হিসেবে চিহ্নিত করুন",
+        "settings": "সেটিংস",
+        "unpinFromSidebar": "সাইডবার থেকে আনপিন করুন",
+        "unsetSuggested": "প্রস্তাবিত চিহ্ন সরান"
+      },
+      "lobbyHeader": {
+        "invite": "আমন্ত্রণ জানান",
+        "leaveSpace": "স্পেস ছেড়ে দিন",
+        "members": "সদস্য",
+        "moreOptions": "আরও বিকল্প",
+        "spaceSettings": "স্পেস সেটিংস"
+      },
+      "reordering": "ক্রম বদলানো হচ্ছে",
+      "roomItem": {
+        "accessUnavailable": "অ্যাক্সেস অনুপলব্ধ",
+        "inaccessible": "প্রবেশ করা যায় না",
+        "join": "যোগ দিন",
+        "memberCount_one": "{{formattedCount}} সদস্য",
+        "memberCount_other": "{{formattedCount}} সদস্য",
+        "openRoom": "রুম খুলুন",
+        "requestSent": "অনুরোধ পাঠানো হয়েছে",
+        "requestToJoin": "যোগদানের অনুরোধ",
+        "sendingRequest": "অনুরোধ পাঠানো হচ্ছে",
+        "suggested": "প্রস্তাবিত",
+        "unknown": "অজানা"
+      },
+      "scrollToTop": "উপরে স্ক্রোল করুন",
+      "spaceHierarchy": {
+        "noRooms": "কোন রুম নেই",
+        "thisSpaceDoesNotContainsRoomsYet": "এই স্পেসটিতে এখনও রুম নেই।"
+      },
+      "spaceItem": {
+        "accessUnavailable": "অ্যাক্সেস অনুপলব্ধ",
+        "addRoom": "রুম যোগ করুন",
+        "addSpace": "স্পেস যোগ করুন",
+        "chatRoom": "চ্যাট রুম",
+        "existingRoom": "বিদ্যমান রুম",
+        "existingSpace": "বিদ্যমান স্পেস",
+        "inaccessible": "প্রবেশ করা যায় না",
+        "newSpace": "নতুন স্পেস",
+        "requestSent": "অনুরোধ পাঠানো হয়েছে",
+        "requestToJoin": "যোগদানের অনুরোধ",
+        "rooms": "রুম",
+        "suggested": "প্রস্তাবিত",
+        "unknown": "অজানা",
+        "voiceRoom": "ভয়েস রুম"
+      }
+    },
+    "room": {
+      "callChatView": {
+        "chat": "চ্যাট",
+        "close": "বন্ধ করুন"
+      },
+      "commandAutocomplete": {
+        "commands": "কমান্ড"
+      },
+      "following": {
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> এবং <others>আরও {{count}} জন</others> কথোপকথনটি অনুসরণ করছেন।",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> এবং <others>আরও {{count}} জন</others> কথোপকথনটি অনুসরণ করছেন।",
+        "one": "<name>{{name}}</name> কথোপকথন অনুসরণ করছেন।",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> এবং <third>{{third}}</third> কথোপকথনটি অনুসরণ করছেন।",
+        "two": "<first>{{first}}</first> এবং <second>{{second}}</second> কথোপকথন অনুসরণ করছেন।"
+      },
+      "joinRequestItem": {
+        "approve": "অনুমোদন করুন",
+        "approvedWaitingForSync": "অনুমোদিত। রুম সিঙ্ক হওয়ার অপেক্ষায়…",
+        "approveFromUser": "{{userId}} থেকে যোগদানের অনুরোধ অনুমোদন করুন",
+        "approving": "অনুমোদন করা হচ্ছে…",
+        "decline": "প্রত্যাখ্যান করুন",
+        "declinedWaitingForSync": "প্রত্যাখ্যাত। রুম সিঙ্ক হওয়ার অপেক্ষায়…",
+        "declineFromUser": "{{userId}} থেকে যোগদানের অনুরোধ প্রত্যাখ্যান করুন",
+        "declining": "প্রত্যাখ্যান করা হচ্ছে…",
+        "noMessageProvided": "কোনো বার্তা দেওয়া হয়নি।",
+        "updateFailed": "অনুরোধ আপডেট করা যায়নি."
+      },
+      "jumpToTime": {
+        "beginning": "শুরু",
+        "date": "তারিখ",
+        "jumpToTime": "নির্দিষ্ট সময়ে যান",
+        "openTimeline": "টাইমলাইন খুলুন",
+        "preset": "প্রিসেট",
+        "time": "সময়",
+        "today": "আজ",
+        "yesterday": "গতকাল"
+      },
+      "membersDrawer": {
+        "close": "বন্ধ করুন",
+        "formattedMemberCount_one": "{{formattedCount}} সদস্য",
+        "formattedMemberCount_other": "{{formattedCount}} সদস্য",
+        "invite": "আমন্ত্রণ জানান",
+        "invitePeople": "মানুষকে আমন্ত্রণ জানান",
+        "memberCount_one": "{{count}} সদস্য",
+        "memberCount_other": "{{count}} সদস্য",
+        "noMembersForFilter": "কোন \"{{filter}}\" সদস্য নেই",
+        "noPendingJoinRequests": "প্রবেশের কোনো অনুরোধ অপেক্ষায় নেই",
+        "noResults": "কোন ফলাফল নেই",
+        "requestCount_one": "অনুরোধ ({{count}})",
+        "requestCount_other": "অনুরোধ ({{count}})",
+        "invitedCount_one": "{{count}} জন আমন্ত্রিত",
+        "invitedCount_other": "{{count}} জন আমন্ত্রিত",
+        "resultCount_one": "{{count}} ফলাফল",
+        "resultCount_other": "{{count}} ফলাফল",
+        "scrollToTop": "উপরে স্ক্রোল করুন",
+        "typeName": "নাম টাইপ করুন..."
+      },
+      "message": {
+        "messageEditor": {
+          "cancel": "বাতিল করুন",
+          "editMessage": "বার্তা সম্পাদনা করুন...",
+          "save": "সংরক্ষণ করুন"
+        }
+      },
+      "pendingJoinRequests": {
+        "accessibleLabel_one": "{{baseLabel}}, {{count}} মুলতুবি যোগদানের অনুরোধ",
+        "accessibleLabel_other": "{{baseLabel}}, {{count}} মুলতুবি যোগদানের অনুরোধ"
+      },
+      "reactionViewer": {
+        "reactedWith": ":{{shortcode}}: দিয়ে প্রতিক্রিয়া দিয়েছেন"
+      },
+      "roomTombstone": {
+        "joinNewRoom": "নতুন রুমে যোগ দিন",
+        "joinReplacementFailed": "প্রতিস্থাপন রুমে যোগদান করতে ব্যর্থ!",
+        "openNewRoom": "নতুন রুম খুলুন",
+        "replacedDescription": "এই রুমটি প্রতিস্থাপন করা হয়েছে এবং আর সক্রিয় নেই৷"
+      },
+      "typing": {
+        "dropTypingStatus": "টাইপ করার অবস্থা সরান",
+        "four": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> এবং <others>আরও {{count}} জন</others> টাইপ করছেন...",
+        "many": "<first>{{first}}</first>, <second>{{second}}</second>, <third>{{third}}</third> এবং <others>আরও {{count}} জন</others> টাইপ করছেন...",
+        "one": "<name>{{name}}</name> টাইপ করছেন...",
+        "three": "<first>{{first}}</first>, <second>{{second}}</second> এবং <third>{{third}}</third> টাইপ করছেন...",
+        "two": "<first>{{first}}</first> এবং <second>{{second}}</second> টাইপ করছেন..."
+      }
+    },
+    "roomNav": {
+      "liveCount": "{{count}} লাইভ",
+      "roomNavItem": {
+        "copyLink": "লিংক কপি করুন",
+        "invite": "আমন্ত্রণ জানান",
+        "leaveRoom": "রুম ছেড়ে দিন",
+        "moreOptions": "আরও বিকল্প",
+        "notifications": "বিজ্ঞপ্তি",
+        "roomSettings": "রুম সেটিংস",
+        "toggleChat": "চ্যাট টগল করুন"
+      }
+    },
+    "roomSettings": {
+      "general": {
+        "addresses": "ঠিকানা",
+        "advancedOptions": "উন্নত বিকল্প",
+        "classic": "ক্লাসিক",
+        "compact": "কমপ্যাক্ট",
+        "general": "সাধারণ",
+        "options": "অপশন",
+        "threads": "থ্রেড",
+        "timeline": "টাইমলাইন",
+        "offline": {
+          "title": "অফলাইন অ্যাক্সেস",
+          "checking": "সংরক্ষিত কনটেন্ট পরীক্ষা করা হচ্ছে…",
+          "unavailable": "এই ডিভাইসে সংরক্ষিত কনটেন্ট পাওয়া যাচ্ছে না।",
+          "notSaved": "এই রুমটি এখনও অফলাইনে ব্যবহারের জন্য সংরক্ষণ করা হয়নি।",
+          "downloading": "অফলাইনে ব্যবহারের জন্য এই রুমটি ডাউনলোড করা হচ্ছে…",
+          "offlinePause": "ডিভাইস অফলাইনে থাকায় সংরক্ষণ স্থগিত আছে।",
+          "backgroundPause": "অ্যাপটি ব্যাকগ্রাউন্ডে থাকায় সংরক্ষণ স্থগিত আছে।",
+          "spacePause": "সুরক্ষিত কনটেন্ট নির্ধারিত স্টোরেজ পূর্ণ করায় সংরক্ষণ স্থগিত আছে।",
+          "readOnlyPause": "স্টোরেজ ব্যর্থ হয়েছে। সংরক্ষণ আবার শুরু করতে অ্যাপটি পুনরায় খুলুন।",
+          "connectionPause": "এই সংযোগে স্বয়ংক্রিয় সংরক্ষণ স্থগিত আছে।",
+          "errorPause": "ত্রুটির পর সংরক্ষণ স্থগিত হয়েছে। আবার চেষ্টা করুন।",
+          "partialHistory": "আগের ইতিহাসের কিছু অংশ সংরক্ষিত হয়নি।",
+          "inaccessibleHistory": "ইতিহাসের কিছু অংশ বর্তমানে অ্যাক্সেস করা যাচ্ছে না।",
+          "waitingForKeys": "কির জন্য অপেক্ষমাণ এনক্রিপ্ট করা ইভেন্ট: {{count}}",
+          "unresolvedRelations": "অমীমাংসিত সম্পাদনা বা উত্তর: {{count}}",
+          "missingEssential": "অনুপস্থিত প্রয়োজনীয় বার্তার মূল অংশ: {{count}}",
+          "historyEntries": "সংরক্ষিত ইতিহাসের এন্ট্রি: {{count}}",
+          "attachments": "সংযুক্তি: {{saved}}টি সংরক্ষিত, {{missing}}টি অনুপস্থিত।",
+          "storageUsed": "সংযুক্তির ব্যবহৃত স্টোরেজ: {{size}}",
+          "pinFailed": "‘অফলাইনে রাখুন’ আপডেট করা যায়নি।",
+          "includeAllMedia": "সব মিডিয়া অন্তর্ভুক্ত করুন",
+          "keepOffline": "অফলাইনে রাখুন",
+          "keepOfflineDescription": "স্বয়ংক্রিয় পরিষ্কারের সময় এই রুমের সংরক্ষিত মিডিয়া সুরক্ষিত রাখুন।",
+          "cancelDownload": "ডাউনলোড বাতিল করুন",
+          "downloadEntireRoom": "সম্পূর্ণ রুম ডাউনলোড করুন",
+          "clearDownloadedContent": "ডাউনলোড করা কনটেন্ট মুছুন",
+          "clearTitle": "ডাউনলোড করা কনটেন্ট মুছবেন?",
+          "cancel": "বাতিল",
+          "clearDescription": "এই রুমের সংরক্ষিত ইতিহাস ও সংযুক্তি এই ডিভাইস থেকে সরানো হবে।",
+          "clearFailed": "ডাউনলোড করা কনটেন্ট মোছা যায়নি।",
+          "clearConfirm": "কনটেন্ট মুছুন"
+        }
+      },
+      "navigation": {
+        "developerTools": "বিকাশকারী সরঞ্জাম",
+        "emojisStickers": "ইমোজি এবং স্টিকার",
+        "general": "সাধারণ",
+        "members": "সদস্য",
+        "permissions": "অনুমতি"
+      },
+      "permissions": {
+        "ban": "নিষিদ্ধ করুন",
+        "changeAllPermission": "সমস্ত অনুমতি পরিবর্তন করুন",
+        "changeRoomAccess": "রুমে প্রবেশের নিয়ম বদলান",
+        "changeServerAcls": "সার্ভার ACL পরিবর্তন করুন",
+        "deleteOthersMessages": "অন্যদের বার্তা মুছুন",
+        "deleteSelfMessages": "নিজের বার্তা মুছুন",
+        "editPowerLevels": "অনুমতির মাত্রা সম্পাদনা করুন",
+        "enableEncryption": "এনক্রিপশন সক্ষম করুন",
+        "groups": {
+          "calls": "কল",
+          "messages": "বার্তা",
+          "moderation": "মডারেশন",
+          "other": "অন্যান্য",
+          "roomOverview": "রুম ওভারভিউ",
+          "settings": "সেটিংস"
+        },
+        "historyVisibility": "ইতিহাসের দৃশ্যমানতা",
+        "invite": "আমন্ত্রণ জানান",
+        "kick": "সরিয়ে দিন",
+        "manageEmojisStickers": "ইমোজি এবং স্টিকার পরিচালনা করুন",
+        "modifyWidgets": "উইজেট পরিবর্তন করুন",
+        "otherMessageEvents": "অন্যান্য বার্তা ইভেন্ট",
+        "otherSettings": "অন্যান্য সেটিংস",
+        "permissions": "অনুমতি",
+        "pingRoom": "@room-কে পিং করুন",
+        "pinMessages": "বার্তা পিন করুন",
+        "publishAddress": "ঠিকানা প্রকাশ করুন",
+        "roomAvatar": "রুম অবতার",
+        "roomName": "রুমের নাম",
+        "roomTopic": "রুম টপিক",
+        "sendMessages": "বার্তা পাঠান",
+        "sendReactions": "প্রতিক্রিয়া পাঠান",
+        "sendStickers": "স্টিকার পাঠান",
+        "startOrJoinCall": "কল শুরু করুন বা যোগ দিন",
+        "upgradeRoom": "রুম আপগ্রেড করুন"
+      }
+    },
+    "search": {
+      "noMatchForQuery": "\"{{query}}\" এর জন্য কোন মিল পাওয়া যায়নি।",
+      "noMatchFound": "কোন মিল পাওয়া যায়নি",
+      "noRooms": "কোন রুম নেই",
+      "noRoomsDescription": "প্রদর্শনের জন্য আপনার কাছে এখনও কোনো রুম নেই।",
+      "placeholder": "খুঁজুন",
+      "syntaxHint": "রুমের জন্য <rooms>#</rooms>, সরাসরি বার্তার জন্য <directs>@</directs> ও স্পেসের জন্য <spaces>*</spaces> লিখুন। শর্টকাট: <hotkey>{{modifier}} + k</hotkey>"
+    },
+    "settings": {
+      "about": {
+        "clearCache": "ক্যাশে সাফ করুন",
+        "clearCacheAndReload": "ক্যাশে সাফ করুন এবং পুনরায় লোড করুন",
+        "clearCacheDescription": "ক্যাশের ডেটা মুছে অ্যাপ আবার লোড করে। আপনি লগইন থাকবেন।",
+        "clearing": "সাফ করা হচ্ছে...",
+        "clearTrace": "ট্রেস মুছুন",
+        "credits": "অবদানকারীদের স্বীকৃতি",
+        "deepDiagnosticTracing": "গভীর ডায়গনিস্টিক ট্রেসিং",
+        "deepTraceMemoryOnly": "ট্রেস সংরক্ষণাগার অনুপলব্ধ থাকায় মেমরিতে রেকর্ড করা হচ্ছে। অ্যাপ পুনরায় চালু করার আগে রপ্তানি করুন; পুনরায় চালু করলে এই সাম্প্রতিক ঘটনাগুলো হারিয়ে যাবে।",
+        "deepTraceEnabledStorageUnavailable": "সক্ষম, কিন্তু ট্রেস সঞ্চয়স্থান বর্তমানে অনুপলব্ধ.",
+        "deepTraceOff": "বন্ধ আছে। অ্যাপ আটকে যাওয়ার সমস্যা আবার ঘটানোর আগে এটি চালু করুন, যাতে কর্মক্ষমতা, Matrix, নেটওয়ার্ক, জীবনচক্র ও ব্যবহারকারীর কাজের সময় রেকর্ড হয়।",
+        "deepTracePreferenceSaveFailed": "এই সেশনের জন্য {{description}} বন্ধ, কিন্তু পছন্দটি সংরক্ষণ করা যায়নি এবং পুনরায় চালু করার পরে পুনরায় সক্ষম হতে পারে৷",
+        "deepTraceRecording": "এই ডিভাইসে সীমিত আকারের, গোপনীয়তা রক্ষাকারী কর্মক্ষমতা ও ব্যবহারকারীর কাজের ট্রেস রেকর্ড হচ্ছে।",
+        "deepTraceStarting": "এই ডিভাইসে সীমিত আকারের, গোপনীয়তা রক্ষাকারী কর্মক্ষমতা ও ব্যবহারকারীর কাজের ট্রেস শুরু হচ্ছে।",
+        "diagnosticsExportFailed": "{{description}} রপ্তানি ব্যর্থ হয়েছে৷ আবার চেষ্টা করুন",
+        "diagnosticsNone": "অপ্রত্যাশিতভাবে শেষ হওয়া কোনো সেশন সংরক্ষিত নেই।",
+        "diagnosticsUnavailable": "ডায়াগনস্টিক স্টোরেজ অনুপলব্ধ৷",
+        "diagnosticsUnexpected": "পূর্ববর্তী অধিবেশন অপ্রত্যাশিতভাবে শেষ হয়েছে; কারণ অজানা।",
+        "emojiArtCredit": "<art>Twemoji</art> ইমোজি শিল্পকর্মটির স্বত্ব © <owner>Twitter, Inc ও অন্যান্য অবদানকারী</owner>-এর; এটি <license>CC-BY 4.0</license>-এর শর্তে ব্যবহৃত হয়।",
+        "emojiFontCredit": "<font>twemoji-colr</font> ফন্টটি © <owner>Mozilla Foundation</owner>; এটি <license>Apache 2.0</license> লাইসেন্সের শর্তে ব্যবহৃত।",
+        "exportDiagnostics": "ডায়াগনস্টিক তথ্য এক্সপোর্ট করুন",
+        "exporting": "রপ্তানি হচ্ছে...",
+        "matrixSdkCredit": "<sdk>matrix-js-sdk</sdk>-এর স্বত্ব © <owner>The Matrix.org Foundation C.I.C</owner>-এর; এটি <license>Apache 2.0</license>-এর শর্তে ব্যবহৃত হয়।",
+        "onDeviceDiagnostics": "অন-ডিভাইস ডায়াগনস্টিকস",
+        "options": "অপশন",
+        "soundResourcesCredit": "<resources>Material-এর শব্দসম্পদগুলির</resources> স্বত্ব © <owner>Google</owner>-এর; এগুলি <license>CC-BY 4.0</license>-এর শর্তে ব্যবহৃত হয়।",
+        "sourceCode": "সোর্স কোড",
+        "support": "সহায়তা",
+        "title": "অ্যাপ সম্পর্কে",
+        "traceStorageUnavailable": "ট্রেস সঞ্চয়স্থান অনুপলব্ধ."
+      },
+      "account": {
+        "account": "অ্যাকাউন্ট",
+        "accountDeactivation": {
+          "accountManagement": "অ্যাকাউন্ট ব্যবস্থাপনা",
+          "additionalAuthenticationIsRequiredToCompleteAccount": "অ্যাকাউন্ট নিষ্ক্রিয়করণ সম্পূর্ণ করতে অতিরিক্ত প্রমাণীকরণ প্রয়োজন।",
+          "cancel": "বাতিল করুন",
+          "continueInProviderPortal": "প্রদানকারী পোর্টালে চালিয়ে যান",
+          "deactivationFailed": "অ্যাকাউন্ট নিষ্ক্রিয় করতে ব্যর্থ হয়েছে. {{error}}",
+          "deleteDeactivate": "মুছুন / নিষ্ক্রিয় করুন",
+          "deleteDeactivateAccount": "অ্যাকাউন্ট মুছুন / নিষ্ক্রিয় করুন",
+          "descriptionWithoutProvider": "এই ক্লায়েন্ট থেকে অ্যাকাউন্ট নিষ্ক্রিয়করণ শুরু করুন. কিছু হোমসার্ভারের অতিরিক্ত প্রমাণীকরণ পদক্ষেপের প্রয়োজন হতে পারে।",
+          "descriptionWithProvider": "এই ক্লায়েন্ট থেকে অ্যাকাউন্ট নিষ্ক্রিয়করণ শুরু করুন. প্রয়োজনে আপনি প্রদানকারীর অ্যাকাউন্ট-ম্যানেজমেন্ট পৃষ্ঠায় চালিয়ে যেতে পারেন।",
+          "eraseAccountDataIfSupported": "অ্যাকাউন্ট ডেটা মুছুন (যদি সমর্থিত হয়)",
+          "ifEnabledTheHomeserverMayPermanentlyErase": "সক্রিয় থাকলে, হোমসার্ভার নিষ্ক্রিয়করণ ছাড়াও স্থায়ীভাবে আপনার অ্যাকাউন্টের ডেটা মুছে ফেলতে পারে।",
+          "openProviderPortal": "প্রদানকারী পোর্টাল খুলুন",
+          "thisClientDoesNotSupportTheRequired": "এই ক্লায়েন্ট এই হোমসার্ভারের জন্য প্রয়োজনীয় প্রমাণীকরণ পদক্ষেপ সমর্থন করে না।",
+          "thisWillRequestAccountDeactivationOnYour": "এটি আপনার Matrix হোমসার্ভারে অ্যাকাউন্ট নিষ্ক্রিয় করার অনুরোধ করবে। আপনি আপনার বার্তা এবং সেশন অ্যাক্সেস হারাতে পারেন."
+        },
+        "contactInfo": {
+          "contactInformation": "যোগাযোগের তথ্য",
+          "emailAddress": "ইমেইল ঠিকানা",
+          "emailAddressAttachedToYourAccount": "আপনার অ্যাকাউন্টের সাথে সংযুক্ত ইমেল ঠিকানা।"
+        },
+        "ignoredUserList": {
+          "block": "ব্লক করুন",
+          "blockedUsers": "অবরুদ্ধ ব্যবহারকারীরা",
+          "preventReceivingMessagesOrInvitesFromUser": "ব্যবহারকারীর ব্যবহারকারী আইডি যোগ করে বার্তা বা আমন্ত্রণ গ্রহণ করা প্রতিরোধ করুন।",
+          "selectUser": "ব্যবহারকারী নির্বাচন করুন",
+          "users": "ব্যবহারকারী"
+        },
+        "matrixId": {
+          "copied": "কপি করা হয়েছে",
+          "copy": "কপি করুন",
+          "matrixId": "Matrix আইডি"
+        },
+        "profile": {
+          "areYouSureYouWantToRemove": "আপনি কি নিশ্চিত আপনি প্রোফাইল অবতার সরাতে চান?",
+          "avatar": "অবতার",
+          "displayName": "প্রদর্শনের নাম",
+          "profile": "প্রোফাইল",
+          "remove": "সরান",
+          "removeAvatar": "অবতার সরান",
+          "save": "সংরক্ষণ করুন",
+          "unnamedFile": "নামহীন",
+          "upload": "আপলোড করুন"
+        }
+      },
+      "developerTools": {
+        "accountData": {
+          "accountData": "অ্যাকাউন্ট ডেটা",
+          "addNew": "নতুন যোগ করুন",
+          "collapse": "গুটিয়ে নিন",
+          "dataStoredInYourGlobalAccountData": "আপনার গ্লোবাল অ্যাকাউন্ট ডেটাতে সংরক্ষিত ডেটা।",
+          "events": "ঘটনা",
+          "expand": "বিস্তৃত করুন",
+          "global": "গ্লোবাল",
+          "total": "মোট: {{count}}"
+        },
+        "developTools": {
+          "accessToken": "অ্যাক্সেস টোকেন",
+          "copy": "কপি করুন",
+          "copyAccessTokenToClipboard": "ক্লিপবোর্ডে অ্যাক্সেস টোকেন কপি করুন।",
+          "developerTools": "বিকাশকারী সরঞ্জাম",
+          "enableDeveloperTools": "বিকাশকারী সরঞ্জামগুলি সক্ষম করুন৷",
+          "options": "অপশন"
+        }
+      },
+      "devices": {
+        "current": "বর্তমান",
+        "devices": "ডিভাইস",
+        "deviceTile": {
+          "cancel": "বাতিল করুন",
+          "deviceIdValue": "ডিভাইস আইডি: <value>{{id}}</value>",
+          "deviceKeyValue": "ডিভাইস কী: <value>{{key}}</value>",
+          "deviceName": "ডিভাইসের নাম",
+          "deviceNamesAreVisibleToPublic": "ডিভাইসের নাম জনসাধারণের কাছে দৃশ্যমান।",
+          "edit": "সম্পাদনা করুন",
+          "ipAddressValue": "আইপি ঠিকানা: <value>{{address}}</value>",
+          "lastActivity": "শেষ কার্যকলাপ:",
+          "loading": "লোড হচ্ছে...",
+          "logout": "লগআউট",
+          "save": "সংরক্ষণ করুন",
+          "today": "আজ",
+          "undo": "পূর্বাবস্থায় ফেরান",
+          "yesterday": "গতকাল"
+        },
+        "deviceVerification": "ডিভাইস যাচাইকরণ",
+        "localBackup": {
+          "collapse": "গুটিয়ে নিন",
+          "confirmPassword": "পাসওয়ার্ড নিশ্চিত করুন",
+          "cryptoModuleNotFound": "অপ্রত্যাশিত ত্রুটি! ক্রিপ্টো মডিউল পাওয়া যায়নি!",
+          "decrypt": "ডিক্রিপ্ট করুন",
+          "expand": "বিস্তৃত করুন",
+          "export": "এক্সপোর্ট করুন",
+          "exportMessagesData": "বার্তা ডেটা রপ্তানি করুন",
+          "import": "ইমপোর্ট করুন",
+          "importMessagesData": "বার্তা ডেটা আমদানি করুন",
+          "loadPasswordProtectedCopyOfEncryptionData": "আপনার বার্তাগুলি ডিক্রিপ্ট করতে ডিভাইস থেকে এনক্রিপশন ডেটার পাসওয়ার্ড সুরক্ষিত কপি লোড করুন।",
+          "localBackup": "স্থানীয় ব্যাকআপ",
+          "newPassword": "নতুন পাসওয়ার্ড",
+          "password": "পাসওয়ার্ড",
+          "savePasswordProtectedCopyOfEncryptionData": "পরে বার্তাগুলি ডিক্রিপ্ট করতে আপনার ডিভাইসে এনক্রিপশন ডেটার পাসওয়ার্ড সুরক্ষিত কপি সংরক্ষণ করুন।"
+        },
+        "otherDevices": {
+          "authenticationStepsToPerformThisActionAre": "এই ক্রিয়াটি সম্পাদনের জন্য প্রমাণীকরণ পদক্ষেপগুলি ক্লায়েন্ট দ্বারা সমর্থিত নয়৷",
+          "cancel": "বাতিল করুন",
+          "deviceDashboard": "ডিভাইস ড্যাশবোর্ড",
+          "logout": "লগআউট",
+          "logoutFailed": "ডিভাইস লগআউট করতে ব্যর্থ! আবার চেষ্টা করুন. {{error}}",
+          "logoutSelectedDevices_one": "নির্বাচিত ডিভাইস থেকে লগআউট করুন. ({{count}} নির্বাচিত)",
+          "logoutSelectedDevices_other": "নির্বাচিত ডিভাইস থেকে লগআউট করুন. ({{count}} নির্বাচিত)",
+          "manageYourDevicesOnOidcDashboard": "OIDC ড্যাশবোর্ডে আপনার ডিভাইসগুলি পরিচালনা করুন।",
+          "open": "খুলুন",
+          "others": "অন্যরা"
+        },
+        "security": "নিরাপত্তা",
+        "toVerifyDeviceIdentityAndGrantAccess": "ডিভাইসের পরিচয় যাচাই করতে এবং এনক্রিপ্ট করা বার্তাগুলিতে অ্যাক্সেস মঞ্জুর করতে।",
+        "verification": {
+          "currentDeviceHelpLess": "অন্য ডিভাইস থেকে যাচাইকরণ শুরু করুন বা ম্যানুয়ালি যাচাই করুন। <toggle><strong>কম দেখান</strong></toggle>",
+          "currentDeviceHelpMore": "অন্য ডিভাইস থেকে যাচাইকরণ শুরু করুন বা ম্যানুয়ালি যাচাই করুন। <toggle><strong>আরো জানুন</strong></toggle>",
+          "enable": "সক্রিয় করুন",
+          "findDevice": "<section>ডিভাইস/সেশন</section> বিভাগে এই ডিভাইসটি খুঁজুন।",
+          "initiateVerification": "যাচাইকরণ শুরু করুন।",
+          "manualVerificationHint": "আপনার কাছে কোনো যাচাইকৃত ডিভাইস না থাকলে <action>\"ম্যানুয়ালি যাচাই করুন\"</action> বোতাম টিপুন।",
+          "openSettings": "<settings>সেটিংস</settings> খুলুন।",
+          "openVerifiedDevice": "আপনার অন্য যাচাইকৃত ডিভাইস খুলুন.",
+          "reset": "রিসেট করুন",
+          "stepsFromOtherDevice": "অন্য ডিভাইস থেকে যাচাই করার ধাপ।",
+          "unverified": "যাচাই করা হয়নি",
+          "unverifiedCount_one": "{{count}} যাচাই করা হয়নি",
+          "unverifiedCount_other": "{{count}} যাচাই করা হয়নি",
+          "verified": "যাচাই করা হয়েছে",
+          "verify": "যাচাই করুন",
+          "verifyDeviceDescription": "ডিভাইসের পরিচয় যাচাই করুন এবং এনক্রিপ্ট করা বার্তাগুলিতে অ্যাক্সেস মঞ্জুর করুন৷",
+          "verifyManually": "ম্যানুয়ালি যাচাই করুন"
+        }
+      },
+      "emojisStickers": {
+        "emojisStickers": "ইমোজি এবং স্টিকার",
+        "globalPacks": {
+          "applyChanges": "পরিবর্তনগুলি প্রয়োগ করুন",
+          "changesSavedApplyWhenReady": "পরিবর্তন সংরক্ষিত হয়েছে! প্রস্তুত হলে প্রয়োগ করুন।",
+          "close": "বন্ধ করুন",
+          "failedToApplyChangesPleaseTryAgain": "পরিবর্তনগুলি প্রয়োগ করতে ব্যর্থ! আবার চেষ্টা করুন.",
+          "favoritePacks": "প্রিয় প্যাক",
+          "noPacks": "কোনো প্যাক নেই",
+          "packFromRoomsWillAppearHereYou": "রুমের প্যাক এখানে দেখা যাবে। আপনার কোনো রুমে এখনও প্যাক নেই।",
+          "pickEmojisAndStickersPackFromRooms": "সমস্ত রুমে ব্যবহার করার জন্য রুম থেকে ইমোজি এবং স্টিকার প্যাক বেছে নিন।",
+          "reset": "রিসেট করুন",
+          "roomPacks": "রুম প্যাক",
+          "save": "সংরক্ষণ করুন",
+          "select": "নির্বাচন করুন",
+          "selectAll": "সব নির্বাচন করুন",
+          "selectPack": "প্যাক নির্বাচন করুন",
+          "unknown": "অজানা",
+          "unselectAll": "সব নির্বাচন বাতিল করুন",
+          "view": "দেখুন"
+        },
+        "userPack": {
+          "defaultPack": "ডিফল্ট প্যাক",
+          "unknown": "অজানা",
+          "view": "দেখুন"
+        }
+      },
+      "notifications": {
+        "allMessages": {
+          "1To1Chats": "1-থেকে-1 চ্যাট",
+          "1To1ChatsEncrypted": "1-থেকে-1 চ্যাট (এনক্রিপ্ট করা)",
+          "allMessages": "সমস্ত বার্তা",
+          "badge": "ব্যাজ:",
+          "rooms": "রুম",
+          "roomsEncrypted": "রুম (এনক্রিপ্ট করা)"
+        },
+        "blockMessages": "বার্তা ব্লক করুন",
+        "keywordMessages": {
+          "badge": "ব্যাজ:",
+          "keywordMessages": "মূলশব্দ বার্তা",
+          "save": "সংরক্ষণ করুন",
+          "selectKeyword": "কীওয়ার্ড নির্বাচন করুন",
+          "setANotificationPreferenceForMessageContaining": "প্রদত্ত কীওয়ার্ড ধারণকারী বার্তার জন্য একটি বিজ্ঞপ্তি পছন্দ সেট করুন।"
+        },
+        "mode": {
+          "disable": "নিষ্ক্রিয় করুন",
+          "notifyLoud": "শব্দসহ বিজ্ঞপ্তি দিন",
+          "notifySilent": "নীরবে বিজ্ঞপ্তি দিন"
+        },
+        "notifications": "বিজ্ঞপ্তি",
+        "specialMessages": {
+          "badge": "ব্যাজ:",
+          "containsDisplayName": "ডিসপ্লেনাম রয়েছে (\"{{displayName}}\")",
+          "containsDisplayNameGeneric": "ডিসপ্লেনাম রয়েছে",
+          "containsRoom": "@room রয়েছে",
+          "containsUsername": "ব্যবহারকারীর নাম রয়েছে (\"{{username}}\")",
+          "mentionRoom": "@room উল্লেখ করুন",
+          "mentionUserId": "ইউজার আইডি উল্লেখ করুন (\"{{userId}}\")",
+          "specialMessages": "বিশেষ বার্তা"
+        },
+        "systemNotification": {
+          "desktopNotifications": "ডেস্কটপ বিজ্ঞপ্তি",
+          "emailNotification": "ইমেল বিজ্ঞপ্তি",
+          "enable": "সক্রিয় করুন",
+          "notificationSound": "বিজ্ঞপ্তির শব্দ",
+          "notSupported": "বিজ্ঞপ্তিগুলি সিস্টেম দ্বারা সমর্থিত নয়৷",
+          "permissionBlocked": "বিজ্ঞপ্তির অনুমতি বন্ধ আছে। ব্রাউজারের ঠিকানা বার থেকে বিজ্ঞপ্তির অনুমতি দিন।",
+          "playSoundWhenNewMessageArrive": "নতুন বার্তা এলে শব্দ চালান।",
+          "sendToEmail": "আপনার ইমেইলে বিজ্ঞপ্তি পাঠান।",
+          "sendToEmailAddress": "আপনার ইমেইলে বিজ্ঞপ্তি পাঠান। (\"{{email}}\")",
+          "showDesktopNotificationsWhenMessageArrive": "বার্তা এলে ডেস্কটপ বিজ্ঞপ্তি দেখান।",
+          "system": "সিস্টেম",
+          "unexpectedError": "অপ্রত্যাশিত ত্রুটি!",
+          "yourAccountDoesNotHaveAnyEmail": "আপনার অ্যাকাউন্টে কোনো ইমেল সংযুক্ত নেই।"
+        },
+        "thisOptionHasBeenMovedToAccount": "এই বিকল্পটি \"অ্যাকাউন্ট > ব্লক ব্যবহারকারী\" বিভাগে সরানো হয়েছে।"
+      }
+    },
+    "spaceSettings": {
+      "general": {
+        "addresses": "ঠিকানা",
+        "advancedOptions": "উন্নত বিকল্প",
+        "general": "সাধারণ",
+        "options": "অপশন"
+      },
+      "navigation": {
+        "developerTools": "বিকাশকারী সরঞ্জাম",
+        "emojisStickers": "ইমোজি এবং স্টিকার",
+        "general": "সাধারণ",
+        "members": "সদস্য",
+        "permissions": "অনুমতি"
+      },
+      "permissions": {
+        "ban": "নিষিদ্ধ করুন",
+        "changeAllPermission": "সমস্ত অনুমতি পরিবর্তন করুন",
+        "changeServerAcls": "সার্ভার ACL পরিবর্তন করুন",
+        "changeSpaceAccess": "স্পেস অ্যাক্সেস পরিবর্তন করুন",
+        "editPowerLevels": "অনুমতির মাত্রা সম্পাদনা করুন",
+        "groups": {
+          "manage": "পরিচালনা করুন",
+          "moderation": "মডারেশন",
+          "other": "অন্যান্য",
+          "settings": "সেটিংস",
+          "spaceOverview": "স্পেস ওভারভিউ"
+        },
+        "invite": "আমন্ত্রণ জানান",
+        "kick": "সরিয়ে দিন",
+        "manageEmojisStickers": "ইমোজি এবং স্টিকার পরিচালনা করুন",
+        "manageSpaceRooms": "স্পেস রুম পরিচালনা করুন",
+        "messageEvents": "বার্তা ইভেন্ট",
+        "otherSettings": "অন্যান্য সেটিংস",
+        "permissions": "অনুমতি",
+        "publishAddress": "ঠিকানা প্রকাশ করুন",
+        "spaceAvatar": "স্পেস অবতার",
+        "spaceName": "স্পেসের নাম",
+        "spaceTopic": "স্পেস বিষয়",
+        "upgradeSpace": "স্পেস আপগ্রেড করুন"
+      }
+    }
+  },
+  "messageTable": {
+    "label": "স্ক্রোলযোগ্য টেবিল",
+    "scrollHint": "অনুভূমিকভাবে স্ক্রোল করুন"
+  },
+  "messageCodeBlock": {
+    "actions": "কোড ব্লকের অ্যাকশন",
+    "code": "কোড",
+    "language": "ভাষা: {{language}}",
+    "copy": "কোড কপি করুন",
+    "copied": "কপি করা হয়েছে",
+    "wrap": "লাইন মোড়ান",
+    "expand": "বিস্তৃত করুন",
+    "collapse": "গুটিয়ে নিন"
+  },
+  "mindroomUi": {
+    "models": {
+      "modelPicker": {
+        "chooseModel": "Choose model",
+        "roomDefault": "Room default",
+        "modelForThread": "Model for this thread",
+        "appliesToThread": "Applies to all agents and teams for future replies in this thread.",
+        "search": "Search models",
+        "close": "Close model picker",
+        "useRoomDefault": "Use room default",
+        "roomDefaultDescription": "Let each agent use its configured model.",
+        "models": "Models",
+        "runtime": "Runtime",
+        "chooseRuntime": "Choose a runtime",
+        "runtimeLabel": "{{userId}} on {{deviceId}}",
+        "refresh": "Refresh models",
+        "retry": "Retry",
+        "loading": "Loading models",
+        "pending": "Waiting for model change",
+        "noResults": "No matching models",
+        "commandFallback": "You can still send !model with a model key in this thread.",
+        "inheritedModels": "Room defaults by agent: {{models}}",
+        "futureReplies": "Changes apply to future replies.",
+        "threadModel": "Thread model"
+      }
+    },
+    "calls": {
+      "agentCallButton": {
+        "browserUnsupported": "আপনার ব্রাউজার WebRTC সমর্থন করে না।",
+        "call": "কল করুন",
+        "endCurrentCall": "আগে বর্তমান কল শেষ করুন।",
+        "failedToStart": "কল শুরু করা যায়নি।",
+        "homeserverUnsupported": "আপনার হোমসার্ভার কল সমর্থন করে না।"
+      },
+      "agentCallHeaderButton": {
+        "call": "একটি এজেন্টকে কল করুন",
+        "callAgent": "{{name}}-কে কল করুন",
+        "chooseAgent": "কল করার জন্য একটি এজেন্ট বেছে নিন",
+        "close": "বন্ধ করুন"
+      }
+    },
+    "commands": {
+      "descriptions": {
+        "cancel_schedule": "ID দিয়ে একটি নির্ধারিত কাজ বা সব নির্ধারিত কাজ বাতিল করুন।",
+        "config": "MindRoom কনফিগারেশন পরিচালনা করুন (শুধু অ্যাডমিন)।",
+        "desktop": "আপনার ডেস্কটপ লক্ষ্য পরিচালনা করুন.",
+        "e2ee": "বর্তমান রুমের জন্য এনক্রিপশন ডায়গনিস্টিক দেখান।",
+        "edit_schedule": "একটি বিদ্যমান শিডিউল টাস্ক আপডেট করুন।",
+        "encrypt": "বর্তমান রুমের জন্য এন্ড-টু-এন্ড এনক্রিপশন পর্যালোচনা বা সক্ষম করুন।",
+        "help": "উপলব্ধ ক্ষমতা বা একটি নির্দিষ্ট বিষয় সম্পর্কে সাহায্য পান.",
+        "hi": "স্বাগত সংক্রান্ত তথ্য দেখান।",
+        "list_schedules": "সমস্ত নির্ধারিত কাজের তালিকা করুন।",
+        "model": "বর্তমান থ্রেডে ব্যবহৃত মডেলটি দেখান বা স্যুইচ করুন।",
+        "reload-plugins": "কনফিগার করা প্লাগইনগুলি পুনরায় লোড করুন (শুধুমাত্র প্রশাসক)।",
+        "room_model": "রুমের ডিফল্ট মডেল দেখুন বা বদলান (সেট/রিসেট করতে রুমের প্রশাসক হতে হবে)।",
+        "schedule": "পরবর্তী কার্য সম্পাদনের জন্য একটি টাস্ক নির্ধারণ করুন।",
+        "thread_mode": "বর্তমান রুমে ব্যবহৃত থ্রেড মোডটি দেখান বা স্যুইচ করুন (শুধুমাত্র রুম অ্যাডমিন)।"
+      },
+      "mindroomCommandAutocomplete": {
+        "mindroomCommands": "MindRoom কমান্ড"
+      }
+    },
+    "editor": {
+      "mindroomEditorElements": {
+        "characterCount_one": "{{formattedCount}} অক্ষর",
+        "characterCount_other": "{{formattedCount}} অক্ষর",
+        "pastedText": "পাঠ্য আটকানো হয়েছে"
+      }
+    },
+    "local-mindroom": {
+      "localMindroom": {
+        "cancel": "বাতিল করুন",
+        "confirmRevoke": "প্রত্যাহার নিশ্চিত করুন",
+        "connectLocalMindroom": "স্থানীয় MindRoom সংযুক্ত করুন",
+        "createdAt": "তৈরি করা হয়েছে: {{timestamp}}",
+        "enterCodeDescription": "আপনার মেশিনে {{command}} চালান, তারপর এটি যে লিংক দেখায় সেটি খুলুন বা এখানে এর কোড লিখুন।",
+        "lastSeenAt": "শেষবার দেখা হয়েছে: {{timestamp}}",
+        "linkedInstallations": "লিঙ্কযুক্ত ইনস্টলেশন",
+        "linkedInstallationsUnavailable": "লিঙ্কযুক্ত ইনস্টলেশন শুধুমাত্র {{server}}-এর অ্যাকাউন্টের জন্য উপলব্ধ।",
+        "loadingLinkedInstallations": "লিঙ্ক করা ইনস্টলেশন লোড হচ্ছে...",
+        "localMindroom": "স্থানীয় MindRoom",
+        "mindroomDocs": "MindRoom ডক্স",
+        "noLinkedLocalMindroomInstallationsYet": "এখনও পর্যন্ত কোনও লিঙ্কযুক্ত স্থানীয় MindRoom ইনস্টলেশন নেই৷",
+        "pairCode": "পেয়ারিং কোড",
+        "pairThisChatAccountWithYourLocalMindroomProcess": "এই চ্যাট অ্যাকাউন্টটিকে আপনার স্থানীয় MindRoom প্রক্রিয়ার সাথে যুক্ত করুন৷",
+        "requestFailed": "অনুরোধ ব্যর্থ হয়েছে. আবার চেষ্টা করুন.",
+        "revoke": "প্রত্যাহার করুন",
+        "tryAgain": "আবার চেষ্টা করুন",
+        "unknown": "অজানা"
+      },
+      "connect": {
+        "accountSignedOut": "অনুমোদন করার আগে এই অ্যাকাউন্টটিকে আবার সাইন ইন করতে হবে।",
+        "approveAs": "{{userId}} হিসেবে অনুমোদন করুন",
+        "approved": "সংযুক্ত হয়েছে। আপনি এখন আপনার টার্মিনালে ফিরে যেতে পারেন।",
+        "backToChat": "চ্যাটে ফিরে যান",
+        "checkingCode": "কোড যাচাই করা হচ্ছে...",
+        "chooseAccount": "যে অ্যাকাউন্ট এই সংযোগ অনুমোদন করবে সেটি বেছে নিন",
+        "code": "কোড: {{code}}",
+        "codeAlreadyApproved": "এই কোডটি ইতিমধ্যে অনুমোদিত হয়েছে।",
+        "codeExpired": "এই কোডের মেয়াদ শেষ হয়ে গেছে। আপনার টার্মিনালে দেখানো নতুন লিংক বা কোড ব্যবহার করুন।",
+        "codeNotFound": "এই কোডটি পাওয়া যায়নি। আপনার টার্মিনালে দেখানো কোডটি যাচাই করুন।",
+        "continue": "চালিয়ে যান",
+        "deviceQuestion": "{{clientName}} সংযুক্ত করবেন?",
+        "deviceStarted": "{{age}} শুরু হয়েছে",
+        "requestedFrom": "{{ip}} থেকে অনুরোধ করা হয়েছে",
+        "requestedFromUnknown": "একটি অজানা ঠিকানা থেকে অনুরোধ করা হয়েছে",
+        "enterCode": "আপনার টার্মিনালে দেখানো কোডটি লিখুন।",
+        "invalidCode": "৮ অক্ষরের কোডটি লিখুন, যেমন ABCD-EFGH।",
+        "noAccount": "এই সংযোগ অনুমোদন করতে আপনার MindRoom অ্যাকাউন্ট দিয়ে সাইন ইন করুন।",
+        "signIn": "অনুমোদন করতে সাইন ইন করুন",
+        "warning": "শুধু তখনই অনুমোদন করুন যদি আপনি এইমাত্র নিজের মেশিনে এটি নিজে শুরু করে থাকেন এবং আপনার টার্মিনালে একই কোড দেখায়।",
+        "enterNewCode": "নতুন কোড প্রবেশ করুন:",
+        "noAccountAppGuidance": "MindRoom অ্যাপে ইতিমধ্যে সাইন ইন আছেন? সেখানে সেটিংস → স্থানীয় MindRoom খুলুন এবং {{code}} প্রবেশ করুন।",
+        "frameWarning": "নিরাপত্তার জন্য, ফ্রেমের মধ্যে ডিভাইস অনুমোদন সম্পন্ন করা যাবে না।",
+        "openInNewTab": "নতুন ট্যাবে খুলুন"
+      }
+    },
+    "matrix": {
+      "agentVerifiedBadge": {
+        "verifiedAgent": "যাচাইকৃত এজেন্ট",
+        "verifiedAgentCrossSignedDevice": "যাচাইকৃত এজেন্ট · ক্রস সাইনড ডিভাইস"
+      }
+    },
+    "message-search": {
+      "messageSearch": {
+        "noResultsFor": "\"{{term}}\" এর জন্য কোন ফলাফল পাওয়া যায়নি",
+        "resultsFor": "\"{{term}}\" এর জন্য ফলাফল",
+        "scrollToTop": "উপরে স্ক্রোল করুন",
+        "searchDescription": "সম্পর্কিত কীওয়ার্ড দিয়ে অনুসন্ধান করে আপনার সম্প্রদায়ে সহায়ক বার্তা খুঁজুন।",
+        "searchMessages": "বার্তা অনুসন্ধান করুন"
+      },
+      "mindroomSearchResultBody": {
+        "edited": " (সম্পাদিত)"
+      },
+      "searchFilters": {
+        "deselectAll": "সব নির্বাচন বাতিল করুন",
+        "filter": "ফিল্টার",
+        "global": "গ্লোবাল",
+        "noMatchFound": "কোন মিল পাওয়া যায়নি!",
+        "recent": "সাম্প্রতিক",
+        "relevance": "প্রাসঙ্গিকতা",
+        "rooms": "রুম",
+        "roomsFor": "\"{{query}}\" এর জন্য রুম",
+        "save": "সংরক্ষণ করুন",
+        "saveCount": "সংরক্ষণ করুন ({{count}})",
+        "search": "খুঁজুন",
+        "selectRooms": "রুম নির্বাচন করুন",
+        "sortBy": "অনুসারে সাজান"
+      },
+      "searchInput": {
+        "clear": "সাফ করুন",
+        "enter": "Enter",
+        "search": "খুঁজুন",
+        "searchForKeyword": "কীওয়ার্ড অনুসন্ধান করুন"
+      },
+      "searchResultGroup": {
+        "open": "খুলুন",
+        "replyContextHiddenInSearchResultsOpenTheMessageFor": "অনুসন্ধানের ফলে উত্তরের প্রসঙ্গ লুকানো থাকে। থ্রেডের সম্পূর্ণ প্রসঙ্গ দেখতে বার্তাটি খুলুন।"
+      },
+      "searchResultPreview": {
+        "audio": "অডিও",
+        "file": "ফাইল",
+        "image": "ছবি",
+        "location": "অবস্থান",
+        "message": "বার্তা",
+        "reaction": "প্রতিক্রিয়া",
+        "redacted": "বার্তাটি মুছে ফেলা হয়েছে।",
+        "unsupportedEvent": "অসমর্থিত ইভেন্ট",
+        "video": "ভিডিও"
+      }
+    },
+    "messages": {
+      "aiRunDisplay": {
+        "cacheRead": "ক্যাশে থেকে পড়া",
+        "cacheWrite_one": "ক্যাশেতে লেখা হয়েছে: {{formattedCount}} টোকেন",
+        "cacheWrite_other": "ক্যাশেতে লেখা হয়েছে: {{formattedCount}} টোকেন",
+        "contextBarTitle_one": "{{label}}: {{formattedCount}} টোকেন (উইন্ডোর {{percentage}}%)",
+        "contextBarTitle_other": "{{label}}: {{formattedCount}} টোকেন (উইন্ডোর {{percentage}}%)",
+        "contextBarTitleWithSuffix_one": "{{label}}: {{formattedCount}} টোকেন (উইন্ডোর {{percentage}}%); {{suffix}}",
+        "contextBarTitleWithSuffix_other": "{{label}}: {{formattedCount}} টোকেন (উইন্ডোর {{percentage}}%); {{suffix}}",
+        "contextUsage": "{{input}} / {{window}} ({{percentage}}%)",
+        "inputTokens": "ইনপুট {{formattedCount}}",
+        "newInput": "নতুন ইনপুট",
+        "notReadTokens": "পড়া হয়নি {{formattedCount}}",
+        "outputTokens": "আউটপুট {{formattedCount}}",
+        "readTokens": "পড়া হয়েছে {{formattedCount}}",
+        "reportedCacheRead_one": "রিপোর্ট করা ক্যাশে রিড: {{formattedCount}} টোকেন",
+        "reportedCacheRead_other": "রিপোর্ট করা ক্যাশে রিড: {{formattedCount}} টোকেন",
+        "reserve": "সংরক্ষিত",
+        "totalTokens": "মোট {{formattedCount}}",
+        "writeTokens": "লেখা হয়েছে {{formattedCount}}"
+      },
+      "approvalArguments": {
+        "arguments": "আর্গুমেন্ট",
+        "loadFailed": "সম্পূর্ণ আর্গুমেন্ট লোড করা যায়নি।",
+        "loadingCompleteArguments": "সম্পূর্ণ আর্গুমেন্ট লোড হচ্ছে…",
+        "onlyATruncatedPreviewIsAvailable": "শুধুমাত্র একটি ছাঁটা পূর্বরূপ উপলব্ধ.",
+        "retry": "আবার চেষ্টা করুন",
+        "sensitiveValuesMayBeRedacted": "সংবেদনশীল মান লুকানো থাকতে পারে।",
+        "hideArguments": "আর্গুমেন্ট লুকান",
+        "showAllArguments": "সব আর্গুমেন্ট দেখান"
+      },
+      "approvalDecisionControls": {
+        "approve": "অনুমোদন করুন",
+        "approveOnce": "একবার অনুমোদন করুন",
+        "autoApprovalDuration": "স্বয়ংক্রিয় অনুমোদনের সময়কাল",
+        "autoApproveMinutes_one": "{{count}} মিনিটের জন্য স্বয়ংক্রিয় অনুমোদন দিন",
+        "autoApproveMinutes_other": "{{count}} মিনিটের জন্য স্বয়ংক্রিয় অনুমোদন দিন",
+        "cancel": "বাতিল করুন",
+        "confirmDeny": "প্রত্যাখ্যান নিশ্চিত করুন",
+        "confirmDeny2": "প্রত্যাখ্যান নিশ্চিত করুন",
+        "denialReasonOptional": "প্রত্যাখ্যানের কারণ (ঐচ্ছিক)",
+        "deny": "প্রত্যাখ্যান করুন",
+        "denyCallReasonOptional": "কল {{number}} প্রত্যাখ্যানের কারণ (ঐচ্ছিক)",
+        "approveExactCall": "ঠিক এই কলটি অনুমোদন করুন",
+        "approveAnyArguments": "যেকোনো আর্গুমেন্ট অনুমোদন করুন",
+        "anyArgumentsWarning": "যেকোনো আর্গুমেন্ট বেছে নিলে এজেন্ট নির্ধারিত সময়ের {{minutes}} মিনিটের মধ্যে নিজের পছন্দমতো {{tool}} একবার কল করতে পারবে।",
+        "denyReasonOptional": "প্রত্যাখ্যানের কারণ (ঐচ্ছিক)",
+        "submittedWaitingForRoomUpdate": "জমা দেওয়া হয়েছে। রুম আপডেটের জন্য অপেক্ষা করছি।",
+        "thisRequestCannotBeApprovedHere": "এই অনুরোধ এখানে অনুমোদন করা যাবে না."
+      },
+      "approvalGrantStatus": {
+        "argumentsMayDifferBetweenCalls": "প্রতিটি কলের আর্গুমেন্ট আলাদা হতে পারে।",
+        "autoApprovalActive": "স্বয়ংক্রিয় অনুমোদন সক্রিয়",
+        "autoApprovalExpired": "স্বতঃ-অনুমোদনের মেয়াদ শেষ",
+        "autoApprovalStopped": "স্বতঃ-অনুমোদন বন্ধ",
+        "expiresInMinutes_one": "{{count}} মিনিটের মধ্যে মেয়াদ শেষ হবে",
+        "expiresInMinutes_other": "{{count}} মিনিটের মধ্যে মেয়াদ শেষ হবে",
+        "fixedExpiry": "নির্ধারিত মেয়াদ শেষের সময়: {{timestamp}}",
+        "stopAutoApproval": "স্বয়ংক্রিয় অনুমোদন বন্ধ করুন",
+        "submittedWaitingForRoomUpdate": "জমা দেওয়া হয়েছে। রুম আপডেটের জন্য অপেক্ষা করছি।"
+      },
+      "approvalReceipt": {
+        "approvedOnce": "একবার অনুমোদিত",
+        "decisionRecordedForThisCall": "এই কলের জন্য সিদ্ধান্ত রেকর্ড করা হয়েছে",
+        "grantedBy": "{{grantor}} দ্বারা মঞ্জুর করা হয়েছে৷",
+        "grantedByAt": "{{grantor}} · {{timestamp}} দ্বারা মঞ্জুর করা হয়েছে",
+        "originalFixedExpiry": "প্রথমে নির্ধারিত মেয়াদ শেষের সময়: {{timestamp}}",
+        "reason": "কারণ: {{reason}}",
+        "approvedWhenScheduledByAt": "নির্ধারণের সময় {{approver}} অনুমোদন করেছেন · {{timestamp}}",
+        "approvedWhenScheduledBy": "নির্ধারণের সময় {{approver}} অনুমোদন করেছেন",
+        "requestedBy": "{{agent}} · {{requester}} দ্বারা অনুরোধ করা হয়েছে",
+        "resolvedAt": "{{status}} · {{timestamp}}",
+        "resolvedBy": "{{resolver}} দ্বারা {{status}}",
+        "resolvedByAt": "{{resolver}} দ্বারা {{status}} · {{timestamp}}",
+        "resolvedToolApprovalRequest": "সমাধান করা টুল অনুমোদন অনুরোধ",
+        "statusApproved": "অনুমোদিত",
+        "statusDenied": "প্রত্যাখ্যাত",
+        "statusExpired": "অনুমোদনের মেয়াদ শেষ",
+        "timedPermission": "সময়সীমাযুক্ত অনুমতি",
+        "timedPermissionMinutes_one": "সময়সীমাযুক্ত অনুমতি · {{count}} মিনিট",
+        "timedPermissionMinutes_other": "সময়সীমাযুক্ত অনুমতি · {{count}} মিনিট",
+        "tool": "টুল: {{tool}}",
+        "toolAndServer": "টুল: {{tool}} · সার্ভার: {{server}}",
+        "unknown": "অজানা"
+      },
+      "approvalSchedule": {
+        "scheduledFor": "{{timestamp}}-এর জন্য নির্ধারিত",
+        "approvedExactArguments": "ঠিক এই আর্গুমেন্টগুলোর জন্য অনুমোদিত",
+        "approvedAnyArguments": "এই টুলের যেকোনো আর্গুমেন্টের জন্য অনুমোদিত"
+      },
+      "approvalReviewCall": {
+        "callStatus": "কল {{number}} · {{status}}",
+        "pending": "মুলতুবি",
+        "status": {
+          "approved": "অনুমোদিত",
+          "denied": "প্রত্যাখ্যাত",
+          "error": "ত্রুটি",
+          "expired": "মেয়াদ শেষ",
+          "pending": "মুলতুবি",
+          "sending": "পাঠানো হচ্ছে",
+          "submitted": "জমা দেওয়া হয়েছে"
+        }
+      },
+      "failedSendActions": {
+        "delete": "মুছুন",
+        "retry": "আবার চেষ্টা করুন"
+      },
+      "messageCopyActions": {
+        "copyLink": "লিংক কপি করুন",
+        "copyText": "টেক্সট কপি করুন",
+        "copyTextWithToolCalls": "টুল কলসহ টেক্সট কপি করুন",
+        "copyTextLoading": "টেক্সট কপি করুন (লোড হচ্ছে...)"
+      },
+      "bugReport": {
+        "report": "বাগ রিপোর্ট করুন",
+        "download": "বাগ রিপোর্ট ডাউনলোড করুন",
+        "sending": "রিপোর্ট পাঠানো হচ্ছে…",
+        "failed": "রিপোর্ট পাঠানো যায়নি। আবার চেষ্টা করুন।"
+      },
+      "messageInspectionActions": {
+        "readReceipts": "পড়ার সূচক",
+        "viewSource": "উৎস দেখুন"
+      },
+      "messageModerationActions": {
+        "delete": "মুছুন",
+        "deleteMessage": "বার্তা মুছুন",
+        "deleting": "মুছে ফেলা হচ্ছে...",
+        "failedToDeleteMessagePleaseTryAgain": "বার্তা মুছে ফেলতে ব্যর্থ! আবার চেষ্টা করুন.",
+        "failedToReportMessagePleaseTryAgain": "বার্তা রিপোর্ট করতে ব্যর্থ! আবার চেষ্টা করুন.",
+        "messageHasBeenReportedToServer": "বার্তা সার্ভারে রিপোর্ট করা হয়েছে.",
+        "optional": "(ঐচ্ছিক)",
+        "pinMessage": "বার্তা পিন করুন",
+        "reason": "কারণ",
+        "report": "রিপোর্ট করুন",
+        "reporting": "রিপোর্ট করা হচ্ছে...",
+        "reportMessage": "বার্তার রিপোর্ট করুন",
+        "reportThisMessageToServerWhichMayThenNotifyThe": "এই বার্তাটি সার্ভারে প্রতিবেদন করুন, যা পরবর্তীতে যথাযথ ব্যক্তিদের পদক্ষেপ নিতে অবহিত করতে পারে।",
+        "thisActionIsIrreversibleAreYouSureThatYouWant": "এই কর্ম অপরিবর্তনীয়! আপনি কি নিশ্চিত যে আপনি এই বার্তাটি মুছতে চান?",
+        "unpinMessage": "বার্তা আনপিন করুন"
+      },
+      "messageReactionActions": {
+        "viewReactions": "প্রতিক্রিয়া দেখুন"
+      },
+      "mindroomHtmlBlocks": {
+        "loadingToolDetails": "এখনও লোড হচ্ছে…",
+        "toolDetailsUnavailable": "টুলের বিবরণ পাওয়া যাচ্ছে না।",
+        "blocks": {
+          "analysis": "বিশ্লেষণ ও মূল্যায়ন",
+          "debug": "ডিবাগ তথ্য",
+          "plan": "পরিকল্পনা ও কৌশল",
+          "research": "গবেষণা ও সূত্র",
+          "system": "সিস্টেম প্রসেসিং",
+          "think": "এআই চিন্তা প্রক্রিয়া"
+        },
+        "characterCount_one": "{{formattedCount}} অক্ষর",
+        "characterCount_other": "{{formattedCount}} অক্ষর",
+        "pastedText": "পাঠ্য আটকানো হয়েছে",
+        "toolCallCount_one": "{{count}} টুল কল",
+        "toolCallCount_other": "{{count}} টুল কল",
+        "toolNumber": "টুল #{{index}}: {{command}}",
+        "usedToolCount_one": "{{count}}টি টুল ব্যবহার করা হয়েছে",
+        "usedToolCount_other": "{{count}}টি টুল ব্যবহার করা হয়েছে",
+        "toolCallsRunning_one": "{{count}}টি টুল কল চলছে",
+        "toolCallsRunning_other": "{{count}}টি টুল কল চলছে",
+        "toolCallsWaiting_one": "{{count}}টি টুল কল অনুমোদনের অপেক্ষায়",
+        "toolCallsWaiting_other": "{{count}}টি টুল কল অনুমোদনের অপেক্ষায়",
+        "toolCallsRan_one": "{{count}}টি টুল কল চালানো হয়েছে",
+        "toolCallsRan_other": "{{count}}টি টুল কল চালানো হয়েছে",
+        "toolCallsDenied_one": "{{count}}টি টুল কল প্রত্যাখ্যাত",
+        "toolCallsDenied_other": "{{count}}টি টুল কল প্রত্যাখ্যাত",
+        "toolCallsExpired_one": "{{count}}টি টুল কলের মেয়াদ শেষ",
+        "toolCallsExpired_other": "{{count}}টি টুল কলের মেয়াদ শেষ"
+      },
+      "mindroomLongTextText": {
+        "loadingFullResponse": "সম্পূর্ণ প্রতিক্রিয়া লোড হচ্ছে..."
+      },
+      "mindroomMessage": {
+        "addReaction": "প্রতিক্রিয়া যোগ করুন",
+        "editMessage": "বার্তা সম্পাদনা করুন",
+        "moreOptions": "আরও বিকল্প",
+        "reply": "উত্তর দিন",
+        "replyInThread": "থ্রেডে উত্তর দিন"
+      },
+      "mindroomMessageControls": {
+        "aiRunMetadata": "এআই রান মেটাডেটা",
+        "close": "বন্ধ করুন",
+        "downloadingOriginal": "আসল ডাউনলোড হচ্ছে...",
+        "downloadOriginal": "অরিজিনাল ডাউনলোড করুন",
+        "model": "মডেল",
+        "openAiRunMetadata": "AI রান মেটাডেটা খুলুন",
+        "requestCache": "অনুরোধের ক্যাশে",
+        "requestContext": "অনুরোধের প্রসঙ্গ",
+        "requestContextWindow": "অনুরোধের কনটেক্সট উইন্ডো",
+        "retryDownloadOriginal": "মূল ফাইল আবার ডাউনলোড করুন",
+        "run": "রান",
+        "runCache": "রানের ক্যাশে",
+        "segmentTokenCount_one": "{{label}}: {{formattedCount}} টোকেন",
+        "segmentTokenCount_other": "{{label}}: {{formattedCount}} টোকেন",
+        "session": "অধিবেশন",
+        "status": "স্ট্যাটাস",
+        "tokens": "টোকেন",
+        "tokenUsage": "টোকেন ব্যবহার",
+        "tools": "টুল",
+        "ttft": "প্রথম টোকেন আসার সময়"
+      },
+      "mindroomMessageExtras": {
+        "messageExtras": "বার্তার অতিরিক্ত তথ্য"
+      },
+      "mindroomModelBadge": {
+        "model": "মডেল: {{model}}"
+      },
+      "mindroomPasteAttachmentContent": {
+        "characterCount_one": "{{formattedCount}} অক্ষর",
+        "characterCount_other": "{{formattedCount}} অক্ষর",
+        "download": "ডাউনলোড করুন",
+        "open": "খুলুন",
+        "pastedText": "পাঠ্য আটকানো হয়েছে",
+        "retry": "আবার চেষ্টা করুন"
+      },
+      "mindroomRoomPinMenu": {
+        "event": " ইভেন্ট",
+        "failedToLoadMessage": "বার্তা লোড করতে ব্যর্থ!",
+        "noPinnedMessages": "কোনো পিন করা বার্তা নেই",
+        "open": "খুলুন",
+        "pinnedMessages": "পিন করা বার্তা",
+        "usersWithSufficientPowerLevelCanPinAMessagesFrom": "পর্যাপ্ত পাওয়ার লেভেল সহ ব্যবহারকারীরা এর প্রসঙ্গ মেনু থেকে একটি বার্তা পিন করতে পারেন।"
+      },
+      "mindroomThinkingPlaceholder": {
+        "aiIsResponding": "এআই সাড়া দিচ্ছে",
+        "thinking": "ভাবছে…"
+      },
+      "mindroomThreadSummaryCard": {
+        "aiThreadSummary": "এআই থ্রেড সারাংশ"
+      },
+      "mindroomThreadSummaryMarker": {
+        "titled": "এআই থ্রেডটির শিরোনাম দিয়েছে",
+        "updated": "এআই শিরোনাম হালনাগাদ করেছে",
+        "edited": "শিরোনাম সম্পাদিত",
+        "previous": "আগে: <old>{{summary}}</old>"
+      },
+      "mindroomToolApprovalCard": {
+        "argumentsMayDifferBetweenCalls": "প্রতিটি কলের আর্গুমেন্ট আলাদা হতে পারে।",
+        "autoApprovalAppliesToThisThreadRequesterAgentAndTool": "স্বতঃ-অনুমোদন এই থ্রেড, অনুরোধকারী, এজেন্ট এবং টুলে প্রযোজ্য।",
+        "pendingApproval": "অনুমোদনের অপেক্ষায়",
+        "requestedBy": "{{requester}} দ্বারা অনুরোধ করা হয়েছে৷",
+        "submitted": "জমা দেওয়া হয়েছে",
+        "toolApprovalRequest": "টুল অনুমোদন অনুরোধ"
+      },
+      "mindroomTranscribingPlaceholder": {
+        "routerAgentIsTranscribing": "রাউটার এজেন্ট কথা থেকে লেখা তৈরি করছে"
+      },
+      "pendingSendIndicator": {
+        "messageFailedToSend": "বার্তা পাঠাতে ব্যর্থ হয়েছে",
+        "messageSending": "বার্তা পাঠানো হচ্ছে",
+        "notSent": "পাঠানো হয়নি",
+        "waitingForServer": "সার্ভারের জন্য অপেক্ষা করছে"
+      },
+      "streamingIndicator": {
+        "aiIsResponding": "এআই সাড়া দিচ্ছে"
+      },
+      "stopButton": {
+        "label": "থামান",
+        "tooltip": "এই উত্তরটি থামান"
+      },
+      "threadApprovalControls": {
+        "activePermissionCount_one": "{{count}} সক্রিয় অনুমতি",
+        "activePermissionCount_other": "{{count}} সক্রিয় অনুমতি",
+        "activePermissions": "সক্রিয় অনুমতি",
+        "allowForMinutes_one": "{{count}} মিনিটের জন্য অনুমতি দিন",
+        "allowForMinutes_other": "{{count}} মিনিটের জন্য অনুমতি দিন",
+        "allowThisOperationForThisThreadRequesterAndAgentArguments": "এই থ্রেড, অনুরোধকারী ও এজেন্টের জন্য এই কাজের অনুমতি দিন। প্রতিটি কলের আর্গুমেন্ট আলাদা হতে পারে।",
+        "approval": "অনুমোদন",
+        "approvals": "অনুমোদন",
+        "approveAllOnce": "সমস্ত {{count}} একবার অনুমোদন করুন",
+        "approvedCount_one": "{{count}} অনুমোদিত",
+        "approvedCount_other": "{{count}} অনুমোদিত",
+        "awaitingConfirmation_one": "{{count}} কল নিশ্চিতকরণের জন্য অপেক্ষা করছে",
+        "awaitingConfirmation_other": "{{count}} কল নিশ্চিতকরণের জন্য অপেক্ষা করছে",
+        "call": "কল",
+        "calls": "কল",
+        "checkingHistory": " · ইতিহাস পরীক্ষা করা হচ্ছে...",
+        "close": "বন্ধ করুন",
+        "denyAll": "সমস্ত {{count}} অস্বীকার করুন",
+        "historyIncomplete": " · ইতিহাস অসম্পূর্ণ",
+        "noActiveTimedPermissions": "কোনো সক্রিয় সময়সীমাযুক্ত অনুমতি নেই।",
+        "operationCallCount_one": "{{operation}} · {{count}} কল",
+        "operationCallCount_other": "{{operation}} · {{count}} কল",
+        "pausedForApproval_one": "{{count}} কল অনুমোদনের জন্য বিরাম দেওয়া হয়েছে৷",
+        "pausedForApproval_other": "{{count}} কল অনুমোদনের জন্য বিরাম দেওয়া হয়েছে৷",
+        "permission": "অনুমতি",
+        "permissions": "অনুমতি",
+        "permissionScope": "{{agent}} · {{requester}} · এই থ্রেড",
+        "reasonForDenyingAllOptional": "সব অস্বীকার করার কারণ (ঐচ্ছিক)",
+        "requestedBy": "{{agent}} · {{requester}} দ্বারা অনুরোধ করা হয়েছে",
+        "retryHistory": "ইতিহাস আবার লোড করুন",
+        "reviewCount": "{{count}} পর্যালোচনা করুন",
+        "reviewToolCalls": "টুল কল পর্যালোচনা করুন",
+        "reviewAgentWants_one": "{{agent}} {{count}}টি কাজ করতে চায়",
+        "reviewAgentWants_other": "{{agent}} {{count}}টি কাজ করতে চায়",
+        "reviewAgentsWant_one": "{{agents}}টি এজেন্ট {{count}}টি কাজ করতে চায়",
+        "reviewAgentsWant_other": "{{agents}}টি এজেন্ট {{count}}টি কাজ করতে চায়",
+        "reviewRequestedBy": "অনুরোধকারী {{requester}}",
+        "someRequestsAreNoLongerAvailable": "কিছু অনুরোধ আর উপলব্ধ নেই.",
+        "statusCheckingHistory": "{{status}} · ইতিহাস পরীক্ষা করা হচ্ছে...",
+        "statusHistoryIncomplete": "{{status}} · ইতিহাস অসম্পূর্ণ",
+        "submittedWaitingForRoomUpdate": "জমা দেওয়া হয়েছে। রুম আপডেটের জন্য অপেক্ষা করছি।",
+        "threadApprovals": "থ্রেড অনুমোদন",
+        "toolApprovalCount_one": "{{count}} টুল অনুমোদন",
+        "toolApprovalCount_other": "{{count}} টুল অনুমোদন",
+        "unknown": "অজানা",
+        "agentWaitingForYou": "{{agent}} আপনার জন্য অপেক্ষা করছে",
+        "agentsWaitingForYou_one": "{{count}}টি এজেন্ট আপনার জন্য অপেক্ষা করছে",
+        "agentsWaitingForYou_other": "{{count}}টি এজেন্ট আপনার জন্য অপেক্ষা করছে",
+        "autoApproveFor": "এত সময়ের জন্য স্বয়ংক্রিয় অনুমোদন",
+        "callCount_one": "{{count}}টি কল",
+        "callCount_other": "{{count}}টি কল",
+        "chipSending": "পাঠানো হচ্ছে…",
+        "chipSubmitted": "জমা দেওয়া হয়েছে",
+        "chipResolved": "নিষ্পন্ন",
+        "confirmDenyAll": "সব {{count}}টি প্রত্যাখ্যান নিশ্চিত করুন",
+        "expires": "মেয়াদ শেষ {{time}}",
+        "hideCalls": "কল লুকান",
+        "historyApproved": "{{operation}} অনুমোদিত",
+        "historyDenied": "{{operation}} প্রত্যাখ্যাত",
+        "historyExpired": "{{operation}}-এর মেয়াদ শেষ",
+        "historyUserApproved": "{{user}} {{operation}} অনুমোদন করেছেন",
+        "historyUserDenied": "{{user}} {{operation}} প্রত্যাখ্যান করেছেন",
+        "historyUserExpired": "{{operation}}-এর মেয়াদ শেষ",
+        "historyYouApproved": "আপনি {{operation}} অনুমোদন করেছেন",
+        "historyYouDenied": "আপনি {{operation}} প্রত্যাখ্যান করেছেন",
+        "historyYouExpired": "{{operation}}-এর মেয়াদ শেষ",
+        "minutesShort_one": "{{count}} মিনিট",
+        "minutesShort_other": "{{count}} মিনিট",
+        "sectionMeta": "{{agent}} · অনুরোধকারী {{requester}}",
+        "showCalls_one": "{{count}}টি কল দেখান",
+        "showCalls_other": "{{count}}টি কল দেখান",
+        "waitingForApproval": "অনুমোদনের অপেক্ষায়",
+        "waitingForYou": "আপনার অপেক্ষায়",
+        "you": "আপনি"
+      }
+    },
+    "native": {
+      "iOSPushNotification": {
+        "allowNativeIosPushNotificationsForBackgroundMessageAlerts": "অ্যাপ পেছনে থাকাকালীন বার্তার বিজ্ঞপ্তির জন্য নেটিভ iOS পুশের অনুমতি দিন।",
+        "deviceRegisteredForNativeIosPushNotifications": "ডিভাইস নেটিভ iOS পুশ বিজ্ঞপ্তির জন্য নিবন্ধিত।",
+        "enable": "সক্রিয় করুন",
+        "failedToUpdateNativePushSettings": "নেটিভ পুশ সেটিংস আপডেট করা যায়নি।",
+        "iosPushNotifications": "iOS পুশ বিজ্ঞপ্তি",
+        "nativeIosPushIsDisabledForThisDevice": "এই ডিভাইসের জন্য নেটিভ iOS পুশ অক্ষম করা হয়েছে৷",
+        "nativeIosPushIsNotConfiguredByTheDeploymentAdd": "এই ডিপ্লয়মেন্টে নেটিভ iOS পুশ কনফিগার করা নেই। `config.json`-এ `push.ios` সেটিংস যোগ করুন।",
+        "permissionDenied": "বিজ্ঞপ্তি অনুমতি অস্বীকার করা হয়. iOS সেটিংসে {{appName}}-এর জন্য বিজ্ঞপ্তিগুলি সক্ষম করুন৷",
+        "unavailable": "অনুপলব্ধ"
+      }
+    },
+    "notifications": {
+      "mindroomMarkRoomReadChip": {
+        "markAsRead": "পঠিত হিসেবে চিহ্নিত করুন"
+      },
+      "mindroomMarkRoomReadMenuItem": {
+        "markAsRead": "পঠিত হিসেবে চিহ্নিত করুন"
+      },
+      "mindroomMarkRoomsReadMenuItem": {
+        "markAsRead": "পঠিত হিসেবে চিহ্নিত করুন"
+      }
+    },
+    "onboarding": {
+      "keyBackupNudge": {
+        "backUpYourEncryptedHistory": "আপনার এনক্রিপ্ট করা ইতিহাস ব্যাক আপ করুন",
+        "dismissBackupReminder": "ব্যাকআপ অনুস্মারক খারিজ করুন",
+        "setUpBackup": "ব্যাকআপ সেট আপ করুন",
+        "setUpSecureBackupSoYouCanStillReadYour": "নিরাপদ ব্যাকআপ সেট আপ করুন যাতে আপনি একটি নতুন ডিভাইসে সাইন ইন করার পরেও আপনার এনক্রিপ্ট করা এজেন্ট চ্যাট পড়তে পারেন৷",
+        "setUpSecureKeyBackup": "সুরক্ষিত কী ব্যাকআপ সেট আপ করুন"
+      }
+    },
+    "recent-threads": {
+      "summary": {
+        "encryptedThread": "এনক্রিপ্ট করা থ্রেড",
+        "thread": "থ্রেড",
+        "threadInRoom": "{{roomName}} এ থ্রেড"
+      }
+    },
+    "sidebar": {
+      "mindroomTab": {
+        "localMindroom": "স্থানীয় MindRoom"
+      },
+      "resizeNavigationPanel": "নেভিগেশন প্যানেলের আকার পরিবর্তন করুন",
+      "resizeMemberPanel": "সদস্য প্যানেলের আকার পরিবর্তন করুন"
+    },
+    "threads": {
+      "compactRoomView": {
+        "noThreads": "কোনো থ্রেড নেই"
+      },
+      "compactThreadCard": {
+        "streaming": "স্ট্রিমিং"
+      },
+      "compactThreadCardUtils": {
+        "atTime": "{{time}} এ",
+        "inHours": "{{count}} ঘণ্টা পরে",
+        "inHoursMinutes": "{{hours}} ঘণ্টা {{minutes}} মিনিট পরে",
+        "inMinutes": "{{count}} মিনিট পরে",
+        "inMinutesSeconds": "{{minutes}} মিনিট {{seconds}} সেকেন্ড পরে",
+        "inSeconds": "{{count}} সেকেন্ড পরে",
+        "pendingScheduledTasks_one": "{{count}} মুলতুবি নির্ধারিত কাজ",
+        "pendingScheduledTasks_other": "{{count}} মুলতুবি নির্ধারিত কাজ",
+        "scheduledTasks_one": "{{count}} নির্ধারিত টাস্ক",
+        "scheduledTasks_other": "{{count}} নির্ধারিত কাজ",
+        "scheduledTasksWithDetail": "{{tasks}}, {{detail}}"
+      },
+      "compactThreadCardViewModel": {
+        "agentStreaming": "এজেন্ট স্ট্রিমিং",
+        "idle": "নিষ্ক্রিয়",
+        "messageCount_one": "{{formattedCount}} বার্তা",
+        "messageCount_other": "{{formattedCount}} বার্তা",
+        "needsAttention": "মনোযোগ প্রয়োজন",
+        "noReplies": "0 উত্তর",
+        "noRepliesYet": "এখনও কোন উত্তর নেই",
+        "resolved": "সমাধান করা হয়েছে",
+        "threadStarted": "থ্রেড শুরু হয়েছে",
+        "waitingOnResponse": "প্রতিক্রিয়ার অপেক্ষায়"
+      },
+      "message-rendering": {
+        "useTimelineMessageExpansion": {
+          "all": "[-সব]",
+          "all2": "[+সব]"
+        }
+      },
+      "mindroomCallChatView": {
+        "chat": "চ্যাট",
+        "close": "বন্ধ করুন"
+      },
+      "mindroomRoomTimeline": {
+        "failedToLoadThisThread": "এই থ্রেড লোড করতে ব্যর্থ হয়েছে.",
+        "jumpToLatest": "সর্বশেষ বার্তায় যান",
+        "jumpToUnread": "অপঠিত বার্তায় যান",
+        "loading": "লোড হচ্ছে...",
+        "loadNewerMessages": "নতুন বার্তা লোড করুন",
+        "loadOlderMessages": "পুরানো বার্তা লোড করুন",
+        "markAsRead": "পঠিত হিসেবে চিহ্নিত করুন",
+        "newMessages": "নতুন বার্তা",
+        "today": "আজ",
+        "yesterday": "গতকাল"
+      },
+      "mindroomRoomView": {
+        "repliesAreAvailableAfterThisMessageIsConfirmed": "এই বার্তা নিশ্চিত হওয়ার পরে উত্তর পাওয়া যায়।",
+        "youDoNotHavePermissionToPostInThisRoom": "আপনার এই রুমে পোস্ট করার অনুমতি নেই"
+      },
+      "mindroomRoomViewHeader": {
+        "showComputer": "কম্পিউটার দেখান",
+        "hideComputer": "কম্পিউটার লুকান",
+        "showCanvas": "প্যানেল দেখান",
+        "hideCanvas": "প্যানেল লুকান",
+        "canvases": "ইন্টারঅ্যাকটিভ প্যানেল",
+        "classic": "ক্লাসিক",
+        "compact": "কমপ্যাক্ট",
+        "copyLink": "লিংক কপি করুন",
+        "hideMembers": "সদস্যদের লুকান",
+        "invite": "আমন্ত্রণ জানান",
+        "jumpToTime": "নির্দিষ্ট সময়ে যান",
+        "leaveRoom": "রুম ছেড়ে দিন",
+        "members": "সদস্য",
+        "moreOptions": "আরও বিকল্প",
+        "back": "পিছনে",
+        "notifications": "বিজ্ঞপ্তি",
+        "pinnedMessages": "পিন করা বার্তা",
+        "roomSettings": "রুম সেটিংস",
+        "showMembers": "সদস্যদের দেখান",
+        "threads": "থ্রেড"
+      },
+      "roomThreadOverview": {
+        "addTagFilter": "ট্যাগ ফিল্টার যোগ করুন",
+        "availableTags": "উপলব্ধ ট্যাগ",
+        "filterPresets": "ফিল্টার প্রিসেট",
+        "lastReply": "শেষ উত্তর",
+        "lockSortOrder": "ক্রম লক করুন (বর্তমানে {{sort}})",
+        "natural": "স্বাভাবিক ক্রম",
+        "noThreadsMatchCurrentFilters": "বর্তমান ফিল্টারের সাথে কোনো থ্রেড মেলে না।",
+        "preset": "প্রিসেট",
+        "presets": {
+          "all": {
+            "description": "সমস্ত ফিল্টার রিসেট করুন",
+            "label": "সব"
+          },
+          "archived": {
+            "description": "শুধুমাত্র সমাধান করা থ্রেড",
+            "label": "সংরক্ষণাগারভুক্ত"
+          },
+          "needs-attention": {
+            "description": "অমীমাংসিত, অ-স্ট্রিমিং, অ-নির্ধারিত থ্রেড",
+            "label": "মনোযোগ প্রয়োজন"
+          },
+          "review-queue": {
+            "description": "অপঠিত উত্তর সহ অমীমাংসিত থ্রেড",
+            "label": "পর্যালোচনা সারি"
+          },
+          "working": {
+            "description": "স্ট্রিমিং বা শিডিউল করা — আপনি এখন কী কাজ করছেন",
+            "label": "কাজ করছে"
+          }
+        },
+        "reset": "রিসেট করুন",
+        "resetAllThreadFilters": "সমস্ত থ্রেড ফিল্টার রিসেট করুন",
+        "roomViewMode": "রুম ভিউ মোড",
+        "searchThreads": "থ্রেড অনুসন্ধান করুন",
+        "searchThreads2": "থ্রেড অনুসন্ধান করুন...",
+        "showingAllThreads_one": "{{count}} থ্রেড দেখানো হচ্ছে",
+        "showingAllThreads_other": "{{count}} থ্রেড দেখানো হচ্ছে",
+        "showingFilteredThreads_one": "{{total}} থ্রেডের {{count}} দেখানো হচ্ছে",
+        "showingFilteredThreads_other": "{{total}} থ্রেডের {{count}} দেখানো হচ্ছে",
+        "sortLockedSummary": "{{summary}} · ক্রম লক করা আছে",
+        "statusFilters": "স্ট্যাটাস ফিল্টার",
+        "tag": "+ ট্যাগ",
+        "tagFilters": "ট্যাগ ফিল্টার",
+        "threadCount_one": "{{count}} থ্রেড",
+        "threadCount_other": "{{count}} থ্রেড",
+        "threadFilters": "থ্রেড ফিল্টার",
+        "unlockSortOrder": "সাজানোর অর্ডার আনলক করুন (বর্তমানে {{sort}})"
+      },
+      "roomTimelineStateEventRenderers": {
+        "changedRoomAvatar": "<sender>{{sender}}</sender> রুমের অবতার বদলেছেন",
+        "changedRoomName": "<sender>{{sender}}</sender> রুমের নাম বদলেছেন",
+        "changedRoomTopic": "<sender>{{sender}}</sender> রুমের বিষয় বদলেছেন",
+        "endedCall": "<sender>{{sender}}</sender> কল শেষ করেছেন",
+        "joinedCall": "<sender>{{sender}}</sender> কলে যোগ দিয়েছেন",
+        "sentEvent": "<sender>{{sender}}</sender> <eventType>{{eventType}}</eventType> ইভেন্ট পাঠিয়েছেন",
+        "sentStateEvent": "<sender>{{sender}}</sender> <eventType>{{eventType}}</eventType> স্টেট ইভেন্ট পাঠিয়েছেন"
+      },
+      "threadHeaderViewModel": {
+        "nextTask": "পরবর্তী কাজ {{schedule}}"
+      },
+      "threadIndicator": {
+        "pendingScheduledTasks_one": "{{count}} মুলতুবি নির্ধারিত কাজ",
+        "pendingScheduledTasks_other": "{{count}} মুলতুবি নির্ধারিত কাজ"
+      },
+      "threadTagPicker": {
+        "addTag": "ট্যাগ যোগ করুন",
+        "createTag": "\"{{tag}}\" তৈরি করুন",
+        "filterNew": "ফিল্টার/নতুন...",
+        "filterOrCreateTag": "ফিল্টার করুন বা ট্যাগ তৈরি করুন",
+        "noMatches": "কোন মিল নেই",
+        "tag": "+ ট্যাগ",
+        "typeToCreateATag": "একটি ট্যাগ তৈরি করতে টাইপ করুন"
+      },
+      "threadTagPill": {
+        "removeTag": "{{tag}} ট্যাগ সরান"
+      },
+      "timelineMinimap": {
+        "jumpToMessage": "বার্তায় যান",
+        "message": "বার্তা"
+      }
+    },
+    "voice": {
+      "discardRecording": "ভয়েস রেকর্ডিং বাতিল করুন",
+      "errors": {
+        "httpsRequired": "ভয়েস রেকর্ডিংয়ের জন্য HTTPS (বা localhost) প্রয়োজন। HTTPS দিয়ে MindRoom খুলুন।",
+        "microphoneBlockedAndroid": "মাইক্রোফোন অ্যাক্সেস ব্লক করা হয়েছে। Android অ্যাপ সেটিংসে MindRoom Chat-এর জন্য মাইক্রোফোন অ্যাক্সেসের অনুমতি দিন এবং আবার চেষ্টা করুন।",
+        "microphoneBlockedBrowser": "মাইক্রোফোন অ্যাক্সেস ব্লক করা হয়েছে। আপনার ব্রাউজার বা সিস্টেম সেটিংসে এই সাইট/অ্যাপের জন্য মাইক্রোফোন অ্যাক্সেসের অনুমতি দিন এবং আবার চেষ্টা করুন।",
+        "microphoneBlockedIos": "মাইক্রোফোন অ্যাক্সেস ব্লক করা হয়েছে। iPhone সেটিংসে MindRoom Chat-এর জন্য মাইক্রোফোন অ্যাক্সেসের অনুমতি দিন এবং আবার চেষ্টা করুন।",
+        "microphoneFailed": "মাইক্রোফোন অ্যাক্সেস করতে ব্যর্থ হয়েছে.",
+        "microphoneUnavailable": "মাইক্রোফোন এই মুহূর্তে অনুপলব্ধ (এটি অন্য অ্যাপ দ্বারা ব্যবহার করা হতে পারে)।",
+        "microphoneUnsupported": "এই ডিভাইসে মাইক্রোফোন অ্যাক্সেস সমর্থিত নয়।",
+        "noAudio": "কোনো অডিও ডেটা ক্যাপচার করা হয়নি।",
+        "noMicrophone": "এই ডিভাইসে কোন মাইক্রোফোন পাওয়া যায়নি।",
+        "recordingStopped": "ভয়েস রেকর্ডিং অপ্রত্যাশিতভাবে বন্ধ হয়েছে। আবার রেকর্ড করুন।",
+        "recordingUnsupported": "এই ব্রাউজারে ভয়েস রেকর্ডিং সমর্থিত নয়।",
+        "sendBusy": "আরেকটি ভয়েস মেসেজ এখনো পাঠানো হচ্ছে। অনুগ্রহ করে অপেক্ষা করুন।",
+        "sendFailed": "ভয়েস বার্তা পাঠাতে ব্যর্থ হয়েছে৷"
+      },
+      "pauseRecording": "ভয়েস রেকর্ডিং থামান",
+      "resumeRecording": "ভয়েস রেকর্ডিং পুনরায় শুরু করুন",
+      "statusActive": "ভয়েস রেকর্ডিং সক্রিয়",
+      "statusPaused": "ভয়েস রেকর্ডিং বিরাম দেওয়া হয়েছে৷",
+      "statusProcessing": "ভয়েস রেকর্ডিং প্রক্রিয়া করা হচ্ছে",
+      "statusReadyToRetry": "আবার চেষ্টা করার জন্য ভয়েস রেকর্ডিং প্রস্তুত৷",
+      "statusSending": "ভয়েস রেকর্ডিং পাঠানো হচ্ছে",
+      "statusStarting": "ভয়েস রেকর্ডিং শুরু হচ্ছে",
+      "voiceRecorderDialog": {
+        "cancel": "বাতিল করুন",
+        "discard": "বাতিল করুন",
+        "discardVoiceRecording": "ভয়েস রেকর্ডিং বাতিল করবেন?",
+        "ok": "ঠিক আছে",
+        "retry": "আবার চেষ্টা করুন",
+        "thisRecordingHasNotBeenSentDiscardItPermanently": "এই রেকর্ডিং পাঠানো হয়নি. এটি স্থায়ীভাবে বাতিল করবেন?",
+        "voiceRecordingError": "ভয়েস রেকর্ডিং ত্রুটি",
+        "voiceSendFailed": "ভয়েস পাঠানো ব্যর্থ হয়েছে",
+        "yourRecordingIsStillSaved": "আপনার রেকর্ডিং এখনও সংরক্ষিত আছে."
+      }
+    },
+    "uiActions": {
+      "viewComputer": "কম্পিউটার দেখুন",
+      "openMembers": "সদস্যদের খুলুন",
+      "openCanvas": "প্যানেল খুলুন",
+      "canvasDisabled": "এই অ্যাপে ইন্টারঅ্যাকটিভ প্যানেল বন্ধ আছে।",
+      "canvasDuringCall": "ইন্টারঅ্যাকটিভ প্যানেল খুলতে কলটি শেষ করুন।",
+      "computerUnavailable": "এই এজেন্টের কম্পিউটার উপলব্ধ নেই।",
+      "releaseControl": "অন্য দৃশ্য খোলার আগে কম্পিউটারের নিয়ন্ত্রণ ছেড়ে দিন।",
+      "openConversation": "রুমের কথোপকথন থেকে এই অনুরোধটি খুলুন।",
+      "settingsUnavailable": "সেটিংসের এই বিভাগ খুলতে সরল মোড বন্ধ করুন।"
+    },
+    "canvas": {
+      "panelLabel": "ইন্টারঅ্যাকটিভ প্যানেল",
+      "fromAgent": "{{agent}}-এর ইন্টারঅ্যাকটিভ প্যানেল",
+      "expand": "প্যানেল বড় করুন",
+      "close": "প্যানেল বন্ধ করুন",
+      "resize": "প্যানেলের আকার পরিবর্তন করুন",
+      "updated": "{{agent}} এই প্যানেলটি আপডেট করেছে।",
+      "loadUpdate": "আপডেট লোড করুন",
+      "version": "সংস্করণ {{current}} / {{total}}",
+      "previousVersion": "আগের সংস্করণ",
+      "nextVersion": "পরের সংস্করণ",
+      "earlierVersion": "এটি একটি আগের সংস্করণ।",
+      "showLatest": "সর্বশেষটি দেখান",
+      "loading": "প্যানেল লোড হচ্ছে…",
+      "loadFailed": "এই প্যানেলটি লোড করা যায়নি।",
+      "retry": "আবার চেষ্টা করুন",
+      "escaped": "এই প্যানেলটি তার স্যান্ডবক্সের বাইরে যাওয়ার চেষ্টা করেছিল, তাই এটি থামানো হয়েছে।",
+      "reload": "প্যানেল আবার লোড করুন",
+      "pageError": "এই পৃষ্ঠাটি একটি ত্রুটি জানিয়েছে।",
+      "tellAgent": "{{agent}}-কে জানান",
+      "errorsSent": "ত্রুটিগুলো {{agent}}-কে পাঠানো হয়েছে।",
+      "errorsNotSent": "ত্রুটিগুলো {{agent}}-কে পাঠানো যায়নি।",
+      "sendTo": "{{agent}}-কে পাঠান:",
+      "changeAnswer": "আপনার উত্তর বদলাতে আগে এটি বাতিল করুন।",
+      "data": "ডেটা",
+      "send": "পাঠান",
+      "discard": "বাতিল করুন",
+      "disclosure": "{{agent}} এটি তৈরি করেছে। এটি আপনার অ্যাকাউন্টে অ্যাক্সেস করতে পারে না; এখানে আপনি যা লিখবেন তা এই প্যানেলের বাইরে যেতে পারে।",
+      "sharedNotice": "এই রুমে সংরক্ষিত: {{agent}} এবং এখানকার অন্যরা আপনি যা লিখবেন তা পড়তে পারে।",
+      "sending": "{{agent}}-কে পাঠানো হচ্ছে…",
+      "sent": "{{agent}}-কে পাঠানো হয়েছে: {{label}}",
+      "sendFailed": "আপনার উত্তর পাঠানো যায়নি। আবার চেষ্টা করুন।",
+      "receiptData": "এজেন্টকে পাঠানো ডেটা দেখুন",
+      "unlabeled": "জমা দেওয়া হয়েছে",
+      "notSent": "{{agent}}-কে পাঠানো হয়নি: {{label}}"
+    },
+    "canvases": {
+      "title": "ইন্টারঅ্যাকটিভ প্যানেল",
+      "note": "আপনার এজেন্টরা আপনার জন্য যে ইন্টারঅ্যাকটিভ প্যানেল বানিয়েছে এবং এই ব্রাউজার যা দেখেছে। পিন করা প্যানেল আপনার সব ডিভাইসে দেখা যায়।",
+      "empty": "এখনো কোনো ইন্টারঅ্যাকটিভ প্যানেল নেই। কোনো এজেন্ট আপনাকে একটি দেখালে সেটি এখানে দেখা যাবে।",
+      "pinned": "পিন করা হয়েছে",
+      "canvas": "প্যানেল",
+      "thread": "থ্রেড",
+      "agent": "এজেন্ট",
+      "room": "রুম",
+      "updated": "আপডেট করা হয়েছে",
+      "created": "তৈরি করা হয়েছে",
+      "pin": "{{title}} পিন করুন",
+      "unpin": "{{title}} আনপিন করুন",
+      "shared": "এজেন্টের সাথে শেয়ার করা",
+      "saved": "আপনার মান সংরক্ষিত আছে"
+    },
+    "backgroundJobs": {
+      "running": "চলছে: {{tool}}",
+      "awaitingApproval": "অনুমোদনের অপেক্ষায়: {{tool}}",
+      "waiting": "অনুমোদনের অপেক্ষায়",
+      "stoppingJob": "থামানো হচ্ছে: {{tool}}",
+      "jobCount": "{{count}}টি ব্যাকগ্রাউন্ড কাজ",
+      "subagent": "{{tool}} (সাব-এজেন্ট)",
+      "stopAll": "সব থামান",
+      "stopping": "থামানো হচ্ছে…",
+      "stop": "থামান",
+      "stopJob": "{{tool}} থামান",
+      "stopFailed": "{{tool}} থামানো যায়নি। আবার চেষ্টা করুন।",
+      "stopAllFailed": "ব্যাকগ্রাউন্ড কাজগুলো থামানো যায়নি। আবার চেষ্টা করুন।",
+      "inRoom": "ব্যাকগ্রাউন্ড কাজ চলছে"
+    }
+  },
+  "nav": {
+    "addSpace": "স্পেস যোগ করুন",
+    "chats": "চ্যাট",
+    "createChat": "চ্যাট তৈরি করুন",
+    "createRoom": "রুম তৈরি করুন",
+    "createSpace": "স্পেস তৈরি করুন",
+    "createSpaceDescription": "আপনার সম্প্রদায়ের জন্য একটি স্পেস তৈরি করুন।",
+    "directMessage": "সরাসরি বার্তা",
+    "directMessages": "সরাসরি বার্তা",
+    "exploreCommunity": "কমিউনিটি খুঁজুন",
+    "exploreCommunityRooms": "কমিউনিটির রুম খুঁজুন",
+    "home": "হোম",
+    "inbox": "ইনবক্স",
+    "joinWithAddress": "ঠিকানা দিয়ে জয়েন করুন",
+    "joinWithAddressDescription": "বিদ্যমান সম্প্রদায়ের একটি অংশ হয়ে উঠুন।",
+    "messageSearch": "বার্তা অনুসন্ধান",
+    "noDirectMessages": "কোনো সরাসরি বার্তা নেই",
+    "noDirectMessagesDescription": "আপনার এখনও কোনো সরাসরি বার্তা নেই।",
+    "noRooms": "কোন রুম নেই",
+    "noRoomsDescription": "আপনার এখনও কোনো রুম নেই।",
+    "rooms": "রুম",
+    "threads": "থ্রেড",
+    "canvases": "ইন্টারঅ্যাকটিভ প্যানেল",
+    "unverifiedDevice": "অযাচাইকৃত ডিভাইস",
+    "unverifiedDevices": "অযাচাইকৃত ডিভাইস"
+  },
+  "options": {
+    "dateFormat": {
+      "custom": "কাস্টম"
+    },
+    "messageLayout": {
+      "bubble": "বুদবুদ",
+      "compact": "কমপ্যাক্ট",
+      "modern": "আধুনিক"
+    },
+    "messageSpacing": {
+      "extraSmall": "অতিরিক্ত ছোট",
+      "large": "বড়",
+      "none": "কোনোটিই নয়",
+      "normal": "স্বাভাবিক",
+      "small": "ছোট",
+      "ultraSmall": "অতি ক্ষুদ্র"
+    },
+    "prefetchScope": {
+      "allRooms": "সব রুম",
+      "currentRoomOnly": "শুধুমাত্র বর্তমান রুম",
+      "myHomeserver": "আমার হোমসার্ভার"
+    },
+    "themeName": {
+      "butter": "মাখন",
+      "dark": "গাঢ়",
+      "light": "হালকা",
+      "midnight": "মধ্যরাত",
+      "silver": "সিলভার"
+    }
+  },
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": " রুমের নাম পরিবর্তন করেছেন"
+    }
+  },
+  "recentThreads": {
+    "empty": "সম্প্রতি খোলা কোনো থ্রেড নেই",
+    "openedAt": "{{time}} খোলা হয়েছে",
+    "resizeAria": "সম্প্রতি খোলা থ্রেডের প্যানেলের আকার বদলান",
+    "title": "সম্প্রতি খোলা হয়েছে"
+  },
+  "settings": {
+    "general": {
+      "appearance": {
+        "darkTheme": "গাঢ় থিম:",
+        "lightTheme": "হালকা থিম:",
+        "monochromeMode": "একরঙা মোড",
+        "pageZoom": "পৃষ্ঠা জুম",
+        "sectionTitle": "চেহারা",
+        "systemTheme": "সিস্টেম থিম",
+        "systemThemeDescription": "সিস্টেম পছন্দের উপর ভিত্তি করে হালকা এবং অন্ধকার থিমের মধ্যে বেছে নিন।",
+        "theme": "থিম",
+        "themeDescription": "সিস্টেম থিম সক্ষম না থাকলে থিম ব্যবহার করতে হবে৷",
+        "twitterEmoji": "Twitter ইমোজি"
+      },
+      "dateTime": {
+        "dateFormat": "তারিখের বিন্যাস",
+        "formatHints": {
+          "dayOfMonth": "মাসের দিন",
+          "dayOfWeek": "সপ্তাহের দিন",
+          "fourDigitYear": "চার অঙ্কের বছর",
+          "fullDayName": "দিনের পূর্ণ নাম",
+          "fullMonthName": "পুরো মাসের নাম",
+          "month": "মাস",
+          "shortDayName": "দিনের সংক্ষিপ্ত নাম",
+          "shortMonthName": "সংক্ষিপ্ত মাসের নাম",
+          "theDayOfMonth": "মাসের দিন",
+          "theDayOfWeek": "সপ্তাহের দিন (রবিবার = 0)",
+          "theMonth": "মাস",
+          "title": "বিন্যাস",
+          "twoDigitDayOfMonth": "মাসের দুই অঙ্কের দিন",
+          "twoDigitMonth": "দুই অঙ্কের মাস",
+          "twoDigitYear": "দুই অঙ্কের বছর",
+          "twoLetterDayName": "দুই অক্ষরের দিনের নাম",
+          "year": "বছর"
+        },
+        "hour24Clock": "24-ঘন্টা সময়ের বিন্যাস",
+        "save": "সংরক্ষণ করুন",
+        "sectionTitle": "তারিখ ও সময়"
+      },
+      "editor": {
+        "enterForNewline": "নতুন লাইনের জন্য ENTER",
+        "enterForNewlineDescription": "বার্তা পাঠাতে {{sendKey}} + ENTER এবং নতুন লাইনের জন্য ENTER ব্যবহার করুন।",
+        "hideActivity": "টাইপ করার ও পড়ার সূচক লুকান",
+        "hideActivityDescription": "আপনার কার্যকলাপ ব্যক্তিগত রাখতে টাইপ করার অবস্থা ও বার্তা পড়ার সূচক বন্ধ করুন।",
+        "markdownFormatting": "Markdown ফরম্যাটিং",
+        "sectionTitle": "সম্পাদক"
+      },
+      "interface": {
+        "showCanvasesInSidebar": "সাইডবারে ইন্টারঅ্যাকটিভ প্যানেল দেখান",
+        "showCanvasesInSidebarDescription": "আপনার এজেন্টদের বানানো ইন্টারঅ্যাকটিভ প্যানেলের জন্য একটি বোতাম দেখান, অন্তত একটি থাকলে। এই সেটিং আপনার ডিভাইসগুলিতে সিঙ্ক হয়।",
+        "saveFailed": "পরিবর্তন সংরক্ষণ করা যায়নি. আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.",
+        "sectionTitle": "ইন্টারফেস",
+        "simpleMode": "সহজ মোড",
+        "simpleModeDescription": "কমান্ড প্যালেট ও থ্রেড ফিল্টারের মতো উন্নত সুবিধাগুলি লুকান। এই সেটিং আপনার ডিভাইসগুলিতে সিঙ্ক হয়।"
+      },
+      "language": {
+        "appLanguage": "অ্যাপের ভাষা",
+        "appLanguageDescription": "মেনু এবং ইন্টারফেস পাঠ্যে প্রযোজ্য। বার্তা বিষয়বস্তু অনুবাদ করা হয় না.",
+        "sectionTitle": "ভাষা"
+      },
+      "messages": {
+        "disableMediaAutoLoad": "মিডিয়া অটো লোড অক্ষম করুন",
+        "hideMembershipChange": "সদস্যপদ পরিবর্তন লুকান",
+        "hideProfileChange": "প্রোফাইল পরিবর্তন লুকান",
+        "historyDepth": "বর্তমান রুমের ইতিহাসের গভীরতা",
+        "historyDepthDescription": "আপনি যে রুমটি দেখছেন তার জন্য আগে থেকে লোড করা ইভেন্টের লক্ষ্য সংখ্যা। সর্বনিম্ন {{min}}, সর্বোচ্চ {{max}}।",
+        "legacyUsernameColor": "লিগ্যাসি ইউজারনেম কালার",
+        "messageLayout": "বার্তা লেআউট",
+        "messageSpacing": "বার্তা ব্যবধান",
+        "prefetchScope": "প্রিফেচ স্কোপ",
+        "prefetchScopeDescription": "কোন রুম ব্যাকগ্রাউন্ডে প্রস্তুত রাখা হয়",
+        "sectionTitle": "বার্তা",
+        "showHiddenEvents": "লুকানো ঘটনা দেখান",
+        "urlPreview": "ইউআরএল প্রিভিউ",
+        "urlPreviewEncrypted": "এনক্রিপ্ট করা রুমে URL পূর্বরূপ"
+      },
+      "title": "সাধারণ",
+      "computers": {
+        "sectionTitle": "কম্পিউটার",
+        "apiUrl": "কম্পিউটার পরিষেবার URL",
+        "description": "একটি বিশ্বস্ত MindRoom ব্যাকএন্ড বেছে নিন; এটি স্বল্পমেয়াদি সাইন-ইন টোকেন পাবে। এই ডিভাইসে সংরক্ষিত হয়। কম্পিউটার বন্ধ করতে ফাঁকা রাখুন।",
+        "save": "কম্পিউটার পরিষেবা সংরক্ষণ করুন",
+        "reset": "অ্যাপের ডিফল্ট ব্যবহার করুন",
+        "invalidUrl": "পরিচয়পত্র, পাথ, কোয়েরি বা ফ্র্যাগমেন্ট ছাড়া একটি অরিজিন লিখুন। HTTPS ব্যবহার করুন, অথবা localhost বা ব্যক্তিগত LAN IP ঠিকানার জন্য HTTP ব্যবহার করুন।",
+        "httpNotice": "HTTP আপনার সাইন-ইন বা কম্পিউটারের ডেটা এনক্রিপ্ট করে না। এটি কেবল বিশ্বস্ত স্থানীয় নেটওয়ার্কে ব্যবহার করুন।",
+        "saveFailed": "এই ডিভাইসে কম্পিউটার পরিষেবা সংরক্ষণ করা যায়নি।",
+        "saved": "কম্পিউটার পরিষেবা সংরক্ষিত হয়েছে।"
+      },
+      "connections": {
+        "sectionTitle": "সংযোগ",
+        "title": "সংযুক্ত অ্যাকাউন্ট",
+        "description": "আপনার এজেন্টরা যেসব অ্যাকাউন্ট ব্যবহার করে, যেমন Google বা GitHub, সেগুলো আপনার MindRoom সার্ভারে সংযুক্ত করুন।",
+        "open": "সংযোগ খুলুন",
+        "noBackend": "সংযোগ ব্যবহার করতে “কম্পিউটার”-এর অধীনে আপনার MindRoom সার্ভার সেট করুন।",
+        "blocked": "আপনার ব্রাউজার সংযোগের উইন্ডোটি ব্লক করেছে। এই সাইটের জন্য পপ-আপ অনুমতি দিন এবং আবার চেষ্টা করুন।"
+      }
+    },
+    "logout": "লগআউট",
+    "nav": {
+      "about": "অ্যাপ সম্পর্কে",
+      "account": "অ্যাকাউন্ট",
+      "developerTools": "বিকাশকারী সরঞ্জাম",
+      "devices": "ডিভাইস",
+      "emojisStickers": "ইমোজি এবং স্টিকার",
+      "general": "সাধারণ",
+      "notifications": "বিজ্ঞপ্তি"
+    },
+    "title": "সেটিংস"
+  },
+  "sharedUi": {
+    "accountDataEditor": {
+      "accountData": "অ্যাকাউন্ট ডেটা",
+      "cancel": "বাতিল করুন",
+      "developerTools": "বিকাশকারী সরঞ্জাম",
+      "edit": "সম্পাদনা করুন",
+      "jsonContent": "JSON বিষয়বস্তু",
+      "save": "সংরক্ষণ করুন"
+    },
+    "additionalCreatorInput": {
+      "enter": "Enter",
+      "founders": "প্রতিষ্ঠাতা",
+      "noSuggestions": "কোন পরামর্শ নেই",
+      "pleaseProvideTheUserIdAndHitEnter": "অনুগ্রহ করে ইউজার আইডি দিন এবং এন্টার চাপুন।",
+      "specialPrivilegedUsersCanBeAssignedDuringCreationTheseUsersHaveElevated": "সৃষ্টির সময় বিশেষ সুবিধাপ্রাপ্ত ব্যবহারকারীদের নিয়োগ করা যেতে পারে। এই ব্যবহারকারীদের উন্নত নিয়ন্ত্রণ আছে এবং শুধুমাত্র একটি আপগ্রেডের সময় সংশোধন করা যেতে পারে।"
+    },
+    "audioContent": {
+      "pause": "সাময়িক থামান",
+      "play": "চালান"
+    },
+    "authFlowsLoader": {
+      "failedToLoadAuthenticationFlowInformation": "প্রমাণীকরণ প্রবাহ তথ্য লোড করতে ব্যর্থ.",
+      "retry": "আবার চেষ্টা করুন"
+    },
+    "authFooter": {
+      "poweredBy": "<app>{{appName}}</app>, <matrix>Matrix</matrix>, <cinny>Cinny</cinny> দ্বারা চালিত",
+      "privacy": "গোপনীয়তা",
+      "support": "সহায়তা",
+      "terms": "শর্তাবলী"
+    },
+    "authLayout": {
+      "backToCurrentAccount": "বর্তমান অ্যাকাউন্টে ফিরে যান",
+      "connectingToValue1": "{{value1}} এর সাথে সংযুক্ত হচ্ছে৷",
+      "failedToConnectEitherServerIsUnavailableAtThisMomentOrDoes": "সংযোগ করতে ব্যর্থ হয়েছে. হয় সার্ভার এই মুহূর্তে অনুপলব্ধ বা বিদ্যমান নেই৷",
+      "failedToConnectServerConfigurationBaseUrlAppearsInvalid": "সংযোগ করা যায়নি। সার্ভার কনফিগারেশনের base_url সঠিক বলে মনে হচ্ছে না।",
+      "failedToConnectServerConfigurationFoundWithValue1AppearsUnusable": "সংযোগ করতে ব্যর্থ হয়েছে. {{value1}} এর সাথে পাওয়া সার্ভার কনফিগারেশন অব্যবহারযোগ্য বলে মনে হচ্ছে।",
+      "failedToFindServer": "সার্ভার খুঁজে পেতে ব্যর্থ.",
+      "failedToGetAuthenticationFlowInformation": "প্রমাণীকরণ প্রবাহ তথ্য পেতে ব্যর্থ.",
+      "loadingAuthenticationFlow": "প্রমাণীকরণ প্রবাহ লোড হচ্ছে...",
+      "lookingForServer": "সার্ভার খোঁজা হচ্ছে...",
+      "onlyHttpsServersAreAllowedHttpIsSupportedForLocalNetworkServers": "শুধুমাত্র HTTPS সার্ভার অনুমোদিত। HTTP শুধুমাত্র স্থানীয়-নেটওয়ার্ক সার্ভারের জন্য সমর্থিত।",
+      "server": "সার্ভার"
+    },
+    "backupRestore": {
+      "backupDetails": "ব্যাকআপ বিবরণ",
+      "backupDoesNotHaveTrustedDecryptionKey": "ব্যাকআপে বিশ্বস্ত ডিক্রিপশন কী নেই!",
+      "backupDoesNotHaveTrustedSignature": "ব্যাকআপে বিশ্বস্ত স্বাক্ষর নেই!",
+      "backupHasTrustedBySignature": "ব্যাকআপের স্বাক্ষর বিশ্বস্ত।",
+      "backupHasTrustedDecryptionKey": "ব্যাকআপে বিশ্বস্ত ডিক্রিপশন কী রয়েছে।",
+      "connected": "সংযুক্ত",
+      "disconnected": "সংযোগ বিচ্ছিন্ন",
+      "encryptionBackup": "এনক্রিপশন ব্যাকআপ",
+      "keys": "কী: {{keyCount}}",
+      "nil": "NIL",
+      "noBackupPresentOnServer": "সার্ভারে কোন ব্যাকআপ উপস্থিত নেই!",
+      "restoreBackup": "ব্যাকআপ পুনরুদ্ধার করুন",
+      "restoring": "পুনরুদ্ধার করা হচ্ছে: {{progress}}%",
+      "restoring0": "পুনরুদ্ধার করা হচ্ছে: 0%",
+      "syncing": "সিঙ্ক হচ্ছে ({{count}})",
+      "version": "সংস্করণ: {{version}}"
+    },
+    "betaNoticeBadge": {
+      "beta": "বেটা",
+      "notice": "বিজ্ঞপ্তি",
+      "thisFeatureIsUnderTestingAndMayChangeOverTime": "এই বৈশিষ্ট্যটি পরীক্ষা করা হচ্ছে এবং সময়ের সাথে সাথে পরিবর্তন হতে পারে।"
+    },
+    "callEmbedProvider": {
+      "answer": "কল ধরুন",
+      "ignore": "উপেক্ষা করুন",
+      "incomingCall": "ইনকামিং কল",
+      "reject": "প্রত্যাখ্যান করুন",
+      "yourBrowserDoesNotSupportWebrtcWhichIsRequiredForCalling": "আপনার ব্রাউজার WebRTC সমর্থন করে না, যা কল করার জন্য প্রয়োজন।",
+      "yourHomeserverDoesNotSupportCalling": "আপনার হোমসার্ভার কলিং সমর্থন করে না।"
+    },
+    "clientNonUIFeatures": {
+      "newInboxNotificationFromValue1": "{{value1}} থেকে নতুন ইনবক্স বিজ্ঞপ্তি"
+    },
+    "clientRoot": {
+      "catchingUp": "নতুন বার্তা লোড হচ্ছে...",
+      "clearCacheAndReload": "ক্যাশে সাফ করুন এবং পুনরায় লোড করুন",
+      "clearing": "সাফ করা হচ্ছে...",
+      "failedToStartAccountValue1Value2": "{{value1}} অ্যাকাউন্ট শুরু করতে ব্যর্থ হয়েছে৷ {{value2}}",
+      "logout": "লগআউট",
+      "removeAccount": "অ্যাকাউন্ট সরান",
+      "retry": "আবার চেষ্টা করুন",
+      "startupRecoveryOptions": "স্টার্টআপ পুনরুদ্ধারের বিকল্প"
+    },
+    "commandPalette": {
+      "shortcutHint": "খোলার শর্টকাট: <shortcut>{{shortcut}}</shortcut>।"
+    },
+    "commands": {
+      "CommandAcl": "সার্ভার অ্যাক্সেস নিয়ন্ত্রণ তালিকা পরিচালনা করুন। উদাহরণ: /acl [-a servername1] [-d servername2] [-ra servername1] [-rd servername2]",
+      "CommandBan": "রুম থেকে ব্যবহারকারী নিষিদ্ধ করুন। উদাহরণ: /ban userId1 userId2 servername [-r reason]",
+      "CommandConvertToDm": "রুমকে সরাসরি বার্তায় রূপান্তর করুন",
+      "CommandConvertToRoom": "সরাসরি বার্তাকে রুমে রূপান্তর করুন",
+      "CommandDelete": "ব্যবহারকারীদের থেকে বার্তা মুছুন. উদাহরণ: /delete userId1 servername -past 1d|2h|5m|30s [-t m.room.message] [-r spam]",
+      "CommandDisInvite": "ব্যবহারকারীর রুমের আমন্ত্রণ ফিরিয়ে নিন। উদাহরণ: /disinvite userId1 userId2 [-r reason]",
+      "CommandIgnore": "ব্যবহারকারীকে উপেক্ষা করুন। উদাহরণ: /ignore userId1 userId2",
+      "CommandInvite": "ব্যবহারকারীকে রুমে আমন্ত্রণ জানান। উদাহরণ: /invite userId1 userId2 [-r reason]",
+      "CommandJoin": "ঠিকানা সহ রুমে যোগ দিন। উদাহরণ: /join address1 address2",
+      "CommandKick": "ব্যবহারকারীকে রুম থেকে সরান। উদাহরণ: /kick userId1 userId2 servername [-r reason]",
+      "CommandLeave": "বর্তমান রুম ছেড়ে দিন।",
+      "CommandMe": "কর্ম বার্তা পাঠান",
+      "CommandMyRoomAvatar": "বর্তমান রুমে প্রোফাইল ছবি পরিবর্তন করুন। উদাহরণ: /myroomavatar mxc://xyzabc",
+      "CommandMyRoomNick": "বর্তমান রুমে ডাকনাম বদলান।",
+      "CommandNotice": "নোটিশ বার্তা পাঠান",
+      "CommandShrug": "বার্তা হিসাবে ¯\\_(ツ)_/¯ পাঠান",
+      "CommandStartDm": "ব্যবহারকারীর সাথে সরাসরি বার্তা শুরু করুন। উদাহরণ: /startdm userId1",
+      "CommandTableFlip": "বার্তা হিসাবে {{value1}} পাঠান",
+      "CommandUnBan": "ব্যবহারকারীর রুমের নিষেধাজ্ঞা তুলে নিন। উদাহরণ: /unban userId1 userId2",
+      "CommandUnFlip": "বার্তা হিসাবে {{value1}} পাঠান",
+      "CommandUnIgnore": "ব্যবহারকারীকে উপেক্ষা করা বন্ধ করুন। উদাহরণ: /unignore userId1 userId2"
+    },
+    "compactUploadCardRenderer": {
+      "cancelUpload": "আপলোড বাতিল করুন",
+      "retry": "আবার চেষ্টা করুন",
+      "retryUpload": "আপলোড পুনরায় চেষ্টা করুন"
+    },
+    "configConfig": {
+      "continueOffline": "অফলাইনে চালিয়ে যান",
+      "failedToLoadClientConfigurationFile": "ক্লায়েন্ট কনফিগারেশন ফাইল লোড করতে ব্যর্থ হয়েছে.",
+      "retry": "আবার চেষ্টা করুন",
+      "signInAgain": "আবার সাইন ইন করুন",
+      "signInAgainToReconnect": "পুনরায় সংযোগ করতে আবার সাইন ইন করুন৷",
+      "signInAgainToReconnectOrContinueInOfflineMode": "পুনরায় সংযোগ করতে আবার সাইন ইন করুন বা অফলাইন মোডে চালিয়ে যান।",
+      "yourWebSessionHasExpired": "আপনার ওয়েব সেশনের মেয়াদ শেষ হয়ে গেছে।"
+    },
+    "create": {
+      "buildASpaceForYourCommunity": "আপনার সম্প্রদায়ের জন্য একটি স্পেস তৈরি করুন।",
+      "createSpace": "স্পেস তৈরি করুন"
+    },
+    "createRoom": {
+      "buildARoomForRealTimeConversations": "রিয়েল-টাইম কথোপকথনের জন্য একটি রুম তৈরি করুন।",
+      "createRoom": "রুম তৈরি করুন"
+    },
+    "createRoomAccessSelector": {
+      "anyoneWithTheAddressCanJoin": "ঠিকানা সহ যে কেউ যোগ দিতে পারেন।",
+      "onlyMemberOfParentSpaceCanJoin": "শুধুমাত্র প্যারেন্ট স্পেসের সদস্য যোগ দিতে পারবেন।",
+      "onlyPeopleWithInviteCanJoin": "শুধুমাত্র আমন্ত্রিত ব্যক্তিরা যোগ দিতে পারবেন।",
+      "private": "ব্যক্তিগত",
+      "public": "সর্বজনীন",
+      "restricted": "সীমাবদ্ধ"
+    },
+    "createRoomAliasInput": {
+      "addressOptional": "ঠিকানা (ঐচ্ছিক)",
+      "pickAnUniqueAddressToMakeItDiscoverable": "এটি আবিষ্কারযোগ্য করতে একটি অনন্য ঠিকানা চয়ন করুন৷",
+      "thisAddressIsAlreadyTakenPleaseSelectADifferentOne": "এই ঠিকানা ইতিমধ্যে নেওয়া হয়েছে. অনুগ্রহ করে একটি আলাদা নির্বাচন করুন৷"
+    },
+    "createRoomTypeSelector": {
+      "chatRoom": "চ্যাট রুম",
+      "liveAudioAndVideoConversations": "- লাইভ অডিও এবং ভিডিও কথোপকথন।",
+      "messagesPhotosAndVideos": "- বার্তা, ফটো এবং ভিডিও।",
+      "voiceRoom": "ভয়েস রুম"
+    },
+    "creatorChip": {
+      "managePowers": "অনুমতির মাত্রা পরিচালনা করুন"
+    },
+    "datePicker": {
+      "day": "দিন",
+      "month": "মাস",
+      "year": "বছর"
+    },
+    "deviceVerification": {
+      "accept": "গ্রহণ করুন",
+      "clickAcceptToStartTheVerificationProcess": "যাচাইকরণ প্রক্রিয়া শুরু করতে স্বীকার করুন ক্লিক করুন।",
+      "close": "বন্ধ করুন",
+      "confirmTheEmojiBelowAreDisplayedOnBothDevicesInTheSame": "নিশ্চিত করুন যে নীচের ইমোজি একই ক্রমে উভয় ডিভাইসে প্রদর্শিত হয়েছে:",
+      "deviceVerification": "ডিভাইস যাচাইকরণ",
+      "doNotMatch": "মেলে না",
+      "okay": "ঠিক আছে",
+      "pleaseAcceptTheRequestFromOtherDevice": "অন্য ডিভাইস থেকে অনুরোধ গ্রহণ করুন.",
+      "startingVerificationUsingEmojiComparison": "ইমোজি তুলনা ব্যবহার করে যাচাইকরণ শুরু করা হচ্ছে...",
+      "theyMatch": "মিলে গেছে",
+      "unexpectedErrorVerificationIsStartedButVerifierIsMissing": "অপ্রত্যাশিত ত্রুটি! যাচাইকরণ শুরু হয়েছে কিন্তু যাচাইকারী অনুপস্থিত।",
+      "verificationHasBeenCanceled": "যাচাইকরণ বাতিল করা হয়েছে।",
+      "verificationRequestHasBeenAccepted": "যাচাইকরণের অনুরোধ গৃহীত হয়েছে।",
+      "waitingForRequestToBeAccepted": "অনুরোধ গৃহীত হওয়ার জন্য অপেক্ষা করা হচ্ছে...",
+      "waitingForTheResponseFromOtherDevice": "অন্য ডিভাইস থেকে প্রতিক্রিয়ার জন্য অপেক্ষা করা হচ্ছে...",
+      "yourDeviceIsVerified": "আপনার ডিভাইস যাচাই করা হয়েছে."
+    },
+    "deviceVerificationSetup": {
+      "authenticationStepsToPerformThisActionAreNotSupportedByClient": "এই ক্রিয়াটি সম্পাদনের জন্য প্রমাণীকরণ পদক্ষেপগুলি ক্লায়েন্ট দ্বারা সমর্থিত নয়৷",
+      "continue": "চালিয়ে যান",
+      "copy": "কপি করুন",
+      "download": "ডাউনলোড করুন",
+      "hide": "লুকান",
+      "passphraseOptional": "পাসফ্রেজ (ঐচ্ছিক)",
+      "recoveryDescription": "আপনার যদি অন্য ডিভাইসগুলিতে অ্যাক্সেস না থাকে তবে পরিচয় যাচাই করার জন্য একটি <b>রিকভারি কী</b> তৈরি করুন৷ উপরন্তু, একটি স্মরণীয় বিকল্প হিসাবে একটি পাসফ্রেজ সেটআপ করুন।",
+      "recoveryKey": "পুনরুদ্ধার কী",
+      "recoveryPassphrase": "পুনরুদ্ধার পাসফ্রেজ",
+      "reset": "রিসেট করুন",
+      "resetDeviceVerification": "ডিভাইস যাচাইকরণ রিসেট করুন",
+      "resettingDeviceVerificationIsPermanent": "ডিভাইস যাচাইকরণ রিসেট করা স্থায়ী।",
+      "resetWarning": "আপনি যার সাথে যাচাই করেছেন তারা নিরাপত্তা সতর্কতা দেখতে পাবেন এবং আপনার এনক্রিপশন ব্যাকআপ হারিয়ে যাবে। আপনি প্রায় নিশ্চিতভাবেই এটি করতে চান না, যদি না আপনি <b>রিকভারি কী</b> বা <b>রিকভারি পাসফ্রেজ</b> এবং আপনি যাচাই করতে পারেন এমন প্রতিটি ডিভাইস হারিয়ে না ফেলেন৷",
+      "setupDeviceVerification": "ডিভাইস যাচাইকরণ সেট আপ করুন",
+      "show": "দেখান",
+      "storeTheRecoveryKeyInASafePlaceForFutureUseAs": "পুনরুদ্ধার কীটি ভবিষ্যতে ব্যবহারের জন্য একটি নিরাপদ স্থানে সংরক্ষণ করুন, কারণ আপনার যদি অন্য ডিভাইসগুলিতে অ্যাক্সেস না থাকে তবে আপনার পরিচয় যাচাই করার জন্য এটির প্রয়োজন হবে৷",
+      "unexpectedError": "অপ্রত্যাশিত ত্রুটি!"
+    },
+    "directCreate": {
+      "createChat": "চ্যাট তৈরি করুন",
+      "startAPrivateEncryptedChatByEnteringAUserId": "একটি ব্যবহারকারী আইডি প্রবেশ করে একটি ব্যক্তিগত, এনক্রিপ্ট করা চ্যাট শুরু করুন৷"
+    },
+    "dummyStage": {
+      "cancel": "বাতিল করুন",
+      "failedToRegister": "নিবন্ধন করতে ব্যর্থ.",
+      "retry": "আবার চেষ্টা করুন"
+    },
+    "emailStage": {
+      "cancel": "বাতিল করুন",
+      "continue": "চালিয়ে যান",
+      "email": "ইমেইল",
+      "failedToSendVerificationEmailRequest": "যাচাইকরণ ইমেল অনুরোধ পাঠাতে ব্যর্থ হয়েছে.",
+      "pleaseCheckYourEmailValue1AndValidateBeforeContinuingFurther": "অনুগ্রহ করে আপনার ইমেল \"{{value1}}\" চেক করুন এবং আরও এগিয়ে যাওয়ার আগে যাচাই করুন৷",
+      "pleaseProvideEmailToSendVerificationRequest": "যাচাইকরণের অনুরোধ পাঠাতে অনুগ্রহ করে ইমেল প্রদান করুন।",
+      "provideEmail": "ইমেইল দিন",
+      "sendingVerificationEmail": "যাচাইকরণ ইমেল পাঠানো হচ্ছে...",
+      "sendVerificationEmail": "যাচাইকরণ ইমেল পাঠান",
+      "verificationRequestSent": "যাচাইকরণের অনুরোধ পাঠানো হয়েছে",
+      "verifyEmail": "ইমেল যাচাই করুন"
+    },
+    "emojiBoard": {
+      "noResultsFound": "কোন ফলাফল পাওয়া যায়নি",
+      "personalPack": "ব্যক্তিগত প্যাক",
+      "recent": "সাম্প্রতিক",
+      "searchResults": "অনুসন্ধান ফলাফল",
+      "unknown": "অজানা",
+      "unknownPack": "অজানা প্যাক"
+    },
+    "emojiGroups": {
+      "activity": "কার্যকলাপ",
+      "animalsNature": "প্রাণী ও প্রকৃতি",
+      "flags": "পতাকা",
+      "foodDrinks": "খাদ্য ও পানীয়",
+      "objects": "বস্তু",
+      "smileysPeople": "স্মাইলিস এবং মানুষ",
+      "symbols": "প্রতীক",
+      "travelPlaces": "ভ্রমণ এবং স্থান"
+    },
+    "emoticonAutocomplete": {
+      "emojis": "ইমোজি"
+    },
+    "eventReaders": {
+      "seenBy": "যাঁরা দেখেছেন"
+    },
+    "explore": {
+      "addServer": "সার্ভার যোগ করুন",
+      "addServerNameToExplorePublicCommunities": "সর্বজনীন সম্প্রদায়গুলি অন্বেষণ করতে সার্ভারের নাম যুক্ত করুন৷",
+      "exploreCommunity": "কমিউনিটি খুঁজুন",
+      "failedToLoadPublicRoomsPleaseTryAgain": "পাবলিক রুম লোড করতে ব্যর্থ হয়েছে. আবার চেষ্টা করুন.",
+      "featured": "বৈশিষ্ট্যযুক্ত",
+      "serverName": "সার্ভারের নাম",
+      "servers": "সার্ভার",
+      "view": "দেখুন"
+    },
+    "fallbackContent": {
+      "brokenMessage": "ভাঙা বার্তা",
+      "couldnTDecryptThisMessageTheEncryptionKeyIsnTAvailable": "এই বার্তাটি ডিক্রিপ্ট করা যায়নি — এনক্রিপশন কী উপলব্ধ নেই৷",
+      "deletedWithReason": "এই বার্তা মুছে ফেলা হয়েছে. {{reason}}",
+      "edited": " (সম্পাদিত)",
+      "emptyMessage": "খালি বার্তা",
+      "failedToLoadMessage": "বার্তা লোড করতে ব্যর্থ হয়েছে৷",
+      "thisMessageHasBeenDeleted": "এই বার্তা মুছে ফেলা হয়েছে",
+      "thisMessageIsNotDecryptedYet": "এই বার্তাটি এখনও ডিক্রিপ্ট করা হয়নি৷",
+      "unsupportedMessage": "অসমর্থিত বার্তা"
+    },
+    "featureCheck": {
+      "missingBrowserFeature": "অনুপস্থিত ব্রাউজার বৈশিষ্ট্য",
+      "noIndexeddbSupportFoundThisApplicationRequiresIndexeddbToStoreSessionData": "কোন IndexedDB সমর্থন পাওয়া যায়নি। স্থানীয়ভাবে সেশন ডেটা সঞ্চয় করতে এই অ্যাপ্লিকেশনটির IndexedDB প্রয়োজন৷ অনুগ্রহ করে নিশ্চিত করুন যে আপনার ব্রাউজার IndexedDB সমর্থন করে এবং এটি সক্ষম করা আছে।",
+      "whatIsIndexeddb": "IndexedDB কি?"
+    },
+    "featured": {
+      "featuredByClient": "ক্লায়েন্টের বাছাই করা",
+      "featuredRooms": "বাছাই করা রুম",
+      "featuredSpaces": "বাছাই করা স্পেস",
+      "findAndExplorePublicRoomsAndSpacesFeaturedByClientProvider": "ক্লায়েন্ট প্রদানকারীর বাছাই করা সর্বজনীন রুম ও স্পেস খুঁজুন।",
+      "noRoomsOrSpacesFeaturedByClientProvider": "ক্লায়েন্ট প্রদানকারী কোনো রুম বা স্পেস বেছে দেননি।"
+    },
+    "fileContent": {
+      "downloadSize": "ডাউনলোড করুন ({{size}})",
+      "loadFailed": "ফাইল লোড করতে ব্যর্থ!",
+      "openFile": "ফাইল খুলুন",
+      "openPdf": "PDF খুলুন",
+      "retryDownload": "আবার ডাউনলোড করার চেষ্টা করুন ({{size}})",
+      "openValue1": "{{value1}} খুলুন"
+    },
+    "fileHeader": {
+      "downloadValue1": "{{value1}} ডাউনলোড করুন"
+    },
+    "hexColorPickerPopOut": {
+      "remove": "সরান"
+    },
+    "imageContent": {
+      "failedToLoadImage": "ছবি লোড করতে ব্যর্থ!",
+      "retry": "আবার চেষ্টা করুন",
+      "spoiler": "স্পয়লার",
+      "view": "দেখুন"
+    },
+    "imageEditor": {
+      "imageEditor": "ইমেজ এডিটর",
+      "save": "সংরক্ষণ করুন"
+    },
+    "imagePackContent": {
+      "applyChanges": "পরিবর্তনগুলি প্রয়োগ করুন",
+      "changesSavedApplyWhenReady": "পরিবর্তন সংরক্ষিত হয়েছে! প্রস্তুত হলে প্রয়োগ করুন।",
+      "failedToApplyChangesPleaseTryAgain": "পরিবর্তনগুলি প্রয়োগ করতে ব্যর্থ! আবার চেষ্টা করুন.",
+      "images": "ছবি",
+      "imagesUsage": "ছবির ব্যবহার",
+      "pack": "প্যাক",
+      "reset": "রিসেট করুন",
+      "select": "নির্বাচন করুন",
+      "selectHowTheImagesAreBeingUsedAsEmojisAsStickersOr": "ছবিগুলি কীভাবে ব্যবহার করা হচ্ছে তা নির্বাচন করুন: ইমোজি হিসাবে, স্টিকার হিসাবে বা উভয় হিসাবে।",
+      "selectImagesFromYourStorageToUploadThemInPack": "প্যাকে আপলোড করতে আপনার স্টোরেজ থেকে ছবি নির্বাচন করুন।",
+      "uploadImages": "ছবি আপলোড করুন"
+    },
+    "imagePackView": {
+      "emojisStickers": "ইমোজি এবং স্টিকার"
+    },
+    "imageTile": {
+      "body": "বিবরণ:",
+      "cancel": "বাতিল করুন",
+      "edit": "সম্পাদনা করুন",
+      "save": "সংরক্ষণ করুন",
+      "shortcode": "শর্টকোড:",
+      "undo": "পূর্বাবস্থায় ফেরান"
+    },
+    "imageUsage": {
+      "both": "উভয়",
+      "emoji": "ইমোজি",
+      "sticker": "স্টিকার"
+    },
+    "imageViewer": {
+      "download": "ডাউনলোড করুন",
+      "retryDownload": "আবার ডাউনলোড করার চেষ্টা করুন",
+      "saving": "সংরক্ষণ করা হচ্ছে...",
+      "zoomIn": "জুম ইন করুন",
+      "zoomOut": "জুম আউট করুন"
+    },
+    "inbox": {
+      "inbox": "ইনবক্স",
+      "invites": "আমন্ত্রণ",
+      "notifications": "বিজ্ঞপ্তি"
+    },
+    "invites": {
+      "accept": "গ্রহণ করুন",
+      "blockAll": "সকলকে ব্লক করুন",
+      "decline": "প্রত্যাখ্যান করুন",
+      "declineAll": "সব প্রত্যাখ্যান করুন",
+      "acceptAll": "সব গ্রহণ করুন",
+      "directMessage": "সরাসরি বার্তা",
+      "encrypted": "এনক্রিপ্ট করা",
+      "filter": "ফিল্টার",
+      "from": "থেকে: <b>{{sender}}</b>",
+      "hideAll": "সব লুকান",
+      "invites": "আমন্ত্রণ",
+      "invitesDetectedAsSpamAppearHere": "স্প্যাম হিসাবে শনাক্ত করা আমন্ত্রণগুলি এখানে প্রদর্শিত হবে৷",
+      "invitesFromPeopleOutsideYourRoomsWillAppearHere": "আপনার রুমের বাইরের লোকেদের আমন্ত্রণগুলি এখানে উপস্থিত হবে৷",
+      "noInvites": "কোনো আমন্ত্রণ নেই",
+      "noSpamInvites": "কোনো স্প্যাম আমন্ত্রণ নেই৷",
+      "primary": "প্রাথমিক",
+      "public": "সর্বজনীন",
+      "reason": "কারণ: {{reason}}",
+      "reportAll": "সমস্ত রিপোর্ট করুন",
+      "someOfTheFollowingInvitesMayContainHarmfulContentOrHaveBeen": "নিম্নলিখিত আমন্ত্রণগুলির মধ্যে কিছু ক্ষতিকারক সামগ্রী থাকতে পারে বা নিষিদ্ধ ব্যবহারকারীদের দ্বারা পাঠানো হয়েছে৷",
+      "space": "স্পেস",
+      "spam": "স্প্যাম",
+      "spamInvites_one": "{{count, number}} স্প্যাম আমন্ত্রণ",
+      "spamInvites_other": "{{count, number}} স্প্যাম আমন্ত্রণ",
+      "viewAll": "সব দেখুন",
+      "whenSomeoneYouShareARoomWithSendsYouAnInviteIt": "যাঁদের সঙ্গে আপনার কোনো রুম সাধারণ আছে, তাঁদের আমন্ত্রণ এখানে দেখা যাবে।"
+    },
+    "inviteUserAutocomplete": {
+      "matchingUsers_one": "{{count}} ম্যাচিং ব্যবহারকারী",
+      "matchingUsers_other": "{{count}} মিলে যাওয়া ব্যবহারকারী",
+      "noMatches": "কোনো ব্যবহারকারী মেলেনি",
+      "searching": "ব্যবহারকারী খোঁজা হচ্ছে",
+      "suggestions": "আমন্ত্রণ জানানোর জন্য প্রস্তাবিত ব্যবহারকারী",
+      "users": "ব্যবহারকারী"
+    },
+    "inviteUserPrompt": {
+      "invite": "আমন্ত্রণ জানান",
+      "reasonOptional": "কারণ (ঐচ্ছিক)",
+      "userId": "ব্যবহারকারীর ID"
+    },
+    "item": {
+      "value1Emoji": "{{value1}} ইমোজি"
+    },
+    "joinAddressPrompt": {
+      "address": "ঠিকানা",
+      "enterPublicAddressToJoinTheCommunityAddressesLooksLike": "সম্প্রদায়ে যোগ দিতে সর্বজনীন ঠিকানা লিখুন। ঠিকানাগুলি এর মত দেখাচ্ছে:",
+      "invalidAddress": "অবৈধ ঠিকানা",
+      "joinWithAddress": "ঠিকানা দিয়ে জয়েন করুন",
+      "open": "খুলুন"
+    },
+    "joinRulesSwitcher": {
+      "option0": "শুধুমাত্র আমন্ত্রণ",
+      "option1": "অনুরোধ ও আমন্ত্রণ",
+      "option2": "স্পেসের সদস্য বা প্রবেশের অনুরোধ",
+      "option3": "স্পেস সদস্য",
+      "option4": "সর্বজনীন",
+      "unsupported": "অসমর্থিত"
+    },
+    "leaveRoomPrompt": {
+      "areYouSureYouWantToLeaveThisRoom": "আপনি কি নিশ্চিত যে আপনি এই রুমটি ছেড়ে যেতে চান?",
+      "leave": "ছেড়ে দিন",
+      "leaveFailed": "রুম ছেড়ে যেতে ব্যর্থ! {{error}}",
+      "leaveRoom": "রুম ছেড়ে দিন",
+      "leaving": "ছেড়ে যাওয়া হচ্ছে..."
+    },
+    "leaveSpacePrompt": {
+      "areYouSureYouWantToLeaveThisSpace": "আপনি কি এই স্পেসটি ছেড়ে যাওয়ার বিষয়ে নিশ্চিত?",
+      "leave": "ছেড়ে দিন",
+      "leaveFailed": "স্পেস ত্যাগ করতে ব্যর্থ! {{error}}",
+      "leaveSpace": "স্পেস ছেড়ে দিন",
+      "leaving": "ছেড়ে যাওয়া হচ্ছে..."
+    },
+    "login": {
+      "accountLink": "অ্যাকাউন্ট নেই? <authLink>নিবন্ধন করুন</authLink>",
+      "login": "লগইন করুন",
+      "passwordLoginIsDisabledOnValue1UseSsoToSignIn": "\"{{value1}}\" এ পাসওয়ার্ড লগইন নিষ্ক্রিয় করা হয়েছে। সাইন ইন করতে SSO ব্যবহার করুন৷",
+      "register": "নিবন্ধন করুন",
+      "thisClientDoesNotSupportLoginOnValue1ServerPasswordAndSso": "এই ক্লায়েন্ট \"{{value1}}\" সার্ভারে লগইন সমর্থন করে না। পাসওয়ার্ড এবং SSO ভিত্তিক লগইন পদ্ধতি পাওয়া যায়নি।",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "এই ক্লায়েন্টের Apple দিয়ে সাইন ইন করতে হবে। Apple অন্তর্ভুক্ত করতে হোমসার্ভার SSO প্রদানকারী তালিকা কনফিগার করুন।"
+    },
+    "logoutDialog": {
+      "alert": "সতর্কতা",
+      "cancel": "বাতিল করুন",
+      "enableDeviceVerificationOrExportYourEncryptedDataFromSettingsToAvoid": "আপনার বার্তাগুলিতে অ্যাক্সেস হারানো এড়াতে ডিভাইস যাচাইকরণ সক্ষম করুন বা সেটিংস থেকে আপনার এনক্রিপ্ট করা ডেটা রপ্তানি করুন৷",
+      "logout": "লগআউট",
+      "logoutFailed": "লগআউট করতে ব্যর্থ! {{error}}",
+      "unverifiedDevice": "অযাচাইকৃত ডিভাইস",
+      "verifyYourDeviceBeforeLoggingOutToSaveYourEncryptedMessages": "আপনার এনক্রিপ্ট করা বার্তাগুলি সংরক্ষণ করতে লগ আউট করার আগে আপনার ডিভাইসটি যাচাই করুন৷",
+      "youReAboutToLogOutAreYouSure": "আপনি লগ আউট করতে চলেছেন। আপনি কি নিশ্চিত?"
+    },
+    "manualVerification": {
+      "deviceVerified": "ডিভাইস যাচাই করা হয়েছে!",
+      "provideRecoveryKey": "পুনরুদ্ধার কী প্রদান করুন।",
+      "recoveryKey": "পুনরুদ্ধার কী",
+      "recoveryPassphrase": "পুনরুদ্ধার পাসফ্রেজ",
+      "selectAVerificationMethod": "একটি যাচাই পদ্ধতি নির্বাচন করুন.",
+      "verifyManually": "ম্যানুয়ালি যাচাই করুন"
+    },
+    "memberEvents": {
+      "acceptedRequest": "<b>{{senderName}}</b> <b>{{userName}}</b>-এর প্রবেশের অনুরোধ গ্রহণ করেছেন {{reason}}",
+      "banned": "<b>{{senderName}}</b> <b>{{userName}}</b>-কে নিষিদ্ধ করেছেন {{reason}}",
+      "broken": "ভাঙা সদস্যতা ইভেন্ট",
+      "changedAvatar": "<b>{{userName}}</b> নিজের অবতার বদলেছেন",
+      "changedName": "<b>{{prevUserName}}</b> নিজের প্রদর্শিত নাম বদলে <b>{{userName}}</b> করেছেন",
+      "invited": "<b>{{senderName}}</b> <b>{{userName}}</b>-কে আমন্ত্রণ জানিয়েছেন {{reason}}",
+      "joined": "<b>{{userName}}</b> রুমে যোগ দিয়েছেন",
+      "kicked": "<b>{{senderName}}</b> <b>{{userName}}</b>-কে রুম থেকে সরিয়েছেন {{reason}}",
+      "left": "<b>{{userName}}</b> রুম ছেড়েছেন {{reason}}",
+      "rejectedInvitation": "<b>{{userName}}</b> আমন্ত্রণ প্রত্যাখ্যান করেছেন {{reason}}",
+      "rejectedRequest": "<b>{{senderName}}</b> <b>{{userName}}</b>-এর প্রবেশের অনুরোধ প্রত্যাখ্যান করেছেন {{reason}}",
+      "removedAvatar": "<b>{{userName}}</b> নিজের অবতার সরিয়েছেন",
+      "removedName": "<b>{{prevUserName}}</b> নিজের প্রদর্শিত নাম সরিয়েছেন",
+      "requested": "<b>{{userName}}</b> রুমে প্রবেশের অনুরোধ করেছেন {{reason}}",
+      "revokedInvitation": "<b>{{senderName}}</b> <b>{{userName}}</b>-এর আমন্ত্রণ ফিরিয়ে নিয়েছেন {{reason}}",
+      "unbanned": "<b>{{senderName}}</b> <b>{{userName}}</b>-এর নিষেধাজ্ঞা তুলে নিয়েছেন {{reason}}",
+      "unchanged": "পরিবর্তনহীন সদস্যতার ইভেন্ট",
+      "withdrewRequest": "<b>{{userName}}</b> প্রবেশের অনুরোধ ফিরিয়ে নিয়েছেন {{reason}}"
+    },
+    "memberFilters": {
+      "banned": "নিষিদ্ধ",
+      "invited": "আমন্ত্রিত",
+      "joined": "যোগদান করেছেন",
+      "kicked": "সরিয়ে দেওয়া হয়েছে",
+      "left": "ছেড়েছেন"
+    },
+    "memberSort": {
+      "atoZ": "এ থেকে জেড",
+      "newest": "সবথেকে নতুন",
+      "oldest": "সবচেয়ে পুরনো",
+      "ztoA": "Z থেকে A"
+    },
+    "mindRoomSplashScreen": {
+      "loading": "MindRoom Chat লোড হচ্ছে"
+    },
+    "msgTypeRenderers": {
+      "audio": "অডিও",
+      "openLocation": "লোকেশন খুলুন",
+      "unnamedFile": "নামহীন ফাইল",
+      "voiceMessage": "ভয়েস বার্তা",
+      "file": "ফাইল",
+      "fileMeta": "{{type}} · {{size}}",
+      "pdfDocument": "PDF নথি",
+      "textFile": "টেক্সট ফাইল"
+    },
+    "noStickerPacks": {
+      "addStickersFromUserRoomOrSpaceSettings": "ব্যবহারকারী, রুম বা স্পেস সেটিংস থেকে স্টিকার যোগ করুন।",
+      "noStickerPacks": "কোনো স্টিকার প্যাক নেই!"
+    },
+    "notifications": {
+      "allNotifications": "সমস্ত বিজ্ঞপ্তি",
+      "event": " ইভেন্ট",
+      "filter": "ফিল্টার",
+      "highlighted": "হাইলাইট করা হয়েছে",
+      "noNotifications": "কোনো বিজ্ঞপ্তি নেই",
+      "notificationMessages": "বিজ্ঞপ্তি বার্তা",
+      "open": "খুলুন",
+      "roomTombstone": "রুম প্রতিস্থাপন ইভেন্ট। {{body}}",
+      "scrollToTop": "উপরে স্ক্রোল করুন",
+      "youDonTHaveAnyNewNotificationsToDisplayYet": "প্রদর্শনের জন্য আপনার কাছে এখনও কোনো নতুন বিজ্ঞপ্তি নেই৷"
+    },
+    "orDivider": {
+      "or": "বা"
+    },
+    "packMeta": {
+      "attribution": "স্বীকৃতি",
+      "cancel": "বাতিল করুন",
+      "edit": "সম্পাদনা করুন",
+      "name": "নাম",
+      "packAvatar": "প্যাকের অবতার",
+      "remove": "সরান",
+      "reset": "রিসেট করুন",
+      "save": "সংরক্ষণ করুন",
+      "unknown": "অজানা",
+      "upload": "আপলোড করুন"
+    },
+    "passwordLoginForm": {
+      "email": "ইমেইল:",
+      "failedToFindYourMatrixIdServer": "আপনার Matrix আইডি সার্ভার খুঁজে পেতে ব্যর্থ হয়েছে.",
+      "failedToLoginPartOfYourRequestDataIsInvalid": "লগইন করতে ব্যর্থ হয়েছে. আপনার অনুরোধের ডেটার অংশটি অবৈধ৷",
+      "failedToLoginUnknownReason": "লগইন করতে ব্যর্থ হয়েছে. অজানা কারণ।",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "লগইন করতে ব্যর্থ হয়েছে. আপনার লগইন অনুরোধ সার্ভার দ্বারা রেট-সীমিত করা হয়েছে, কিছু সময় পরে চেষ্টা করুন.",
+      "forgetPassword": "পাসওয়ার্ড ভুলে গেছেন?",
+      "hint": "ইঙ্গিত",
+      "invalidUsernameOrPassword": "অবৈধ ব্যবহারকারীর নাম বা পাসওয়ার্ড।",
+      "login": "লগইন করুন",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "লগইন সফল হয়েছে, কিন্তু এই ব্রাউজারটি অ্যাকাউন্ট সংরক্ষণ করতে পারেনি৷ স্টোরেজ অনুমতি পরীক্ষা করুন এবং আবার চেষ্টা করুন.",
+      "loginWithCustomServerNotAllowedByYourClientInstance": "আপনার ক্লায়েন্টে কাস্টম সার্ভার দিয়ে লগইন করার অনুমতি নেই।",
+      "matrixId": "Matrix আইডি:",
+      "password": "পাসওয়ার্ড",
+      "thisAccountHasBeenDeactivated": "এই অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে.",
+      "username": "ব্যবহারকারীর নাম:",
+      "username2": "ব্যবহারকারীর নাম"
+    },
+    "passwordRegisterForm": {
+      "acceptTerms": "আমি সার্ভারের <terms>শর্তাবলী</terms> মেনে নিচ্ছি।",
+      "confirmPassword": "পাসওয়ার্ড নিশ্চিত করুন",
+      "email": "ইমেইল",
+      "emailOptional": "ইমেইল (ঐচ্ছিক)",
+      "failedToRegisterInvalidRequest": "নিবন্ধন করতে ব্যর্থ. অবৈধ অনুরোধ.",
+      "failedToRegisterTheHomeserverDoesNotPermitRegistration": "নিবন্ধন করতে ব্যর্থ. হোমসার্ভার নিবন্ধন অনুমতি দেয় না.",
+      "failedToRegisterUnknownReason": "নিবন্ধন করতে ব্যর্থ. অজানা কারণ।",
+      "failedToRegisterYourRegisterRequestHasBeenRateLimitedByServer": "নিবন্ধন করতে ব্যর্থ. আপনার নিবন্ধন অনুরোধ সার্ভার দ্বারা রেট-সীমিত করা হয়েছে, কিছু সময় পরে চেষ্টা করুন.",
+      "password": "পাসওয়ার্ড",
+      "register": "নিবন্ধন করুন",
+      "registrationSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "নিবন্ধন সফল হয়েছে, কিন্তু এই ব্রাউজারটি অ্যাকাউন্টটি সংরক্ষণ করতে পারেনি৷ স্টোরেজ অনুমতি পরীক্ষা করুন এবং লগ ইন করার চেষ্টা করুন।",
+      "registrationToken": "রেজিস্ট্রেশন টোকেন",
+      "registrationTokenOptional": "রেজিস্ট্রেশন টোকেন (ঐচ্ছিক)",
+      "shortPasswordPasswordRejectedByServerPleaseChoosingMoreLongPassword": "পাসওয়ার্ড ছোট। সার্ভার এটি প্রত্যাখ্যান করেছে। আরও দীর্ঘ পাসওয়ার্ড বেছে নিন।",
+      "termsAndConditions": "শর্তাবলী",
+      "thisUsernameContainsInvalidCharacters": "এই ব্যবহারকারীর নামটিতে অবৈধ অক্ষর রয়েছে৷",
+      "thisUsernameIsAlreadyTaken": "এই ব্যবহারকারীর নাম আগে থেকেই নেওয়া হয়েছে।",
+      "thisUsernameIsReserved": "এই ব্যবহারকারীর নাম সংরক্ষিত.",
+      "username": "ব্যবহারকারীর নাম",
+      "weakPasswordPasswordRejectedByServerPleaseChoosingMoreStrongPassword": "পাসওয়ার্ড দুর্বল। সার্ভার এটি প্রত্যাখ্যান করেছে। আরও শক্তিশালী পাসওয়ার্ড বেছে নিন।"
+    },
+    "passwordResetForm": {
+      "confirmPassword": "পাসওয়ার্ড নিশ্চিত করুন",
+      "email": "ইমেইল",
+      "login": "লগইন করুন",
+      "newPassword": "নতুন পাসওয়ার্ড",
+      "passwordHasBeenResetSuccessfullyPleaseLoginWithYourNewPassword": "পাসওয়ার্ড সফলভাবে পুনরায় সেট করা হয়েছে. আপনার নতুন পাসওয়ার্ড দিয়ে লগইন করুন.",
+      "resetEmailDescription": "হোমসার্ভার <strong>{{server}}</strong> আপনাকে আপনার পাসওয়ার্ড রিসেট করার জন্য একটি ইমেল পাঠাবে৷",
+      "resetPassword": "পাসওয়ার্ড রিসেট করুন",
+      "failedToResetPassword": "পাসওয়ার্ড রিসেট করা যায়নি।"
+    },
+    "passwordStage": {
+      "accountPassword": "অ্যাকাউন্ট পাসওয়ার্ড",
+      "continue": "চালিয়ে যান",
+      "invalidPassword": "অবৈধ পাসওয়ার্ড!",
+      "password": "পাসওয়ার্ড",
+      "toPerformThisActionYouNeedToAuthenticateYourselfByEnteringYou": "এই ক্রিয়াটি সম্পাদন করার জন্য আপনাকে আপনার অ্যাকাউন্টের পাসওয়ার্ড দিয়ে নিজেকে প্রমাণীকরণ করতে হবে।"
+    },
+    "pdfViewer": {
+      "download": "ডাউনলোড করুন",
+      "failedToLoadPdf": "PDF লোড করতে ব্যর্থ হয়েছে৷",
+      "jumpToPage": "পৃষ্ঠায় যান",
+      "next": "পরবর্তী",
+      "pageNumber": "পৃষ্ঠা নম্বর",
+      "previous": "আগের",
+      "retry": "আবার চেষ্টা করুন",
+      "retryDownload": "আবার ডাউনলোড করার চেষ্টা করুন",
+      "saving": "সংরক্ষণ করা হচ্ছে...",
+      "zoomIn": "জুম ইন করুন",
+      "zoomOut": "জুম আউট করুন"
+    },
+    "powerChip": {
+      "demote": "অনুমতির মাত্রা কমান",
+      "errorName": "ত্রুটি: {{name}}",
+      "managePowers": "অনুমতির মাত্রা পরিচালনা করুন",
+      "promote": "অনুমতির মাত্রা বাড়ান",
+      "selfDemotion": "নিজের অনুমতির মাত্রা কমান",
+      "sharedPower": "সমান অধিকার",
+      "youAreAboutToDemoteYourselfYouWillNotBeAbleTo": "আপনি নিজের অনুমতির মাত্রা কমাতে যাচ্ছেন! আপনি নিজে এই অধিকার ফিরিয়ে আনতে পারবেন না। আপনি কি নিশ্চিত?",
+      "youArePromotingTheUserToHaveTheSamePowerAsYourself": "আপনি এই ব্যবহারকারীকে নিজের সমান অধিকার দিতে যাচ্ছেন! এরপর আপনি তাঁর অনুমতির মাত্রা বদলাতে পারবেন না। আপনি কি নিশ্চিত?"
+    },
+    "powerLevels": {
+      "admin": "অ্যাডমিন",
+      "founder": "প্রতিষ্ঠাতা",
+      "manager": "ম্যানেজার",
+      "member": "সদস্য",
+      "moderator": "মডারেটর",
+      "muted": "নিঃশব্দ",
+      "team": "দল {{power}}"
+    },
+    "presence": {
+      "active": "সক্রিয়",
+      "away": "দূরে",
+      "busy": "ব্যস্ত"
+    },
+    "reaction": {
+      "others_one": "আরও {{count}} জন",
+      "others_other": "আরও {{count}} জন",
+      "reactionSummary": "<names>{{names}}</names> :<reaction>{{reaction}}</reaction>: দিয়ে প্রতিক্রিয়া দিয়েছেন"
+    },
+    "reCaptchaStage": {
+      "cancel": "বাতিল করুন",
+      "invalidData": "অবৈধ ডেটা",
+      "noValidDataFoundToProceedWithRecaptcha": "ReCAPTCHA-এর সাথে এগিয়ে যাওয়ার জন্য কোনো বৈধ ডেটা পাওয়া যায়নি।",
+      "pleaseCheckTheBoxBelowToProceed": "এগিয়ে যেতে নিচের বাক্সে চেক করুন."
+    },
+    "register": {
+      "accountLink": "আগেই অ্যাকাউন্ট আছে? <authLink>লগইন করুন</authLink>",
+      "invalidRequestFailedToGetAnyRegistrationOptions": "অবৈধ অনুরোধ! কোনো নিবন্ধন বিকল্প পেতে ব্যর্থ.",
+      "login": "লগইন করুন",
+      "register": "নিবন্ধন করুন",
+      "registrationHasBeenDisabledOnThisHomeserver": "এই হোমসার্ভারে নিবন্ধন নিষ্ক্রিয় করা হয়েছে।",
+      "ssoRegistrationIsRequiredOnThisHomeserverButNoSsoProvidersWere": "এই হোমসার্ভারে SSO দিয়ে নিবন্ধন করতে হয়, কিন্তু কোনো SSO প্রদানকারীর তথ্য পাওয়া যায়নি।",
+      "thisApplicationDoesNotSupportRegistrationOnThisHomeserver": "এই অ্যাপ্লিকেশনটি এই হোমসার্ভারে নিবন্ধন সমর্থন করে না।",
+      "thisClientRequiresSignInWithAppleConfigureTheHomeserverSsoProvider": "এই ক্লায়েন্টের Apple দিয়ে সাইন ইন করতে হবে। Apple অন্তর্ভুক্ত করতে হোমসার্ভার SSO প্রদানকারী তালিকা কনফিগার করুন।",
+      "thisHomeserverOnlyAllowsSignUpWithAppleGoogleOrGithub": "এই হোমসার্ভার শুধুমাত্র Apple, Google, বা GitHub দিয়ে সাইন আপ করার অনুমতি দেয়।",
+      "youHaveBeenRateLimitedPleaseTryAfterSomeTime": "অনুরোধের সীমা পেরিয়ে গেছে! কিছু সময় পরে আবার চেষ্টা করুন।"
+    },
+    "registrationTokenStage": {
+      "cancel": "বাতিল করুন",
+      "invalidRegistrationTokenProvided": "অবৈধ নিবন্ধন টোকেন প্রদান করা হয়েছে.",
+      "pleaseSubmitRegistrationTokenProvidedByYouHomeserverAdmin": "আপনার হোমসার্ভার অ্যাডমিন দ্বারা প্রদত্ত নিবন্ধন টোকেন জমা দিন।",
+      "registrationToken": "রেজিস্ট্রেশন টোকেন",
+      "retry": "আবার চেষ্টা করুন"
+    },
+    "resetPassword": {
+      "accountLink": "পাসওয়ার্ড মনে আছে? <authLink>লগইন করুন</authLink>",
+      "login": "লগইন করুন",
+      "resetPassword": "পাসওয়ার্ড রিসেট করুন"
+    },
+    "roomAccessControl": {
+      "anAdminWillReviewYourRequest": "একজন প্রশাসক আপনার অনুরোধ পর্যালোচনা করবে।",
+      "cancel": "বাতিল করুন",
+      "failedToSendRequest": "অনুরোধ পাঠাতে ব্যর্থ হয়েছে.",
+      "messageOptional": "বার্তা (ঐচ্ছিক)",
+      "requestToJoinValue1": "{{value1}} যোগদানের জন্য অনুরোধ করুন",
+      "sendingRequest": "অনুরোধ পাঠানো হচ্ছে",
+      "sendRequest": "অনুরোধ পাঠান"
+    },
+    "roomCard": {
+      "accessUnavailable": "অ্যাক্সেস অনুপলব্ধ",
+      "cancel": "বাতিল করুন",
+      "checkingAccess": "অ্যাক্সেস পরীক্ষা করা হচ্ছে",
+      "failedToJoinUnknownError": "যোগদান করতে ব্যর্থ হয়েছে. অজানা ত্রুটি",
+      "join": "যোগ দিন",
+      "joinError": "যোগদানের ত্রুটি",
+      "joining": "যোগ দেওয়া হচ্ছে",
+      "members_one": "{{count, number}} সদস্য",
+      "members_other": "{{count, number}} সদস্য",
+      "requestSent": "অনুরোধ পাঠানো হয়েছে",
+      "requestToJoin": "যোগদানের অনুরোধ",
+      "retry": "আবার চেষ্টা করুন",
+      "retryRoomInfo": "রুমের তথ্য আবার লোড করুন",
+      "sendingRequest": "অনুরোধ পাঠানো হচ্ছে",
+      "space": "স্পেস",
+      "view": "দেখুন",
+      "viewError": "ত্রুটি দেখুন"
+    },
+    "roomIntro": {
+      "createdBy": "তৈরি করেছেন: ",
+      "inviteMember": "সদস্যকে আমন্ত্রণ জানান",
+      "joinOldRoom": "পুরনো রুমে যোগ দিন",
+      "onValue1Value2": " {{value1}} {{value2}}-এ",
+      "openOldRoom": "পুরনো রুম খুলুন",
+      "thisIsTheBeginningOfConversation": "এখানেই কথোপকথনের শুরু।"
+    },
+    "roomMentionAutocomplete": {
+      "rooms": "রুম",
+      "unknownRoom": "অচেনা রুম"
+    },
+    "roomNotificationSwitcher": {
+      "option0": "ডিফল্ট",
+      "option1": "সমস্ত বার্তা",
+      "option2": "উল্লেখ এবং কীওয়ার্ড",
+      "option3": "নিঃশব্দ করুন"
+    },
+    "roomTypes": {
+      "all": "সব",
+      "rooms": "রুম",
+      "spaces": "স্পেস"
+    },
+    "roomVersionSelector": {
+      "versions": "সংস্করণ",
+      "version": "সংস্করণ"
+    },
+    "router": {
+      "join": "যোগ দিন",
+      "notFound": "পেজ পাওয়া যায়নি"
+    },
+    "search": {
+      "messageSearch": "বার্তা অনুসন্ধান"
+    },
+    "searchInput": {
+      "react": "প্রতিক্রিয়া দিন",
+      "search": "খুঁজুন",
+      "searchOrTextReaction": "খুঁজুন বা টেক্সট প্রতিক্রিয়া দিন "
+    },
+    "secretStorage": {
+      "recoveryKey": "পুনরুদ্ধার কী",
+      "recoveryPassphrase": "পুনরুদ্ধার পাসফ্রেজ",
+      "verify": "যাচাই করুন",
+      "invalidRecoveryPassphrase": "পুনরুদ্ধারের পাসফ্রেজ অবৈধ।",
+      "invalidRecoveryKey": "পুনরুদ্ধারের চাবি অবৈধ।"
+    },
+    "server": {
+      "changeLimit": "সীমা পরিবর্তন করুন",
+      "clear": "সাফ করুন",
+      "customLimit": "কাস্টম সীমা",
+      "enter": "Enter",
+      "nextPage": "পরবর্তী পৃষ্ঠা",
+      "noCommunitiesFound": "কোন সম্প্রদায় খুঁজে পাওয়া যায়নি!",
+      "pageLimitValue1": "পৃষ্ঠার সীমা: {{value1}}",
+      "perPageItemLimit": "প্রতি পৃষ্ঠা আইটেম সীমা",
+      "popularCommunities": "জনপ্রিয় সম্প্রদায়",
+      "presets": "প্রিসেট",
+      "previousPage": "পূর্ববর্তী পৃষ্ঠা",
+      "protocols": "প্রোটোকল",
+      "resultsForValue1": "\"{{value1}}\" এর জন্য ফলাফল",
+      "search": "খুঁজুন",
+      "searchForKeyword": "কীওয়ার্ড অনুসন্ধান করুন"
+    },
+    "serverPicker": {
+      "server": "সার্ভার",
+      "serverList": "সার্ভার তালিকা"
+    },
+    "space": {
+      "copyLink": "লিংক কপি করুন",
+      "eventTimeline": "ইভেন্ট টাইমলাইন",
+      "failedToJoinReplacementSpace": "প্রতিস্থাপন স্পেস যোগদান করতে ব্যর্থ!",
+      "invite": "আমন্ত্রণ জানান",
+      "joinNewSpace": "নতুন স্পেসে যোগ দিন",
+      "leaveSpace": "স্পেস ছেড়ে দিন",
+      "lobby": "লবি",
+      "messageSearch": "বার্তা অনুসন্ধান",
+      "openNewSpace": "নতুন স্পেস খুলুন",
+      "pickedUpRoomValue1UseArrowKeysToReorderPressSpaceTo": "রুম {{value1}} তোলা হয়েছে। পুনরায় সাজাতে তীর কী ব্যবহার করুন। ড্রপ করার জন্য স্পেস টিপুন।",
+      "rooms": "রুম",
+      "spaceSettings": "স্পেস সেটিংস",
+      "spaceUpgraded": "স্পেস আপগ্রেড",
+      "thisSpaceHasBeenReplacedAndIsNoLongerActive": "এই স্পেসটি প্রতিস্থাপন করা হয়েছে এবং আর সক্রিয় নেই৷"
+    },
+    "spaceTabs": {
+      "copyLink": "লিংক কপি করুন",
+      "invite": "আমন্ত্রণ জানান",
+      "pickedUpSpaceValue1UseArrowKeysToReorderPressSpaceTo": "স্পেস {{value1}} তোলা হয়েছে৷ পুনরায় সাজাতে তীর কী ব্যবহার করুন। ড্রপ করার জন্য স্পেস টিপুন।",
+      "spaceSettings": "স্পেস সেটিংস",
+      "unpin": "আনপিন করুন"
+    },
+    "specVersions": {
+      "cancelAndReturnToSignIn": "বাতিল করুন এবং সাইন ইন করতে ফিরে যান",
+      "clearCacheAndReload": "ক্যাশে সাফ করুন এবং পুনরায় লোড করুন",
+      "clearing": "সাফ করা হচ্ছে...",
+      "connectingToServer": "সার্ভারের সাথে সংযোগ করা হচ্ছে",
+      "continue": "চালিয়ে যান",
+      "retry": "আবার চেষ্টা করুন",
+      "unableToConnectToTheHomeserverTheHomeserverOrYourInternetConnection": "হোমসার্ভারের সাথে সংযোগ করতে অক্ষম৷ হোমসার্ভার বা আপনার ইন্টারনেট সংযোগ ডাউন হতে পারে।"
+    },
+    "sSOLogin": {
+      "continueWithSso": "SSO দিয়ে চালিয়ে যান"
+    },
+    "ssoProviders": {
+      "continueGithub": "GitHub দিয়ে চালিয়ে যান",
+      "continueGoogle": "Google দিয়ে চালিয়ে যান",
+      "continueProvider": "{{provider}} দিয়ে চালিয়ে যান",
+      "signInApple": "Apple দিয়ে সাইন ইন করুন",
+      "signUpApple": "Apple দিয়ে সাইন আপ করুন"
+    },
+    "sSOStage": {
+      "continue": "চালিয়ে যান",
+      "continueWithSso": "SSO দিয়ে চালিয়ে যান",
+      "ssoLogin": "SSO লগইন করুন",
+      "toPerformThisActionYouNeedToAuthenticateYourselfBySsoLogin": "এই ক্রিয়াটি সম্পাদন করতে আপনাকে SSO লগইন করে নিজেকে প্রমাণীকরণ করতে হবে৷"
+    },
+    "syncStatus": {
+      "catchingUp": "নতুন বার্তা লোড হচ্ছে...",
+      "connectionLost": "সংযোগ বিচ্ছিন্ন!",
+      "connectionLostReconnecting": "সংযোগ বিচ্ছিন্ন! পুনরায় সংযোগ করা হচ্ছে..."
+    },
+    "tabs": {
+      "emoji": "ইমোজি",
+      "sticker": "স্টিকার"
+    },
+    "termsStage": {
+      "cancel": "বাতিল করুন",
+      "failedToSubmitTermsAndConditionAcceptance": "শর্তাদি এবং শর্তাবলীর স্বীকৃতি জমা দিতে ব্যর্থ হয়েছে৷",
+      "retry": "আবার চেষ্টা করুন"
+    },
+    "textViewer": {
+      "copyAll": "সব কপি করুন"
+    },
+    "threadPreviews": {
+      "tools_one": "{{count, number}} টুল",
+      "tools_other": "{{count, number}} টুল",
+      "voiceMessage": "ভয়েস মেসেজ"
+    },
+    "threads": {
+      "threads": "থ্রেড"
+    },
+    "threadSummary": {
+      "manual": "ম্যানুয়ালি সম্পাদিত সারাংশ",
+      "provenance": "AI-উত্পন্ন থ্রেড সারাংশ",
+      "provenanceCount_one": "শেষ {{count, number}} মেসেজের AI সারাংশ",
+      "provenanceCount_other": "শেষ {{count, number}} মেসেজের AI সারাংশ",
+      "title": "থ্রেড সারাংশ"
+    },
+    "threadsView": {
+      "clearFilters": "ফিল্টার সাফ করুন",
+      "loadingThreads": "থ্রেড লোড হচ্ছে",
+      "noThreadsMatchYourFilters": "আপনার ফিল্টারের সঙ্গে কোনো থ্রেড মেলেনি",
+      "thread": "থ্রেড",
+      "threads": "থ্রেড",
+      "youHaveNotBeenInvolvedInAnyThreadsYet": "আপনি এখনও কোনো থ্রেডে অংশ নেননি"
+    },
+    "time": {
+      "yesterdayValue1": "গতকাল {{value1}}"
+    },
+    "timePicker": {
+      "am": "এএম",
+      "hour": "ঘন্টা",
+      "minutes": "মিনিট",
+      "period": "সময়কাল",
+      "pm": "পিএম"
+    },
+    "tokenLogin": {
+      "failedToLoginPartOfYourRequestDataIsInvalid": "লগইন করতে ব্যর্থ হয়েছে. আপনার অনুরোধের ডেটার অংশটি অবৈধ৷",
+      "failedToLoginUnknownReason": "লগইন করতে ব্যর্থ হয়েছে. অজানা কারণ।",
+      "failedToLoginYourLoginRequestHasBeenRateLimitedByServer": "লগইন করতে ব্যর্থ হয়েছে. আপনার লগইন অনুরোধ সার্ভার দ্বারা রেট-সীমিত করা হয়েছে, কিছু সময় পরে চেষ্টা করুন.",
+      "invalidLoginToken": "অবৈধ লগইন টোকেন।",
+      "loginSucceededButThisBrowserCouldNotSaveTheAccountCheckStorage": "লগইন সফল হয়েছে, কিন্তু এই ব্রাউজারটি অ্যাকাউন্ট সংরক্ষণ করতে পারেনি৷ স্টোরেজ অনুমতি পরীক্ষা করুন এবং আবার চেষ্টা করুন.",
+      "thisAccountHasBeenDeactivated": "এই অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে.",
+      "tokenLogin": "টোকেন লগইন"
+    },
+    "toolbar": {
+      "blockCode": "ব্লক কোড",
+      "blockQuote": "ব্লক কোট",
+      "bold": "গাঢ়",
+      "disableMarkdown": "Markdown অক্ষম করুন",
+      "enableMarkdown": "Markdown সক্ষম করুন৷",
+      "exitFormatting": "বিন্যাস থেকে বের হন",
+      "exitValue1": "{{value1}} থেকে প্রস্থান করুন",
+      "heading1": "শিরোনাম 1",
+      "heading2": "শিরোনাম 2",
+      "heading3": "শিরোনাম 3",
+      "inlineCode": "ইনলাইন কোড",
+      "italic": "তির্যক",
+      "orderedList": "সংখ্যাযুক্ত তালিকা",
+      "spoiler": "স্পয়লার",
+      "strikeThrough": "লেখার মাঝ বরাবর দাগ",
+      "underline": "আন্ডারলাইন করুন",
+      "unorderedList": "বুলেট তালিকা"
+    },
+    "uIAFlowOverlay": {
+      "exit": "বের হন",
+      "stepValue1Value2": "ধাপ {{value1}}/{{value2}}"
+    },
+    "uploadBoard": {
+      "files": "ফাইল",
+      "remove": "সরান",
+      "removeAll": "সব সরান",
+      "uploadFailed": "আপলোড ব্যর্থ হয়েছে৷"
+    },
+    "uploadCardRenderer": {
+      "cancelUpload": "আপলোড বাতিল করুন",
+      "retry": "আবার চেষ্টা করুন",
+      "retryUpload": "আপলোড পুনরায় চেষ্টা করুন",
+      "spoiler": "স্পয়লার"
+    },
+    "userChips": {
+      "blockedUser": "অবরুদ্ধ ব্যবহারকারী",
+      "blockUser": "ব্যবহারকারীকে ব্লক করুন",
+      "copyServer": "সার্ভার কপি করুন",
+      "copyUserId": "ইউজার আইডি কপি করুন",
+      "copyUserLink": "ইউজার লিংক কপি করুন",
+      "directMessages": "সরাসরি বার্তা",
+      "exploreCommunity": "কমিউনিটি খুঁজুন",
+      "mutualRooms": "সাধারণ রুম",
+      "mutualRooms_one": "{{count, number}} সাধারণ রুম",
+      "mutualRooms_other": "{{count, number}} সাধারণ রুম",
+      "openInBrowser": "ব্রাউজারে খুলুন",
+      "rooms": "রুম",
+      "share": "শেয়ার করুন",
+      "spaces": "স্পেস",
+      "unblockUser": "ব্যবহারকারীকে আনব্লক করুন",
+      "youDoNotReceiveAnyMessagesOrInvitesFromThisUser": "আপনি এই ব্যবহারকারীর কাছ থেকে কোনো বার্তা বা আমন্ত্রণ পাবেন না।"
+    },
+    "userMentionAutocomplete": {
+      "mentions": "উল্লেখ"
+    },
+    "userModeration": {
+      "ban": "নিষিদ্ধ করুন",
+      "bannedBy": "নিষিদ্ধ করেছেন: <b>{{name}}</b>",
+      "bannedUser": "নিষিদ্ধ ব্যবহারকারী",
+      "cancelInvite": "আমন্ত্রণ বাতিল করুন",
+      "invite": "আমন্ত্রণ জানান",
+      "invitedBy": "আমন্ত্রণ জানিয়েছেন: <b>{{name}}</b>",
+      "invitedUser": "আমন্ত্রিত ব্যবহারকারী",
+      "kick": "সরিয়ে দিন",
+      "kickedBy": "সরিয়েছেন: <b>{{name}}</b>",
+      "kickedUser": "সরিয়ে দেওয়া ব্যবহারকারী",
+      "moderation": "মডারেশন",
+      "noReasonProvided": "কোন কারণ প্রদান করা হয়নি.",
+      "reason": "কারণ: <b>{{reason}}</b>",
+      "unban": "নিষেধাজ্ঞা মুক্ত করুন"
+    },
+    "userRoomProfile": {
+      "message": "বার্তা"
+    },
+    "videoContent": {
+      "failedToLoadVideo": "ভিডিও লোড করতে ব্যর্থ!",
+      "retry": "আবার চেষ্টা করুন",
+      "spoiler": "স্পয়লার",
+      "watch": "দেখুন"
+    },
+    "voiceAudioContent": {
+      "loadError": "অডিও লোড করা যায়নি। আবার চেষ্টা করতে প্লে চাপুন।",
+      "playbackError": "এই অডিও এখানে চালানো যাচ্ছে না। ডাউনলোড করে দেখুন।",
+      "playbackPosition": "{{duration}}-এর মধ্যে {{current}}",
+      "download": "ডাউনলোড করুন",
+      "duration": "সময়কাল",
+      "moreAudioOptions": "আরও অডিও বিকল্প",
+      "name": "নাম",
+      "pauseValue1": "{{value1}} সাময়িক থামান",
+      "playValue1": "{{value1}} চালান",
+      "seekValue1": "{{value1}}-এর সময় বদলান",
+      "size": "আকার",
+      "type": "টাইপ",
+      "voiceMessage": "ভয়েস বার্তা"
+    },
+    "voicePlaybackRateButton": {
+      "playbackSpeedCurrentlyValue1ClickToCycle": "চালানোর গতি এখন {{value1}}; পরের গতিতে যেতে ক্লিক করুন"
+    },
+    "voiceVolumeButton": {
+      "voiceVolume": "ভয়েস ভলিউম",
+      "voiceVolumeCurrentlyValue1": "ভয়েস ভলিউম, বর্তমানে {{value1}}%"
+    },
+    "voiceWaveform": {
+      "seekVoiceMessage": "ভয়েস বার্তার সময় বদলান"
+    },
+    "welcomePage": {
+      "enterPairCode": "কোড আছে? স্থানীয় MindRoom-এ সেটি লিখুন",
+      "docs": "ডক্স",
+      "openLocalMindroomSettings": "স্থানীয় MindRoom-এর সেটিংস খুলুন",
+      "poweredBy": "<links /> দ্বারা চালিত",
+      "setUpLocalMindroom": "স্থানীয় MindRoom সেট আপ করুন",
+      "sourceCode": "সোর্স কোড",
+      "subtitle": "এআই এজেন্ট যারা আপনার চ্যাট রুমে থাকে।",
+      "title": "{{appName}} এ স্বাগতম",
+      "setupStep1": "1. {{command}} চালান",
+      "setupStep2": "2. {{envFile}}-এ মডেলের ক্রেডেনশিয়াল যোগ করুন, অথবা {{command}} চালান",
+      "setupStep3": "3. {{command}} দিয়ে এটি শুরু করুন, তারপর সংযোগ অনুমোদন করতে এটি যে লিংক দেখায় সেটি খুলুন"
+    },
+    "mindroomNavigation": {
+      "expandNavigationPanel": "নেভিগেশন প্যানেল বিস্তৃত করুন",
+      "collapseNavigationPanel": "নেভিগেশন প্যানেল গুটিয়ে নিন"
+    }
+  },
+  "threadActions": {
+    "more": "থ্রেডের বিকল্প",
+    "open": "থ্রেড খুলুন",
+    "tags": "ট্যাগ সম্পাদনা করুন",
+    "editSummary": "সারাংশ সম্পাদনা করুন",
+    "regenerate": "সারাংশ আবার তৈরি করুন",
+    "reopen": "থ্রেড আবার খুলুন",
+    "copy": "থ্রেডের লিংক কপি করুন",
+    "summary": "সারাংশ",
+    "summaryHint": "ম্যানুয়াল সম্পাদনা স্বয়ংক্রিয় সারাংশ আপডেট বন্ধ করে। আপনি যেকোনো সময় আবার সারাংশ সম্পাদনা করতে বা পুনরায় তৈরি করতে পারেন।",
+    "length": "{{count}} / {{max}} অক্ষর",
+    "agent": "এজেন্ট",
+    "noAgents": "এই রুমে যোগ দেওয়া কোনো এজেন্ট নেই",
+    "regenerateHint": "একজন এজেন্টকে এই থ্রেডের সারাংশ হালনাগাদ করতে বলুন। এজেন্টটির থ্রেড সারাংশ টুল প্রয়োজন।",
+    "requested": "অনুরোধ পাঠানো হয়েছে। এজেন্ট কাজটি সম্পন্ন করলে সারাংশ আপডেট হবে। তার উত্তর দেখতে থ্রেডটি দেখুন।",
+    "failed": "এই কাজটি সম্পন্ন করা যায়নি। আবার চেষ্টা করুন।",
+    "save": "সারাংশ সংরক্ষণ করুন",
+    "sendRequest": "অনুরোধ পাঠান",
+    "saving": "পাঠানো হচ্ছে…",
+    "cancel": "বাতিল করুন",
+    "done": "সম্পন্ন"
+  },
+  "thread": {
+    "pinFailed": "পিন আপডেট করা যায়নি। আবার চেষ্টা করুন।",
+    "aria": {
+      "agentStreaming": "এজেন্ট স্ট্রিমিং",
+      "lastActivity": "শেষ কার্যকলাপ {{time}}",
+      "messageFailed": "বার্তা পাঠাতে ব্যর্থ হয়েছে",
+      "messageSending": "বার্তা পাঠানো হচ্ছে",
+      "openThread": "থ্রেড খুলুন: {{title}}",
+      "removeTagFilter": "{{tag}} ফিল্টার সরান",
+      "resolvedThread": "সমাধান করা থ্রেড",
+      "unreadMessages": "অপঠিত বার্তা",
+      "unresolvedThread": "অমীমাংসিত থ্রেড"
+    },
+    "chip": "থ্রেড",
+    "filters": {
+      "activity": "কার্যকলাপ",
+      "activity30d": "৩০ দিন",
+      "activity7d": "৭ দিন",
+      "activityAll": "সব",
+      "activityToday": "আজ",
+      "attention": "মনোযোগ",
+      "clear": "সাফ করুন",
+      "closeAria": "থ্রেড ফিল্টার বন্ধ করুন",
+      "excludeTagsPlaceholder": "ট্যাগ বাদ দিন",
+      "open": "ফিল্টার",
+      "roomIdsAria": "রুম আইডি ফিল্টার",
+      "roomIdsPlaceholder": "রুম আইডি",
+      "scope": "ব্যাপ্তি",
+      "scopeAllRooms": "সব রুম",
+      "scopeInvolved": "জড়িত",
+      "search": "থ্রেড অনুসন্ধান করুন",
+      "sheetAria": "থ্রেড ফিল্টার",
+      "spaceIdsAria": "স্পেস আইডি ফিল্টার",
+      "spaceIdsPlaceholder": "স্পেস আইডি",
+      "status": "স্ট্যাটাস",
+      "statusAll": "সব",
+      "statusResolved": "সমাধান করা হয়েছে",
+      "statusUnresolved": "অমীমাংসিত",
+      "tagsExcludeAria": "বাদ দেওয়া ট্যাগ ফিল্টার",
+      "tagsIncludeAria": "ট্যাগ ফিল্টার অন্তর্ভুক্ত",
+      "tagsPlaceholder": "ট্যাগ",
+      "unread": "অপঠিত"
+    },
+    "filterTooltip": {
+      "any": "{{label}}: সব দেখানো হচ্ছে। শুধু এগুলি দেখাতে ক্লিক করুন।",
+      "exclude": "{{label}}: লুকানো আছে। ফিল্টার সরাতে ক্লিক করুন।",
+      "include": "{{label}}: শুধু এগুলি দেখানো হচ্ছে। লুকাতে ক্লিক করুন।",
+      "stateAny": "সব দেখানো হচ্ছে",
+      "stateExclude": "লুকানো",
+      "stateInclude": "শুধু এগুলি দেখানো হচ্ছে",
+      "tagAny": "ট্যাগ \"{{tag}}\"",
+      "tagExclude": "ট্যাগ \"{{tag}}\": লুকানো আছে। ফিল্টার সরাতে ক্লিক করুন।",
+      "tagInclude": "ট্যাগ \"{{tag}}\": শুধু এটিই দেখানো হচ্ছে। লুকাতে ক্লিক করুন।"
+    },
+    "replyCount_one": "{{count}} উত্তর",
+    "replyCount_other": "{{count}} উত্তর",
+    "resolve": "সমাধান হয়েছে বলে চিহ্নিত করুন",
+    "resolved": "সমাধান করা হয়েছে",
+    "resolvedBy": "{{name}} দ্বারা সমাধান করা হয়েছে",
+    "resolvedByShort": "{{name}} দ্বারা",
+    "hideDetails": "থ্রেডের বিবরণ লুকান",
+    "showDetails": "থ্রেডের বিবরণ দেখান",
+    "backToRoom": "রুমে ফিরে যান",
+    "simpleFilter": {
+      "showingAll": "সব থ্রেড দেখাচ্ছে. শুধুমাত্র অমীমাংসিত দেখানোর জন্য ক্লিক করুন.",
+      "showingUnresolved": "অমীমাংসিত থ্রেড দেখানো হচ্ছে. সব দেখানোর জন্য ক্লিক করুন.",
+      "unresolved": "অমীমাংসিত"
+    },
+    "stats": {
+      "aria": "থ্রেড পরিসংখ্যান",
+      "showing": "{{total}}-এর মধ্যে {{shown}} দেখানো হচ্ছে",
+      "tags": "ট্যাগ",
+      "threadCount_one": "{{count}} থ্রেড",
+      "threadCount_other": "{{count}} থ্রেড"
+    },
+    "status": {
+      "idle": "নিষ্ক্রিয়",
+      "idleFilter": "নিষ্ক্রিয় (সমাধান হয়েছে, স্ট্রিমিং নেই, কোনো কাজ নেই)",
+      "resolved": "সমাধান করা হয়েছে",
+      "scheduled": "নির্ধারিত",
+      "streaming": "স্ট্রিমিং",
+      "unread": "অপঠিত"
+    },
+    "view": "থ্রেড ভিউ"
+  },
+  "threadNav": {
+    "agents": "এজেন্ট",
+    "agentsUnknown": "কোনো এজেন্ট চিহ্নিত করা হয়নি",
+    "empty": "এখনও কোনো থ্রেড নেই",
+    "lastActivity": "শেষ কার্যকলাপ",
+    "loading": "থ্রেড লোড হচ্ছে...",
+    "messages": "বার্তা",
+    "pin": "থ্রেড পিন করুন",
+    "pinned": "পিন করা হয়েছে",
+    "room": "রুম",
+    "title": "থ্রেড",
+    "unknownActivity": "অজানা",
+    "unpin": "থ্রেড আনপিন করুন"
+  },
+  "roomSchedules": {
+    "title": "নির্ধারিত কাজ",
+    "openLabel": "নির্ধারিত কাজ ({{total}})",
+    "empty": "এই রুমে কোনো নির্ধারিত কাজ নেই।",
+    "emptyHint": "এখানে একটি কাজ নির্ধারণ করতে MindRoom এজেন্টকে বলুন।",
+    "prompt": "প্রম্পট",
+    "promptUnavailable": "প্রম্পট পাওয়া যাচ্ছে না",
+    "once": "একবার",
+    "recurring": "পুনরাবৃত্ত",
+    "executionTime": "কার্যকর করার সময়",
+    "unknownTime": "কার্যকর করার সময় পাওয়া যাচ্ছে না",
+    "awaitingExecution": "কার্যকর হওয়ার অপেক্ষায়",
+    "recurrence": "পুনরাবৃত্তি",
+    "silent": "নীরব",
+    "conditional": "শর্তসাপেক্ষ",
+    "newThread": "নতুন থ্রেড",
+    "roomTimeline": "রুমের টাইমলাইন",
+    "openThread": "থ্রেড খুলুন",
+    "owner": "কাজের মালিক",
+    "createdAt": "তৈরি করা হয়েছে",
+    "updatedAt": "আপডেট করা হয়েছে",
+    "model": "মডেল",
+    "inheritedModel": "এজেন্ট, রুম বা থ্রেডের সেটিংস থেকে",
+    "taskId": "কাজের ID",
+    "historyLimit": "ইতিহাসের সীমা",
+    "fullHistory": "সম্পূর্ণ ইতিহাস",
+    "noHistory": "কোনো ইতিহাস নেই",
+    "recentMessages": "সাম্প্রতিক বার্তা: {{total}}",
+    "close": "বন্ধ করুন"
+  },
+  "archivedRooms": {
+    "title": "আর্কাইভ করা রুম",
+    "archive": "রুম আর্কাইভ করুন",
+    "restore": "রুম ফিরিয়ে আনুন",
+    "restoreNamed": "{{room}} ফিরিয়ে আনুন",
+    "failed": "পরিবর্তন সংরক্ষণ করা যায়নি। আবার চেষ্টা করুন।",
+    "close": "আর্কাইভ করা রুম বন্ধ করুন",
+    "description": "রুম ছেড়ে না গিয়ে সাইডবার থেকে লুকান। এখান থেকে খুলুন বা ফিরিয়ে আনুন।",
+    "empty": "কোনো আর্কাইভ করা রুম নেই।"
+  }
+}
