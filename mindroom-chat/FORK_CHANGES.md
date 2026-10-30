@@ -2,6 +2,21 @@
 
 ## Runbook
 
+### Hide thread model control in Agent Room (2026-10-30)
+
+- Agent Room discussions no longer show the thread model selector in the composer.
+- The existing chat client keeps the selector on ordinary `/chat.html` routes, and model configuration and runtime behavior are unchanged.
+- Validation: focused model-picker and discussion tests (28), ESLint, TypeScript, and production build pass.
+
+### Discussion room entry recovery (2026-10-30)
+
+- Unified discussions reuse the native room route provider for initial sync, invitation acceptance, and live membership updates.
+- A saved Matrix login no longer leaves a newly created room on an indefinite loading placeholder when the owner has not joined yet.
+- Regression coverage exercises a missing cached room, an invited owner, initial-sync deferral, and room arrival while retaining discussion thread navigation.
+- Validation: 22 discussion/wizard tests, 16 backend wizard/provisioning tests, targeted ESLint, TypeScript, production build, and independent review passed.
+- Live Chrome verification restored the reported discussion with its timeline, composer, and member list visible; a separate Matrix read confirmed the owner joined.
+- Full Vitest reported 6,945 passes and three failures; focused reruns passed the notification test and retained the previously recorded scheduled-time and caption-recovery failures.
+
 ### Unified discussion space (2026-10-30)
 
 - The root entry now opens a single discussion workspace with a lightweight history rail, instead of handing off from a planning page to a separate chat page.

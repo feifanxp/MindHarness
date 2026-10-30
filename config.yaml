@@ -1,5 +1,9 @@
+administrators:
+- __MINDROOM_OWNER_USER_ID_FROM_PAIRING__
 agents:
   agent_builder:
+    context_files: []
+    delegate_to: []
     display_name: AgentBuilder
     instructions:
     - You are an expert on MindRoom agent architecture and configuration
@@ -11,9 +15,10 @@ agents:
     - Provide clear explanations of MindRoom features and capabilities
     - Test agent configurations when requested
     - Help users understand how agents, teams, and tools work together
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Expert MindRoom agent builder that helps create and configure custom AI
       agents with deep knowledge of the system
     rooms:
@@ -25,15 +30,18 @@ agents:
     tools:
     - config_manager
   analyst:
+    context_files: []
+    delegate_to: []
     display_name: AnalystAgent
     instructions:
     - Analyze information comprehensively.
     - Provide structured insights.
     - Consider multiple perspectives.
     - Make evidence-based recommendations.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Provide analytical insights and recommendations.
     rooms:
     - lobby
@@ -41,15 +49,18 @@ agents:
     skills: []
     tools: []
   calculator:
+    context_files: []
+    delegate_to: []
     display_name: CalculatorAgent
     instructions:
     - Use the calculator tools to solve mathematical problems accurately.
     - Show your work step by step.
     - Explain the mathematical concepts when helpful.
     - Double-check calculations for accuracy.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Solve mathematical problems.
     rooms:
     - lobby
@@ -59,6 +70,8 @@ agents:
     tools:
     - calculator
   callagent:
+    context_files: []
+    delegate_to: []
     display_name: CallAgent
     instructions:
     - Make and receive phone calls using Twilio services
@@ -68,9 +81,10 @@ agents:
     - Handle phone numbers in international format when possible
     - Be concise and clear in SMS messages due to character limits
     - For calls, prepare a brief script of what will be communicated
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Manage phone calls and SMS messages through Twilio integration.
     rooms:
     - lobby
@@ -79,6 +93,8 @@ agents:
     tools:
     - twilio
   code:
+    context_files: []
+    delegate_to: []
     display_name: CodeAgent
     instructions:
     - Write clean, well-documented code following best practices
@@ -88,9 +104,10 @@ agents:
     - Be careful with shell commands - explain what they do
     - Always read files before modifying them
     - Follow the project's existing style and conventions
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: opus
+    model: default
     role: Generate code, manage files, and execute shell commands.
     rooms:
     - lobby
@@ -101,6 +118,8 @@ agents:
     - file
     - shell
   data_analyst:
+    context_files: []
+    delegate_to: []
     display_name: DataAnalystAgent
     instructions:
     - Analyze data thoroughly and accurately.
@@ -109,9 +128,10 @@ agents:
     - Identify patterns and trends in data.
     - Provide actionable insights and recommendations.
     - Handle missing or inconsistent data appropriately.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Analyze data, create visualizations, and provide insights.
     rooms:
     - lobby
@@ -124,6 +144,8 @@ agents:
     - csv
     - calculator
   email:
+    context_files: []
+    delegate_to: []
     display_name: EmailAssistant
     instructions:
     - Search and retrieve emails based on user queries
@@ -136,9 +158,10 @@ agents:
     - Respect privacy - only access emails when specifically requested
     - When summarizing, focus on sender, subject, and key points
     - For email drafts, maintain appropriate tone and formality based on context
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sol
+    model: default
     role: Manage and respond to emails efficiently using Gmail with Claude Sonnet's
       intelligence
     rooms:
@@ -150,6 +173,8 @@ agents:
     - gmail
     - file
   finance:
+    context_files: []
+    delegate_to: []
     display_name: FinanceAgent
     instructions:
     - Provide accurate financial data and analysis.
@@ -158,9 +183,10 @@ agents:
     - Explain financial concepts clearly.
     - Include relevant disclaimers about investment advice.
     - Present data in a clear, organized format.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Analyze financial data, stock information, and perform calculations.
     rooms:
     - lobby
@@ -172,15 +198,18 @@ agents:
     - yfinance
     - calculator
   general:
+    context_files: []
+    delegate_to: []
     display_name: GeneralAgent
     instructions:
     - Always provide a clear, helpful response to the user after any reasoning.
     - Remember context from the conversation.
     - Be conversational and friendly.
     - Ask clarifying questions when needed.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: A general-purpose assistant that provides helpful, conversational responses
       to users.
     rooms:
@@ -189,6 +218,8 @@ agents:
     skills: []
     tools: []
   home:
+    context_files: []
+    delegate_to: []
     display_name: HomeAssistant
     instructions:
     - You are a helpful home automation assistant
@@ -200,9 +231,10 @@ agents:
     - List available devices when asked about what you can control
     - Provide clear status updates after performing actions
     - Group related actions together for efficiency
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Control and monitor smart home devices through Home Assistant
     rooms:
     - lobby
@@ -212,6 +244,8 @@ agents:
     tools:
     - homeassistant
   news:
+    context_files: []
+    delegate_to: []
     display_name: NewsAgent
     instructions:
     - Search for recent news and current events.
@@ -220,9 +254,10 @@ agents:
     - Include publication dates and sources.
     - Distinguish between news and opinion pieces.
     - Highlight key developments and their significance.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: nemotron
+    model: default
     role: Gather and summarize news and current events.
     rooms:
     - lobby
@@ -234,42 +269,6 @@ agents:
     - duckduckgo
     - newspaper
   openclaw:
-    display_name: OpenClawAgent
-    # Drop-in OpenClaw workspace import.
-    # Copy OpenClaw files into <storage>/agents/openclaw/workspace/ (default: mindroom_data/agents/openclaw/workspace/).
-    # The file memory backend preloads MEMORY.md from that workspace root.
-    instructions:
-    - >-
-      You wake up fresh each session with no memory of previous conversations.
-      Your context files (SOUL.md, USER.md, MEMORY.md, etc.) are already loaded
-      into your system prompt. Do not re-read them unless you need to verify
-      specific details.
-    - >-
-      Important long-term context is persisted by the configured MindRoom
-      memory backend. If something must be preserved exactly, write/update the
-      relevant file directly.
-    - >-
-      IMPORTANT: You have no persistent memory between sessions. If you want to
-      remember something, you MUST write it to a file. Mental notes do not
-      survive. When someone says "remember this", when you learn something
-      important, or when you make a decision worth tracking, write it to
-      memory/YYYY-MM-DD.md using today's date. Append, never
-      overwrite.
-    - >-
-      MEMORY.md is your curated long-term memory: distilled insights, not raw
-      logs. Periodically review recent daily files and update MEMORY.md with
-      what is worth keeping long-term. Remove outdated information.
-    - >-
-      Ask before external/public actions (sending emails, posting, messaging
-      others). Ask before destructive operations (rm, overwriting files). Read
-      files and explore freely without asking.
-    - >-
-      Before answering questions about prior conversations, decisions, people,
-      or preferences, use search_memories to search memory files. Do not guess
-      from incomplete context; search first.
-    include_default_tools: false
-    learning: false
-    memory_backend: file
     context_files:
     - SOUL.md
     - AGENTS.md
@@ -277,9 +276,36 @@ agents:
     - IDENTITY.md
     - TOOLS.md
     - HEARTBEAT.md
-    model: opus
-    role: OpenClaw-style personal assistant with persistent file-based identity
-      and memory.
+    delegate_to: []
+    display_name: OpenClawAgent
+    include_default_tools: false
+    instructions:
+    - You wake up fresh each session with no memory of previous conversations. Your
+      context files (SOUL.md, USER.md, MEMORY.md, etc.) are already loaded into your
+      system prompt. Do not re-read them unless you need to verify specific details.
+    - Important long-term context is persisted by the configured MindRoom memory backend.
+      If something must be preserved exactly, write/update the relevant file directly.
+    - 'IMPORTANT: You have no persistent memory between sessions. If you want to remember
+      something, you MUST write it to a file. Mental notes do not survive. When someone
+      says "remember this", when you learn something important, or when you make a
+      decision worth tracking, write it to memory/YYYY-MM-DD.md using today''s date.
+      Append, never overwrite.'
+    - 'MEMORY.md is your curated long-term memory: distilled insights, not raw logs.
+      Periodically review recent daily files and update MEMORY.md with what is worth
+      keeping long-term. Remove outdated information.'
+    - Ask before external/public actions (sending emails, posting, messaging others).
+      Ask before destructive operations (rm, overwriting files). Read files and explore
+      freely without asking.
+    - Before answering questions about prior conversations, decisions, people, or
+      preferences, use search_memories to search memory files. Do not guess from incomplete
+      context; search first.
+    knowledge_bases: []
+    learning: false
+    learning_mode: always
+    memory_backend: file
+    model: default
+    role: OpenClaw-style personal assistant with persistent file-based identity and
+      memory.
     rooms:
     - personal
     skills:
@@ -295,6 +321,8 @@ agents:
     - python
     - calculator
   research:
+    context_files: []
+    delegate_to: []
     display_name: ResearchAgent
     instructions:
     - Search for accurate, up-to-date information from reliable sources.
@@ -303,9 +331,10 @@ agents:
     - Distinguish between facts and opinions.
     - Provide balanced viewpoints on controversial topics.
     - Summarize findings in a clear, organized manner.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sol
+    model: default
     role: Conduct research using web sources, Wikipedia, and academic papers.
     rooms:
     - lobby
@@ -318,15 +347,18 @@ agents:
     - wikipedia
     - arxiv
   security:
+    context_files: []
+    delegate_to: []
     display_name: SecurityAgent
     instructions:
     - Analyze security implications thoroughly.
     - Provide security best practices.
     - Identify potential vulnerabilities.
     - Suggest mitigation strategies.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Analyze security aspects and provide recommendations.
     rooms:
     - lobby
@@ -334,6 +366,8 @@ agents:
     skills: []
     tools: []
   shell:
+    context_files: []
+    delegate_to: []
     display_name: ShellAgent
     instructions:
     - Execute shell commands to help users with system tasks.
@@ -342,9 +376,10 @@ agents:
     - Provide clear output and error messages.
     - Suggest safer alternatives when appropriate.
     - Remember the user's working directory context.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Execute shell commands and manage system operations.
     rooms:
     - lobby
@@ -355,6 +390,8 @@ agents:
     tools:
     - shell
   sleepy_paws:
+    context_files: []
+    delegate_to: []
     display_name: Sleepy Paws 🐾
     instructions:
     - Vertel altijd verhalen in het Nederlands
@@ -377,10 +414,11 @@ agents:
     - Gebruik Nederlandse uitdrukkingen en culturele elementen die geschikt zijn voor
       Nederlandse kinderen
     - Maak de verhalen warm, gezellig en vertrouwd voor Nederlandse gezinnen
+    knowledge_bases: []
     learning: true
     learning_mode: always
     markdown: true
-    model: sonnet
+    model: default
     role: Je bent Sleepy Paws, een magische verhalenverteller die zachte dierenaventuren
       creëert met de tweelingbroertjes Tom de Tijger en Leo de Leeuw. Je specialiseert
       je in verhalen voor 2-jarigen met eenvoudige Nederlandse woordenschat, herhalende
@@ -391,6 +429,8 @@ agents:
     skills: []
     tools: []
   summary:
+    context_files: []
+    delegate_to: []
     display_name: SummaryAgent
     instructions:
     - Provide clear, concise summaries of long texts.
@@ -399,9 +439,10 @@ agents:
     - Use bullet points for clarity when appropriate.
     - Indicate the level of detail in your summary.
     - Preserve important quotes or specific data points.
+    knowledge_bases: []
     learning: true
     learning_mode: always
-    model: sonnet
+    model: default
     role: Summarize long texts and extract key information.
     rooms:
     - lobby
@@ -409,17 +450,9 @@ agents:
     - docs
     skills: []
     tools: []
-administrators:
-- __MINDROOM_OWNER_USER_ID_FROM_PAIRING__
-room_defaults:
-  invite_users:
-  - __MINDROOM_OWNER_USER_ID_FROM_PAIRING__
 authorization:
   config_command_enabled: false
 bot_accounts: []
-mindroom_user:
-  display_name: MindRoomUser
-  username: mindroom_user
 defaults:
   enable_streaming: true
   learning: true
@@ -439,72 +472,84 @@ memory:
       temperature: 0.1
     provider: openai
   search:
-    mode: semantic
     include:
-      - memory/**/*.md
+    - memory/**/*.md
     include_entrypoint: false
+    mode: semantic
+mindroom_user:
+  display_name: MindRoomUser
+  username: mindroom_user
 models:
-  # --- Local (llama.local) ---
-  # llama-swap + llama.cpp, see https://github.com/basnijholt/dotfiles/blob/main/configs/nixos/hosts/pc/ai.nix
-  default:
+  Andon1-DeepSeek-v4-1-flash:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: DeepSeek-v4.1-flash
     extra_kwargs:
-      base_url: http://llama.local/v1
-    id: gpt-oss-low:20b
+      base_url: https://sub1api.jiuan.com/v1
+    id: DeepSeek-v4.1-flash
     provider: openai
-  devstral:
+  Andon1-gemini-3-5-flash:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: gemini-3.5-flash
     extra_kwargs:
-      base_url: http://llama.local/v1
-    id: devstral-2:24b-q8
+      base_url: https://sub1api.jiuan.com/v1
+    id: gemini-3.5-flash
     provider: openai
-  glm47:
+  Andon1-glm-5-3:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: glm-5.3
     extra_kwargs:
-      base_url: http://llama.local/v1
-    id: glm-4.7-flash:q4
+      base_url: https://sub1api.jiuan.com/v1
+    id: glm-5.3
     provider: openai
-  # --- Local (ollama) ---
-  ollama:
-    host: http://192.168.1.143:11434
-    id: devstral-2:24b-q8
-    provider: ollama
-  # --- Anthropic ---
-  haiku:
-    id: claude-haiku-5-5
-    provider: anthropic
-  fable:
-    id: claude-fable-5-1
-    provider: anthropic
-  opus:
-    id: claude-opus-5-5
-    provider: anthropic
-  sonnet:
-    id: claude-sonnet-5-5
-    provider: anthropic
-  # --- OpenAI ---
-  astra:
+  Andon1-gpt-6-astra:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: GPT-6 Astra
+    extra_kwargs:
+      base_url: https://sub1api.jiuan.com/v1
     id: gpt-6-astra
     provider: openai
-  sol:
-    id: gpt-6.1-sol
+  Andon1-gpt-6-luna:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: GPT-6 Luna
+    extra_kwargs:
+      base_url: https://sub1api.jiuan.com/v1
+    id: gpt-6-luna
     provider: openai
-  # --- Google ---
-  gemini_flash:
-    id: gemini-3.8-flash
-    provider: google
-  # --- OpenRouter ---
-  deepseek:
-    id: deepseek/deepseek-v4.1-flash
-    provider: openrouter
-  nemotron:
-    id: nvidia/nemotron-3.5-lightning:free
-    provider: openrouter
-  tencent_hy4:
-    id: tencent/hy4-preview
-    provider: openrouter
-plugins: []
+  Andon1-gpt-6-sol:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: GPT-6 Sol
+    extra_kwargs:
+      base_url: https://sub1api.jiuan.com/v1
+    id: gpt-6-sol
+    provider: openai
+  Andon1-grok-4-7:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    display_name: grok-4.7
+    extra_kwargs:
+      base_url: https://sub1api.jiuan.com/v1
+    id: grok-4.7
+    provider: openai
+  default:
+    api: chat_completions
+    credentials_service: custom-provider:Andon1:key
+    extra_kwargs:
+      base_url: https://sub1api.jiuan.com/v1
+    id: DeepSeek-v4.1-flash
+    provider: openai
+room_defaults:
+  invite_users:
+  - __MINDROOM_OWNER_USER_ID_FROM_PAIRING__
 room_models:
   research: haiku
 router:
-  model: ollama
+  model: default
 teams:
   code_team:
     agents:

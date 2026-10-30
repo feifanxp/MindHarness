@@ -17,10 +17,12 @@ import React, {
   useMemo,
   useRef,
   useState,
+  useContext,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePreventScroll } from 'react-aria';
 import { ScreenSize, useScreenSizeContext } from '../../hooks/useScreenSize';
+import { HideThreadModelPickerContext } from '../../hooks/threadModelPickerVisibility';
 import { stopPropagation } from '../../utils/keyboard';
 import { PageScroll } from '../../components/page';
 import { Header, Modal, Surface } from '../../components/glass/GlassPrimitives';
@@ -522,6 +524,7 @@ function ExistingThreadModelPicker({ room, threadId }: { room: Room; threadId: s
 }
 
 export function ThreadModelPicker({ room, threadId }: { room: Room; threadId?: string }) {
-  if (!threadId) return null;
+  const hidden = useContext(HideThreadModelPickerContext);
+  if (!threadId || hidden) return null;
   return <ExistingThreadModelPicker room={room} threadId={threadId} />;
 }

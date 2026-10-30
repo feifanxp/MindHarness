@@ -9,6 +9,7 @@ import { ScreenSize } from '../../hooks/useScreenSize';
 import type { ModelPickerState } from './useModelPicker';
 import { ModelPicker, ThreadModelPicker } from './ModelPicker';
 import { ModelIcon } from './ModelIcon';
+import { HideThreadModelPickerContext } from '../../hooks/threadModelPickerVisibility';
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -297,6 +298,21 @@ describe('responsive model picker', () => {
       expect(container.querySelector('button[aria-label="Choose model"]')).toBeNull();
     }
   );
+
+  it('hides the selector when the host disables thread model controls', () => {
+    mocks.useModelPicker.mockReturnValue(createState());
+
+    act(() =>
+      root.render(
+        <HideThreadModelPickerContext.Provider value>
+          <ThreadModelPicker room={{} as Room} threadId="$thread" />
+        </HideThreadModelPickerContext.Provider>
+      )
+    );
+
+    expect(mocks.useModelPicker).not.toHaveBeenCalled();
+    expect(container.querySelector('button[aria-label="Choose model"]')).toBeNull();
+  });
 
   it('searches display name, stable key, and provider while grouping visible models', () => {
     act(() => root.render(<ModelPicker state={createState()} />));

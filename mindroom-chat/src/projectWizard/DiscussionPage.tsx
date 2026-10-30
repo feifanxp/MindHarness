@@ -4,10 +4,10 @@ import { color } from 'folds';
 import ProjectWizard from './ProjectWizard';
 import { type WizardState } from './api';
 import { ClientRuntime } from '../app/pages/client/ClientRuntime';
+import { HomeRouteRoomProvider } from '../app/pages/client/home/RoomProvider';
 import { Room } from '../app/mindroom/threads/MindroomRoom';
 import { RoomPathOverrideContext } from '../app/hooks/roomPathOverride';
-import { IsDirectRoomProvider, RoomProvider } from '../app/hooks/useRoom';
-import { useMatrixClient } from '../app/hooks/useMatrixClient';
+import { HideThreadModelPickerContext } from '../app/hooks/threadModelPickerVisibility';
 import './discussionSpace.css';
 
 type DiscussionSummary = { draft_id: string; name: string; status: string; updated_at: number };
@@ -41,29 +41,14 @@ function LiveDiscussion({ state }: { state: WizardState }) {
   );
   return (
     <RoomPathOverrideContext.Provider value={override}>
-      <ClientRuntime>
-        <LiveRoom state={state} />
-      </ClientRuntime>
+      <HideThreadModelPickerContext.Provider value>
+        <ClientRuntime>
+          <HomeRouteRoomProvider>
+            <Room />
+          </HomeRouteRoomProvider>
+        </ClientRuntime>
+      </HideThreadModelPickerContext.Provider>
     </RoomPathOverrideContext.Provider>
-  );
-}
-
-function LiveRoom({ state }: { state: WizardState }) {
-  const mx = useMatrixClient();
-  const roomId = state.result?.room_id;
-  const room = roomId ? mx.getRoom(roomId) : undefined;
-  if (!room)
-    return (
-      <div className="discussion-room-loading" role="status">
-        正在加载聊天室…
-      </div>
-    );
-  return (
-    <RoomProvider key={room.roomId} value={room}>
-      <IsDirectRoomProvider value={false}>
-        <Room />
-      </IsDirectRoomProvider>
-    </RoomProvider>
   );
 }
 
