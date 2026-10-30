@@ -556,6 +556,250 @@ describe("ModelConfig", () => {
     expect(within(row).queryByTitle("Copy API key")).toBeNull();
   });
 
+  const customCatalogModels = {
+    relay_a: {
+      provider: "openai",
+      id: "test-a",
+      credentials_service: "custom-provider:relayA:key",
+      api: "responses",
+      extra_kwargs: { base_url: "https://a.example/v1" },
+    },
+    relay_b: {
+      provider: "openai",
+      id: "test-b",
+      credentials_service: "custom-provider:relayB:key",
+      api: "chat_completions",
+      extra_kwargs: { base_url: "https://b.example/v1" },
+    },
+    relay_claude: {
+      provider: "anthropic",
+      id: "test-c",
+      credentials_service: "custom-provider:relayClaude:key",
+      extra_kwargs: { client_params: { base_url: "https://c.example" } },
+    },
+  };
+
+  function withCustomProviders() {
+    vi.mocked(useConfigStore).mockReturnValue({
+      ...mockStore,
+      config: {
+        ...mockStore.config,
+        models: { ...mockStore.config.models, ...customCatalogModels },
+      },
+    });
+    keyStatusByService["custom-provider:relayA:key"] = {
+      has_key: true,
+      source: "ui",
+      masked_key: "relay-A-key",
+    };
+    keyStatusByService["custom-provider:relayB:key"] = {
+      has_key: true,
+      source: "ui",
+      masked_key: "relay-B-key",
+    };
+  }
+
+  it("labels saved custom providers and includes them in the edit selector", async () => {
+    withCustomProviders();
+    render(<ModelConfig />);
+    const savedRow = screen.getByText("relay_a").closest("tr")!;
+    expect(within(savedRow).getByText("relayA")).toBeInTheDocument();
+    fireEvent.click(screen.getByText("default"));
+    const row = screen.getByDisplayValue("default").closest("tr")!;
+    fireEvent.click(within(row).getAllByRole("combobox")[0]);
+    expect(
+      screen.getByRole("option", { name: "relayA · 第三方 API" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("option", { name: "relayB · 第三方 API" }),
+    ).toBeInTheDocument();
+    fireEvent.click(
+      screen.getByRole("option", { name: "relayA · 第三方 API" }),
+    );
+    expect(within(row).getByLabelText("API Base URL")).toHaveValue(
+      "https://a.example/v1",
+    );
+    expect(within(row).getByLabelText("API Base URL")).toHaveAttribute(
+      "readonly",
+    );
+    fireEvent.click(within(row).getByRole("button", { name: "Save" }));
+    await waitFor(() =>
+      expect(mockStore.updateConfigValue).toHaveBeenCalledWith(
+        ["models", "default"],
+        expect.objectContaining({
+          provider: "openai",
+          credentials_service: "custom-provider:relayA:key",
+          api: "responses",
+          extra_kwargs: { base_url: "https://a.example/v1" },
+        }),
+      ),
+    );
+  });
+
+  it("switches between custom endpoints with the same SDK and clears the old model key", async () => {
+    withCustomProviders();
+    keyStatusByService["model:relay_a"] = {
+      has_key: true,
+      source: "ui",
+      masked_key: "old-model-key",
+    };
+    render(<ModelConfig />);
+    await screen.findByText("old-model-key");
+    fireEvent.click(screen.getByText("relay_a"));
+    const row = screen.getByDisplayValue("relay_a").closest("tr")!;
+    fireEvent.click(within(row).getAllByRole("combobox")[0]);
+    fireEvent.click(
+      screen.getByRole("option", { name: "relayB · 第三方 API" }),
+    );
+    expect(within(row).queryByText("old-model-key")).not.toBeInTheDocument();
+    expect(within(row).getByLabelText("API Base URL")).toHaveValue(
+      "https://b.example/v1",
+    );
+    fireEvent.click(within(row).getByRole("button", { name: "Save" }));
+    await waitFor(() =>
+      expect(mockStore.updateConfigValue).toHaveBeenCalledWith(
+        ["models", "relay_a"],
+        expect.objectContaining({
+          credentials_service: "custom-provider:relayB:key",
+          api: "chat_completions",
+          extra_kwargs: { base_url: "https://b.example/v1" },
+        }),
+      ),
+    );
+    expect(fetchMock).toHaveBeenCalledWith("/api/credentials/model:relay_a", {
+      method: "DELETE",
+    });
+    expect(
+      fetchMock.mock.calls.some(
+        ([url, init]) =>
+          String(url).includes("custom-provider:relayA:key") &&
+          init?.method === "DELETE",
+      ),
+    ).toBe(false);
+  });
+
+  it("removes the custom binding when switching back to official OpenAI", async () => {
+    withCustomProviders();
+    render(<ModelConfig />);
+    fireEvent.click(screen.getByText("relay_a"));
+    const row = screen.getByDisplayValue("relay_a").closest("tr")!;
+    fireEvent.click(within(row).getAllByRole("combobox")[0]);
+    fireEvent.click(screen.getByRole("option", { name: "OpenAI" }));
+    expect(within(row).getByLabelText("API Base URL")).toHaveValue("");
+    fireEvent.click(within(row).getByRole("button", { name: "Save" }));
+    await waitFor(() =>
+      expect(mockStore.updateConfigValue).toHaveBeenCalledWith(
+        ["models", "relay_a"],
+        { provider: "openai", id: "test-a" },
+      ),
+    );
+  });
+
+  it.each([
+    ["relayA", "openai", "responses", { base_url: "https://a.example/v1" }],
+    [
+      "relayClaude",
+      "anthropic",
+      undefined,
+      { client_params: { base_url: "https://c.example" } },
+    ],
+  ])(
+    "adds a model bound to %s with its shared connection",
+    async (name, provider, api, extra_kwargs) => {
+      withCustomProviders();
+      render(<ModelConfig />);
+      fireEvent.click(screen.getByRole("button", { name: "Add Model" }));
+      fireEvent.change(screen.getByPlaceholderText("model name"), {
+        target: { value: "added" },
+      });
+      const row = screen.getByDisplayValue("added").closest("tr")!;
+      fireEvent.click(within(row).getAllByRole("combobox")[0]);
+      fireEvent.click(
+        screen.getByRole("option", { name: String(name) + " · 第三方 API" }),
+      );
+      fireEvent.change(within(row).getByPlaceholderText("provider model id"), {
+        target: { value: "test-new" },
+      });
+      fireEvent.click(within(row).getByRole("button", { name: "Add" }));
+      await waitFor(() =>
+        expect(mockStore.updateConfigValue).toHaveBeenCalledWith(
+          ["models", "added"],
+          expect.objectContaining({
+            provider,
+            id: "test-new",
+            credentials_service: "custom-provider:" + name + ":key",
+            extra_kwargs,
+          }),
+        ),
+      );
+      const saved = mockStore.updateConfigValue.mock.calls.find(
+        ([path]) => path[1] === "added",
+      )![1];
+      expect(saved.api).toBe(api);
+      expect(
+        fetchMock.mock.calls.some(([, init]) => init?.method === "POST"),
+      ).toBe(false);
+    },
+  );
+
+  it("explains a URL entered as context window and saves the provider change after it is cleared", async () => {
+    withCustomProviders();
+    render(<ModelConfig />);
+    fireEvent.click(screen.getByText("default"));
+    const row = screen.getByDisplayValue("default").closest("tr")!;
+    fireEvent.click(within(row).getAllByRole("combobox")[0]);
+    fireEvent.click(
+      screen.getByRole("option", { name: "relayA · 第三方 API" }),
+    );
+    const contextWindow =
+      within(row).getByLabelText("上下文窗口（tokens，可选）");
+    const endpoint = within(row).getByLabelText("API Base URL");
+    fireEvent.change(contextWindow, {
+      target: { value: "https://a.example/v1" },
+    });
+    expect(contextWindow).toHaveAttribute("aria-invalid", "true");
+    expect(within(row).getByRole("alert")).toHaveTextContent(
+      "这里是上下文窗口，不是 API 地址",
+    );
+    fireEvent.click(within(row).getByRole("button", { name: "Save" }));
+    expect(mockStore.updateConfigValue).not.toHaveBeenCalled();
+    expect(endpoint).toHaveValue("https://a.example/v1");
+    fireEvent.change(contextWindow, { target: { value: "" } });
+    expect(contextWindow).toHaveAttribute("aria-invalid", "false");
+    expect(within(row).queryByRole("alert")).not.toBeInTheDocument();
+    fireEvent.click(within(row).getByRole("button", { name: "Save" }));
+    await waitFor(() =>
+      expect(mockStore.updateConfigValue).toHaveBeenCalledWith(
+        ["models", "default"],
+        expect.objectContaining({
+          provider: "openai",
+          credentials_service: "custom-provider:relayA:key",
+          api: "responses",
+          extra_kwargs: { base_url: "https://a.example/v1" },
+        }),
+      ),
+    );
+    const saved = mockStore.updateConfigValue.mock.calls.find(
+      ([path]) => path[1] === "default",
+    )![1];
+    expect(saved).not.toHaveProperty("context_window");
+  });
+
+  it.each(["0", "-1", "1.5", "9007199254740992"])(
+    "rejects invalid context window %s without losing the draft",
+    (value) => {
+      render(<ModelConfig />);
+      fireEvent.click(screen.getByText("default"));
+      const row = screen.getByDisplayValue("default").closest("tr")!;
+      const input = within(row).getByLabelText("上下文窗口（tokens，可选）");
+      fireEvent.change(input, { target: { value } });
+      fireEvent.click(within(row).getByRole("button", { name: "Save" }));
+      expect(input).toHaveValue(value);
+      expect(input).toHaveAttribute("aria-invalid", "true");
+      expect(mockStore.updateConfigValue).not.toHaveBeenCalled();
+    },
+  );
+
   it("changes provider with inline dropdown", async () => {
     render(<ModelConfig />);
 
@@ -633,6 +877,75 @@ describe("ModelConfig", () => {
     });
   });
 
+  it("shows and copies the explicit shared provider key instead of an official key", async () => {
+    const service = "custom-provider:relay:key";
+    vi.mocked(useConfigStore).mockReturnValue({
+      ...mockStore,
+      config: {
+        ...mockStore.config,
+        models: {
+          relay: {
+            provider: "openai",
+            id: "test",
+            credentials_service: service,
+          },
+        },
+      },
+    });
+    keyStatusByService[service] = {
+      has_key: true,
+      source: "ui",
+      masked_key: "relay...key",
+      api_key: "relay-key",
+    };
+    keyStatusByService.openai = {
+      has_key: true,
+      source: "env",
+      masked_key: "official...key",
+      api_key: "official-key",
+    };
+    render(<ModelConfig />);
+    const row = screen.getByText("relay").closest("tr")!;
+    await waitFor(() =>
+      expect(within(row).getByText("relay...key")).toBeInTheDocument(),
+    );
+    expect(within(row).queryByText("official...key")).not.toBeInTheDocument();
+    fireEvent.click(within(row).getByTitle("Copy API key"));
+    await waitFor(() =>
+      expect(writeTextMock).toHaveBeenCalledWith("relay-key"),
+    );
+  });
+
+  it("does not display the official key when an explicit shared provider key is missing", async () => {
+    vi.mocked(useConfigStore).mockReturnValue({
+      ...mockStore,
+      config: {
+        ...mockStore.config,
+        models: {
+          relay: {
+            provider: "openai",
+            id: "test",
+            credentials_service: "custom-provider:relay:key",
+          },
+        },
+      },
+    });
+    keyStatusByService.openai = {
+      has_key: true,
+      source: "env",
+      masked_key: "official...key",
+    };
+    render(<ModelConfig />);
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith(
+        "/api/credentials/custom-provider:relay:key/api-key?key_name=api_key",
+      ),
+    );
+    const row = screen.getByText("relay").closest("tr")!;
+    expect(within(row).queryByTitle("Copy API key")).not.toBeInTheDocument();
+    expect(within(row).queryByText("official...key")).not.toBeInTheDocument();
+  });
+
   it("copies API key via copy button", async () => {
     keyStatusByService["model:anthropic"] = {
       has_key: true,
@@ -677,7 +990,7 @@ describe("ModelConfig", () => {
     fireEvent.change(screen.getByPlaceholderText("provider model id"), {
       target: { value: "openai/gpt-5.6-terra" },
     });
-    fireEvent.change(screen.getByPlaceholderText("optional context window"), {
+    fireEvent.change(screen.getByLabelText("上下文窗口（tokens，可选）"), {
       target: { value: "200000" },
     });
 

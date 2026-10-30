@@ -120,7 +120,28 @@ def test_bundled_mindroom_docs_skill_is_discoverable() -> None:
     assert (listing.path.parent / "references" / "reference-index.md").exists()
 
 
-@pytest.mark.parametrize("skill_name", ["open-knowledge-format", "agent-conversations"])
+@pytest.mark.parametrize(
+    "skill_name",
+    [
+        "open-knowledge-format",
+        "agent-conversations",
+        "role-product-manager",
+        "role-data-analyst",
+        "role-engineer",
+        "role-designer",
+        "role-operations-manager",
+        "role-sales-specialist",
+        "role-customer-support",
+        "role-marketer",
+        "role-finance-analyst",
+        "role-legal-analyst",
+        "role-hr-specialist",
+        "role-research-scientist",
+        "role-knowledge-researcher",
+        "role-executive-assistant",
+        "role-small-business-advisor",
+    ],
+)
 def test_bundled_skill_loads_for_allowlisted_agent(tmp_path: Path, skill_name: str) -> None:
     """Ensure an agent that allowlists a bundled skill can load it."""
     skills = build_agent_skills(
@@ -133,6 +154,15 @@ def test_bundled_skill_loads_for_allowlisted_agent(tmp_path: Path, skill_name: s
     )
 
     assert _skill_names(skills) == [skill_name]
+    assert skills is not None
+    instruction_tool = next(tool for tool in skills.get_tools() if tool.name == "get_skill_instructions")
+    assert instruction_tool.entrypoint is not None
+    payload = json.loads(instruction_tool.entrypoint(skill_name))
+    assert payload["skill_name"] == skill_name
+    skill = skills.get_skill(skill_name)
+    assert skill is not None
+    assert payload["instructions"] == skill.instructions
+    assert payload["instructions"].strip()
 
 
 def test_get_bundled_skills_dir_uses_package_fallback(

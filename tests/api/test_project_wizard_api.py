@@ -18,8 +18,10 @@ def proposal(name: str = "项目") -> ProjectWizardDraftContent:
         project={"name": name, "goal": "目标", "expected_outcomes": ["成果"], "constraints": [], "open_questions": []},
         collaboration={"mode": "parallel", "rationale": "多角度"},
         agents=[
-            {"name": "专家", "responsibility": "研究", "behavior": "求证"},
-            {"name": "教师", "responsibility": "实践", "behavior": "说明限制"},
+            {"name": "林悦", "responsibility": "产品研究", "behavior": "求证", "recommendation": "验证需求"},
+            {"name": "陈墨", "responsibility": "教师", "behavior": "耐心", "recommendation": "解释原理"},
+            {"name": "苏青", "responsibility": "设计师", "behavior": "开放", "recommendation": "提供创意"},
+            {"name": "周衡", "responsibility": "工程师", "behavior": "务实", "recommendation": "检验可行性"},
         ],
     )
 

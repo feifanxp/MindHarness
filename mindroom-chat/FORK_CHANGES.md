@@ -2,6 +2,36 @@
 
 ## Runbook
 
+### Unified discussion space (2026-10-30)
+
+- The root entry now opens a single discussion workspace with a lightweight history rail, instead of handing off from a planning page to a separate chat page.
+- Requirement clarification, teammate selection, saved discussion history and the native Matrix room share one route family under `/discussion`.
+- After provisioning, the selected AI teammates load into the same workspace; preparation messages stay available in a collapsed context block above the live room.
+- The existing Matrix runtime, message timeline, threads, composer, sync and reconnect behavior remain the live room implementation.
+- Room navigation keeps the discussion workspace route for the active project, while ordinary `/chat.html` routes retain the standard client behavior.
+- Browser startup at the production preview verified the new `/discussion` entry at desktop size with no page errors; TypeScript, targeted ESLint, focused wizard tests (17), backend wizard tests (21), and production build pass.
+- Expired API sessions during the room login handoff now open the same API-key reauthentication surface; the wizard suite covers this 401 recovery path (18 tests).
+- The local API was unavailable during the standalone visual entry check, so authenticated room rendering still requires the existing local runtime and Matrix credentials.
+
+### Pick AI teammates before starting a discussion (2026-10-28)
+
+- Ready discussions present 4–6 candidate cards with names, specialties, conversational personalities, reasons and bundled portraits; three are selected by default.
+- Checkbox changes persist against the draft revision, and natural-language revisions preserve existing choices and portraits.
+- “组队，开始聊” confirms the selected members once and starts the native Matrix chat handoff after provisioning.
+- Only selected candidates become Bots; their profile instructions and portraits follow them into the room.
+- Validation: 60 focused backend, import-boundary and whitelist checks, 17 wizard tests, TypeScript, targeted ESLint and production build pass; independent review approved the fixes.
+- A real configured model produced five complete candidates with three selected; desktop and mobile browser fixtures verified first-turn matching, keyboard selection, refresh recovery, the final card and automatic chat handoff.
+- The existing local runtime and preview were restarted with the same configuration; readiness and the new member endpoint schema were verified.
+- Full Vitest: 6,934 passed and nine failed; an isolated rerun of the eight affected files passed 257 tests and reproduced only the two previously recorded scheduled-time and caption-recovery failures.
+- Full Python validation reaches the existing Linux-only background-script containment failure on macOS; repository-wide hooks also report unrelated provider_setup type/boundary findings and a watchdog build failure while regenerating documentation.
+
+### Conversational discussion entry copy (2026-10-28)
+
+- The entry page invites a lightweight conversation with “今天想聊点什么？” instead of framing the experience as creating a project.
+- User-facing labels now use discussion language such as “开始新讨论”, “讨论提纲”, and “说说你想聊的事…”.
+- The saved draft, confirmation, Matrix room, and Bot flow remain unchanged behind the copy update.
+- Project wizard tests (10), TypeScript typecheck, targeted ESLint, and production build pass.
+
 ### Equal-peer project discussion (2026-10-27)
 
 - Parallel projects opt into the parent backend's peer discussion policy: members decide independently whether to speak and send separate Matrix messages under their own identities.

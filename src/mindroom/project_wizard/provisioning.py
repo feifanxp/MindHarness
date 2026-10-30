@@ -11,10 +11,16 @@ from fastapi import HTTPException
 
 from mindroom.api import config_lifecycle
 from mindroom.background_tasks import run_blocking_until_complete
-from mindroom.constants import OWNER_MATRIX_USER_ID_ENV, ROUTER_AGENT_NAME, runtime_matrix_homeserver
+from mindroom.constants import (
+    OWNER_MATRIX_USER_ID_ENV,
+    ROUTER_AGENT_NAME,
+    runtime_matrix_homeserver,
+    workspace_avatar_path,
+)
 from mindroom.matrix.health import get_matrix_sync_health_snapshot
 from mindroom.matrix.state import load_rooms
 from mindroom.matrix.users import create_agent_http_client, load_agent_user
+from mindroom.project_wizard.avatars import avatar_path
 from mindroom.project_wizard.models import ProjectMember, ProjectResult, WizardState
 from mindroom.runtime_state import get_runtime_state
 
@@ -45,7 +51,11 @@ def _project_keys(state: WizardState) -> tuple[str, list[str], str]:
     """Stable names let config and Matrix reconciliation safely resume the same operation."""
     assert state.draft is not None
     prefix = f"project_{state.draft_id.hex}"
-    return prefix, [f"{prefix}_a{index + 1}" for index in range(len(state.draft.agents))], f"{prefix}_team"
+    return (
+        prefix,
+        [f"{prefix}_a{index + 1}" for index, agent in enumerate(state.draft.agents) if agent.selected],
+        f"{prefix}_team",
+    )
 
 
 def preflight(request: Request, user: dict[str, object]) -> str | None:
@@ -79,7 +89,7 @@ def _project_config(
     room_key, agent_keys, team_key = _project_keys(state)
     context = f"项目：{draft.project.name}\n目标：{draft.project.goal}\n预期成果：{'；'.join(draft.project.expected_outcomes)}\n约束：{'；'.join(draft.project.constraints)}\n待确认：{'；'.join(draft.project.open_questions)}"
     agents = {}
-    for key, role in zip(agent_keys, draft.agents, strict=True):
+    for key, role in zip(agent_keys, draft.selected_agents, strict=True):
         agents[key] = {
             "display_name": role.name,
             "role": role.responsibility,
@@ -131,8 +141,14 @@ def _project_config(
 
 def _install_project_config(request: Request, state: WizardState, owner: str | None) -> None:
     """Commit room, agents and team together using the existing validated config writer."""
-    config, _paths = config_lifecycle.read_committed_runtime_config(request)
+    config, paths = config_lifecycle.read_committed_runtime_config(request)
     rooms, agents, teams = _project_config(state, config.router.model, owner)
+    assert state.draft is not None
+    for key, role in zip(agents, state.draft.selected_agents, strict=True):
+        if role.avatar_id is not None:
+            destination = workspace_avatar_path("agents", key, paths)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(avatar_path(role.avatar_id).read_bytes())
 
     def mutate(candidate: dict[str, Any]) -> None:
         for section, entries in (("rooms", rooms), ("agents", agents), ("teams", teams)):
@@ -187,7 +203,7 @@ async def _live_project_result(  # noqa: PLR0911
         await router.close()
     members = [
         ProjectMember(agent_id=key, user_id=account.user_id, name=role.name, responsibility=role.responsibility)
-        for key, account, role in zip(agent_keys, identities, state.draft.agents, strict=False)
+        for key, account, role in zip(agent_keys, identities, state.draft.selected_agents, strict=False)
     ]
     return ProjectResult(
         project_id=str(state.draft_id),

@@ -66,6 +66,28 @@ def test_get_skill(
     assert payload["content"].startswith("---")
 
 
+def test_bundled_role_skills_are_visible_and_read_only(
+    test_client: TestClient,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """The dashboard can inspect every bundled role without making it user-editable."""
+    bundled_root = skills_module._get_bundled_skills_dir()
+    monkeypatch.setattr(skills_module, "_get_default_skill_roots", lambda: [bundled_root])
+    monkeypatch.setattr(skills_module, "get_user_skills_dir", lambda: tmp_path / "user-skills")
+
+    response = test_client.get("/api/skills")
+    assert response.status_code == 200
+    roles = [skill for skill in response.json() if skill["name"].startswith("role-")]
+    assert len(roles) == 15
+    for role in roles:
+        assert role["origin"] == "bundled"
+        assert role["can_edit"] is False
+        detail = test_client.get(f"/api/skills/{role['name']}")
+        assert detail.status_code == 200
+        assert detail.json()["content"] == (bundled_root / role["name"] / "SKILL.md").read_text()
+
+
 def test_update_skill(
     test_client: TestClient,
     tmp_path: Path,

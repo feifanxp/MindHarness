@@ -719,6 +719,17 @@ class ModelConfig(BaseModel):
         description="Model provider (openai, anthropic, vertexai_claude, ollama, etc)",
     )
     id: str = Field(description="Model ID specific to the provider")
+    credentials_service: str | None = Field(
+        default=None,
+        description="Named shared API credential for this endpoint; missing credentials never fall back to an official provider key",
+    )
+
+    @field_validator("credentials_service")
+    @classmethod
+    def _validate_credentials_service(cls, value: str | None) -> str | None:
+        """Validate an explicit provider credential reference."""
+        return None if value is None else validate_service_name(value)
+
     display_name: str | None = Field(default=None, description="Friendly model name shown in clients")
     icon: str | None = Field(default=None, description="Config-relative image path or Matrix mxc URI")
     api: Literal["responses", "chat_completions"] | None = Field(

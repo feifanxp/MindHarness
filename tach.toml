@@ -1943,6 +1943,7 @@ path = "mindroom.api.provider_setup"
 depends_on = [
     "mindroom.api.config_lifecycle",
     "mindroom.api.credentials",
+    "mindroom.config.models",
     "mindroom.logging_config",
     "mindroom.model_defaults",
     "mindroom.providers.model_loading",

@@ -1,3 +1,5 @@
+import { CustomProviderButton } from "@/components/ProviderSetup/ProviderSetup";
+import { savedCustomProviders } from "@/components/ProviderSetup/customProvider";
 import {
   type Dispatch,
   type ReactNode,
@@ -51,6 +53,7 @@ import type {
 interface RowDraft {
   modelName: string;
   provider: string;
+  credentialsService: string | null;
   modelId: string;
   displayName: string;
   icon: string;
@@ -94,6 +97,7 @@ interface ModelRowData {
 const EMPTY_DRAFT: RowDraft = {
   modelName: "",
   provider: "openrouter",
+  credentialsService: null,
   modelId: "",
   displayName: "",
   icon: "",
@@ -312,6 +316,7 @@ function getKeyStatusDisplay(
   usesConfigKey: boolean,
   modelKeys: Record<string, KeyStatus>,
   providerKeys: Record<string, KeyStatus>,
+  credentialsService?: string | null,
 ): KeyDisplayInfo | null {
   if (!getProviderInfo(provider).requiresApiKey) {
     return null;
@@ -342,7 +347,7 @@ function getKeyStatusDisplay(
     };
   }
 
-  const providerKey = providerKeys[provider];
+  const providerKey = providerKeys[credentialsService ?? provider];
   if (providerKey?.hasKey) {
     return {
       hasKey: true,
@@ -405,6 +410,7 @@ const MODEL_EDITOR_FIELDS = [
   "display_name",
   "icon",
   "api_key",
+  "credentials_service",
   "context_window",
 ] as const;
 
@@ -453,6 +459,69 @@ export function ModelConfig() {
   const [isSavingNewRow, setIsSavingNewRow] = useState(false);
 
   const models = useMemo(() => config?.models ?? {}, [config?.models]);
+  const customProviders = useMemo(() => savedCustomProviders(models), [models]);
+  const customConnections = useMemo(
+    () =>
+      Object.fromEntries(
+        customProviders.map((provider) => [
+          "custom-provider:" + provider.name + ":key",
+          provider,
+        ]),
+      ),
+    [customProviders],
+  );
+  const providerOptions = [
+    ...customProviders.map((provider) => ({
+      id: "custom-provider:" + provider.name + ":key",
+      name: provider.name + " · 第三方 API",
+      logo: provider.protocol === "anthropic" ? "anthropic" : "openai",
+    })),
+    ...getProviderList().map((provider) => ({
+      ...provider,
+      logo: provider.id,
+    })),
+  ];
+  const selectDraftProvider = (
+    draft: RowDraft,
+    selection: string,
+  ): RowDraft => {
+    const custom = customConnections[selection];
+    return {
+      ...draft,
+      provider: custom
+        ? custom.protocol === "anthropic"
+          ? "anthropic"
+          : "openai"
+        : selection,
+      credentialsService: custom ? selection : null,
+      baseUrl: custom
+        ? custom.baseUrl
+        : selection === "openai" && !draft.credentialsService
+          ? draft.baseUrl
+          : "",
+      apiKey: "",
+      selectedKeySourceModel: "",
+      clearCustomKey: false,
+    };
+  };
+  const applyCustomConnection = (
+    model: ModelConfigType,
+    service: string | null,
+  ) => {
+    const custom = service ? customConnections[service] : undefined;
+    if (!custom) return;
+    model.credentials_service = service;
+    if (custom.protocol === "anthropic") {
+      delete model.api;
+      model.extra_kwargs = {
+        ...model.extra_kwargs,
+        client_params: { base_url: custom.baseUrl },
+      };
+    } else {
+      model.api = custom.protocol;
+      model.extra_kwargs = { ...model.extra_kwargs, base_url: custom.baseUrl };
+    }
+  };
 
   const fetchAllKeyStatuses = useCallback(async () => {
     if (!config) {
@@ -461,7 +530,13 @@ export function ModelConfig() {
 
     const modelEntries = Object.entries(config.models);
     const uniqueProviders = [
-      ...new Set(modelEntries.map(([_, model]) => model.provider)),
+      ...new Set(
+        modelEntries.flatMap(([_, model]) =>
+          model.credentials_service
+            ? [model.provider, model.credentials_service]
+            : [model.provider],
+        ),
+      ),
     ].filter((provider) => provider !== "ollama");
 
     const [providerResults, modelResults] = await Promise.all([
@@ -573,12 +648,14 @@ export function ModelConfig() {
   const getProviderScopedKeyModels = (
     provider: string,
     excludedModelNames: string[] = [],
+    credentialsService: string | null = null,
   ) => {
     return Object.entries(models)
       .filter(
         ([modelName, modelConfig]) =>
           !excludedModelNames.includes(modelName) &&
           modelConfig.provider === provider &&
+          (modelConfig.credentials_service ?? null) === credentialsService &&
           modelKeys[modelName]?.hasKey,
       )
       .map(([modelName]) => ({
@@ -590,7 +667,7 @@ export function ModelConfig() {
   const copyApiKeyForRow = async (modelName: string, provider: string) => {
     const service = modelKeys[modelName]?.hasKey
       ? `model:${modelName}`
-      : providerToService(provider);
+      : (models[modelName]?.credentials_service ?? providerToService(provider));
 
     const apiKey = await fetchApiKeyValue(service);
     if (!apiKey) {
@@ -643,6 +720,7 @@ export function ModelConfig() {
     setRowDraft({
       modelName: row.modelName,
       provider: row.provider,
+      credentialsService: models[row.modelName].credentials_service ?? null,
       modelId: row.modelId,
       displayName: row.displayName || "",
       icon: row.icon || "",
@@ -724,7 +802,8 @@ export function ModelConfig() {
     if (contextWindow !== null && Number.isNaN(contextWindow)) {
       toast({
         title: "Error",
-        description: "Context window must be a positive integer",
+        description:
+          "上下文窗口只能填写正整数 token 数，或留空；不要填写 API 地址。",
         variant: "destructive",
       });
       return { valid: false };
@@ -793,9 +872,11 @@ export function ModelConfig() {
     const hasManualApiKey = Boolean(rowDraft.apiKey.trim());
     const hasKeyReuseSource = Boolean(rowDraft.selectedKeySourceModel);
     // A saved key belongs to the provider it was saved for.
-    const clearsCustomKey =
-      rowDraft.clearCustomKey ||
-      rowDraft.provider !== originalModelConfig.provider;
+    const bindingChanged =
+      rowDraft.provider !== originalModelConfig.provider ||
+      rowDraft.credentialsService !==
+        (originalModelConfig.credentials_service ?? null);
+    const clearsCustomKey = rowDraft.clearCustomKey || bindingChanged;
 
     let keyOperationOk = true;
     let deletedOriginalKey = false;
@@ -835,7 +916,7 @@ export function ModelConfig() {
       return;
     }
 
-    const nextModelConfig = {
+    const nextModelConfig: ModelConfigType = {
       ...originalModelConfig,
       provider: rowDraft.provider as ProviderType,
       id: targetModelId,
@@ -855,6 +936,16 @@ export function ModelConfig() {
     }
 
     const nextExtraKwargs = { ...(originalModelConfig.extra_kwargs ?? {}) };
+    if (bindingChanged) {
+      delete nextModelConfig.api_key;
+      delete nextModelConfig.credentials_service;
+      delete nextModelConfig.api;
+      delete nextExtraKwargs.api_key;
+      delete nextExtraKwargs.auth_token;
+      delete nextExtraKwargs.base_url;
+      delete nextExtraKwargs.client_params;
+    }
+
     if (rowDraft.provider === "openai") {
       // More settings may have edited extra_kwargs; keep its base_url unless
       // the row's own Base URL input changed.
@@ -869,16 +960,13 @@ export function ModelConfig() {
       delete nextExtraKwargs.base_url;
       delete nextModelConfig.api;
     }
-    if (rowDraft.provider !== originalModelConfig.provider) {
-      // A config.yaml key belongs to the old provider; never send it to the new one.
-      delete nextModelConfig.api_key;
-      delete nextExtraKwargs.api_key;
-    }
     if (Object.keys(nextExtraKwargs).length > 0) {
       nextModelConfig.extra_kwargs = nextExtraKwargs;
     } else {
       delete nextModelConfig.extra_kwargs;
     }
+    if (bindingChanged)
+      applyCustomConnection(nextModelConfig, rowDraft.credentialsService);
     if (normalizedContextWindow != null) {
       nextModelConfig.context_window = normalizedContextWindow;
     } else {
@@ -964,14 +1052,7 @@ export function ModelConfig() {
       return;
     }
 
-    const nextModelConfig: {
-      provider: ProviderType;
-      id: string;
-      display_name?: string;
-      icon?: string;
-      context_window?: number;
-      extra_kwargs?: Record<string, unknown>;
-    } = {
+    const nextModelConfig: ModelConfigType = {
       provider: newRowDraft.provider as ProviderType,
       id: modelId,
     };
@@ -990,6 +1071,7 @@ export function ModelConfig() {
       nextModelConfig.context_window = normalizedContextWindow;
     }
 
+    applyCustomConnection(nextModelConfig, newRowDraft.credentialsService);
     updateConfigValue(["models", modelName], nextModelConfig);
 
     await fetchAllKeyStatuses();
@@ -1034,25 +1116,31 @@ export function ModelConfig() {
         hasConfigApiKey(modelConfig),
         modelKeys,
         providerKeys,
+        modelConfig.credentials_service,
       );
+      const custom = modelConfig.credentials_service
+        ? customConnections[modelConfig.credentials_service]
+        : undefined;
       const openAIBaseUrl =
-        modelConfig.provider === "openai"
+        custom?.baseUrl ??
+        (modelConfig.provider === "openai"
           ? getOpenAIBaseUrl(modelConfig)
-          : null;
+          : null);
 
       return {
         modelName,
         displayName: modelConfig.display_name?.trim() || null,
         icon: modelConfig.icon?.trim() || null,
         provider: modelConfig.provider,
-        providerName: getProviderInfo(modelConfig.provider).name,
+        providerName:
+          custom?.name ?? getProviderInfo(modelConfig.provider).name,
         modelId: modelConfig.id,
         openAIBaseUrl,
         contextWindow: modelConfig.context_window ?? null,
         keyDisplay,
       };
     });
-  }, [models, modelKeys, providerKeys]);
+  }, [models, modelKeys, providerKeys, customConnections]);
 
   const renderReadonlyKeyStatus = (
     keyDisplay: KeyDisplayInfo | null,
@@ -1127,6 +1215,7 @@ export function ModelConfig() {
     const providerKeyOptions = getProviderScopedKeyModels(
       draft.provider,
       currentModelName ? [currentModelName] : [],
+      draft.credentialsService,
     );
 
     const hasCustomKey = Boolean(
@@ -1140,24 +1229,30 @@ export function ModelConfig() {
     // Saving under another provider drops the saved key and the config.yaml key.
     const providerChanged =
       currentModelConfig !== undefined &&
-      currentModelConfig.provider !== draft.provider;
+      (currentModelConfig.provider !== draft.provider ||
+        (currentModelConfig.credentials_service ?? null) !==
+          draft.credentialsService);
     const isClearingCustomKey =
       hasCustomKey &&
       (draft.clearCustomKey || providerChanged) &&
       !hasManualApiKey &&
       !hasReuseSource;
-    const providerFallbackKey = providerKeys[draft.provider];
+    const credentialService = draft.credentialsService;
+    const providerFallbackKey =
+      providerKeys[credentialService ?? draft.provider];
     const usesConfigKey =
       !providerChanged && hasConfigApiKey(currentModelConfig);
-    const currentStatus = currentModelName
-      ? getKeyStatusDisplay(
-          currentModelName,
-          draft.provider,
-          usesConfigKey,
-          modelKeys,
-          providerKeys,
-        )
-      : null;
+    const currentStatus =
+      currentModelName && !providerChanged
+        ? getKeyStatusDisplay(
+            currentModelName,
+            draft.provider,
+            usesConfigKey,
+            modelKeys,
+            providerKeys,
+            credentialService,
+          )
+        : null;
 
     return (
       <div className="space-y-2" onClick={(event) => event.stopPropagation()}>
@@ -1191,14 +1286,14 @@ export function ModelConfig() {
                 {isClearingCustomKey ? "Undo clear key" : "Clear custom key"}
               </Button>
             )}
-            {isClearingCustomKey && (
-              <p className="text-xs text-amber-700 dark:text-amber-300">
-                {providerChanged
-                  ? "Custom key will be removed on save because the provider changed."
-                  : "Custom key will be removed on save."}
-              </p>
-            )}
           </div>
+        )}
+        {isClearingCustomKey && (
+          <p className="text-xs text-amber-700 dark:text-amber-300">
+            {providerChanged
+              ? "Custom key will be removed on save because the provider changed."
+              : "Custom key will be removed on save."}
+          </p>
         )}
 
         <Input
@@ -1284,28 +1379,39 @@ export function ModelConfig() {
     draft: RowDraft,
     setDraft: Dispatch<SetStateAction<RowDraft>>,
   ) => {
-    if (draft.provider !== "openai") {
+    if (draft.provider !== "openai" && !draft.credentialsService) {
       return null;
     }
 
     return (
       <div className="space-y-2" onClick={(event) => event.stopPropagation()}>
-        <Input
-          value={draft.baseUrl}
-          onChange={(event) => {
-            const baseUrl = event.target.value;
-            setDraft((current) => ({ ...current, baseUrl }));
-          }}
-          onClick={(event) => event.stopPropagation()}
-          placeholder={DEFAULT_OPENAI_BASE_URL}
-          className="h-8 text-xs"
-        />
+        <label className="block space-y-1 text-xs text-muted-foreground">
+          <span>API 地址（Base URL）</span>
+          <Input
+            value={draft.baseUrl}
+            readOnly={Boolean(draft.credentialsService)}
+            aria-label="API Base URL"
+            onChange={(event) => {
+              const baseUrl = event.target.value;
+              setDraft((current) => ({ ...current, baseUrl }));
+            }}
+            onClick={(event) => event.stopPropagation()}
+            placeholder={DEFAULT_OPENAI_BASE_URL}
+            className="h-8 text-xs"
+          />
+        </label>
         <p className="text-xs text-muted-foreground">
-          Leave empty to use{" "}
-          <code className="rounded bg-muted px-1 py-0.5 text-[10px]">
-            {DEFAULT_OPENAI_BASE_URL}
-          </code>
-          .
+          {draft.credentialsService ? (
+            "使用所选第三方提供方的共享地址。"
+          ) : (
+            <>
+              Leave empty to use{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-[10px]">
+                {DEFAULT_OPENAI_BASE_URL}
+              </code>
+              .
+            </>
+          )}
         </p>
       </div>
     );
@@ -1315,22 +1421,47 @@ export function ModelConfig() {
     draft: RowDraft,
     setDraft: Dispatch<SetStateAction<RowDraft>>,
   ) => {
+    const fieldId = isAddingRow
+      ? "new-model-context-window"
+      : "edit-model-context-window";
+    const invalid = Number.isNaN(
+      parseOptionalPositiveInteger(draft.contextWindow),
+    );
     return (
       <div className="space-y-2" onClick={(event) => event.stopPropagation()}>
+        <label
+          htmlFor={fieldId}
+          className="block text-xs text-muted-foreground"
+        >
+          上下文窗口（tokens，可选）
+        </label>
         <Input
+          id={fieldId}
           value={draft.contextWindow}
           onChange={(event) => {
             const contextWindow = event.target.value;
             setDraft((current) => ({ ...current, contextWindow }));
           }}
           onClick={(event) => event.stopPropagation()}
-          placeholder="optional context window"
+          placeholder="留空，或填写正整数 token 数"
           inputMode="numeric"
-          className="h-8 text-xs"
+          pattern="[0-9]*"
+          autoComplete="off"
+          aria-invalid={invalid}
+          aria-describedby={fieldId + "-help"}
+          className={cn("h-8 text-xs", invalid && "border-destructive")}
         />
-        <p className="text-xs text-muted-foreground">
-          Required for compaction-aware budgeting when the provider does not
-          report it elsewhere.
+        <p
+          id={fieldId + "-help"}
+          role={invalid ? "alert" : undefined}
+          className={cn(
+            "text-xs",
+            invalid ? "text-destructive" : "text-muted-foreground",
+          )}
+        >
+          {invalid
+            ? "这里是上下文窗口，不是 API 地址。请清空此项，或填写正整数 token 数。"
+            : "可留空；手动设置时填写模型支持的 token 数，不要填写 API 地址。"}
         </p>
       </div>
     );
@@ -1433,18 +1564,10 @@ export function ModelConfig() {
         return (
           <div onClick={(event) => event.stopPropagation()}>
             <Select
-              value={rowDraft.provider}
+              value={rowDraft.credentialsService ?? rowDraft.provider}
               onValueChange={(provider) => {
                 setRowDraft((current) =>
-                  current
-                    ? {
-                        ...current,
-                        provider,
-                        baseUrl: provider === "openai" ? current.baseUrl : "",
-                        apiKey: "",
-                        selectedKeySourceModel: "",
-                      }
-                    : current,
+                  current ? selectDraftProvider(current, provider) : current,
                 );
               }}
             >
@@ -1452,13 +1575,15 @@ export function ModelConfig() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {getProviderList().map((provider) => (
+                {providerOptions.map((provider) => (
                   <SelectItem key={provider.id} value={provider.id}>
                     <div className="flex items-center gap-2">
-                      <ProviderLogo
-                        provider={provider.id}
-                        className="h-4 w-4"
-                      />
+                      <span aria-hidden="true">
+                        <ProviderLogo
+                          provider={provider.logo}
+                          className="h-4 w-4"
+                        />
+                      </span>
                       <span>{provider.name}</span>
                     </div>
                   </SelectItem>
@@ -1482,15 +1607,14 @@ export function ModelConfig() {
               <code className="rounded bg-muted px-1.5 py-0.5 text-xs">
                 {row.original.modelId}
               </code>
-              {row.original.provider === "openai" &&
-                row.original.openAIBaseUrl && (
-                  <p className="text-xs text-muted-foreground">
-                    Endpoint:{" "}
-                    <code className="rounded bg-muted px-1 py-0.5 text-[10px]">
-                      {row.original.openAIBaseUrl}
-                    </code>
-                  </p>
-                )}
+              {row.original.openAIBaseUrl && (
+                <p className="text-xs text-muted-foreground">
+                  Endpoint:{" "}
+                  <code className="rounded bg-muted px-1 py-0.5 text-[10px]">
+                    {row.original.openAIBaseUrl}
+                  </code>
+                </p>
+              )}
               {row.original.contextWindow != null && (
                 <p className="text-xs text-muted-foreground">
                   Context window:{" "}
@@ -1641,7 +1765,8 @@ export function ModelConfig() {
       isBusy={Object.entries(models).some(
         ([name, model]) =>
           model.provider !== "ollama" &&
-          (!modelKeys[name] || !providerKeys[model.provider]),
+          (!modelKeys[name] ||
+            !providerKeys[model.credentials_service ?? model.provider]),
       )}
       onSave={handleSaveAllChanges}
       onDelete={() => {}}
@@ -1650,7 +1775,8 @@ export function ModelConfig() {
       className="h-full"
     >
       <div className="space-y-4">
-        <div className="flex justify-end">
+        <div className="flex flex-wrap justify-end gap-2">
+          <CustomProviderButton onSaved={() => void fetchAllKeyStatuses()} />
           <Button
             onClick={startAddingRow}
             variant="outline"
@@ -1712,29 +1838,28 @@ export function ModelConfig() {
                     </td>
                     <td className="px-4 py-2.5 align-middle">
                       <Select
-                        value={newRowDraft.provider}
-                        onValueChange={(provider) => {
-                          setNewRowDraft((current) => ({
-                            ...current,
-                            provider,
-                            apiKey: "",
-                            selectedKeySourceModel: "",
-                            baseUrl:
-                              provider === "openai" ? current.baseUrl : "",
-                          }));
-                        }}
+                        value={
+                          newRowDraft.credentialsService ?? newRowDraft.provider
+                        }
+                        onValueChange={(provider) =>
+                          setNewRowDraft((current) =>
+                            selectDraftProvider(current, provider),
+                          )
+                        }
                       >
                         <SelectTrigger className="h-8 text-xs">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
-                          {getProviderList().map((provider) => (
+                          {providerOptions.map((provider) => (
                             <SelectItem key={provider.id} value={provider.id}>
                               <div className="flex items-center gap-2">
-                                <ProviderLogo
-                                  provider={provider.id}
-                                  className="h-4 w-4"
-                                />
+                                <span aria-hidden="true">
+                                  <ProviderLogo
+                                    provider={provider.logo}
+                                    className="h-4 w-4"
+                                  />
+                                </span>
                                 <span>{provider.name}</span>
                               </div>
                             </SelectItem>

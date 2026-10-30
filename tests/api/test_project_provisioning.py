@@ -177,3 +177,17 @@ async def test_chat_handoff_joins_room_and_returns_only_new_device_session(
     assert result.device_id == "NEW"
     assert result.room_id == "!room:example.org"
     assert client.post.call_args_list[1].args[0].endswith("%21room%3Aexample.org")
+
+
+def test_selected_portraits_are_installed_before_runtime_reload(test_client: TestClient) -> None:
+    """The Bot starts with the same bundled portrait as its candidate card."""
+    state = _ready_state()
+    assert state.draft is not None
+    state.draft.agents[0].avatar_id = 2
+    provisioning._install_project_config(_request(test_client), state, state.owner_user_id)
+    _, keys, _ = provisioning._project_keys(state)
+    paths = main._app_runtime_paths(test_client.app)
+    assert (
+        provisioning.workspace_avatar_path("agents", keys[0], paths).read_bytes()
+        == provisioning.avatar_path(2).read_bytes()
+    )

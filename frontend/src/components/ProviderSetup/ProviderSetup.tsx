@@ -16,8 +16,10 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/components/ui/toaster";
 import { API_BASE_URL, fetchJSON } from "@/lib/api";
 import { cn } from "@/lib/utils";
+import { CustomProviderSetup } from "./customProvider";
 
-export type ConnectableProvider = "openrouter" | "anthropic" | "openai";
+export type ConnectableProvider =
+  "openrouter" | "anthropic" | "openai" | "custom";
 
 export interface MissingProviderKey {
   provider: string;
@@ -66,6 +68,13 @@ const PROVIDER_OPTIONS: {
       "GPT models directly from OpenAI. Your models must use the OpenAI provider.",
     keyUrl: "https://platform.openai.com/api-keys",
     placeholder: "sk-...",
+  },
+  {
+    id: "custom",
+    label: "第三方 API",
+    description: "配置 API 地址、Key 和调用方式，获取并批量添加模型。",
+    keyUrl: "",
+    placeholder: "输入第三方提供的 API Key",
   },
 ];
 
@@ -128,14 +137,18 @@ function ProviderSetupDialog({
   open,
   onOpenChange,
   missing,
+  initialProvider,
+  onSaved,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   missing: MissingProviderKey[];
+  initialProvider?: ConnectableProvider;
+  onSaved?: () => void;
 }) {
   const queryClient = useQueryClient();
-  const [provider, setProvider] = useState<ConnectableProvider>(() =>
-    defaultProviderChoice(missing),
+  const [provider, setProvider] = useState<ConnectableProvider>(
+    () => initialProvider ?? defaultProviderChoice(missing),
   );
   const [apiKey, setApiKey] = useState("");
   const [isSaving, setIsSaving] = useState(false);
@@ -145,12 +158,14 @@ function ProviderSetupDialog({
 
   const selectProvider = (next: ConnectableProvider) => {
     setProvider(next);
+    setApiKey("");
     setError(null);
     setHint(null);
   };
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    if (isSaving || provider === "custom") return;
     if (!apiKey.trim()) {
       setError("Paste an API key first.");
       return;
@@ -187,76 +202,109 @@ function ProviderSetupDialog({
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[560px]">
+    <Dialog
+      open={open}
+      onOpenChange={(next) => {
+        if (!isSaving) onOpenChange(next);
+      }}
+    >
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-[560px]">
         <form onSubmit={(event) => void handleSubmit(event)}>
           <DialogHeader>
-            <DialogTitle>Connect your AI provider</DialogTitle>
+            <DialogTitle>
+              {provider === "custom"
+                ? "第三方 API 提供方"
+                : "Connect your AI provider"}
+            </DialogTitle>
             <DialogDescription>
-              Paste an API key from your provider. MindRoom checks it with the
-              provider before saving it.
+              {provider === "custom"
+                ? "先配置提供方，再获取模型列表并选择添加。同一提供方的多个模型共享连接信息。"
+                : "Paste an API key from your provider. MindRoom checks it with the provider before saving it."}
             </DialogDescription>
           </DialogHeader>
 
-          <div
-            role="radiogroup"
-            aria-label="AI provider"
-            className="mt-4 grid gap-2"
-          >
-            {PROVIDER_OPTIONS.map((option) => (
-              <button
-                key={option.id}
-                type="button"
-                role="radio"
-                aria-checked={provider === option.id}
-                onClick={() => selectProvider(option.id)}
-                className={cn(
-                  "rounded-lg border px-3 py-2.5 text-left transition-colors",
-                  provider === option.id
-                    ? "border-primary bg-primary/5"
-                    : "border-border hover:bg-muted/50",
-                )}
-              >
-                <span className="flex items-center gap-2 text-sm font-medium">
-                  {option.label}
-                  {option.id === "openrouter" && (
-                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">
-                      Recommended
-                    </span>
+          {initialProvider !== "custom" && (
+            <div
+              role="radiogroup"
+              aria-label="AI provider"
+              className="mt-4 grid gap-2"
+            >
+              {PROVIDER_OPTIONS.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={provider === option.id}
+                  onClick={() => selectProvider(option.id)}
+                  disabled={isSaving}
+                  className={cn(
+                    "rounded-lg border px-3 py-2.5 text-left transition-colors",
+                    provider === option.id
+                      ? "border-primary bg-primary/5"
+                      : "border-border hover:bg-muted/50",
                   )}
-                </span>
-                <span className="mt-0.5 block text-xs text-muted-foreground">
-                  {option.description}
-                </span>
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-4 space-y-2">
-            <Label htmlFor="provider-api-key">{selected.label} API key</Label>
-            <Input
-              id="provider-api-key"
-              type="password"
-              autoComplete="off"
-              spellCheck={false}
-              placeholder={selected.placeholder}
-              value={apiKey}
-              onChange={(event) => setApiKey(event.target.value)}
+                >
+                  <span className="flex items-center gap-2 text-sm font-medium">
+                    {option.label}
+                    {option.id === "openrouter" && (
+                      <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">
+                        Recommended
+                      </span>
+                    )}
+                  </span>
+                  <span className="mt-0.5 block text-xs text-muted-foreground">
+                    {option.description}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+          {provider === "custom" && (
+            <CustomProviderSetup
               disabled={isSaving}
+              onBusyChange={setIsSaving}
+              onComplete={(count) => {
+                if (count === 0) onSaved?.();
+                void queryClient.invalidateQueries({
+                  queryKey: ["provider-setup-status"],
+                });
+                toast({
+                  title: "第三方提供方已保存",
+                  description: count
+                    ? `已添加 ${count} 个模型。可在 Settings → Router 中选择对话模型。`
+                    : "共享 Key 已更新。",
+                });
+                onOpenChange(false);
+              }}
             />
-            <p className="text-xs text-muted-foreground">
-              No key yet?{" "}
-              <a
-                href={selected.keyUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary underline-offset-2 hover:underline"
-              >
-                Get a key from {selected.label}
-              </a>
-              .
-            </p>
-          </div>
+          )}
+          {provider !== "custom" && (
+            <div className="mt-4 space-y-2">
+              <Label htmlFor="provider-api-key">{selected.label} API key</Label>
+              <Input
+                id="provider-api-key"
+                type="password"
+                autoComplete="off"
+                spellCheck={false}
+                placeholder={selected.placeholder}
+                value={apiKey}
+                onChange={(event) => setApiKey(event.target.value)}
+                disabled={isSaving}
+              />
+              <p className="text-xs text-muted-foreground">
+                No key yet?{" "}
+                <a
+                  href={selected.keyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-primary underline-offset-2 hover:underline"
+                >
+                  Get a key from {selected.label}
+                </a>
+                .
+              </p>
+            </div>
+          )}
 
           {error && (
             <p role="alert" className="mt-3 text-sm text-destructive">
@@ -283,13 +331,16 @@ function ProviderSetupDialog({
             <Button
               type="button"
               variant="outline"
+              disabled={isSaving}
               onClick={() => onOpenChange(false)}
             >
               {hint ? "Close" : "Cancel"}
             </Button>
-            <Button type="submit" disabled={isSaving}>
-              {isSaving ? "Checking key…" : "Verify and save"}
-            </Button>
+            {provider !== "custom" && (
+              <Button type="submit" disabled={isSaving}>
+                {isSaving ? "Checking key…" : "Verify and save"}
+              </Button>
+            )}
           </DialogFooter>
         </form>
       </DialogContent>
@@ -333,6 +384,27 @@ export function ProviderSetupBanner({ refreshKey }: { refreshKey: string }) {
           open={open}
           onOpenChange={setOpen}
           missing={missing}
+        />
+      )}
+    </>
+  );
+}
+
+/** Always available on Models, even after every provider has credentials. */
+export function CustomProviderButton({ onSaved }: { onSaved?: () => void }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="outline" size="sm" onClick={() => setOpen(true)}>
+        管理第三方提供方
+      </Button>
+      {open && (
+        <ProviderSetupDialog
+          open={open}
+          onOpenChange={setOpen}
+          missing={[]}
+          initialProvider="custom"
+          onSaved={onSaved}
         />
       )}
     </>

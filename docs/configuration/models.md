@@ -30,12 +30,23 @@ The same model can have different IDs on different providers; check the [OpenAI]
 To generate a starter config for one provider, use `mindroom config init --provider <preset>` (see [Getting Started](../getting-started.md)).
 The [macOS app's local model setup](../installation/macos-app.md#local-ai-models) downloads and runs models with one click, with hardware recommendations including Qwen3.8 27B when memory permits.
 
+## Third-party APIs in the dashboard
+
+In **Models → 管理第三方提供方** (also available under **Connect provider → 第三方 API**), enter a unique provider name, API base URL and key, then choose **OpenAI Chat Completions**, **OpenAI Responses** or **Anthropic Messages**.
+For OpenAI-compatible APIs, include the provider's required path prefix (such as `/v1`), but not `/chat/completions` or `/responses`; for Anthropic-compatible APIs, a trailing `/v1` is optional.
+Click **获取 / 同步模型**, search or select multiple models, then click **添加所选模型** to save them with one shared provider key.
+Reopen the provider from the selector to sync again; already-added models are marked and skipped, and leaving the key blank reuses the saved key.
+Fetching the catalog calls `/models` (or `/v1/models` for Anthropic), without inference; the provider must support this endpoint, and listing a model does not guarantee that it supports the selected inference protocol.
+The key does not replace official provider credentials or appear in the model's YAML configuration.
+Select the saved model under **Settings → Router → model** to use it for the project assistant; agents and teams retain their existing model selections.
+
 ## Model Config Fields
 
 | Field | Required | Default | Description |
 |-------|----------|---------|-------------|
 | `provider` | Yes | - | The AI provider (see supported providers above) |
 | `id` | Yes | - | Model ID specific to the provider; for Azure OpenAI, the deployment name |
+| `credentials_service` | No | `null` | Shared credential service name (letters, numbers, `:`, `_`, `-`), used when no model-specific key is present; a missing named key is an error, with no official-provider fallback |
 | `display_name` | No | `null` | Friendly model name shown in clients |
 | `icon` | No | `null` | Image path relative to the config file's directory, or a Matrix `mxc://` URI |
 | `api` | No | `null` | `responses` or `chat_completions`; valid only with `provider: openai` (see [OpenAI API Models](#openai-api-models)); unset selects automatically |

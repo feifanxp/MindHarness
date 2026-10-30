@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 import { type NavigateOptions, useNavigate } from 'react-router-dom';
 import { useAtomValue } from 'jotai';
 import { getCanonicalAliasOrRoomId } from '../utils/matrix';
@@ -19,8 +19,10 @@ import { useSetting } from '../state/hooks/settings';
 import { _RoomSearchParams } from '../pages/paths';
 import { navigateMindroomRoomThread } from '../mindroom/threads/threadNavigation';
 import { useSimpleMode } from '../mindroom/settings/useMindroomAccountSettings';
+import { RoomPathOverrideContext } from './roomPathOverride';
 
 export const useRoomNavigate = () => {
+  const roomPathOverride = useContext(RoomPathOverrideContext);
   const navigate = useNavigate();
   const mx = useMatrixClient();
   const roomToParents = useAtomValue(roomToParentsAtom);
@@ -39,6 +41,8 @@ export const useRoomNavigate = () => {
 
   const getRoomPath = useCallback(
     (roomId: string, eventId?: string) => {
+      const workspacePath = roomPathOverride?.(roomId, eventId);
+      if (workspacePath) return workspacePath;
       const roomIdOrAlias = getCanonicalAliasOrRoomId(mx, roomId);
       const openSpaceTimeline = developerTools && spaceSelectedId === roomId;
 
@@ -73,7 +77,7 @@ export const useRoomNavigate = () => {
 
       return getHomeRoomPath(roomIdOrAlias, eventId);
     },
-    [mx, spaceSelectedId, roomToParents, mDirects, developerTools, simpleMode]
+    [mx, spaceSelectedId, roomToParents, mDirects, developerTools, simpleMode, roomPathOverride]
   );
 
   const navigateRoom = useCallback(

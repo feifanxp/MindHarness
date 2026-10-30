@@ -1,20 +1,14 @@
-:root {
-  font-family: Inter, 'Noto Sans SC', system-ui, sans-serif;
-  color: #25342d;
-  background: #f6f8f6;
+.wizard-shell {
+  font-family: var(--font-secondary, system-ui, sans-serif);
+  color: var(--discussion-text, #25342d);
   font-synthesis: none;
 }
-* {
+.wizard-shell * {
   box-sizing: border-box;
 }
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
-button,
-textarea,
-input {
+.wizard-shell button,
+.wizard-shell textarea,
+.wizard-shell input {
   font: inherit;
 }
 .wizard-shell {
@@ -22,7 +16,7 @@ input {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse at 50% 30%, #fff 0, #f8faf8 54%, #f1f5f1 100%);
+  background: var(--discussion-background);
 }
 .wizard-header {
   height: 68px;
@@ -30,7 +24,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e9eeea;
+  border-bottom: 1px solid var(--discussion-line);
 }
 .wizard-brand {
   display: flex;
@@ -47,21 +41,21 @@ input {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  color: #376d4d;
-  background: #e8f2eb;
+  color: var(--discussion-accent);
+  background: var(--discussion-accent-soft);
 }
 .wizard-slash,
 .wizard-label {
-  color: #87938b;
+  color: var(--discussion-muted);
   font-weight: 450;
 }
 .wizard-chat-link {
-  color: #66766c;
+  color: var(--discussion-muted);
   font-size: 12px;
   text-decoration: none;
 }
 .wizard-chat-link:hover {
-  color: #315f43;
+  color: var(--discussion-accent);
 }
 .wizard-content {
   width: min(790px, 100%);
@@ -76,7 +70,7 @@ input {
   text-align: center;
 }
 .wizard-eyebrow {
-  color: #568064;
+  color: var(--discussion-accent);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.13em;
@@ -84,7 +78,7 @@ input {
 }
 .wizard-welcome h1 {
   margin: 17px 0 12px;
-  color: #24352b;
+  color: var(--discussion-text);
   font-size: clamp(27px, 4vw, 38px);
   letter-spacing: -0.045em;
   line-height: 1.2;
@@ -92,7 +86,7 @@ input {
 .wizard-welcome p {
   max-width: 520px;
   margin: 0 auto;
-  color: #7b8980;
+  color: var(--discussion-muted);
   font-size: 14px;
   line-height: 1.8;
 }
@@ -105,17 +99,17 @@ input {
 }
 .wizard-examples button {
   padding: 9px 13px;
-  border: 1px solid #e5ebe6;
+  border: 1px solid var(--discussion-line);
   border-radius: 999px;
-  color: #627168;
-  background: rgb(255 255 255 / 72%);
+  color: var(--discussion-muted);
+  background: var(--discussion-surface);
   cursor: pointer;
   font-size: 12px;
 }
 .wizard-examples button:hover {
-  border-color: #b9d0bf;
-  color: #3c704e;
-  background: #fff;
+  border-color: var(--discussion-line);
+  color: var(--discussion-accent);
+  background: var(--discussion-surface);
 }
 .wizard-content-chat {
   width: min(1240px, 100%);
@@ -150,9 +144,9 @@ input {
   max-height: 100%;
   overflow-y: auto;
   padding: 18px;
-  border: 1px solid #e1e9e2;
+  border: 1px solid var(--discussion-line);
   border-radius: 18px;
-  background: rgb(255 255 255 / 88%);
+  background: var(--discussion-surface);
   box-shadow: 0 12px 38px rgb(37 62 46 / 5%);
 }
 .wizard-plan-heading {
@@ -164,25 +158,25 @@ input {
 }
 .wizard-plan-heading h2 {
   margin: 0;
-  color: #35473b;
+  color: var(--discussion-text);
   font-size: 15px;
 }
 .wizard-plan-heading span {
-  color: #849188;
+  color: var(--discussion-muted);
   font-size: 11px;
 }
 .wizard-plan-status {
   margin: 0 0 12px;
   padding: 9px 10px;
   border-radius: 10px;
-  color: #765b32;
-  background: #f8f1e3;
+  color: var(--discussion-text);
+  background: var(--discussion-subtle);
   font-size: 12px;
   line-height: 1.55;
 }
 .wizard-plan-name {
   display: block;
-  color: #7e8a82;
+  color: var(--discussion-muted);
   font-size: 11px;
   font-weight: 600;
 }
@@ -191,11 +185,11 @@ input {
   min-height: 42px;
   margin-top: 6px;
   padding: 9px 11px;
-  border: 1px solid #dfe7e0;
+  border: 1px solid var(--discussion-line);
   border-radius: 10px;
-  outline-color: #85ae91;
-  color: #2e4034;
-  background: #fff;
+  outline-color: var(--discussion-accent);
+  color: var(--discussion-text);
+  background: var(--discussion-surface);
   font-size: 14px;
   font-weight: 600;
 }
@@ -204,13 +198,13 @@ input {
 }
 .wizard-plan-section h3 {
   margin: 0 0 6px;
-  color: #7e8a82;
+  color: var(--discussion-muted);
   font-size: 11px;
   font-weight: 650;
 }
 .wizard-plan-section p,
 .wizard-plan-section li {
-  color: #4c5d52;
+  color: var(--discussion-text);
   font-size: 12px;
   line-height: 1.6;
 }
@@ -225,38 +219,158 @@ input {
   display: inline-block;
   padding: 5px 9px;
   border-radius: 999px;
-  color: #3e704e;
-  background: #eaf2eb;
+  color: var(--discussion-accent);
+  background: var(--discussion-accent-soft);
   font-size: 11px;
   font-weight: 650;
-}
-.wizard-plan-agents {
-  display: grid;
-  gap: 7px;
-}
-.wizard-plan-agents details {
-  padding: 9px 10px;
-  border: 1px solid #e8eee9;
-  border-radius: 10px;
-  background: #fbfcfb;
-}
-.wizard-plan-agents summary {
-  color: #405347;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 650;
-}
-.wizard-plan-agents details p {
-  margin-top: 8px;
-}
-.wizard-plan-agents .wizard-agent-behavior {
-  color: #829087;
 }
 .wizard-plan-edit-hint {
   margin: 16px 0 0;
-  color: #8a968e;
+  color: var(--discussion-muted);
   font-size: 11px;
   line-height: 1.55;
+}
+.wizard-teammates {
+  min-width: 0;
+  padding: 8px 0 0;
+  margin: 16px 0 0;
+  border: 0;
+}
+.wizard-teammates legend {
+  padding: 0;
+  font-size: 23px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+.wizard-teammates-hint {
+  margin: 0 0 18px;
+  color: var(--discussion-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.wizard-teammate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.wizard-teammate-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-content: start;
+  gap: 5px 10px;
+  padding: 18px;
+  border: 1px solid var(--discussion-line);
+  border-radius: 17px;
+  background: var(--discussion-surface);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.wizard-teammate-selected {
+  border-color: var(--discussion-accent);
+  background: var(--discussion-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--discussion-accent);
+}
+.wizard-teammate-card:focus-within {
+  outline: 3px solid var(--discussion-accent);
+  outline-offset: 3px;
+}
+.wizard-teammate-card input {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--discussion-accent);
+}
+.wizard-teammate-avatar {
+  grid-row: 1 / 3;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 7px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.wizard-teammate-initial {
+  display: grid;
+  place-items: center;
+  background: var(--discussion-accent-soft);
+  font-size: 25px;
+}
+.wizard-teammate-name {
+  grid-column: 2;
+  align-self: end;
+  padding-right: 22px;
+  color: var(--discussion-text);
+  font-size: 17px;
+  font-weight: 650;
+}
+.wizard-teammate-type {
+  grid-column: 2;
+  color: var(--discussion-muted);
+  font-size: 11px;
+}
+.wizard-teammate-field {
+  grid-column: 1 / -1;
+  margin-top: 9px;
+  color: var(--discussion-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+.wizard-teammate-detail {
+  grid-column: 1 / -1;
+  color: var(--discussion-text);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.wizard-teammate-reason {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 9px;
+  padding-top: 11px;
+  border-top: 1px solid var(--discussion-line);
+  color: var(--discussion-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.wizard-teammate-reason strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+.wizard-team-count {
+  color: var(--discussion-muted);
+  font-size: 12px;
+}
+.wizard-team-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 12px 0;
+}
+.wizard-team-action p {
+  color: var(--discussion-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.wizard-team-action .wizard-confirm {
+  width: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+.wizard-teammates:disabled .wizard-teammate-card {
+  cursor: default;
+}
+@media (max-width: 600px) {
+  .wizard-teammate-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .wizard-team-action p {
+    max-width: 45%;
+  }
 }
 .wizard-plan-mobile-toggle {
   display: none;
@@ -268,7 +382,7 @@ input {
 .wizard-message p,
 .wizard-message-body {
   margin: 5px 0 0;
-  color: #35443b;
+  color: var(--discussion-text);
   font-size: 15px;
   line-height: 1.75;
   overflow-wrap: anywhere;
@@ -284,7 +398,7 @@ input {
 .wizard-message-body pre {
   overflow-x: auto;
   padding: 12px;
-  background: #edf2ee;
+  background: var(--discussion-accent-soft);
   border-radius: 8px;
 }
 .wizard-message-body h1,
@@ -294,24 +408,24 @@ input {
   font-size: 16px;
 }
 .wizard-message-role {
-  color: #89968d;
+  color: var(--discussion-muted);
   font-size: 11px;
   font-weight: 600;
 }
 .wizard-user {
   margin-left: auto;
   padding: 13px 16px;
-  border: 1px solid #e5ece6;
+  border: 1px solid var(--discussion-line);
   border-radius: 17px 17px 5px 17px;
-  background: #fff;
+  background: var(--discussion-surface);
 }
 .wizard-user .wizard-message-role {
-  color: #4c775b;
+  color: var(--discussion-accent);
 }
 .wizard-pending {
   width: fit-content;
   margin: 0 auto 20px;
-  color: #819087;
+  color: var(--discussion-muted);
   font-size: 13px;
 }
 .wizard-compose-area {
@@ -323,13 +437,13 @@ input {
   align-items: flex-end;
   gap: 10px;
   padding: 10px 11px 10px 18px;
-  border: 1px solid #dfe7e0;
+  border: 1px solid var(--discussion-line);
   border-radius: 20px;
-  background: rgb(255 255 255 / 94%);
+  background: var(--discussion-surface);
   box-shadow: 0 12px 38px rgb(37 62 46 / 6%);
 }
 .wizard-composer:focus-within {
-  border-color: #a9c5af;
+  border-color: var(--discussion-accent);
   box-shadow: 0 0 0 3px rgb(78 128 91 / 9%), 0 12px 38px rgb(37 62 46 / 6%);
 }
 .wizard-composer textarea {
@@ -340,13 +454,13 @@ input {
   padding: 10px 0;
   border: 0;
   outline: 0;
-  color: #293a30;
+  color: var(--discussion-text);
   background: transparent;
   font-size: 14px;
   line-height: 1.55;
 }
 .wizard-composer textarea::placeholder {
-  color: #a0aaa3;
+  color: var(--discussion-muted);
 }
 .wizard-send {
   width: 42px;
@@ -356,8 +470,8 @@ input {
   place-items: center;
   border: 0;
   border-radius: 13px;
-  color: #fff;
-  background: #467956;
+  color: var(--discussion-on-accent);
+  background: var(--discussion-accent);
   cursor: pointer;
 }
 .wizard-send:disabled {
@@ -369,7 +483,7 @@ input {
   justify-content: space-between;
   gap: 10px;
   padding: 8px 5px;
-  color: #9aa49d;
+  color: var(--discussion-muted);
   font-size: 10px;
 }
 .wizard-error {
@@ -379,10 +493,10 @@ input {
   gap: 10px;
   margin-bottom: 10px;
   padding: 10px 12px;
-  border: 1px solid #f0d6d0;
+  border: 1px solid var(--discussion-danger-soft);
   border-radius: 12px;
-  color: #944b3a;
-  background: #fff8f6;
+  color: var(--discussion-danger);
+  background: var(--discussion-danger-soft);
   font-size: 12px;
 }
 .wizard-error button {
@@ -390,7 +504,7 @@ input {
   align-items: center;
   gap: 4px;
   border: 0;
-  color: #884736;
+  color: var(--discussion-danger);
   background: transparent;
   cursor: pointer;
 }
@@ -406,9 +520,9 @@ input {
 .wizard-login {
   width: min(420px, 100%);
   padding: 28px;
-  border: 1px solid #e4ebe5;
+  border: 1px solid var(--discussion-line);
   border-radius: 22px;
-  background: #fff;
+  background: var(--discussion-surface);
   box-shadow: 0 24px 80px rgb(26 48 33 / 16%);
 }
 .wizard-login h2 {
@@ -416,25 +530,25 @@ input {
   font-size: 23px;
 }
 .wizard-login p {
-  color: #77847c;
+  color: var(--discussion-muted);
   font-size: 13px;
   line-height: 1.65;
 }
 .wizard-login label {
   display: block;
   margin: 18px 0 6px;
-  color: #5e6c63;
+  color: var(--discussion-muted);
   font-size: 12px;
 }
 .wizard-login input {
   width: 100%;
   padding: 11px 12px;
-  border: 1px solid #dbe4dd;
+  border: 1px solid var(--discussion-line);
   border-radius: 11px;
-  outline-color: #85ae91;
+  outline-color: var(--discussion-accent);
 }
 .wizard-auth-error {
-  color: #a14b3c !important;
+  color: var(--discussion-danger) !important;
 }
 .wizard-login-submit {
   width: 100%;
@@ -442,8 +556,8 @@ input {
   padding: 12px;
   border: 0;
   border-radius: 11px;
-  color: #fff;
-  background: #467956;
+  color: var(--discussion-on-accent);
+  background: var(--discussion-accent);
   cursor: pointer;
 }
 .sr-only {
@@ -490,12 +604,6 @@ input {
 .wizard-content-chat {
   overflow: hidden;
 }
-.wizard-plan-agents summary span {
-  display: block;
-  margin-top: 4px;
-  font-weight: 400;
-  line-height: 1.6;
-}
 .wizard-plan-panel {
   grid-column: 2;
   grid-row: 1;
@@ -504,11 +612,11 @@ input {
 .wizard-plan-edit {
   min-height: 44px;
   margin-top: 12px;
-  border: 1px solid #b9d0bf;
+  border: 1px solid var(--discussion-line);
   border-radius: 10px;
   padding: 8px 16px;
-  color: #315f43;
-  background: #eaf2eb;
+  color: var(--discussion-accent);
+  background: var(--discussion-accent-soft);
   cursor: pointer;
 }
 .wizard-plan-name input {
@@ -544,10 +652,10 @@ input {
     align-items: center;
     justify-content: center;
     margin: 0 8px 8px;
-    border: 1px solid #dfe7e0;
+    border: 1px solid var(--discussion-line);
     border-radius: 12px;
     color: #45664f;
-    background: #fff;
+    background: var(--discussion-surface);
     cursor: pointer;
     font-size: 12px;
     font-weight: 600;
@@ -608,10 +716,10 @@ input {
 .wizard-new-project {
   min-height: 44px;
   padding: 8px 14px;
-  border: 1px solid #b9d0bf;
+  border: 1px solid var(--discussion-line);
   border-radius: 10px;
-  color: #315f43;
-  background: #eaf2eb;
+  color: var(--discussion-accent);
+  background: var(--discussion-accent-soft);
   cursor: pointer;
   white-space: nowrap;
 }

@@ -233,4 +233,23 @@ describe("ProviderSetupBanner", () => {
       "/api/provider-setup/status",
     ]);
   });
+
+  it("shows custom API fields and clears the official key when switching providers", async () => {
+    mockFetch(() => jsonResponse({ missing: OPENROUTER_MISSING }));
+    renderBanner();
+    fireEvent.click(
+      await screen.findByRole("button", { name: "Connect provider" }),
+    );
+    fireEvent.change(screen.getByLabelText("OpenRouter API key"), {
+      target: { value: "official-key" },
+    });
+    fireEvent.click(screen.getByRole("radio", { name: /第三方 API/ }));
+    expect(screen.getByLabelText("API Key")).toHaveValue("");
+    expect(screen.getByLabelText("调用方式")).toHaveValue("chat_completions");
+    expect(screen.getByLabelText("API 地址（Base URL）")).toBeInTheDocument();
+    expect(screen.getByText(/先配置提供方/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "获取 / 同步模型" }),
+    ).toBeInTheDocument();
+  });
 });

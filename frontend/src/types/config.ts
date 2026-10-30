@@ -26,6 +26,7 @@ export interface BudgetsConfig {
 export interface ModelConfig {
   provider: ProviderType;
   id: string;
+  credentials_service?: string | null;
   display_name?: string | null;
   icon?: string | null;
   api?: "responses" | "chat_completions" | null;

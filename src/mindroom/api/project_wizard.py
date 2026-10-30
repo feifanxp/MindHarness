@@ -10,15 +10,18 @@ from uuid import UUID, uuid4
 from agno.agent import Agent
 from agno.models.message import Message
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, ValidationError
 
 from mindroom.api import config_lifecycle
 from mindroom.api.auth import verify_user
 from mindroom.background_tasks import run_blocking_until_complete
 from mindroom.logging_config import get_logger
+from mindroom.project_wizard.avatars import avatar_path
 from mindroom.project_wizard.chat_session import ChatSession, create_chat_session
 from mindroom.project_wizard.models import (
     ConfirmRequest,
+    DiscussionSummary,
     MessageRequest,
     ProjectWizardAssistantTurn,
     ProjectWizardChatRequest,
@@ -27,6 +30,7 @@ from mindroom.project_wizard.models import (
     ProjectWizardMessage,
     ProjectWizardRevisionTurn,
     RenameRequest,
+    SelectMembersRequest,
     StoredMessage,
     WizardState,
 )
@@ -48,8 +52,9 @@ _PROJECT_ASSISTANT_INSTRUCTIONS = """你是 Agent Room 的项目创建助手，�
 你必须为每轮回复提供一条简洁自然语言消息，并提供当前完整项目草稿；信息不足、尚不能形成有用草案时，草稿设为 null。每轮只推进最重要的一步：
 - 用户只说“开始吧”等而尚未给出项目方向时，简短回应并问想做什么项目，不自行选择行业或用户群体。
 - 根据已有对话逐步了解目标、预期产出、协作方式及影响方案的约束，不重复询问已回答的问题。缺少关键信息时只问一个具体问题，不附带多项问卷。
-- 信息足以给出有用建议时，立即提供项目名称、目标、预期成果、约束、待确认问题、推荐协作模式及理由，以及默认 2–4 位互补 Agent 的名称、职责和行为特点。
-- 用户明确要求增减人数时可以调整到 1–8 人；每位成员名称必须唯一。聊天简要解释推荐或修改，不重复列出面板中的完整方案。
+- 信息足以给出有用建议时，立即提供讨论名称、目标、预期成果、约束、待确认问题、推荐协作模式及理由，以及 4–6 位互补的 AI 候选队友。候选人数不是实际入群人数，用户稍后勾选。
+- 每位候选人有独特姓名（不是职位名称）、responsibility（职业专长与职责）、behavior（性格和交流方式）、recommendation（为什么适合当前需求）。不同候选人的实际视角与贡献必须不同。
+- 用户调整成员时仍提供 4–6 位候选人，可替换或调整指定角色。未被要求替换的候选人保留姓名。selected 和 avatar_id 由系统管理，不要擅自改变。聊天简要解释修改，不重复列出全部卡片。
 - 模式只能是 parallel、hierarchical 或 needs_clarification。探索、脑暴、辩论和比较优先考虑 parallel；明确交付物、依赖和审核时优先考虑 hierarchical；关键需求不清时可用 needs_clarification 并提出一个问题。
 - 已有草稿时，draft 不能为 null，必须结合用户本轮要求返回更新后的完整草稿；增加、删除、合并或替换成员时，确保草稿反映最新版本。无实质修改时仍返回当前完整草稿，不要因为回答额外问题而丢弃。
 - 平行讨论/主从执行只是团队组织方式建议，不代表系统已有自动发言或任务调度能力。
@@ -57,7 +62,7 @@ _PROJECT_ASSISTANT_INSTRUCTIONS = """你是 Agent Room 的项目创建助手，�
 
 事实必须来自用户明确提供的内容。助手之前提出的假设、示例和建议不等于用户已确认的事实。不得编造用户看过的数据、评论、访谈、痛点、市场结论或业务承诺。必要的假设必须明确标注，不能声称“你看到的那份数据”除非用户确实提过。
 
-系统会保存对话和方案；确认会创建真实聊天室和 Bot。方案面板真实存在，桌面在右侧，手机点“查看项目方案”展开。用户说“创建吧”“开始吧”时提供完整方案并引导点击面板的“确认创建”，然后点击摘要中的“确认创建聊天室”；不要声称已触发确认或已开始真实讨论。用户希望先讨论时接受该产出，不重复追问报告形式。不为角色启用工具或授予权限。
+系统会保存对话、候选人和选择；用户在“挑选 AI 队友”中勾选成员后点击“组队，开始聊”，系统只为选中的成员创建真实聊天室和 Bot。用户说“创建吧”“开始吧”时提供完整方案并引导挑选队友，不要声称已建群。头像来自本地头像库，不是现实人物。用户希望先讨论时接受该产出，不重复追问报告形式。不为角色启用工具或授予权限。
 
 以用户使用的语言回答，表达简洁、具体、友好。普通澄清用 1–3 句话，方案建议用简短列表；用户要求详细展开时再展开。"""
 
@@ -69,6 +74,27 @@ def _next_draft(
     """Version a complete model proposal while preserving the current plan when omitted."""
     if proposed is None:
         return current
+    previous = {agent.name: agent for agent in current.agents} if current else {}
+    selection = (
+        {name: agent.selected for name, agent in previous.items()}
+        if current is not None and current.status == "proposal_ready"
+        else {}
+    )
+    used_avatars = {previous[agent.name].avatar_id for agent in proposed.agents if agent.name in previous}
+    remaining_selections = (sum(selection.values()) if selection else 3) - sum(
+        selection.get(agent.name, False) for agent in proposed.agents
+    )
+    for candidate in proposed.agents:
+        prior = previous.get(candidate.name)
+        candidate.avatar_id = prior.avatar_id if prior else None
+        if candidate.name in selection:
+            candidate.selected = selection[candidate.name]
+        else:
+            candidate.selected = remaining_selections > 0
+            remaining_selections -= int(candidate.selected)
+        if candidate.avatar_id is None:
+            candidate.avatar_id = next(index for index in range(12) if index not in used_avatars)
+        used_avatars.add(candidate.avatar_id)
     proposed_data = proposed.model_dump()
     if current is not None and proposed_data == current.model_dump(exclude={"draft_id", "revision", "status"}):
         return current
@@ -138,7 +164,21 @@ async def _generate_turn(
     if not turn.message.strip():
         logger.warning("Project wizard model returned an empty message")
         raise HTTPException(status_code=502, detail="项目助手暂时无法生成文字回复，请重试。")
+    if (
+        turn.draft is not None
+        and turn.draft.collaboration.mode != "needs_clarification"
+        and (not 4 <= len(turn.draft.agents) <= 6 or any(not agent.recommendation for agent in turn.draft.agents))
+    ):
+        raise HTTPException(502, "暂时无法匹配完整的队友资料，请重试。")
     return turn.message.strip(), _next_draft(payload.draft, turn.draft)
+
+
+@router.get("/avatars/{avatar_id}", dependencies=[Depends(verify_user)])
+async def teammate_avatar(avatar_id: int) -> FileResponse:
+    """Serve the same bundled portrait used by the selected Matrix member."""
+    if not 0 <= avatar_id < 12:
+        raise HTTPException(404, "找不到该头像。")
+    return FileResponse(avatar_path(avatar_id), media_type="image/png")
 
 
 @router.post("/chat")
@@ -158,6 +198,17 @@ def _store(request: Request, user: dict[str, object]) -> WizardStore:
 async def create_draft(request: Request, user: Annotated[dict, Depends(verify_user)]) -> WizardState:
     """Create an owner-scoped empty draft without calling a model."""
     return await asyncio.to_thread(_store(request, user).create)
+
+
+@router.get("/drafts", response_model=list[DiscussionSummary])
+async def list_discussions(
+    request: Request,
+    response: Response,
+    user: Annotated[dict, Depends(verify_user)],
+) -> list[DiscussionSummary]:
+    """Keep preparing and created discussions in one private navigation list."""
+    response.headers["Cache-Control"] = "no-store"
+    return await asyncio.to_thread(_store(request, user).discussions)
 
 
 @router.get("/drafts/latest", response_model=WizardState | None)
@@ -272,6 +323,35 @@ async def rename_draft(
     return await asyncio.to_thread(_rename, _store(request, user), draft_id, payload)
 
 
+def _select_members(store: WizardStore, draft_id: UUID, payload: SelectMembersRequest) -> WizardState:
+    with store.operation(draft_id) as state:
+        store.check_revision(state, payload.revision)
+        store.check_editable(state)
+        if state.draft is None or state.draft.status != "proposal_ready":
+            raise HTTPException(409, "请先明确需求并匹配队友。")
+        names = set(payload.names)
+        if len(names) != len(payload.names) or not names.issubset({agent.name for agent in state.draft.agents}):
+            raise HTTPException(422, "请选择当前候选队友，成员不能重复。")
+        if names != {agent.name for agent in state.draft.selected_agents}:
+            for agent in state.draft.agents:
+                agent.selected = agent.name in names
+            state.revision += 1
+            state.draft.revision = state.revision
+            store.save(state)
+        return state
+
+
+@router.patch("/drafts/{draft_id}/members", response_model=WizardState)
+async def select_members(
+    draft_id: UUID,
+    payload: SelectMembersRequest,
+    request: Request,
+    user: Annotated[dict, Depends(verify_user)],
+) -> WizardState:
+    """Persist the user's candidate selection with the same draft locking as chat."""
+    return await asyncio.to_thread(_select_members, _store(request, user), draft_id, payload)
+
+
 async def _confirm(  # noqa: PLR0915
     request: Request,
     store: WizardStore,
@@ -297,8 +377,12 @@ async def _confirm(  # noqa: PLR0915
         if state.confirmation_key is not None and state.confirmation_key != payload.idempotency_key:
             raise HTTPException(409, "该方案已确认，请加载当前创建结果。")
         store.check_revision(state, payload.revision)
-        if state.draft is None or state.draft.collaboration.mode == "needs_clarification":
-            raise HTTPException(409, "请先明确协作模式并生成可用方案。")
+        if (
+            state.draft is None
+            or state.draft.collaboration.mode == "needs_clarification"
+            or not state.draft.selected_agents
+        ):
+            raise HTTPException(409, "请先明确需求并至少选择一位 AI 队友。")
         if state.status not in {"proposal_ready", "provision_failed", "confirmed", "provisioning"}:
             raise HTTPException(409, "该方案当前不能创建，请重新加载。")
         if state.confirmation_key is None:

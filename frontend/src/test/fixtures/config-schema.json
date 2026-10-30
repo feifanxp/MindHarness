@@ -3419,6 +3419,19 @@
           "title": "Id",
           "type": "string"
         },
+        "credentials_service": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Named shared API credential for this endpoint; missing credentials never fall back to an official provider key",
+          "title": "Credentials Service"
+        },
         "display_name": {
           "anyOf": [
             {

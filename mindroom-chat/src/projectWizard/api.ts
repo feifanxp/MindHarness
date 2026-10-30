@@ -1,4 +1,12 @@
 export type ProjectMode = 'parallel' | 'hierarchical' | 'needs_clarification';
+export type Teammate = {
+  name: string;
+  responsibility: string;
+  behavior: string;
+  recommendation: string;
+  avatar_id: number | null;
+  selected: boolean;
+};
 export type ProjectDraft = {
   draft_id: string;
   revision: number;
@@ -11,7 +19,7 @@ export type ProjectDraft = {
     open_questions: string[];
   };
   collaboration: { mode: ProjectMode; rationale: string };
-  agents: { name: string; responsibility: string; behavior: string }[];
+  agents: Teammate[];
 };
 export type Turn = { id: string; role: 'user' | 'assistant'; content: string };
 export type WizardState = {
@@ -87,6 +95,8 @@ export async function wizardRequest(
   } catch (cause) {
     if (cause instanceof Error && cause.name === 'AbortError')
       throw new WizardError(504, '请求超时，已保存的内容可以重新加载。');
+    if (cause instanceof TypeError && cause.message === 'Failed to fetch')
+      throw new WizardError(503, '暂时无法连接讨论服务，请检查 MindRoom 服务后重试。');
     throw cause;
   } finally {
     window.clearTimeout(timer);

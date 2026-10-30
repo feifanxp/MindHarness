@@ -384,12 +384,7 @@ get_provider_setup_status  # FastAPI endpoint (src/mindroom/api/provider_setup.p
 connect_provider  # FastAPI endpoint (src/mindroom/api/provider_setup.py)
 _.validate_recommended_team  # Pydantic model validator (src/mindroom/project_wizard/models.py)
 _.validate_conversation  # Pydantic model validator (src/mindroom/project_wizard/models.py)
-_.goal  # ProjectWizardProjectDraft API field (src/mindroom/project_wizard/models.py)
-_.expected_outcomes  # ProjectWizardProjectDraft API field (src/mindroom/project_wizard/models.py)
-_.constraints  # ProjectWizardProjectDraft API field (src/mindroom/project_wizard/models.py)
-_.open_questions  # ProjectWizardProjectDraft API field (src/mindroom/project_wizard/models.py)
 _.rationale  # ProjectWizardCollaborationDraft API field (src/mindroom/project_wizard/models.py)
-_.responsibility  # ProjectWizardAgentDraft API field (src/mindroom/project_wizard/models.py)
 
 create_session  # FastAPI Computer endpoint (src/mindroom/api/computers.py)
 session_status  # FastAPI Computer endpoint (src/mindroom/api/computers.py)
@@ -432,14 +427,18 @@ _._reject_non_finite_numbers  # Pydantic field validator (src/mindroom/api/scrip
 retired_project_wizard_chat  # FastAPI retired client endpoint (src/mindroom/api/project_wizard.py)
 create_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 latest_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
+list_discussions  # FastAPI owner-scoped discussion navigation (src/mindroom/api/project_wizard.py)
 get_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 draft_message  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 rename_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
+select_members  # FastAPI candidate selection endpoint (src/mindroom/api/project_wizard.py)
+teammate_avatar  # FastAPI bundled portrait endpoint (src/mindroom/api/project_wizard.py)
 confirm_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 reopen_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
-_.test_mode  # Serialized mock-only API result/state field (src/mindroom/project_wizard/models.py)
 
 project_chat_session  # FastAPI project-owner Matrix login handoff (api/project_wizard.py)
-_.homeserver_url  # ProjectResult API field consumed by the web client
 
 _.team_user_id  # ProjectResult API field consumed by the Matrix web client
+_.validate_base_url  # Pydantic custom endpoint validator (src/mindroom/api/provider_setup.py)
+discover_custom_models  # FastAPI provider catalog endpoint (src/mindroom/api/provider_setup.py)
+verify_custom_provider  # FastAPI provider connection endpoint (src/mindroom/api/provider_setup.py)

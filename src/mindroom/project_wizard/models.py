@@ -27,6 +27,14 @@ class ProjectWizardAgentDraft(BaseModel):
     name: str = Field(min_length=1, max_length=80)
     responsibility: str = Field(min_length=1, max_length=240)
     behavior: str = Field(min_length=1, max_length=240)
+    # LEGACY_COMPAT: Project wizard proposals without selectable teammate profiles.
+    # Legacy format: Agents with only name, responsibility and behavior.
+    # Last legacy release: Unreleased native writer c1e57045c; no tagged release contains it.
+    # Handling: Keep old members selected and their existing avatars; new inference supplies profiles.
+    # Coverage: tests/api/test_project_teammates.py::test_old_draft_preserves_members
+    recommendation: str = Field(default="", max_length=240)
+    avatar_id: int | None = Field(default=None, ge=0, lt=12, strict=True)
+    selected: bool = True
 
 
 class ProjectWizardProjectDraft(BaseModel):
@@ -58,6 +66,11 @@ class ProjectWizardDraftContent(BaseModel):
     project: ProjectWizardProjectDraft
     collaboration: ProjectWizardCollaborationDraft
     agents: list[ProjectWizardAgentDraft] = Field(default_factory=list, max_length=8)
+
+    @property
+    def selected_agents(self) -> list[ProjectWizardAgentDraft]:
+        """Return only the members the user selected for provisioning."""
+        return [agent for agent in self.agents if agent.selected]
 
     @model_validator(mode="after")
     def validate_recommended_team(self) -> Self:
@@ -207,6 +220,15 @@ class WizardState(BaseModel):
     test_mode: bool = False
 
 
+class DiscussionSummary(BaseModel):
+    """Small owner-scoped navigation entry for a draft or its created room."""
+
+    draft_id: UUID
+    name: str
+    status: str
+    updated_at: float
+
+
 class MessageRequest(BaseModel):
     """One user-authored turn against an exact persisted revision."""
 
@@ -222,6 +244,14 @@ class RenameRequest(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True, hide_input_in_errors=True)
     revision: int = Field(ge=0, strict=True)
     name: str = Field(min_length=1, max_length=120)
+
+
+class SelectMembersRequest(BaseModel):
+    """Select candidates from the exact persisted proposal, without accepting new roles."""
+
+    model_config = ConfigDict(extra="forbid", hide_input_in_errors=True)
+    revision: int = Field(ge=0, strict=True)
+    names: list[Annotated[str, StringConstraints(min_length=1, max_length=80)]] = Field(max_length=8)
 
 
 class ConfirmRequest(BaseModel):

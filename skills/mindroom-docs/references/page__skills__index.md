@@ -68,6 +68,42 @@ agents:
 If `skills` is empty or unset, the agent gets no bundled, plugin, or user skills.
 Skills in the agent's own workspace load without being listed; see [Workspace skills](#workspace-skills).
 
+## Bundled role skills
+
+Assign a `role-*` skill to give an agent a job-specific perspective, decision criteria, deliverables, and collaboration boundaries.
+These are adapted from Anthropic's [Knowledge Work Plugins](https://github.com/anthropics/knowledge-work-plugins); each skill records its source revision and adaptation in its metadata.
+They provide instructions only: they do not install Claude plugins, connect external accounts, add tools, create agents, or change permissions.
+Select them in the agent editor's Skills section or add their names to `skills:`:
+
+```yaml
+agents:
+  product_manager:
+    display_name: Product Manager
+    role: Help our team define and prioritize product work
+    skills: [role-product-manager]
+```
+
+Skills are loaded on demand; for a persistent identity, also describe the agent's job in `role` and any required behavior in `instructions`.
+Adapt company terminology and policies through the agent's existing instructions or context files, and configure any needed tools separately.
+
+| Skill | Role and focus |
+| --- | --- |
+| `role-product-manager` | Product manager / 产品经理: user problems, scope, priorities, acceptance criteria |
+| `role-data-analyst` | Data analyst / 数据分析师: metric definitions, data quality, reproducible evidence |
+| `role-engineer` | Engineer / 工程师: technical trade-offs, correctness, maintainability |
+| `role-designer` | Designer / 设计师: usability, accessibility, interaction states, handoff |
+| `role-operations-manager` | Operations manager / 运营经理: process ownership, bottlenecks, operational risks |
+| `role-sales-specialist` | Sales specialist / 销售顾问: account context, qualification, next steps |
+| `role-customer-support` | Customer support / 客户支持专员: triage, customer communication, escalation |
+| `role-marketer` | Marketer / 市场营销策划: audience, positioning, campaigns, brand consistency |
+| `role-finance-analyst` | Finance analyst / 财务分析师: reconciliation, variance drivers, reporting evidence |
+| `role-legal-analyst` | Legal analyst / 法务分析员: contract deviations, exposure, counsel review |
+| `role-hr-specialist` | HR specialist / 人力资源专员: competencies, structured interviews, performance evidence |
+| `role-research-scientist` | Research scientist / 科研研究员: biological research questions, project risk, data quality |
+| `role-knowledge-researcher` | Enterprise researcher / 企业知识研究员: cross-source search, attribution, conflicting evidence |
+| `role-executive-assistant` | Executive assistant / 工作助理: commitments, priorities, dependencies, workplace context |
+| `role-small-business-advisor` | Small business advisor / 小企业经营顾问: cash, sales, commitments, practical next actions |
+
 ## Skill locations and precedence
 
 MindRoom resolves skills for each agent from these locations, in this order:

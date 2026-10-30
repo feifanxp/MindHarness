@@ -26,6 +26,14 @@ The same model can have different IDs on different providers; check the [OpenAI]
 To generate a starter config for one provider, use `mindroom config init --provider <preset>` (see [Getting Started](https://docs.mindroom.chat/getting-started/)).
 The [macOS app's local model setup](https://docs.mindroom.chat/installation/macos-app/#local-ai-models) downloads and runs models with one click, with hardware recommendations including Qwen3.8 27B when memory permits.
 
+## Third-party APIs in the dashboard
+
+In **Connect provider → 第三方 API**, enter a unique model name, the provider's model ID, API base URL and key, then choose **OpenAI Chat Completions**, **OpenAI Responses** or **Anthropic Messages**.
+For OpenAI-compatible APIs, include the provider's required path prefix (such as `/v1`), but not `/chat/completions` or `/responses`; for Anthropic-compatible APIs, a trailing `/v1` is optional.
+Verification sends one short inference request, which may incur a small charge, before saving a model-specific credential and model configuration.
+The key does not replace shared provider credentials or appear in the model's YAML configuration.
+Select the saved model under **Settings → Router → model** to use it for the project assistant; agents and teams retain their existing model selections.
+
 ## Model Config Fields
 
 | Field | Required | Default | Description |

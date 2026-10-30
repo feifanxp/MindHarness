@@ -13,7 +13,7 @@ from fastapi import HTTPException
 
 from mindroom.durable_write import write_json_file_durable
 from mindroom.file_locks import release_file_lock, try_exclusive_file_lock
-from mindroom.project_wizard.models import ProjectWizardDraft, StoredMessage, WizardState
+from mindroom.project_wizard.models import DiscussionSummary, ProjectWizardDraft, StoredMessage, WizardState
 
 if TYPE_CHECKING:
     from collections.abc import Iterator
@@ -101,6 +101,20 @@ class WizardStore:
             return None
         latest = max(paths, key=lambda path: path.stat().st_mtime_ns)
         return self.get(UUID(latest.stem))
+
+    def discussions(self) -> list[DiscussionSummary]:
+        """List this owner's recent discussions without loading or exposing their transcripts."""
+        paths = sorted(self.root.glob("*.json"), key=lambda path: path.stat().st_mtime_ns, reverse=True)[:50]
+        states = [self.read(UUID(path.stem)) for path in paths]
+        return [
+            DiscussionSummary(
+                draft_id=state.draft_id,
+                name=state.draft.project.name if state.draft else "新讨论",
+                status=state.status,
+                updated_at=state.updated_at,
+            )
+            for state in states
+        ]
 
     @staticmethod
     def check_revision(state: WizardState, revision: int) -> None:

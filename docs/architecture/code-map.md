@@ -299,8 +299,9 @@ Matrix sync callback
 | `media_inputs.py` | Shared media-input container passed across bot, teams, and AI layers |
 | `api/` | FastAPI REST API (dashboard, credentials, OpenAI-compatible endpoint) |
 | `api/project_wizard.py` | Authenticated project-guidance, saved drafts, versioned edits, and explicit confirmation and provisioning endpoints |
-| `project_wizard/models.py` | Validated proposal, persisted conversation, and confirmation request models |
-| `project_wizard/store.py` | Owner-scoped atomic snapshots and per-draft operation locks under tracking |
+| `project_wizard/models.py` | Validated candidate profiles, member selections, persisted conversation, and confirmation models |
+| `project_wizard/avatars.py` | Bundled portrait lookup shared by candidate cards and provisioned Matrix accounts |
+| `project_wizard/store.py` | Owner-scoped atomic snapshots, discussion navigation entries, and per-draft operation locks under tracking |
 | `project_wizard/chat_session.py` | Owner-scoped login handoff to the existing Matrix web client |
 | `project_wizard/provisioning.py` | Stable project keys, validated config mapping, runtime reload wait, and verified Matrix membership |
 | `api/open_access.py` | Host allow-list and browser-origin guard for requests served without a credential (open dashboard auth, unauthenticated `/v1`) |

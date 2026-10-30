@@ -32,8 +32,9 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 
 ### Config and state kept out of workers
 
-Project-creation conversations, proposals, revision counters, and simulated confirmation results live under `tracking/project_wizard/`, outside worker mounts.
+Project-creation conversations, candidate profiles and selections, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
 Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
+Candidate portraits come from a bundled library; provisioning copies only selected portraits into the primary-owned managed avatar directory before the runtime loads the new agents.
 Real provisioning refuses to run unless the complete orchestrator is ready and a concrete owner Matrix identity is available; a dashboard-only API cannot claim a room or Bot exists.
 Only the authenticated confirmation endpoint can freeze a proposal and run project provisioning; model output cannot create rooms, accounts, or tool grants. Project roles always receive an empty tool list and explicitly disabled learning/automations; room membership is deterministic and derived from the authenticated owner.
 

@@ -407,6 +407,16 @@ def _model_credential_api_key(model_name: str, runtime_paths: RuntimePaths) -> s
     return model_creds.get("api_key") if model_creds else None
 
 
+def _named_model_api_key(model_config: ModelConfig, runtime_paths: RuntimePaths) -> str | None:
+    """Resolve one explicit provider key without consulting official provider defaults."""
+    if not model_config.credentials_service:
+        return None
+    credentials = get_runtime_shared_credentials_manager(runtime_paths).load_credentials(
+        model_config.credentials_service,
+    )
+    return credentials.get("api_key") if credentials else None
+
+
 # Settings the provider model classes accept in place of ``api_key``; Gemini with
 # ``vertexai: true`` authenticates with Google Cloud credentials instead.
 _ALTERNATIVE_AUTH_KWARGS: dict[str, tuple[str, ...]] = {
@@ -435,7 +445,8 @@ def model_uses_own_credential(model_name: str, model_config: ModelConfig, runtim
     return bool(
         model_config.configured_api_key()
         or _uses_alternative_auth(model_config)
-        or _model_credential_api_key(model_name, runtime_paths),
+        or _model_credential_api_key(model_name, runtime_paths)
+        or _named_model_api_key(model_config, runtime_paths),
     )
 
 
@@ -457,6 +468,8 @@ def missing_model_api_key_provider(config: Config, runtime_paths: RuntimePaths, 
         return None
     if model_uses_own_credential(model_name, model_config, runtime_paths):
         return None
+    if model_config.credentials_service:
+        return model_config.credentials_service
     if get_api_key_for_provider(provider, runtime_paths=runtime_paths):
         return None
     return provider
@@ -486,6 +499,12 @@ def get_model_instance(
     model_api_key = _model_credential_api_key(model_name, runtime_paths)
     if model_api_key:
         extra_kwargs["api_key"] = model_api_key
+    if model_config.credentials_service and not extra_kwargs.get("api_key"):
+        named_api_key = _named_model_api_key(model_config, runtime_paths)
+        if not named_api_key:
+            msg = f"Missing API key for {model_config.credentials_service}"
+            raise ValueError(msg)
+        extra_kwargs["api_key"] = named_api_key
 
     if canonical_provider(provider) in {"codex", "openai_codex"}:
         extra_kwargs.setdefault("default_instructions", config.get_prompt("CODEX_DEFAULT_INSTRUCTIONS"))

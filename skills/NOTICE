@@ -1,0 +1,16 @@
+The role-* skills in this directory are adapted from Knowledge Work Plugins
+by Anthropic: https://github.com/anthropics/knowledge-work-plugins
+Source revision: 33d3dea41a341b341d4f5da2e8801ae0c89be2b8
+Upstream license: Apache License 2.0, also distributed in MindRoom's LICENSE.
+
+These are modified, condensed role profiles, not the original plugins.
+MindRoom adaptations extract responsibilities, judgment, deliverables, and
+collaboration boundaries; add bilingual discovery labels; and replace
+Claude-specific commands, connectors, scripts, and file conventions with
+guidance for MindRoom's existing capabilities and authorization.
+Each skill's metadata identifies its source plugin and source skills.
+No upstream MCP configurations or executable scripts are included.
+
+Covered source plugins: productivity, sales, customer-support,
+product-management, marketing, legal, finance, data, enterprise-search,
+bio-research, engineering, human-resources, design, operations, small-business.
