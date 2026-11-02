@@ -101,7 +101,7 @@ def _project_config(
                 _PROJECT_DISCUSSION_INSTRUCTIONS,
             ],
             "rooms": [room_key],
-            "thread_mode": "thread",
+            "thread_mode": "room",
             "include_default_tools": False,
             "tools": [],
             "skills": [],

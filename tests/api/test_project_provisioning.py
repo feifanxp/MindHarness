@@ -52,6 +52,7 @@ def test_repeated_config_install_preserves_one_set_of_entities(test_client: Test
     room_key, keys, team = provisioning._project_keys(state)
     assert config.agents[keys[0]].tool_names == []
     assert config.agents[keys[0]].include_default_tools is False
+    assert config.agents[keys[0]].thread_mode == "room"
     assert config.teams[team].mode == "collaborate"
     assert config.agents[keys[0]].instructions[-1] == provisioning._PROJECT_DISCUSSION_INSTRUCTIONS
     assert config.teams[team].instructions == provisioning._PROJECT_TEAM_INSTRUCTIONS

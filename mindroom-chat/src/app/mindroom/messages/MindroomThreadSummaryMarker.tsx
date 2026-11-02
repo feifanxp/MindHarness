@@ -1,10 +1,11 @@
-import React, { useEffect, useId, useRef, useState, type PointerEvent } from 'react';
+import React, { useContext, useEffect, useId, useRef, useState, type PointerEvent } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { PopOut, Text, Tooltip, type RectCords } from 'folds';
 import { IconSparkles } from '@tabler/icons-react';
 import type { MindroomThreadSummaryInfo } from './threadSummary';
 import type { ThreadSummaryMarkerPlan } from '../threads/threadSummaryTimeline';
 import * as css from './MindroomThreadSummaryMarker.css';
+import { HideRoomThreadsContext } from '../../hooks/roomThreadVisibility';
 
 type MindroomThreadSummaryMarkerProps = {
   summaryInfo: MindroomThreadSummaryInfo;
@@ -20,6 +21,7 @@ export function MindroomThreadSummaryMarker({
   summaryInfo,
   plan,
 }: MindroomThreadSummaryMarkerProps) {
+  const hideRoomThreads = useContext(HideRoomThreadsContext);
   const { t } = useTranslation();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState<{ mode: OpenMode; anchor: RectCords }>();
@@ -56,6 +58,8 @@ export function MindroomThreadSummaryMarker({
       window.removeEventListener('scroll', onScroll, true);
     };
   }, [isOpen]);
+
+  if (hideRoomThreads) return null;
 
   let label = t('mindroomUi.messages.mindroomThreadSummaryMarker.updated');
   if (summaryInfo.isManual) label = t('mindroomUi.messages.mindroomThreadSummaryMarker.edited');

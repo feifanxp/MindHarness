@@ -5,6 +5,7 @@ import { createStore, Provider } from 'jotai';
 import { RoomMemberEvent, type MatrixClient, type MatrixEvent } from 'matrix-js-sdk';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MatrixClientProvider } from '../../hooks/useMatrixClient';
+import { HideRoomThreadsContext } from '../../hooks/roomThreadVisibility';
 import { mDirectAtom } from '../../state/mDirectList';
 import { createSessionId } from '../../state/sessions';
 import { getRoomViewModeStorageKey, type RoomViewMode } from './roomViewMode';
@@ -104,6 +105,22 @@ describe('useRoomViewMode', () => {
         )
       )
     );
+  const hiddenTree = (probes: string[]) =>
+    React.createElement(
+      HideRoomThreadsContext.Provider,
+      { value: true },
+      React.createElement(
+        Provider,
+        { store },
+        React.createElement(
+          MatrixClientProvider,
+          { value: mx as unknown as MatrixClient },
+          probes.map((probe) =>
+            React.createElement(Probe, { key: probe, roomId: probe.split('#')[0] })
+          )
+        )
+      )
+    );
   const render = (probes: string[], directRoomIds: string[]) => {
     store = createStore();
     store.set(mDirectAtom, { type: 'INITIALIZE', rooms: new Set(directRoomIds) });
@@ -190,6 +207,21 @@ describe('useRoomViewMode', () => {
     expect(results.get(roomId)?.viewMode).toBe('threaded');
     expect(results.get(roomId)?.availableViewModes).toEqual(['compact', 'threaded', 'classic']);
     expect(mx.listenerCount(RoomMemberEvent.Membership)).toBe(0);
+  });
+
+  it('forces Agent Room hosts into one continuous Classic conversation', () => {
+    const roomId = '!agent-room:example.org';
+    addRoom(roomId, [userId, agentId]);
+    simpleModeState.value = false;
+    storeMode(roomId, 'threaded');
+    store = createStore();
+    act(() => {
+      renderer = create(hiddenTree([roomId]));
+    });
+
+    expect(results.get(roomId)?.viewMode).toBe('classic');
+    expect(results.get(roomId)?.availableViewModes).toEqual([]);
+    expect(results.get(roomId)?.storedViewMode).toBe('threaded');
   });
 
   it('serves every direct room from one client listener', () => {

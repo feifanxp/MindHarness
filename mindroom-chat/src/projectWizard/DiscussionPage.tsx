@@ -8,6 +8,7 @@ import { HomeRouteRoomProvider } from '../app/pages/client/home/RoomProvider';
 import { Room } from '../app/mindroom/threads/MindroomRoom';
 import { RoomPathOverrideContext } from '../app/hooks/roomPathOverride';
 import { HideThreadModelPickerContext } from '../app/hooks/threadModelPickerVisibility';
+import { HideRoomThreadsContext } from '../app/hooks/roomThreadVisibility';
 import './discussionSpace.css';
 
 type DiscussionSummary = { draft_id: string; name: string; status: string; updated_at: number };
@@ -41,13 +42,15 @@ function LiveDiscussion({ state }: { state: WizardState }) {
   );
   return (
     <RoomPathOverrideContext.Provider value={override}>
-      <HideThreadModelPickerContext.Provider value>
-        <ClientRuntime>
-          <HomeRouteRoomProvider>
-            <Room />
-          </HomeRouteRoomProvider>
-        </ClientRuntime>
-      </HideThreadModelPickerContext.Provider>
+      <HideRoomThreadsContext.Provider value>
+        <HideThreadModelPickerContext.Provider value>
+          <ClientRuntime>
+            <HomeRouteRoomProvider>
+              <Room />
+            </HomeRouteRoomProvider>
+          </ClientRuntime>
+        </HideThreadModelPickerContext.Provider>
+      </HideRoomThreadsContext.Provider>
     </RoomPathOverrideContext.Provider>
   );
 }

@@ -8,6 +8,7 @@ import { createSessionId } from '../../state/sessions';
 import { getAccountData } from '../../utils/room';
 import { hasActiveMindroomAgent, isMindroomAgentUserId } from '../matrix/agentIdentity';
 import { useSimpleMode } from '../settings/useMindroomAccountSettings';
+import { useHideRoomThreads } from '../../hooks/roomThreadVisibility';
 import {
   DEFAULT_ROOM_VIEW_MODE,
   getAvailableRoomViewModes,
@@ -84,12 +85,17 @@ const useIsHumanDirectRoom = (roomId: string): boolean => {
 export const useRoomViewMode = (roomId: string) => {
   const mx = useMatrixClient();
   const simpleMode = useSimpleMode();
+  const hideRoomThreads = useHideRoomThreads();
   const humanDirectRoom = useIsHumanDirectRoom(roomId);
   const sessionId = useMemo(() => createSessionId(mx.getHomeserverUrl(), mx.getSafeUserId()), [mx]);
   const atom = useMemo(() => roomViewModeAtomFamily(sessionId, roomId), [roomId, sessionId]);
   const [storedViewMode, setViewMode] = useAtom(atom);
-  const viewMode = resolveEffectiveRoomViewMode(storedViewMode, simpleMode, humanDirectRoom);
-  const availableViewModes = getAvailableRoomViewModes(simpleMode, humanDirectRoom);
+  const viewMode = hideRoomThreads
+    ? 'classic'
+    : resolveEffectiveRoomViewMode(storedViewMode, simpleMode, humanDirectRoom);
+  const availableViewModes = hideRoomThreads
+    ? []
+    : getAvailableRoomViewModes(simpleMode, humanDirectRoom);
 
   return { availableViewModes, setViewMode, storedViewMode, viewMode };
 };

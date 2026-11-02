@@ -1,6 +1,7 @@
 @import "./styles/tokens.css";
 @import "./styles/animations.css";
 @import "tailwindcss";
+@import "./presentation.css";
 @config "../tailwind.config.js";
 
 @layer base {
