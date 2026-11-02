@@ -136,6 +136,24 @@ def _project_config(
         "access": {"current_room_members": True, "members_of_rooms": [], "users": []},
         "accept_invites": False,
     }
+    agents[f"{room_key}_scribe"] = {
+        "display_name": "整理员",
+        "role": "后台整理讨论中的事实、观点、决定、分歧和行动，保留原文出处。",
+        "model": model,
+        "room_scribe": True,
+        "rooms": [room_key],
+        "include_default_tools": False,
+        "tools": [],
+        "skills": [],
+        "delegate_to": [],
+        "automations": [],
+        "learning": False,
+        "knowledge_graph": False,
+        "memory_backend": "none",
+        "allow_self_config": False,
+        "accept_invites": False,
+        "access": {"current_room_members": False, "members_of_rooms": [], "users": []},
+    }
     return {room_key: room}, agents, {team_key: team}
 
 
@@ -144,7 +162,8 @@ def _install_project_config(request: Request, state: WizardState, owner: str | N
     config, paths = config_lifecycle.read_committed_runtime_config(request)
     rooms, agents, teams = _project_config(state, config.router.model, owner)
     assert state.draft is not None
-    for key, role in zip(agents, state.draft.selected_agents, strict=True):
+    _, agent_keys, _ = _project_keys(state)
+    for key, role in zip(agent_keys, state.draft.selected_agents, strict=True):
         if role.avatar_id is not None:
             destination = workspace_avatar_path("agents", key, paths)
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -168,14 +187,15 @@ async def _live_project_result(  # noqa: PLR0911
     """Require every named Bot to run and actually join the room before claiming success."""
     assert state.draft is not None
     room_key, agent_keys, team_key = _project_keys(state)
+    scribe_key = f"{room_key}_scribe"
     room = (await asyncio.to_thread(load_rooms, paths)).get(room_key)
     if room is None:
         return None
     health = get_matrix_sync_health_snapshot()
-    if not {*agent_keys, team_key}.issubset(set(health.active_entities) - set(health.stale_entities)):
+    if not {*agent_keys, team_key, scribe_key}.issubset(set(health.active_entities) - set(health.stale_entities)):
         return None
     identities = []
-    for key in [*agent_keys, team_key, "user"]:
+    for key in [*agent_keys, scribe_key, team_key, "user"]:
         account = await asyncio.to_thread(load_agent_user, key, paths)
         if account is None or not account.access_token:
             return None
@@ -212,6 +232,12 @@ async def _live_project_result(  # noqa: PLR0911
         team_user_id=identities[-2].user_id,
         sender_user_id=identities[-1].user_id,
         members=members,
+        scribe=ProjectMember(
+            agent_id=scribe_key,
+            user_id=identities[-3].user_id,
+            name="整理员",
+            responsibility="后台整理讨论成果，不参与发言",
+        ),
     )
 
 

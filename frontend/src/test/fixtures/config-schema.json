@@ -9,6 +9,12 @@
           "title": "Display Name",
           "type": "string"
         },
+        "room_scribe": {
+          "default": false,
+          "description": "Maintain room discussion notes in the background instead of answering messages",
+          "title": "Room Scribe",
+          "type": "boolean"
+        },
         "role": {
           "default": "",
           "description": "Description of the agent's purpose",

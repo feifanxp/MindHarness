@@ -1694,6 +1694,7 @@ agents:
 |--------|------|---------|-------------|
 | `display_name` | string | *required* | Name shown in Matrix |
 | `role` | string | `""` | System prompt describing the agent's purpose and expertise |
+| `room_scribe` | bool | `false` | Set `true` for a silent background organizer of its configured rooms; uses this agent's `model` and does not answer messages, including mentions; new Agent Room discussions provision one automatically |
 | `model` | string | `"default"` | Key of an entry under `models:` |
 | `cheap_model` | string or null | `null` | Cheaper model key this agent may switch to; used by `cold_cache`. Inherits `defaults.cheap_model`. See [Cold-Cache Model](https://docs.mindroom.chat/configuration/models/#cold-cache-model) |
 | `tools` | list | `[]` | Tool names or single-key dicts with per-agent overrides; see [Tools](https://docs.mindroom.chat/tools/) and [Per-Agent Tool Configuration](https://docs.mindroom.chat/tools/#per-agent-tool-configuration). The agent gets these plus `defaults.tools`, without duplicates |
@@ -1903,10 +1904,12 @@ The [macOS app's local model setup](https://docs.mindroom.chat/installation/maco
 
 ## Third-party APIs in the dashboard
 
-In **Connect provider → 第三方 API**, enter a unique model name, the provider's model ID, API base URL and key, then choose **OpenAI Chat Completions**, **OpenAI Responses** or **Anthropic Messages**.
+In **Models → 管理第三方提供方** (also available under **Connect provider → 第三方 API**), enter a unique provider name, API base URL and key, then choose **OpenAI Chat Completions**, **OpenAI Responses** or **Anthropic Messages**.
 For OpenAI-compatible APIs, include the provider's required path prefix (such as `/v1`), but not `/chat/completions` or `/responses`; for Anthropic-compatible APIs, a trailing `/v1` is optional.
-Verification sends one short inference request, which may incur a small charge, before saving a model-specific credential and model configuration.
-The key does not replace shared provider credentials or appear in the model's YAML configuration.
+Click **获取 / 同步模型**, search or select multiple models, then click **添加所选模型** to save them with one shared provider key.
+Reopen the provider from the selector to sync again; already-added models are marked and skipped, and leaving the key blank reuses the saved key.
+Fetching the catalog calls `/models` (or `/v1/models` for Anthropic), without inference; the provider must support this endpoint, and listing a model does not guarantee that it supports the selected inference protocol.
+The key does not replace official provider credentials or appear in the model's YAML configuration.
 Select the saved model under **Settings → Router → model** to use it for the project assistant; agents and teams retain their existing model selections.
 
 ## Model Config Fields
@@ -1915,6 +1918,7 @@ Select the saved model under **Settings → Router → model** to use it for the
 |-------|----------|---------|-------------|
 | `provider` | Yes | - | The AI provider (see supported providers above) |
 | `id` | Yes | - | Model ID specific to the provider; for Azure OpenAI, the deployment name |
+| `credentials_service` | No | `null` | Shared credential service name (letters, numbers, `:`, `_`, `-`), used when no model-specific key is present; a missing named key is an error, with no official-provider fallback |
 | `display_name` | No | `null` | Friendly model name shown in clients |
 | `icon` | No | `null` | Image path relative to the config file's directory, or a Matrix `mxc://` URI |
 | `api` | No | `null` | `responses` or `chat_completions`; valid only with `provider: openai` (see [OpenAI API Models](#openai-api-models)); unset selects automatically |
@@ -6704,6 +6708,12 @@ On a shared homeserver, any account can create or repoint an alias such as `#lob
 Otherwise it logs `managed_alias_target_refused`, never joins that room, and creates its own room without the alias.
 A recorded room stays in use even when its alias now points elsewhere, which logs `managed_alias_points_elsewhere`.
 If the alias of a recorded room is deleted, the router restores it, and creates a replacement room only when it can no longer read or is no longer joined to the recorded room.
+
+## Discussion Notes
+
+New Agent Room discussions include a silent organizer Bot alongside the selected teammates.
+Open **讨论成果** to read its categorized notes and original-message links, or select **立即整理** to process pending messages immediately.
+It automatically processes new messages in batches of 20, or after two minutes of quiet, and revises affected notes when their source messages change or are withdrawn.
 
 ## Room Cleanup
 
@@ -14660,8 +14670,10 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 
 ### Config and state kept out of workers
 
-Project-creation conversations, proposals, revision counters, and simulated confirmation results live under `tracking/project_wizard/`, outside worker mounts.
+Project-creation conversations, candidate profiles and selections, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
 Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
+Room scribe snapshots, including cached Matrix source events, notes, message citations, and extraction progress, live in primary-only `tracking/room_scribe/`; the project API exposes notes only through the authenticated owner's saved draft.
+Candidate portraits come from a bundled library; provisioning copies only selected portraits into the primary-owned managed avatar directory before the runtime loads the new agents.
 Real provisioning refuses to run unless the complete orchestrator is ready and a concrete owner Matrix identity is available; a dashboard-only API cannot claim a room or Bot exists.
 Only the authenticated confirmation endpoint can freeze a proposal and run project provisioning; model output cannot create rooms, accounts, or tool grants. Project roles always receive an empty tool list and explicitly disabled learning/automations; room membership is deterministic and derived from the authenticated owner.
 

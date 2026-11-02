@@ -91,6 +91,12 @@ Otherwise it logs `managed_alias_target_refused`, never joins that room, and cre
 A recorded room stays in use even when its alias now points elsewhere, which logs `managed_alias_points_elsewhere`.
 If the alias of a recorded room is deleted, the router restores it, and creates a replacement room only when it can no longer read or is no longer joined to the recorded room.
 
+## Discussion Notes
+
+New Agent Room discussions include a silent organizer Bot alongside the selected teammates.
+Open **讨论成果** to read its categorized notes and original-message links, or select **立即整理** to process pending messages immediately.
+It automatically processes new messages in batches of 20, or after two minutes of quiet, and revises affected notes when their source messages change or are withdrawn.
+
 ## Room Cleanup
 
 On startup, MindRoom removes Matrix accounts of agents and teams that were deleted from `config.yaml` from the rooms they had joined.

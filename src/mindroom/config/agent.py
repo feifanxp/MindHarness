@@ -233,6 +233,10 @@ class AgentConfig(BaseModel):
     model_config = ConfigDict(extra="forbid", validate_assignment=True)
 
     display_name: str = Field(description="Human-readable name for the agent")
+    room_scribe: bool = Field(
+        default=False,
+        description="Maintain room discussion notes in the background instead of answering messages",
+    )
     role: str = Field(
         default="",
         description="Description of the agent's purpose",

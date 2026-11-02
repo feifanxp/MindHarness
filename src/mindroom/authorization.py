@@ -103,6 +103,9 @@ def _responder_reply_authorization(
     ``observed_room`` is the answering bot's own synced view of ``room_id``. Its roster never grants
     access; it only lets a same-room denial wait briefly for the router to apply a join.
     """
+    agent = config.agents.get(entity_name)
+    if agent is not None and agent.room_scribe:
+        return _ReplyAuthorizationDecision.DENIED
     allowed = _is_own_account(sender_id, entity_name, runtime_paths)
     resolved_sender = resolve_human_requester_alias(sender_id, config, runtime_paths)
     access = resolve_responder_access(config, entity_name)

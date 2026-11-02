@@ -562,6 +562,7 @@ export default function ProjectWizard({
                           ? `已选择 ${selectedAgents.length} 位 AI 队友，准备好就出发。`
                           : '至少选择一位 AI 队友。'}
                       </p>
+                      <p>默认加入整理员 BOT，在后台摘录讨论成果，不参与发言。</p>
                       <button
                         className="wizard-confirm"
                         type="button"
@@ -736,7 +737,7 @@ export default function ProjectWizard({
                 >
                   调整队友和讨论方式
                 </button>
-                <p className="wizard-plan-edit-hint">只邀请你选中的 AI 队友加入聊天室。</p>
+                <p className="wizard-plan-edit-hint">邀请已选 AI 队友，并默认加入后台整理员。</p>
               </aside>
             )}
           </div>

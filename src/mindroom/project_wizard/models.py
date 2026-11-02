@@ -189,6 +189,7 @@ class ProjectResult(BaseModel):
     team_user_id: str
     sender_user_id: str
     members: list[ProjectMember]
+    scribe: ProjectMember | None = None
 
 
 class WizardState(BaseModel):

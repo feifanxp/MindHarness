@@ -17,12 +17,14 @@ from mindroom.api import config_lifecycle
 from mindroom.api.auth import verify_user
 from mindroom.background_tasks import run_blocking_until_complete
 from mindroom.logging_config import get_logger
+from mindroom.matrix.state import resolve_room_id
 from mindroom.project_wizard.avatars import avatar_path
 from mindroom.project_wizard.chat_session import ChatSession, create_chat_session
 from mindroom.project_wizard.models import (
     ConfirmRequest,
     DiscussionSummary,
     MessageRequest,
+    ProjectResult,
     ProjectWizardAssistantTurn,
     ProjectWizardChatRequest,
     ProjectWizardDraft,
@@ -38,6 +40,9 @@ from mindroom.project_wizard.provisioning import preflight, provision_project
 from mindroom.project_wizard.store import WizardStore
 from mindroom.providers import model_loading
 from mindroom.providers.tool_policy import without_provider_tools
+from mindroom.room_scribe.models import DiscussionNotes
+from mindroom.room_scribe.service import run_pass
+from mindroom.room_scribe.store import ScribeStore
 
 logger = get_logger(__name__)
 
@@ -62,7 +67,7 @@ _PROJECT_ASSISTANT_INSTRUCTIONS = """你是 Agent Room 的项目创建助手，�
 
 事实必须来自用户明确提供的内容。助手之前提出的假设、示例和建议不等于用户已确认的事实。不得编造用户看过的数据、评论、访谈、痛点、市场结论或业务承诺。必要的假设必须明确标注，不能声称“你看到的那份数据”除非用户确实提过。
 
-系统会保存对话、候选人和选择；用户在“挑选 AI 队友”中勾选成员后点击“组队，开始聊”，系统只为选中的成员创建真实聊天室和 Bot。用户说“创建吧”“开始吧”时提供完整方案并引导挑选队友，不要声称已建群。头像来自本地头像库，不是现实人物。用户希望先讨论时接受该产出，不重复追问报告形式。不为角色启用工具或授予权限。
+系统会保存对话、候选人和选择；用户在“挑选 AI 队友”中勾选成员后点击“组队，开始聊”，系统为选中的成员创建真实聊天室和 Bot，另外固定加入一个不参与发言的后台整理员。整理员不占候选人名额，不要重复推荐整理或总结角色。用户说“创建吧”“开始吧”时提供完整方案并引导挑选队友，不要声称已建群。头像来自本地头像库，不是现实人物。用户希望先讨论时接受该产出，不重复追问报告形式。不为角色启用工具或授予权限。
 
 以用户使用的语言回答，表达简洁、具体、友好。普通澄清用 1–3 句话，方案建议用简短列表；用户要求详细展开时再展开。"""
 
@@ -251,6 +256,49 @@ def _start_message(store: WizardStore, state: WizardState, payload: MessageReque
     state.error = None
     store.save(state)
     return True
+
+
+async def _scribe_result(request: Request, user: dict[str, object], draft_id: UUID) -> ProjectResult:
+    state = await asyncio.to_thread(_store(request, user).read, draft_id)
+    if state.status != "created" or not isinstance(state.result, ProjectResult) or state.result.scribe is None:
+        raise HTTPException(409, "此聊天室尚未启用整理员。")
+    return state.result
+
+
+@router.get("/drafts/{draft_id}/notes", response_model=DiscussionNotes)
+async def discussion_notes(
+    draft_id: UUID,
+    request: Request,
+    response: Response,
+    user: Annotated[dict, Depends(verify_user)],
+) -> DiscussionNotes:
+    """Read only the authenticated owner's project notes."""
+    response.headers["Cache-Control"] = "no-store"
+    result = await _scribe_result(request, user, draft_id)
+    store = ScribeStore(config_lifecycle.api_runtime_paths(request).storage_root, result.room_id)
+    return (await asyncio.to_thread(store.read)).notes
+
+
+@router.post("/drafts/{draft_id}/notes/refresh", response_model=DiscussionNotes)
+async def refresh_discussion_notes(
+    draft_id: UUID,
+    request: Request,
+    response: Response,
+    user: Annotated[dict, Depends(verify_user)],
+) -> DiscussionNotes:
+    """Explicitly process the next batch without waiting for a quiet room."""
+    response.headers["Cache-Control"] = "no-store"
+    result = await _scribe_result(request, user, draft_id)
+    assert result.scribe is not None
+    config, paths = config_lifecycle.read_committed_runtime_config(request)
+    agent = config.agents.get(result.scribe.agent_id)
+    if (
+        agent is None
+        or not agent.room_scribe
+        or result.room_id not in {resolve_room_id(room, paths) for room in agent.rooms}
+    ):
+        raise HTTPException(409, "整理员已停用，请检查聊天室配置。")
+    return await run_pass(config, paths, result.scribe.agent_id, result.room_id, force=True)
 
 
 def _conversation_request(state: WizardState) -> ProjectWizardChatRequest:

@@ -51,6 +51,7 @@ export type WizardState = {
     team_user_id: string;
     sender_user_id: string;
     members: { agent_id: string; user_id: string; name: string; responsibility: string }[];
+    scribe?: { agent_id: string; user_id: string; name: string; responsibility: string } | null;
   } | null;
   test_mode: boolean;
 };

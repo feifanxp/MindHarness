@@ -90,6 +90,7 @@ from mindroom.private_storage.legacy_private_storage import migrate_private_stor
 from mindroom.providers.model_http_client import aclose_model_http_client
 from mindroom.response_activity import ResponseIdentity
 from mindroom.response_admission import ResponseAdmissionGate
+from mindroom.room_scribe.runtime import ScribeRunner
 from mindroom.runtime_shutdown import (
     ENTITY_REMOVED_SHUTDOWN,
     ORDERLY_SHUTDOWN,
@@ -414,6 +415,7 @@ class _MultiAgentOrchestrator:
     _bot_start_tasks: dict[str, asyncio.Task] = field(default_factory=dict, init=False)
     _permanently_failed_entities: set[str] = field(default_factory=set, init=False)
     _memory_auto_flush_task: asyncio.Task | None = field(default=None, init=False)
+    _room_scribe: ScribeRunner = field(init=False, repr=False)
     _skill_reviews: SkillReviewRunner = field(init=False, repr=False)
     _automations: AutomationRunner = field(init=False, repr=False)
     _budgets: BudgetMonitor = field(init=False, repr=False)
@@ -462,6 +464,7 @@ class _MultiAgentOrchestrator:
     def __post_init__(self) -> None:
         """Store canonical derived paths from the explicit runtime context."""
         self.storage_path = self.runtime_paths.storage_root
+        self._room_scribe = ScribeRunner(self.runtime_paths, lambda: self.config)
         self.config_path = self.runtime_paths.config_path
         self._knowledge_refresh_scheduler = KnowledgeRefreshScheduler()
         self._knowledge_source_watcher = KnowledgeSourceWatcher(self._knowledge_refresh_scheduler)
@@ -1071,6 +1074,7 @@ class _MultiAgentOrchestrator:
         ensure_default_agent_workspaces(config, self.storage_path)
         self._configure_approval_store_transport()
         await self._sync_memory_auto_flush_worker()
+        self._room_scribe.start()
         await self._knowledge_graph.sync()
         await self._todo_poke_runtime.sync()
         await self._tool_job_runtime.sync()
@@ -2517,6 +2521,7 @@ class _MultiAgentOrchestrator:
         await _run_shutdown_step("todo_poke", self._todo_poke_runtime.stop())
         await _run_shutdown_step("thread_exports", self._thread_export_runner.stop())
         await _run_shutdown_step("memory_auto_flush", self._stop_memory_auto_flush_worker())
+        await _run_shutdown_step("room_scribe", self._room_scribe.stop())
         await _run_shutdown_step("knowledge_graph", self._knowledge_graph.stop())
         await _run_shutdown_step("skill_reviews", self._skill_reviews.stop())
         await _run_shutdown_step("automations", self._automations.stop())

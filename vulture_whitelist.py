@@ -442,3 +442,6 @@ _.team_user_id  # ProjectResult API field consumed by the Matrix web client
 _.validate_base_url  # Pydantic custom endpoint validator (src/mindroom/api/provider_setup.py)
 discover_custom_models  # FastAPI provider catalog endpoint (src/mindroom/api/provider_setup.py)
 verify_custom_provider  # FastAPI provider connection endpoint (src/mindroom/api/provider_setup.py)
+
+discussion_notes  # FastAPI owner-scoped project notes endpoint
+refresh_discussion_notes  # FastAPI explicit project notes refresh endpoint

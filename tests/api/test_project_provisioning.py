@@ -50,7 +50,10 @@ def test_repeated_config_install_preserves_one_set_of_entities(test_client: Test
     assert paths.config_path.read_bytes() == first
     config, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
     room_key, keys, team = provisioning._project_keys(state)
+    scribe = f"{room_key}_scribe"
     assert config.agents[keys[0]].tool_names == []
+    assert config.agents[scribe].room_scribe
+    assert scribe not in config.teams[team].agents
     assert config.agents[keys[0]].include_default_tools is False
     assert config.agents[keys[0]].thread_mode == "room"
     assert config.teams[team].mode == "collaborate"
@@ -91,13 +94,13 @@ async def test_ready_result_requires_owner_invitation(
     paths = main._app_runtime_paths(test_client.app)
     accounts = {
         key: AgentMatrixUser(key, f"@{key}:example.org", key, None, access_token="test-session")  # noqa: S106
-        for key in [*keys, team, "user"]
+        for key in [*keys, f"{room_key}_scribe", team, "user"]
     }
     monkeypatch.setattr(provisioning, "load_rooms", lambda _: {room_key: SimpleNamespace(room_id="!room:example.org")})
     monkeypatch.setattr(
         provisioning,
         "get_matrix_sync_health_snapshot",
-        lambda: SimpleNamespace(active_entities=[*keys, team], stale_entities=[]),
+        lambda: SimpleNamespace(active_entities=[*keys, f"{room_key}_scribe", team], stale_entities=[]),
     )
     monkeypatch.setattr(provisioning, "load_agent_user", lambda key, _: accounts[key])
     client = AsyncMock(spec=nio.AsyncClient)
@@ -114,6 +117,11 @@ async def test_ready_result_requires_owner_invitation(
     monkeypatch.setattr(provisioning, "create_agent_http_client", lambda *_: client)
     result = await provisioning._live_project_result(state, paths)
     assert (result is not None) is ready
+    if result is not None:
+        assert result.scribe is not None
+        assert result.scribe.agent_id == f"{room_key}_scribe"
+        assert result.team_user_id == accounts[team].user_id
+        assert len(result.members) == len(keys)
     assert client.close.await_count == 2
 
 

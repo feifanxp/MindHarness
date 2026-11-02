@@ -2,6 +2,16 @@
 
 ## Runbook
 
+### Background discussion organizer (2026-11-02)
+
+- New Agent Room discussions include a fixed organizer Bot, separate from model-recommended teammates and excluded from conversational replies.
+- The discussion room has a collapsible **讨论成果** panel with categorized notes, source-message navigation, refresh, and saved update times.
+- The backend maintains notes while the browser is closed, waits for completed message revisions, and rechecks evidence after model calls before publishing.
+- Long messages are processed in resumable segments; edits and withdrawals invalidate affected notes.
+- Validation: 206 targeted Python tests passed with four skips, 27 discussion UI tests passed, and type checks, scoped lint, production build, Tach, and changed-file hooks passed.
+- A disposable real Matrix room verified automatic extraction with the configured model, manual corrections, source withdrawal, zero scribe chat messages, and source navigation; desktop and 390px screenshots showed no horizontal overflow or browser errors.
+- Full validation remains limited by PostgreSQL container setup requiring a missing Docker credential helper, unrelated Python failures, two reproducible existing client failures in scheduled-time formatting and caption recovery, and missing Bun for the dashboard's repository-wide hooks.
+
 ### Hide thread model control in Agent Room (2026-10-30)
 
 - Agent Room discussions no longer show the thread model selector in the composer.

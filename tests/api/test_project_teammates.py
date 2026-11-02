@@ -102,7 +102,7 @@ def test_provisioning_uses_selected_profiles_only(test_client: TestClient, monke
     room_key, keys, team_key = _project_keys(state)
     rooms, agents, teams = _project_config(state, "default", "@owner:example.org")
     assert keys == [f"{room_key}_a2", f"{room_key}_a4"]
-    assert list(agents) == keys
+    assert list(agents) == [*keys, f"{room_key}_scribe"]
     assert teams[team_key]["agents"] == keys
     for key, candidate in zip(keys, state.draft.selected_agents, strict=True):
         assert agents[key]["display_name"] == candidate.name

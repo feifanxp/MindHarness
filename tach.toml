@@ -1163,7 +1163,8 @@ depends_on = [
     "mindroom.providers.prompt_cache_key",
     "mindroom.providers.vertex_claude_compat",
 ]
-visibility = ["mindroom.judgment.llm",
+visibility = [
+    "mindroom.room_scribe","mindroom.judgment.llm",
     "mindroom.ai",
     "mindroom.api.provider_setup",
     "mindroom.api.project_wizard",
@@ -1967,6 +1968,8 @@ depends_on = [
 [[modules]]
 path = "mindroom.api.project_wizard"
 depends_on = [
+    "mindroom.matrix.state",
+    "mindroom.room_scribe",
     "mindroom.api.config_lifecycle",
     "mindroom.api.auth",
     "mindroom.background_tasks",
@@ -2964,6 +2967,7 @@ visibility = ["mindroom.orchestrator"]
 [[modules]]
 path = "mindroom.orchestrator"
 depends_on = [
+    "mindroom.room_scribe",
     "mindroom.agent_cli.session",
     "mindroom.api.agent_cli",
     "mindroom.approval.manager",
@@ -4095,6 +4099,7 @@ depends_on = [
     "mindroom.tool_system.events",
 ]
 visibility = [
+    "mindroom.room_scribe.history",
     "mindroom.matrix.room_history_reads",
     "mindroom.api.openai_request_parsing",
     "mindroom.commands.handler",
@@ -7652,7 +7657,8 @@ visibility = ["mindroom.judgment.client", "mindroom.judgment.llm", "mindroom.agn
 [[modules]]
 path = "mindroom.providers.tool_policy"
 depends_on = []
-visibility = ["mindroom.api.project_wizard", "mindroom.judgment.llm", "mindroom.agno_participation", "mindroom.providers.claude_prompt_cache", "mindroom.providers.openai_models", "mindroom.providers.google_gemini", "mindroom.providers.groq_model", "mindroom.providers.cerebras_model", "mindroom.providers.ollama_model"]
+visibility = [
+    "mindroom.room_scribe","mindroom.api.project_wizard", "mindroom.judgment.llm", "mindroom.agno_participation", "mindroom.providers.claude_prompt_cache", "mindroom.providers.openai_models", "mindroom.providers.google_gemini", "mindroom.providers.groq_model", "mindroom.providers.cerebras_model", "mindroom.providers.ollama_model"]
 
 [[modules]]
 path = "mindroom.providers.groq_model"
@@ -9354,3 +9360,28 @@ visibility = [
 [[modules]]
 path = "mindroom.peer_discussion"
 depends_on = ["mindroom.config.judgment", "mindroom.config.participation", "mindroom.constants", "mindroom.entity_resolution", "mindroom.matrix.state"]
+
+[[modules]]
+path = "mindroom.room_scribe"
+depends_on = [
+    "mindroom.room_scribe.history",
+    "mindroom.background_tasks",
+    "mindroom.constants",
+    "mindroom.durable_write",
+    "mindroom.entity_resolution",
+    "mindroom.file_locks",
+    "mindroom.logging_config",
+    "mindroom.matrix.sidecar_content",
+    "mindroom.matrix.state",
+    "mindroom.matrix.users",
+    "mindroom.providers.model_loading",
+    "mindroom.providers.tool_policy",
+]
+
+[[modules]]
+path = "mindroom.room_scribe.history"
+depends_on = [
+    "mindroom.matrix.client_visible_messages",
+    "mindroom.matrix.event_info",
+    "mindroom.matrix.message_content",
+]

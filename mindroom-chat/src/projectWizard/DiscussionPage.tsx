@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState, type CSSProperties } f
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { color } from 'folds';
 import ProjectWizard from './ProjectWizard';
+import { DiscussionNotesPanel } from './DiscussionNotesPanel';
 import { type WizardState } from './api';
 import { ClientRuntime } from '../app/pages/client/ClientRuntime';
 import { HomeRouteRoomProvider } from '../app/pages/client/home/RoomProvider';
@@ -41,17 +42,27 @@ function LiveDiscussion({ state }: { state: WizardState }) {
     [state.draft_id, state.result?.room_id]
   );
   return (
-    <RoomPathOverrideContext.Provider value={override}>
-      <HideRoomThreadsContext.Provider value>
-        <HideThreadModelPickerContext.Provider value>
-          <ClientRuntime>
-            <HomeRouteRoomProvider>
-              <Room />
-            </HomeRouteRoomProvider>
-          </ClientRuntime>
-        </HideThreadModelPickerContext.Provider>
-      </HideRoomThreadsContext.Provider>
-    </RoomPathOverrideContext.Provider>
+    <div className="discussion-room">
+      {state.result?.scribe && (
+        <DiscussionNotesPanel
+          draftId={state.draft_id}
+          sourcePath={(eventId) => discussionPath(state.draft_id, state.result?.room_id, eventId)}
+        />
+      )}
+      <div className="discussion-room-timeline">
+        <RoomPathOverrideContext.Provider value={override}>
+          <HideRoomThreadsContext.Provider value>
+            <HideThreadModelPickerContext.Provider value>
+              <ClientRuntime>
+                <HomeRouteRoomProvider>
+                  <Room />
+                </HomeRouteRoomProvider>
+              </ClientRuntime>
+            </HideThreadModelPickerContext.Provider>
+          </HideRoomThreadsContext.Provider>
+        </RoomPathOverrideContext.Provider>
+      </div>
+    </div>
   );
 }
 

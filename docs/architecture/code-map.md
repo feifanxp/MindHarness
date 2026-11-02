@@ -176,6 +176,7 @@ Matrix sync callback
 | `tool_system/tool_access.py` | Shared qualified tool identities, discovery, schemas, and local argument validation |
 | `memory/` | Mem0 memory: agent and team-scoped |
 | `memory/auto_flush.py` | Background passes that turn file-memory agents' new finished turns into daily notes, with per-conversation progress below `tracking/` |
+| `room_scribe/` | Silent whole-room discussion notes, source citations, incremental history and extraction progress under `tracking/room_scribe/`, and orchestrator-owned scheduling |
 | `knowledge/file_memory_knowledge.py` | Shared resolution for agent file-memory semantic knowledge overlays |
 | `memory_scope_ids.py` | Cycle-free canonical agent memory scope identifiers |
 | `history/conversation_text.py` | What stored turns said, for background model calls: which turns and messages count and who said each |
