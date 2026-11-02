@@ -3,7 +3,7 @@ export type Teammate = {
   name: string;
   responsibility: string;
   behavior: string;
-  recommendation: string;
+  expertise: string;
   avatar_id: number | null;
   selected: boolean;
 };

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import time
 from contextlib import contextmanager
 from typing import TYPE_CHECKING
@@ -13,6 +14,7 @@ from fastapi import HTTPException
 
 from mindroom.durable_write import write_json_file_durable
 from mindroom.file_locks import release_file_lock, try_exclusive_file_lock
+from mindroom.project_wizard.legacy_profiles import discard_retired_recommendations
 from mindroom.project_wizard.models import DiscussionSummary, ProjectWizardDraft, StoredMessage, WizardState
 
 if TYPE_CHECKING:
@@ -47,7 +49,7 @@ class WizardStore:
         path = self._path(draft_id)
         if not path.exists():
             raise HTTPException(404, "找不到该草稿，请重新选择。")
-        return WizardState.model_validate_json(path.read_text())
+        return WizardState.model_validate(discard_retired_recommendations(json.loads(path.read_text())))
 
     @contextmanager
     def operation(self, draft_id: UUID) -> Iterator[WizardState]:

@@ -2,6 +2,14 @@
 
 ## Runbook
 
+### Concise teammate profiles (2026-11-02)
+
+- Candidate cards show a name, profession, concise personality traits, and one or two specialties; the recommendation pitch is removed.
+- New generated profiles target 25–40 Chinese characters across profession, personality, and expertise, with a 24-character field limit and a 60-character combined limit.
+- Existing saved proposals retain their names, selections, portraits, and role instructions when read; retired recommendation text is discarded.
+- Validation: 35 focused backend tests, 18 wizard tests, TypeScript, scoped ESLint, build, Tach, and changed-file hooks passed; real-model candidates used 22–27 profile characters and rendered as 150px cards with working selection and no narrow-screen overflow.
+- Full client tests passed 6,953 cases and retained the two previously recorded scheduled-time and caption-recovery failures; repository-wide dashboard hooks still require unavailable Bun.
+
 ### Background discussion organizer (2026-11-02)
 
 - New Agent Room discussions include a fixed organizer Bot, separate from model-recommended teammates and excluded from conversational replies.

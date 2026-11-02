@@ -25,14 +25,19 @@ class ProjectWizardAgentDraft(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True, hide_input_in_errors=True)
 
     name: str = Field(min_length=1, max_length=80)
-    responsibility: str = Field(min_length=1, max_length=240)
-    behavior: str = Field(min_length=1, max_length=240)
+    responsibility: str = Field(min_length=1, max_length=240, description="Short profession title, not a task list")
+    behavior: str = Field(min_length=1, max_length=240, description="Two or three concise personality traits")
+    # LEGACY_COMPAT: Saved project profiles without a separate expertise field.
+    # Legacy format: Profiles use responsibility for both occupation and domain, and omit expertise.
+    # Last legacy release: Unreleased writer a1535ec81; no tag contains this schema.
+    # Handling: Preserve the original role text and leave expertise empty until the proposal is revised.
+    # Coverage: tests/api/test_project_teammates.py::test_saved_long_profiles_drop_retired_recommendation
+    expertise: str = Field(default="", max_length=240, description="One or two short specialty names")
     # LEGACY_COMPAT: Project wizard proposals without selectable teammate profiles.
     # Legacy format: Agents with only name, responsibility and behavior.
     # Last legacy release: Unreleased native writer c1e57045c; no tagged release contains it.
     # Handling: Keep old members selected and their existing avatars; new inference supplies profiles.
     # Coverage: tests/api/test_project_teammates.py::test_old_draft_preserves_members
-    recommendation: str = Field(default="", max_length=240)
     avatar_id: int | None = Field(default=None, ge=0, lt=12, strict=True)
     selected: bool = True
 

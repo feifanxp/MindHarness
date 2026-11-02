@@ -55,15 +55,15 @@ export function TeammatePicker({ agents, disabled, frozen, onSelect }: Props) {
               </span>
             )}
             <span className="wizard-teammate-name">{agent.name}</span>
-            <span className="wizard-teammate-type">AI 队友</span>
-            <span className="wizard-teammate-field">职业专长</span>
-            <span className="wizard-teammate-detail">{agent.responsibility}</span>
-            <span className="wizard-teammate-field">性格与交流方式</span>
-            <span className="wizard-teammate-detail">{agent.behavior}</span>
-            {agent.recommendation && (
-              <span className="wizard-teammate-reason">
-                <strong>为什么适合你</strong>
-                {agent.recommendation}
+            <span className="wizard-teammate-type">{agent.responsibility}</span>
+            <span className="wizard-teammate-detail">
+              <span className="wizard-teammate-field">性格</span>
+              {agent.behavior}
+            </span>
+            {agent.expertise && (
+              <span className="wizard-teammate-detail">
+                <span className="wizard-teammate-field">擅长</span>
+                {agent.expertise}
               </span>
             )}
           </label>

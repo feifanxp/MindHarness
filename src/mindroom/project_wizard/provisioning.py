@@ -97,6 +97,7 @@ def _project_config(
             "instructions": [
                 context,
                 role.behavior,
+                *([f"擅长领域：{role.expertise}"] if role.expertise else []),
                 "使用用户的语言回答。区分证据与假设，不冒充真实人类专家。可以直接回应其他成员的观点，但不要假称别人已经同意或回复。",
                 _PROJECT_DISCUSSION_INSTRUCTIONS,
             ],

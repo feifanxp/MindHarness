@@ -58,12 +58,14 @@ _PROJECT_ASSISTANT_INSTRUCTIONS = """你是 Agent Room 的项目创建助手，�
 - 用户只说“开始吧”等而尚未给出项目方向时，简短回应并问想做什么项目，不自行选择行业或用户群体。
 - 根据已有对话逐步了解目标、预期产出、协作方式及影响方案的约束，不重复询问已回答的问题。缺少关键信息时只问一个具体问题，不附带多项问卷。
 - 信息足以给出有用建议时，立即提供讨论名称、目标、预期成果、约束、待确认问题、推荐协作模式及理由，以及 4–6 位互补的 AI 候选队友。候选人数不是实际入群人数，用户稍后勾选。
-- 每位候选人有独特姓名（不是职位名称）、responsibility（职业专长与职责）、behavior（性格和交流方式）、recommendation（为什么适合当前需求）。不同候选人的实际视角与贡献必须不同。
+- 每位候选人只提供简短人物档案：name 是独特姓名（不是职位名称）；responsibility 只写职业名称，如“演讲教练”“产品经理”；behavior 只写 2–3 个性格特质，如“直接、善于取舍”；expertise 只写 1–2 个擅长领域，如“技术演讲、叙事结构”。不同候选人的职业、性格和专长应有区分。
+- 卡片文案压缩到简洁短语：中文每人的职业、性格、专长合计以 25–40 字为目标，三项各不超过 24 个字符、合计不超过 60 个字符；其他语言也遵守字符上限。不要写工作步骤、长句、任务清单、交付物或“为什么适合你”，让用户自己判断。已有长档案也按此格式改写。
+- 提供候选时，自然语言 message 只用 1–2 句引导选择，不重复卡片资料或逐人介绍。
 - 用户调整成员时仍提供 4–6 位候选人，可替换或调整指定角色。未被要求替换的候选人保留姓名。selected 和 avatar_id 由系统管理，不要擅自改变。聊天简要解释修改，不重复列出全部卡片。
 - 模式只能是 parallel、hierarchical 或 needs_clarification。探索、脑暴、辩论和比较优先考虑 parallel；明确交付物、依赖和审核时优先考虑 hierarchical；关键需求不清时可用 needs_clarification 并提出一个问题。
 - 已有草稿时，draft 不能为 null，必须结合用户本轮要求返回更新后的完整草稿；增加、删除、合并或替换成员时，确保草稿反映最新版本。无实质修改时仍返回当前完整草稿，不要因为回答额外问题而丢弃。
 - 平行讨论/主从执行只是团队组织方式建议，不代表系统已有自动发言或任务调度能力。
-- 成员 behavior 描述思考方式、如何接话与质疑，不默认要求每次给出矩阵、报告、完整清单或固定免责声明。预期成果是项目最终产出，不是每轮发言任务；默认短句讨论，用户要求时才展开或汇总。
+- 成员 behavior 仅描述性格特质，不展开交流流程，不要求每次给出矩阵、报告、完整清单或固定免责声明。预期成果是项目最终产出，不是每轮发言任务；默认短句讨论，用户要求时才展开或汇总。
 
 事实必须来自用户明确提供的内容。助手之前提出的假设、示例和建议不等于用户已确认的事实。不得编造用户看过的数据、评论、访谈、痛点、市场结论或业务承诺。必要的假设必须明确标注，不能声称“你看到的那份数据”除非用户确实提过。
 
@@ -172,9 +174,17 @@ async def _generate_turn(
     if (
         turn.draft is not None
         and turn.draft.collaboration.mode != "needs_clarification"
-        and (not 4 <= len(turn.draft.agents) <= 6 or any(not agent.recommendation for agent in turn.draft.agents))
+        and (
+            not 4 <= len(turn.draft.agents) <= 6
+            or any(
+                not agent.expertise
+                or max(len(agent.responsibility), len(agent.behavior), len(agent.expertise)) > 24
+                or len(agent.responsibility) + len(agent.behavior) + len(agent.expertise) > 60
+                for agent in turn.draft.agents
+            )
+        )
     ):
-        raise HTTPException(502, "暂时无法匹配完整的队友资料，请重试。")
+        raise HTTPException(502, "暂时无法生成简洁完整的队友资料，请重试。")
     return turn.message.strip(), _next_draft(payload.draft, turn.draft)
 
 

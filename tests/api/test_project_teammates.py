@@ -1,5 +1,6 @@
 """Candidate profiles, owner selections and selected-only room provisioning."""
 
+import json
 from uuid import UUID, uuid4
 
 import pytest
@@ -17,7 +18,63 @@ def test_old_draft_preserves_members() -> None:
     agent = ProjectWizardAgentDraft(name="Expert", responsibility="Research", behavior="Curious")
     assert agent.selected
     assert agent.avatar_id is None
-    assert agent.recommendation == ""
+    assert agent.expertise == ""
+
+
+def test_saved_long_profiles_drop_retired_recommendation(
+    test_client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Existing saved roles keep their identities and instructions while dropping the retired pitch."""
+    state = saved(test_client, monkeypatch)
+    agent = state["draft"]["agents"][0]
+    agent["responsibility"] = ("Long existing role description. " * 5).strip()
+    agent["behavior"] = ("Preserve existing behavioral instructions. " * 4).strip()
+    agent["recommendation"] = "Retired recommendation"
+    agent.pop("expertise")
+    agent["selected"] = False
+    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "standalone")
+    (store.root / f"{state['draft_id']}.json").write_text(json.dumps(state))
+    response = test_client.get(f"/api/project-wizard/drafts/{state['draft_id']}")
+    assert response.status_code == 200
+    restored = response.json()["draft"]["agents"][0]
+    assert restored == {key: value for key, value in agent.items() if key != "recommendation"} | {"expertise": ""}
+    assert "recommendation" not in ProjectWizardAgentDraft.model_json_schema()["properties"]
+
+
+@pytest.mark.parametrize(
+    ("field", "text"),
+    [("expertise", ""), ("responsibility", "x" * 25), ("behavior", "x" * 25), ("expertise", "x" * 25)],
+)
+def test_generated_profiles_require_short_fields(
+    test_client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    field: str,
+    text: str,
+) -> None:
+    """Reject verbose or incomplete generated cards without truncating or saving them."""
+    draft = proposal().model_dump()
+    draft["agents"][0][field] = text
+    install(monkeypatch, {"message": "Candidates", "draft": draft})
+    state = test_client.post("/api/project-wizard/drafts").json()
+    response = test_client.post(
+        f"/api/project-wizard/drafts/{state['draft_id']}/messages",
+        json={"revision": 0, "message_id": str(uuid4()), "content": "讨论"},
+    )
+    assert response.status_code == 502
+
+
+def test_generated_profiles_enforce_total_copy_budget(test_client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Individually short fields must also fit the overall profile budget."""
+    draft = proposal().model_dump()
+    draft["agents"][0].update(responsibility="x" * 21, behavior="y" * 21, expertise="z" * 21)
+    install(monkeypatch, {"message": "Candidates", "draft": draft})
+    state = test_client.post("/api/project-wizard/drafts").json()
+    response = test_client.post(
+        f"/api/project-wizard/drafts/{state['draft_id']}/messages",
+        json={"revision": 0, "message_id": str(uuid4()), "content": "讨论"},
+    )
+    assert response.status_code == 502
 
 
 def test_match_profiles_and_selection_survive_refresh(test_client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
@@ -108,6 +165,7 @@ def test_provisioning_uses_selected_profiles_only(test_client: TestClient, monke
         assert agents[key]["display_name"] == candidate.name
         assert agents[key]["role"] == candidate.responsibility
         assert candidate.behavior in agents[key]["instructions"]
+        assert f"擅长领域：{candidate.expertise}" in agents[key]["instructions"]  # noqa: RUF001
         assert state.draft.project.goal in agents[key]["instructions"][0]
     assert rooms[room_key]["invite_users"] == ["@owner:example.org"]
 

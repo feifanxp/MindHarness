@@ -33,9 +33,9 @@ const saved = (): WizardState => ({
     collaboration: { mode: 'parallel', rationale: '多角度' },
     agents: ['林悦', '陈墨', '苏青', '周衡'].map((name, index) => ({
       name,
-      responsibility: '产品研究',
+      responsibility: '产品经理',
       behavior: '理性、善于求证',
-      recommendation: '帮你验证核心需求',
+      expertise: '用户研究、需求分析',
       avatar_id: index,
       selected: index < 3,
     })),
@@ -267,7 +267,12 @@ it('shows candidate identities, portraits and three initial selections', async (
   expect(renderer.root.findAllByType('img').map((img) => img.props.src)).toEqual(
     [0, 1, 2, 3].map((index) => `/api/project-wizard/avatars/${index}`)
   );
-  expect(JSON.stringify(renderer.toJSON())).toContain('帮你验证核心需求');
+  const copy = JSON.stringify(renderer.toJSON());
+  expect(copy).toContain('产品经理');
+  expect(copy).toContain('理性、善于求证');
+  expect(copy).toContain('用户研究、需求分析');
+  expect(copy).not.toContain('为什么适合你');
+  expect(copy).not.toContain('职业专长');
 });
 
 it('saves the selected subset and keeps it after refresh', async () => {
