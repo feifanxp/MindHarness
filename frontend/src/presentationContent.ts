@@ -5,13 +5,15 @@ export type SlideKey =
   | 'motivation'
   | 'realworld'
   | 'relationship'
+  | 'overview'
   | 'room'
   | 'discussion'
   | 'execution'
   | 'case-bp'
   | 'case-retention'
   | 'value'
-  | 'harness';
+  | 'harness'
+  | 'scenarios';
 export type Slide = {
   key: SlideKey;
   chapter: string;
@@ -21,6 +23,29 @@ export type Slide = {
   summary: string;
   notes: string;
   transition: string;
+};
+export const overviewSlide: Slide = {
+  key: 'overview',
+  chapter: '我们做了什么',
+  kicker: 'WHAT IS MIND HARNESS?',
+  label: '什么是 Mind Harness',
+  title: '什么是 Mind Harness？',
+  summary: '一个聊天室。\n在这里，人和 AI 可以平等地沟通交流。',
+  notes:
+    '所以，Mind Harness 是什么？\n简单说，就是一个人和 AI 可以平等交流的聊天室。\n你不用先配好一支团队，只要和助理 Agent 简单聊几句，它就会根据需求，帮你生成匹配这个问题的 AI 队友。\n你也可以拉上同事，让多个人、多个 Agent 在同一个环境里畅所欲言。\n每个 Agent 都有自己的性格、专业和记忆，需要时也能调用技能，比如搜索资料、撰写文档。\n大家尽管讨论、头脑风暴，后台还有一位书记员 Agent，默默帮你梳理思路，记下有价值的想法。',
+  transition: '这些不同的 AI 队友进了同一个聊天室，会怎样参与讨论？我们接着看。',
+};
+export const scenariosSlide: Slide = {
+  key: 'scenarios',
+  chapter: '适用场景',
+  kicker: 'WHEN TO THINK TOGETHER',
+  label: '什么时候适合平行讨论',
+  title: '不是每件事，都需要一场讨论',
+  summary:
+    '目前，我们更关注头脑风暴和需求分析。\n问题还没想清楚、需要不同视角时，先一起聊聊。\n目标和要求已经明确，就直接安排执行。',
+  notes:
+    '最后补充一下适用场景。\n我们并不认为所有任务都需要拉上多个 Agent，一起平行讨论。\n目前看到的比较适合的场景，主要是头脑风暴和需求分析。\n头脑风暴时，可能只有一个念头，还不知道能往哪些方向走，可以让不同的队友补充思路、提出新的可能。\n需求分析时，往往已经有一个功能想法，但背后的问题还没说清楚。\n比如血压计要不要上大彩屏，先一起讨论谁在用、遇到了什么困难、到底需要解决什么，再决定方案。\n如果目标、要求和交付标准都已经明确，比如按确认的提纲写文档，就可以直接交给 Agent 执行，不需要每次都开一场讨论。\n我们希望把平行讨论用在值得一起想的地方：头脑风暴，打开思路；需求分析，把问题问清楚。',
+  transition: '',
 };
 export const slides: Slide[] = [
   {

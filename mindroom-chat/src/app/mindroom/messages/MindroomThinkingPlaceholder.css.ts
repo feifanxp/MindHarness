@@ -10,7 +10,7 @@ const shimmerCounter = keyframes({
   to: { transform: 'translateX(-100%)' },
 });
 
-// Horizontal flip, glowing core, vertical flip; rest about 0.5s between phases.
+// Horizontal flip, glowing aura, vertical flip; rest about 0.5s between phases.
 const turn = keyframes({
   '0%, 3%': {
     transform: 'translateY(0%) rotateX(0deg) rotateY(0deg) rotateZ(0deg)',
@@ -38,32 +38,6 @@ const turn = keyframes({
   },
   '97%, 100%': {
     transform: 'translateY(0%) rotateX(360deg) rotateY(360deg) rotateZ(0deg)',
-  },
-});
-const core = keyframes({
-  '0%, 31%': {
-    transform: 'translateY(0%) rotateY(0deg) scale(1, 1)',
-    filter: 'drop-shadow(0 0 0.025em #ffe39b30)',
-  },
-  '36.333%': {
-    transform: 'translateY(2.5%) rotateY(-22deg) scale(1.03, 0.93)',
-    filter: 'drop-shadow(0 0 0.025em #ffe39b45)',
-  },
-  '44.333%': {
-    transform: 'translateY(-7.5%) rotateY(385deg) scale(0.97, 1.05)',
-    filter: 'drop-shadow(0 0 0.1em #ffe39bb0)',
-  },
-  '49.667%': {
-    transform: 'translateY(1.875%) rotateY(350deg) scale(1.025, 0.96)',
-    filter: 'drop-shadow(0 0 0.05em #ffe39b75)',
-  },
-  '55.667%': {
-    transform: 'translateY(-1.25%) rotateY(364deg) scale(0.99, 1.015)',
-    filter: 'drop-shadow(0 0 0.05em #ffe39b60)',
-  },
-  '63%, 100%': {
-    transform: 'translateY(0%) rotateY(360deg) scale(1, 1)',
-    filter: 'drop-shadow(0 0 0.025em #ffe39b30)',
   },
 });
 const glow = keyframes({
@@ -125,7 +99,7 @@ export const Aura = style({
   position: 'absolute',
   inset: '-12%',
   borderRadius: '50%',
-  background: 'radial-gradient(ellipse, #ffcf6740, transparent 72%)',
+  background: 'radial-gradient(ellipse, #894bff40, transparent 72%)',
   opacity: 0.2,
   pointerEvents: 'none',
   animation: `${glow} 9s ease-in-out infinite`,
@@ -143,20 +117,9 @@ export const Rotor = style({
 
 export const Mark = style({
   display: 'block',
+  objectFit: 'contain',
   width: '100%',
   height: '100%',
-});
-
-export const Core = style({
-  // Animate an HTML layer containing static SVG artwork. Animating the SVG
-  // <use> itself forces layout and repaint throughout each core movement.
-  position: 'absolute',
-  inset: 0,
-  // Center of the cube's bounds in the shared 720-unit viewBox.
-  transformOrigin: '50% 47.5%',
-  willChange: 'transform, filter',
-  animation: `${core} 9s cubic-bezier(0.2, 0.7, 0.3, 1) infinite`,
-  '@media': reducedMotion,
 });
 
 export const Text = style({

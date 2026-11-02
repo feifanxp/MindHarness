@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
 import { useClientConfig } from '../../hooks/useClientConfig';
+import { MINDROOM_LOGO_SRC } from '../branding/branding';
 import * as css from './MindroomThinkingPlaceholder.css';
 import { resolveMindroomThinkingPlaceholderMessages } from './thinkingPlaceholder';
 import { MINDROOM_THINKING_PLACEHOLDER_BODY } from './thinkingPlaceholder';
@@ -42,16 +43,7 @@ export function MindroomThinkingPlaceholder() {
       <span className={css.Indicator} aria-hidden="true">
         <span className={css.Aura} />
         <span className={css.Rotor}>
-          <svg className={css.Mark} viewBox="152 112 720 720" focusable="false">
-            <use href="#mindroom-thinking-outer-frame" />
-            <use href="#mindroom-thinking-left-rooms" />
-            <use href="#mindroom-thinking-right-rooms" />
-          </svg>
-          <span className={css.Core}>
-            <svg className={css.Mark} viewBox="152 112 720 720" focusable="false">
-              <use href="#mindroom-thinking-central-cube" />
-            </svg>
-          </span>
+          <img className={css.Mark} src={MINDROOM_LOGO_SRC} alt="" />
         </span>
       </span>
       <span className={css.Text} aria-hidden="true">

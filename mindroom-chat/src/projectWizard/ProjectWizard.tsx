@@ -7,7 +7,7 @@ import React, {
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
-import { IconArrowUp, IconRefresh, IconSparkles } from '@tabler/icons-react';
+import { IconArrowUp, IconRefresh } from '@tabler/icons-react';
 import parse from 'html-react-parser';
 import { parseBlockMD, parseInlineMD } from '../app/plugins/markdown';
 import { sanitizeCustomHtml, sanitizeText } from '../app/utils/sanitize';
@@ -19,6 +19,7 @@ import {
   normalizeSessionBaseUrl,
 } from '../app/state/sessions';
 import { TeammatePicker } from './TeammatePicker';
+import { MINDROOM_LOGO_SRC } from '../app/mindroom/branding/branding';
 import './projectWizard.css';
 
 const examples = ['聊聊一个新产品想法', '分析一个正在遇到的问题', '一起想想周末做什么'];
@@ -453,9 +454,7 @@ export default function ProjectWizard({
     <main className={`wizard-shell ${messages.length ? 'wizard-shell-chat' : ''}`}>
       <header className="wizard-header">
         <div className="wizard-brand">
-          <span className="wizard-mark">
-            <IconSparkles size={18} />
-          </span>
+          <img className="wizard-mark" src={MINDROOM_LOGO_SRC} width={30} height={30} alt="" />
           <span>Agent Room</span>
           <span className="wizard-slash">/</span>
           <span className="wizard-label">{connected ? '一起讨论' : '开始讨论'}</span>

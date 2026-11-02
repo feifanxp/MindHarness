@@ -264,7 +264,8 @@ it('shows candidate identities, portraits and three initial selections', async (
   const choices = renderer.root.findAllByProps({ type: 'checkbox' });
   expect(choices).toHaveLength(4);
   expect(choices.filter((choice) => choice.props.checked)).toHaveLength(3);
-  expect(renderer.root.findAllByType('img').map((img) => img.props.src)).toEqual(
+  const portraits = renderer.root.findAllByProps({ className: 'wizard-teammate-avatar' });
+  expect(portraits.map((img) => img.props.src)).toEqual(
     [0, 1, 2, 3].map((index) => `/api/project-wizard/avatars/${index}`)
   );
   const copy = JSON.stringify(renderer.toJSON());

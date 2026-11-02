@@ -289,12 +289,6 @@ export default defineConfig({
         chat: path.resolve(__dirname, 'chat.html'),
       },
       plugins: [inject({ Buffer: ['buffer', 'Buffer'] })],
-      output: {
-        // Keep the raw artwork out of the main chunk so both stay below the PWA cache limit.
-        manualChunks(id) {
-          if (id.endsWith('/thinking-mark.svg?raw')) return 'thinking-mark';
-        },
-      },
     },
   },
 });

@@ -16,6 +16,7 @@ import {
   type PresentationFields,
 } from './presentationDraft';
 import './presentationEditor.css';
+import { isPortablePresentation, downloadPortablePresentation } from './presentationPortable';
 import {
   loadPresentationFile,
   savePresentationFile,
@@ -116,7 +117,9 @@ export function PresentationEditButton() {
 }
 
 export function PresentationEditor({ children }: { children: ReactNode }) {
+  const portable = isPortablePresentation();
   const [local] = useState(() => {
+    if (portable) return { fields: {} as PresentationFields, error: '' };
     try {
       return { fields: readPresentationDraft(localStorage), error: '' };
     } catch {
@@ -201,6 +204,11 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
       void refresh();
     };
     void refresh();
+    if (portable)
+      return () => {
+        alive = false;
+        refreshRef.current = () => {};
+      };
     const visibleRefresh = () => {
       if (window.document.visibilityState === 'visible') void refresh();
     };
@@ -214,7 +222,7 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
       window.document.removeEventListener('visibilitychange', visibleRefresh);
       refreshRef.current = () => {};
     };
-  }, [accept, retireLocal]);
+  }, [accept, retireLocal, portable]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -312,7 +320,13 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
       setError('备份格式无效，项目文件没有变化。');
       return;
     }
-    if (!window.confirm('导入备份会替换项目文件中的文字修改，所有设备都会看到新版本。是否继续？'))
+    if (
+      !window.confirm(
+        portable
+          ? '导入备份会替换当前页面的修改，之后请保存新版 HTML。是否继续？'
+          : '导入备份会替换项目文件中的文字修改，所有设备都会看到新版本。是否继续？'
+      )
+    )
       return;
     void runWrite(async () => {
       const current = await currentFile();
@@ -338,13 +352,17 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
   };
   const pendingLegacy = Object.keys(legacy).length > 0;
   const failure = error || loadError || legacyError;
-  const status = busy
-    ? '正在写入项目文件…'
-    : loading
-      ? '正在读取项目文件…'
-      : document?.writable
-        ? '内容已与项目文件同步 · 其他设备可读取'
-        : '静态副本可查看；编辑保存需要运行演示服务';
+  const status = portable
+    ? busy
+      ? '正在应用修改…'
+      : '独立 HTML · 修改后请保存新版文件'
+    : busy
+      ? '正在写入项目文件…'
+      : loading
+        ? '正在读取项目文件…'
+        : document?.writable
+          ? '内容已与项目文件同步 · 其他设备可读取'
+          : '静态副本可查看；编辑保存需要运行演示服务';
 
   return (
     <EditorContext.Provider value={{ fields, editing, setEditing, select, canEdit, busy }}>
@@ -373,6 +391,21 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
               )}
             </div>
             <div className="mh-editor-actions">
+              {portable && (
+                <>
+                  <button
+                    type="button"
+                    disabled={busy || loading}
+                    onClick={downloadPortablePresentation}
+                  >
+                    <Download size={15} />
+                    保存新版 HTML
+                  </button>
+                  <a className="mh-portable-notes-link" href="#speaker-notes">
+                    独立讲稿
+                  </a>
+                </>
+              )}
               {loadError && (
                 <button type="button" onClick={() => refreshRef.current()} disabled={busy}>
                   重新读取文件
@@ -453,7 +486,11 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
               rows={8}
               aria-describedby="mh-editor-help"
             />
-            <p id="mh-editor-help">支持换行。点击应用后写入项目文件，其他设备读取同一份内容。</p>
+            <p id="mh-editor-help">
+              {portable
+                ? '应用后保留在当前页面；请点击“保存新版 HTML”把修改保存为文件，再分享或关闭。'
+                : '支持换行。点击应用后写入项目文件，其他设备读取同一份内容。'}
+            </p>
             {failure && (
               <p className="mh-editor-error" role="alert">
                 {failure}
@@ -468,7 +505,7 @@ export function PresentationEditor({ children }: { children: ReactNode }) {
                 取消
               </button>
               <button type="submit" disabled={busy || !canEdit} className="mh-editor-apply">
-                {busy ? '正在写入…' : '应用修改'}
+                {busy ? (portable ? '正在应用…' : '正在写入…') : '应用修改'}
               </button>
             </div>
           </form>

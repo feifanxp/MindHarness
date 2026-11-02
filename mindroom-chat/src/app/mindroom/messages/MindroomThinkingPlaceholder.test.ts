@@ -3,7 +3,7 @@ import { act, create } from 'react-test-renderer';
 import { describe, expect, it, vi } from 'vitest';
 import { ClientConfigProvider } from '../../hooks/useClientConfig';
 import { MindroomThinkingPlaceholder } from './MindroomThinkingPlaceholder';
-import thinkingMark from './thinking-mark.svg?raw';
+import { MINDROOM_LOGO_SRC } from '../branding/branding';
 import {
   DEFAULT_MINDROOM_THINKING_PLACEHOLDER_MESSAGES,
   resolveMindroomThinkingPlaceholderMessages,
@@ -11,7 +11,6 @@ import {
 
 vi.mock('./MindroomThinkingPlaceholder.css', () => ({
   Aura: 'Aura',
-  Core: 'Core',
   Indicator: 'Indicator',
   Mark: 'Mark',
   Placeholder: 'Placeholder',
@@ -56,7 +55,7 @@ describe('resolveMindroomThinkingPlaceholderMessages', () => {
 });
 
 describe('MindroomThinkingPlaceholder', () => {
-  it('keeps the SVG artwork decorative inside the responding status', () => {
+  it('keeps the shared brand artwork decorative inside the responding status', () => {
     const renderer = renderPlaceholder(['Working']);
 
     const status = renderer.root.findByProps({ role: 'status' });
@@ -64,9 +63,9 @@ describe('MindroomThinkingPlaceholder', () => {
 
     expect(status.props['aria-label']).toBe('AI is responding');
     expect(indicator.props['aria-hidden']).toBe('true');
-    const artwork = indicator.findAllByType('svg');
-    expect(artwork).toHaveLength(2);
-    artwork.forEach((svg) => expect(svg.props.focusable).toBe('false'));
+    const artwork = indicator.findByType('img');
+    expect(artwork.props.src).toBe(MINDROOM_LOGO_SRC);
+    expect(artwork.props.alt).toBe('');
     expect(JSON.stringify(renderer.toJSON())).toContain('Working');
 
     renderer.unmount();
@@ -107,14 +106,5 @@ describe('MindroomThinkingPlaceholder', () => {
     );
 
     renderer.unmount();
-  });
-});
-
-describe('thinking mark artwork', () => {
-  it('opens the frame behind the turning core', () => {
-    // Copy MindRoom's assets/logo/logo-mark-movable-cube.svg; its logo-mark.svg keeps a solid frame that shows a navy slab behind the flip.
-    const frame = thinkingMark.match(/<path id="structural-frame"[^>]*>/)?.[0] ?? '';
-    expect(frame).toContain('fill-rule="evenodd"');
-    expect(frame.match(/ Z/g)).toHaveLength(2);
   });
 });

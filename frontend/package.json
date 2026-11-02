@@ -16,7 +16,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "test:unit": "vitest run --reporter=verbose"
+    "test:unit": "vitest run --reporter=verbose",
+    "build:presentation-html": "node scripts/build-presentation-standalone.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

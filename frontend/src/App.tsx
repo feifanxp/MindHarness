@@ -29,6 +29,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Toaster } from "@/components/ui/toaster";
 import { PresentationPage } from "./Presentation";
 import { PresentationNotesPage } from "./PresentationNotes";
+import siteLogo from "../public/logo.png";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { showSaveFailureToastIfNeeded } from "@/components/shared";
@@ -373,7 +374,7 @@ function AppContent() {
           <Navigation mode="mobile" />
           <h1 className="flex min-w-0 items-center gap-2.5">
             <img
-              src="/logo.svg"
+              src={siteLogo}
               alt="MindRoom logo"
               className="h-7 w-7 shrink-0"
             />
@@ -685,10 +686,10 @@ function AppContent() {
 function AppRoute() {
   const location = useLocation();
   if (location.pathname === "/presentation/notes") {
-    return <PresentationNotesPage />;
+    return <PresentationNotesPage logoSrc={siteLogo} />;
   }
   if (location.pathname === "/presentation") {
-    return <PresentationPage />;
+    return <PresentationPage logoSrc={siteLogo} />;
   }
   return <AppContent />;
 }

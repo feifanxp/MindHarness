@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import mindroomLogo from "../../../assets/logo/logo-mark-animated.svgz?url";
+import mindroomLogo from "../../public/logo.png";
 import { requestConnection } from "./request";
 import type { ConnectionsIdentity } from "./types";
 

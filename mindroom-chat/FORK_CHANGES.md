@@ -2,6 +2,16 @@
 
 ## Runbook
 
+### Shared violet website icon (2026-11-02)
+
+- The supplied violet wave artwork is shared by discussion navigation, Chat branding, reply placeholders, browser favicons, and installed web app icons.
+- The dashboard, presentation, speaker notes, and connections page use the same artwork with transparent padding adjusted for small icons.
+- The reply placeholder retains its status text, motion, and reduced-motion support; obsolete cube artwork and its SVG-only setup are removed.
+- Desktop and 390px browser checks load the logo and favicon successfully, with no horizontal overflow or page errors; the 37 focused branding, discussion, and reply-placeholder tests pass.
+- Both frontend builds, TypeScript checks, scoped lint, and all seven thinking-marker browser tests pass; production favicon, Apple touch icons, and all nine manifest icon sizes resolve successfully.
+- Dashboard tests pass 1,723 cases with one skip; Chat passes 6,965 cases and retains the two known scheduled-time and caption-recovery failures.
+- The broader Python run passed 4,636 cases before interruption, with unrelated Git error-language and PostgreSQL response-shutdown timeout failures.
+
 ### Discussion rename, archive, and delete (2026-11-02)
 
 - Each Agent Room discussion has a keyboard-accessible **⋯** menu for renaming, archiving/restoring, and confirmed deletion.

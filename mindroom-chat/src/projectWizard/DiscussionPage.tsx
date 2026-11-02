@@ -15,6 +15,7 @@ import { Room } from '../app/mindroom/threads/MindroomRoom';
 import { RoomPathOverrideContext } from '../app/hooks/roomPathOverride';
 import { HideThreadModelPickerContext } from '../app/hooks/threadModelPickerVisibility';
 import { HideRoomThreadsContext } from '../app/hooks/roomThreadVisibility';
+import { MINDROOM_LOGO_SRC } from '../app/mindroom/branding/branding';
 import './discussionSpace.css';
 
 export const discussionPath = (draftId: string, roomId?: string, eventId?: string) =>
@@ -188,7 +189,16 @@ export function DiscussionPage() {
         className={`discussion-sidebar ${mobileNavOpen ? 'discussion-sidebar-open' : ''}`}
         aria-label="我的讨论"
       >
-        <strong className="discussion-sidebar-title">Agent Room</strong>
+        <strong className="discussion-sidebar-title">
+          <img
+            className="discussion-brand-mark"
+            src={MINDROOM_LOGO_SRC}
+            width={32}
+            height={32}
+            alt=""
+          />
+          Agent Room
+        </strong>
         <button
           className="discussion-new"
           type="button"

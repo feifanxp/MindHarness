@@ -90,8 +90,17 @@
   gap: 16px;
 }
 .discussion-sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 17px;
   padding: 0 10px;
+}
+.discussion-brand-mark {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 .discussion-new {
   min-height: 44px;

@@ -8,7 +8,6 @@ import '../../src/app/i18n';
 import { darkTheme, lightTheme } from '../../src/colors.css';
 import { ClientConfigProvider } from '../../src/app/hooks/useClientConfig';
 import { MindroomThinkingPlaceholder } from '../../src/app/mindroom/messages/MindroomThinkingPlaceholder';
-import { MindroomThinkingDefinitions } from '../../src/app/mindroom/messages/MindroomThinkingDefinitions';
 
 const params = new URLSearchParams(window.location.search);
 const dark = params.has('dark');
@@ -18,7 +17,6 @@ document.documentElement.dir = params.has('rtl') ? 'rtl' : 'ltr';
 
 createRoot(document.getElementById('root')!).render(
   <ClientConfigProvider value={{ mindroom: { thinkingPlaceholderMessages: [label] } }}>
-    <MindroomThinkingDefinitions />
     <main
       style={{
         padding: 24,

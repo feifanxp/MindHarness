@@ -1,4 +1,9 @@
 import { decodePresentationDraft, type PresentationFields } from './presentationDraft';
+import {
+  readPortablePresentation,
+  writePortablePresentation,
+  isPortablePresentation,
+} from './presentationPortable';
 
 export type PresentationFile = {
   fields: PresentationFields;
@@ -51,6 +56,8 @@ async function request(url: string, options: RequestInit = {}) {
 }
 
 export async function loadPresentationFile(): Promise<PresentationFile> {
+  const portable = readPortablePresentation();
+  if (portable) return portable;
   const { response, json, body } = await request(ENDPOINT);
   if (response.ok && json) return fileResponse(body);
   if (response.status === 404 || response.status === 405 || (response.ok && !json)) {
@@ -74,6 +81,7 @@ export async function savePresentationFile(
   revision: string,
   fields: PresentationFields
 ): Promise<PresentationFile> {
+  if (isPortablePresentation()) return writePortablePresentation(revision, fields);
   const { response, json, body } = await request(ENDPOINT, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },

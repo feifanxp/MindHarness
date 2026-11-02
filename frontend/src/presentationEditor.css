@@ -223,3 +223,14 @@
     padding-block-end: 14rem;
   }
 }
+
+.mh-editor-actions .mh-portable-notes-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #475344;
+  border-radius: 6px;
+  color: #f1f0e9;
+  font-size: 0.8rem;
+  text-decoration: none;
+}

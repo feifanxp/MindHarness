@@ -66,6 +66,13 @@
   gap: 3px;
   block-size: 18px;
 }
+.mh-brand-logo {
+  display: block;
+  inline-size: 40px;
+  block-size: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 .mh-brand-mark span {
   display: block;
   inline-size: 4px;
@@ -1192,6 +1199,14 @@
   max-inline-size: 1100px;
   inline-size: 100%;
 }
+.mh-cover-logo {
+  display: block;
+  inline-size: clamp(8rem, 16vw, 14rem);
+  block-size: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0 auto 1.25rem;
+}
 .mh-slide--cover .mh-slide-title {
   font-size: clamp(3rem, 8vw, 8rem);
   font-weight: 700;
@@ -1231,4 +1246,114 @@
 }
 .mh-slide--motivation .mh-chat-bubble {
   line-height: 1.85;
+}
+
+/* The overview bridges the relationship argument and the team demonstration. */
+.mh-slide--overview {
+  gap: clamp(2rem, 3.5vw, 4rem);
+}
+.mh-slide--overview .mh-slide-title {
+  font-size: clamp(2rem, 3.2vw, 3.7rem);
+  margin-block: 1.2rem 1rem;
+}
+.mh-slide--overview .mh-slide-summary {
+  color: var(--mh-ink);
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.7;
+}
+.mh-overview-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.6rem 0 0;
+  display: grid;
+  gap: 1.15rem;
+}
+.mh-overview-features li {
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr);
+  gap: 0.65rem;
+}
+.mh-overview-number {
+  color: var(--mh-lime);
+  font: 500 0.75rem/1.9 monospace;
+}
+.mh-overview-features strong {
+  display: block;
+  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
+  line-height: 1.6;
+}
+.mh-overview-features p {
+  margin: 0.3rem 0 0;
+  color: var(--mh-muted);
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  line-height: 1.75;
+}
+.mh-overview-image {
+  margin: 0;
+}
+.mh-overview-image img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1590 / 1102;
+  object-fit: contain;
+  border: 1px solid var(--mh-line);
+  border-radius: 16px;
+}
+.mh-overview-image figcaption {
+  margin-block-start: 1rem;
+  color: var(--mh-muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.mh-scenarios-card {
+  block-size: auto;
+  min-block-size: 0;
+}
+.mh-scenario-list {
+  display: grid;
+  gap: 1.25rem;
+  margin-block: 1.5rem;
+}
+.mh-scenario {
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid var(--mh-lime);
+}
+.mh-scenario:nth-child(2) {
+  border-color: var(--mh-blue);
+}
+.mh-scenario h3 {
+  margin: 0;
+  color: var(--mh-lime);
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  line-height: 1.4;
+}
+.mh-scenario:nth-child(2) h3 {
+  color: var(--mh-blue);
+}
+.mh-scenario-purpose {
+  margin: 0.35rem 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.mh-scenario blockquote {
+  margin: 0.85rem 0 0.5rem;
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.75;
+}
+.mh-scenario-outcome,
+.mh-scenario-boundary p {
+  margin: 0.4rem 0 0;
+  color: var(--mh-muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.mh-scenario-boundary {
+  border-block-start: 1px solid var(--mh-line);
+  padding-block-start: 1.25rem;
+}
+.mh-scenario-boundary strong {
+  font-size: 1rem;
+  line-height: 1.65;
 }

@@ -6,50 +6,44 @@ async function sample(page: Page, time: number) {
       animation.pause();
       animation.currentTime = currentTime;
     });
-    const svg = document.querySelector('[role="status"] svg')!;
-    const core = document.querySelector('use[href$="-central-cube"]')!.parentElement!
-      .parentElement!;
-    const rotor = svg.parentElement!;
+    const image = document.querySelector('[role="status"] img')!;
+    const rotor = image.parentElement!;
     const aura = rotor.previousElementSibling!;
-    const styles = [rotor, core, aura].map((element) => {
+    const styles = [rotor, aura].map((element) => {
       const style = getComputedStyle(element);
       return [style.transform, style.filter, style.opacity];
     });
-    return { rotor: styles[0], core: styles[1], aura: styles[2] };
+    return { rotor: styles[0], aura: styles[1] };
   }, time);
 }
 
-test('thinking marker plays the glowing core between the horizontal and vertical flips', async ({
+test('thinking marker plays the brand mark and glow between the horizontal and vertical flips', async ({
   page,
 }) => {
   await page.goto('/e2e/fixtures/thinking-marker.html');
   const status = page.getByRole('status', { name: 'AI is responding' }).first();
-  await expect(status.locator('svg')).toHaveCount(2);
-  for (const part of await status.locator('use').all()) {
-    await expect
-      .poll(() => part.evaluate((element) => (element as SVGGraphicsElement).getBBox().width))
-      .toBeGreaterThan(0);
-  }
+  const image = status.locator('img');
+  await expect(image).toHaveCount(1);
+  await expect
+    .poll(() => image.evaluate((element: HTMLImageElement) => element.naturalWidth))
+    .toBeGreaterThan(0);
   const initial = await sample(page, 0);
   for (const time of [720, 1350, 1800]) {
     const frame = await sample(page, time);
     expect(frame.rotor).not.toEqual(initial.rotor);
-    expect(frame.core).toEqual(initial.core);
     expect(frame.aura).toEqual(initial.aura);
   }
   const settled = await sample(page, 2790);
   for (const time of [3270, 3990, 4470, 5010]) {
     const frame = await sample(page, time);
     expect(frame.rotor).toEqual(settled.rotor);
-    expect(frame.core).not.toEqual(settled.core);
     expect(frame.aura).not.toEqual(settled.aura);
   }
-  const coreSettled = await sample(page, 6570);
+  const glowSettled = await sample(page, 6570);
   for (const time of [7020, 7740, 8190]) {
     const frame = await sample(page, time);
-    expect(frame.rotor).not.toEqual(coreSettled.rotor);
-    expect(frame.core).toEqual(coreSettled.core);
-    expect(frame.aura).toEqual(coreSettled.aura);
+    expect(frame.rotor).not.toEqual(glowSettled.rotor);
+    expect(frame.aura).toEqual(glowSettled.aura);
   }
   expect(await sample(page, 9000)).toEqual(initial);
 });
@@ -64,10 +58,10 @@ test('thinking marker fits chat text and honors reduced motion in both themes', 
     const statuses = page.getByRole('status', { name: 'AI is responding' });
     await expect(statuses).toHaveCount(2);
     for (const [index, size] of [32, 28].entries()) {
-      for (const svg of await statuses.nth(index).locator('svg').all()) {
-        await expect(svg).toHaveCSS('width', `${size}px`);
-        await expect(svg).toHaveCSS('height', `${size}px`);
-        await expect(svg).toHaveAttribute('focusable', 'false');
+      for (const image of await statuses.nth(index).locator('img').all()) {
+        await expect(image).toHaveCSS('width', `${size}px`);
+        await expect(image).toHaveCSS('height', `${size}px`);
+        await expect(image).toHaveAttribute('alt', '');
       }
     }
     expect(await page.getByRole('img').count()).toBe(0);
@@ -102,7 +96,7 @@ test('thinking motion does not continuously repaint the artwork or text', async 
     categories: 'devtools.timeline',
     transferMode: 'ReportEvents',
   });
-  // Cover a complete flip / glowing-core / flip cycle.
+  // Cover a complete flip / glow / flip cycle.
   await page.waitForTimeout(9500);
   const complete = new Promise<void>((resolve) => {
     cdp.once('Tracing.tracingComplete', resolve);
@@ -130,7 +124,7 @@ for (const { label, query } of [
     const text = status.locator(':scope > span').last();
     // Base text plus a decorative, masked copy, without duplicating the logo.
     await expect(text.locator(':scope > span')).toHaveCount(2);
-    await expect(status.locator('svg')).toHaveCount(2);
+    await expect(status.locator('img')).toHaveCount(1);
     const frames = [];
     for (const time of [0, 550, 1100, 2000]) {
       const frame = await text.evaluate((host, currentTime) => {
@@ -185,7 +179,7 @@ test('forced colors retain readable text without a shimmer overlay', async ({
   await expect(text.locator(':scope > span').last()).toBeHidden();
 });
 
-test('thinking marker paints its glass faces and gold core', async ({ page }) => {
+test('thinking marker paints the violet brand mark', async ({ page }) => {
   await page.goto('/e2e/fixtures/thinking-marker.html?dark');
   const markers = page
     .getByRole('status', { name: 'AI is responding' })
@@ -205,18 +199,13 @@ test('thinking marker paints its glass faces and gold core', async ({ page }) =>
       const context = canvas.getContext('2d')!;
       context.drawImage(image, 0, 0);
       const { data } = context.getImageData(0, 0, image.width, image.height);
-      let glass = 0;
-      let gold = 0;
+      let violet = 0;
       for (let index = 0; index < data.length; index += 4) {
         const [red, green, blue, alpha] = data.slice(index, index + 4);
-        if (alpha > 128 && blue > red + 20 && green > red + 15) glass += 1;
-        if (alpha > 128 && red > 100 && red > green * 1.08 && green > blue * 1.15) gold += 1;
+        if (alpha > 128 && blue > green + 30 && blue > red + 15) violet += 1;
       }
-      return { glass, gold, area: image.width * image.height };
+      return { violet, area: image.width * image.height };
     }, screenshot.toString('base64'));
-    expect(paint.glass, 'the blue glass faces must visibly paint').toBeGreaterThan(
-      paint.area * 0.12
-    );
-    expect(paint.gold, 'the gold cube must visibly paint').toBeGreaterThan(paint.area * 0.02);
+    expect(paint.violet, 'the violet logo must visibly paint').toBeGreaterThan(paint.area * 0.12);
   }
 });

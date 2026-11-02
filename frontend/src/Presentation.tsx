@@ -1,4 +1,12 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 import {
   ArrowDown,
   ArrowRight,
@@ -12,7 +20,8 @@ import {
   CircleHelp,
   Check,
 } from 'lucide-react';
-import { slides, type SlideKey } from './presentationContent';
+import { slides as defaultSlides, type Slide, type SlideKey } from './presentationContent';
+import overviewScreenshot from './assets/presentation-start.png';
 import {
   EditableText,
   PresentationEditor,
@@ -23,6 +32,7 @@ import {
 
 type Color = 'lime' | 'coral' | 'blue' | 'violet';
 type Message = { name: string; text: string; color?: Color; highlight?: string };
+const SlideNumberContext = createContext(0);
 
 function Avatar({ name, color = 'blue' }: { name: string; color?: Color }) {
   return (
@@ -44,11 +54,13 @@ function Card({
   children: ReactNode;
   className?: string;
 }) {
+  const slideNumber = useContext(SlideNumberContext);
+  const caption = title.replace(/^\d+ \/ /, String(slideNumber).padStart(2, '0') + ' / ');
   return (
     <div className={`mh-proof-card mh-v2-card ${className}`}>
       <div className="mh-proof-card__topline">
         <span>
-          <EditableText id={field + '.caption'} text={title} label="示例标题" />
+          <EditableText id={field + '.caption'} text={caption} label="示例标题" />
         </span>
         <span className="mh-sample-label">
           <EditableText id={field + '.badge.' + badge} text={badge} label="示例状态说明" />
@@ -770,6 +782,120 @@ function HarnessVisual() {
     </Card>
   );
 }
+function OverviewDetails() {
+  const features = [
+    {
+      key: 'teammates',
+      title: '聊几句，找到合适的 AI 队友',
+      text: '和助理 Agent 简单问答，根据需求快速生成匹配你问题的 AI 队友。',
+    },
+    {
+      key: 'conversation',
+      title: '多人、多 Agent，畅所欲言',
+      text: '在同一个聊天环境里，一起交流、互相启发。',
+    },
+    {
+      key: 'capabilities',
+      title: '有性格、有专业，也能动手帮忙',
+      text: '每位 Agent 都有自己的记忆，还能调用网络搜索、文档撰写等技能。',
+    },
+    {
+      key: 'scribe',
+      title: '尽情讨论，书记员帮你整理',
+      text: '头脑风暴时，书记员 Agent 在后台默默梳理思路，记下有价值的想法。',
+    },
+  ];
+  return (
+    <ul className="mh-overview-features">
+      {features.map((feature, index) => (
+        <li key={feature.key}>
+          <span className="mh-overview-number" aria-hidden="true">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <strong>
+              <EditableText id={'overview.' + feature.key + '.title'} text={feature.title} />
+            </strong>
+            <p>
+              <EditableText id={'overview.' + feature.key + '.text'} text={feature.text} />
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+function OverviewVisual() {
+  return (
+    <figure className="mh-overview-image">
+      <img
+        src={overviewScreenshot}
+        width={1590}
+        height={1102}
+        alt="Mind Harness 项目创建页面：今天想聊点什么？从一句话开始，和助理聊清问题。"
+      />
+      <figcaption>
+        <EditableText id="overview.image.caption" text="从一句话开始，找到一起思考的队友。" />
+      </figcaption>
+    </figure>
+  );
+}
+function ScenariosVisual() {
+  const scenarios = [
+    {
+      key: 'brainstorm',
+      title: '头脑风暴',
+      purpose: '打开思路，找更多可能',
+      example: '“想做一个帮爸妈管理健康的产品，可以从哪些方向入手？”',
+      outcome: '从不同视角补充想法，再一起比较和筛选。',
+    },
+    {
+      key: 'requirements',
+      title: '需求分析',
+      purpose: '先把问题问清楚',
+      example: '“下一款血压计要不要上大彩屏？它到底解决什么问题？”',
+      outcome: '追问动机、梳理使用场景，再明确真正要解决的需求。',
+    },
+  ];
+  return (
+    <Card
+      field="scenarios"
+      title="14 / WHEN TO THINK TOGETHER"
+      badge="目前重点探索"
+      className="mh-scenarios-card"
+    >
+      <div className="mh-scenario-list">
+        {scenarios.map(scenario => (
+          <article className="mh-scenario" key={scenario.key}>
+            <h3>
+              <EditableText id={'scenarios.' + scenario.key + '.title'} text={scenario.title} />
+            </h3>
+            <p className="mh-scenario-purpose">
+              <EditableText id={'scenarios.' + scenario.key + '.purpose'} text={scenario.purpose} />
+            </p>
+            <blockquote>
+              <EditableText id={'scenarios.' + scenario.key + '.example'} text={scenario.example} />
+            </blockquote>
+            <p className="mh-scenario-outcome">
+              <EditableText id={'scenarios.' + scenario.key + '.outcome'} text={scenario.outcome} />
+            </p>
+          </article>
+        ))}
+      </div>
+      <div className="mh-scenario-boundary">
+        <strong>
+          <EditableText id="scenarios.boundary.title" text="目标明确，就直接执行" />
+        </strong>
+        <p>
+          <EditableText
+            id="scenarios.boundary.text"
+            text="比如按确认的提纲写文档、按清单整理资料，无需每次都开一场讨论。"
+          />
+        </p>
+      </div>
+    </Card>
+  );
+}
 function SlideVisual({ kind }: { kind: SlideKey }) {
   switch (kind) {
     case 'cover':
@@ -782,6 +908,8 @@ function SlideVisual({ kind }: { kind: SlideKey }) {
       return <RealWorldVisual />;
     case 'relationship':
       return <RelationshipVisual />;
+    case 'overview':
+      return <OverviewVisual />;
     case 'room':
       return <RoomVisual />;
     case 'discussion':
@@ -795,24 +923,29 @@ function SlideVisual({ kind }: { kind: SlideKey }) {
       return <ValueVisual />;
     case 'harness':
       return <HarnessVisual />;
+    case 'scenarios':
+      return <ScenariosVisual />;
   }
 }
 
-function PresentationContent() {
+function PresentationContent({ slides, logoSrc }: { slides: Slide[]; logoSrc?: string }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const mainRef = useRef<HTMLElement>(null);
-  const navigate = useCallback((index: number) => {
-    const bounded = Math.max(0, Math.min(slides.length - 1, index));
-    const section = document.getElementById(`mh-slide-${slides[bounded].key}`);
-    setActiveIndex(bounded);
-    section?.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        ? 'instant'
-        : 'smooth',
-      block: 'start',
-    });
-    document.getElementById(`mh-title-${slides[bounded].key}`)?.focus({ preventScroll: true });
-  }, []);
+  const navigate = useCallback(
+    (index: number) => {
+      const bounded = Math.max(0, Math.min(slides.length - 1, index));
+      const section = document.getElementById(`mh-slide-${slides[bounded].key}`);
+      setActiveIndex(bounded);
+      section?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'instant'
+          : 'smooth',
+        block: 'start',
+      });
+      document.getElementById(`mh-title-${slides[bounded].key}`)?.focus({ preventScroll: true });
+    },
+    [slides]
+  );
   useEffect(() => {
     const title = document.title;
     const lang = document.documentElement.lang;
@@ -841,7 +974,7 @@ function PresentationContent() {
       document.title = title;
       document.documentElement.lang = lang;
     };
-  }, []);
+  }, [slides]);
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       if (
@@ -867,7 +1000,7 @@ function PresentationContent() {
     };
     window.addEventListener('keydown', keydown);
     return () => window.removeEventListener('keydown', keydown);
-  }, [activeIndex, navigate]);
+  }, [activeIndex, navigate, slides]);
   return (
     <div className="mh-presentation" lang="zh-CN">
       <header className="mh-presentation-header">
@@ -880,11 +1013,15 @@ function PresentationContent() {
           }}
           aria-label="回到开头"
         >
-          <span className="mh-brand-mark" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
+          {logoSrc ? (
+            <img className="mh-brand-logo" src={logoSrc} width={40} height={40} alt="" />
+          ) : (
+            <span className="mh-brand-mark" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+          )}
           <span>MIND HARNESS</span>
         </a>
         <div className="mh-header-center">
@@ -934,6 +1071,15 @@ function PresentationContent() {
               aria-labelledby={`mh-title-${slide.key}`}
             >
               <div className="mh-slide-copy">
+                {slide.key === 'cover' && logoSrc && (
+                  <img
+                    className="mh-cover-logo"
+                    src={logoSrc}
+                    width={1254}
+                    height={1254}
+                    alt="Mind Harness 项目标志"
+                  />
+                )}
                 {slide.key !== 'cover' && (
                   <div className="mh-slide-kicker">
                     <span className="mh-kicker-line" />
@@ -971,6 +1117,7 @@ function PresentationContent() {
                     label={'第 ' + (index + 1) + ' 页正文'}
                   />
                 </p>
+                {slide.key === 'overview' && <OverviewDetails />}
                 {slide.key === 'harness' && (
                   <p className="mh-closing-line">
                     <EditableText
@@ -996,7 +1143,9 @@ function PresentationContent() {
               </div>
               {slide.key !== 'cover' && (
                 <div className="mh-slide-visual">
-                  <SlideVisual kind={slide.key} />
+                  <SlideNumberContext.Provider value={index + 1}>
+                    <SlideVisual kind={slide.key} />
+                  </SlideNumberContext.Provider>
                 </div>
               )}
             </section>
@@ -1028,10 +1177,16 @@ function PresentationContent() {
   );
 }
 
-export function PresentationPage() {
+export function PresentationPage({
+  slides = defaultSlides,
+  logoSrc,
+}: {
+  slides?: Slide[];
+  logoSrc?: string;
+}) {
   return (
     <PresentationEditor>
-      <PresentationContent />
+      <PresentationContent slides={slides} logoSrc={logoSrc} />
     </PresentationEditor>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { slides } from './presentationContent';
+import { slides as defaultSlides, type Slide } from './presentationContent';
+import { isPortablePresentation } from './presentationPortable';
 import {
   EditableText,
   PresentationEditor,
@@ -8,9 +9,8 @@ import {
   usePresentationEditor,
 } from './PresentationEditor';
 
-const chapters = [...new Set(slides.map(slide => slide.chapter))];
-
-function NotesContent() {
+function NotesContent({ slides, logoSrc }: { slides: Slide[]; logoSrc?: string }) {
+  const chapters = [...new Set(slides.map(slide => slide.chapter))];
   const { fields, editing } = usePresentationEditor();
   useEffect(() => {
     const previousTitle = document.title;
@@ -27,20 +27,24 @@ function NotesContent() {
     <div className="mh-presentation mh-notes-page" lang="zh-CN">
       <header className="mh-notes-header">
         <a className="mh-brand" href="#notes-top">
-          <span className="mh-brand-mark" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
+          {logoSrc ? (
+            <img className="mh-brand-logo" src={logoSrc} width={40} height={40} alt="" />
+          ) : (
+            <span className="mh-brand-mark" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+          )}
           <span>MIND HARNESS / 讲稿</span>
         </a>
         <a
           className="mh-notes-open-deck"
-          href="/presentation"
-          target="_blank"
+          href={isPortablePresentation() ? '#mh-slide-cover' : '/presentation'}
+          target={isPortablePresentation() ? undefined : '_blank'}
           rel="noopener noreferrer"
         >
-          打开演示（新标签页）
+          {isPortablePresentation() ? '返回演示' : '打开演示（新标签页）'}
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>
         <PresentationEditButton />
@@ -118,10 +122,16 @@ function NotesContent() {
   );
 }
 
-export function PresentationNotesPage() {
+export function PresentationNotesPage({
+  slides = defaultSlides,
+  logoSrc,
+}: {
+  slides?: Slide[];
+  logoSrc?: string;
+}) {
   return (
     <PresentationEditor>
-      <NotesContent />
+      <NotesContent slides={slides} logoSrc={logoSrc} />
     </PresentationEditor>
   );
 }
