@@ -50,6 +50,7 @@ _ENTITY_CONSTRUCTION_PROMPTS = frozenset(
 # accept_invites decides which invited rooms the bot loads when it is built, and private
 # sets the storage and session identity of requester-private state. A tool edit still
 # restarts the agent when it changes _agent_startup_tools().
+# Switching room_scribe also restarts the bot, draining foreground replies before it becomes a silent observer.
 _AGENT_LIVE_FIELDS = frozenset(
     {
         "access",
@@ -100,6 +101,7 @@ _TEAM_LIVE_FIELDS = frozenset(
         "access",
         "agents",
         "compaction",
+        "instructions",
         "max_tool_calls_from_history",
         "max_tool_calls_per_turn",
         "mode",

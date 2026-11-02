@@ -1851,7 +1851,12 @@ def _entity_edit_plan(
 def test_every_agent_and_team_field_is_classified_for_config_reload() -> None:
     """A new entity field must be classified, so it cannot silently skip a restart its bot needs."""
     assert set(AgentConfig.model_fields) >= _AGENT_LIVE_FIELDS
-    assert set(AgentConfig.model_fields) - _AGENT_LIVE_FIELDS == {"display_name", "accept_invites", "private"}
+    assert set(AgentConfig.model_fields) - _AGENT_LIVE_FIELDS == {
+        "display_name",
+        "accept_invites",
+        "private",
+        "room_scribe",
+    }
     assert set(TeamConfig.model_fields) >= _TEAM_LIVE_FIELDS
     assert set(TeamConfig.model_fields) - _TEAM_LIVE_FIELDS == {"display_name", "accept_invites"}
 
@@ -1877,6 +1882,11 @@ def _update_helper(**fields: object) -> Callable[[dict[str, Any]], object]:
         pytest.param(_update_helper(cheap_model="fast", cold_cache={}), "helper", id="cold-cache"),
         pytest.param(_update_helper(access={"users": ["@alice:localhost"]}), "helper", id="access"),
         pytest.param(lambda data: data["teams"]["crew"].update(mode="collaborate"), "crew", id="team-mode"),
+        pytest.param(
+            lambda data: data["teams"]["crew"].update(instructions=["Be brief."]),
+            "crew",
+            id="team-instructions",
+        ),
         pytest.param(lambda data: data["teams"]["crew"].update(agents=["helper", "other"]), "crew", id="team-members"),
     ],
 )
@@ -1896,6 +1906,7 @@ def test_config_update_plan_applies_live_entity_edits_without_restarting(
     [
         pytest.param(_update_helper(display_name="Helpful"), {"helper"}, id="display-name"),
         pytest.param(_update_helper(accept_invites=False), {"helper"}, id="accept-invites"),
+        pytest.param(_update_helper(room_scribe=True), {"helper"}, id="room-scribe"),
         pytest.param(lambda data: data["agents"]["other"].update(private={"per": "user"}), {"other"}, id="private"),
         pytest.param(_update_helper(tools=["shell", "desktop"]), {"helper"}, id="desktop"),
         pytest.param(_update_helper(tools=["shell", "mcp_docs"]), {"helper"}, id="mcp-tool"),
