@@ -1,10 +1,17 @@
 import { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { slides } from './presentationContent';
+import {
+  EditableText,
+  PresentationEditor,
+  PresentationEditButton,
+  usePresentationEditor,
+} from './PresentationEditor';
 
 const chapters = [...new Set(slides.map(slide => slide.chapter))];
 
-export function PresentationNotesPage() {
+function NotesContent() {
+  const { fields, editing } = usePresentationEditor();
   useEffect(() => {
     const previousTitle = document.title;
     const previousLanguage = document.documentElement.lang;
@@ -36,6 +43,7 @@ export function PresentationNotesPage() {
           打开演示（新标签页）
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>
+        <PresentationEditButton />
       </header>
       <div className="mh-notes-layout">
         <nav className="mh-notes-toc" aria-label="讲稿目录">
@@ -74,16 +82,32 @@ export function PresentationNotesPage() {
               <div className="mh-slide-kicker">
                 第 {index + 1} 页 / {slide.chapter}
               </div>
-              <h2 id={'notes-title-' + slide.key}>{slide.title}</h2>
+              <h2 id={'notes-title-' + slide.key}>
+                <EditableText
+                  id={'slide.' + slide.key + '.title'}
+                  text={slide.title}
+                  label={'第 ' + (index + 1) + ' 页标题'}
+                />
+              </h2>
               <div className="mh-notes-copy">
-                {slide.notes.split(/\n\n+/).map((paragraph, paragraphIndex) => (
-                  <p key={paragraphIndex}>{paragraph}</p>
-                ))}
+                <p>
+                  <EditableText
+                    id={'slide.' + slide.key + '.notes'}
+                    text={slide.notes}
+                    label={'第 ' + (index + 1) + ' 页讲稿'}
+                  />
+                </p>
               </div>
-              {slide.transition && (
+              {(editing || (fields['slide.' + slide.key + '.transition'] ?? slide.transition)) && (
                 <div className="mh-notes-transition">
                   <h3>过渡</h3>
-                  <p>{slide.transition}</p>
+                  <p>
+                    <EditableText
+                      id={'slide.' + slide.key + '.transition'}
+                      text={slide.transition}
+                      label={'第 ' + (index + 1) + ' 页过渡语'}
+                    />
+                  </p>
                 </div>
               )}
             </section>
@@ -91,5 +115,13 @@ export function PresentationNotesPage() {
         </main>
       </div>
     </div>
+  );
+}
+
+export function PresentationNotesPage() {
+  return (
+    <PresentationEditor>
+      <NotesContent />
+    </PresentationEditor>
   );
 }

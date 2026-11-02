@@ -196,6 +196,14 @@ MindRoom verifies the token a second time after reading `/versions`, because `/v
 The record is fixed at sign-in, because a session started before binding was never proven bound, while `administrators` is read again on every dashboard request.
 Such a session authenticates dashboard routes as the administrator's Matrix ID, except in hosted platform mode and on OAuth callbacks, which keep finishing each flow as the identity that started it.
 
+## Presentation editing service
+
+The Vite development and preview servers expose /__presentation/content for the internal presentation, independently of the MindRoom primary runtime and dashboard API.
+It reads and writes only the configured repository-root Mind_Harness_Presentation_编辑.json; clients cannot supply a path.
+Writes require JSON from a matching Origin and Host, accept at most 2 MiB per request, and reject stale file revisions.
+It has no per-user authentication: access to the presentation server is edit access, so any shared deployment must restrict access to intended editors.
+Static builds contain a read-only presentation-edits.json snapshot and do not provide a save endpoint.
+
 ## Known gaps
 
 These are tracked gaps, not intentional behaviors; fix them rather than documenting around them.

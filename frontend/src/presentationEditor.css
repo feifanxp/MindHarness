@@ -1,0 +1,225 @@
+.mh-edit-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-block-size: 34px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(196, 239, 109, 0.3);
+  border-radius: 7px;
+  color: #c4ef6d;
+  background: rgba(196, 239, 109, 0.05);
+  font-size: 0.75rem !important;
+  white-space: nowrap;
+}
+.mh-edit-toggle[aria-pressed='true'] {
+  background: #c4ef6d;
+  color: #111411;
+}
+.mh-editable-text {
+  display: inline-block;
+  max-inline-size: 100%;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.mh-edit-surface[data-editing='true'] .mh-editable-text {
+  outline: 1px dashed rgba(196, 239, 109, 0.55);
+  outline-offset: 4px;
+  cursor: text;
+  border-radius: 2px;
+}
+.mh-edit-surface[data-editing='true'] .mh-editable-text:hover {
+  background: rgba(196, 239, 109, 0.08);
+  outline-color: #c4ef6d;
+}
+.mh-edit-surface[data-editing='true'] .mh-editable-text:focus-visible {
+  outline: 2px solid #c4ef6d;
+}
+.mh-empty-field {
+  font-size: 0.8rem;
+  color: #c4ef6d;
+}
+.mh-editor-dock {
+  position: fixed;
+  z-index: 35;
+  inset: auto 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #202620;
+  color: #f1f0e9;
+  border: 1px solid rgba(196, 239, 109, 0.35);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px #0006;
+  font-family: 'Manrope', 'Noto Sans SC', sans-serif;
+}
+.mh-editor-dock strong {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.mh-editor-dock p {
+  margin: 0.3rem 0 0;
+  font-size: 0.75rem;
+  color: #acb3a9;
+}
+.mh-editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.mh-editor-dock button,
+.mh-text-editor button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-block-size: 36px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #475344;
+  border-radius: 6px;
+  background: transparent;
+  color: #f1f0e9;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+}
+.mh-editor-dock button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.mh-edit-surface[data-editing='true'] .mh-presentation-footer {
+  display: none;
+}
+.mh-edit-surface[data-editing='true'] .mh-slide {
+  padding-block-end: 8rem;
+}
+.mh-edit-surface[data-editing='true'] .mh-notes-layout {
+  padding-block-end: 10rem;
+}
+.mh-text-editor {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  inline-size: min(680px, calc(100% - 2rem));
+  max-block-size: calc(100dvh - 2rem);
+  padding: 1.5rem;
+  overflow: auto;
+  border: 1px solid #53604b;
+  border-radius: 14px;
+  color: #f1f0e9;
+  background: #1a1e1a;
+  box-shadow: 0 20px 90px #0008;
+  font-family: 'Manrope', 'Noto Sans SC', sans-serif;
+}
+.mh-text-editor::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+.mh-text-editor-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 1.2rem;
+}
+.mh-text-editor h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+.mh-text-editor-heading button {
+  border: 0;
+  padding: 0.2rem;
+  flex-shrink: 0;
+}
+.mh-text-editor label {
+  display: block;
+  font-size: 0.8rem;
+  color: #acb3a9;
+  margin-block-end: 0.6rem;
+}
+.mh-text-editor textarea {
+  display: block;
+  box-sizing: border-box;
+  inline-size: 100%;
+  min-block-size: 180px;
+  max-block-size: 55dvh;
+  resize: vertical;
+  border: 1px solid #53604b;
+  border-radius: 8px;
+  background: #111411;
+  color: #f1f0e9;
+  padding: 0.9rem;
+  font:
+    400 1rem/1.85 'Noto Sans SC',
+    sans-serif;
+}
+.mh-text-editor textarea:focus-visible,
+.mh-text-editor button:focus-visible,
+.mh-editor-dock button:focus-visible {
+  outline: 2px solid #c4ef6d;
+  outline-offset: 3px;
+}
+.mh-text-editor p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #acb3a9;
+}
+.mh-text-editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block-start: 1rem;
+}
+.mh-text-editor-actions > span {
+  flex: 1;
+}
+.mh-text-editor .mh-editor-apply {
+  background: #c4ef6d;
+  color: #111411;
+  border-color: #c4ef6d;
+}
+.mh-text-editor .mh-editor-error,
+.mh-editor-dock .mh-editor-error {
+  color: #ffb29e;
+}
+@media (max-width: 600px) {
+  .mh-editor-dock {
+    inset: auto 0.5rem 0.5rem;
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+  .mh-editor-actions {
+    gap: 0.3rem;
+  }
+  .mh-editor-dock button {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .mh-edit-surface .mh-presentation-header {
+    gap: 0.6rem;
+  }
+  .mh-edit-surface .mh-header-progress i {
+    display: none;
+  }
+  .mh-text-editor {
+    padding: 1rem;
+  }
+  .mh-notes-header {
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mh-editor-dock button {
+    min-block-size: 44px;
+  }
+  .mh-edit-surface[data-editing='true'] .mh-slide {
+    padding-block-end: 14rem;
+  }
+  .mh-edit-surface[data-editing='true'] .mh-notes-layout {
+    padding-block-end: 14rem;
+  }
+}

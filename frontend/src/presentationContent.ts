@@ -1,5 +1,6 @@
 // Page copy mirrors Mind_Harness_Presentation_文案.md (V2.0).
 export type SlideKey =
+  | 'cover'
   | 'resonance'
   | 'motivation'
   | 'realworld'
@@ -22,6 +23,16 @@ export type Slide = {
   transition: string;
 };
 export const slides: Slide[] = [
+  {
+    key: 'cover',
+    chapter: '标题页',
+    kicker: 'MIND HARNESS',
+    label: '标题页',
+    title: 'Mind Harness',
+    summary: '平行多Agent 场景应用探索',
+    notes: 'Mind Harness。\n平行多Agent 场景应用探索。',
+    transition: '',
+  },
   {
     key: 'resonance',
     chapter: '共鸣',
