@@ -37,6 +37,7 @@ from tests.conftest import (
     bind_runtime_paths,
     make_matrix_client_mock,
     make_visible_message,
+    message_origin,
     request_envelope,
     runtime_paths_for,
     test_runtime_paths,
@@ -184,6 +185,50 @@ async def test_mentioned_agent_responds_individually(config: Config) -> None:
     assert plan.kind == "respond"
     assert plan.response_action is not None
     assert plan.response_action.kind == "individual"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("thread_id", [None, "$thread"])
+async def test_mentioned_peer_bypasses_autonomous_participation(config: Config, thread_id: str | None) -> None:
+    """An explicit @mention must not be blocked by the peer transcript guard."""
+    config.rooms[_ROOM_ID] = RoomConfig(peer_discussion=PeerDiscussionConfig())
+    config.agents["general"].rooms = [_ROOM_ID]
+    room = _room_with_members(_SENDER, _entity_id(config, "general").full_id)
+    context = _context(mentioned=[_entity_id(config, "general")], am_i_mentioned=True, thread_id=thread_id)
+
+    plan = await _plan(_policy_for(config, "general"), room, _dispatch(context, agent_name="general"))
+
+    assert plan.kind == "respond"
+    assert plan.response_action is not None
+    assert plan.response_action.kind == "individual"
+    assert plan.response_action.participation is None
+
+
+@pytest.mark.asyncio
+async def test_peer_mention_still_obeys_autonomous_limits(config: Config) -> None:
+    """Agents tagging each other cannot turn bounded discussion into an infinite exchange."""
+    config.rooms[_ROOM_ID] = RoomConfig(peer_discussion=PeerDiscussionConfig())
+    config.agents["general"].rooms = [_ROOM_ID]
+    peer_id = _entity_id(config, "research").full_id
+    room = _room_with_members(_SENDER, peer_id, _entity_id(config, "general").full_id)
+    context = _context(mentioned=[_entity_id(config, "general")], am_i_mentioned=True)
+    dispatch = _dispatch(context, agent_name="general")
+    dispatch = replace(
+        dispatch,
+        envelope=replace(
+            dispatch.envelope,
+            origin=message_origin(
+                sender_id=peer_id,
+                requester_id=_SENDER,
+                sender_entity_name="research",
+            ),
+        ),
+    )
+
+    plan = await _plan(_policy_for(config, "general"), room, dispatch)
+
+    assert plan.kind == "respond"
+    assert plan.response_action.participation is not None
 
 
 @pytest.mark.asyncio

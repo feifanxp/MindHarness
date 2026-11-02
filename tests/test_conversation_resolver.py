@@ -32,7 +32,7 @@ from mindroom.event_journal import (
     VisibleMessage,
 )
 from mindroom.logging_config import get_logger
-from mindroom.matrix.conversation_hydration import ConversationHydrator
+from mindroom.matrix.conversation_hydration import HYDRATED_PROMPT_WINDOW_MESSAGES, ConversationHydrator
 from mindroom.matrix.conversation_reads import ConversationReader
 from mindroom.matrix.identity import MatrixID
 from mindroom.matrix.journal_ingress import _inbound_event, _projected_event
@@ -334,6 +334,27 @@ async def test_room_thread_mode_skips_thread_resolution(tmp_path: Path) -> None:
     assert result.thread_context is None
     reader.read.assert_not_awaited()  # type: ignore[attr-defined]
     reader.read_strict.assert_not_awaited()  # type: ignore[attr-defined]
+
+
+@pytest.mark.asyncio
+async def test_room_history_uses_bounded_strict_projection(config: Config) -> None:
+    """Room-mode history includes the current human and peers without inventing a thread."""
+    reader = _conversation_reader(
+        replace(_projected(_EVENT_ID, "question"), thread_id=None),
+        replace(_projected(_CHILD, "answer"), thread_id=None, sender=_BOT_USER_ID),
+    )
+    resolver = _resolver(config, conversation_reader=reader)
+
+    history = await resolver.fetch_room_history(_ROOM_ID)
+
+    reader.read_strict.assert_awaited_once_with(  # type: ignore[attr-defined]
+        room_id=_ROOM_ID,
+        thread_id=None,
+        limit=HYDRATED_PROMPT_WINDOW_MESSAGES,
+    )
+    assert history.is_full_history
+    assert [message.event_id for message in history] == [_EVENT_ID, _CHILD]
+    assert all(message.thread_id is None for message in history)
 
 
 @pytest.mark.asyncio

@@ -1,6 +1,7 @@
 """Peer discussion limits use the shared transcript rather than a leader's selection."""
 
 import asyncio
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -10,7 +11,8 @@ from mindroom.config.main import Config
 from mindroom.config.participation import PeerDiscussionConfig
 from mindroom.entity_resolution import entity_identity_registry
 from mindroom.matrix.client_visible_messages import ResolvedVisibleMessage
-from mindroom.peer_discussion.policy import _transcript_stop_reason
+from mindroom.participation import ParticipationGate
+from mindroom.peer_discussion.policy import _transcript_stop_reason, enforce_transcript_limits
 from mindroom.peer_discussion.runtime import speaking_slot
 from tests.conftest import bind_runtime_paths, runtime_paths_for, test_runtime_paths
 
@@ -71,20 +73,21 @@ def test_transcript_limits_survive_new_runtime(
 
 
 @pytest.mark.asyncio
-async def test_speaking_slot_serializes_peers_and_releases_on_cancel(tmp_path: Path) -> None:
+@pytest.mark.parametrize("thread_id", [None, "thread"])
+async def test_speaking_slot_serializes_peers_and_releases_on_cancel(tmp_path: Path, thread_id: str | None) -> None:
     """Peers see the preceding committed answer; cancelling one waiter cannot strand others."""
     entered = asyncio.Event()
     release = asyncio.Event()
     order = []
 
     async def first() -> None:
-        async with speaking_slot(tmp_path, "room", "thread", enabled=True):
+        async with speaking_slot(tmp_path, "room", thread_id, enabled=True):
             order.append("first")
             entered.set()
             await release.wait()
 
     async def next_peer(name: str) -> None:
-        async with speaking_slot(tmp_path, "room", "thread", enabled=True):
+        async with speaking_slot(tmp_path, "room", thread_id, enabled=True):
             order.append(name)
 
     first_task = asyncio.create_task(first())
@@ -123,3 +126,63 @@ def test_one_peer_cannot_take_every_turn(peer_config: Config) -> None:
         )
         == "peer_member_turn_limit"
     )
+
+
+@pytest.mark.parametrize("unavailable", [False, True])
+def test_room_human_anchor_allows_participation_only_with_current_history(
+    peer_config: Config,
+    unavailable: bool,
+) -> None:
+    """A room-level source is sufficient; failed refreshes must never use stale budget evidence."""
+    history = [
+        ResolvedVisibleMessage.synthetic(
+            sender="@person:localhost",
+            body="Let's discuss this",
+            event_id="$human",
+            thread_id=None,
+        ),
+    ]
+    gate = ParticipationGate()
+    enforce_transcript_limits(
+        gate,
+        history,
+        config=peer_config,
+        paths=runtime_paths_for(peer_config),
+        room_id="!room:localhost",
+        agent_name="a",
+        source_event_ids=["$human"],
+        history_unavailable=unavailable,
+    )
+    if unavailable:
+        assert gate.decision is not None
+        assert gate.decision.reason == "peer_history_unavailable"
+        assert gate.is_silent
+    else:
+        assert gate.decision is None
+
+
+@pytest.mark.parametrize("source_id", ["$reply", "$final-edit", "$stale-edit"])
+def test_finished_peer_reply_matches_its_current_visible_revision(peer_config: Config, source_id: str) -> None:
+    """A final streamed edit refers to the same utterance; superseded revisions cannot wake a peer."""
+    paths = runtime_paths_for(peer_config)
+    registry = entity_identity_registry(peer_config, paths)
+    history = [
+        ResolvedVisibleMessage.synthetic(sender="@person:localhost", body="Question", event_id="$human"),
+        replace(
+            ResolvedVisibleMessage.synthetic(
+                sender=registry.current_id("b").full_id,
+                body="An answer",
+                event_id="$reply",
+            ),
+            latest_event_id="$final-edit",
+        ),
+    ]
+    reason = _transcript_stop_reason(
+        history,
+        config=peer_config,
+        paths=paths,
+        agent_name="a",
+        source_event_ids=[source_id],
+        settings=PeerDiscussionConfig(),
+    )
+    assert reason == ("peer_missing_source" if source_id == "$stale-edit" else None)

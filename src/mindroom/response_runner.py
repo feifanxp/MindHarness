@@ -3781,20 +3781,32 @@ class ResponseRunner:
         *,
         exclude_event_id: str | None = None,
     ) -> ResponseRequest:
-        """Refresh model-facing thread history once this turn owns the lifecycle lock."""
-        if request.thread_id is None:
+        """Refresh the target conversation once this turn owns the lifecycle lock."""
+        room_history = (
+            request.thread_id is None
+            and self.deps.runtime.config.get_entity_thread_mode(
+                self.deps.agent_name,
+                self.deps.runtime_paths,
+                room_id=request.room_id,
+            )
+            == "room"
+        )
+        if request.thread_id is None and not room_history:
             return request
 
         try:
-            refreshed_history = await self.deps.resolver.fetch_thread_history(
-                request.room_id,
-                request.thread_id,
-            )
+            if request.thread_id is None:
+                refreshed_history = await self.deps.resolver.fetch_room_history(request.room_id)
+            else:
+                refreshed_history = await self.deps.resolver.fetch_thread_history(
+                    request.room_id,
+                    request.thread_id,
+                )
         except Exception as exc:
             if request.requires_model_history_refresh:
                 raise
             self.deps.logger.warning(
-                "Failed to refresh thread history after lock; continuing with existing history",
+                "Failed to refresh conversation history after lock; continuing with existing history",
                 room_id=request.room_id,
                 thread_id=request.thread_id,
                 error=str(exc),

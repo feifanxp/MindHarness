@@ -766,12 +766,12 @@ class ConversationResolver:
     async def _read_thread_messages(
         self,
         room_id: str,
-        thread_id: str,
+        thread_id: str | None,
         *,
         mode: ThreadReadMode,
         requires_complete_history: bool = True,
     ) -> ThreadHistoryResult:
-        """Resolve one thread read against the conversation projection.
+        """Resolve one room or thread read against the conversation projection.
 
         There are two read contracts because there were only ever two
         questions. A caller assembling a prompt must not be handed a
@@ -1110,6 +1110,10 @@ class ConversationResolver:
             thread_id,
             mode=ThreadReadMode.STRICT,
         )
+
+    async def fetch_room_history(self, room_id: str) -> ThreadHistoryResult:
+        """Read the unthreaded conversation through the same authoritative history window."""
+        return await self._read_thread_messages(room_id, None, mode=ThreadReadMode.STRICT)
 
     async def consecutive_agent_messages(self, room_id: str, thread_id: str | None, *, limit: int) -> int:
         """Count the newest messages in one conversation that agents or teams wrote, looking back at most ``limit``.

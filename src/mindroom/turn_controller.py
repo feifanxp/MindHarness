@@ -87,7 +87,7 @@ from mindroom.matrix.member_display_names import room_member_display_names
 from mindroom.matrix.message_content import is_v2_sidecar_text_preview
 from mindroom.matrix.thread_history_result import ThreadHistoryResult
 from mindroom.matrix.thread_membership import RelatedEventUnavailableError, ThreadMembershipLookupError
-from mindroom.peer_discussion.policy import allows_peer_source
+from mindroom.peer_discussion.policy import allows_peer_source, room_discussion
 from mindroom.response_admission import admitted_response_decision
 from mindroom.response_lifecycle import response_lifecycle_reservation_context
 from mindroom.response_payload_preparation import (
@@ -831,12 +831,12 @@ class TurnController:
         """Return the message a response to this event answers: a finished reply's original, else the event."""
         return self.deps.ingress.entity_final_reply_original_event_id(event) or event.event_id
 
-    def _mentioned_entity_final_reply(
+    def _dispatchable_entity_final_reply(
         self,
         room: nio.MatrixRoom,
         event: nio.RoomMessageFormatted,
     ) -> nio.RoomMessageFormatted | None:
-        """Return another entity's completed edit as its reply when that reply mentions this entity."""
+        """Dispatch completed peer replies and explicit mentions, never streaming progress."""
         final_reply = self.deps.ingress.entity_final_reply(event)
         if final_reply is None:
             return None
@@ -847,7 +847,11 @@ class TurnController:
             self.deps.runtime_paths,
             room=room,
         )
-        return final_reply if am_i_mentioned else None
+        peer_reply = (
+            self.deps.ingress.managed_entity_name_for_sender(final_reply.sender) in self.deps.runtime.config.agents
+            and room_discussion(self.deps.runtime.config, self.deps.runtime_paths, room.room_id) is not None
+        )
+        return final_reply if am_i_mentioned or peer_reply else None
 
     async def _agent_mention_may_wake(
         self,
@@ -2248,8 +2252,8 @@ class TurnController:
         )
         if not isinstance(event.body, str) or (is_nonterminal_stream and event_info.is_edit):
             return TurnDispatchOutcome.INTENTIONALLY_IGNORED
-        # Another entity's finished reply arrives as an edit of its placeholder; its mentions dispatch like a message.
-        final_reply = self._mentioned_entity_final_reply(room, event) if event_info.is_edit else None
+        # Completed edits can wake a mentioned entity or an opted-in peer, just like a non-streamed reply.
+        final_reply = self._dispatchable_entity_final_reply(room, event) if event_info.is_edit else None
         if final_reply is not None:
             event = final_reply
         is_edit = event_info.is_edit and final_reply is None

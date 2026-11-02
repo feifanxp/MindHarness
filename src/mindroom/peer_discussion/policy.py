@@ -148,7 +148,14 @@ def _transcript_stop_reason(  # noqa: PLR0911
     own_id = registry.current_id(agent_name).full_id
     messages = [message for message in history if message.body.strip()]
     sources = set(source_event_ids)
-    source_index = max((index for index, message in enumerate(messages) if message.event_id in sources), default=-1)
+    source_index = max(
+        (
+            index
+            for index, message in enumerate(messages)
+            if message.event_id in sources or message.latest_event_id in sources
+        ),
+        default=-1,
+    )
     human_index = max((index for index, message in enumerate(messages) if message.sender not in managed), default=-1)
     if human_index < 0:
         return "peer_missing_human_anchor"

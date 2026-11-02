@@ -813,7 +813,9 @@ class TurnPolicy:
         if action is None:
             return None
         participation = None
-        if action == "individual":
+        if action == "individual" and not (
+            context.am_i_mentioned and dispatch.envelope.origin.may_answer_interactive_prompt
+        ):
             participation = peer_participation(
                 self.deps.runtime.config,
                 self.deps.runtime_paths,

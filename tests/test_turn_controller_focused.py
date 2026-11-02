@@ -44,10 +44,10 @@ from mindroom.coalescing.gate import CoalescingGate, IngressAdmissionClosedError
 from mindroom.command_turn_executor import CommandTurnExecutor, CommandTurnExecutorDeps
 from mindroom.commands.parsing import CommandType, command_parser
 from mindroom.config.access import ResponderAccessConfig
-from mindroom.config.agent import AgentConfig
+from mindroom.config.agent import AgentConfig, RoomConfig
 from mindroom.config.main import Config
 from mindroom.config.models import DefaultsConfig, ModelConfig
-from mindroom.config.participation import ParticipationConfig
+from mindroom.config.participation import ParticipationConfig, PeerDiscussionConfig
 from mindroom.config.plugin import PluginEntryConfig
 from mindroom.constants import ROUTER_AGENT_NAME
 from mindroom.conversation_resolver import ConversationResolver, ConversationResolverDeps, MessageContext
@@ -2362,12 +2362,19 @@ async def test_agents_stop_waking_each_other_at_the_limit_until_a_person_writes(
 @pytest.mark.asyncio
 @pytest.mark.usefixtures("enforce_turn_authorization")
 @pytest.mark.parametrize("placeholder_thread", [_THREAD_ROOT, None])
+@pytest.mark.parametrize("peer_room", [False, True])
 async def test_mention_in_an_agents_finished_reply_wakes_the_mentioned_agent_once(
     tmp_path: Path,
     placeholder_thread: str | None,
+    peer_room: bool,
 ) -> None:
-    """A reply delivered as the final edit of its placeholder dispatches its mention once, answering that reply."""
+    """A completed edit dispatches once for a mention or an unmentioned peer discussion."""
     config = _owner_only_general_config(tmp_path)
+    if peer_room:
+        config.rooms[_ROOM_ID] = RoomConfig(peer_discussion=PeerDiscussionConfig())
+        for agent in config.agents.values():
+            agent.rooms = [_ROOM_ID]
+            agent.thread_mode = "room" if placeholder_thread is None else "thread"
     harness = _build_harness(config, tmp_path)
     room = _joined_room(config, "general", "research")
     research = _entity_user_id(config, "research")
@@ -2379,6 +2386,9 @@ async def test_mention_in_an_agents_finished_reply_wakes_the_mentioned_agent_onc
     if placeholder_thread is not None:
         placeholder.source["content"]["m.relates_to"] = {"rel_type": "m.thread", "event_id": placeholder_thread}
     final_edit = _final_reply_edit(config, placeholder_id=placeholder_id, event_id="$final:localhost")
+    if peer_room:
+        final_edit.source["content"]["m.new_content"]["m.mentions"] = {"user_ids": []}
+        final_edit.source["content"]["m.new_content"]["body"] = "I have another perspective"
 
     await harness.deliver(room, placeholder)
     assert harness.runner.requests == []
@@ -2395,10 +2405,13 @@ async def test_mention_in_an_agents_finished_reply_wakes_the_mentioned_agent_onc
     assert request.response_envelope.origin.acting_sender_id == research
     # The answer replies to the finished reply, in its thread, or in a new thread on it.
     assert request.reply_to_event_id == placeholder_id
-    assert request.response_envelope.target.resolved_thread_id == (placeholder_thread or placeholder_id)
+    assert request.response_envelope.target.resolved_thread_id == (
+        placeholder_thread if peer_room else (placeholder_thread or placeholder_id)
+    )
     assert request.sources.logical_source_event_ids == (final_edit.event_id,)
     assert request.sources.discovery_event_ids == (placeholder_id,)
-    assert "please take this over" in request.prompt
+    assert ("another perspective" if peer_room else "please take this over") in request.prompt
+    assert (request.participation is not None) is peer_room
 
 
 @pytest.mark.asyncio

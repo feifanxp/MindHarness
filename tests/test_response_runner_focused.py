@@ -1228,6 +1228,47 @@ def _attempt_runner() -> ResponseAttemptRunner:
 
 
 @pytest.mark.asyncio
+@pytest.mark.parametrize("thread_id", [None, "$thread"])
+@pytest.mark.parametrize("unavailable", [False, True])
+async def test_conversation_history_refresh_supports_room_and_thread(
+    tmp_path: Path,
+    thread_id: str | None,
+    unavailable: bool,
+) -> None:
+    """Room replies receive shared context; failed reads cannot authorize autonomous turns."""
+    bot = _bot(tmp_path)
+    bot.config.agents["general"].thread_mode = "room" if thread_id is None else "thread"
+    resolver = MagicMock(spec=ConversationResolver)
+    history = ThreadHistoryResult(
+        [
+            make_visible_message(sender="@user:localhost", body="question", event_id="$event"),
+            make_visible_message(sender="@peer:localhost", body="a useful fact", event_id="$peer"),
+            make_visible_message(sender="@agent:localhost", body="Thinking...", event_id="$placeholder"),
+        ],
+        is_full_history=True,
+    )
+    fetch = AsyncMock(return_value=history, side_effect=RuntimeError("Unavailable") if unavailable else None)
+    if thread_id is None:
+        resolver.fetch_room_history = fetch
+    else:
+        resolver.fetch_thread_history = fetch
+    runner = ResponseRunner(replace(unwrap_extracted_collaborator(bot._response_runner).deps, resolver=resolver))
+    request = _plain_request(_target(thread_id=thread_id))
+
+    refreshed = await runner._refresh_model_history_after_lock(request, exclude_event_id="$placeholder")
+
+    if thread_id is None:
+        fetch.assert_awaited_once_with("!room:localhost")
+        resolver.fetch_thread_history.assert_not_called()
+    else:
+        fetch.assert_awaited_once_with("!room:localhost", "$thread")
+        resolver.fetch_room_history.assert_not_called()
+    assert refreshed.requires_model_history_refresh is unavailable
+    assert [message.event_id for message in refreshed.thread_history] == ([] if unavailable else ["$event", "$peer"])
+    assert refreshed.response_envelope.target == request.response_envelope.target
+
+
+@pytest.mark.asyncio
 async def test_concurrent_requests_serialize_and_refresh_history_under_lock(tmp_path: Path) -> None:
     """Two requests for one thread serialize; each refreshes history under lock, then prepares the payload."""
     bot = _bot(tmp_path)

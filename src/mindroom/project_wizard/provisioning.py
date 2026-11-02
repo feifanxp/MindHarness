@@ -143,6 +143,7 @@ def _project_config(
         "model": model,
         "room_scribe": True,
         "rooms": [room_key],
+        "thread_mode": "room",
         "include_default_tools": False,
         "tools": [],
         "skills": [],
