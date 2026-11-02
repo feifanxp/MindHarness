@@ -28,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Toaster } from "@/components/ui/toaster";
 import { PresentationPage } from "./Presentation";
+import { PresentationNotesPage } from "./PresentationNotes";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { showSaveFailureToastIfNeeded } from "@/components/shared";
@@ -683,6 +684,9 @@ function AppContent() {
 
 function AppRoute() {
   const location = useLocation();
+  if (location.pathname === "/presentation/notes") {
+    return <PresentationNotesPage />;
+  }
   if (location.pathname === "/presentation") {
     return <PresentationPage />;
   }
