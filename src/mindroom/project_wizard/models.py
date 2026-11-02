@@ -224,6 +224,9 @@ class WizardState(BaseModel):
     owner_user_id: str | None = None
     updated_at: float = 0
     test_mode: bool = False
+    display_name: str | None = None
+    archived: bool = False
+    deleted: bool = False
 
 
 class DiscussionSummary(BaseModel):
@@ -233,6 +236,21 @@ class DiscussionSummary(BaseModel):
     name: str
     status: str
     updated_at: float
+    revision: int
+    archived: bool = False
+
+
+class DiscussionActionRequest(BaseModel):
+    """A sidebar action against the version the owner has reviewed."""
+
+    model_config = ConfigDict(extra="forbid")
+    revision: int = Field(ge=0, strict=True)
+
+
+class ArchiveRequest(DiscussionActionRequest):
+    """Move a discussion into or out of the owner's archive."""
+
+    archived: bool
 
 
 class MessageRequest(BaseModel):

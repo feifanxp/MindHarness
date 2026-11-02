@@ -1,11 +1,13 @@
 // @vitest-environment jsdom
 import React, { useContext, type ReactNode } from 'react';
 import { act, create, type ReactTestRenderer } from 'react-test-renderer';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes, useNavigate, type NavigateFunction } from 'react-router-dom';
 import { Provider } from 'jotai';
 import { ClientEvent, createClient, type MatrixClient, Room } from 'matrix-js-sdk';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { DiscussionPage } from './DiscussionPage';
+import ProjectWizard from './ProjectWizard';
+import { DiscussionActions } from './DiscussionActions';
 import type { WizardState } from './api';
 import { MatrixClientProvider } from '../app/hooks/useMatrixClient';
 import { useRoom } from '../app/hooks/useRoom';
@@ -17,6 +19,11 @@ const roomId = '!discussion:example.org';
 let mx: MatrixClient;
 let renderer: ReactTestRenderer;
 let initialSyncComplete: boolean;
+let navigate: NavigateFunction;
+function NavigationCapture() {
+  navigate = useNavigate();
+  return null;
+}
 const state: WizardState = {
   draft_id: 'draft-1',
   revision: 1,
@@ -45,6 +52,7 @@ const state: WizardState = {
 vi.mock('./ProjectWizard', () => ({
   default: ({ renderRoom }: { renderRoom: (value: WizardState) => ReactNode }) => renderRoom(state),
 }));
+vi.mock('./DiscussionActions', () => ({ DiscussionActions: () => null }));
 vi.mock('../app/pages/client/ClientRuntime', () => ({
   ClientRuntime: function Runtime({ children }: { children: ReactNode }) {
     useBindAllRoomsAtom(mx, allRoomsAtom);
@@ -77,12 +85,14 @@ beforeEach(() => {
 });
 afterEach(() => {
   act(() => renderer?.unmount());
+  window.history.replaceState(null, '', '/');
   vi.unstubAllGlobals();
 });
 function view() {
   return (
     <Provider>
       <MemoryRouter initialEntries={['/discussion/draft-1/' + encodeURIComponent(roomId)]}>
+        <NavigationCapture />
         <Routes>
           <Route path="/discussion/:draftId/:roomIdOrAlias" element={<DiscussionPage />} />
         </Routes>
@@ -135,3 +145,58 @@ it('renders the room after a live join and retains discussion thread navigation'
     '/discussion/draft-1/' + encodeURIComponent(roomId) + '/%24thread'
   );
 });
+
+it('keeps pending saves out of the archive view without restarting the wizard', async () => {
+  await mount();
+  const onSaved = renderer.root.findByType(ProjectWizard).props.onSaved;
+  await act(async () =>
+    renderer.root.findByProps({ className: 'discussion-archive-toggle' }).props.onClick()
+  );
+  expect(renderer.root.findByType(ProjectWizard).props.onSaved).toBe(onSaved);
+  await act(async () => onSaved({ ...state, display_name: '尚未归档的讨论' }));
+  expect(renderer.root.findAllByProps({ className: 'discussion-history-row' })).toHaveLength(0);
+  await act(async () => onSaved({ ...state, archived: true, display_name: '已归档的讨论' }));
+  expect(renderer.root.findAllByProps({ className: 'discussion-history-row' })).toHaveLength(1);
+});
+
+it('keeps the newer sidebar title and cache when an earlier save arrives late', async () => {
+  await mount();
+  const onSaved = renderer.root.findByType(ProjectWizard).props.onSaved;
+  const renamed = { ...state, revision: 2, display_name: '保留新名称' };
+  await act(async () => onSaved(renamed));
+  await act(async () => onSaved(state));
+  expect(renderer.root.findByType(ProjectWizard).props.initialState).toEqual(renamed);
+  expect(
+    renderer.root.findByProps({ className: 'discussion-history-row' }).findByType('span').children
+  ).toEqual(['保留新名称']);
+});
+
+it('keeps the newly opened discussion when a previous archive finishes late', async () => {
+  await mount();
+  await act(async () => renderer.root.findByType(ProjectWizard).props.onSaved(state));
+  const finishArchive = renderer.root.findByType(DiscussionActions).props.onChanged;
+  await act(async () => navigate('/discussion/draft-2/' + encodeURIComponent(roomId)));
+  await act(async () =>
+    finishArchive('draft-1', 'archive', { ...state, revision: 2, archived: true })
+  );
+  expect(renderer.root.findByType(ProjectWizard).props.draftId).toBe('draft-2');
+});
+
+it.each(['delete', 'archive'])(
+  'clears legacy draft URLs after %s so reload cannot reopen them',
+  async (action) => {
+    window.history.replaceState(null, '', '/?draft=draft-1');
+    await mount();
+    await act(async () => renderer.root.findByType(ProjectWizard).props.onSaved(state));
+    await act(async () =>
+      renderer.root
+        .findByType(DiscussionActions)
+        .props.onChanged(
+          'draft-1',
+          action,
+          action === 'delete' ? null : { ...state, revision: 2, archived: true }
+        )
+    );
+    expect(new URL(window.location.href).searchParams.has('draft')).toBe(false);
+  }
+);

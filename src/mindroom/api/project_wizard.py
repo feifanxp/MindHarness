@@ -21,7 +21,9 @@ from mindroom.matrix.state import resolve_room_id
 from mindroom.project_wizard.avatars import avatar_path
 from mindroom.project_wizard.chat_session import ChatSession, create_chat_session
 from mindroom.project_wizard.models import (
+    ArchiveRequest,
     ConfirmRequest,
+    DiscussionActionRequest,
     DiscussionSummary,
     MessageRequest,
     ProjectResult,
@@ -36,7 +38,12 @@ from mindroom.project_wizard.models import (
     StoredMessage,
     WizardState,
 )
-from mindroom.project_wizard.provisioning import preflight, provision_project
+from mindroom.project_wizard.provisioning import (
+    preflight,
+    provision_project,
+    remove_project_config,
+    rename_project_config,
+)
 from mindroom.project_wizard.store import WizardStore
 from mindroom.providers import model_loading
 from mindroom.providers.tool_policy import without_provider_tools
@@ -220,10 +227,11 @@ async def list_discussions(
     request: Request,
     response: Response,
     user: Annotated[dict, Depends(verify_user)],
+    archived: bool = False,
 ) -> list[DiscussionSummary]:
     """Keep preparing and created discussions in one private navigation list."""
     response.headers["Cache-Control"] = "no-store"
-    return await asyncio.to_thread(_store(request, user).discussions)
+    return await asyncio.to_thread(_store(request, user).discussions, archived=archived)
 
 
 @router.get("/drafts/latest", response_model=WizardState | None)
@@ -356,16 +364,19 @@ async def draft_message(
         await run_blocking_until_complete(operation.__exit__, None, None, None)
 
 
-def _rename(store: WizardStore, draft_id: UUID, payload: RenameRequest) -> WizardState:
+def _rename(request: Request, store: WizardStore, draft_id: UUID, payload: RenameRequest) -> WizardState:
     with store.operation(draft_id) as state:
         store.check_revision(state, payload.revision)
-        store.check_editable(state)
-        if state.draft is None:
-            raise HTTPException(409, "请先生成项目方案。")
-        if state.draft.project.name != payload.name:
+        if state.status != "created":
+            store.check_editable(state)
+        current_name = state.display_name or (state.draft.project.name if state.draft else "新讨论")
+        if current_name != payload.name:
+            rename_project_config(request, state, payload.name)
             state.revision += 1
-            state.draft.revision = state.revision
-            state.draft.project.name = payload.name
+            state.display_name = payload.name
+            if state.draft is not None:
+                state.draft.revision = state.revision
+                state.draft.project.name = payload.name
             store.save(state)
         return state
 
@@ -378,7 +389,54 @@ async def rename_draft(
     user: Annotated[dict, Depends(verify_user)],
 ) -> WizardState:
     """Persist a name edit with optimistic concurrency."""
-    return await asyncio.to_thread(_rename, _store(request, user), draft_id, payload)
+    return await asyncio.to_thread(_rename, request, _store(request, user), draft_id, payload)
+
+
+def _archive(store: WizardStore, draft_id: UUID, payload: ArchiveRequest) -> WizardState:
+    with store.operation(draft_id) as state:
+        store.check_revision(state, payload.revision)
+        if state.archived != payload.archived:
+            state.archived = payload.archived
+            state.revision += 1
+            if state.confirmed_revision is not None:
+                state.confirmed_revision = state.revision
+            if state.draft is not None:
+                state.draft.revision = state.revision
+            store.save(state)
+        return state
+
+
+@router.patch("/drafts/{draft_id}/archive", response_model=WizardState)
+async def archive_discussion(
+    draft_id: UUID,
+    payload: ArchiveRequest,
+    request: Request,
+    user: Annotated[dict, Depends(verify_user)],
+) -> WizardState:
+    """Hide or restore one owner's discussion without stopping its room."""
+    return await asyncio.to_thread(_archive, _store(request, user), draft_id, payload)
+
+
+def _delete(request: Request, store: WizardStore, draft_id: UUID, payload: DiscussionActionRequest) -> None:
+    with store.operation(draft_id, include_deleted=True) as state:
+        if state.deleted:
+            return
+        store.check_revision(state, payload.revision)
+        remove_project_config(request, state)
+        # Retain only a tombstone so duplicate requests cannot resurrect or re-provision a deleted draft.
+        store.save(WizardState(draft_id=state.draft_id, revision=state.revision + 1, deleted=True))
+
+
+@router.delete("/drafts/{draft_id}", status_code=204)
+async def delete_discussion(
+    draft_id: UUID,
+    payload: DiscussionActionRequest,
+    request: Request,
+    user: Annotated[dict, Depends(verify_user)],
+) -> Response:
+    """Delete the preparation record and stop dedicated bots; Matrix history remains available."""
+    await run_blocking_until_complete(_delete, request, _store(request, user), draft_id, payload)
+    return Response(status_code=204)
 
 
 def _select_members(store: WizardStore, draft_id: UUID, payload: SelectMembersRequest) -> WizardState:

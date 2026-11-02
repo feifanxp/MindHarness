@@ -421,3 +421,60 @@ it('keeps automatic chat handoff when provisioning succeeds through the generic 
     renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')
   ).toContain('登录暂不可用');
 });
+
+it('accepts a sidebar rename before the next edit without reloading', async () => {
+  const initial = saved();
+  await mount(initial);
+  const renamed = {
+    ...initial,
+    revision: 2,
+    display_name: '侧栏新名称',
+    draft: {
+      ...initial.draft!,
+      revision: 2,
+      project: { ...initial.draft!.project, name: '侧栏新名称' },
+    },
+  };
+  await act(async () => renderer.update(<ProjectWizard initialState={renamed} />));
+  expect(renderer.root.findByProps({ id: 'wizard-project-name' }).props.value).toBe('侧栏新名称');
+  vi.mocked(fetch).mockResolvedValueOnce(response({ ...renamed, revision: 3 }));
+  act(() => renderer.root.findByType('textarea').props.onChange({ target: { value: '继续修改' } }));
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(fetch).toHaveBeenLastCalledWith(
+    '/api/project-wizard/drafts/draft-1/messages',
+    expect.objectContaining({
+      body: expect.any(String),
+    })
+  );
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string)).toEqual({
+    revision: 2,
+    message_id: 'id-1',
+    content: '继续修改',
+  });
+});
+
+it('ignores an initial load that arrives after a sidebar rename', async () => {
+  let finish!: (value: Response) => void;
+  vi.mocked(fetch).mockReturnValueOnce(
+    new Promise((resolve) => {
+      finish = resolve;
+    })
+  );
+  await act(async () => {
+    renderer = create(<ProjectWizard draftId="draft-1" />);
+  });
+  const renamed = { ...saved(), revision: 2, display_name: '保留新名称' };
+  await act(async () =>
+    renderer.update(<ProjectWizard draftId="draft-1" initialState={renamed} />)
+  );
+  await act(async () => finish(response(saved())));
+  expect(renderer.root.findByProps({ id: 'wizard-project-name' }).props.value).toBe('保留新名称');
+  vi.mocked(fetch).mockResolvedValueOnce(response({ ...renamed, revision: 3 }));
+  act(() => renderer.root.findByType('textarea').props.onChange({ target: { value: '继续修改' } }));
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string).revision).toBe(2);
+});

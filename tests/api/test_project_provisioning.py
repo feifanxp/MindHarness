@@ -202,3 +202,77 @@ def test_selected_portraits_are_installed_before_runtime_reload(test_client: Tes
         provisioning.workspace_avatar_path("agents", keys[0], paths).read_bytes()
         == provisioning.avatar_path(2).read_bytes()
     )
+
+
+@pytest.mark.parametrize("installed_receipt", [True, False])
+def test_delete_stops_only_this_project_and_preserves_other_config(
+    test_client: TestClient,
+    installed_receipt: bool,
+) -> None:
+    """Deletion also handles a config commit whose draft receipt was interrupted."""
+    state = _ready_state()
+    provisioning._install_project_config(_request(test_client), state, state.owner_user_id)
+    state.status = "created"
+    state.config_installed = installed_receipt
+    paths = main._app_runtime_paths(test_client.app)
+    store = WizardStore(paths.storage_root, "standalone")
+    store.save(state)
+    before, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
+    room, agents, team = provisioning._project_keys(state)
+    response = test_client.request(
+        "DELETE",
+        f"/api/project-wizard/drafts/{state.draft_id}",
+        json={"revision": state.revision},
+    )
+    assert response.status_code == 204
+    after, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
+    assert room not in after.rooms
+    assert team not in after.teams
+    assert set(after.agents) == set(before.agents) - {*agents, f"{room}_scribe"}
+    assert after.models == before.models
+    assert store.read(state.draft_id, include_deleted=True).messages == []
+
+
+def test_created_discussion_can_be_renamed_and_archived_without_removing_bots(test_client: TestClient) -> None:
+    """Room display names follow rename; archiving only changes the owner's navigation."""
+    state = _ready_state()
+    provisioning._install_project_config(_request(test_client), state, state.owner_user_id)
+    state.status = "created"
+    state.config_installed = True
+    paths = main._app_runtime_paths(test_client.app)
+    WizardStore(paths.storage_root, "standalone").save(state)
+    room, agents, _team = provisioning._project_keys(state)
+    url = f"/api/project-wizard/drafts/{state.draft_id}"
+    renamed = test_client.patch(url, json={"revision": state.revision, "name": "重新命名"})
+    assert renamed.status_code == 200
+    config, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
+    assert config.rooms[room].display_name == "重新命名"
+    archived = test_client.patch(url + "/archive", json={"revision": renamed.json()["revision"], "archived": True})
+    assert archived.status_code == 200
+    config, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
+    assert set(agents).issubset(config.agents)
+
+
+def test_delete_rejects_a_bot_shared_with_another_room(test_client: TestClient) -> None:
+    """A project action must not stop a bot that an operator has reused elsewhere."""
+    state = _ready_state()
+    provisioning._install_project_config(_request(test_client), state, state.owner_user_id)
+    state.status = "created"
+    state.config_installed = True
+    paths = main._app_runtime_paths(test_client.app)
+    WizardStore(paths.storage_root, "standalone").save(state)
+    _room, agents, _team = provisioning._project_keys(state)
+    config_lifecycle.write_committed_config(
+        _request(test_client),
+        lambda data: data["agents"][agents[0]]["rooms"].append("!shared:localhost"),
+        error_prefix="test",
+    )
+    before = paths.config_path.read_bytes()
+    response = test_client.request(
+        "DELETE",
+        f"/api/project-wizard/drafts/{state.draft_id}",
+        json={"revision": state.revision},
+    )
+    assert response.status_code == 409
+    assert paths.config_path.read_bytes() == before
+    assert test_client.get(f"/api/project-wizard/drafts/{state.draft_id}").status_code == 200

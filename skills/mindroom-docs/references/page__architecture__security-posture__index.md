@@ -28,7 +28,7 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 
 ### Config and state kept out of workers
 
-Project-creation conversations, candidate profiles and selections, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
+Project-creation conversations, candidate profiles and selections, display names, archive flags, deletion tombstones, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
 Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
 Room scribe snapshots, including cached Matrix source events, notes, message citations, and extraction progress, live in primary-only `tracking/room_scribe/`; the project API exposes notes only through the authenticated owner's saved draft.
 Candidate portraits come from a bundled library; provisioning copies only selected portraits into the primary-owned managed avatar directory before the runtime loads the new agents.
@@ -191,6 +191,14 @@ Under binding, a token that verified with this deployment's audience was request
 MindRoom verifies the token a second time after reading `/versions`, because `/versions` shows only the setting after the first verification: if binding came on in between, the second verification refuses the unbound token, and if it went off, the first one already proved the token bound to this deployment.
 The record is fixed at sign-in, because a session started before binding was never proven bound, while `administrators` is read again on every dashboard request.
 Such a session authenticates dashboard routes as the administrator's Matrix ID, except in hosted platform mode and on OAuth callbacks, which keep finishing each flow as the identity that started it.
+
+## Presentation editing service
+
+The Vite development and preview servers expose /__presentation/content for the internal presentation, independently of the MindRoom primary runtime and dashboard API.
+It reads and writes only the configured repository-root Mind_Harness_Presentation_编辑.json; clients cannot supply a path.
+Writes require JSON from a matching Origin and Host, accept at most 2 MiB per request, and reject stale file revisions.
+It has no per-user authentication: access to the presentation server is edit access, so any shared deployment must restrict access to intended editors.
+Static builds contain a read-only presentation-edits.json snapshot and do not provide a save endpoint.
 
 ## Known gaps
 

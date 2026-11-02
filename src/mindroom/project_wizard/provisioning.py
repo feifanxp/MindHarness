@@ -182,6 +182,46 @@ def _install_project_config(request: Request, state: WizardState, owner: str | N
     config_lifecycle.write_committed_config(request, mutate, error_prefix="Failed to save project configuration")
 
 
+def rename_project_config(request: Request, state: WizardState, name: str) -> None:
+    """Update the managed room title when a created discussion is renamed."""
+    if not state.config_installed:
+        return
+    room_key, _agent_keys, _team_key = _project_keys(state)
+
+    def mutate(candidate: dict[str, Any]) -> None:
+        room = candidate.get("rooms", {}).get(room_key)
+        if room is not None:
+            room["display_name"] = name
+
+    config_lifecycle.write_committed_config(request, mutate, error_prefix="Failed to rename discussion")
+
+
+def remove_project_config(request: Request, state: WizardState) -> None:
+    """Stop only this project's dedicated entities, retaining Matrix messages and runtime history."""
+    if state.draft is None:
+        return
+    room_key, agent_keys, team_key = _project_keys(state)
+    agent_keys = [*agent_keys, f"{room_key}_scribe"]
+
+    def mutate(candidate: dict[str, Any]) -> None:
+        for section, keys in (("agents", agent_keys), ("teams", [team_key])):
+            entries = candidate.get(section, {})
+            for key in keys:
+                entry = entries.get(key)
+                if entry is not None and set(entry.get("rooms", [])) - {room_key}:
+                    raise HTTPException(409, "该讨论的 BOT 已用于其他房间，请先解除关联再删除。")
+        for key, team in candidate.get("teams", {}).items():
+            if key != team_key and set(team.get("agents", [])).intersection(agent_keys):
+                raise HTTPException(409, "该讨论的 BOT 已用于其他团队，请先解除关联再删除。")
+        for key in agent_keys:
+            candidate.get("agents", {}).pop(key, None)
+        candidate.get("teams", {}).pop(team_key, None)
+        candidate.get("rooms", {}).pop(room_key, None)
+        candidate.get("room_models", {}).pop(room_key, None)
+
+    config_lifecycle.write_committed_config(request, mutate, error_prefix="Failed to remove discussion")
+
+
 async def _live_project_result(  # noqa: PLR0911
     state: WizardState,
     paths: RuntimePaths,

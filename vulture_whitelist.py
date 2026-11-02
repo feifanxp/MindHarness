@@ -431,6 +431,8 @@ list_discussions  # FastAPI owner-scoped discussion navigation (src/mindroom/api
 get_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 draft_message  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 rename_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
+archive_discussion  # FastAPI discussion archive endpoint (src/mindroom/api/project_wizard.py)
+delete_discussion  # FastAPI discussion deletion endpoint (src/mindroom/api/project_wizard.py)
 select_members  # FastAPI candidate selection endpoint (src/mindroom/api/project_wizard.py)
 teammate_avatar  # FastAPI bundled portrait endpoint (src/mindroom/api/project_wizard.py)
 confirm_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)

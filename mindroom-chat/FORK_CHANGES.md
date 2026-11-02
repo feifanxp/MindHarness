@@ -2,6 +2,16 @@
 
 ## Runbook
 
+### Discussion rename, archive, and delete (2026-11-02)
+
+- Each Agent Room discussion has a keyboard-accessible **⋯** menu for renaming, archiving/restoring, and confirmed deletion.
+- Renaming a created discussion updates its managed Matrix room name; **已归档讨论** keeps archived discussions discoverable and restores them to the recent list.
+- Deletion removes the preparation conversation and list entry and stops the project's dedicated teammates and organizer, while retaining Matrix messages and runtime history.
+- Validation: 40 focused Python tests and 40 discussion UI tests passed, alongside TypeScript, scoped ESLint, production build, Tach, changed-file hooks, and independent review.
+- A disposable real-model project verified Matrix room renaming, archive/restore, dedicated Bot shutdown, unchanged unrelated configuration, and preserved Matrix messages after deletion.
+- Desktop and 390px Chrome checks passed menu keyboard navigation, rename and reload, archive/restore, delete cancellation/confirmation, and deletion followed by reload, with no horizontal overflow or page errors.
+- The local preview uses `APP_BUILD_BASE_PATH=/ npm run build`; the full client test run still reports the two existing scheduled-time and caption-recovery failures.
+
 ### Concise teammate profiles (2026-11-02)
 
 - Candidate cards show a name, profession, concise personality traits, and one or two specialties; the recommendation pitch is removed.

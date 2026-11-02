@@ -25,6 +25,8 @@ export type Turn = { id: string; role: 'user' | 'assistant'; content: string };
 export type WizardState = {
   draft_id: string;
   revision: number;
+  display_name?: string | null;
+  archived?: boolean;
   status:
     | 'empty'
     | 'discovering'
@@ -82,6 +84,7 @@ export async function wizardRequest(
         response.status,
         typeof data?.detail === 'string' ? data.detail : `请求失败（${response.status}），请重试。`
       );
+    if (method === 'DELETE' && response.status === 204) return null;
     if (data === null && path === '/drafts/latest') return null;
     if (
       !data ||

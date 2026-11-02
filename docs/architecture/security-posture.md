@@ -32,7 +32,7 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 
 ### Config and state kept out of workers
 
-Project-creation conversations, candidate profiles and selections, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
+Project-creation conversations, candidate profiles and selections, display names, archive flags, deletion tombstones, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
 Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
 Room scribe snapshots, including cached Matrix source events, notes, message citations, and extraction progress, live in primary-only `tracking/room_scribe/`; the project API exposes notes only through the authenticated owner's saved draft.
 Candidate portraits come from a bundled library; provisioning copies only selected portraits into the primary-owned managed avatar directory before the runtime loads the new agents.

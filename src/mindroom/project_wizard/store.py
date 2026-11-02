@@ -44,23 +44,27 @@ class WizardStore:
         state.updated_at = time.time()
         write_json_file_durable(self._path(state.draft_id), state.model_dump(mode="json"))
 
-    def read(self, draft_id: UUID) -> WizardState:
+    def read(self, draft_id: UUID, *, include_deleted: bool = False) -> WizardState:
         """Read one atomic snapshot, requiring it to belong to this owner."""
         path = self._path(draft_id)
         if not path.exists():
             raise HTTPException(404, "找不到该草稿，请重新选择。")
-        return WizardState.model_validate(discard_retired_recommendations(json.loads(path.read_text())))
+        state = WizardState.model_validate(discard_retired_recommendations(json.loads(path.read_text())))
+        if state.deleted and not include_deleted:
+            raise HTTPException(404, "该讨论已删除。")
+        return state
 
     @contextmanager
-    def operation(self, draft_id: UUID) -> Iterator[WizardState]:
+    def operation(self, draft_id: UUID, *, include_deleted: bool = False) -> Iterator[WizardState]:
         """Serialize a draft's operations; process exit releases an interrupted request."""
-        self.read(draft_id)
+        self.read(draft_id, include_deleted=include_deleted)
         lock = try_exclusive_file_lock(self.root / f"{draft_id}.lock")
         if lock is None:
             raise HTTPException(409, "草稿正在处理中，请等待后重新加载。")
         try:
-            state = self.read(draft_id)
-            self._recover(state)
+            state = self.read(draft_id, include_deleted=include_deleted)
+            if not state.deleted:
+                self._recover(state)
             yield state
         finally:
             release_file_lock(lock)
@@ -98,25 +102,26 @@ class WizardStore:
 
     def latest(self) -> WizardState | None:
         """Restore the last persisted conversation without browser-held private content."""
-        paths = list(self.root.glob("*.json"))
-        if not paths:
-            return None
-        latest = max(paths, key=lambda path: path.stat().st_mtime_ns)
-        return self.get(UUID(latest.stem))
+        entries = self.discussions()
+        return self.get(entries[0].draft_id) if entries else None
 
-    def discussions(self) -> list[DiscussionSummary]:
+    def discussions(self, *, archived: bool = False) -> list[DiscussionSummary]:
         """List this owner's recent discussions without loading or exposing their transcripts."""
-        paths = sorted(self.root.glob("*.json"), key=lambda path: path.stat().st_mtime_ns, reverse=True)[:50]
-        states = [self.read(UUID(path.stem)) for path in paths]
-        return [
+        paths = sorted(self.root.glob("*.json"), key=lambda path: path.stat().st_mtime_ns, reverse=True)
+        states = [self.read(UUID(path.stem), include_deleted=True) for path in paths]
+        entries = [
             DiscussionSummary(
                 draft_id=state.draft_id,
-                name=state.draft.project.name if state.draft else "新讨论",
+                name=state.display_name or (state.draft.project.name if state.draft else "新讨论"),
                 status=state.status,
                 updated_at=state.updated_at,
+                revision=state.revision,
+                archived=state.archived,
             )
             for state in states
+            if not state.deleted and state.archived == archived
         ]
+        return entries if archived else entries[:50]
 
     @staticmethod
     def check_revision(state: WizardState, revision: int) -> None:
@@ -139,6 +144,8 @@ class WizardStore:
             proposal.draft_id = str(state.draft_id)
             proposal.revision = state.revision
         state.draft = proposal
+        if state.draft is not None and state.display_name:
+            state.draft.project.name = state.display_name
         state.messages.append(StoredMessage(id=uuid4(), role="assistant", content=content))
         state.pending_message_id = None
         state.error = None

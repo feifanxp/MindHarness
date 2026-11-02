@@ -87,6 +87,13 @@ Otherwise it logs `managed_alias_target_refused`, never joins that room, and cre
 A recorded room stays in use even when its alias now points elsewhere, which logs `managed_alias_points_elsewhere`.
 If the alias of a recorded room is deleted, the router restores it, and creates a replacement room only when it can no longer read or is no longer joined to the recorded room.
 
+## Managing Agent Room Discussions
+
+Use the **⋯** menu beside a discussion to rename, archive, or delete it.
+Renaming an active discussion also updates its Matrix room name.
+Archived discussions remain available under **已归档讨论**, where **取消归档** returns them to the recent list; their Bots continue running.
+Deleting a discussion requires confirmation, removes its preparation conversation and list entry, and stops its dedicated teammates and organizer; existing Matrix messages and runtime history remain stored.
+
 ## Discussion Notes
 
 New Agent Room discussions include a silent organizer Bot alongside the selected teammates.

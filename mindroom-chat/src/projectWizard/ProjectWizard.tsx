@@ -88,9 +88,15 @@ export default function ProjectWizard({
   const accept = useCallback(
     (value: WizardState | null, navigate = true) => {
       if (!alive.current) return;
+      if (
+        value &&
+        value.draft_id === current.current?.draft_id &&
+        value.revision < current.current.revision
+      )
+        return;
       current.current = value;
       setSaved(value);
-      setProjectName(value?.draft?.project.name ?? '');
+      setProjectName(value?.display_name ?? value?.draft?.project.name ?? '');
       if (value) {
         onSaved?.(value);
         if (onDraftChange && navigate) {
@@ -104,6 +110,16 @@ export default function ProjectWizard({
     },
     [onSaved, onDraftChange, workspaceMode]
   );
+  useEffect(() => {
+    if (
+      initialState &&
+      !busy.current &&
+      initialState.draft_id === (current.current?.draft_id ?? draftId) &&
+      (!current.current || initialState.revision > current.current.revision)
+    ) {
+      accept(initialState);
+    }
+  }, [initialState, accept, pending, draftId]);
   const report = useCallback((cause: unknown) => {
     if (cause instanceof WizardError && cause.status === 401) setAuthRequired(true);
     else setError(cause instanceof Error ? cause.message : '连接失败，请重试。');
