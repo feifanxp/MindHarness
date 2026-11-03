@@ -16,6 +16,7 @@ export type SlideKey =
   | 'scenarios';
 export type Slide = {
   key: SlideKey;
+  visual?: 'gift-comparison';
   chapter: string;
   kicker: string;
   label: string;
@@ -46,6 +47,19 @@ export const scenariosSlide: Slide = {
   notes:
     '最后补充一下适用场景。\n我们并不认为所有任务都需要拉上多个 Agent，一起平行讨论。\n目前看到的比较适合的场景，主要是头脑风暴和需求分析。\n头脑风暴时，可能只有一个念头，还不知道能往哪些方向走，可以让不同的队友补充思路、提出新的可能。\n需求分析时，往往已经有一个功能想法，但背后的问题还没说清楚。\n比如血压计要不要上大彩屏，先一起讨论谁在用、遇到了什么困难、到底需要解决什么，再决定方案。\n如果目标、要求和交付标准都已经明确，比如按确认的提纲写文档，就可以直接交给 Agent 执行，不需要每次都开一场讨论。\n我们希望把平行讨论用在值得一起想的地方：头脑风暴，打开思路；需求分析，把问题问清楚。',
   transition: '',
+};
+export const giftCaseSlide: Slide = {
+  key: 'case-bp',
+  visual: 'gift-comparison',
+  chapter: '看看具体效果',
+  kicker: 'CASE STUDY / 01',
+  label: '销量放缓与赠品',
+  title: '销量放缓，先送赠品还是先找原因？',
+  summary:
+    '同一个问题：\n“现在美亚血压计的销量有点放缓了，咱们想想送点什么赠品好？”\n\nChatGPT 给出一组赠品备选。\nMind Harness 的 Agent 则先追问：销量放缓，到底是什么原因？',
+  notes:
+    '这次我们看一段实际对话。\n问题是：现在美亚血压计的销量有点放缓了，咱们想想送点什么赠品好？\nChatGPT 的回答给出了不少赠品备选，比如药盒、收纳盒、血压记录本，也比较了采购成本和消费者感知价值。\n在 Mind Harness 的聊天室里，有 Agent 先把问题拉回了销量放缓的原因：是曝光下滑，还是转化率下滑？\n如果问题出在流量，送赠品未必能解决；如果出在转化，再去看评价、竞争、价格和赠品这些因素。\n这里值得注意的是，讨论没有只围绕“送什么”展开，也有人主动追问“为什么卖慢了”。\n截图展示的是这次对话里思考方向的差异，还没有验证最终销量效果。',
+  transition: '再看另一个工作场景，看看讨论能不能帮助我们找到更值得追问的问题。',
 };
 export const slides: Slide[] = [
   {

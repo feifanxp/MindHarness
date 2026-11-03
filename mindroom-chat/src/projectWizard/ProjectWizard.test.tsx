@@ -365,12 +365,18 @@ it('automatically starts the chat handoff and exposes handoff failures', async (
   expect(findButton('开始聊天')).toBeTruthy();
 });
 
-it('shows matching progress during the first request before messages arrive', async () => {
+it('shows the first message immediately while both draft creation and the reply are pending', async () => {
   await mount(null);
   const empty = { ...saved(), revision: 0, status: 'empty', draft: null, messages: [] };
+  let createDraft!: (value: Response) => void;
   let finish!: (value: Response) => void;
   vi.mocked(fetch)
-    .mockResolvedValueOnce(response(empty))
+    .mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          createDraft = resolve;
+        })
+    )
     .mockImplementationOnce(
       () =>
         new Promise((resolve) => {
@@ -383,9 +389,212 @@ it('shows matching progress during the first request before messages arrive', as
   await act(async () => {
     renderer.root.findByType('form').props.onSubmit({ preventDefault: () => {} });
   });
+  expect(renderer.root.findByType('article').findByType('p').children.join('')).toBe(
+    '帮我规划一个产品'
+  );
+  expect(renderer.root.findByType('textarea').props.value).toBe('');
+  expect(renderer.root.findAllByType('h1')).toHaveLength(0);
   expect(renderer.root.findByProps({ role: 'status' }).children.join('')).toContain('匹配 AI 队友');
-  await act(async () => finish(response(saved())));
+  expect(fetch).toHaveBeenCalledTimes(2);
+  await act(async () => createDraft(response(empty)));
+  expect(renderer.root.findByType('article').findByType('p').children.join('')).toBe(
+    '帮我规划一个产品'
+  );
+  act(() => renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() }));
+  expect(fetch).toHaveBeenCalledTimes(3);
+  await act(async () =>
+    finish(
+      response({
+        ...saved(),
+        messages: [
+          { id: 'id-1', role: 'user', content: '帮我规划一个产品' },
+          { id: 'assistant-1', role: 'assistant', content: '这些队友可以一起讨论。' },
+        ],
+      })
+    )
+  );
+  expect(renderer.root.findAllByProps({ className: 'wizard-message wizard-user' })).toHaveLength(1);
+  expect(
+    renderer.root.findAllByProps({ className: 'wizard-message wizard-assistant' })
+  ).toHaveLength(1);
   expect(renderer.root.findAllByProps({ type: 'checkbox' })).toHaveLength(4);
+});
+
+it('keeps an unsent first message visible and retries with its original identity', async () => {
+  await mount(null);
+  vi.mocked(fetch).mockRejectedValueOnce(new Error('草稿创建失败'));
+  act(() => renderer.root.findByType('textarea').props.onChange({ target: { value: '我的想法' } }));
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(renderer.root.findByType('article').findByType('p').children.join('')).toBe('我的想法');
+  expect(renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')).toBe(
+    '草稿创建失败'
+  );
+  expect(renderer.root.findByType('textarea').props.value).toBe('');
+  const empty = { ...saved(), revision: 0, status: 'empty', draft: null, messages: [] };
+  vi.mocked(fetch)
+    .mockResolvedValueOnce(response(empty))
+    .mockResolvedValueOnce(
+      response({
+        ...saved(),
+        messages: [{ id: 'id-1', role: 'user', content: '我的想法' }],
+      })
+    );
+  await act(async () => findButton('重试')!.props.onClick());
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string)).toEqual({
+    revision: 0,
+    message_id: 'id-1',
+    content: '我的想法',
+  });
+  expect(renderer.root.findAllByType('article')).toHaveLength(1);
+  expect(renderer.root.findAllByProps({ role: 'alert' })).toHaveLength(0);
+  expect(renderer.root.findByType('textarea').props.disabled).toBe(false);
+});
+
+it('merges a saved failed turn with the local message and retries without duplicating it', async () => {
+  const initial = saved();
+  await mount(initial);
+  const message = { id: 'id-1', role: 'user' as const, content: '再聊一下定价' };
+  const failed = {
+    ...initial,
+    revision: 2,
+    pending_message_id: message.id,
+    error: '模型暂不可用',
+    messages: [...initial.messages, message],
+  };
+  vi.mocked(fetch)
+    .mockResolvedValueOnce(response({ detail: failed.error }, 502))
+    .mockResolvedValueOnce(response(failed));
+  act(() =>
+    renderer.root.findByType('textarea').props.onChange({ target: { value: message.content } })
+  );
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(renderer.root.findAllByType('article')).toHaveLength(2);
+  expect(initial.messages).toHaveLength(1);
+  expect(renderer.root.findByType('textarea').props.value).toBe('');
+  vi.mocked(fetch).mockResolvedValueOnce(
+    response({ ...failed, revision: 3, pending_message_id: null, error: null })
+  );
+  await act(async () => findButton('重试')!.props.onClick());
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string)).toEqual({
+    revision: 2,
+    message_id: message.id,
+    content: message.content,
+  });
+  expect(renderer.root.findAllByType('article')).toHaveLength(2);
+  expect(renderer.root.findByType('textarea').props.disabled).toBe(false);
+});
+
+it('preserves an unaccepted message through a revision conflict and retries the recovered revision', async () => {
+  const initial = saved();
+  await mount(initial);
+  const recovered = { ...initial, revision: 3 };
+  vi.mocked(fetch)
+    .mockResolvedValueOnce(response({ detail: '版本已更新' }, 409))
+    .mockResolvedValueOnce(response(recovered));
+  act(() =>
+    renderer.root.findByType('textarea').props.onChange({ target: { value: '保留这句话' } })
+  );
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(renderer.root.findAllByType('article')).toHaveLength(2);
+  vi.mocked(fetch).mockResolvedValueOnce(
+    response({
+      ...recovered,
+      revision: 4,
+      messages: [...initial.messages, { id: 'id-1', role: 'user', content: '保留这句话' }],
+    })
+  );
+  await act(async () => findButton('重试')!.props.onClick());
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string)).toEqual({
+    revision: 3,
+    message_id: 'id-1',
+    content: '保留这句话',
+  });
+  expect(renderer.root.findAllByType('article')).toHaveLength(2);
+});
+
+it('retains the local turn while retrying a different saved turn after a conflict', async () => {
+  const initial = saved();
+  await mount(initial);
+  const previous = { id: 'other-tab', role: 'user' as const, content: '另一标签页的消息' };
+  const interrupted = {
+    ...initial,
+    revision: 3,
+    pending_message_id: previous.id,
+    error: '上次回复失败',
+    messages: [...initial.messages, previous],
+  };
+  vi.mocked(fetch)
+    .mockResolvedValueOnce(response({ detail: '还有消息等待处理' }, 409))
+    .mockResolvedValueOnce(response(interrupted));
+  act(() =>
+    renderer.root.findByType('textarea').props.onChange({ target: { value: '保留本地内容' } })
+  );
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  const recovered = { ...interrupted, revision: 4, pending_message_id: null, error: null };
+  vi.mocked(fetch).mockResolvedValueOnce(response(recovered));
+  await act(async () => findButton('重试')!.props.onClick());
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string).message_id).toBe(
+    previous.id
+  );
+  expect(
+    renderer.root.findAllByType('article').map((node) => node.findByType('p').children.join(''))
+  ).toEqual(['讨论', previous.content, '保留本地内容']);
+  expect(findButton('重试')).toBeTruthy();
+  vi.mocked(fetch).mockResolvedValueOnce(
+    response({
+      ...recovered,
+      revision: 5,
+      messages: [...recovered.messages, { id: 'id-1', role: 'user', content: '保留本地内容' }],
+    })
+  );
+  await act(async () => findButton('重试')!.props.onClick());
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string)).toEqual({
+    revision: 4,
+    message_id: 'id-1',
+    content: '保留本地内容',
+  });
+  expect(renderer.root.findAllByType('article')).toHaveLength(3);
+  expect(renderer.root.findByType('textarea').props.disabled).toBe(false);
+});
+
+it('keeps an unaccepted message retryable after signing in again', async () => {
+  const initial = saved();
+  await mount(initial);
+  vi.mocked(fetch)
+    .mockResolvedValueOnce(response({ detail: '登录已过期' }, 401))
+    .mockResolvedValueOnce(response({ detail: '登录已过期' }, 401));
+  act(() => renderer.root.findByType('textarea').props.onChange({ target: { value: '继续讨论' } }));
+  await act(async () =>
+    renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(renderer.root.findAllByType('article')).toHaveLength(2);
+  vi.mocked(fetch).mockResolvedValueOnce(response({})).mockResolvedValueOnce(response(initial));
+  await act(async () =>
+    renderer.root
+      .findByProps({ className: 'wizard-login' })
+      .props.onSubmit({ preventDefault: vi.fn() })
+  );
+  expect(renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')).toBe(
+    '消息尚未发送，请重试。'
+  );
+  vi.mocked(fetch).mockResolvedValueOnce(
+    response({
+      ...initial,
+      revision: 2,
+      messages: [...initial.messages, { id: 'id-1', role: 'user', content: '继续讨论' }],
+    })
+  );
+  await act(async () => findButton('重试')!.props.onClick());
+  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string).message_id).toBe('id-1');
+  expect(renderer.root.findAllByType('article')).toHaveLength(2);
 });
 
 it('keeps automatic chat handoff when provisioning succeeds through the generic retry', async () => {

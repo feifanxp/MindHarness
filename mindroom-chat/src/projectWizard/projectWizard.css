@@ -426,18 +426,39 @@
   border-color: var(--discussion-accent);
   box-shadow: 0 0 0 3px rgb(78 128 91 / 9%), 0 12px 38px rgb(37 62 46 / 6%);
 }
-.wizard-composer textarea {
+.wizard-input {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+}
+.wizard-composer textarea,
+.wizard-input::after {
+  grid-area: 1 / 1;
+  width: 100%;
+  min-width: 0;
   min-height: 42px;
   max-height: 170px;
-  flex: 1;
-  resize: vertical;
   padding: 10px 0;
   border: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.wizard-composer textarea {
+  field-sizing: content;
+  resize: none;
+  overflow-y: auto;
   outline: 0;
   color: var(--discussion-text);
   background: transparent;
-  font-size: 14px;
-  line-height: 1.55;
+}
+@supports not (field-sizing: content) {
+  .wizard-input::after {
+    content: attr(data-value) ' ';
+    visibility: hidden;
+    overflow: hidden;
+  }
 }
 .wizard-composer textarea::placeholder {
   color: var(--discussion-muted);
@@ -653,7 +674,8 @@
     max-height: 35dvh;
     margin-bottom: 12px;
   }
-  .wizard-composer textarea {
+  .wizard-composer textarea,
+  .wizard-input::after {
     font-size: 16px;
   }
 }

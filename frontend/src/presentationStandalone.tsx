@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { PresentationPage } from './Presentation';
 import { PresentationNotesPage } from './PresentationNotes';
-import { slides, overviewSlide, scenariosSlide } from './presentationContent';
+import { slides, overviewSlide, scenariosSlide, giftCaseSlide } from './presentationContent';
 import logoSrc from './assets/mind-harness-logo.png';
 import './presentation.css';
 
@@ -10,7 +10,7 @@ const overviewPosition = slides.findIndex(slide => slide.key === 'relationship')
 const standaloneSlides = [
   ...slides.slice(0, overviewPosition),
   overviewSlide,
-  ...slides.slice(overviewPosition),
+  ...slides.slice(overviewPosition).map(slide => slide.key === 'case-bp' ? giftCaseSlide : slide),
   scenariosSlide,
 ];
 

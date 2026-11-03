@@ -22,6 +22,8 @@ import {
 } from 'lucide-react';
 import { slides as defaultSlides, type Slide, type SlideKey } from './presentationContent';
 import overviewScreenshot from './assets/presentation-start.png';
+import giftChatGPTScreenshot from './assets/gift-case-chatgpt.png';
+import giftMindHarnessScreenshot from './assets/gift-case-mind-harness.png';
 import {
   EditableText,
   PresentationEditor,
@@ -689,6 +691,51 @@ function CaseVisual({ kind }: { kind: keyof typeof caseData }) {
     </Card>
   );
 }
+function GiftEvidence({ source, title, takeaway, image, width, height, alt }: {
+  source: 'chatgpt' | 'mind-harness';
+  title: string;
+  takeaway: string;
+  image: string;
+  width: number;
+  height: number;
+  alt: string;
+}) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  return (
+    <figure className={'mh-gift-evidence mh-gift-evidence--' + source}>
+      <figcaption>
+        <h3><EditableText id={'case-bp.' + source + '.title'} text={title} /></h3>
+        <p><EditableText id={'case-bp.' + source + '.takeaway'} text={takeaway} /></p>
+      </figcaption>
+      <button className="mh-evidence-preview" type="button" onClick={() => dialogRef.current?.showModal()} aria-label={'放大查看 ' + title + ' 对话截图'}>
+        <img src={image} width={width} height={height} alt={alt} />
+        <span>查看原图 <ArrowUpRight size={14} aria-hidden="true" /></span>
+      </button>
+      <dialog className="mh-evidence-dialog" ref={dialogRef} aria-labelledby={'mh-evidence-title-' + source}>
+        <div className="mh-evidence-dialog-header">
+          <h2 id={'mh-evidence-title-' + source}>{title} · 实际对话截图</h2>
+          <form method="dialog"><button autoFocus type="submit">关闭</button></form>
+        </div>
+        <img src={image} width={width} height={height} alt={alt} />
+      </dialog>
+    </figure>
+  );
+}
+function GiftCaseVisual() {
+  return (
+    <Card field="case-bp" title="10 / SALES SLOWDOWN" badge="实际对话截图" className="mh-gift-case-card">
+      <div className="mh-gift-comparison">
+        <GiftEvidence source="chatgpt" title="ChatGPT" takeaway="先给出一组赠品备选" image={giftChatGPTScreenshot} width={842} height={819} alt="ChatGPT 对话截图：针对销量放缓和赠品问题，列出药盒、收纳盒、血压记录本等备选，并比较成本与感知价值。" />
+        <GiftEvidence source="mind-harness" title="Mind Harness" takeaway="有人先追问：销量为什么放缓？" image={giftMindHarnessScreenshot} width={1221} height={870} alt="Mind Harness 对话截图：Agent 林澈追问销量放缓是曝光下滑还是转化率下滑，其他队友继续补充观点。" />
+      </div>
+      <blockquote className="mh-gift-question">
+        <EditableText id="case-bp.key-question" text="“销量放缓先分清是曝光下滑，还是转化率下滑。”" />
+        <cite><EditableText id="case-bp.quote-source" text="Mind Harness · 林澈" /></cite>
+      </blockquote>
+      <p className="mh-gift-note"><EditableText id="case-bp.evidence-note" text="本次对话片段对比，展示思考方向的差异；尚未验证最终销量效果。" /></p>
+    </Card>
+  );
+}
 function ValueVisual() {
   return (
     <Card field={'value'} title="11 / FOR PRODUCT MANAGERS" badge="目标产物示意">
@@ -896,7 +943,7 @@ function ScenariosVisual() {
     </Card>
   );
 }
-function SlideVisual({ kind }: { kind: SlideKey }) {
+function SlideVisual({ kind }: { kind: SlideKey | 'gift-comparison' }) {
   switch (kind) {
     case 'cover':
       return null;
@@ -919,6 +966,8 @@ function SlideVisual({ kind }: { kind: SlideKey }) {
     case 'case-bp':
     case 'case-retention':
       return <CaseVisual kind={kind} />;
+    case 'gift-comparison':
+      return <GiftCaseVisual />;
     case 'value':
       return <ValueVisual />;
     case 'harness':
@@ -1066,7 +1115,7 @@ function PresentationContent({ slides, logoSrc }: { slides: Slide[]; logoSrc?: s
           return (
             <section
               key={slide.key}
-              className={`mh-slide mh-slide--${slide.key}`}
+              className={`mh-slide mh-slide--${slide.key}${slide.visual ? ' mh-slide--' + slide.visual : ''}`}
               id={`mh-slide-${slide.key}`}
               aria-labelledby={`mh-title-${slide.key}`}
             >
@@ -1144,7 +1193,7 @@ function PresentationContent({ slides, logoSrc }: { slides: Slide[]; logoSrc?: s
               {slide.key !== 'cover' && (
                 <div className="mh-slide-visual">
                   <SlideNumberContext.Provider value={index + 1}>
-                    <SlideVisual kind={slide.key} />
+                    <SlideVisual kind={slide.visual ?? slide.key} />
                   </SlideNumberContext.Provider>
                 </div>
               )}

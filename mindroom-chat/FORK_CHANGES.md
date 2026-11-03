@@ -2,6 +2,16 @@
 
 ## Runbook
 
+### Responsive discussion composer and immediate sent messages (2026-11-03)
+
+- The preparation composer grows and shrinks with typed, pasted, and wrapped text, caps its height at 170px, and keeps the send button visible on desktop and narrow screens.
+- Browsers without native content sizing use a hidden text mirror with the same typography and sizing.
+- Sending immediately shows the user turn and clears the composer while draft creation and the model response remain pending; saved turns reconcile by message ID.
+- Failed requests keep their content and retry identity through empty-draft recovery, sign-in, and revision conflicts; retrying another tab's saved turn preserves this tab's unsent message.
+- Recovery avoids navigation that would discard local state, and only message count changes scroll the conversation, leaving teammate selection in place.
+- Validation: 45 focused UI tests, 47 focused Python tests, four real-page Chromium tests, and independent review pass; desktop and 390px screenshots verify expanded input and immediate pending messages.
+- The full client suite passes 6,970 tests and retains the two previously recorded scheduled-time and caption-recovery failures.
+
 ### Shared violet website icon (2026-11-02)
 
 - The supplied violet wave artwork is shared by discussion navigation, Chat branding, reply placeholders, browser favicons, and installed web app icons.

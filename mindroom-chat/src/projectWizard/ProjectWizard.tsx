@@ -11,7 +11,7 @@ import { IconArrowUp, IconRefresh } from '@tabler/icons-react';
 import parse from 'html-react-parser';
 import { parseBlockMD, parseInlineMD } from '../app/plugins/markdown';
 import { sanitizeCustomHtml, sanitizeText } from '../app/utils/sanitize';
-import { wizardRequest, WizardError, type WizardState, type ProjectMode } from './api';
+import { wizardRequest, WizardError, type WizardState, type ProjectMode, type Turn } from './api';
 import {
   listSessions,
   setActiveSession,
@@ -61,6 +61,7 @@ export default function ProjectWizard({
   const [loading, setLoading] = useState(true);
   const [mobilePlanOpen, setMobilePlanOpen] = useState(false);
   const [draft, setDraft] = useState('');
+  const [outgoing, setOutgoing] = useState<Turn | null>(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState('');
   const [authRequired, setAuthRequired] = useState(false);
@@ -75,7 +76,11 @@ export default function ProjectWizard({
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const retryAction = useRef<(() => Promise<void>) | null>(null);
-  const messages = saved?.messages ?? [];
+  const savedMessages = saved?.messages ?? [];
+  const messages =
+    outgoing && !savedMessages.some((message) => message.id === outgoing.id)
+      ? [...savedMessages, outgoing]
+      : savedMessages;
   const selectedAgents = saved?.draft?.agents.filter((agent) => agent.selected) ?? [];
   const projectDraft = saved?.draft ?? null;
   const serverBusy =
@@ -84,7 +89,9 @@ export default function ProjectWizard({
     (!!saved.pending_message_id || ['confirmed', 'provisioning'].includes(saved.status));
   const frozen =
     !!saved && ['confirmed', 'provisioning', 'created', 'provision_failed'].includes(saved.status);
-  const disabled = loading || pending || serverBusy || frozen || !!saved?.pending_message_id;
+  const disabled =
+    loading || pending || serverBusy || frozen || !!saved?.pending_message_id || !!outgoing;
+  const unsent = !!outgoing && !pending && !serverBusy && !authRequired;
 
   const accept = useCallback(
     (value: WizardState | null, navigate = true) => {
@@ -97,6 +104,9 @@ export default function ProjectWizard({
         return;
       current.current = value;
       setSaved(value);
+      setOutgoing((message) =>
+        value?.messages.some((turn) => turn.id === message?.id) ? null : message
+      );
       setProjectName(value?.display_name ?? value?.draft?.project.name ?? '');
       if (value) {
         onSaved?.(value);
@@ -134,7 +144,7 @@ export default function ProjectWizard({
         current.current ? `/drafts/${current.current.draft_id}` : initialDraftPath!
       );
       if (busy.current || current.current !== before || !alive.current) return;
-      accept(value);
+      accept(value, false);
       setError('');
     } catch (cause) {
       report(cause);
@@ -171,6 +181,9 @@ export default function ProjectWizard({
     }, 2000);
     return () => window.clearTimeout(timer);
   }, [serverBusy, pending, saved, restore]);
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView?.({ block: 'end' });
+  }, [messages.length]);
 
   const run = async (action: () => Promise<void>, recoveryKey?: string) => {
     if (busy.current) return;
@@ -187,7 +200,7 @@ export default function ProjectWizard({
         try {
           const expectedKey = recoveryKey;
           const recovered = await wizardRequest(`/drafts/${current.current.draft_id}`);
-          accept(recovered);
+          accept(recovered, false);
           if (
             expectedKey &&
             recovered?.status === 'created' &&
@@ -220,11 +233,15 @@ export default function ProjectWizard({
       autoConnect.current = null;
       accept(created);
       setDraft('');
+      setOutgoing(null);
       setMobilePlanOpen(false);
       requestAnimationFrame(() => inputRef.current?.focus());
     });
   };
   const send = async (content: string, messageId: string) => {
+    const preservesOutgoing = !!outgoing && outgoing.id !== messageId;
+    setOutgoing((message) => message ?? { id: messageId, role: 'user', content });
+    setDraft('');
     setPendingLabel('讨论助手正在梳理需求并匹配 AI 队友…');
     let state = current.current;
     if (!state) {
@@ -237,9 +254,8 @@ export default function ProjectWizard({
       message_id: messageId,
       revision: state.revision,
     });
-    accept(value);
-    setDraft('');
-    requestAnimationFrame(() => bottomRef.current?.scrollIntoView?.({ behavior: 'smooth' }));
+    accept(value, !preservesOutgoing);
+    setOutgoing((message) => (message?.id === messageId ? null : message));
   };
   const submit = (event: FormEvent) => {
     event.preventDefault();
@@ -254,6 +270,7 @@ export default function ProjectWizard({
       const message = state.messages.find((item) => item.id === state.pending_message_id);
       if (message) void run(() => send(message.content, message.id));
     } else if (retryAction.current) void retryAction.current();
+    else if (outgoing) void run(() => send(outgoing.content, outgoing.id));
     else void restore();
   };
   const rename = async () => {
@@ -410,9 +427,9 @@ export default function ProjectWizard({
 
   const composer = (
     <div className="wizard-compose-area">
-      {(error || saved?.error) && (
+      {(error || saved?.error || unsent) && (
         <div className="wizard-error" role="alert">
-          <span>{error || saved?.error}</span>
+          <span>{error || saved?.error || '消息尚未发送，请重试。'}</span>
           <button type="button" disabled={pending} onClick={retry}>
             <IconRefresh size={16} />
             重试
@@ -420,20 +437,22 @@ export default function ProjectWizard({
         </div>
       )}
       <form className="wizard-composer" onSubmit={submit}>
-        <textarea
-          ref={inputRef}
-          id="project-prompt"
-          aria-label="描述你想讨论的内容"
-          aria-describedby="wizard-composer-hint"
-          name="message"
-          value={draft}
-          onChange={(event) => setDraft(event.target.value)}
-          onKeyDown={onKeyDown}
-          placeholder="说说你想聊的事…"
-          rows={1}
-          maxLength={4000}
-          disabled={disabled || authRequired || !!error}
-        />
+        <div className="wizard-input" data-value={draft}>
+          <textarea
+            ref={inputRef}
+            id="project-prompt"
+            aria-label="描述你想讨论的内容"
+            aria-describedby="wizard-composer-hint"
+            name="message"
+            value={draft}
+            onChange={(event) => setDraft(event.target.value)}
+            onKeyDown={onKeyDown}
+            placeholder="说说你想聊的事…"
+            rows={1}
+            maxLength={4000}
+            disabled={disabled || authRequired || !!error}
+          />
+        </div>
         <button
           className="wizard-send"
           type="submit"
