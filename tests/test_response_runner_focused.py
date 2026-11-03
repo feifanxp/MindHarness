@@ -51,12 +51,13 @@ from mindroom.authorization import ReplyMembershipPendingError
 from mindroom.background_tasks import wait_for_background_tasks
 from mindroom.cancellation import current_task_is_process_shutdown, request_task_cancel
 from mindroom.config.access import ResponderAccessConfig
-from mindroom.config.agent import TeamConfig
+from mindroom.config.agent import RoomConfig, TeamConfig
 from mindroom.config.approval import ApprovalRuleConfig
 from mindroom.config.cold_cache import ColdCacheConfig
 from mindroom.config.main import ResolvedRuntimeModel
 from mindroom.config.mid_turn import MidTurnConfig
 from mindroom.config.models import ModelConfig, ToolConfigEntry
+from mindroom.config.participation import PeerDiscussionConfig
 from mindroom.constants import (
     MATRIX_RESPONSE_EVENT_ID_METADATA_KEY,
     STREAM_STATUS_APPROVAL_PENDING,
@@ -6193,6 +6194,54 @@ async def test_process_shutdown_blocks_stream_finalization_after_generation_cons
             await task
 
     finalize.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("streaming", [False, True])
+@pytest.mark.parametrize("peer_room", [None, "!room:localhost", "!other:localhost"])
+async def test_response_question_style_follows_current_room(
+    tmp_path: Path,
+    streaming: bool,
+    peer_room: str | None,
+) -> None:
+    """Peer rooms omit menu guidance without changing the same agent's ordinary rooms."""
+    runner = unwrap_extracted_collaborator(_bot(tmp_path)._response_runner)
+    config = runner.deps.runtime.config
+    if peer_room is not None:
+        config.rooms[peer_room] = RoomConfig(peer_discussion=PeerDiscussionConfig())
+        if peer_room not in config.agents["general"].rooms:
+            config.agents["general"].rooms.append(peer_room)
+    choices: list[object] = []
+
+    async def reply(*_args: object, **kwargs: object) -> str:
+        choices.append(kwargs["include_interactive_questions"])
+        return "One useful point."
+
+    async def stream(*args: object, **kwargs: object) -> AsyncIterator[str]:
+        yield await reply(*args, **kwargs)
+
+    async def consume(delivery_request: StreamingDeliveryRequest) -> StreamTransportOutcome:
+        body = "".join([chunk async for chunk in delivery_request.response_stream])
+        return StreamTransportOutcome(
+            last_physical_stream_event_id="$response",
+            terminal_status="completed",
+            rendered_body=body,
+            visible_body_state="visible_body",
+        )
+
+    terminal_method = "finalize_streamed_response" if streaming else "deliver_final"
+    with (
+        patch.object(DeliveryGateway, "deliver_stream", new=AsyncMock(side_effect=consume)),
+        patch.object(DeliveryGateway, terminal_method, new=AsyncMock(return_value=_completed_outcome())),
+        patch_response_runner_module(ai_response=reply, stream_agent_response=stream, typing_indicator=_noop_typing),
+    ):
+        request = _plain_request(_target())
+        if streaming:
+            await runner._process_and_respond_streaming(request)
+        else:
+            await runner._process_and_respond(request)
+
+    assert choices == [peer_room != "!room:localhost"]
 
 
 @pytest.mark.asyncio

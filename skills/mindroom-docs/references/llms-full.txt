@@ -6679,6 +6679,7 @@ MindRoom logs `Administrators, room invitees, or room admins are on another home
 
 Set `rooms.<key>.peer_discussion: {}` to let authorized individual agents independently decide whether to join a discussion, including replying to one another without mentions.
 Agents speak under their own identities, take turns, and read the latest thread before deciding; the router does not pick a speaker and implicit teams do not form in these rooms.
+In peer discussions, individual agents default to plain-language clarification questions instead of emoji option menus.
 Explicitly mentioning a named team still invokes that team.
 `peer_discussion` defaults to `null` (disabled); its `max_agent_turns` integer defaults to `6` (range `1–12`) and its `max_turns_per_agent` integer defaults to `2` (range `1–4`), limiting consecutive agent replies until a human posts again.
 An agent may stay silent; these limits are ceilings, not required rounds or guarantees of participation.
