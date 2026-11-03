@@ -15,7 +15,6 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE_WORKFLOW = ROOT / ".github" / "workflows" / "release.yml"
 BUILD_PLATFORM_WORKFLOW = ROOT / ".github" / "workflows" / "build-platform.yml"
-README = ROOT / "README.md"
 MACOS_APP_DOC = ROOT / "docs" / "installation" / "macos-app.md"
 MACOS_BUILD_SCRIPT = ROOT / "macos" / "build-macos-app.sh"
 PLATFORM_BACKEND = ROOT / "saas-platform" / "platform-backend"
@@ -232,12 +231,11 @@ def test_release_workflow_no_longer_updates_in_repo_cask(release_workflow: str) 
     assert "Homebrew cask version and SHA256" not in release_workflow
 
 
-def test_docs_use_dedicated_homebrew_tap_command() -> None:
-    """User-facing install docs should point at the dedicated tap."""
+def test_macos_guide_uses_dedicated_homebrew_tap_command() -> None:
+    """The upstream macOS guide points at its tap; the fork README installs from source."""
     install_command = "brew install --cask mindroom-ai/tap/mindroom"
     old_command = "brew install --cask mindroom-ai/mindroom/mindroom"
 
-    for path in (README, MACOS_APP_DOC):
-        text = path.read_text(encoding="utf-8")
-        assert install_command in text
-        assert old_command not in text
+    text = MACOS_APP_DOC.read_text(encoding="utf-8")
+    assert install_command in text
+    assert old_command not in text

@@ -1,0 +1,37 @@
+{
+  "name": "mind-harness-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-presentation-standalone.mjs",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" presentationServer*.ts vitest.config.ts --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "lucide-react": "1.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.9.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "vite": "8.0.13",
+    "postcss": "8.5.14",
+    "typescript": "6.0.3",
+    "vitest": "4.1.6",
+    "jsdom": "29.1.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/jest-dom": "6.9.1",
+    "eslint": "10.4.0",
+    "@typescript-eslint/parser": "8.59.4",
+    "@typescript-eslint/eslint-plugin": "8.59.4",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.6.0",
+    "prettier": "3.8.3"
+  }
+}

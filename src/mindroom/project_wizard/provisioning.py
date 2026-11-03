@@ -91,7 +91,7 @@ def _project_config(
     agents = {}
     for key, role in zip(agent_keys, draft.selected_agents, strict=True):
         agents[key] = {
-            "display_name": role.name,
+            "display_name": f"{role.name}（{role.responsibility}）",
             "role": role.responsibility,
             "model": model,
             "instructions": [

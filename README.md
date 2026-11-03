@@ -1,381 +1,254 @@
-<div align="center">
+# Mind Harness
 
-<picture>
-  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/mindroom-ai/mindroom/main/assets/logo/logo-mark-animated.svg" />
-  <img src="https://raw.githubusercontent.com/mindroom-ai/mindroom/main/assets/logo/logo-mark.svg" alt="MindRoom logo" width="128" />
-</picture>
+> 一个让人类和 AI 队友平等讨论问题的开源 AI 聊天室。
 
-# MindRoom
+Mind Harness 是一个面向问题探索、头脑风暴和方案讨论的多 Agent 聊天室。
+人类用户和不同专业的 AI Agent 在同一个聊天室里平等交流，秘书 Agent 在后台整理讨论成果。
+这里的“平等”指交流方式：Agent 可以追问、质疑和提出自己的判断，用户也可以随时补充背景、纠正或暂停讨论。
 
-**AI agents that know you and your work, in a chat app anyone can use.**
+我们希望你可以带着一个还没有想清楚的念头进入聊天室，经过追问、补充、质疑和讨论，带着更清晰的问题、判断和下一步离开。
 
-Open source under Apache 2.0 · Any model, local or cloud · Self-host the whole stack
+[快速开始](#快速开始) · [配置](#配置) · [文档导航](#文档导航) · [参与贡献](#参与贡献)
 
-[Website](https://mindroom.chat) · [Docs](https://docs.mindroom.chat) · [Showcase](https://docs.mindroom.chat/showcase/) · [MindRoom Chat](https://chat.mindroom.chat) · [Hosted](https://mindroom.chat/#hosted) · [Quick start](#quick-start)
+基于 MindRoom 二次开发 · 使用 Matrix 开放协议 · 支持本地或云端模型 · 可自托管
 
-[![PyPI](https://img.shields.io/pypi/v/mindroom)](https://pypi.org/project/mindroom/)
-[![Tests](https://img.shields.io/github/actions/workflow/status/mindroom-ai/mindroom/pytest.yml?label=tests)](https://github.com/mindroom-ai/mindroom/actions/workflows/pytest.yml)
-[![Docs](https://img.shields.io/badge/docs-mindroom.chat-blue)](https://docs.mindroom.chat)
-[![License](https://img.shields.io/github/license/mindroom-ai/mindroom)](https://github.com/mindroom-ai/mindroom/blob/main/LICENSE)
-[![Downloads](https://img.shields.io/pypi/dm/mindroom)](https://pypi.org/project/mindroom/)
+## 为什么要做这样的聊天室？
 
-</div>
+我们观察到，许多 Agent 应用采用“用户提出要求，Agent 执行任务”的上下级关系。
+这种关系非常适合完成明确的工作，但当用户自己还没有想清楚问题时，Agent 往往会顺着最初的方向继续展开。
 
-https://github.com/user-attachments/assets/f8325b3c-7ed0-4cd7-bc77-0c4cd74f226e
+在需要探索问题而非直接执行时，这种交互可能带来两个问题：
 
-MindRoom gives you a personal agent for your calendar, notes, trips, and homelab, and shared agents for your team's email, documents, and code.
-Every agent is a real user on [Matrix](https://matrix.org/), the open chat standard, so you talk to it in [MindRoom Chat](https://github.com/mindroom-ai/mindroom-chat), in any other Matrix client, or in Slack, Telegram, WhatsApp, and Discord through bridges.
-Pick a [local model](https://docs.mindroom.chat/configuration/models/) for your private life or a frontier model for hard problems, and self-host the whole stack or run only the agents on your own computer.
+- 用户更容易停留在自己熟悉的一条思维链路里。
+- 用户提出一个假设后，Agent 更倾向于补全和执行，而不是帮助重新检查问题本身。
 
-**Run it on any computer**
+现实中的很多好讨论并不是一个人发布指令、其他人提交结果。
+它通常由不同的人从不同角度追问、补充、质疑和举例，逐步把模糊的想法变成可以判断的问题。
 
-```bash
-uvx mindroom run
-```
+Mind Harness 想把这种平行讨论带到 AI 场景中。
+多个 Agent 可以拥有不同的角色、专业和表达方式，在同一个空间里提供彼此不同的视角。
+这种方式也更贴近我们在交流中思考的习惯：想法不一定线性展开，可能在别人的追问和补充中逐渐清晰。
+最终的判断仍然由人类用户做出，Agent 的作用是帮助用户把问题看得更完整、想得更深入。
+这是我们正在验证的产品方向，并不意味着多个 Agent 的一致意见就一定正确。
 
-Needs [uv](https://docs.astral.sh/uv/getting-started/installation/) and a model: an API key, a subscription login such as Codex, or a local model.
-It installs MindRoom with a starter agent, pairs it with your [MindRoom Chat](https://chat.mindroom.chat) account, and starts it.
+## 它和其他 AI 聊天室有什么不同？
 
-**Or use the macOS app**
+### 交互式聊天室创建
 
-```bash
-brew install --cask mindroom-ai/tap/mindroom
-```
+用户不需要先理解复杂的 Agent 配置。
+创建流程以一到两个关键问题为起点，帮助用户初步梳理问题和诉求，推荐适合参与的 AI 队友。
+信息不足时会继续澄清，已有明确背景时则可以直接推荐队友。
+确认后，系统会创建一个独立的讨论空间，把相关 Agent 加入其中。
 
-A native app that runs your agents on your Mac in the background, with one-click local models.
-Needs an Apple silicon Mac with macOS 14 or later.
+### 更接近真实聊天室的发言方式
 
-Chat with your agents on the [web](https://chat.mindroom.chat), on the [Mac](https://docs.mindroom.chat/installation/macos-app/), on [iPhone and iPad](https://apps.apple.com/us/app/mindroom-ai/id6760272172), and on Android (in beta).
-Rather not run it yourself? [Try hosted MindRoom](https://mindroom.chat/#hosted).
-See [Quick start](#quick-start) for every way to run it.
+在启用平行讨论的聊天室里，Agent 不必等到用户逐个点名。
+它们会阅读最新的讨论内容，判断自己是否有具体且有价值的补充，再决定发言或保持安静。
 
-## See it in action
+Agent 可以回答其他 Agent 的问题、指出隐藏的假设、补充遗漏的角度，也可以在观点已经充分表达后停止发言。
+系统会限制连续的自动发言，避免聊天室变成没有边界的 Agent 自言自语。
 
-<table>
-<tr>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#ask-approve-done"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/5e389c59-c81a-4f70-9c5d-de7406ff95f4" /><img src="https://github.com/user-attachments/assets/bc6194b1-9398-47f5-b649-2ea17dbb6b9f" alt="A review dialog where the user approves an agent's calendar booking" /></picture></a>
-<p><b>Approve before it acts</b><br />Actions you choose wait for your OK, with the exact arguments in view.</p>
-</td>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#one-thread-the-whole-team"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/635ce3ef-217d-494a-a8e5-01e3dd78454d" /><img src="https://github.com/user-attachments/assets/fbd1295d-025d-41d1-9ee8-0cc674706b98" alt="Three colleagues see the same agent thread side by side" /></picture></a>
-<p><b>The whole team, one thread</b><br />Colleagues share an agent in a thread and see every answer stream in live.</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#canvases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/7fc2bc01-1ec5-40d1-971f-5e6f33ba0f18" /><img src="https://github.com/user-attachments/assets/8eb3e6d8-8e9f-4ebb-a51b-bbb5913536e3" alt="Two agent canvases: a week grid of free meeting slots and a weekend trip planner with a budget" /></picture></a>
-<p><b>Canvases you can click</b><br />An agent lays out free slots or a trip budget beside the chat and acts on what you pick.</p>
-</td>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#canvases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/6ccc9db8-6155-4d50-ae60-f4e011d39617" /><img src="https://github.com/user-attachments/assets/c8492e0c-4864-4753-ad1b-4a7d66e70c91" alt="A data canvas with a fitted curve, its parameters, and one point left out" /></picture></a>
-<p><b>Data you can explore</b><br />Leave a point out of a fit, then send the new result back to the agent.</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#it-drives-you-take-the-wheel"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/ddf9402f-a451-4f50-b070-1b50aab739c8" /><img src="https://github.com/user-attachments/assets/6b7a2673-d9b9-446a-b9a7-4e4240241489" alt="The agent hands over the passkey step next to its browser on the order page" /></picture></a>
-<p><b>It drives, you take the wheel</b><br />Watch an agent work in its own browser and take over when it needs your passkey.</p>
-</td>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#connect-once-then-just-ask"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/69f219b2-6fef-419c-9d3b-513aaa340b01" /><img src="https://github.com/user-attachments/assets/4f18f100-5ce8-46c4-a4bf-18be84fccb4f" alt="A thread answered from a wiki next to the connections page where the wiki account is connected" /></picture></a>
-<p><b>Connect once, then just ask</b><br />Connect an account once, and the agent answers from it from then on.</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#lock-up-on-the-way-out"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/b35e6de5-09f6-4ae1-b8df-e9ad3e81987e" /><img src="https://github.com/user-attachments/assets/38b5676b-dedf-4bde-a6ba-fad3378d3c12" alt="Two phone screens: a voice note locks up the house, and another sets a reminder" /></picture></a>
-<p><b>From your phone</b><br />One voice note locks up the house; another becomes a reminder.</p>
-</td>
-<td width="50%" valign="top">
-<a href="https://docs.mindroom.chat/showcase/#your-morning-already-handled"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/a78ee8fb-0828-45bc-9cc4-08d4181d017b" /><img src="https://github.com/user-attachments/assets/1ae37f4e-63b9-4cb0-aefd-e0c2431b997a" alt="A scheduled morning brief with today's meetings and what needs attention" /></picture></a>
-<p><b>Your morning, already handled</b><br />A scheduled brief with today's meetings and what needs you.</p>
-</td>
-</tr>
-</table>
+### 无感记录与自动整理
 
-These are stills from the [showcase](https://docs.mindroom.chat/showcase/) recordings: MindRoom Chat and a real MindRoom backend, with a fictional company and scripted model responses.
+聊天室内可以配置一个秘书 Agent，在后台持续阅读讨论内容。
+它会把有出处的事实、想法、决定、未决问题和下一步行动整理成结构化笔记，并随着消息编辑和新讨论持续更新。
 
-## What people use it for
+用户不需要为了总结而中断讨论，也不需要在讨论结束后重新复制整段聊天记录。
+新建讨论会自动加入秘书 Agent，界面中称为“整理员”。
+打开“讨论成果”可查看分类笔记和原始消息出处，也可以点击“立即整理”手动触发更新。
+讨论记录仍然保留在聊天室里，秘书笔记则帮助用户快速回顾已经明确的内容和仍待解决的问题。
 
-### Personal
+## 我们做了什么
 
-- Plan a family trip, from flights to a packing list.
-- Keep your calendar, reminders, and to-do lists in order, by voice.
-- Keep notes, a journal, and memories you can find months later.
-- Follow the topics you care about, with a digest only when something is new.
-- Look after your homelab and smart home, with approval for the actions you choose.
-- Build quick tools and scripts in the agent's own workspace.
+### 发言调度器
 
-### Work
+为平行讨论增加了独立的参与判断、发言槽位和对话边界。
+每个 Agent 会基于自己的角色和最新上下文决定是否参与，多个 Agent 同时准备发言时由调度机制协调顺序。
 
-- Find anything across email, chat, documents, tickets, and code, with sources.
-- Get a morning briefing, or a summary of your week before a one-on-one.
-- Write status updates from what actually happened in chat and the tracker.
-- Turn a question into a report or a presentation built from your own documents.
-- Triage the inbox and draft emails, approving each one before it is sent.
-- Join a new team and ask its agent how the work fits together.
+### 引导式聊天室创建与队友匹配
 
-## Why MindRoom
+把“我想聊一件事”变成“创建一个适合这件事的讨论环境”。
+创建流程会先理解用户的目标，再匹配具有不同视角的 Agent，并自动加入负责记录讨论成果的秘书 Agent。
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### 更接近真人的 Agent 发言
 
-**🔌 [Connected to your tools and documents](https://docs.mindroom.chat/#agents-that-know-you-and-your-work)**<br />
-Personal agents and shared team agents connect to 100+ tools, including email, calendar, Slack, Jira, GitHub, and any MCP server, and search your own documents.
-Even from a server across the world, they can use a computer you pair.
+Agent 不再只围绕用户最后一句话独立生成答案。
+它们会回应具体的上下文，承接其他参与者的观点，在需要时追问、反驳、补充或暂时不发言。
+普通讨论以简短回应为主，需要展开或交付时再组织长文；角色差异体现在关注点、判断和措辞中，始终保持 AI 身份。
 
-</td>
-<td width="50%" valign="top">
+### 自动内容整理
 
-**🔒 [Private where it matters](https://docs.mindroom.chat/#private-where-it-matters)**<br />
-Pick a model per agent: a local one for your most personal data, a frontier one for coding. With local memory and your own server, nothing that agent sees leaves your home, and what you tell a private agent stays out of shared ones.
+实现了基于消息出处的增量整理机制。
+整理结果区分事实、想法、决定、问题和行动，并保留对应的聊天消息来源，方便回到原始讨论核对上下文。
 
-</td>
-</tr>
-<tr>
-<td valign="top">
+## 适合什么场景？
 
-**🧠 [Memory that keeps improving](https://docs.mindroom.chat/#they-remember-and-keep-improving)**<br />
-Agents keep what matters from every conversation, get better as more people use them, and can turn work they repeat into reusable skills.
+| 场景 | 可以怎样讨论 |
+| --- | --- |
+| 产品需求探索 | 从一个模糊想法出发，让产品、用户研究、设计和研发视角一起检查真正需要解决的问题 |
+| 方案评审 | 围绕用户价值、可行性、成本和风险交叉检查方案，保留分歧与待验证假设 |
+| 头脑风暴 | 鼓励不同方向的提问和联想，减少过早收敛到单一路径 |
+| 研究与分析 | 对已有资料提出解释、反例和进一步核实的问题；需要查资料时，为相应 Agent 配置检索工具 |
+| 持续项目讨论 | 接着已有背景继续聊，通过讨论成果回顾决定、未决问题和下一步行动 |
 
-</td>
-<td valign="top">
+### 一次讨论如何开始？
 
-**🛡️ [Safe to give real access](https://docs.mindroom.chat/#safe-to-give-real-access)**<br />
-One-tap approval for the actions you choose, sandboxed code execution (on by default in hosted MindRoom), and opt-in end-to-end encryption on Matrix, the open standard governments use for secure messaging.
+1. 用一句话说出你想聊的事情，不必先写完整需求文档。
+2. 和助理澄清目标、背景或关键约束，查看推荐的 AI 队友。
+3. 在“挑选 AI 队友”中选择成员，点击“组队，开始聊”。
+4. 进入聊天室，自由补充想法，回应队友的追问，或指定某位 Agent 发表意见。
+5. 随时打开“讨论成果”，查看秘书整理的内容及原文出处。
 
-</td>
-</tr>
-<tr>
-<td valign="top">
+例如，你可以从“我们想做一款更便宜的产品，但又不想只打价格战”开始。
+讨论可以逐步澄清目标用户、成本约束和差异化方向，而不必一开始就要求 Agent 交付完整方案。
+这只是使用方式示例，不是效果评测。
 
-**💬 [A chat app built for agents](https://docs.mindroom.chat/#a-chat-app-built-for-agents)**<br />
-MindRoom builds its own client for the web, Mac, iPhone, iPad, and Android (in beta), so agents can show live tool traces, ask for approval, open interactive canvases, join voice calls, and work in a real browser you can take over.
+## 在 MindRoom 基础上保留的能力
 
-</td>
-<td valign="top">
-
-**🌉 [Works where you already are](https://docs.mindroom.chat/#works-where-you-already-are)**<br />
-Bridges bring the same agents to Slack, Telegram, WhatsApp, and Discord, and an MCP gateway brings them to Claude Code and Codex.
-
-</td>
-</tr>
-</table>
+Mind Harness 基于 [MindRoom](https://github.com/mindroom-ai/mindroom) 二次开发，保留其 Agent 运行时、配置体系和 Matrix 集成。
+上面的引导创建、平行讨论、发言节奏和自动整理，是本项目重点扩展的部分。
 
 <details>
-<summary><b>Full feature list</b></summary>
+<summary><b>模型、工具与运行时能力</b></summary>
 
-**Agents and teams**
+- **模型选择**：可配置云端模型、本地模型和 OpenAI 兼容服务，并为不同 Agent 指定模型，详见[模型配置](docs/configuration/models.md)。
+- **Agent 与团队**：通过配置文件或管理界面管理角色、指令、团队与房间，详见[Agent](docs/configuration/agents.md)和[团队](docs/configuration/teams.md)。
+- **工具与 MCP**：按需配置检索、文件、外部服务和 MCP 工具，详见[工具目录](docs/tools/index.md)和[MCP](docs/mcp.md)。
+- **记忆与知识库**：可为需要长期上下文的 Agent 配置记忆与知识库，详见[记忆](docs/memory.md)和[知识库](docs/knowledge.md)。
+- **定时任务与工作流**：保留上游的任务调度和自动化能力，详见[Agent 编排](docs/tools/agent-orchestration.md)。
+- **交互界面**：保留流式回复、工具状态、审批和交互式画布等基础能力，具体可用性取决于 Agent 和客户端配置。
+- **配置热更新**：管理界面与配置文件使用同一配置体系，多数配置修改可在运行中生效。
 
-- **Multi-agent orchestration** — define specialist agents and teams in `config.yaml` or the dashboard; a built-in router picks the responder when you don't @-mention one, mentioning several agents makes them collaborate in a thread, and agents can hand tasks to each other or run reusable workflows ([Teams](https://docs.mindroom.chat/configuration/teams/), [Agent Orchestration](https://docs.mindroom.chat/tools/agent-orchestration/)).
-- **Adaptive participation** — in a thread with several people, agents you opt in that already replied there decide for themselves when an untagged message is theirs to answer, and a judge can decide whether a new message should interrupt the current task or wait ([Threads](https://docs.mindroom.chat/configuration/threads/#adaptive-participation)).
-- **Personal rooms and access control** — each person can get a private room with their own agent, and each agent answers only the people and rooms you allow ([Personal Rooms](https://docs.mindroom.chat/personal-rooms/), [Access Control](https://docs.mindroom.chat/authorization/)).
-
-**Memory and learning**
-
-- **Persistent memory** — agents remember people, preferences, and context across conversations and platforms (Mem0 + ChromaDB, stored on your disk).
-- **Automatic skill learning** — opt-in background reviews turn work an agent repeats into a small library of reusable skills, following the self-improvement loop of Hermes Agent ([Skills](https://docs.mindroom.chat/skills/#automatic-skill-learning)).
-- **Automatic knowledge graph** — an agent you opt in gets a [Graphiti](https://github.com/getzep/graphiti) graph of the people, projects, and documents its conversations and tool results reveal, with when each fact held and where it came from, and a scheduled `exploration` can have it read the sources its tools and MCP servers reach to fill the graph in ([Knowledge Graph](https://docs.mindroom.chat/knowledge-graph/)).
-- **Knowledge bases (RAG)** — point an agent at a folder or Git repository; MindRoom indexes it and can watch it for changes ([Knowledge Bases](https://docs.mindroom.chat/knowledge/)).
-
-**Tools and computers**
-
-- **100+ tool integrations** — Gmail, GitHub, Google Docs, Google Drive, Home Assistant, shell, Python, web search, any [MCP server](https://docs.mindroom.chat/mcp/), and more, plus native Matrix tools and a per-thread `todo` planner.
-- **A real browser you can take over** — an agent works in its own persistent Chromium browser that you watch live in MindRoom Chat, take control of for a login or passkey, and hand back ([Worker Computer](https://docs.mindroom.chat/tools/worker-computer/)).
-- **Reach any computer you pair** — your agents can run on a server across the world and still use your laptop: turn on the desktop bridge on any machine, and the agent can use the apps and folders you allow and run the commands you approve, over end-to-end encrypted Matrix with no open ports or VPN ([Desktop Bridge](https://docs.mindroom.chat/tools/desktop/)).
-- **Lean prompts** — minimal mode gives an agent one Bash tool that calls its other tools, and dynamic tools load rarely used tools only when needed, so each request carries fewer tokens ([Minimal Mode](https://docs.mindroom.chat/tools/agent-cli/), [Dynamic Tools](https://docs.mindroom.chat/tools/dynamic-tools/)).
-
-**In the chat**
-
-- **Interactive canvases** — an agent can open a page it wrote, such as a dashboard, slide deck, form, or picker, beside the conversation, and what you pick there comes back as your next message ([Interactive Canvases](https://docs.mindroom.chat/canvases/)).
-- **Approvals and questions** — one-tap approval cards show exactly what will be sent and to whom, a scheduled send can be approved when it is scheduled, and agents can ask multiple-choice questions you answer with a click ([Tool Approval](https://docs.mindroom.chat/tool-approval/), [Interactive Questions](https://docs.mindroom.chat/interactive/)).
-- **Streaming responses** — agents type into the room with progressive edits, visible tool traces, and cancellation.
-- **Voice** — voice messages are transcribed, agents can join Element Call voice calls and talk in real time, and text-to-speech tools use OpenAI, Groq, ElevenLabs, and Cartesia ([Voice Messages](https://docs.mindroom.chat/voice/), [Voice Calls](https://docs.mindroom.chat/voice-calls/)).
-- **Model routing** — a different model per agent, room, or thread (`!model` and `!room_model`); route sensitive rooms to local Ollama and everything else to a cloud model.
-
-**Automation**
-
-- **Scheduling & automation** — cron or natural-language scheduled tasks (`!schedule`), including silent checks that post only when they find something, plus [supervised background Python watchers](https://docs.mindroom.chat/tools/background-scripts/) that can call governed agent tools and wake the agent only when something changes, and [external triggers](https://docs.mindroom.chat/external-triggers/) that let any process wake an agent with one HTTP request.
-
-**Safety and privacy**
-
-- **Isolated execution** — shell, Python, and coding tools can run in container workers with no access to the primary process's secrets, with per-tool [approval rules](https://docs.mindroom.chat/tool-approval/) and [approved egress](https://docs.mindroom.chat/deployment/approved-egress/) for locked-down environments ([Workers & Sandboxing](https://docs.mindroom.chat/deployment/sandbox-proxy/)).
-- **End-to-end encryption** — rooms can be end-to-end encrypted with Matrix's Olm/Megolm ([End-to-End Encryption](https://docs.mindroom.chat/matrix/#end-to-end-encryption)).
-
-**Run it anywhere**
-
-- **Works with other apps** — bridges bring the same agents to Slack, Telegram, WhatsApp, Discord, and email, an [OpenAI-compatible API](https://docs.mindroom.chat/openai-api/) serves them to LibreChat, Open WebUI, and other clients, and an [MCP gateway](https://docs.mindroom.chat/deployment/mcp-gateway/) shares their tools with Claude Code and Codex ([Bridges](https://docs.mindroom.chat/deployment/bridges/)).
-- **Native macOS app** — runs your agents on your Mac in the background, with a menu bar companion and one-click local model setup ([macOS App](https://docs.mindroom.chat/installation/macos-app/)).
-- **Web dashboard** — create and configure agents, teams, models, tools, credentials, and knowledge bases by clicking instead of editing YAML; chat stays in your Matrix client.
-- **Plugins & hooks** — drop-in [plugins](https://docs.mindroom.chat/plugins/) add custom tools, skills, and OAuth providers, and a typed [event-hook system](https://docs.mindroom.chat/hooks/) (per-hook timeouts, fault isolation) lets them observe and transform messages; reload plugins at runtime with `!reload-plugins`.
-- **Hot reload & restart-safe** — `config.yaml` and plugin changes apply live without bringing down the stack, and conversations resume seamlessly after a restart: session history and turn state are durable on disk, so agents pick up where they left off without double-replying.
-- **Enterprise deployment** — the same runtime scales from a laptop to multi-tenant Kubernetes with Helm charts.
+这些是可配置的底层能力，并不代表新建讨论中的每位队友都默认启用了它们。
+当前引导流程创建的队友默认专注讨论，不启用工具、技能或长期记忆；讨论成果由独立的秘书 Agent 整理。
 
 </details>
 
-<details>
-<summary><b>Why we built this</b></summary>
+## 技术基础与架构
 
-AI apps can connect to your email, calendar, and documents now, but each one ties those connections to one company.
-Connect your inbox to ChatGPT, and OpenAI's servers process it for OpenAI's models only.
-Want Claude for writing or Gemini for research? Connect everything again, hand your data to another company, and teach it about you from scratch.
+| 层次 | 技术或开源基础 | 在本项目中的作用 |
+| --- | --- | --- |
+| 通信协议 | Matrix | 承载用户与 Agent 身份、房间、消息和聊天历史 |
+| Agent 运行时 | MindRoom、Python、Agno、mindroom-nio | 模型调用、Agent 运行、消息处理及 Matrix 接入 |
+| 本项目扩展 | 引导创建、平行讨论、聊天室秘书 | 队友匹配、参与判断、发言调度与讨论成果整理 |
+| 聊天客户端 | MindRoom Chat，基于 Cinny | 面向用户的聊天室、队友选择和讨论成果界面 |
+| 管理界面与 API | React、TypeScript、Vite、FastAPI | Agent、模型、工具与运行配置管理 |
 
-MindRoom turns that around:
+### 为什么使用 Matrix？
 
-- **Connect once, use any model.** Your accounts, memory, and documents live in MindRoom, which can run on your own machine, and every agent uses them with the model that fits: Claude, GPT, Gemini, or a local model.
-- **You decide who sees what.** A cloud model sees only what its agent sends it, and an agent on a local model, with local memory and your own server, keeps everything at home.
-- **One place, everywhere you chat.** Agents live in shared rooms on Matrix and follow you to Slack, Telegram, WhatsApp, and Discord through Matrix bridges, with their memory intact.
+Matrix 为人类用户和 Agent 提供同一套聊天身份与消息机制。
+我们可以沿用成熟的房间、消息历史和客户端基础，把开发重点放在人与 AI 如何共同讨论上。
 
-Federation even lets agents cross organization boundaries:
+Matrix 也提供跨服务器通信、其他客户端接入与桥接能力，可按部署需求使用。
+Mind Harness 的引导创建与讨论成果界面位于本仓库的定制客户端中，其他 Matrix 客户端不一定包含这些界面。
+
+### 项目结构
 
 ```text
-Your client asks in their Discord:
-Client: Can our architect AI review this with your team?
-You: Sure! @assistant please collaborate with them
-
-Your Assistant: [Joins from your Matrix server]
-Client's Architect AI: [Joins from their server]
-Together: [They review architecture, sharing context from both organizations]
+MindHarness/
+├── src/mindroom/       # Agent 运行时、Matrix 集成及本项目后端扩展
+├── mindroom-chat/      # 定制聊天客户端与 Agent Room 讨论流程
+├── frontend/           # 管理界面
+├── config.yaml         # 仓库开发配置；首次使用请另建本地配置
+├── skills/             # Agent 技能与角色定义
+├── docs/               # 配置、部署和架构文档
+├── local/              # 本地 Matrix 与开发环境辅助配置
+└── saas-platform/      # 上游托管平台代码，普通自托管通常无需使用
 ```
 
-Two AI agents from different companies collaborating — impossible with app-bound assistants.
+代码中的 Python 包名和 CLI 命令沿用 mindroom，部分界面仍使用 Agent Room 名称。
 
-</details>
+## 快速开始
 
-## How it compares to OpenClaw and Hermes
+Mind Harness 目前处于持续开发阶段，建议从本仓库源码运行，以使用这里的聊天室扩展。
+上游发布的安装包、托管服务和应用商店客户端不能直接视为本项目的发行版。
 
-[OpenClaw](https://github.com/openclaw/openclaw) and [Hermes Agent](https://github.com/nousresearch/hermes-agent) are self-hosted assistants that pipe an agent into chat apps you already use.
-MindRoom plays in the same space but makes different architectural bets:
+### 1. 准备环境并获取代码
 
-- **Multi-agent and multi-user by default.** Both are personal-first: one owner talking to their assistant. In MindRoom every agent is a real Matrix user, so you run a fleet of specialists and teams, share them with family, a project, or a whole company, and scope access per user and per room.
-- **An AI-native interface on an open protocol.** With WhatsApp, Signal, or Telegram as the front end, you rent UX from platforms that were never designed for agents and can cut bots off at any time. MindRoom's home is Matrix, with [MindRoom Chat](https://github.com/mindroom-ai/mindroom-chat) tuned for AI: collapsible tool-call traces, model metadata on every response, streaming with in-place edits, response cancellation, and first-class threads. Bridges to those apps are additive, not the foundation.
-- **Sandboxing with real secrets isolation.** Execution tools (shell, Python, coding) can run in isolated container workers with no access to the primary process's secrets — your agent uses credentialed tools (Gmail, GitHub, ...) while code running in a worker cannot read those credentials. Per-tool [approval rules](https://docs.mindroom.chat/tool-approval/) and [egress approval](https://docs.mindroom.chat/deployment/approved-egress/) add human-in-the-loop control.
-- **Batteries included.** 100+ built-in tool integrations with typed configuration, OAuth flows, and automatic dependency installation — plus OpenClaw-compatible skills on top.
-
-Coming from OpenClaw? MindRoom [imports OpenClaw workspaces](https://docs.mindroom.chat/openclaw/) (`SOUL.md`, `MEMORY.md`, skills) and ships an `openclaw_compat` tool preset.
-
-## Quick start
-
-### Your computer + MindRoom Chat (fastest)
-
-MindRoom runs on your computer; Matrix is hosted at `mindroom.chat` and the chat app at [chat.mindroom.chat](https://chat.mindroom.chat).
-You need:
-
-- [uv](https://docs.astral.sh/uv/getting-started/installation/), which installs Python when needed.
-- A model: an API key, a subscription login such as Codex, or a local model.
-- A MindRoom Chat account, which your first sign-in at [chat.mindroom.chat](https://chat.mindroom.chat) creates.
+- Python 3.12–3.14 和 [uv](https://docs.astral.sh/uv/)。
+- Node.js 24、npm；管理界面首次自动构建还需要 Bun，或预先设置 `MINDROOM_FRONTEND_DIST` 指向已构建的管理界面目录。
+- 可用的模型服务，以及一个 Matrix homeserver 和用户账号。
+- 如需启动本地 Matrix 开发环境，还需 Docker。
 
 ```bash
-uvx mindroom run
-# First run: choose a model provider; anthropic, openai, and openrouter
-# also ask for an API key (Enter skips).
-# MindRoom writes ~/.mindroom/config.yaml and ~/.mindroom/.env with hosted
-# defaults, then prints a link and QR code: approve it with your MindRoom Chat
-# account, or enter the code in MindRoom Chat -> Settings -> Local MindRoom.
-# Finally, Enter keeps MindRoom running in the background as a login service
-# (systemd or launchd); n runs it here instead.
+git clone https://github.com/feifanxp/MindHarness.git
+cd MindHarness
+uv sync --all-extras
 ```
 
-Coding agents and scripts can answer every question with flags instead: `OPENAI_API_KEY=sk-... uvx mindroom run --provider openai --service`.
-To create or review the files without starting, run `uvx mindroom config init` (optionally with `--provider codex` or another preset), edit `~/.mindroom/.env`, and then run `uvx mindroom run`.
-See the [hosted Matrix deployment guide](https://docs.mindroom.chat/deployment/hosted-matrix/) for full details.
+### 2. 创建本地配置
 
-### macOS app
-
-The macOS app provides a native window and menu bar companion for local agents and computer access.
-It bundles `uv`, uses `~/.mindroom` for config and state, and manages the `mindroom service` launchd service.
-The signed app requires an Apple silicon Mac.
+沿用原项目的源码运行方式，单独生成本地配置，避免直接使用仓库中的开发模型地址。
+以下以 Anthropic 和自托管 Matrix 为例，其他模型提供商见[模型配置](docs/configuration/models.md)。
 
 ```bash
-brew install --cask mindroom-ai/tap/mindroom
-```
-
-Open **MindRoom** from `/Applications` to set up local agents, manage computer access, or open chat and the configuration dashboard.
-**Run AI on this Mac** offers one-click local model setup; see the [hardware recommendations](https://docs.mindroom.chat/installation/macos-app/#local-ai-models) for Qwen3.8 27B and smaller models matched to your Mac's memory.
-See the [macOS app guide](https://docs.mindroom.chat/installation/macos-app/) for setup, updates, and uninstall instructions.
-
-### Full stack with Docker Compose
-
-To self-host everything, including the Matrix homeserver and the chat app, use [mindroom-stack](https://github.com/mindroom-ai/mindroom-stack) with Docker, Docker Compose, and Python 3:
-
-```bash
-git clone https://github.com/mindroom-ai/mindroom-stack
-cd mindroom-stack
-cp .env.example .env
-$EDITOR .env  # set ANTHROPIC_API_KEY for the default stack config
-./scripts/quickstart.py
-```
-
-It serves the dashboard at http://localhost:8765, MindRoom Chat at http://localhost:8080, and Matrix at http://localhost:8008.
-See [Full stack Docker Compose](https://docs.mindroom.chat/getting-started/#full-stack-docker-compose) for other providers and access from other devices, and [Deployment](#deployment) for Kubernetes.
-
-### From source, for contributors
-
-To work on MindRoom itself, run it from a checkout.
-
-<details>
-<summary><b>Run from source</b></summary>
-
-Requires Python 3.12–3.14 and [uv](https://github.com/astral-sh/uv).
-For the dashboard in a fresh source checkout, install Node.js 24 and [Bun](https://bun.sh/) so the first run can build missing assets, or set `MINDROOM_FRONTEND_DIST` to a prebuilt dashboard directory.
-The repository dev shell provides Node.js 24 and Bun.
-
-```bash
-git clone https://github.com/mindroom-ai/mindroom
-cd mindroom
-uv sync
-
-# Create a starter config with an Anthropic model and self-hosted Matrix settings.
 uv run mindroom config init --path ./config.local.yaml --matrix-server self-hosted --provider anthropic
-
-# Set MATRIX_HOMESERVER, ANTHROPIC_API_KEY, and any required registration credentials.
-$EDITOR .env
-# Replace each owner placeholder with your quoted Matrix user ID.
-$EDITOR config.local.yaml
-
-# Optional: bootstrap this checkout's local Synapse + MindRoom Chat stack.
-# MINDROOM_CONFIG_PATH=./config.local.yaml uv run mindroom local-stack-setup --synapse-dir local/matrix
-
-# Start MindRoom with the generated config.
-uv run mindroom run --config ./config.local.yaml
 ```
 
-The checked-in `config.yaml` is a development setup with local model endpoints.
-In `config.local.yaml`, replace every `__MINDROOM_OWNER_USER_ID_FROM_PAIRING__` with your quoted Matrix user ID, such as `"@alice:matrix.example.com"`.
-See the [manual configuration and account provisioning instructions](https://docs.mindroom.chat/getting-started/#configuration) for homeserver setup.
-The starter creates the `Mind` agent in the `personal` room.
+编辑生成的 `config.local.yaml` 及旁边的 `.env`：
 
-With dashboard assets available, open http://localhost:8765.
-Without assets and Bun, the API is available at http://localhost:8765/api but the dashboard is unavailable.
-Matrix E2EE support is installed by default.
+- 填写 Matrix 服务地址、所选模型提供商的凭据，以及 homeserver 所需的账号注册凭据。
+- 将配置中的所有 `__MINDROOM_OWNER_USER_ID_FROM_PAIRING__` 替换为你自己的 Matrix 用户 ID，例如 "@alice:matrix.example.com"。
+- 保留并检查生成的 `mindroom_user` 配置；引导式建群需要完整 Bot 运行服务及可登录的内部用户。
+- 若配置管理界面 API 密钥，启动客户端后需完成对应登录。
 
-</details>
+详细设置见[入门与账号注册](docs/getting-started.md)及[环境变量](docs/configuration/index.md)。
+已有可用 Matrix 服务时可以直接启动后端。
+需要本地服务时，沿用上游的可选开发栈命令：
 
-### First steps
+```bash
+MINDROOM_CONFIG_PATH=./config.local.yaml uv run mindroom local-stack-setup --synapse-dir local/matrix
+```
 
-Open the **Personal** room in MindRoom Chat ([chat.mindroom.chat](https://chat.mindroom.chat), or the chat app of your own stack) and say hello: the starter agent `Mind` is the room's only responder, so it answers without a mention.
+该命令启动本地 Synapse 和上游聊天客户端容器；体验 Mind Harness 的讨论界面请继续启动下面的本仓库客户端。
 
-Then add more agents and teams in the dashboard or `config.yaml` (see [Configuration](#configuration)), and mention several in one message to have them work together.
+### 3. 启动后端与聊天客户端
 
-## How agents respond
+在仓库根目录启动后端：
 
-Agents and teams respond using Matrix thread relations to keep conversations organized.
-If your client or bridge only sends plain replies, MindRoom keeps them in an existing thread when the reply chain eventually reaches a threaded ancestor or proven thread root.
-Plain replies that never reach threaded context still stay plain replies.
+```bash
+uv run mindroom run --config ./config.local.yaml --api-host 127.0.0.1
+```
 
-1. **Mentioned agents and teams respond** - Tag them to get their attention
-2. **Single responder continues** - In a thread with one person, the agent or team that answered keeps responding without a tag
-3. **Multiple agents collaborate** - Mention multiple agents when you want an ad-hoc collaboration
-4. **Smart routing** - The router picks the best agent or team for a new thread when you don't tag one
-5. **Group threads stay human-first** - Once two or more people talk in a thread, agents answer only when tagged, so they don't interrupt
-6. **Adaptive participation** - An agent with [`participation`](https://docs.mindroom.chat/configuration/threads/#adaptive-participation) enabled that has already replied in a group thread decides for each untagged message whether it can help, so nobody has to tag it
-7. **DMs need no mentions** - Agents respond naturally in 1:1 rooms, and you can add more agents to a DM for private collaboration
+另开一个终端，在同一目录启动聊天客户端：
+
+```bash
+./run-frontend.sh
+```
+
+- 聊天界面：本机浏览器打开 http://localhost:3003。
+- 管理界面：具备构建产物时访问 http://localhost:8765。
+- 客户端开发代理默认连接 http://127.0.0.1:8765；后端地址不同，可在启动客户端时设置 `VITE_MINDROOM_API_PROXY_TARGET`。
+
+登录所配置 homeserver 上的 Matrix 账号后，从讨论入口开始创建聊天室。
+仅启动 Dashboard API 不足以创建和运行讨论中的 Bot，后端应保持完整运行。
+
+## 配置
+
+沿用 MindRoom 的配置体系：Agent、团队、模型、房间、记忆和权限集中在选定的 YAML 配置文件中，管理界面也编辑同一份配置。
+模型密钥等环境变量放在该配置文件旁的 `.env` 中；修改 `.env` 后需重启后端。
+
+通过 `--config` 或 `MINDROOM_CONFIG_PATH` 选择配置文件。
+引导流程会为新讨论配置专用队友、聊天室和秘书，手动配置时可参考以下文档：
+
+| 需要调整什么 | 文档 |
+| --- | --- |
+| Agent 的专业、指令、模型和工具 | [Agent 配置](docs/configuration/agents.md) |
+| 平行讨论、自动发言上限与讨论成果 | [聊天室与空间](docs/rooms.md) |
+| 团队协作方式 | [团队配置](docs/configuration/teams.md) |
+| 模型提供商与本地模型 | [模型配置](docs/configuration/models.md) |
+| 谁可以与 Agent 交互 | [访问控制](docs/authorization.md) |
+
+### Agent 如何回应？
+
+在启用平行讨论的房间中，每位队友独立判断是否有值得补充的内容，由共享发言机制安排顺序，轮到发言时再读取最新讨论。
+主动参与也可以选择沉默；连续自动回复受房间配置限制，用户发来新信息后继续讨论。
+
+普通房间继续使用 MindRoom 的响应规则，包括点名、路由和线程内跟进，具体见[线程配置](docs/configuration/threads.md)。
+这两种方式可以按房间用途选用。
 
 <details>
-<summary><b>Chat commands</b></summary>
-
+<summary><b>保留的 Matrix 聊天命令</b></summary>
 <!-- CODE:START -->
 <!-- import sys -->
 <!-- sys.path.insert(0, 'src') -->
@@ -404,130 +277,64 @@ Plain replies that never reach threaded context still stay plain replies.
 - `!hi` - Show welcome message
 
 <!-- OUTPUT:END -->
-
 </details>
 
-## Configuration
+## 部署与自托管
 
-Everything lives in `config.yaml`: agents, teams, models, rooms, knowledge bases, voice, memory, and authorization.
-The web dashboard edits the same file, so you can point-and-click instead of writing YAML.
-Either way, changes are hot-reloaded, and most take effect without a restart.
+- **已有 Matrix 服务**：连接自己的 homeserver，按[手动部署说明](docs/getting-started.md)配置账号注册。
+- **本地开发栈**：使用 local-stack-setup 启动本地 Matrix，再运行本仓库的后端与聊天客户端。
+- **容器部署**：参考上游的 [Docker](docs/deployment/docker.md) 与 [Kubernetes](docs/deployment/kubernetes.md) 部署结构，并构建包含本项目修改的后端和客户端产物。
+- **其他聊天平台**：有需要时参考 [Matrix 桥接](docs/deployment/bridges/index.md)。
 
-```yaml
-agents:
-  assistant:
-    display_name: Assistant
-    role: A helpful AI assistant
-    model: default
-    rooms: [lobby]
-    tools: [matrix_message]
-    accept_invites: true  # Accept all, none, or matching inviter ID patterns
-    knowledge_bases: [engineering_docs]
+普通自托管通常不需要 saas-platform 目录。
+完整部署需分别配置聊天客户端、Agent 后端、Matrix 和模型服务；开发启动脚本不是完整的生产部署方案。
 
-models:
-  default:
-    provider: anthropic
-    id: claude-sonnet-5-5
+## 文档导航
 
-knowledge_bases:
-  engineering_docs:
-    path: ./knowledge_docs
-    watch: true
+- [配置总览](docs/configuration/index.md)
+- [聊天室与讨论成果](docs/rooms.md)
+- [CLI 参考](docs/cli.md)与[聊天命令](docs/chat-commands.md)
+- [代码地图](docs/architecture/code-map.md)
+- [聊天客户端及修改记录](mindroom-chat/FORK_CHANGES.md)
 
-voice:
-  enabled: true
-  stt:
-    provider: openai
-    model: gpt-transcribe
+文档中仍有沿用 MindRoom 名称的上游说明，涉及本项目讨论流程时，以本仓库代码和相应功能文档为准。
 
-mindroom_user:
-  username: mindroom_user  # Immutable once the account is created on first run
-  display_name: MindRoomUser
+## 当前状态与后续方向
 
-administrators: ["@alice:example.com"]
-room_defaults:
-  invite_users: ["@alice:example.com"]
+当前已实现引导式创建、队友选择、平行讨论、发言调度和后台讨论成果整理。
+我们会继续打磨问题澄清、角色匹配、发言节奏和成果整理，并通过真实使用案例检验它们是否帮助用户重新理解问题。
 
-authorization:
-  config_command_enabled: false
-```
+欢迎反馈具体的讨论片段：哪些追问有帮助、哪些发言重复，以及哪些关键信息没有被整理出来。
+真实的使用反馈比单纯增加 Agent 数量更能帮助我们改进体验。
 
-Environment variables go in `.env` next to the selected config file (`~/.mindroom/.env` for the hosted path):
+## 参与贡献
+
+欢迎通过 Issue、Pull Request 或使用反馈参与项目。
+贡献代码前，请阅读 [AGENTS.md](AGENTS.md) 中的开发约定与质量检查要求。
 
 ```bash
-MATRIX_HOMESERVER=https://your-matrix.server
-ANTHROPIC_API_KEY=your-key-here
-# Dashboard API key; generate one with `openssl rand -hex 32`.
-# `mindroom run` listens on every network interface by default, so keep this key set;
-# leave it empty (MINDROOM_API_KEY=) only together with `--api-host 127.0.0.1`.
-MINDROOM_API_KEY=replace-with-a-long-random-secret
+uv sync --all-extras
+uv run pytest
+uv run pre-commit run --all-files
 ```
 
-Select another config with `mindroom run --config /path/to/config.yaml` or `export MINDROOM_CONFIG_PATH=/path/to/config.yaml` before running the CLI.
-MindRoom selects the config before loading the `.env` beside it.
+## 许可证
 
-Teams, per-room models, context compaction, history controls, and memory backends are covered in the [configuration docs](https://docs.mindroom.chat/configuration/) and at [docs.mindroom.chat](https://docs.mindroom.chat).
+本仓库包含采用不同许可证的组件：
 
-## Deployment
+| 范围 | 许可证文件 |
+| --- | --- |
+| 核心后端等采用根目录许可的代码 | [Apache License 2.0](LICENSE) |
+| 聊天客户端 mindroom-chat/ | [GNU AGPL v3](mindroom-chat/LICENSE) |
 
-- **Own homeserver** — set `MATRIX_HOMESERVER` and run against any Synapse, Conduit, or Dendrite instance ([guide](https://docs.mindroom.chat/getting-started/#manual-install-with-your-own-matrix-homeserver)).
-- **Local stack** — `mindroom local-stack-setup` bootstraps a local Synapse + MindRoom Chat via Docker.
-- **Your computer + MindRoom Chat (hosted Matrix)** — run only the backend locally against hosted Matrix at [mindroom.chat](https://mindroom.chat), pairing via [chat.mindroom.chat](https://chat.mindroom.chat) ([guide](https://docs.mindroom.chat/deployment/hosted-matrix/)).
-- **Docker** — single-container runtime ([guide](https://docs.mindroom.chat/deployment/docker/)).
-- **Kubernetes** — Helm charts for enterprise-scale, multi-tenant deployments ([guide](https://docs.mindroom.chat/deployment/kubernetes/)).
-- **Agent-managed NixOS container (advanced)** — the author's favorite for personal use: [mindroom-ai/lxc-nixos](https://github.com/mindroom-ai/lxc-nixos) provisions a persistent, agent-controlled NixOS container with the full stack, which the agent can rebuild and manage itself while the host controls what it sees.
-- **Bridges** — connect Slack, Telegram, WhatsApp, and more via [Bridges](https://docs.mindroom.chat/deployment/bridges/).
+各目录和第三方组件的具体条款以其许可证文件及声明为准。
 
-## Why Matrix?
+## 致谢
 
-Matrix is an open, federated messaging protocol with a decade of production use, including large government and healthcare deployments.
-By building on it, MindRoom inherits instead of reimplements:
+Mind Harness 建立在以下开源项目之上，感谢原作者和社区的贡献：
 
-- End-to-end encryption (Olm/Megolm)
-- Federation — your agent can join rooms on other homeservers, including other organizations'
-- Mature clients on every platform (Element, Cinny, FluffyChat)
-- 50+ maintained bridges to Slack, Telegram, Discord, WhatsApp, IRC, email, and more
-
-<details>
-<summary><b>Matrix adoption at a glance</b></summary>
-
-- **10+ years** of development by the Matrix.org Foundation, with **€10M+** invested and **100+ core contributors**
-- **35+ million users** globally
-- **German healthcare**: 150,000+ organizations on TI-Messenger
-- **French government**: 5.5 million civil servants on Tchap
-- **Defense**: NATO, U.S. Space Force, and other defense organizations
-- Built for European privacy standards (GDPR)
-
-</details>
-
-## Architecture
-
-- **Matrix**: any homeserver (Synapse, Conduit, Dendrite, ...)
-- **Agents**: Python, built on [Agno](https://agno.dev/) and [mindroom-nio](https://github.com/mindroom-ai/mindroom-nio)
-- **AI models**: Anthropic, OpenAI, Google, Ollama, Bedrock, or any OpenAI-compatible endpoint
-- **Memory**: Mem0 + ChromaDB vector storage, persistent on disk
-- **UI**: web dashboard for administration; [MindRoom Chat](https://github.com/mindroom-ai/mindroom-chat) (or any Matrix client) for chat
-
-See the [architecture docs](https://docs.mindroom.chat/architecture/) for internals.
-
-## Note for self-hosters
-
-This repository contains everything you need to self-host MindRoom.
-The `saas-platform/` directory contains infrastructure specific to running MindRoom as a hosted service and can be safely ignored by self-hosters.
-
-## Contributing
-
-We welcome contributions!
-See [AGENTS.md](https://github.com/mindroom-ai/mindroom/blob/main/AGENTS.md) for the current development workflow and quality checks.
-
-## License
-
-- **Repository (except `saas-platform/`)**: [Apache License 2.0](https://github.com/mindroom-ai/mindroom/blob/main/LICENSE)
-- **SaaS Platform** (`saas-platform/`): [Business Source License 1.1](https://github.com/mindroom-ai/mindroom/blob/main/saas-platform/LICENSE) (converts to Apache 2.0 on 2030-02-06)
-
-## Acknowledgments
-
-Built with:
-- [Matrix](https://matrix.org/) - The federated communication protocol
-- [Agno](https://agno.dev/) - AI agent framework
-- [mindroom-nio](https://github.com/mindroom-ai/mindroom-nio) - Python Matrix client
+- [MindRoom](https://github.com/mindroom-ai/mindroom)：本项目二次开发的核心基础。
+- [Matrix](https://matrix.org/)：开放的通信协议。
+- [MindRoom Chat](https://github.com/mindroom-ai/mindroom-chat) 与 [Cinny](https://github.com/cinnyapp/cinny)：聊天客户端基础。
+- [Agno](https://github.com/agno-agi/agno)：Agent 与模型集成能力。
+- [mindroom-nio](https://github.com/mindroom-ai/mindroom-nio)：Python Matrix 客户端。

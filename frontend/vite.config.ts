@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import type { IncomingMessage } from 'http';
 import path from 'path';
 import { svgzPlugin } from './svgz.config';
-import { presentationFiles } from './presentationServer';
 
 // Get ports from environment variables or use defaults
 const mindroomPort = process.env.MINDROOM_PORT || '8765';
@@ -41,11 +40,7 @@ function isOperatorRequest(req: IncomingMessage): boolean {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    svgzPlugin,
-    presentationFiles(path.resolve(__dirname, '../Mind_Harness_Presentation_编辑.json')),
-  ],
+  plugins: [react(), svgzPlugin],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

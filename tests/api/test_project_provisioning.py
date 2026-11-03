@@ -51,6 +51,8 @@ def test_repeated_config_install_preserves_one_set_of_entities(test_client: Test
     config, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
     room_key, keys, team = provisioning._project_keys(state)
     scribe = f"{room_key}_scribe"
+    assert config.agents[keys[0]].display_name == "Researcher（Research）"  # noqa: RUF001
+    assert config.agents[scribe].display_name == "整理员"
     assert config.agents[keys[0]].tool_names == []
     assert config.agents[scribe].room_scribe
     assert config.agents[scribe].thread_mode == "room"

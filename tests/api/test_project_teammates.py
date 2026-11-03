@@ -162,7 +162,7 @@ def test_provisioning_uses_selected_profiles_only(test_client: TestClient, monke
     assert list(agents) == [*keys, f"{room_key}_scribe"]
     assert teams[team_key]["agents"] == keys
     for key, candidate in zip(keys, state.draft.selected_agents, strict=True):
-        assert agents[key]["display_name"] == candidate.name
+        assert agents[key]["display_name"] == f"{candidate.name}（{candidate.responsibility}）"  # noqa: RUF001
         assert agents[key]["role"] == candidate.responsibility
         assert candidate.behavior in agents[key]["instructions"]
         assert f"擅长领域：{candidate.expertise}" in agents[key]["instructions"]  # noqa: RUF001

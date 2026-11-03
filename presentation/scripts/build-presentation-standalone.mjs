@@ -7,8 +7,8 @@ import react from '@vitejs/plugin-react';
 import postcss from 'postcss';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const contentPath = path.resolve(root, '../Mind_Harness_Presentation_编辑.json');
-const outputPath = path.resolve(root, '../Mind_Harness_独立版.html');
+const contentPath = path.resolve(root, 'Mind_Harness_Presentation_编辑.json');
+const outputPath = path.resolve(root, 'Mind_Harness_独立版.html');
 // The standalone HTML is the editing source of truth after the first export.
 const previousHtml = existsSync(outputPath) ? await readFile(outputPath, 'utf8') : null;
 const embedded = previousHtml?.match(

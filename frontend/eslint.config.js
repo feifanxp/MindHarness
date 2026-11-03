@@ -9,7 +9,7 @@ export default [
     ignores: ["coverage/**", "dist/**", "node_modules/**"],
   },
   {
-    files: ["src/**/*.{ts,tsx}", "vite*.config.ts", "vitest.config.ts", "presentationServer*.ts"],
+    files: ["src/**/*.{ts,tsx}", "vite*.config.ts", "vitest.config.ts"],
     languageOptions: {
       parser: tsParser,
       parserOptions: {

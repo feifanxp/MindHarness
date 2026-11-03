@@ -27,8 +27,6 @@ import { ProviderSetupBanner } from "@/components/ProviderSetup/ProviderSetup";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Toaster } from "@/components/ui/toaster";
-import { PresentationPage } from "./Presentation";
-import { PresentationNotesPage } from "./PresentationNotes";
 import siteLogo from "../public/logo.png";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
@@ -683,23 +681,12 @@ function AppContent() {
   );
 }
 
-function AppRoute() {
-  const location = useLocation();
-  if (location.pathname === "/presentation/notes") {
-    return <PresentationNotesPage logoSrc={siteLogo} />;
-  }
-  if (location.pathname === "/presentation") {
-    return <PresentationPage logoSrc={siteLogo} />;
-  }
-  return <AppContent />;
-}
-
 export default function App() {
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
-          <AppRoute />
+          <AppContent />
           <Toaster />
         </ThemeProvider>
       </QueryClientProvider>
