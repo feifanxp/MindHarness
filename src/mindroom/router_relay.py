@@ -23,6 +23,7 @@ from mindroom.dispatch_source import TRUSTED_INTERNAL_RELAY_SOURCE_KIND, content
 from mindroom.handled_turns import TurnRecord
 from mindroom.logging_config import bound_log_context
 from mindroom.matrix.media import is_matrix_media_dispatch_event
+from mindroom.router_debug.state import record_event, selection_scope
 from mindroom.routing import suggest_responder_for_message
 from mindroom.turn_origin import original_sender_for_router_handoff
 from mindroom.turn_record import canonicalize_turn_record
@@ -267,6 +268,7 @@ async def execute_router_relay(
         permission_sender_id,
     )
     if not responder_candidates:
+        record_event(deps.runtime_paths, room.room_id, event.event_id, "skipped", "no_candidates")
         deps.logger.debug(
             "No responders to route to in this room for sender",
             sender=permission_sender_id,
@@ -284,15 +286,16 @@ async def execute_router_relay(
             deps.logger.info("Handling AI routing", event_id=event.event_id)
 
             routing_text = message or event.body
-            suggested_entity = await suggest_responder_for_message(
-                routing_text,
-                responder_candidates,
-                deps.runtime.config,
-                deps.runtime_paths,
-                thread_history,
-                room_id=room.room_id,
-                thread_id=thread_id,
-            )
+            with selection_scope(deps.runtime_paths, room.room_id, event.event_id):
+                suggested_entity = await suggest_responder_for_message(
+                    routing_text,
+                    responder_candidates,
+                    deps.runtime.config,
+                    deps.runtime_paths,
+                    thread_history,
+                    room_id=room.room_id,
+                    thread_id=thread_id,
+                )
 
     target_resolution = _resolve_router_target(
         deps.runtime.orchestrator,
@@ -301,6 +304,13 @@ async def execute_router_relay(
     )
     if target_resolution is None:
         return
+    record_event(
+        deps.runtime_paths,
+        room.room_id,
+        event.event_id,
+        "target",
+        {"entity": target_resolution.suggested_entity, "response": target_resolution.response_text},
+    )
     selected_entity, suggested_entity, response_text = (
         target_resolution.selected_entity,
         target_resolution.suggested_entity,
@@ -380,6 +390,13 @@ async def execute_router_relay(
         return
     event_id = relay_delivery.event_id
     suggested_entity = relay_delivery.suggested_entity
+    record_event(
+        deps.runtime_paths,
+        room.room_id,
+        event.event_id,
+        "delivery",
+        {"event_id": event_id, "entity": suggested_entity, "sent": event_id is not None},
+    )
     with bound_log_context(**resolved_target.log_context):
         if event_id:
             deps.logger.info("Routed to entity", suggested_entity=suggested_entity)

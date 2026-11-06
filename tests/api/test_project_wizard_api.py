@@ -12,6 +12,8 @@ from mindroom.project_wizard.models import ConfirmRequest, ProjectWizardDraftCon
 from mindroom.project_wizard.provisioning import _project_config
 from mindroom.project_wizard.store import WizardStore
 
+pytestmark = pytest.mark.usefixtures("discussion_login")
+
 
 def proposal(name: str = "项目") -> ProjectWizardDraftContent:
     """Build a bounded complementary-role proposal."""
@@ -170,7 +172,7 @@ def test_sidebar_actions_cannot_touch_another_owners_draft(test_client: TestClie
 
 def test_delete_refuses_an_active_draft_operation(test_client: TestClient) -> None:
     """An active model/provisioning operation cannot race a sidebar deletion."""
-    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "standalone")
+    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "@owner:example.org")
     state = store.create()
     with store.operation(state.draft_id):
         assert (
@@ -186,7 +188,7 @@ def test_delete_refuses_an_active_draft_operation(test_client: TestClient) -> No
 
 def test_all_archived_discussions_remain_discoverable_and_restorable(test_client: TestClient) -> None:
     """Archiving more than the recent-list limit never strands older discussions."""
-    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "standalone")
+    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "@owner:example.org")
     states = [store.create() for _ in range(51)]
     for state in states:
         state.archived = True

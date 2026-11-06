@@ -4383,6 +4383,60 @@ def test_cookie_mutations_use_configured_public_origin(
     assert response.status_code == expected, response.text
 
 
+@pytest.mark.parametrize(
+    ("dashboard_origin", "headers", "expected"),
+    [
+        ("http://100.89.133.114:8765", {"Origin": "http://100.89.133.114:8765"}, 200),
+        ("http://100.89.133.114:8765", {"Origin": "https://public.example.org"}, 403),
+        ("http://100.89.133.114:8765", {"Origin": "https://other.example.org"}, 403),
+        ("http://100.89.133.114:8765", {}, 403),
+        ("http://100.89.133.114:8765", {"Origin": "http://100.89.133.114:8765", "Sec-Fetch-Site": "cross-site"}, 403),
+        ("invalid", {"Origin": "https://public.example.org"}, 403),
+        ("invalid", {"Authorization": "Bearer test-key"}, 200),
+    ],
+)
+def test_cookie_mutations_support_a_separate_dashboard_origin(
+    api_key_client: TestClient,
+    dashboard_origin: str,
+    headers: dict[str, str],
+    expected: int,
+) -> None:
+    """A private dashboard has its own exact origin without disabling cross-site checks."""
+    state = main._app_context(api_key_client.app)
+    state.auth_state = replace(
+        state.auth_state,
+        settings=replace(
+            state.auth_state.settings, public_url="https://public.example.org", dashboard_origin=dashboard_origin
+        ),
+    )
+    api_key_client.cookies.set("mindroom_api_key", "test-key")
+    response = api_key_client.post("/api/config/load", headers=headers)
+    assert response.status_code == expected, response.text
+
+
+def test_dashboard_origin_environment_preserves_public_discussion_origin(temp_config_file: Path) -> None:
+    """The private admin origin must not replace the public discussion identity or origin."""
+    paths = constants.resolve_primary_runtime_paths(
+        config_path=temp_config_file,
+        process_env={
+            "MINDROOM_API_KEY": "test-key",
+            "MINDROOM_PUBLIC_URL": "https://public.example.org",
+            "MINDROOM_DASHBOARD_ORIGIN": "http://100.89.133.114:8765",
+        },
+    )
+    main.initialize_api_app(main.app, paths)
+    config_lifecycle.load_config_into_app(paths, main.app)
+    client = TestClient(main.app, base_url="http://localhost")
+    assert client.post("/api/auth/session", json={"api_key": "test-key"}).status_code == 200
+    assert client.post("/api/config/load", headers={"Origin": "http://100.89.133.114:8765"}).status_code == 200
+    assert (
+        client.post("/api/project-wizard/drafts", headers={"Origin": "https://public.example.org"}).status_code == 401
+    )
+    assert (
+        client.post("/api/project-wizard/drafts", headers={"Origin": "http://100.89.133.114:8765"}).status_code == 403
+    )
+
+
 def test_api_key_cookie_auth_allows_protected_requests(api_key_client: TestClient) -> None:
     """A valid standalone auth session cookie should work without bearer headers."""
     response = api_key_client.post("/api/auth/session", json={"api_key": "test-key"})

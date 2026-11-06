@@ -44,10 +44,12 @@ from mindroom.api.mcp_gateway import gateway_cors_origins, gateway_lifespan, ins
 from mindroom.api.oauth import router as oauth_router
 from mindroom.api.openai_compat import router as openai_compat_router
 from mindroom.api.project_wizard import router as project_wizard_router
+from mindroom.api.project_wizard_auth import router as project_wizard_auth_router
 from mindroom.api.provider_setup import router as provider_setup_router
 from mindroom.api.report_publishing import public_router as report_publishing_public_router
 from mindroom.api.request_body_limit import RequestBodyLimitMiddleware
 from mindroom.api.response_activity import router as response_activity_router
+from mindroom.api.router_debug import router as router_debug_router
 from mindroom.api.schedules import router as schedules_router
 from mindroom.api.script_gateway import bind_script_tool_broker
 from mindroom.api.script_gateway import router as script_gateway_router
@@ -743,7 +745,9 @@ install_gateway_routes(app)
 app.include_router(credentials_router, dependencies=[Depends(verify_user)])
 app.include_router(egress_broker_router, dependencies=[Depends(verify_user)])
 app.include_router(provider_setup_router, dependencies=[Depends(verify_user)])
-app.include_router(project_wizard_router, dependencies=[Depends(verify_user)])
+app.include_router(project_wizard_auth_router)
+app.include_router(project_wizard_router)
+app.include_router(router_debug_router)
 app.include_router(homeassistant_router, dependencies=[Depends(verify_user)])
 app.include_router(integrations_router, dependencies=[Depends(verify_user)])
 app.include_router(matrix_router, dependencies=[Depends(verify_user)])

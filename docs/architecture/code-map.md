@@ -159,6 +159,8 @@ Matrix sync callback
 | `agents.py` | Agent creation and configuration |
 | `config/` | Pydantic models for YAML config parsing (root model in `config/main.py`) |
 | `config/personal_rooms.py` | Opt-in personal-room settings and validation for commands, aliases, and message templates |
+| `router_debug/` | Expiring room-scoped router traces and temporary selection experiments |
+| `api/router_debug.py` | Discussion-owner debugger session, observation and parameter endpoints |
 | `routing.py` | Intelligent responder selection when no agent or team is mentioned |
 | `routing_judgment.py` | Opt-in bounded System One or OpenAI Decisions responder selection, with explicit no-fit outcomes and existing LLM routing fallback |
 | `teams.py` | Multi-agent collaboration (coordinate vs collaborate modes) |
@@ -303,7 +305,8 @@ Matrix sync callback
 | `project_wizard/models.py` | Validated candidate profiles, member selections, persisted conversation, and confirmation models |
 | `project_wizard/avatars.py` | Bundled portrait lookup shared by candidate cards and provisioned Matrix accounts |
 | `project_wizard/store.py` | Owner-scoped atomic snapshots, discussion navigation entries, and per-draft operation locks under tracking |
-| `project_wizard/chat_session.py` | Owner-scoped login handoff to the existing Matrix web client |
+| `api/project_wizard_auth.py` | Personal discussion sessions authenticated by Matrix OpenID, without dashboard access |
+| `project_wizard/legacy_owners.py` | Migration of standalone drafts to explicitly established Matrix owners |
 | `project_wizard/provisioning.py` | Stable project keys, validated config mapping, runtime reload wait, and verified Matrix membership |
 | `api/open_access.py` | Host allow-list and browser-origin guard for requests served without a credential (open dashboard auth, unauthenticated `/v1`) |
 | `api/request_body_limit.py` | Pure ASGI middleware answering 413 for dashboard API request bodies over 16 MiB, except knowledge uploads |
@@ -395,4 +398,4 @@ Matrix sync callback
 An agent's Agno session database, including its traces, is `agents/<agent>/sessions/<agent>.db`, and private agents keep the same per-agent layout under their resolved private state roots.
 Its `<agent>_sessions_summaries` table holds compaction summary rows, and `<agent>_sessions_removed_runs` records runs that edits and redactions removed.
 
-Project-creation drafts and project provisioning records are stored per authenticated dashboard identity under `tracking/project_wizard/`.
+Project-creation drafts and project provisioning records are stored per verified Matrix identity under `tracking/project_wizard/`.

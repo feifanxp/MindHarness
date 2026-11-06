@@ -1866,6 +1866,7 @@ depends_on = [
 [[modules]]
 path = "mindroom.api.main"
 depends_on = [
+    "mindroom.api.router_debug",
     "mindroom.origins",
     "mindroom.api.agent_cli",
     "mindroom.api.config_reload",
@@ -1898,6 +1899,7 @@ depends_on = [
     "mindroom.api.oauth",
     "mindroom.api.provider_setup",
     "mindroom.api.project_wizard",
+    "mindroom.api.project_wizard_auth",
     "mindroom.api.report_publishing",
     "mindroom.api.request_body_limit",
     "mindroom.api.schedules",
@@ -1971,7 +1973,7 @@ depends_on = [
     "mindroom.matrix.state",
     "mindroom.room_scribe",
     "mindroom.api.config_lifecycle",
-    "mindroom.api.auth",
+    "mindroom.api.project_wizard_auth",
     "mindroom.background_tasks",
     "mindroom.project_wizard",
     "mindroom.logging_config",
@@ -3174,6 +3176,7 @@ visibility = [
 [[modules]]
 path = "mindroom.routing"
 depends_on = [
+    "mindroom.router_debug",
     "mindroom.helper_usage",
     "mindroom.routing_judgment",
     "mindroom.agent_descriptions",
@@ -5768,6 +5771,7 @@ depends_on = [
 [[modules]]
 path = "mindroom.turn_policy"
 depends_on = [
+    "mindroom.router_debug",
     "mindroom.peer_discussion",
     "mindroom.config.participation",
     "mindroom.authorization",
@@ -9385,3 +9389,22 @@ depends_on = [
     "mindroom.matrix.event_info",
     "mindroom.matrix.message_content",
 ]
+
+[[modules]]
+path = "mindroom.api.project_wizard_auth"
+depends_on = [
+    "mindroom.api.config_lifecycle",
+    "mindroom.api.auth",
+    "mindroom.constants",
+    "mindroom.matrix_openid",
+    "mindroom.origins",
+    "mindroom.project_wizard",
+]
+
+[[modules]]
+path = "mindroom.router_debug"
+depends_on = []
+
+[[modules]]
+path = "mindroom.api.router_debug"
+depends_on = ["mindroom.api.config_lifecycle", "mindroom.api.project_wizard_auth", "mindroom.project_wizard", "mindroom.peer_discussion", "mindroom.router_debug"]

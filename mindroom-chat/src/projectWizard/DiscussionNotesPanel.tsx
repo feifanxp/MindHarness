@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'folds';
+import { discussionFetch } from './discussionSession';
 
 const categories = {
   fact: '已确认的信息',
@@ -30,7 +31,7 @@ async function requestNotes(
   signal: AbortSignal,
   refresh = false
 ): Promise<DiscussionNotes> {
-  const response = await fetch(
+  const response = await discussionFetch(
     `/api/project-wizard/drafts/${encodeURIComponent(draftId)}/notes${refresh ? '/refresh' : ''}`,
     { method: refresh ? 'POST' : 'GET', credentials: 'same-origin', cache: 'no-store', signal }
   );

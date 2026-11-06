@@ -1694,7 +1694,7 @@ agents:
 |--------|------|---------|-------------|
 | `display_name` | string | *required* | Name shown in Matrix |
 | `role` | string | `""` | System prompt describing the agent's purpose and expertise |
-| `room_scribe` | bool | `false` | Set `true` for a silent background organizer of its configured rooms; uses this agent's `model` and does not answer messages, including mentions; new Agent Room discussions provision one automatically |
+| `room_scribe` | bool | `false` | Set `true` for a silent background organizer of its configured rooms; uses this agent's `model` and does not answer messages, including mentions; new Mind Harness discussions provision one automatically |
 | `model` | string | `"default"` | Key of an entry under `models:` |
 | `cheap_model` | string or null | `null` | Cheaper model key this agent may switch to; used by `cold_cache`. Inherits `defaults.cheap_model`. See [Cold-Cache Model](https://docs.mindroom.chat/configuration/models/#cold-cache-model) |
 | `tools` | list | `[]` | Tool names or single-key dicts with per-agent overrides; see [Tools](https://docs.mindroom.chat/tools/) and [Per-Agent Tool Configuration](https://docs.mindroom.chat/tools/#per-agent-tool-configuration). The agent gets these plus `defaults.tools`, without duplicates |
@@ -6710,16 +6710,29 @@ Otherwise it logs `managed_alias_target_refused`, never joins that room, and cre
 A recorded room stays in use even when its alias now points elsewhere, which logs `managed_alias_points_elsewhere`.
 If the alias of a recorded room is deleted, the router restores it, and creates a replacement room only when it can no longer read or is no longer joined to the recorded room.
 
-## Managing Agent Room Discussions
+## Managing Mind Harness Discussions
 
 Use the **⋯** menu beside a discussion to rename, archive, or delete it.
 Renaming an active discussion also updates its Matrix room name.
 Archived discussions remain available under **已归档讨论**, where **取消归档** returns them to the recent list; their Bots continue running.
 Deleting a discussion requires confirmation, removes its preparation conversation and list entry, and stops its dedicated teammates and organizer; existing Matrix messages and runtime history remain stored.
 
+## Router Debugger
+
+In a created Mind Harness discussion, open **Router 调试** to inspect new routing decisions beside the conversation.
+The panel shows why routing was skipped, eligible candidates, the LLM prompt, SDK response content, validation failures, and the handoff result.
+It records only messages that reach the router policy while the panel is open; earlier messages and ingress-filtered events are not included.
+Only the discussion owner can open its debugger, and one window can hold it at a time.
+Under **工作方式与参数**, choose the configured selection strategy or LLM-only selection, then set the LLM model, prompt, thread-history limits, per-call timeout, and validation retries.
+Keep both `{agents_info}` and `{message}` in a custom prompt; increasing history limits does not add room-level history that the router did not receive.
+Select **应用到本房间** to use those settings for subsequent selections in this room, or **恢复原配置** to clear the overrides.
+Closing the panel restores the original settings; a disconnected panel loses its overrides after 60 seconds, and requests already started keep their captured settings.
+Debug settings are temporary and are not saved to the server configuration.
+Rooms using parallel discussion continue to skip the router, and ordinary mention and thread-continuation rules remain in effect.
+
 ## Discussion Notes
 
-New Agent Room discussions include a silent organizer Bot alongside the selected teammates.
+New Mind Harness discussions include a silent organizer Bot alongside the selected teammates.
 Open **讨论成果** to read its categorized notes and original-message links, or select **立即整理** to process pending messages immediately.
 It automatically processes new messages in batches of 20, or after two minutes of quiet, and revises affected notes when their source messages change or are withdrawn.
 
@@ -6751,6 +6764,15 @@ Room `admins`, `administrators`, and other access settings do not cause Space in
 MindRoom never removes existing Space admins, and adding, removing, or reordering Space children in a Matrix client requires sufficient power in the Space; manage those permissions in a Matrix client.
 Setting `enabled: false` stops maintaining the Space but does not delete it or remove its child links.
 The Space avatar is described in [Managed Avatars](https://docs.mindroom.chat/matrix/#managed-avatars).
+
+### Discussion accounts
+
+The /discussion page uses the same Matrix account as chat.
+You can write an initial idea before signing in; sending it opens sign-in and restores the text when you return.
+Each account has its own saved discussions, and entering a created room reuses that account without another login.
+The discussion sidebar provides sign-in, registration, account switching, and sign-out.
+Registration availability depends on the configured Matrix homeserver.
+Existing standalone discussions retain their recorded owner; drafts without one migrate only to the explicitly configured MINDROOM_OWNER_USER_ID.
 
 # Personal Rooms
 
@@ -14679,8 +14701,16 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 ### Config and state kept out of workers
 
 Project-creation conversations, candidate profiles and selections, display names, archive flags, deletion tombstones, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
-Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
+Each verified local Matrix identity has separate drafts; the discussion API accepts only its dedicated personal session and matching displayed-user header.
+A discussion session cannot authenticate dashboard or other management APIs.
+An explicitly configured MINDROOM_DASHBOARD_ORIGIN separates the private dashboard mutation origin from the public discussion origin; browser requests still require valid authentication and reject cross-site fetch metadata.
+The discussion cookie is HttpOnly, SameSite=Strict, scoped to /api/project-wizard, expires after one hour, and is Secure on HTTPS deployments; process restarts invalidate it.
+Sign-in verifies a short-lived Matrix OpenID token at the configured homeserver and browser mutations require the deployment origin.
+Standalone history migrates only to its recorded Matrix owner, or to MINDROOM_OWNER_USER_ID when a draft has no recorded owner; unassigned records remain unclaimed.
 Room scribe snapshots, including cached Matrix source events, notes, message citations, and extraction progress, live in primary-only `tracking/room_scribe/`; the project API exposes notes only through the authenticated owner's saved draft.
+Router debug sessions keep room message excerpts, selection prompts, SDK response content and temporary overrides in primary-process memory, outside worker mounts.
+Only the authenticated discussion owner can access or change that room’s debug session through same-origin discussion APIs; overrides cannot change saved configuration or credentials.
+Closing a session clears its records; a lease without a heartbeat expires after 60 seconds and cannot affect new routing decisions.
 Candidate portraits come from a bundled library; provisioning copies only selected portraits into the primary-owned managed avatar directory before the runtime loads the new agents.
 Real provisioning refuses to run unless the complete orchestrator is ready and a concrete owner Matrix identity is available; a dashboard-only API cannot claim a room or Bot exists.
 Only the authenticated confirmation endpoint can freeze a proposal and run project provisioning; model output cannot create rooms, accounts, or tool grants. Project roles always receive an empty tool list and explicitly disabled learning/automations; room membership is deterministic and derived from the authenticated owner.
@@ -14930,8 +14960,7 @@ Classify every finding before proposing a change.
 A fix that restricts a trusted setup, or that blocks workspace and attachment flows an agent legitimately needs, is not a security fix.
 When a maintainer rejects a finding as intended behavior, add it to the list above in the same change so the next reviewer does not rediscover it.
 
-The optional project-chat handoff uses the operator-configured project_chat_owner credential only for the frozen project owner, and only for that verified Matrix user or the standalone operator.
-It creates a normal Matrix device session and sends it only in the authenticated, no-store response to the same-origin web client, which stores it through the existing Matrix session store.
+The discussion client uses its own Matrix login to enter the confirmed room; the retired project-chat handoff cannot issue operator-configured credentials.
 
 # Egress Broker Design Decisions
 
@@ -19621,6 +19650,8 @@ A personal OAuth link opened by a browser signed in as anyone other than the req
 ## Browser Mutation Protection
 
 Changing requests (anything other than `GET`, `HEAD`, `OPTIONS`, or `TRACE`) authenticated by trusted upstream identity, a dashboard cookie, or a Connections sign-in session must send an `Origin` matching `MINDROOM_PUBLIC_URL`, or the request origin when it is unset.
+For a separately hosted private dashboard, set `MINDROOM_DASHBOARD_ORIGIN` to its HTTP(S) origin, such as `http://100.89.133.114:8765`, to override the expected origin for these requests.
+The setting defaults to unset; an invalid configured value rejects cookie-authenticated changes, and it does not change the public discussion origin, Matrix OpenID audience, or platform SSO ticket audience.
 Requests marked `Sec-Fetch-Site: cross-site` are rejected even when the `Origin` matches.
 A validated bearer token skips these checks, but adding a bearer header to a trusted-upstream request does not.
 `MINDROOM_DASHBOARD_CORS_ALLOWED_ORIGINS` controls which origins may read credentialed responses and never authorizes cross-origin changes.

@@ -19,6 +19,28 @@ const emptyDraft: WizardState = {
 };
 
 test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    const baseUrl = 'https://example.org';
+    const userId = '@owner:example.org';
+    const sessionId = encodeURIComponent(baseUrl) + '::' + encodeURIComponent(userId);
+    localStorage.setItem(
+      'mindroom_multi_account_store',
+      JSON.stringify({
+        version: 1,
+        activeSessionId: sessionId,
+        sessions: [
+          {
+            sessionId,
+            baseUrl,
+            userId,
+            accessToken: 'fixture-token',
+            deviceId: 'FIXTURE',
+            lastUsedAt: Date.now(),
+          },
+        ],
+      })
+    );
+  });
   await page.route('**/api/project-wizard/drafts', (route) =>
     route.fulfill({ json: route.request().method() === 'GET' ? [] : emptyDraft })
   );

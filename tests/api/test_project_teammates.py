@@ -12,6 +12,8 @@ from mindroom.project_wizard.provisioning import _project_config, _project_keys
 from mindroom.project_wizard.store import WizardStore
 from tests.api.test_project_wizard_api import install, proposal, saved
 
+pytestmark = pytest.mark.usefixtures("discussion_login")
+
 
 def test_old_draft_preserves_members() -> None:
     """Unreleased pre-selection drafts keep their original member and avatar behavior."""
@@ -33,7 +35,7 @@ def test_saved_long_profiles_drop_retired_recommendation(
     agent["recommendation"] = "Retired recommendation"
     agent.pop("expertise")
     agent["selected"] = False
-    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "standalone")
+    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "@owner:example.org")
     (store.root / f"{state['draft_id']}.json").write_text(json.dumps(state))
     response = test_client.get(f"/api/project-wizard/drafts/{state['draft_id']}")
     assert response.status_code == 200
@@ -173,7 +175,7 @@ def test_provisioning_uses_selected_profiles_only(test_client: TestClient, monke
 def test_frozen_selection_cannot_change(test_client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
     """A failed but already confirmed team remains frozen for safe provisioning retries."""
     state = saved(test_client, monkeypatch)
-    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "standalone")
+    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "@owner:example.org")
     frozen = store.read(UUID(state["draft_id"]))
     frozen.status = "provision_failed"
     store.save(frozen)

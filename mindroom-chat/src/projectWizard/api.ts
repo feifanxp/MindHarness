@@ -1,3 +1,5 @@
+import { discussionFetch } from './discussionSession';
+
 export type ProjectMode = 'parallel' | 'hierarchical' | 'needs_clarification';
 export type Teammate = {
   name: string;
@@ -70,7 +72,7 @@ export async function wizardRequest(
   const controller = new AbortController();
   const timer = window.setTimeout(() => controller.abort(), 130_000);
   try {
-    const response = await fetch(`/api/project-wizard${path}`, {
+    const response = await discussionFetch(`/api/project-wizard${path}`, {
       method,
       credentials: 'same-origin',
       cache: 'no-store',

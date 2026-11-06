@@ -169,7 +169,7 @@ vi.mock('../../hooks/useMediaAuthentication', () => ({
 vi.mock('../../hooks/useRoomMeta', () => ({
   useRoomAvatar: (_room: Room, direct?: boolean) =>
     direct ? testState.directAvatarMxc : testState.avatarMxc,
-  useRoomName: () => 'Agent Room',
+  useRoomName: () => 'Mind Harness',
 }));
 
 vi.mock('../../state/hooks/unread', () => ({
@@ -267,7 +267,7 @@ describe('RoomNavItem avatar', () => {
     const images = findByTestId(renderer, 'room-avatar-image');
     expect(images).toHaveLength(1);
     expect(images[0].props).toMatchObject({
-      alt: 'Agent Room',
+      alt: 'Mind Harness',
       src: 'https://media.example.org/avatar',
     });
     expect(findByTestId(renderer, 'room-icon')).toHaveLength(0);
@@ -330,7 +330,7 @@ describe('RoomNavItem avatar', () => {
   it('preserves direct-message initials when no avatar is available', () => {
     const renderer = renderRoomNavItem({ direct: true, showAvatar: true });
 
-    expect(renderer.root.findAllByType('span').some((node) => node.children.includes('A'))).toBe(
+    expect(renderer.root.findAllByType('span').some((node) => node.children.includes('M'))).toBe(
       true
     );
     expect(findByTestId(renderer, 'room-icon')).toHaveLength(0);
@@ -351,7 +351,7 @@ describe('RoomNavItem avatar', () => {
       findByTestId(renderer, 'room-avatar-image')[0].props.onError();
     });
 
-    expect(renderer.root.findAllByType('span').some((node) => node.children.includes('A'))).toBe(
+    expect(renderer.root.findAllByType('span').some((node) => node.children.includes('M'))).toBe(
       true
     );
     expect(findByTestId(renderer, 'room-icon')).toHaveLength(0);

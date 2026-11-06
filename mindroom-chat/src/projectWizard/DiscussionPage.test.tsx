@@ -5,8 +5,10 @@ import { MemoryRouter, Route, Routes, useNavigate, type NavigateFunction } from 
 import { Provider } from 'jotai';
 import { ClientEvent, createClient, type MatrixClient, Room } from 'matrix-js-sdk';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { putSession } from '../app/state/sessions';
 import { DiscussionPage } from './DiscussionPage';
 import ProjectWizard from './ProjectWizard';
+import { logoutClient, removeSessionAndReload } from '../client/initMatrix';
 import { DiscussionActions } from './DiscussionActions';
 import type { WizardState } from './api';
 import { MatrixClientProvider } from '../app/hooks/useMatrixClient';
@@ -19,6 +21,7 @@ const roomId = '!discussion:example.org';
 let mx: MatrixClient;
 let renderer: ReactTestRenderer;
 let initialSyncComplete: boolean;
+let showLiveRoom = true;
 let navigate: NavigateFunction;
 function NavigationCapture() {
   navigate = useNavigate();
@@ -50,8 +53,10 @@ const state: WizardState = {
 };
 
 vi.mock('./ProjectWizard', () => ({
-  default: ({ renderRoom }: { renderRoom: (value: WizardState) => ReactNode }) => renderRoom(state),
+  default: ({ renderRoom }: { renderRoom: (value: WizardState) => ReactNode }) =>
+    showLiveRoom ? renderRoom(state) : null,
 }));
+vi.mock('../client/initMatrix', () => ({ logoutClient: vi.fn(), removeSessionAndReload: vi.fn() }));
 vi.mock('./DiscussionActions', () => ({ DiscussionActions: () => null }));
 vi.mock('../app/pages/client/ClientRuntime', () => ({
   ClientRuntime: function Runtime({ children }: { children: ReactNode }) {
@@ -79,8 +84,19 @@ vi.mock('../app/features/join-before-navigate', () => ({
 }));
 
 beforeEach(() => {
+  localStorage.clear();
+  sessionStorage.clear();
+  putSession({
+    baseUrl: 'https://example.org',
+    userId: '@owner:example.org',
+    accessToken: 'token',
+    deviceId: 'device',
+  });
   mx = createClient({ baseUrl: 'https://example.org', userId: '@owner:example.org' });
   initialSyncComplete = true;
+  showLiveRoom = true;
+  vi.mocked(logoutClient).mockClear();
+  vi.mocked(removeSessionAndReload).mockClear();
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => [] }));
 });
 afterEach(() => {
@@ -130,6 +146,9 @@ it('waits for initial sync before offering room access', async () => {
   await mount();
   expect(renderer.root.findAllByProps({ 'data-join': roomId })).toHaveLength(0);
   initialSyncComplete = true;
+  showLiveRoom = true;
+  vi.mocked(logoutClient).mockClear();
+  vi.mocked(removeSessionAndReload).mockClear();
   await act(async () => renderer.update(view()));
   expect(renderer.root.findByProps({ 'data-join': roomId })).toBeTruthy();
 });
@@ -200,3 +219,33 @@ it.each(['delete', 'archive'])(
     expect(new URL(window.location.href).searchParams.has('draft')).toBe(false);
   }
 );
+
+it('logs out the actual live Matrix runtime', async () => {
+  await mount();
+  await act(async () =>
+    renderer.root
+      .findAllByType('button')
+      .find((button) => button.children.includes('退出登录'))!
+      .props.onClick()
+  );
+  expect(logoutClient).toHaveBeenCalledWith(mx);
+  expect(removeSessionAndReload).not.toHaveBeenCalled();
+});
+
+it('cleans the stored account even when Matrix logout fails before room entry', async () => {
+  showLiveRoom = false;
+  await mount();
+  vi.mocked(fetch).mockImplementation(async (url) => {
+    if (String(url).includes('_matrix')) throw new Error('Expired token');
+    return { ok: true, json: async () => [] } as Response;
+  });
+  await act(async () =>
+    renderer.root
+      .findAllByType('button')
+      .find((button) => button.children.includes('退出登录'))!
+      .props.onClick()
+  );
+  expect(removeSessionAndReload).toHaveBeenCalledWith(
+    expect.objectContaining({ userId: '@owner:example.org' })
+  );
+});

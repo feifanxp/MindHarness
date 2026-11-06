@@ -29,8 +29,16 @@ Examples are symlinks or files planted in shared workspaces that the primary lat
 ### Config and state kept out of workers
 
 Project-creation conversations, candidate profiles and selections, display names, archive flags, deletion tombstones, revision counters, and confirmation results live under `tracking/project_wizard/`, outside worker mounts.
-Each dashboard identity has separate drafts; standalone API-key sessions share the operator identity.
+Each verified local Matrix identity has separate drafts; the discussion API accepts only its dedicated personal session and matching displayed-user header.
+A discussion session cannot authenticate dashboard or other management APIs.
+An explicitly configured MINDROOM_DASHBOARD_ORIGIN separates the private dashboard mutation origin from the public discussion origin; browser requests still require valid authentication and reject cross-site fetch metadata.
+The discussion cookie is HttpOnly, SameSite=Strict, scoped to /api/project-wizard, expires after one hour, and is Secure on HTTPS deployments; process restarts invalidate it.
+Sign-in verifies a short-lived Matrix OpenID token at the configured homeserver and browser mutations require the deployment origin.
+Standalone history migrates only to its recorded Matrix owner, or to MINDROOM_OWNER_USER_ID when a draft has no recorded owner; unassigned records remain unclaimed.
 Room scribe snapshots, including cached Matrix source events, notes, message citations, and extraction progress, live in primary-only `tracking/room_scribe/`; the project API exposes notes only through the authenticated owner's saved draft.
+Router debug sessions keep room message excerpts, selection prompts, SDK response content and temporary overrides in primary-process memory, outside worker mounts.
+Only the authenticated discussion owner can access or change that room’s debug session through same-origin discussion APIs; overrides cannot change saved configuration or credentials.
+Closing a session clears its records; a lease without a heartbeat expires after 60 seconds and cannot affect new routing decisions.
 Candidate portraits come from a bundled library; provisioning copies only selected portraits into the primary-owned managed avatar directory before the runtime loads the new agents.
 Real provisioning refuses to run unless the complete orchestrator is ready and a concrete owner Matrix identity is available; a dashboard-only API cannot claim a room or Bot exists.
 Only the authenticated confirmation endpoint can freeze a proposal and run project provisioning; model output cannot create rooms, accounts, or tool grants. Project roles always receive an empty tool list and explicitly disabled learning/automations; room membership is deterministic and derived from the authenticated owner.
@@ -280,5 +288,4 @@ Classify every finding before proposing a change.
 A fix that restricts a trusted setup, or that blocks workspace and attachment flows an agent legitimately needs, is not a security fix.
 When a maintainer rejects a finding as intended behavior, add it to the list above in the same change so the next reviewer does not rediscover it.
 
-The optional project-chat handoff uses the operator-configured project_chat_owner credential only for the frozen project owner, and only for that verified Matrix user or the standalone operator.
-It creates a normal Matrix device session and sends it only in the authenticated, no-store response to the same-origin web client, which stores it through the existing Matrix session store.
+The discussion client uses its own Matrix login to enter the confirmed room; the retired project-chat handoff cannot issue operator-configured credentials.

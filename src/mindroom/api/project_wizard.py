@@ -14,12 +14,11 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, ValidationError
 
 from mindroom.api import config_lifecycle
-from mindroom.api.auth import verify_user
+from mindroom.api.project_wizard_auth import require_discussion_user
 from mindroom.background_tasks import run_blocking_until_complete
 from mindroom.logging_config import get_logger
 from mindroom.matrix.state import resolve_room_id
 from mindroom.project_wizard.avatars import avatar_path
-from mindroom.project_wizard.chat_session import ChatSession, create_chat_session
 from mindroom.project_wizard.models import (
     ArchiveRequest,
     ConfirmRequest,
@@ -58,7 +57,7 @@ router = APIRouter(prefix="/api/project-wizard", tags=["project-wizard"])
 _MAX_CONVERSATION_CHARS = 20_000
 _MODEL_TIMEOUT_SECONDS = 120
 
-_PROJECT_ASSISTANT_INSTRUCTIONS = """你是 Agent Room 的项目创建助手，帮助用户把模糊目标梳理成清楚、可讨论的项目构想，并维护结构化项目方案。
+_PROJECT_ASSISTANT_INSTRUCTIONS = """你是 Mind Harness 的项目创建助手，帮助用户把模糊目标梳理成清楚、可讨论的项目构想，并维护结构化项目方案。
 
 只输出符合指定 schema 的单个 JSON 对象，顶层只有 message 和 draft。不得返回 JSON Patch、数组或 Markdown 代码块。
 你必须为每轮回复提供一条简洁自然语言消息，并提供当前完整项目草稿；信息不足、尚不能形成有用草案时，草稿设为 null。每轮只推进最重要的一步：
@@ -195,7 +194,7 @@ async def _generate_turn(
     return turn.message.strip(), _next_draft(payload.draft, turn.draft)
 
 
-@router.get("/avatars/{avatar_id}", dependencies=[Depends(verify_user)])
+@router.get("/avatars/{avatar_id}")
 async def teammate_avatar(avatar_id: int) -> FileResponse:
     """Serve the same bundled portrait used by the selected Matrix member."""
     if not 0 <= avatar_id < 12:
@@ -217,16 +216,16 @@ def _store(request: Request, user: dict[str, object]) -> WizardStore:
 
 
 @router.post("/drafts", response_model=WizardState)
-async def create_draft(request: Request, user: Annotated[dict, Depends(verify_user)]) -> WizardState:
+async def create_draft(request: Request, user: Annotated[dict, Depends(require_discussion_user)]) -> WizardState:
     """Create an owner-scoped empty draft without calling a model."""
-    return await asyncio.to_thread(_store(request, user).create)
+    return await asyncio.to_thread(_store(request, user).create, user["matrix_user_id"])
 
 
 @router.get("/drafts", response_model=list[DiscussionSummary])
 async def list_discussions(
     request: Request,
     response: Response,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
     archived: bool = False,
 ) -> list[DiscussionSummary]:
     """Keep preparing and created discussions in one private navigation list."""
@@ -238,7 +237,7 @@ async def list_discussions(
 async def latest_draft(
     request: Request,
     response: Response,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState | None:
     """Recover this user's latest draft; never cache private conversations."""
     response.headers["Cache-Control"] = "no-store"
@@ -250,7 +249,7 @@ async def get_draft(
     draft_id: UUID,
     request: Request,
     response: Response,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Restore saved conversation, proposal, and interrupted operations."""
     response.headers["Cache-Control"] = "no-store"
@@ -288,7 +287,7 @@ async def discussion_notes(
     draft_id: UUID,
     request: Request,
     response: Response,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> DiscussionNotes:
     """Read only the authenticated owner's project notes."""
     response.headers["Cache-Control"] = "no-store"
@@ -302,7 +301,7 @@ async def refresh_discussion_notes(
     draft_id: UUID,
     request: Request,
     response: Response,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> DiscussionNotes:
     """Explicitly process the next batch without waiting for a quiet room."""
     response.headers["Cache-Control"] = "no-store"
@@ -335,7 +334,7 @@ async def draft_message(
     draft_id: UUID,
     payload: MessageRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Persist the user turn before inference and publish a matching message and proposal atomically."""
     store = _store(request, user)
@@ -386,7 +385,7 @@ async def rename_draft(
     draft_id: UUID,
     payload: RenameRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Persist a name edit with optimistic concurrency."""
     return await asyncio.to_thread(_rename, request, _store(request, user), draft_id, payload)
@@ -411,7 +410,7 @@ async def archive_discussion(
     draft_id: UUID,
     payload: ArchiveRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Hide or restore one owner's discussion without stopping its room."""
     return await asyncio.to_thread(_archive, _store(request, user), draft_id, payload)
@@ -432,7 +431,7 @@ async def delete_discussion(
     draft_id: UUID,
     payload: DiscussionActionRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> Response:
     """Delete the preparation record and stop dedicated bots; Matrix history remains available."""
     await run_blocking_until_complete(_delete, request, _store(request, user), draft_id, payload)
@@ -462,7 +461,7 @@ async def select_members(
     draft_id: UUID,
     payload: SelectMembersRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Persist the user's candidate selection with the same draft locking as chat."""
     return await asyncio.to_thread(_select_members, _store(request, user), draft_id, payload)
@@ -540,7 +539,7 @@ async def confirm_draft(
     draft_id: UUID,
     payload: ConfirmRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Confirm a precise proposal and provision the real project when the full runtime is ready."""
     owner = preflight(request, user)
@@ -572,20 +571,13 @@ async def reopen_draft(
     draft_id: UUID,
     payload: ConfirmRequest,
     request: Request,
-    user: Annotated[dict, Depends(verify_user)],
+    user: Annotated[dict, Depends(require_discussion_user)],
 ) -> WizardState:
     """Return failed provisioning to editable planning with a fresh version."""
     return await asyncio.to_thread(_reopen, request, _store(request, user), draft_id, payload)
 
 
-@router.post("/drafts/{draft_id}/chat-session", response_model=ChatSession)
-async def project_chat_session(
-    draft_id: UUID,
-    request: Request,
-    response: Response,
-    user: Annotated[dict, Depends(verify_user)],
-) -> ChatSession:
-    """Sign in the configured owner on a fresh web device only after explicit Start chat."""
-    response.headers["Cache-Control"] = "no-store"
-    state = await asyncio.to_thread(_store(request, user).read, draft_id)
-    return await create_chat_session(state, config_lifecycle.api_runtime_paths(request), user)
+@router.post("/drafts/{draft_id}/chat-session")
+async def retired_chat_session(_user: Annotated[dict, Depends(require_discussion_user)]) -> None:
+    """Old clients must use their own Matrix login instead of an operator credential."""
+    raise HTTPException(410, "请刷新页面，使用当前账号进入聊天室。")

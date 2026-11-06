@@ -147,7 +147,7 @@ Mind Harness 的引导创建与讨论成果界面位于本仓库的定制客户�
 ```text
 MindHarness/
 ├── src/mindroom/       # Agent 运行时、Matrix 集成及本项目后端扩展
-├── mindroom-chat/      # 定制聊天客户端与 Agent Room 讨论流程
+├── mindroom-chat/      # 定制聊天客户端与 Mind Harness 讨论流程
 ├── frontend/           # 管理界面
 ├── config.yaml         # 仓库开发配置；首次使用请另建本地配置
 ├── skills/             # Agent 技能与角色定义
@@ -156,7 +156,7 @@ MindHarness/
 └── saas-platform/      # 上游托管平台代码，普通自托管通常无需使用
 ```
 
-代码中的 Python 包名和 CLI 命令沿用 mindroom，部分界面仍使用 Agent Room 名称。
+代码中的 Python 包名和 CLI 命令沿用 mindroom。
 
 ## 快速开始
 

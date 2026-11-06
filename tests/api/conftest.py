@@ -137,3 +137,26 @@ def calls_on_event_loop(monkeypatch: pytest.MonkeyPatch) -> Callable[[object, st
         return on_loop
 
     return record
+
+
+@pytest.fixture
+def discussion_login(test_client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Give discussion behavior tests a real personal session, mocking only the homeserver."""
+    from unittest.mock import AsyncMock  # noqa: PLC0415
+
+    from mindroom.api import project_wizard_auth  # noqa: PLC0415
+
+    monkeypatch.setattr(project_wizard_auth, "verify_matrix_openid", AsyncMock(return_value="@owner:example.org"))
+    test_client.headers.update({"Origin": "http://localhost", "X-MindRoom-Discussion-User": "@owner:example.org"})
+    response = test_client.post(
+        "/api/project-wizard/session",
+        json={
+            "openid_token": {
+                "access_token": "test-openid",
+                "token_type": "Bearer",
+                "matrix_server_name": "example.org",
+                "expires_in": 300,
+            },
+        },
+    )
+    assert response.status_code == 200

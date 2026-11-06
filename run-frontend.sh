@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Start Agent Room's MindRoom Chat-based frontend
+# Start Mind Harness's MindRoom Chat-based frontend
 # Usage: ./run-frontend.sh [dev|prod]
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

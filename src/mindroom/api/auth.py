@@ -152,6 +152,7 @@ class _ApiAuthSettings:
     account_id: str | None
     mindroom_api_key: str | None
     public_url: str | None = None
+    dashboard_origin: str | None = None
     platform_sso_url: str | None = None
     platform_sso_secret: str | None = None
     trusted_upstream: _TrustedUpstreamAuthSettings = field(default_factory=_TrustedUpstreamAuthSettings)
@@ -175,6 +176,7 @@ def _build_auth_settings(runtime_paths: RuntimePaths, *, account_id: str | None 
         account_id=account_id,
         mindroom_api_key=runtime_paths.env_value("MINDROOM_API_KEY"),
         public_url=runtime_paths.env_value("MINDROOM_PUBLIC_URL"),
+        dashboard_origin=_env_text(runtime_paths, "MINDROOM_DASHBOARD_ORIGIN"),
         platform_sso_url=_env_text(runtime_paths, "MINDROOM_PLATFORM_SSO_URL"),
         platform_sso_secret=_env_text(runtime_paths, "MINDROOM_PLATFORM_SSO_SECRET"),
         trusted_upstream=_build_trusted_upstream_auth_settings(runtime_paths),
@@ -1214,7 +1216,11 @@ def _require_browser_mutation_origin(
         or _extract_bearer_token(validated_authorization) is not None
     ):
         return
-    origin = _dashboard_origin(request, settings)
+    origin = (
+        normalized_origin(settings.dashboard_origin)
+        if settings.dashboard_origin is not None
+        else _dashboard_origin(request, settings)
+    )
     if origin is None:
         raise HTTPException(403, "Browser changes require a valid public origin")
     require_same_origin(request, origin)

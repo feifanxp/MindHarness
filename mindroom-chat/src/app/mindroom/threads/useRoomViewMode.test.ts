@@ -209,7 +209,7 @@ describe('useRoomViewMode', () => {
     expect(mx.listenerCount(RoomMemberEvent.Membership)).toBe(0);
   });
 
-  it('forces Agent Room hosts into one continuous Classic conversation', () => {
+  it('forces Mind Harness hosts into one continuous Classic conversation', () => {
     const roomId = '!agent-room:example.org';
     addRoom(roomId, [userId, agentId]);
     simpleModeState.value = false;

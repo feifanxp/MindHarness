@@ -438,7 +438,8 @@ teammate_avatar  # FastAPI bundled portrait endpoint (src/mindroom/api/project_w
 confirm_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 reopen_draft  # FastAPI project wizard endpoint (src/mindroom/api/project_wizard.py)
 
-project_chat_session  # FastAPI project-owner Matrix login handoff (api/project_wizard.py)
+retired_chat_session  # FastAPI retired operator handoff (api/project_wizard.py)
+sign_out  # FastAPI discussion logout (api/project_wizard_auth.py)
 
 _.team_user_id  # ProjectResult API field consumed by the Matrix web client
 _.validate_base_url  # Pydantic custom endpoint validator (src/mindroom/api/provider_setup.py)
@@ -447,3 +448,7 @@ verify_custom_provider  # FastAPI provider connection endpoint (src/mindroom/api
 
 discussion_notes  # FastAPI owner-scoped project notes endpoint
 refresh_discussion_notes  # FastAPI explicit project notes refresh endpoint
+
+renew_debugger  # FastAPI router debug session endpoint (api/router_debug.py)
+update_debugger  # FastAPI router debug parameter endpoint (api/router_debug.py)
+stop_debugger  # FastAPI router debug cleanup endpoint (api/router_debug.py)

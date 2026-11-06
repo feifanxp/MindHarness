@@ -41,6 +41,7 @@ from mindroom.responder_availability import (
     live_responder_entity_names,
     materializable_agent_names_for_orchestrator,
 )
+from mindroom.router_debug.state import record_event
 from mindroom.runtime_protocols import SupportsClientConfigOrchestrator  # noqa: TC001
 from mindroom.teams import (
     TeamIntent,
@@ -704,7 +705,15 @@ class TurnPolicy:
         """Return one router-specific dispatch plan when this entity is the router."""
         if self.deps.agent_name != ROUTER_AGENT_NAME:
             return None
+        record_event(
+            self.deps.runtime_paths,
+            room.room_id,
+            event.event_id,
+            "received",
+            {"body": message or event.body, "thread_id": dispatch.context.thread_id},
+        )
         if room_discussion(self.deps.runtime.config, self.deps.runtime_paths, room.room_id) is not None:
+            record_event(self.deps.runtime_paths, room.room_id, event.event_id, "skipped", "peer_discussion")
             return _DispatchPlan(kind="ignore", ignore_reason="router")
 
         context = dispatch.context
@@ -717,7 +726,9 @@ class TurnPolicy:
             runtime_paths=self.deps.runtime_paths,
         ):
             if not self.can_reply_to_sender_in_room(requester_user_id, room.room_id):
+                record_event(self.deps.runtime_paths, room.room_id, event.event_id, "skipped", "sender_not_allowed")
                 return _DispatchPlan(kind="ignore", ignore_reason="router")
+            record_event(self.deps.runtime_paths, room.room_id, event.event_id, "guidance", "router_only_mention")
             plan = _DispatchPlan(
                 kind="respond",
                 response_action=ResponseAction(
@@ -726,14 +737,24 @@ class TurnPolicy:
                 ),
             )
         elif context.mentioned_agents or context.has_non_agent_mentions:
+            record_event(self.deps.runtime_paths, room.room_id, event.event_id, "skipped", "explicit_mention")
             plan = _DispatchPlan(kind="ignore", ignore_reason="router")
         elif context.planning_thread_history_unavailable:
+            record_event(self.deps.runtime_paths, room.room_id, event.event_id, "skipped", "history_unavailable")
             self.deps.logger.info("Skipping routing: thread policy history unavailable")
             plan = _DispatchPlan(kind="ignore", ignore_reason="router")
         else:
             if not self.can_reply_to_sender_in_room(requester_user_id, room.room_id):
+                record_event(self.deps.runtime_paths, room.room_id, event.event_id, "skipped", "sender_not_allowed")
                 return _DispatchPlan(kind="ignore", ignore_reason="router")
             available_responders = await self.responder_candidates_for_room(room, requester_user_id)
+            record_event(
+                self.deps.runtime_paths,
+                room.room_id,
+                event.event_id,
+                "candidates",
+                [candidate.full_id for candidate in available_responders],
+            )
             if context.is_thread and thread_requires_explicit_agent_targeting(
                 planning_thread_history,
                 sender_id=requester_user_id,
@@ -743,8 +764,16 @@ class TurnPolicy:
                 available_responders_in_room=available_responders,
             ):
                 self.deps.logger.info("Skipping routing: thread already requires explicit responder targeting")
+                record_event(
+                    self.deps.runtime_paths,
+                    room.room_id,
+                    event.event_id,
+                    "skipped",
+                    "thread_owned_or_multi_human",
+                )
                 plan = _DispatchPlan(kind="ignore", ignore_reason="router")
             elif len(available_responders) == 1:
+                record_event(self.deps.runtime_paths, room.room_id, event.event_id, "skipped", "single_responder")
                 self.deps.logger.info("Skipping routing: only one responder candidate")
                 plan = _DispatchPlan(kind="ignore", ignore_reason="router")
             else:

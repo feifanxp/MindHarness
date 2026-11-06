@@ -12,7 +12,6 @@ from fastapi import HTTPException
 from mindroom.api import config_lifecycle
 from mindroom.background_tasks import run_blocking_until_complete
 from mindroom.constants import (
-    OWNER_MATRIX_USER_ID_ENV,
     ROUTER_AGENT_NAME,
     runtime_matrix_homeserver,
     workspace_avatar_path,
@@ -72,7 +71,7 @@ def preflight(request: Request, user: dict[str, object]) -> str | None:
         raise HTTPException(409, "此版本项目空间暂不支持加密房间，请使用现有 Matrix 客户端创建加密会话。")
     if config.router.model not in config.models:
         raise HTTPException(503, "项目所用模型未配置，请先修正项目助手模型。")
-    raw_owner = user.get("matrix_user_id") or paths.env_value(OWNER_MATRIX_USER_ID_ENV)
+    raw_owner = user.get("matrix_user_id")
     if not isinstance(raw_owner, str) or not raw_owner.startswith("@"):
         raise HTTPException(503, "无法确定聊天室的邀请对象。请先完成 Matrix 配对或设置 MINDROOM_OWNER_USER_ID。")
     return raw_owner

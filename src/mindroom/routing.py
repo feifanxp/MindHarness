@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import asyncio
+from time import perf_counter
 from typing import TYPE_CHECKING
 
 from agno.agent import Agent
@@ -15,6 +17,7 @@ from mindroom.logging_config import get_logger
 from mindroom.matrix.client_visible_messages import ResolvedVisibleMessage, replace_visible_message
 from mindroom.matrix.identity import MatrixID
 from mindroom.providers import model_loading
+from mindroom.router_debug.state import current_settings, record_selection
 from mindroom.routing_judgment import ResponderSelection, judge_responder
 from mindroom.tool_system.events import body_without_tool_markers
 
@@ -65,8 +68,10 @@ async def suggest_responder(
 
     """
     try:
-        if config.router.judgment is not None:
+        debug = current_settings()
+        if config.router.judgment is not None and (debug is None or debug.strategy == "configured"):
             selection = await judge_responder(message, available_entity_names, config, runtime_paths, thread_context)
+            record_selection("judgment", {"backend": config.router.judgment.provider, "result": selection})
             if selection is not None:
                 return selection
         entity_descriptions = []
@@ -76,17 +81,18 @@ async def suggest_responder(
 
         agents_info = "\n\n".join(entity_descriptions)
 
-        prompt = config.render_prompt(
+        template = (debug.prompt_template if debug is not None else None) or config.get_prompt(
             "ROUTER_AGENT_SELECTION_PROMPT_TEMPLATE",
-            agents_info=agents_info,
-            message=message,
         )
+        prompt = template.format(agents_info=agents_info, message=message)
 
-        if thread_context:
+        history_count = debug.history_messages if debug is not None else 3
+        history_chars = debug.history_chars if debug is not None else 100
+        if thread_context and history_count:
             context = f"{config.get_prompt('ROUTER_THREAD_CONTEXT_HEADER')}\n"
-            for msg in thread_context[-3:]:  # Last 3 messages
+            for msg in thread_context[-history_count:]:
                 sender = msg.sender
-                body = body_without_tool_markers(msg.body, msg.content)[:100]
+                body = body_without_tool_markers(msg.body, msg.content)[:history_chars]
                 context += f"{sender}: {body}\n"
             prompt = context + "\n" + prompt
 
@@ -96,6 +102,8 @@ async def suggest_responder(
             thread_id=thread_id,
             runtime_paths=runtime_paths,
         ).model_name
+        if debug is not None and debug.model is not None:
+            router_model_name = debug.model
 
         model = model_loading.get_model_instance(config, runtime_paths, router_model_name)
         logger.info(
@@ -113,32 +121,82 @@ async def suggest_responder(
             telemetry=False,
         )
 
-        response = await agent.arun(prompt, session_id="routing")
+        record_selection(
+            "input",
+            {
+                "model_alias": router_model_name,
+                "model_id": model.id,
+                "candidates": available_entity_names,
+                "available_history_messages": len(thread_context or ()),
+                "used_history_messages": min(history_count, len(thread_context or ())),
+                "prompt": prompt,
+                "settings": debug.model_dump() if debug is not None else None,
+            },
+        )
+        suggestion = await _select_with_validation(agent, prompt, available_entity_names, runtime_paths)
+        if suggestion is None:
+            return None
+
+        logger.info("Routing decision", entity=suggestion.entity_name, reason=suggestion.reasoning)
+    except Exception as e:
+        record_selection("error", {"kind": type(e).__name__})
+        logger.exception("Routing failed", error=str(e))
+        return None
+    else:
+        return ResponderSelection(suggestion.entity_name)
+
+
+async def _select_with_validation(
+    agent: Agent,
+    prompt: str,
+    candidates: list[str],
+    runtime_paths: RuntimePaths,
+) -> _RoutingSuggestion | None:
+    """Preserve normal routing; an active experiment may bound and retry validation."""
+    debug = current_settings()
+    retries = debug.retries if debug is not None else 0
+    timeout = debug.timeout_seconds if debug is not None else None
+    for attempt in range(retries + 1):
+        started = perf_counter()
+        record_selection("attempt", {"number": attempt + 1, "prompt": prompt})
+        async with asyncio.timeout(timeout):
+            response = await agent.arun(prompt, session_id="routing")
         await record_system_usage(response, runtime_paths=runtime_paths, kind="routing")
+        record_selection(
+            "output",
+            {
+                "attempt": attempt + 1,
+                "latency_ms": round((perf_counter() - started) * 1000),
+                "type": type(response.content).__name__,
+                "content": response.content,
+            },
+        )
+        failure = None
         try:
             suggestion = _RoutingSuggestion.model_validate(response.content)
         except ValidationError:
+            failure = "invalid_response_format"
             logger.warning(
                 "Unexpected response type from AI routing",
                 expected="_RoutingSuggestion",
                 actual=type(response.content).__name__,
             )
-            return None
-
-        if suggestion.entity_name not in available_entity_names:
+        else:
+            if suggestion.entity_name in candidates:
+                record_selection("selected", suggestion.model_dump())
+                return suggestion
+            failure = "invalid_candidate"
             logger.warning(
                 "AI suggested invalid entity",
                 suggested=suggestion.entity_name,
-                available=available_entity_names,
+                available=candidates,
             )
-            return None
-
-        logger.info("Routing decision", entity=suggestion.entity_name, reason=suggestion.reasoning)
-    except Exception as e:
-        logger.exception("Routing failed", error=str(e))
-        return None
-    else:
-        return ResponderSelection(suggestion.entity_name)
+        record_selection("validation_failed", {"reason": failure, "will_retry": attempt < retries})
+        prompt += (
+            "\nThe previous answer failed validation. Return one object with entity_name and reasoning. "
+            f"entity_name must be one of: {', '.join(candidates)}."
+        )
+    return None
 
 
 async def suggest_responder_for_message(

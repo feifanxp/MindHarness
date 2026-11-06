@@ -1,4 +1,4 @@
-# Agent Room — 对话式项目创建 MVP
+# Mind Harness — 对话式项目创建 MVP
 
 **产品需求与分阶段开发任务 v0.5**
 **定位：先验证 AI 引导创建项目的完整体验，不重写 MindRoom 底层。**

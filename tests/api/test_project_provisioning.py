@@ -1,21 +1,21 @@
 """Real provisioning readiness, retry, and local owner handoff regressions."""
 
 from types import SimpleNamespace
-from unittest.mock import AsyncMock, Mock
+from unittest.mock import AsyncMock
 from uuid import uuid4
 
-import httpx
 import nio
 import pytest
-from fastapi import HTTPException, Request
+from fastapi import Request
 from fastapi.testclient import TestClient
 
 from mindroom.api import config_lifecycle, main
-from mindroom.credentials.manager import get_runtime_shared_credentials_manager
 from mindroom.matrix.users import AgentMatrixUser
-from mindroom.project_wizard import chat_session, provisioning
-from mindroom.project_wizard.models import ProjectResult, ProjectWizardDraft, WizardState
+from mindroom.project_wizard import provisioning
+from mindroom.project_wizard.models import ProjectWizardDraft, WizardState
 from mindroom.project_wizard.store import WizardStore
+
+pytestmark = pytest.mark.usefixtures("discussion_login")
 
 
 def _ready_state() -> WizardState:
@@ -74,7 +74,7 @@ def test_reopen_refuses_committed_config_even_if_flag_write_was_lost(test_client
     provisioning._install_project_config(_request(test_client), state, state.owner_user_id)
     state.status = "provision_failed"
     state.confirmation_key = uuid4()
-    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "standalone")
+    store = WizardStore(main._app_runtime_paths(test_client.app).storage_root, "@owner:example.org")
     store.save(state)
     response = test_client.post(
         f"/api/project-wizard/drafts/{state.draft_id}/reopen",
@@ -129,67 +129,9 @@ async def test_ready_result_requires_owner_invitation(
     assert client.close.await_count == 2
 
 
-def _created_state() -> WizardState:
-    state = _ready_state()
-    state.status = "created"
-    state.result = ProjectResult(
-        project_id=str(state.draft_id),
-        room_id="!room:example.org",
-        homeserver_url="http://localhost:8008",
-        team_user_id="@team:example.org",
-        sender_user_id="@user:example.org",
-        members=[],
-    )
-    return state
-
-
-@pytest.mark.asyncio
-async def test_chat_handoff_only_authenticates_frozen_owner(
-    test_client: TestClient,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """A configured owner login cannot be handed to a different upstream identity."""
-    paths = main._app_runtime_paths(test_client.app)
-    manager = get_runtime_shared_credentials_manager(paths)
-    manager.save_credentials("project_chat_owner", {"user_id": "@owner:example.org", "password": "fixture-password"})
-    client = Mock()
-    monkeypatch.setattr(chat_session.httpx, "AsyncClient", client)
-    with pytest.raises(HTTPException) as denied:
-        await chat_session.create_chat_session(
-            _created_state(),
-            paths,
-            {"user_id": "other", "matrix_user_id": "@other:example.org"},
-        )
-    assert denied.value.status_code == 403
-    client.assert_not_called()
-
-
-@pytest.mark.asyncio
-async def test_chat_handoff_joins_room_and_returns_only_new_device_session(
-    test_client: TestClient,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """Starting chat signs in the human owner, then joins the exact persisted room."""
-    paths = main._app_runtime_paths(test_client.app)
-    get_runtime_shared_credentials_manager(paths).save_credentials(
-        "project_chat_owner",
-        {"user_id": "@owner:example.org", "password": "fixture-password"},
-    )
-    client = AsyncMock(spec=httpx.AsyncClient)
-    client.__aenter__.return_value = client
-    client.post.side_effect = [
-        httpx.Response(
-            200,
-            json={"user_id": "@owner:example.org", "access_token": "new-device-session", "device_id": "NEW"},
-        ),
-        httpx.Response(200, json={"room_id": "!room:example.org"}),
-    ]
-    monkeypatch.setattr(chat_session.httpx, "AsyncClient", lambda **_: client)
-    result = await chat_session.create_chat_session(_created_state(), paths, {"user_id": "standalone"})
-    assert result.user_id == "@owner:example.org"
-    assert result.device_id == "NEW"
-    assert result.room_id == "!room:example.org"
-    assert client.post.call_args_list[1].args[0].endswith("%21room%3Aexample.org")
+def test_chat_handoff_no_longer_issues_operator_credentials(test_client: TestClient) -> None:
+    """Old clients must refresh and reuse their personal login."""
+    assert test_client.post("/api/project-wizard/drafts/old/chat-session").status_code == 410
 
 
 def test_selected_portraits_are_installed_before_runtime_reload(test_client: TestClient) -> None:
@@ -217,7 +159,7 @@ def test_delete_stops_only_this_project_and_preserves_other_config(
     state.status = "created"
     state.config_installed = installed_receipt
     paths = main._app_runtime_paths(test_client.app)
-    store = WizardStore(paths.storage_root, "standalone")
+    store = WizardStore(paths.storage_root, "@owner:example.org")
     store.save(state)
     before, _ = config_lifecycle.read_committed_runtime_config(_request(test_client))
     room, agents, team = provisioning._project_keys(state)
@@ -242,7 +184,7 @@ def test_created_discussion_can_be_renamed_and_archived_without_removing_bots(te
     state.status = "created"
     state.config_installed = True
     paths = main._app_runtime_paths(test_client.app)
-    WizardStore(paths.storage_root, "standalone").save(state)
+    WizardStore(paths.storage_root, "@owner:example.org").save(state)
     room, agents, _team = provisioning._project_keys(state)
     url = f"/api/project-wizard/drafts/{state.draft_id}"
     renamed = test_client.patch(url, json={"revision": state.revision, "name": "重新命名"})
@@ -262,7 +204,7 @@ def test_delete_rejects_a_bot_shared_with_another_room(test_client: TestClient) 
     state.status = "created"
     state.config_installed = True
     paths = main._app_runtime_paths(test_client.app)
-    WizardStore(paths.storage_root, "standalone").save(state)
+    WizardStore(paths.storage_root, "@owner:example.org").save(state)
     _room, agents, _team = provisioning._project_keys(state)
     config_lifecycle.write_committed_config(
         _request(test_client),

@@ -3,6 +3,7 @@ import React from 'react';
 import { act, create, type ReactTestRenderer } from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { putSession } from '../app/state/sessions';
 import { DiscussionNotesPanel, type DiscussionNotes } from './DiscussionNotesPanel';
 
 vi.mock('folds', () => ({
@@ -19,6 +20,10 @@ vi.mock('folds', () => ({
       {children}
     </button>
   ),
+}));
+
+vi.mock('./discussionSession', () => ({
+  discussionFetch: (path: string, init: RequestInit) => fetch(path, init),
 }));
 
 let renderer: ReactTestRenderer;
@@ -53,6 +58,14 @@ async function toggle(open: boolean) {
 }
 
 beforeEach(() => {
+  localStorage.clear();
+  sessionStorage.clear();
+  putSession({
+    baseUrl: 'https://example.org',
+    userId: '@owner:example.org',
+    accessToken: 'token',
+    deviceId: 'device',
+  });
   vi.useFakeTimers();
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response()));
 });

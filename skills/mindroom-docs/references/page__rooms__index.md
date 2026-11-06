@@ -88,16 +88,29 @@ Otherwise it logs `managed_alias_target_refused`, never joins that room, and cre
 A recorded room stays in use even when its alias now points elsewhere, which logs `managed_alias_points_elsewhere`.
 If the alias of a recorded room is deleted, the router restores it, and creates a replacement room only when it can no longer read or is no longer joined to the recorded room.
 
-## Managing Agent Room Discussions
+## Managing Mind Harness Discussions
 
 Use the **⋯** menu beside a discussion to rename, archive, or delete it.
 Renaming an active discussion also updates its Matrix room name.
 Archived discussions remain available under **已归档讨论**, where **取消归档** returns them to the recent list; their Bots continue running.
 Deleting a discussion requires confirmation, removes its preparation conversation and list entry, and stops its dedicated teammates and organizer; existing Matrix messages and runtime history remain stored.
 
+## Router Debugger
+
+In a created Mind Harness discussion, open **Router 调试** to inspect new routing decisions beside the conversation.
+The panel shows why routing was skipped, eligible candidates, the LLM prompt, SDK response content, validation failures, and the handoff result.
+It records only messages that reach the router policy while the panel is open; earlier messages and ingress-filtered events are not included.
+Only the discussion owner can open its debugger, and one window can hold it at a time.
+Under **工作方式与参数**, choose the configured selection strategy or LLM-only selection, then set the LLM model, prompt, thread-history limits, per-call timeout, and validation retries.
+Keep both `{agents_info}` and `{message}` in a custom prompt; increasing history limits does not add room-level history that the router did not receive.
+Select **应用到本房间** to use those settings for subsequent selections in this room, or **恢复原配置** to clear the overrides.
+Closing the panel restores the original settings; a disconnected panel loses its overrides after 60 seconds, and requests already started keep their captured settings.
+Debug settings are temporary and are not saved to the server configuration.
+Rooms using parallel discussion continue to skip the router, and ordinary mention and thread-continuation rules remain in effect.
+
 ## Discussion Notes
 
-New Agent Room discussions include a silent organizer Bot alongside the selected teammates.
+New Mind Harness discussions include a silent organizer Bot alongside the selected teammates.
 Open **讨论成果** to read its categorized notes and original-message links, or select **立即整理** to process pending messages immediately.
 It automatically processes new messages in batches of 20, or after two minutes of quiet, and revises affected notes when their source messages change or are withdrawn.
 
@@ -129,3 +142,12 @@ Room `admins`, `administrators`, and other access settings do not cause Space in
 MindRoom never removes existing Space admins, and adding, removing, or reordering Space children in a Matrix client requires sufficient power in the Space; manage those permissions in a Matrix client.
 Setting `enabled: false` stops maintaining the Space but does not delete it or remove its child links.
 The Space avatar is described in [Managed Avatars](https://docs.mindroom.chat/matrix/#managed-avatars).
+
+### Discussion accounts
+
+The /discussion page uses the same Matrix account as chat.
+You can write an initial idea before signing in; sending it opens sign-in and restores the text when you return.
+Each account has its own saved discussions, and entering a created room reuses that account without another login.
+The discussion sidebar provides sign-in, registration, account switching, and sign-out.
+Registration availability depends on the configured Matrix homeserver.
+Existing standalone discussions retain their recorded owner; drafts without one migrate only to the explicitly configured MINDROOM_OWNER_USER_ID.

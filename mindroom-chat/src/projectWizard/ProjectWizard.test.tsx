@@ -1,9 +1,22 @@
 // @vitest-environment jsdom
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { act, create, type ReactTestRenderer } from 'react-test-renderer';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import ProjectWizard from './ProjectWizard';
 import type { WizardState } from './api';
+import { putSession } from '../app/state/sessions';
+import { beginDiscussionLogin } from './discussionSession';
+
+vi.mock('./discussionSession', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('./discussionSession')>()),
+  discussionFetch: (path: string, init: RequestInit) => fetch(path, init),
+  beginDiscussionLogin: vi.fn(),
+}));
+
+function RoutedProjectWizard(props: React.ComponentProps<typeof ProjectWizard>) {
+  return <MemoryRouter>{React.createElement(ProjectWizard, props)}</MemoryRouter>;
+}
 
 let renderer: ReactTestRenderer;
 const saved = (): WizardState => ({
@@ -49,6 +62,14 @@ const findButton = (text: string) =>
     .findAllByType('button')
     .find((b) => b.children.filter((c) => typeof c === 'string').join('') === text);
 beforeEach(() => {
+  localStorage.clear();
+  sessionStorage.clear();
+  putSession({
+    baseUrl: 'http://localhost:8008',
+    userId: '@owner:example.org',
+    accessToken: 'token',
+    deviceId: 'device',
+  });
   window.history.replaceState(null, '', '/');
   vi.stubGlobal('fetch', vi.fn());
   vi.stubGlobal('crypto', { randomUUID: () => 'id-1' });
@@ -64,7 +85,7 @@ afterEach(() => {
 async function mount(value: WizardState | null) {
   vi.mocked(fetch).mockResolvedValueOnce(response(value));
   await act(async () => {
-    renderer = create(<ProjectWizard />);
+    renderer = create(<RoutedProjectWizard />);
   });
 }
 it('restores a saved real project draft', async () => {
@@ -117,16 +138,35 @@ it('keeps pending model messages retryable after refresh', async () => {
 it('keeps initial recovery failure from creating a new draft', async () => {
   vi.mocked(fetch).mockRejectedValueOnce(new Error('offline'));
   await act(async () => {
-    renderer = create(<ProjectWizard />);
+    renderer = create(<RoutedProjectWizard />);
   });
   expect(renderer.root.findByType('textarea').props.disabled).toBe(true);
 });
 
-it('keeps a chat handoff failure visible even when the project is already created', async () => {
+it('enters a verified owners room even when the backend uses a private homeserver address', async () => {
   const created = saved();
   created.status = 'created';
   created.confirmation_key = 'id-1';
   created.confirmed_revision = 1;
+  created.result = {
+    test_mode: false,
+    project_id: 'draft-1',
+    room_id: '!room:example.org',
+    homeserver_url: 'http://matrix-internal:8008',
+    team_user_id: '@team:example.org',
+    sender_user_id: '@owner:example.org',
+    members: [],
+  };
+  await mount(created);
+  vi.mocked(fetch).mockClear();
+  await act(async () => findButton('开始聊天')!.props.onClick());
+  expect(findButton('开始聊天')).toBeUndefined();
+  expect(fetch).not.toHaveBeenCalled();
+});
+
+it('requires the signed-in owner when entering an existing room', async () => {
+  const created = saved();
+  created.status = 'created';
   created.result = {
     test_mode: false,
     project_id: 'draft-1',
@@ -137,35 +177,17 @@ it('keeps a chat handoff failure visible even when the project is already create
     members: [],
   };
   await mount(created);
-  vi.mocked(fetch)
-    .mockRejectedValueOnce(new Error('聊天登录失败'))
-    .mockResolvedValueOnce(response(created));
+  putSession({
+    baseUrl: 'http://localhost:8008',
+    userId: '@other:example.org',
+    accessToken: 'other-token',
+    deviceId: 'other-device',
+  });
+  vi.mocked(fetch).mockResolvedValueOnce(response(created));
   await act(async () => findButton('开始聊天')!.props.onClick());
   expect(
     renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')
-  ).toContain('聊天登录失败');
-  expect(findButton('开始聊天')).toBeTruthy();
-});
-
-it('opens reauthentication when the chat handoff session has expired', async () => {
-  const created = saved();
-  created.status = 'created';
-  created.confirmation_key = 'id-1';
-  created.confirmed_revision = 1;
-  created.result = {
-    test_mode: false,
-    project_id: 'draft-1',
-    room_id: '!room:example.org',
-    homeserver_url: 'http://localhost:8008',
-    team_user_id: '@team:example.org',
-    sender_user_id: '@owner:example.org',
-    members: [],
-  };
-  await mount(created);
-  vi.mocked(fetch).mockResolvedValueOnce(response({ detail: '登录已过期，请重新登录。' }, 401));
-  await act(async () => findButton('开始聊天')!.props.onClick());
-  expect(renderer.root.findByProps({ className: 'wizard-login' })).toBeTruthy();
-  expect(renderer.root.findByProps({ id: 'wizard-api-key' }).props.type).toBe('password');
+  ).toContain('所属的账号');
 });
 
 it('starts an independent project after completion and restores it after refresh', async () => {
@@ -333,7 +355,7 @@ it('freezes selected teammates after confirmation', async () => {
   expect(findButton('组队，开始聊')).toBeUndefined();
 });
 
-it('automatically starts the chat handoff and exposes handoff failures', async () => {
+it('enters the room using the current login after confirmation', async () => {
   await mount(saved());
   const created = {
     ...saved(),
@@ -350,19 +372,13 @@ it('automatically starts the chat handoff and exposes handoff failures', async (
       members: [],
     },
   };
-  vi.mocked(fetch)
-    .mockResolvedValueOnce(response(created))
-    .mockRejectedValueOnce(new Error('聊天登录失败'))
-    .mockResolvedValueOnce(response(created));
+  vi.mocked(fetch).mockResolvedValueOnce(response(created));
   await act(async () => findButton('组队，开始聊')!.props.onClick());
-  expect(fetch).toHaveBeenCalledWith(
+  expect(fetch).not.toHaveBeenCalledWith(
     '/api/project-wizard/drafts/draft-1/chat-session',
     expect.objectContaining({ method: 'POST' })
   );
-  expect(
-    renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')
-  ).toContain('聊天登录失败');
-  expect(findButton('开始聊天')).toBeTruthy();
+  expect(findButton('开始聊天')).toBeUndefined();
 });
 
 it('shows the first message immediately while both draft creation and the reply are pending', async () => {
@@ -565,39 +581,21 @@ it('retains the local turn while retrying a different saved turn after a conflic
   expect(renderer.root.findByType('textarea').props.disabled).toBe(false);
 });
 
-it('keeps an unaccepted message retryable after signing in again', async () => {
-  const initial = saved();
-  await mount(initial);
-  vi.mocked(fetch)
-    .mockResolvedValueOnce(response({ detail: '登录已过期' }, 401))
-    .mockResolvedValueOnce(response({ detail: '登录已过期' }, 401));
+it('preserves an unaccepted message when reauthentication is required', async () => {
+  await mount(saved());
+  vi.mocked(fetch).mockResolvedValue(response({ detail: '登录已过期' }, 401));
   act(() => renderer.root.findByType('textarea').props.onChange({ target: { value: '继续讨论' } }));
   await act(async () =>
     renderer.root.findByType('form').props.onSubmit({ preventDefault: vi.fn() })
   );
   expect(renderer.root.findAllByType('article')).toHaveLength(2);
-  vi.mocked(fetch).mockResolvedValueOnce(response({})).mockResolvedValueOnce(response(initial));
-  await act(async () =>
-    renderer.root
-      .findByProps({ className: 'wizard-login' })
-      .props.onSubmit({ preventDefault: vi.fn() })
+  act(() => findButton('登录 / 注册')!.props.onClick());
+  expect(beginDiscussionLogin).toHaveBeenCalledWith(
+    expect.objectContaining({ content: '继续讨论' })
   );
-  expect(renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')).toBe(
-    '消息尚未发送，请重试。'
-  );
-  vi.mocked(fetch).mockResolvedValueOnce(
-    response({
-      ...initial,
-      revision: 2,
-      messages: [...initial.messages, { id: 'id-1', role: 'user', content: '继续讨论' }],
-    })
-  );
-  await act(async () => findButton('重试')!.props.onClick());
-  expect(JSON.parse(vi.mocked(fetch).mock.lastCall![1]!.body as string).message_id).toBe('id-1');
-  expect(renderer.root.findAllByType('article')).toHaveLength(2);
 });
 
-it('keeps automatic chat handoff when provisioning succeeds through the generic retry', async () => {
+it('enters the room when provisioning succeeds through the generic retry', async () => {
   await mount(saved());
   vi.mocked(fetch)
     .mockResolvedValueOnce(response({ detail: '服务未就绪' }, 503))
@@ -618,18 +616,13 @@ it('keeps automatic chat handoff when provisioning succeeds through the generic 
       members: [],
     },
   };
-  vi.mocked(fetch)
-    .mockResolvedValueOnce(response(created))
-    .mockRejectedValueOnce(new Error('登录暂不可用'))
-    .mockResolvedValueOnce(response(created));
+  vi.mocked(fetch).mockResolvedValueOnce(response(created));
   await act(async () => findButton('重试')!.props.onClick());
-  expect(fetch).toHaveBeenCalledWith(
+  expect(fetch).not.toHaveBeenCalledWith(
     '/api/project-wizard/drafts/draft-1/chat-session',
     expect.objectContaining({ method: 'POST' })
   );
-  expect(
-    renderer.root.findByProps({ role: 'alert' }).findByType('span').children.join('')
-  ).toContain('登录暂不可用');
+  expect(findButton('开始聊天')).toBeUndefined();
 });
 
 it('accepts a sidebar rename before the next edit without reloading', async () => {
@@ -645,7 +638,7 @@ it('accepts a sidebar rename before the next edit without reloading', async () =
       project: { ...initial.draft!.project, name: '侧栏新名称' },
     },
   };
-  await act(async () => renderer.update(<ProjectWizard initialState={renamed} />));
+  await act(async () => renderer.update(<RoutedProjectWizard initialState={renamed} />));
   expect(renderer.root.findByProps({ id: 'wizard-project-name' }).props.value).toBe('侧栏新名称');
   vi.mocked(fetch).mockResolvedValueOnce(response({ ...renamed, revision: 3 }));
   act(() => renderer.root.findByType('textarea').props.onChange({ target: { value: '继续修改' } }));
@@ -673,11 +666,11 @@ it('ignores an initial load that arrives after a sidebar rename', async () => {
     })
   );
   await act(async () => {
-    renderer = create(<ProjectWizard draftId="draft-1" />);
+    renderer = create(<RoutedProjectWizard draftId="draft-1" />);
   });
   const renamed = { ...saved(), revision: 2, display_name: '保留新名称' };
   await act(async () =>
-    renderer.update(<ProjectWizard draftId="draft-1" initialState={renamed} />)
+    renderer.update(<RoutedProjectWizard draftId="draft-1" initialState={renamed} />)
   );
   await act(async () => finish(response(saved())));
   expect(renderer.root.findByProps({ id: 'wizard-project-name' }).props.value).toBe('保留新名称');

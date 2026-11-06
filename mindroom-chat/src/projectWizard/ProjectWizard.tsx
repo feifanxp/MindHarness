@@ -7,17 +7,19 @@ import React, {
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { IconArrowUp, IconRefresh } from '@tabler/icons-react';
 import parse from 'html-react-parser';
 import { parseBlockMD, parseInlineMD } from '../app/plugins/markdown';
 import { sanitizeCustomHtml, sanitizeText } from '../app/utils/sanitize';
 import { wizardRequest, WizardError, type WizardState, type ProjectMode, type Turn } from './api';
+import { getActiveSession } from '../app/state/sessions';
 import {
-  listSessions,
-  setActiveSession,
-  putSession,
-  normalizeSessionBaseUrl,
-} from '../app/state/sessions';
+  beginDiscussionLogin,
+  readDiscussionInput,
+  clearDiscussionInput,
+  DiscussionAuthError,
+} from './discussionSession';
 import { TeammatePicker } from './TeammatePicker';
 import { MINDROOM_LOGO_SRC } from '../app/mindroom/branding/branding';
 import './projectWizard.css';
@@ -30,6 +32,7 @@ const modeLabels: Record<ProjectMode, string> = {
 };
 
 type Props = {
+  onInputChange?: (content: string) => void;
   workspaceMode?: boolean;
   draftId?: string;
   initialState?: WizardState;
@@ -40,6 +43,7 @@ type Props = {
 };
 
 export default function ProjectWizard({
+  onInputChange,
   workspaceMode = false,
   draftId,
   initialState,
@@ -48,6 +52,10 @@ export default function ProjectWizard({
   onRoomReady,
   renderRoom,
 }: Props = {}) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const returnPath = location.pathname + location.search + location.hash;
+  const initialReturnPath = useRef(returnPath);
   const [saved, setSaved] = useState<WizardState | null>(initialState ?? null);
   const current = useRef<WizardState | null>(initialState ?? null);
   const initialDraftId = useRef(
@@ -60,13 +68,12 @@ export default function ProjectWizard({
     : '/drafts/latest';
   const [loading, setLoading] = useState(true);
   const [mobilePlanOpen, setMobilePlanOpen] = useState(false);
-  const [draft, setDraft] = useState('');
+  const [draft, setDraft] = useState(() => readDiscussionInput(returnPath));
+  const restoredInput = useRef(draft);
   const [outgoing, setOutgoing] = useState<Turn | null>(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState('');
-  const [authRequired, setAuthRequired] = useState(false);
-  const [apiKey, setApiKey] = useState('');
-  const [authError, setAuthError] = useState('');
+  const [authRequired, setAuthRequired] = useState(!!initialDraftPath && !getActiveSession());
   const [projectName, setProjectName] = useState('');
   const [pendingLabel, setPendingLabel] = useState('正在保存更改…');
   const [connected, setConnected] = useState(false);
@@ -76,6 +83,16 @@ export default function ProjectWizard({
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const retryAction = useRef<(() => Promise<void>) | null>(null);
+  useEffect(() => {
+    onInputChange?.(outgoing?.content ?? draft);
+  }, [draft, outgoing, onInputChange]);
+  useEffect(() => {
+    if (
+      restoredInput.current &&
+      readDiscussionInput(initialReturnPath.current) === restoredInput.current
+    )
+      clearDiscussionInput();
+  }, []);
   const savedMessages = saved?.messages ?? [];
   const messages =
     outgoing && !savedMessages.some((message) => message.id === outgoing.id)
@@ -132,7 +149,11 @@ export default function ProjectWizard({
     }
   }, [initialState, accept, pending, draftId]);
   const report = useCallback((cause: unknown) => {
-    if (cause instanceof WizardError && cause.status === 401) setAuthRequired(true);
+    if (
+      (cause instanceof WizardError && cause.status === 401) ||
+      cause instanceof DiscussionAuthError
+    )
+      setAuthRequired(true);
     else setError(cause instanceof Error ? cause.message : '连接失败，请重试。');
   }, []);
   const restore = useCallback(async () => {
@@ -155,7 +176,10 @@ export default function ProjectWizard({
   useEffect(() => {
     alive.current = true;
     let cancelled = false;
-    const restored = initialDraftPath ? wizardRequest(initialDraftPath) : Promise.resolve(null);
+    const restored =
+      initialDraftPath && getActiveSession()
+        ? wizardRequest(initialDraftPath)
+        : Promise.resolve(null);
     void restored
       .then((value) => {
         if (!cancelled) {
@@ -261,6 +285,14 @@ export default function ProjectWizard({
     event.preventDefault();
     const content = draft.trim();
     if (!content || disabled || busy.current || authRequired || error) return;
+    if (!getActiveSession()) {
+      try {
+        beginDiscussionLogin({ content, navigate, returnPath });
+      } catch (cause) {
+        report(cause);
+      }
+      return;
+    }
     const id = crypto.randomUUID();
     void run(() => send(content, id));
   };
@@ -328,47 +360,9 @@ export default function ProjectWizard({
     if (!state?.result || state.result.test_mode || !state.owner_user_id) return;
     await run(async () => {
       setPendingLabel('正在进入聊天室…');
-      const result = state.result!;
-      const existing = listSessions().find(
-        (session) =>
-          session.userId === state.owner_user_id &&
-          normalizeSessionBaseUrl(session.baseUrl) ===
-            normalizeSessionBaseUrl(result.homeserver_url)
-      );
-      if (existing) {
-        setActiveSession(existing.sessionId);
-      } else {
-        const response = await fetch(`/api/project-wizard/drafts/${state.draft_id}/chat-session`, {
-          method: 'POST',
-          credentials: 'same-origin',
-          cache: 'no-store',
-        });
-        const session = await response.json();
-        if (!response.ok) {
-          throw new WizardError(
-            response.status,
-            typeof session.detail === 'string' ? session.detail : '聊天登录失败，请重试。'
-          );
-        }
-        if (
-          session.user_id !== state.owner_user_id ||
-          session.room_id !== result.room_id ||
-          normalizeSessionBaseUrl(session.base_url) !==
-            normalizeSessionBaseUrl(result.homeserver_url) ||
-          typeof session.access_token !== 'string' ||
-          typeof session.device_id !== 'string'
-        ) {
-          throw new Error('聊天登录身份不匹配，请重新加载讨论。');
-        }
-        putSession(
-          {
-            baseUrl: session.base_url,
-            userId: session.user_id,
-            accessToken: session.access_token,
-            deviceId: session.device_id,
-          },
-          { setActive: true }
-        );
+      const session = getActiveSession();
+      if (!session || session.userId !== state.owner_user_id) {
+        throw new Error('请使用此讨论所属的账号登录后继续。');
       }
       if (!alive.current) return;
       setConnected(true);
@@ -394,22 +388,11 @@ export default function ProjectWizard({
     void startChatRef.current();
   }, [workspaceMode, saved, loading, pending, authRequired, connected]);
 
-  const login = async (event: FormEvent) => {
-    event.preventDefault();
-    setAuthError('');
+  const login = () => {
     try {
-      const response = await fetch('/api/auth/session', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: apiKey }),
-      });
-      if (!response.ok) throw new Error('密钥无效，请重试。');
-      setAuthRequired(false);
-      setApiKey('');
-      await restore();
+      beginDiscussionLogin({ content: outgoing?.content ?? draft, navigate, returnPath });
     } catch (cause) {
-      setAuthError(cause instanceof Error ? cause.message : '登录失败');
+      report(cause);
     }
   };
 
@@ -474,7 +457,7 @@ export default function ProjectWizard({
       <header className="wizard-header">
         <div className="wizard-brand">
           <img className="wizard-mark" src={MINDROOM_LOGO_SRC} width={30} height={30} alt="" />
-          <span>Agent Room</span>
+          <span>Mind Harness</span>
           <span className="wizard-slash">/</span>
           <span className="wizard-label">{connected ? '一起讨论' : '开始讨论'}</span>
         </div>
@@ -780,31 +763,18 @@ export default function ProjectWizard({
 
       {authRequired && (
         <div className="wizard-overlay">
-          <form className="wizard-login" onSubmit={login}>
-            <span className="wizard-eyebrow">连接 MindRoom</span>
-            <h2>需要 API 密钥</h2>
-            <p>请输入此 MindRoom 实例的 API 密钥。密钥仅用于建立安全会话，不会发送给语言模型。</p>
-            <label htmlFor="wizard-api-key">
-              <span>API 密钥</span>
-              <input
-                id="wizard-api-key"
-                type="password"
-                name="api_key"
-                autoComplete="current-password"
-                value={apiKey}
-                onChange={(event) => setApiKey(event.target.value)}
-                required
-              />
-            </label>
-            {authError && (
-              <p className="wizard-auth-error" role="alert">
-                {authError}
-              </p>
-            )}
-            <button className="wizard-login-submit" type="submit">
-              连接并继续
+          <section
+            className="wizard-login"
+            role="dialog"
+            aria-modal="true"
+            aria-label="登录后继续讨论"
+          >
+            <h2>登录后继续讨论</h2>
+            <p>使用你的聊天账号登录，讨论内容会保留。</p>
+            <button className="wizard-login-submit" type="button" onClick={login}>
+              登录 / 注册
             </button>
-          </form>
+          </section>
         </div>
       )}
     </main>

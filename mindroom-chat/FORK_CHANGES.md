@@ -2,6 +2,49 @@
 
 ## Runbook
 
+### Mind Harness product naming (2026-11-06)
+
+The discussion entry, navigation, page metadata, and project assistant identify the product as Mind Harness.
+The project specification, documentation, and bundled documentation references use the same name.
+Validation: 88 focused client tests, 24 focused backend tests, TypeScript, scoped ESLint, the production build, and independent review pass.
+The full client regression retains the previously recorded scheduled-time and caption-recovery failures after correcting the renamed avatar fixture initials.
+The full Python run stops after 7,537 passes and four failures outside the rename: Git error-language expectations, Linux-only script containment, release-script exit handling, and gateway shutdown.
+
+### Discussion router debugger (2026-11-05)
+
+Created discussion pages include a collapsible Router debugger beside the conversation, with a stacked layout on phones.
+It displays policy skips, candidate selection inputs, SDK content, validation and handoff outcomes while an owner-scoped lease is open.
+Temporary room settings cover selection strategy, LLM model, prompt, thread-history bounds, timeout and validation retries, and expire when closed or after 60 seconds without renewal.
+Polling and saves merge observations monotonically so late responses cannot hide newer trace stages.
+Coverage lives in `src/projectWizard/RouterDebugger.test.tsx` and `e2e/router-debugger.spec.ts`.
+
+### NUC invitation deployment and logout ordering (2026-11-04)
+
+- The NUC release uses personal Matrix discussion sessions through the public discussion API, with operator routes excluded from the public client proxy.
+- Logout drains that account's pending cookie exchange before deleting its cookie and refuses new exchanges until the page reloads.
+- Pending exchanges remain tracked per account across account switches, including A-to-B-to-A transitions.
+- Validation: 59 discussion UI/session tests, TypeScript, ESLint, and the production build pass; independent review approved the logout ordering.
+
+### Discussion sign-in navigation in hash mode (2026-11-04)
+
+- Discussion sign-in, registration, and first-send authentication use React Router navigation, matching both browser and production hash routing.
+- Saved input and the post-login return target use the router-relative location, including its query and fragment.
+- Fresh browser contexts reproduced the old production bounce back to discussion and verify both authentication routes after rebuilding the active preview.
+- Validation: 56 discussion unit tests, 11 browser tests covering both router modes and rendered authentication forms, eight backend auth tests, TypeScript, scoped ESLint, and the production build pass; independent review approved the increment.
+
+### Personal discussion accounts (2026-11-04)
+
+- Discussion preparation and live rooms use the same Matrix account, with a dedicated backend discussion session verified by Matrix OpenID.
+- The welcome page remains available before login; first-send and sidebar sign-in preserve the pending text and return path.
+- Account controls show the current identity, switch saved accounts, and sign out using the existing session cleanup.
+- Account switches remount the workspace and discard its cached lists, drafts, and room state; stale responses cannot update another account.
+- Ordinary discussion users do not gain dashboard privileges, and the server no longer logs the browser into a configured operator account.
+- Standalone drafts migrate only to an established owner, retaining their IDs and historical profile compatibility.
+- Validation: 110 focused backend/import tests, 54 discussion UI/session tests, and eight Chromium tests pass; desktop and 390px screenshots verify login-return text and account controls.
+- TypeScript, scoped ESLint, production build, Ruff, Tach, and Vulture pass; independent review findings are addressed.
+- Full client regression retains the two recorded scheduled-time and caption-recovery failures (6,979 passing tests); full Python regression was interrupted after 14,607 passes and 18 failures outside the changed feature, including Linux-only script execution and PostgreSQL tests.
+- Repository-wide hooks still require unavailable Bun; generated documentation references are synchronized.
+
 ### Responsive discussion composer and immediate sent messages (2026-11-03)
 
 - The preparation composer grows and shrinks with typed, pasted, and wrapped text, caps its height at 170px, and keeps the send button visible on desktop and narrow screens.
@@ -24,7 +67,7 @@
 
 ### Discussion rename, archive, and delete (2026-11-02)
 
-- Each Agent Room discussion has a keyboard-accessible **⋯** menu for renaming, archiving/restoring, and confirmed deletion.
+- Each Mind Harness discussion has a keyboard-accessible **⋯** menu for renaming, archiving/restoring, and confirmed deletion.
 - Renaming a created discussion updates its managed Matrix room name; **已归档讨论** keeps archived discussions discoverable and restores them to the recent list.
 - Deletion removes the preparation conversation and list entry and stops the project's dedicated teammates and organizer, while retaining Matrix messages and runtime history.
 - Validation: 40 focused Python tests and 40 discussion UI tests passed, alongside TypeScript, scoped ESLint, production build, Tach, changed-file hooks, and independent review.
@@ -42,7 +85,7 @@
 
 ### Background discussion organizer (2026-11-02)
 
-- New Agent Room discussions include a fixed organizer Bot, separate from model-recommended teammates and excluded from conversational replies.
+- New Mind Harness discussions include a fixed organizer Bot, separate from model-recommended teammates and excluded from conversational replies.
 - The discussion room has a collapsible **讨论成果** panel with categorized notes, source-message navigation, refresh, and saved update times.
 - The backend maintains notes while the browser is closed, waits for completed message revisions, and rechecks evidence after model calls before publishing.
 - Long messages are processed in resumable segments; edits and withdrawals invalidate affected notes.
@@ -50,9 +93,9 @@
 - A disposable real Matrix room verified automatic extraction with the configured model, manual corrections, source withdrawal, zero scribe chat messages, and source navigation; desktop and 390px screenshots showed no horizontal overflow or browser errors.
 - Full validation remains limited by PostgreSQL container setup requiring a missing Docker credential helper, unrelated Python failures, two reproducible existing client failures in scheduled-time formatting and caption recovery, and missing Bun for the dashboard's repository-wide hooks.
 
-### Hide thread model control in Agent Room (2026-10-30)
+### Hide thread model control in Mind Harness (2026-10-30)
 
-- Agent Room discussions no longer show the thread model selector in the composer.
+- Mind Harness discussions no longer show the thread model selector in the composer.
 - The existing chat client keeps the selector on ordinary `/chat.html` routes, and model configuration and runtime behavior are unchanged.
 - Validation: focused model-picker and discussion tests (28), ESLint, TypeScript, and production build pass.
 
@@ -122,7 +165,7 @@
 - Local setup, startup script and evidence live under ignored .baspowers/sdd/wizard-real; credentials are never committed.
 - Focused API/import checks (44), frontend wizard tests (6), type checks and build pass; unrelated provider_setup Tach failure remains.
 
-### Agent Room durable drafts, confirmation, and real provisioning — Task C–E (2026-10-27)
+### Mind Harness durable drafts, confirmation, and real provisioning — Task C–E (2026-10-27)
 
 - Task C adds owner-scoped saved drafts, conversation history, server revisions, name edits, and explicit two-step confirmation. Task D/E now map a confirmed proposal to real managed Agent/Team configuration and a real managed Matrix room; the result opens the native Chat room route.
 - `/api/project-wizard/drafts` creates an empty draft; `/drafts/latest` and `/drafts/{id}` restore it; `/messages`, `PATCH /drafts/{id}`, `/confirm`, and `/reopen` implement versioned actions.
@@ -137,9 +180,9 @@
 - Repository pre-commit remains blocked by existing provider-setup type/dead-code/Tach errors, missing Bun, and the docs hook dependency build; no commit was made.
 - Evidence is kept outside version control under `.baspowers/sdd/wizard-task-c/`.
 
-### Agent Room structured proposal preview — Task B (2026-10-27)
+### Mind Harness structured proposal preview — Task B (2026-10-27)
 
-- Scope: Task B of `../Agent_Room_Conversational_Project_Creation_MVP_v0.3.md`; draft persistence and confirmation remain Task C, real rooms Task D, and agent provisioning Task E.
+- Scope: Task B of `../Mind_Harness_Conversational_Project_Creation_MVP_v0.3.md`; draft persistence and confirmation remain Task C, real rooms Task D, and agent provisioning Task E.
 - The existing authenticated `/api/project-wizard/chat` endpoint returns natural-language `message` and a separately validated full `draft`, including identity, revision, project context, organization rationale, and roles.
 - The server does not give the assistant tools or write configuration; model-selected permissions and unknown fields fail validation.
 - Revisions are client-held in this stage, with request/response base revisions and serialized submission; they are not a persistent server concurrency guarantee.
@@ -154,7 +197,7 @@
 - Existing provider-setup changes still fail repository-wide type, dead-code and Tach checks; the docs-reference hook also failed, and its unrelated generated config-schema change was reverted.
 - Local verification evidence and service logs are under ignored `.baspowers/sdd/wizard-task-b/`; the existing production preview on port 3004 and API on port 8765 serve the updated implementation.
 
-### Agent Room project-guided conversation entry (2026-10-23)
+### Mind Harness project-guided conversation entry (2026-10-23)
 
 - This fork vendors MindRoom Chat `dev` at `dbae8c9212500b18381d63b9e4289f098bb25cc4`; see `UPSTREAM.md` and preserve the upstream AGPL-3.0-only license.
 - The root `index.html` is now the Task A project-guided conversation entry. The original Matrix client remains available at `/chat.html`; the MindRoom administration dashboard remains in the parent repository's `frontend/` directory as a development fallback.

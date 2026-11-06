@@ -233,6 +233,8 @@ A personal OAuth link opened by a browser signed in as anyone other than the req
 ## Browser Mutation Protection
 
 Changing requests (anything other than `GET`, `HEAD`, `OPTIONS`, or `TRACE`) authenticated by trusted upstream identity, a dashboard cookie, or a Connections sign-in session must send an `Origin` matching `MINDROOM_PUBLIC_URL`, or the request origin when it is unset.
+For a separately hosted private dashboard, set `MINDROOM_DASHBOARD_ORIGIN` to its HTTP(S) origin, such as `http://100.89.133.114:8765`, to override the expected origin for these requests.
+The setting defaults to unset; an invalid configured value rejects cookie-authenticated changes, and it does not change the public discussion origin, Matrix OpenID audience, or platform SSO ticket audience.
 Requests marked `Sec-Fetch-Site: cross-site` are rejected even when the `Origin` matches.
 A validated bearer token skips these checks, but adding a bearer header to a trusted-upstream request does not.
 `MINDROOM_DASHBOARD_CORS_ALLOWED_ORIGINS` controls which origins may read credentialed responses and never authorizes cross-origin changes.

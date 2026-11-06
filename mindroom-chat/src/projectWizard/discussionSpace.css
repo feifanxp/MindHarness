@@ -382,3 +382,59 @@
   padding: 6px;
   font-size: 12px;
 }
+
+.discussion-account {
+  border-top: 1px solid var(--discussion-line);
+  padding-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+.discussion-account-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.discussion-account-identity > span:last-child {
+  min-width: 0;
+}
+.discussion-account-identity strong,
+.discussion-account-identity small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.discussion-account-identity small {
+  color: var(--discussion-muted);
+  font-size: 11px;
+}
+.discussion-account-avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--discussion-accent-soft);
+}
+.discussion-account-identity img {
+  border-radius: 50%;
+}
+.discussion-account-actions {
+  display: flex;
+  gap: 8px;
+}
+.discussion-account button,
+.discussion-account select {
+  padding: 6px 8px;
+  border: 1px solid var(--discussion-line);
+  border-radius: 8px;
+  color: var(--discussion-text);
+  background: var(--discussion-surface);
+  max-width: 100%;
+}
+.discussion-account p {
+  color: var(--discussion-danger);
+  font-size: 12px;
+}

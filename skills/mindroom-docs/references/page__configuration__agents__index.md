@@ -58,7 +58,7 @@ agents:
 |--------|------|---------|-------------|
 | `display_name` | string | *required* | Name shown in Matrix |
 | `role` | string | `""` | System prompt describing the agent's purpose and expertise |
-| `room_scribe` | bool | `false` | Set `true` for a silent background organizer of its configured rooms; uses this agent's `model` and does not answer messages, including mentions; new Agent Room discussions provision one automatically |
+| `room_scribe` | bool | `false` | Set `true` for a silent background organizer of its configured rooms; uses this agent's `model` and does not answer messages, including mentions; new Mind Harness discussions provision one automatically |
 | `model` | string | `"default"` | Key of an entry under `models:` |
 | `cheap_model` | string or null | `null` | Cheaper model key this agent may switch to; used by `cold_cache`. Inherits `defaults.cheap_model`. See [Cold-Cache Model](https://docs.mindroom.chat/configuration/models/#cold-cache-model) |
 | `tools` | list | `[]` | Tool names or single-key dicts with per-agent overrides; see [Tools](https://docs.mindroom.chat/tools/) and [Per-Agent Tool Configuration](https://docs.mindroom.chat/tools/#per-agent-tool-configuration). The agent gets these plus `defaults.tools`, without duplicates |

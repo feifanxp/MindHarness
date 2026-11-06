@@ -12,8 +12,10 @@ from mindroom.project_wizard.store import WizardStore
 from mindroom.room_scribe.models import Note, ScribeState
 from mindroom.room_scribe.store import ScribeStore
 
+pytestmark = pytest.mark.usefixtures("discussion_login")
 
-def created(test_client: TestClient, owner: str = "standalone") -> WizardState:
+
+def created(test_client: TestClient, owner: str = "@owner:example.org") -> WizardState:
     """Save a real created result under the chosen authenticated owner."""
     paths = main._app_runtime_paths(test_client.app)
     state = WizardState(

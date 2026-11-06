@@ -33,9 +33,9 @@ class WizardStore:
     def _path(self, draft_id: UUID) -> Path:
         return self.root / f"{draft_id}.json"
 
-    def create(self) -> WizardState:
+    def create(self, owner_user_id: str | None = None) -> WizardState:
         """Persist an empty conversation before accepting any model work."""
-        state = WizardState(draft_id=uuid4())
+        state = WizardState(draft_id=uuid4(), owner_user_id=owner_user_id)
         self.save(state)
         return state
 
